@@ -14,5 +14,6 @@ eggs/
 include/
 lib/
 local.cfg
+Makefile
 parts/
 var/
