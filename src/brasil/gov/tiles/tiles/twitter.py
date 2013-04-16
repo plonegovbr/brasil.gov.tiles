@@ -20,14 +20,6 @@ class ITwitterTile(IPersistentCoverTile):
         required=True,
     )
 
-<<<<<<< HEAD
-=======
-    def delete():
-        """
-        This method removes the persistent data created for this tile
-        """
-
->>>>>>> * Added credits.
     def get_wid():
         """
         Get the stored widget id.
@@ -58,12 +50,5 @@ class TwitterTile(PersistentCoverTile):
     def get_username(self):
         return self.data['username']
 
-<<<<<<< HEAD
-=======
-    def delete(self):
-        data_mgr = ITileDataManager(self)
-        data_mgr.delete()
-
->>>>>>> * Added credits.
     def accepted_ct(self):
         return None
