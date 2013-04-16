@@ -16,4 +16,5 @@ lib/
 local.cfg
 Makefile
 parts/
+src/collective.cover/
 var/
