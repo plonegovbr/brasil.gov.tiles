@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <layers>
- <layer
-     name="brasil.gov.tiles"
-     interface="brasil.gov.tiles.interfaces.IBrasilGovTiles"
-     />
+  <layer
+      name="brasil.gov.tiles"
+      interface="brasil.gov.tiles.interfaces.IBrasilGovTiles"
+      />
 </layers>

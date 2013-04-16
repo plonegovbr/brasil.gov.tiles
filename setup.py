@@ -14,7 +14,7 @@ long_description = open("README.rst").read() + "\n" + \
 setup(
     name='brasil.gov.tiles',
     version=version,
-    description="Temas para o Portal Modelo do Governo Federal",
+    description="Tiles para o Portal Modelo do Governo Federal",
     long_description=long_description,
     classifiers=[
         "Development Status :: 1 - Alpha",
@@ -33,7 +33,7 @@ setup(
         "Topic :: Multimedia",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    keywords='plone .gov.br tiles plone.app.tiles',
+    keywords='plone tiles brasil gov',
     author='Simples Consultoria',
     author_email='products@simplesconsultoria.com.br',
     url='https://github.com/plonegovbr/brasil.gov.tiles',
@@ -44,11 +44,14 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'setuptools',
+        'collective.cover',
+        #'collective.nitf',  # XXX: we must wait a release of this package
+        'collective.polls',
+        'collective.prettydate',
         'five.grok',
         'plone.app.tiles',
         'plone.tiles',
-
+        'setuptools',
     ],
     extras_require={
         'test': [

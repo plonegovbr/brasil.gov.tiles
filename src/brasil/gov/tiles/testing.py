@@ -5,6 +5,8 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import FunctionalTesting
 
+import unittest
+
 
 class Fixture(PloneSandboxLayer):
 
@@ -14,8 +16,10 @@ class Fixture(PloneSandboxLayer):
         # Load ZCML
         import collective.cover
         self.loadZCML(package=collective.cover)
-        import collective.nitf
-        self.loadZCML(package=collective.nitf)
+        #import collective.nitf
+        #self.loadZCML(package=collective.nitf)
+        import collective.polls
+        self.loadZCML(package=collective.polls)
         import brasil.gov.tiles
         self.loadZCML(package=brasil.gov.tiles)
 
@@ -32,3 +36,12 @@ FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='brasil.gov.tiles:Functional',
 )
+
+
+class BaseIntegrationTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.request = self.layer['request']

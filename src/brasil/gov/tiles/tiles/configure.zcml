@@ -6,7 +6,7 @@
 
   <include package="plone.tiles" file="meta.zcml" />
 
-  <plone:tile
+  <!--plone:tile
       name="nitf.basic"
       title="Basic News Article Tile"
       description="A tile that shows general information about news articles."
@@ -16,7 +16,7 @@
       permission="zope2.View"
       for="*"
       i18n:attributes="title; description"
-      />
+      /-->
 
   <plone:tile
       name="poll"
