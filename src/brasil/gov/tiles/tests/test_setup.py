@@ -19,6 +19,7 @@ DEPENDENCIES = [
 TILES = [
     #'nitf.basic',
     'poll',
+    'twitter',
 ]
 
 
