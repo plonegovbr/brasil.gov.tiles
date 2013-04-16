@@ -7,3 +7,4 @@ seguintes pessoas:
 - Héctor Velarde
 - Érico Andrei
 - André Nogueira
+- Rodrigo Ferreira de Souza
