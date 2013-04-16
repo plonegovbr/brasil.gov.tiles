@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="beyondskins.cartacapital.portal">
+
+<body tal:define="is_empty nocall:view/is_empty;
+                  toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+  <p tal:condition="is_empty">
+    Please drag&amp;drop a news article here.
+  </p>
+
+  <div tal:condition="not: is_empty"
+       tal:define="description view/data/description|nothing">
+    <tal:fields repeat="field view/get_configured_fields">
+    
+         <tal:title define="htmltag python:field.get('htmltag', 'h1')"
+                 condition="python:field['id'] == 'title'">
+      
+          <h1 tal:condition="python:htmltag == 'h1'">
+             <a tal:attributes="href view/getURL;
+                                title description"
+              tal:content="python:field['content']" />
+          </h1>
+         
+          <h2 tal:condition="python:htmltag == 'h2'">
+             <a tal:attributes="href view/getURL;
+                                title description"
+              tal:content="python:field['content']" />
+          </h2>
+          <h3 tal:condition="python:htmltag == 'h3'">
+             <a tal:attributes="href view/getURL;
+                                title description"
+              tal:content="python:field['content']" />
+          </h3>
+          <h4 tal:condition="python:htmltag == 'h4'">
+             <a tal:attributes="href view/getURL;
+                                title description"
+              tal:content="python:field['content']" />
+          </h4>
+      </tal:title>
+
+      <tal:image condition="python:field['id'] == 'image'"
+      			 define="scale python:field.get('scale', 'large');
+      			         position python:field.get('position', '');">
+        <a class="imag" tal:attributes="href view/getURL;
+                                        title description;">
+          <img tal:define="scales view/@@images;
+                           thumbnail python: scales.scale('image', scale=scale);"
+               tal:condition="thumbnail"
+               tal:attributes="src thumbnail/url;
+                               width thumbnail/width;
+                               height thumbnail/height;
+                               class position;" />
+        </a>
+      </tal:image>
+
+      <tal:description condition="python:field['id'] == 'description'">
+        <p tal:content="python:field['content']" class="tile-description">Description</p>
+      </tal:description>
+
+      <tal:date condition="python:field['id'] == 'date'">
+        <p tal:content="python:toLocalizedTime(view.Date(), True)" class="tile-date">Date</p>
+      </tal:date>
+
+      <tal:subjects condition="python:field['id'] == 'subjects'">
+		    <span metal:use-macro="context/@@tile_macros/subjects" />
+      </tal:subjects>
+
+      <tal:subtitle condition="python:field['id'] == 'subtitle'">
+        <p tal:content="python:field['content']" class="tile-subtitle">Subtitle</p>
+      </tal:subtitle>
+
+      <tal:section condition="python:field['id'] == 'section'">
+        <p tal:content="python:field['content']" class="tile-section">Section</p>
+      </tal:section>
+
+      <tal:last condition="repeat/field/end">
+        <div class="visualClear"><!-- --></div>
+      </tal:last>
+    </tal:fields>
+  </div>
+</body>
+</html>

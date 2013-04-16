@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:grok="http://namespaces.zope.org/grok"    
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="brasil.gov.tiles">
+
+    <includeDependencies package="." />
+
+	<grok:grok package="." />
+
+    <include package=".tiles" />
+
+    <include file="profiles.zcml" />    
+
+</configure>

@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Brasil.gov.br: Blocos de Conteúdo"
+      directory="profiles/default"
+      description="Instala e configura elementos reutilizáveis de interface"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Brasil.gov.br: Blocos de Conteúdo (remover)"
+      directory="profiles/uninstall"
+      description="Remove este pacote"
+      provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+</configure>
