@@ -7,7 +7,7 @@ from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
 from collective.cover.testing import INTEGRATION_TESTING
-from collective.cover.tiles.destaque import DestaqueTile
+from brasil.gov.tiles.tiles.destaque import DestaqueTile
 from collective.cover.tiles.base import IPersistentCoverTile
 
 from plone.uuid.interfaces import IUUID
