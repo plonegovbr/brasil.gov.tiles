@@ -24,11 +24,22 @@ Captura de tela
 TODO
 
 
+Tiles
+-----
+
+Twitter
++++++++
+
+Este tile mostra uma listagem dos últimos tweets de um usuário.  Como parâmetro
+de entrada ele o número de identificação do widget do twitter e o nome da conta
+que será listada.
+
+
 Estado deste pacote
 ---------------------
 
 O **brasil.gov.tiles** tem testes automatizados e, a cada alteração em seu
-código os testes são executados pelo serviço Travis. 
+código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes pode ser visto na imagem a seguir:
 
