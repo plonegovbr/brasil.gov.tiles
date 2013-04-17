@@ -34,6 +34,13 @@ Este tile mostra uma listagem dos últimos tweets de um usuário.  Como parâmet
 de entrada ele o número de identificação do widget do twitter e o nome da conta
 que será listada.
 
+Destaque
+++++++++
+
+Este tile mostra uma duas notícias por padrão para destaque, ele se diferencia
+do tile list do cover somente em seu título e na quantidade padrão de itens,
+além da classe padrão de seu css, para facilitar a customização.
+
 
 Estado deste pacote
 ---------------------
