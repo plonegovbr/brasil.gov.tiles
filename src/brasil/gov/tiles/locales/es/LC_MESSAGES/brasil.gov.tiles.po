@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-17 12:30+0000\n"
+"POT-Creation-Date: 2013-04-17 20:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,18 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: brasil/gov/tiles/tiles/destaque.py:42
+msgid "Description"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/destaque.py:30
+msgid "Elements"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/destaque.py:48
+msgid "Image"
+msgstr ""
 
 #: brasil/gov/tiles/tiles/templates/poll.pt:39
 msgid "Nothing to see here"
@@ -48,6 +60,10 @@ msgstr ""
 
 #: brasil/gov/tiles/tiles/nitf.py:25
 msgid "Subtitle"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/destaque.py:36
+msgid "Title"
 msgstr ""
 
 #: brasil/gov/tiles/tiles/templates/poll.pt:72
