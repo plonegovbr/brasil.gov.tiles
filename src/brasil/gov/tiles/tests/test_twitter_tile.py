@@ -28,8 +28,7 @@ class TwitterTileTestCase(BaseIntegrationTestCase):
         self.assertFalse(self.tile.is_droppable)
 
     def test_accepted_content_types(self):
-        self.assertListEqual(
-            self.tile.accepted_ct(), None)
+        self.assertIsNone(self.tile.accepted_ct())
 
     def test_wid(self):
         self.tile.data['wid'] = 123456
