@@ -4,6 +4,7 @@
     <value purge="false">
       <element>poll</element>
       <element>twitter</element>
+      <element>destaque</element>
     </value>
   </record>
 </registry>

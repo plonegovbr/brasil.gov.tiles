@@ -7,12 +7,17 @@
 
     <includeDependencies package="." />
 
-	<grok:grok package="." />
+    <grok:grok package="." />
 
     <i18n:registerTranslations directory="locales" />
 
     <include package=".tiles" />
 
     <include file="profiles.zcml" />
+
+    <browser:resourceDirectory
+            name="brasil.gov.tiles"
+            directory="static"
+    />
 
 </configure>
