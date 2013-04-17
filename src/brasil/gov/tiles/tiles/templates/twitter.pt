@@ -1,8 +1,16 @@
-<div id="twitter-tile">
-    <a class="twitter-timeline"
-       tal:attributes="href           string:https://twitter.com/${view/get_username};
-                       data-widget-id view/get_wid;"
-       tal:content="string:Tweets from ${view/get_username}" />
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+<body>
+    <div id="twitter-tile">
+        <a class="twitter-timeline"
+           tal:attributes="href string:https://twitter.com/${view/get_username};
+                           data-widget-id view/get_wid;"
+           tal:content="string:Tweets from ${view/get_username}"
+           i18n:translate="" />
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+</body>
+</html>

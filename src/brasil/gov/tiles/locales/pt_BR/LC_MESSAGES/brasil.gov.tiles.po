@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: brasil.gov.tiles\n"
+"POT-Creation-Date: 2013-04-17 12:30+0000\n"
+"PO-Revision-Date: 2013-04-17 09:04-0300\n"
+"Last-Translator: Rodrigo Ferreira de Souza <rodrigo.souza@avadora.com.br>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: pt_br\n"
+"Language-Name: Português brasileiro\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:39
+msgid "Nothing to see here"
+msgstr "Nada para ver aqui"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:23
+msgid "Partial results"
+msgstr "Resultados parciais"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:17
+msgid "Poll"
+msgstr "Pool"
+
+#: brasil/gov/tiles/tiles/nitf.py:20
+msgid "Pretty dates"
+msgstr "Datas"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:24
+msgid "Results"
+msgstr "Resultados"
+
+#: brasil/gov/tiles/tiles/nitf.py:30
+msgid "Section"
+msgstr "Seção"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:76
+msgid "See previous polls"
+msgstr "Veja os pools anteriores"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:61
+msgid "Submit"
+msgstr "Enviar"
+
+#: brasil/gov/tiles/tiles/nitf.py:25
+msgid "Subtitle"
+msgstr "Subtítulo"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:72
+msgid "Total votes:"
+msgstr "Total de votos"
+
+#: brasil/gov/tiles/tiles/templates/poll.pt:66
+msgid "spiner"
+msgstr "spiner"
+
