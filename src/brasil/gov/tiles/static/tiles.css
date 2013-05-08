@@ -1,0 +1,144 @@
+
+.videogallery-tile {
+    background-color: #072d6c;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFF;
+}
+
+.videogallery-tile .gallery-tile {
+    color: #FFF;
+    font-size: 23px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #2e5493;
+    padding: 15px;
+    margin: 0px;
+}
+
+.videogallery-tile .player-metadata {
+    padding: 10px 15px;
+    border-bottom: 1px solid #305492;
+}
+.player-metadata .title {
+    border-bottom: 1px dotted #305492;
+    color: #CDE1FA;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.player-metadata .description {
+    padding-top: 15px;
+}
+.subtitle {
+    text-transform: uppercase;
+    color: #667cae;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.videogallery-tile .gallery-footer {
+    font-size: 10px;
+    padding: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    background-color: #062458;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px dotted #305492;
+}
+.videogallery-tile .gallery-footer a {
+    background: url("++resource++brasil.gov.tiles/footer-arrow.jpg") no-repeat scroll right 0 transparent;
+    color: #D1E2FF !important;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding-right: 25px;
+}
+
+.videogallery-tile .selected {
+    display: none;
+}
+
+.gallery-element-link {
+    height: 60px;
+    width: 80px;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+}
+#content .gallery-element-link img {
+    border-radius: 0 0 0 0;
+}
+.galery-items-wrapper {
+    margin: 0;
+}
+.gallery-element-wrapper {
+    padding: 15px 15px;
+}
+.gallery-element {
+    float: left;
+    border-bottom: 1px dotted #305492;
+    width: 100%;
+}
+
+.gallery-element-metadata {
+    height: 60px;
+    overflow: hidden;
+}
+.gallery-element-metadata .title {
+    margin-left: 15px;
+    display: block;
+}
+.gallery-element-metadata .description {
+    display: none;
+}
+
+.player-holder iframe {
+    width: 100%;
+    height: auto;
+}
+
+
+.gallery-2-columns .gallery-element{
+    width: 50%;
+}
+.gallery-2-columns .player-video {
+    width: 50%;
+    float: left;
+}
+.gallery-2-columns .player-holder {
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.gallery-2-columns .player-metadata {
+    padding: 0;
+    border-bottom: medium none;
+}
+.gallery-2-columns .player-metadata-wrapper {
+    padding-left: 50%;
+    padding-right: 15px;
+    margin-left: 10px;
+}
+.gallery-2-columns .galery-items {
+    border-top: 1px solid #305492;
+}
+
+
+.gallery-3-columns .player-holder{
+    width: 505px;
+    float: left;
+}
+.gallery-3-columns .galery-items {
+    width: 230px;
+    float: left;
+    margin: 0;
+}
+
+.gallery-3-columns .player-metadata .title {
+    border-bottom: medium none;
+}
+.gallery-3-columns .player-metadata {
+    border-bottom: medium none;   
+}
+.gallery-3-columns .galery-items-wrapper {
+    margin-left: 15px;
+    border-left: 1px solid #305492;
+    display: inline-block;
+}

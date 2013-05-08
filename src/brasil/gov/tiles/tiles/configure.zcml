@@ -54,4 +54,16 @@
       i18n:attributes="title; description"
       />
 
+  <plone:tile
+      name="videogallery"
+      title="A Video Gallery tile"
+      description="A dropable tile that shows a gallery of videos with descriptions and links."
+      add_permission="cmf.ModifyPortalContent"
+      schema=".videogallery.IVideoGalleryTile"
+      class=".videogallery.VideoGalleryTile"
+      permission="zope2.View"
+      for="*"
+      i18n:attributes="title; description"
+      />
+
 </configure>

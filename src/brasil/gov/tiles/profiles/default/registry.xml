@@ -5,6 +5,7 @@
       <element>poll</element>
       <element>twitter</element>
       <element>destaque</element>
+      <element>videogallery</element>
     </value>
   </record>
 </registry>
