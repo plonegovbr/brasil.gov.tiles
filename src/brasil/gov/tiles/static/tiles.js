@@ -47,4 +47,130 @@ $(document).ready(function() {
             });
         });
     }
+
 });
+
+
+(function($) {
+    function AudioPlayer(audio_element, conf) {
+        var self = this,
+            cssSelectorAncestor = conf.cssSelectorAncestor,
+            ae = audio_element;
+
+        $.extend(self, {
+            init: function(){
+                var audio_url = self.get_audio_url();
+                var media = self.get_media(audio_url);
+
+                ae.jPlayer({
+                    ready: function () {
+                        $(this).jPlayer("setMedia", media.media_urls);
+                    },
+                    swfPath: "/++resource++brasil.gov.tiles",
+                    supplied: 'mp3,m4a,oga,webma',
+                    cssSelectorAncestor: cssSelectorAncestor,
+                    solution:"html,flash",
+                    wmode: "window"
+                });
+            },
+
+            /**
+             * Construct the setMedia list of option and the supplied list
+             * XXX at this point is not really used because a bug in the player
+             **/
+            get_media: function(urls){
+                //right now works for only 1 media type but should be modify 
+                //to iterate over urls and provide multiple supplied and sources
+                var media = {'media_urls':{}, 'supplied':''};
+                var media_type = self.get_media_type(urls);
+
+                if (media_type){
+                    media['media_urls'][media_type] = urls;
+                    media['supplied'] = media_type;
+                }
+                return media;
+            },
+
+            /**
+             * Get the audio url from the configuration or the data attribute in the
+             * main element
+             **/
+            get_audio_url: function(){
+                var url = conf.audio_url? conf.audio_url : ae.data('audio-url');
+                return url;
+            },
+
+            /**
+             * Function to gleam the media type from the URL
+             * 
+             **/
+            get_media_type: function(url) { 
+                var mediaType = false;
+                if(/\.mp3$/i.test(url)) {
+                    mediaType = 'mp3';
+                } else if(/\.mp4$/i.test(url) || /\.m4v$/i.test(url)) {
+                    mediaType = 'm4v';
+                } else if(/\.m4a$/i.test(url)) {
+                    mediaType = 'm4a';
+                } else if(/\.ogg$/i.test(url) || /\.oga$/i.test(url)) {
+                    mediaType = 'oga';
+                } else if(/\.ogv$/i.test(url)) {
+                    mediaType = 'ogv';
+                } else if(/\.webm$/i.test(url)) {
+                    mediaType = 'webmv';
+                }
+                return mediaType;
+            },
+
+            /**
+             * Method to update the media element reproduced in the player
+             * requires just a media url
+             **/
+            update_player: function(new_url) {
+                //clear all media (even if is running)
+                //ae.jPlayer("clearMedia");
+                conf.audio_url = new_url;
+
+                var audio_url = self.get_audio_url();
+                var media = self.get_media(audio_url);
+
+                ae.jPlayer( "clearMedia" );
+                ae.jPlayer("option", 'swfPath', '/++resource++brasil.gov.tiles');
+
+                ae.jPlayer("option", "supplied", media.supplied);
+                ae.jPlayer("setMedia", media.media_urls);
+
+            }
+        });
+        self.init();
+    }
+
+    $.fn.audio_player = function(options) {
+
+        // already instanced, return the data object
+        var el = this.data("audio_player");
+        if (el) { return el; }
+
+
+        var default_settings = this.data('audio_player-settings');
+        var settings = '';
+        //default settings
+        if (default_settings) {
+            settings = default_settings;
+        } else {
+            settings = {
+                'cssSelectorAncestor': '#jp_container_1',
+            }
+        }
+
+        if (options) {
+            $.extend(settings, options);
+        }
+
+        return this.each(function() {
+            el = new AudioPlayer($(this), settings);
+            $(this).data("audio_player", el);
+        });
+
+    };
+})(jQuery);

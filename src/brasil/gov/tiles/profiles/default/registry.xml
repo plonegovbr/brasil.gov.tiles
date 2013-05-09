@@ -6,6 +6,7 @@
       <element>twitter</element>
       <element>destaque</element>
       <element>videogallery</element>
+      <element>audio</element>
     </value>
   </record>
 </registry>

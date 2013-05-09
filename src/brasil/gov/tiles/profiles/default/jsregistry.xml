@@ -2,5 +2,8 @@
 <object name="portal_javascripts" purge="False">
   <javascript id="++resource++brasil.gov.tiles/tiles.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
-      expression="" inline="False" authenticated="True" insert-after="*" />
+      expression="" inline="False" authenticated="False" insert-after="*" />
+  <javascript id="++resource++brasil.gov.tiles/jquery.jplayer.min.js"
+      cacheable="True" compression="none" cookable="True" enabled="True"
+      expression="" inline="False" authenticated="False" insert-after="*" />
 </object>
