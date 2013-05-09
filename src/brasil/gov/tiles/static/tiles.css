@@ -199,8 +199,23 @@
 }
 
 
-
-
+/* GALLERY */
+.mediacarousel {
+    background: none repeat scroll 0 0 #EEEFF1;
+    border:1px solid #d5d5d5;
+}
+.mediacarousel .mediacarousel-tile {
+    padding: 10px 15px;
+    font-weight: bold;
+}
+.mediacarousel .mediacarousel-footer-container {
+    border-top: 1px solid #d5d5d5;
+    padding: 10px;
+    text-align: right;
+}
+.mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
+    display: inline-block;
+}
 
 
 
@@ -593,3 +608,4 @@ a.jp-shuffle-off:hover {
 }
 
 /* @end */
+

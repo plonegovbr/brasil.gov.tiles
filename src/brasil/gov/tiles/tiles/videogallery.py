@@ -77,14 +77,18 @@ class VideoGalleryTile(ListTile):
         if obj:
             portal_type = obj.getPortalTypeName()
 
+            limit = 0
             catalog_results = []
             if portal_type == 'Collection':
                 catalog_results = obj.results()
+                limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
                 catalog_results = obj.getFolderContents({"portal_type": "sc.embedder"})
+                limit = len(catalog_results) if catalog_results else 0
 
             if catalog_results:
-                for i in xrange(self.limit):
+                limit = limit if limit <= self.limit else self.limit
+                for i in xrange(limit):
                     results.append(catalog_results[i].getObject())
 
         return results

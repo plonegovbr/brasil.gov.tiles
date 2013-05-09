@@ -3,13 +3,15 @@
 from collective.cover import _
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
+from plone.autoform import directives as form
+from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
-class IAudioGalleryTile(IListTile):
+class IMediaCarouselTile(IListTile):
     """
     """
 
@@ -24,16 +26,17 @@ class IAudioGalleryTile(IListTile):
         readonly=False,
     )
 
+    form.omitted('uuids')
+    form.no_omit(IDefaultConfigureForm, 'uuids')
     uuids = schema.List(
-        title=_(u'Audios'),
+        title=_(u'Elements'),
         value_type=schema.TextLine(),
         required=False,
-        readonly=True,
     )
 
 
-class AudioGalleryTile(ListTile):
-    index = ViewPageTemplateFile("templates/audiogallery.pt")
+class MediaCarouselTile(ListTile):
+    index = ViewPageTemplateFile("templates/mediacarousel.pt")
     is_configurable = True
     is_editable = True
 
@@ -51,13 +54,20 @@ class AudioGalleryTile(ListTile):
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
+    def get_uid(self, obj):
+        return IUUID(obj)
+
+    def thumbnail(self, item):
+        scales = item.restrictedTraverse('@@images')
+        try:
+            return scales.scale('image', width=80, height=60)
+        except:
+            return None
+
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
         """
         return ['Collection', 'Folder']
-
-    def get_uid(self, obj):
-        return IUUID(obj)
 
     def get_elements(self, obj):
         results = []
@@ -70,7 +80,7 @@ class AudioGalleryTile(ListTile):
                 catalog_results = obj.results()
                 limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({"portal_type": "File"})
+                catalog_results = obj.getFolderContents({"portal_type": ["sc.embedder", "Image"]})
                 limit = len(catalog_results) if catalog_results else 0
 
             if catalog_results:
@@ -80,9 +90,19 @@ class AudioGalleryTile(ListTile):
 
         return results
 
+    def get_media_url(self, obj):
+        portal_type = obj.getPortalTypeName()
+        url = ''
+        if portal_type == "sc.embedder":
+            url = obj.url
+        elif portal_type == "Image":
+            url = obj.absolute_url() + '/@@images/image'
+
+        return url
+
     def init_js(self):
         return """
 $(document).ready(function() {
-    $('#audiogallery-%s').audiogallery();
+    $('#mediacarousel-gallerie-%s').mediacarousel();
 });
 """ % (self.id)

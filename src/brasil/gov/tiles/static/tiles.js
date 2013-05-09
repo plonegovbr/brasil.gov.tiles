@@ -224,3 +224,43 @@ $(document).ready(function() {
 
     };
 })(jQuery);
+
+
+(function($) {
+
+    function MediaCarousel(mediacarousel) {
+        var self = this,
+            galleria_id = mediacarousel.attr('id');
+
+        $.extend(self, {
+            init: function(){
+                self.setup_size();
+
+                Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
+                Galleria.run('#' + galleria_id);
+            },
+
+            setup_size: function() {
+                //proportions is going to be 4/3, requeriment defined.
+                var width = mediacarousel.width();
+                mediacarousel.height(width/1.33333);
+            }
+        });
+        self.init();
+    }
+    $.fn.mediacarousel = function() {
+
+        // already instanced, return the data object
+        var el = this.data("mediacarousel");
+        if (el) { return el; }
+
+
+        var default_settings = this.data('mediacarousel-settings');
+
+        return this.each(function() {
+            el = new MediaCarousel($(this));
+            $(this).data("mediacarousel", el);
+        });
+
+    };
+})(jQuery);

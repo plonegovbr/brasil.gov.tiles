@@ -8,6 +8,7 @@
       <element>videogallery</element>
       <element>audio</element>
       <element>audiogallery</element>
+      <element>mediacarousel</element>
     </value>
   </record>
 </registry>
