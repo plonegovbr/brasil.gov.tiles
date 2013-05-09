@@ -144,6 +144,62 @@
 }
 
 
+/* AUDIO GALLERY*/
+#content .audiogallery-tile .selected {
+    display: none;
+}
+.audiogallery-tile {
+    background-color: #eeeff1;
+    border:1px solid #d4d4d6;
+    margin-bottom: 20px; 
+}
+.audiogallery-title-container .gallery-tile {
+    padding: 10px 15px 10px 10px;
+    border-bottom: 1px solid #d4d4d6;
+}
+.audiogallery-player-container {
+    padding: 10px 15px;
+    border-bottom: 1px dotted #d4d4d6;
+}
+.audiogallery-player-container .audiogallery-item-title {
+    padding-top: 10px;
+}
+
+#content .audiogallery-items-container ul {
+    margin: 0px;
+}
+#content .audiogallery-items-container li {
+    list-style: none outside none;
+    border-bottom: 1px dotted #d4d4d6;
+    padding: 10px 15px;
+}
+#content .audiogallery-items-container .audiogallery-item {
+    padding-left: 20px;
+    background: url("++resource++brasil.gov.tiles/sound-icon.png") no-repeat scroll left 0 transparent;
+}
+.audiogallery-footer-container {
+    text-align: right;
+    padding: 5px 15px;
+}
+.audiogallery-footer-container .audiogallery-footer-link {
+    text-transform: uppercase;
+    background: url("++resource++brasil.gov.tiles/footer-arrow.jpg") no-repeat scroll right 0 transparent;
+    display: inline-block;
+    height: 20px;
+    padding-right: 25px;
+    font-size: 10px;
+}
+
+
+/* AUDIO */
+.audio-tile .title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+
 
 
 
@@ -153,18 +209,6 @@
 
 /*
  * Skin for jPlayer Plugin (jQuery JavaScript Library)
- * http://www.jplayer.org
- *
- * Skin Name: Blue Monday
- *
- * Copyright (c) 2010-2012 Happyworm Ltd
- * Dual licensed under the MIT and GPL licenses.
- *  - http://www.opensource.org/licenses/mit-license.php
- *  - http://www.gnu.org/copyleft/gpl.html
- *
- * Author: Silvia Benvenuti
- * Skin Version: 4.3 (jPlayer 2.2.0)
- * Date: 19th November 2012
  */
 
 div.jp-audio,
@@ -181,9 +225,12 @@ div.jp-audio-stream{
     color: #666;
     border:1px solid #e0e0e0;
     background-color:#eee;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow:0 0 5px 1px #CCCCCC;
 }
 div.jp-audio {
     width:100%;
+    margin-bottom: 5px;
 }
 div.jp-audio-stream {
     width:182px;

@@ -9,19 +9,13 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
-class IVideoGalleryTile(IListTile):
+class IAudioGalleryTile(IListTile):
     """
     """
 
     title = schema.TextLine(
         title=_(u'Title'),
         required=False,
-    )
-
-    subtitle = schema.TextLine(
-        title=_(u'Subtitle'),
-        required=False,
-        readonly=False,
     )
 
     footer_text = schema.TextLine(
@@ -31,15 +25,15 @@ class IVideoGalleryTile(IListTile):
     )
 
     uuids = schema.List(
-        title=_(u'Videos'),
+        title=_(u'Audios'),
         value_type=schema.TextLine(),
         required=False,
         readonly=True,
     )
 
 
-class VideoGalleryTile(ListTile):
-    index = ViewPageTemplateFile("templates/videogallery.pt")
+class AudioGalleryTile(ListTile):
+    index = ViewPageTemplateFile("templates/audiogallery.pt")
     is_configurable = True
     is_editable = True
 
@@ -57,20 +51,13 @@ class VideoGalleryTile(ListTile):
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
-    def get_uid(self, obj):
-        return IUUID(obj)
-
-    def thumbnail(self, item):
-        scales = item.restrictedTraverse('@@images')
-        try:
-            return scales.scale('image', width=80, height=60)
-        except:
-            return None
-
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
         """
         return ['Collection', 'Folder']
+
+    def get_uid(self, obj):
+        return IUUID(obj)
 
     def get_elements(self, obj):
         results = []
@@ -81,10 +68,18 @@ class VideoGalleryTile(ListTile):
             if portal_type == 'Collection':
                 catalog_results = obj.results()
             elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({"portal_type": "sc.embedder"})
+                catalog_results = obj.getFolderContents({"portal_type": "File"})
 
             if catalog_results:
-                for i in xrange(self.limit):
+                limit = catalog_results.length if catalog_results.length <= self.limit else self.limit
+                for i in xrange(limit):
                     results.append(catalog_results[i].getObject())
 
         return results
+
+    def init_js(self):
+        return """
+$(document).ready(function() {
+    $('#audiogallery-%s').audiogallery();
+});
+""" % (self.id)

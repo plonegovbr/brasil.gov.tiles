@@ -13,7 +13,7 @@
   <div class="audio-tile"
        tal:attributes="id string:audio-$tile_id"
        tal:define="results view/data;">
-    <h3 tal:content="view/data/title"></h3>
+    <h3 class="title" tal:content="view/data/title"></h3>
     <!-- Audio item player -->
     <div class="jp-jplayer" 
          tal:attributes="data-audio-url python:results.get('url', '');
@@ -52,8 +52,8 @@
         </div>
       </div>
     </div>
-    <p tal:content="view/data/description"></p>
-    <p tal:content="view/data/credit"></p>
+    <p class="description" tal:content="view/data/description"></p>
+    <p class="credit" tal:condition="view/data/credit"><span i18n:translate="">Credits:</span><span tal:replace="view/data/credit"></span></p>
   </div>
 </body>
 </html>

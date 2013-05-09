@@ -16,7 +16,8 @@
        tal:attributes="id string:videogallery-$tile_id"
        tal:define="results view/results;
                    collection python:results[0] if results else None;
-                   items python:view.get_elements(collection)">
+                   items python:view.get_elements(collection)"
+       tal:condition="collection">
     <!-- Gallery items -->
     <div>
       <h3 class="gallery-tile" tal:content="view/data/title"></h3>

@@ -174,3 +174,53 @@ $(document).ready(function() {
 
     };
 })(jQuery);
+
+(function($) {
+
+    function AudioGallery(gallery) {
+        var self = this,
+            gallery_obj = gallery,
+            player = gallery_obj.find('.jp-jplayer'),
+            ancestor = '#' + gallery_obj.find('.jp-audio').attr('id');
+
+        $.extend(self, {
+            init: function(){
+                self.bind_events();
+                player.audio_player({'cssSelectorAncestor':ancestor});
+            },
+
+            bind_events: function() {
+                var links = gallery_obj.find('.audiogallery-item');
+                links.click(function(e){
+                    e.preventDefault();
+                    self.update($(this).attr('href'));
+                    links.parent('li').removeClass('selected');
+                    $(this).parent('li').addClass('selected');
+                    gallery_obj.find('.audiogallery-item-title').html($(this).html());
+                });
+            },
+
+            update: function(url) {
+                var p = player.audio_player({'cssSelectorAncestor':ancestor});
+                p.update_player(url);
+            }
+        });
+        self.init();
+    }
+
+    $.fn.audiogallery = function() {
+
+        // already instanced, return the data object
+        var el = this.data("audiogallery");
+        if (el) { return el; }
+
+
+        var default_settings = this.data('audiogallery-settings');
+
+        return this.each(function() {
+            el = new AudioGallery($(this));
+            $(this).data("audiogallery", el);
+        });
+
+    };
+})(jQuery);

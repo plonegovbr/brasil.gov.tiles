@@ -56,7 +56,7 @@
 
   <plone:tile
       name="videogallery"
-      title="A Video Gallery tile"
+      title="Video Gallery"
       description="A dropable tile that shows a gallery of videos with descriptions and links."
       add_permission="cmf.ModifyPortalContent"
       schema=".videogallery.IVideoGalleryTile"
@@ -73,6 +73,18 @@
       add_permission="cmf.ModifyPortalContent"
       schema=".audio.IAudioTile"
       class=".audio.AudioTile"
+      permission="zope2.View"
+      for="*"
+      i18n:attributes="title; description"
+      />
+
+  <plone:tile
+      name="audiogallery"
+      title="Audio Gallery"
+      description="A dropable tile that shows a gallery of audios with descriptions and links."
+      add_permission="cmf.ModifyPortalContent"
+      schema=".audiogallery.IAudioGalleryTile"
+      class=".audiogallery.AudioGalleryTile"
       permission="zope2.View"
       for="*"
       i18n:attributes="title; description"

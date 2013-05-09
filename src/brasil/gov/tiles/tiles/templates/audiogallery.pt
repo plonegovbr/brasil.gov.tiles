@@ -1,0 +1,86 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+
+<head>
+  <script type="text/javascript" tal:content="structure view/init_js">
+  </script>
+</head>
+
+<body tal:define="tile_id view/id;">
+  <div class="audiogallery-tile"
+       tal:attributes="id string:audiogallery-$tile_id"
+       tal:define="results view/results;
+                   collection python:results[0] if results else None;
+                   items python:view.get_elements(collection)"
+       tal:condition="python:collection and items">
+    <!-- Gallery items -->
+    <div class="audiogallery-title-container">
+      <h3 class="gallery-tile" tal:content="view/data/title"></h3>
+    </div>
+    <!-- Audio item player -->
+    <div class="audiogallery-player-container" tal:define="first_item python:items[0]">
+      <div class="jp-jplayer"
+           tal:attributes="data-audio-url python:first_item.absolute_url();
+                           data-audio-title first_item/title;
+                           id string:audiogallery_jplayer_$tile_id"></div>
+      <div class="jp-audio" tal:attributes="id string:audiogallery_jpcontainer_$tile_id">
+        <div class="jp-type-single">
+          <div class="jp-gui jp-interface">
+            <ul class="jp-controls">
+              <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+              <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+              <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+              <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+              <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            </ul>
+            <div class="jp-progress-time-wrapper">
+              <div class="jp-progress">
+                <div class="jp-seek-bar">
+                  <div class="jp-play-bar"></div>
+                </div>
+              </div>
+              <div class="jp-time-holder">
+                <span class="jp-current-time"></span>/
+                <span class="jp-duration"></span>
+              </div>
+            </div>
+            <div class="jp-volume-bar">
+              <div class="jp-volume-bar-value"></div>
+            </div>
+          </div>
+          <div class="jp-no-solution">
+            <span>Update Required</span>
+            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="audiogallery-item-title" tal:content="first_item/title"></h4>
+      </div>
+
+    </div>
+    <div class="audiogallery-items-container">
+      <ul>
+        <tal:block tal:repeat="item items">
+        <li tal:attributes="class python:'selected' if repeat['item'].start else ''">
+          <a class="audiogallery-item" tal:attributes="data-audio-url item/absolute_url;
+                                                       href item/absolute_url;
+                                                       title item/description"
+                                       tal:content="item/title"></a>
+        </li>
+        </tal:block>
+      </ul>
+    </div>
+
+    <div class="audiogallery-footer-container">
+      <a class="audiogallery-footer-link" tal:content="view/data/footer_text"
+          tal:attributes="href collection/absolute_url"></a>
+    </div>
+
+  </div>
+</body>
+</html>
