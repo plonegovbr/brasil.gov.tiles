@@ -48,6 +48,19 @@ $(document).ready(function() {
         });
     }
 
+
+    //video player tile
+    if($('.video-tile')[0] !== undefined ) {
+        $('.video-tile .video-container').height(function(){
+            var video = $(this).find('iframe');
+            var oh = video.height();
+            var ow = video.width();
+            var proportion = ow/oh;
+            video.width('100%');
+            video.height(video.width()/proportion);
+        });
+    }
+
 });
 
 

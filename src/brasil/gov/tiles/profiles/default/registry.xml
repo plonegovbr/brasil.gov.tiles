@@ -11,6 +11,7 @@
       <element>mediacarousel</element>
       <element>social</element>
       <element>standaloneheader</element>
+      <element>video</element>
     </value>
   </record>
 </registry>
