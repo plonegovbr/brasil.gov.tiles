@@ -45,7 +45,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'collective.cover',
-        #'collective.nitf',  # XXX: we must wait a release of this package
+        'collective.nitf',
         'collective.polls',
         'collective.prettydate',
         'five.grok',
