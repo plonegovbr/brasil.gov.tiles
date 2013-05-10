@@ -22,7 +22,7 @@
       <h3 class="mediacarousel-tile" tal:content="view/data/title"></h3>
     </div>
     <!-- Carousel items -->
-    <div tal:attributes="id string:mediacarousel-gallerie-$tile_id">
+    <div tal:condition="items" tal:attributes="id string:mediacarousel-gallerie-$tile_id">
       <tal:items repeat="item items">
         <a tal:attributes="href python: view.get_media_url(item)">
               <img tal:define="scales item/@@images;
@@ -37,7 +37,7 @@
         </a>
       </tal:items>
     </div>
-    <div class="mediacarousel-footer-container">
+    <div tal:condition="collection" class="mediacarousel-footer-container">
       <a class="mediacarousel-footer-link" tal:content="view/data/footer_text"
           tal:attributes="href collection/absolute_url"></a>
     </div>
