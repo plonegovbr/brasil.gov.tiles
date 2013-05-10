@@ -10,6 +10,7 @@
       <element>audiogallery</element>
       <element>mediacarousel</element>
       <element>social</element>
+      <element>standaloneheader</element>
     </value>
   </record>
 </registry>

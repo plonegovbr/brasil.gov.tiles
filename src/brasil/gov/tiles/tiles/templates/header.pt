@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+<body>
+    <div class="outstanding-header">
+        <a class="outstanding-link" href="" tal:attributes="href view/data/link_url" tal:content="view/data/link_text"></a>
+        <h2 class="outstanding-title" tal:content="view/data/title"></h2>
+    </div>
+</body>
+</html>

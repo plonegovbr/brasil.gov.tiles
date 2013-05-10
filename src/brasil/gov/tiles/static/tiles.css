@@ -680,3 +680,15 @@ ul.css-tabs a.current {
 }
 
 
+
+
+.outstanding-header {
+    border-top:4px solid #CCC;
+    position: relative;
+}
+
+.outstanding-link {
+    display: inline-block;
+    float: right;
+    right: 0;
+}
