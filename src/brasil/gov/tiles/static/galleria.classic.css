@@ -31,7 +31,8 @@
     background-color: #ffffff;
     border: 1px solid #d5d5d5;
 }
-.galleria-carousel .galleria-thumbnails-list {
+.galleria-carousel .galleria-thumbnails-list,
+.galleria-thumbnails-list {
     margin-left: 35px;
     margin-right: 35px;
     margin-top: 7px;
