@@ -3,14 +3,46 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="brasil.gov.tiles">
+
+<head>
+  <script type="text/javascript">
+    $(function() {
+        // setup ul.tabs to work as tabs for each div directly under div.panes
+        $("ul.tabs").tabs("div.panes > div");
+    });
+  </script>
+</head>
 <body>
-    <div id="twitter-tile">
-        <a class="twitter-timeline"
-           tal:attributes="href string:https://twitter.com/${view/get_username};
-                           data-widget-id view/get_wid;"
-           tal:content="string:Tweets from ${view/get_username}"
-           i18n:translate="" />
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <tal:facebook tal:condition="view/facebook_available">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    </tal:facebook>
+    <div>
+        <ul class="tabs css-tabs">
+            <li tal:condition="view/twitter_available"><a href="">Twitter</a></li>
+            <li tal:condition="view/facebook_available"><a href="">Facebook</a></li>
+        <ul>
+    </div>
+    <div class="panes css-panes">
+        <div class="twitter-content pane" tal:condition="view/twitter_available">
+            <a class="twitter-timeline"
+                tal:attributes="href string:https://twitter.com/${view/get_username};
+                           data-widget-id view/get_wid;
+                           height python:350"
+                tal:content="string:Tweets from ${view/get_username}"
+                i18n:translate="" />
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div class="facebook-content pane" tal:condition="view/facebook_available">
+            <div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="292" data-show-faces="true" data-stream="false" data-header="true"
+                tal:attributes="data-href view/data/facebook_page"></div>
+        </div>
     </div>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <include package="plone.tiles" file="meta.zcml" />
 
   <plone:tile
-      name="nitf.basic"
+      name="nitf"
       title="Basic News Article Tile"
       description="A tile that shows a news article."
       add_permission="cmf.ModifyPortalContent"
@@ -25,18 +25,6 @@
       add_permission="cmf.ModifyPortalContent"
       schema=".poll.IPollTile"
       class=".poll.PollTile"
-      permission="zope2.View"
-      for="*"
-      i18n:attributes="title; description"
-      />
-
-  <plone:tile
-      name="twitter"
-      title="A twitter widget tile"
-      description="A tile that shows a twitter widget."
-      add_permission="cmf.ModifyPortalContent"
-      schema=".twitter.ITwitterTile"
-      class=".twitter.TwitterTile"
       permission="zope2.View"
       for="*"
       i18n:attributes="title; description"
@@ -97,6 +85,18 @@
       add_permission="cmf.ModifyPortalContent"
       schema=".mediacarousel.IMediaCarouselTile"
       class=".mediacarousel.MediaCarouselTile"
+      permission="zope2.View"
+      for="*"
+      i18n:attributes="title; description"
+      />
+
+  <plone:tile
+      name="social"
+      title="Social"
+      description="social streams, from twitter and facebook."
+      add_permission="cmf.ModifyPortalContent"
+      schema=".social.ISocialTile"
+      class=".social.SocialTile"
       permission="zope2.View"
       for="*"
       i18n:attributes="title; description"

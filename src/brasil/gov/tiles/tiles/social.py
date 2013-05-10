@@ -11,28 +11,18 @@ class ISocialTile(IPersistentCoverTile):
 
     wid = schema.TextLine(
         title=u'Twitter widget id',
-        required=True,
+        required=False,
     )
 
     username = schema.TextLine(
         title=u'Twitter username',
-        required=True,
+        required=False,
     )
 
-    def get_wid():
-        """
-        Get the stored widget id.
-        """
-
-    def get_username():
-        """
-        Get the stored username.
-        """
-
-    def accepted_ct():
-        """
-        Check wich content types are accepted.
-        """
+    facebook_page = schema.TextLine(
+        title=u'Facebook Page URL',
+        required=False,
+    )
 
 
 class SocialTile(PersistentCoverTile):
@@ -51,3 +41,9 @@ class SocialTile(PersistentCoverTile):
 
     def accepted_ct(self):
         return None
+
+    def facebook_available(self):
+        return self.data['facebook_page']
+
+    def twitter_available(self):
+        return self.data['username'] and self.data['wid']

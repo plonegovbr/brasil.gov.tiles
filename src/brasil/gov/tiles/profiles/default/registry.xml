@@ -4,12 +4,12 @@
     <value purge="false">
       <element>nitf</element>
       <element>poll</element>
-      <element>twitter</element>
       <element>destaque</element>
       <element>videogallery</element>
       <element>audio</element>
       <element>audiogallery</element>
       <element>mediacarousel</element>
+      <element>social</element>
     </value>
   </record>
 </registry>
