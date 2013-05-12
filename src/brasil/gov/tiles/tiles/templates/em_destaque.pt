@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+
+<body tal:define="is_empty view/is_empty">
+  <p tal:condition="is_empty" i18n:translate="">
+    Please add up to <span i18n:name="limit_objects" tal:replace="view/limit"/> objects to the tile.
+  </p>
+
+  <!-- FIXME: this should be configurable -->
+  <div id="em-destaque"
+       tal:condition="not: is_empty">
+    <ul class="sortable-tile cover-list-tile" >
+      <li id="em-destaque-titulo">Em destaque</li>
+    <tal:items repeat="item view/results"
+               define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+      <li tal:attributes="data-uid python:view.get_uid(item)">
+
+        <tal:title>
+          <!-- FIXME: a tag should be inside h tag -->
+          <a tal:attributes="href item/absolute_url;
+                             title item/Description"
+             tal:content="item/Title" >
+             Destaque!
+          </a>
+        </tal:title>
+
+      </li>
+
+    </tal:items>
+  </ul>
+  <div class="visualClear"><!-- --></div>
+  </div>
+</body>
+</html>

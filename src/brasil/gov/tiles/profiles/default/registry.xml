@@ -2,6 +2,7 @@
 <registry>
   <record name="plone.app.tiles">
     <value purge="false">
+      <element>em_destaque</element>
       <element>nitf</element>
       <element>poll</element>
       <element>destaque</element>
