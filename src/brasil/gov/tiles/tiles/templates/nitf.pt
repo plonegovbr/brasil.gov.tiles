@@ -48,7 +48,8 @@
           <img tal:define="scales view/@@images;
                            thumbnail python: scales.scale('image', scale=scale);"
                tal:condition="thumbnail"
-               tal:attributes="src thumbnail/url;
+               tal:attributes="alt description;
+                               src thumbnail/url;
                                width thumbnail/width;
                                height thumbnail/height;
                                class position;" />
