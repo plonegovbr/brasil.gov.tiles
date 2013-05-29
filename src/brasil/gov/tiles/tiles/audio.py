@@ -50,13 +50,20 @@ class AudioTile(PersistentCoverTile):
         if obj.portal_type in self.accepted_ct():
             title = obj.Title()
             description = obj.Description()
-            url = obj.absolute_url()
+            rights = obj.Rights()
+            mp3 = obj.return_mp3()
+            if mp3:
+                url = mp3.absolute_url()
+                content_type = 'audio/mp3'
+            else:
+                url = obj.absolute_url()
+                content_type = ''
             uuid = IUUID(obj)
-            content_type = obj.file.contentType
             data_mgr = ITileDataManager(self)
             data_mgr.set({'title': title,
                           'description': description,
                           'url': url,
+                          'credit': rights,
                           'uuid': uuid,
                           'content_type': content_type
                           })
@@ -64,7 +71,7 @@ class AudioTile(PersistentCoverTile):
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
         """
-        return ['File']
+        return ['Audio']
 
     def get_uid(self, obj):
         return IUUID(obj)

@@ -53,7 +53,7 @@
       </div>
     </div>
     <p class="description" tal:content="view/data/description"></p>
-    <p class="credit" tal:condition="view/data/credit"><span i18n:translate="">Credits:</span><span tal:replace="view/data/credit"></span></p>
+    <p class="credit" tal:condition="view/data/credit"><span i18n:translate="">Crédito: </span><span tal:replace="view/data/credit"></span></p>
   </div>
 </body>
 </html>
