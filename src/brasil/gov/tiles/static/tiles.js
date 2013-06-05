@@ -250,6 +250,11 @@ $(document).ready(function() {
                 self.setup_size();
 
                 Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
+                Galleria.configure({
+                    imageCrop: 'width',
+                    _toggleInfo: false,
+                    height: 0.75,
+                });
                 Galleria.run('#' + galleria_id);
             },
 
