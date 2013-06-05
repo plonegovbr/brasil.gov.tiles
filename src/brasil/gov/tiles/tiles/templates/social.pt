@@ -40,8 +40,9 @@
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
         <div class="facebook-content pane" tal:condition="view/facebook_available">
-            <div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="292" data-show-faces="true" data-stream="false" data-header="true"
-                tal:attributes="data-href view/data/facebook_page"></div>
+            <div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="210" data-show-faces="true" data-stream="false" data-header="true"
+                tal:attributes="data-href view/data/facebook_page;
+                                data-width view/get_columns_size"></div>
         </div>
     </div>
 </body>

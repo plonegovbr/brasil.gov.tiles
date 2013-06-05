@@ -24,6 +24,14 @@ class ISocialTile(IPersistentCoverTile):
         required=False,
     )
 
+    number_of_columns = schema.Choice(
+        title=u"Columns",
+        values=(u'1',
+            u'2',
+            u'3',),
+        required=True,
+    )
+
 
 class SocialTile(PersistentCoverTile):
 
@@ -47,3 +55,18 @@ class SocialTile(PersistentCoverTile):
 
     def twitter_available(self):
         return self.data['username'] and self.data['wid']
+
+    def get_columns_size(self):
+        column1 = '720'
+        column2 = '450'
+        column3 = '220'
+
+        column_size = 250
+        c = self.data['number_of_columns']
+        if c == '1':
+            column_size = column1
+        elif c == '2':
+            column_size = column2
+        elif c == '3':
+            column_size = column3
+        return column_size

@@ -692,3 +692,8 @@ ul.css-tabs a.current {
     float: right;
     right: 0;
 }
+
+/*social*/
+.social-panes .pane {
+    padding:15px 4px;
+}
