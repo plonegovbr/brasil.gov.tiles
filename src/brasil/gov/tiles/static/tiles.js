@@ -253,7 +253,6 @@ $(document).ready(function() {
                 Galleria.configure({
                     imageCrop: 'width',
                     _toggleInfo: false,
-                    height: 0.75,
                 });
                 Galleria.run('#' + galleria_id);
             },
@@ -261,7 +260,7 @@ $(document).ready(function() {
             setup_size: function() {
                 //proportions is going to be 4/3, requeriment defined.
                 var width = mediacarousel.width();
-                mediacarousel.height(width/1.33333);
+                mediacarousel.height(width/1.33333 + 60);
             }
         });
         self.init();

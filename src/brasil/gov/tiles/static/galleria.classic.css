@@ -6,7 +6,7 @@
     position: relative;
     overflow: hidden;
     background: #EEEFF1;
-    min-height: 250px;
+    min-height: 270px;
 }
 .galleria-container img {
     -moz-user-select: none;
