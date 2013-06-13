@@ -16,7 +16,9 @@
       <li id="em-destaque-titulo">Em destaque</li>
     <tal:items repeat="item view/results"
                define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-      <li tal:attributes="data-uid python:view.get_uid(item)">
+      <li tal:define="last repeat/item/end" 
+          tal:attributes="data-uid python:view.get_uid(item);
+                          class python:(last and 'last-item') or '';">
 
         <tal:title>
           <!-- FIXME: a tag should be inside h tag -->
