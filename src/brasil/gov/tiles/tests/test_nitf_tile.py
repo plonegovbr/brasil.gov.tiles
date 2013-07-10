@@ -6,15 +6,13 @@ from collective.cover.tiles.base import IPersistentCoverTile
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
-import unittest
-
 
 class NITFBasicTileTestCase(BaseIntegrationTestCase):
 
     def setUp(self):
         super(NITFBasicTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@%s/%s' % ('nitf.basic', 'test-tile'))
+            '@@%s/%s' % ('nitf', 'test-tile'))
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(NITFBasicTile))

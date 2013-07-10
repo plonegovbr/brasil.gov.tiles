@@ -13,13 +13,21 @@ import unittest
 
 DEPENDENCIES = [
     'collective.cover',
-    #'collective.nitf',
+    'collective.nitf',
     'collective.polls',
 ]
 TILES = [
-    #'nitf.basic',
+    'em_destaque',
+    'nitf',
     'poll',
-    'twitter',
+    'destaque',
+    'videogallery',
+    'audio',
+    'audiogallery',
+    'mediacarousel',
+    'social',
+    'standaloneheader',
+    'video',
 ]
 
 
@@ -67,4 +75,5 @@ class UninstallTestCase(unittest.TestCase):
 
     def test_browserlayer_removed(self):
         layers = [l.getName() for l in registered_layers()]
-        self.assertNotIn('IBrasilGovTiles', layers, 'browser layer not removed')
+        self.assertNotIn('IBrasilGovTiles', layers,
+                         'browser layer not removed')
