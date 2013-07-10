@@ -25,11 +25,17 @@
     </tal:facebook>
     <div>
         <ul class="social-tabs css-tabs">
-            <li tal:condition="view/twitter_available"><a href="">Twitter</a></li>
-            <li tal:condition="view/facebook_available"><a href="">Facebook</a></li>
+            <li tal:condition="view/facebook_available"><a href="">FACEBOOK</a></li>
+            <li tal:condition="view/twitter_available"><a href="">TWITTER</a></li>
         <ul>
     </div>
     <div class="social-panes css-panes">
+        <div class="facebook-content pane" tal:condition="view/facebook_available">
+            <div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="210" data-show-faces="true" data-stream="false" data-header="true"
+                tal:attributes="data-href view/data/facebook_page;
+                                data-width view/get_columns_size">
+            </div>
+        </div>
         <div class="twitter-content pane" tal:condition="view/twitter_available">
             <a class="twitter-timeline"
                 tal:attributes="href string:https://twitter.com/${view/get_username};
@@ -38,11 +44,6 @@
                 tal:content="string:Tweets from ${view/get_username}"
                 i18n:translate="" />
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-        <div class="facebook-content pane" tal:condition="view/facebook_available">
-            <div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="210" data-show-faces="true" data-stream="false" data-header="true"
-                tal:attributes="data-href view/data/facebook_page;
-                                data-width view/get_columns_size"></div>
         </div>
     </div>
 </body>
