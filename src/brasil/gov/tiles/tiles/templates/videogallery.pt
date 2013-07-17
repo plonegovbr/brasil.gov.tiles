@@ -54,7 +54,8 @@
                                            data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
                                            data-description item/Description;
                                            data-link string:${item/absolute_url}/view;
-                                           data-uid uid;" />
+                                           data-uid uid;
+                                           alt python: thumbnail.context.Title()" />
                     </tal:image>
                 </a>
                 <div class="gallery-element-metadata">
