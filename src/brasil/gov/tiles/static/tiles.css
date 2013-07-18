@@ -218,7 +218,10 @@
     text-align: right;
 }
 .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
+    padding-right: 30px;
     display: inline-block;
+    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
+    text-transform: uppercase;
 }
 
 
