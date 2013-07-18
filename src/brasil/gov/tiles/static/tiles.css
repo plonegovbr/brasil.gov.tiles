@@ -135,7 +135,7 @@
     border-bottom: medium none;
 }
 .gallery-3-columns .player-metadata {
-    border-bottom: medium none;   
+    border-bottom: medium none;
 }
 .gallery-3-columns .galery-items-wrapper {
     margin-left: 15px;
@@ -151,11 +151,13 @@
 .audiogallery-tile {
     background-color: #eeeff1;
     border:1px solid #d4d4d6;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 .audiogallery-title-container .gallery-tile {
     padding: 10px 15px 10px 10px;
     border-bottom: 1px solid #d4d4d6;
+    color: #454545;
+    font-weight: bold;
 }
 .audiogallery-player-container {
     padding: 10px 15px;
@@ -176,6 +178,8 @@
 #content .audiogallery-items-container .audiogallery-item {
     padding-left: 20px;
     background: url("++resource++brasil.gov.tiles/sound-icon.png") no-repeat scroll left 0 transparent;
+    display: block;
+    font-weight: bold;
 }
 .audiogallery-footer-container {
     text-align: right;
@@ -282,7 +286,7 @@ div.jp-interface ul.jp-controls {
     margin:0;
     padding: 0;
     overflow:hidden;
-    position: absolute; 
+    position: absolute;
     width: 100%;
 }
 
@@ -409,7 +413,7 @@ a.jp-unmute {
 
 div.jp-audio div.jp-type-single a.jp-mute,
 div.jp-audio div.jp-type-single a.jp-unmute {
-    margin-left: 210px; 
+    margin-left: 210px;
 }
 
 div.jp-audio-stream div.jp-type-single a.jp-mute,
