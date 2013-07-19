@@ -259,4 +259,14 @@
 
 @media all and (max-width: 440px) {
     .galleria-thumbnails-container { bottom: -7px; }
+
+    .galleria-info-title,
+    .galleria-info-description {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .galleria-info-title { height: 14px; }
+    .galleria-info-description { height: 28px; }
 }
