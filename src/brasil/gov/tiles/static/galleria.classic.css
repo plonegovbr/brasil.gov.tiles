@@ -229,19 +229,34 @@
     background-repeat: no-repeat;
 }
 
-/* alterações deserto digital */
-.mediacarousel { min-height: 460px !important; }
-
+/* alterações DESERTO digital */
 .galleria-info {
-   position: static: !important;
-   overflow: visible !important;
-   margin-top: 255px !important;
-   float: left !important;
-   clear: both !important;
-   width: 100% !important;
-   margin: 0   !important;
-   height: auto !important;
-   padding: 0   !important;
+    width: 100%;
+    bottom: 42px;
+    left: 0px;
+    z-index: 2;
+    position: absolute;
+    height: 6.1em;
+    overflow: hidden;
+    line-height: 1em;
+    font-size: 12px;
 }
 
-.galleria-thumbnails-container { bottom: -12px !important; }
+.galleria-info-title { margin-bottom: 3px; }
+
+.galleria-thumbnails-container {
+    height: 56px;
+    bottom: 5px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: #ffffff;
+    border: 1px solid #d5d5d5;
+}
+
+.galleria-info-text { padding: 0 12px; }
+
+@media all and (max-width: 440px) {
+    .galleria-thumbnails-container { bottom: -7px; }
+}
