@@ -228,3 +228,20 @@
     background-image: url(classic-map.png);
     background-repeat: no-repeat;
 }
+
+/* alterações deserto digital */
+.mediacarousel { min-height: 460px !important; }
+
+.galleria-info {
+   position: static: !important;
+   overflow: visible !important;
+   margin-top: 255px !important;
+   float: left !important;
+   clear: both !important;
+   width: 100% !important;
+   margin: 0   !important;
+   height: auto !important;
+   padding: 0   !important;
+}
+
+.galleria-thumbnails-container { bottom: -12px !important; }

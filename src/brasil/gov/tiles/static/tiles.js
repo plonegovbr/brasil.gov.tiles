@@ -4,17 +4,15 @@
 $(document).ready(function() {
     //video gallery
     if ($('.videogallery-tile')[0] !== undefined) {
+        //fake responsive (1, 2 or 3 columns)
+        var width = $(window).width();
         $('.videogallery-tile').each(function(){
-
-
-            //fake responsive (1, 2 or 3 columns)
-            var width = $(this).width();
             // 2 column, 230
-            if (width > 280) {
+            if (width > 480) {
                 $(this).addClass('gallery-2-columns');
             }
             // 3 columns, 460 + 30 padding
-            if (width > 500) {
+            if (width > 960) {
                 $(this).removeClass('gallery-2-columns');
                 $(this).addClass('gallery-3-columns');
             }
@@ -43,7 +41,6 @@ $(document).ready(function() {
                 //resize video onload
                 var video_width = $('.player-holder iframe').width();
                 $('.player-holder iframe').height(video_width/1.3333);
-
             });
         });
     }
