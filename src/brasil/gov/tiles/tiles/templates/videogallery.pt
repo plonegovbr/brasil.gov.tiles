@@ -28,7 +28,7 @@
         <div class="player-video"><tal:block tal:replace="structure first_item/embed_html"></tal:block></div>
         <div class="player-metadata">
           <div class="player-metadata-wrapper">
-            <spam class="subtitle" tal:content="view/data/subtitle"></spam>
+            <span class="subtitle" tal:content="view/data/subtitle"></span>
             <h3 class="title" tal:content="first_item/title"></h3>
             <p class="description" tal:content="first_item/description"></p>
           </div>
@@ -42,7 +42,7 @@
               <div class="gallery-element-wrapper">
                 <a tal:attributes="href item/absolute_url;
                                    data-player-dom item/embed_html;
-                                   id python: 'gallerylink-' + str(view.get_uid(collection)) + '-' + str(view.get_uid(item));" 
+                                   id python: 'gallerylink-' + str(view.get_uid(collection)) + '-' + str(view.get_uid(item));"
                    class="gallery-element-link">
                     <tal:image define="thumbnail python:view.thumbnail(item);"
                                condition="thumbnail">
@@ -54,7 +54,8 @@
                                            data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
                                            data-description item/Description;
                                            data-link string:${item/absolute_url}/view;
-                                           data-uid uid;" />
+                                           data-uid uid;
+                                           alt python: thumbnail.context.Title()" />
                     </tal:image>
                 </a>
                 <div class="gallery-element-metadata">
