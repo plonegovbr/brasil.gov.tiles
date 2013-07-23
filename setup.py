@@ -17,7 +17,7 @@ setup(
     description="Tiles para o Portal Modelo do Governo Federal",
     long_description=long_description,
     classifiers=[
-        "Development Status :: 1 - Alpha",
+        "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",
