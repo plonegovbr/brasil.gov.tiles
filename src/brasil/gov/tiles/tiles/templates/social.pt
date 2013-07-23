@@ -27,7 +27,7 @@
         <ul class="social-tabs css-tabs">
             <li tal:condition="view/facebook_available"><a href="">FACEBOOK</a></li>
             <li tal:condition="view/twitter_available"><a href="">TWITTER</a></li>
-        <ul>
+        </ul>
     </div>
     <div class="social-panes css-panes">
         <div class="facebook-content pane" tal:condition="view/facebook_available">
@@ -40,7 +40,7 @@
             <a class="twitter-timeline"
                 tal:attributes="href string:https://twitter.com/${view/get_username};
                            data-widget-id view/get_wid;
-                           height python:350"
+                           data-height python:350"
                 tal:content="string:Tweets from ${view/get_username}"
                 i18n:translate="" />
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
