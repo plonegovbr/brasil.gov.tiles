@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.PythonScripts.standard import url_quote
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -47,9 +46,6 @@ class SocialTile(PersistentCoverTile):
 
     def get_username(self):
         return self.data['username']
-
-    def get_quoted_username(self):
-        return url_quote(self.data['username'])
 
     def accepted_ct(self):
         return None
