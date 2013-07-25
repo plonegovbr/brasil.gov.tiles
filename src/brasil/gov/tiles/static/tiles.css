@@ -707,3 +707,9 @@ ul.css-tabs a.current {
 
 /* mensagem de erro na tag noscript */
 div.error { padding: 1em; }
+
+/* tile do video container */
+.video-container {
+    max-width: 270px;
+    overflow: hidden;
+}
