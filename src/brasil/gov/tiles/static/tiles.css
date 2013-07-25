@@ -704,3 +704,6 @@ ul.css-tabs a.current {
 .social-panes .pane {
     padding:15px 4px;
 }
+
+/* mensagem de erro na tag noscript */
+div.error { padding: 1em; }
