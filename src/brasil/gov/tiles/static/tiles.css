@@ -713,3 +713,6 @@ div.error { padding: 1em; }
     max-width: 270px;
     overflow: hidden;
 }
+
+/* botão de busca dos filtros da página de resultado de busca */
+.formControls input.searchButton { display: none; }
