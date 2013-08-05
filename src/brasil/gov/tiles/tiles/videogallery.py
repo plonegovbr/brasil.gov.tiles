@@ -42,6 +42,7 @@ class VideoGalleryTile(ListTile):
     index = ViewPageTemplateFile("templates/videogallery.pt")
     is_configurable = True
     is_editable = True
+    limit = 6
 
     def populate_with_object(self, obj):
         super(ListTile, self).populate_with_object(obj)  # check permission
