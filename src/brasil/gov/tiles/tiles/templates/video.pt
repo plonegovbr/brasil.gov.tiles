@@ -11,5 +11,8 @@
     <div class="video-container" tal:content="structure results/embed_code"></div>
     <a href="" tal:content="results/title" tal:attributes="href results/url"></a>
   </div>
+  <noscript>
+      <div class="error">Seu navegador de internet esta sem suporte a javascript, por esse motivo alguns funcionalidades do site podem não estar acessíveis.</div>
+  </noscript>
 </body>
 </html>

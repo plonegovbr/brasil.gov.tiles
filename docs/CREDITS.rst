@@ -7,6 +7,7 @@ seguintes pessoas:
 - André Nogueira
 - Érico Andrei
 - Héctor Velarde
-- Rennan Martini
+- Felipe Duardo
+- Rennan Rodrigues
 - Rodrigo Ferreira de Souza
 - Silvestre Huens

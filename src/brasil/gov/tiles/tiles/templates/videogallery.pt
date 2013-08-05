@@ -75,5 +75,8 @@
       <a href="" tal:content="view/data/footer_text"
                 tal:attributes="href collection/absolute_url"></a></div>
   </div>
+  <noscript>
+      <div class="error">Seu navegador de internet esta sem suporte a javascript, por esse motivo alguns funcionalidades do site podem não estar acessíveis.</div>
+  </noscript>
 </body>
 </html>
