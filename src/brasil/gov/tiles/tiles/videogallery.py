@@ -34,7 +34,6 @@ class IVideoGalleryTile(IListTile):
         title=_(u'Videos'),
         value_type=schema.TextLine(),
         required=False,
-        readonly=True,
     )
 
 
