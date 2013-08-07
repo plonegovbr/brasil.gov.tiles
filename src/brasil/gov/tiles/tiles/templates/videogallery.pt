@@ -23,7 +23,8 @@
       <h3 class="gallery-tile" tal:content="view/data/title"></h3>
     </div>
     <div class="videogallery-inner">
-      <div class="player-holder" tal:define="first_item python:items[0] if items else None"
+      <div class="player-holder" tal:define="first_item python:items[0] if items else None;
+                                             last_item python:items[-1] if items else None"
                                  tal:condition="first_item">
         <div class="player-video"><tal:block tal:replace="structure first_item/embed_html"></tal:block></div>
         <div class="player-metadata">
@@ -38,7 +39,7 @@
       <div class="galery-items">
         <div class="galery-items-wrapper">
           <tal:items repeat="item items">
-            <div class="gallery-element" tal:attributes="class python:'gallery-element' + (' selected' if repeat['item'].start else '')">
+            <div class="gallery-element" tal:attributes="class python:'gallery-element' + (' selected' if repeat['item'].start else '') + (' last' if item == last_item else '')">
               <div class="gallery-element-wrapper">
                 <a tal:attributes="href item/absolute_url;
                                    data-player-dom item/embed_html;
