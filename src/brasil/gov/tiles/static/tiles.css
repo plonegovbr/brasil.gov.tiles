@@ -15,17 +15,12 @@
 }
 
 .videogallery-tile .player-metadata {
-    padding: 10px 15px;
-    border-bottom: 1px solid #305492;
+    padding: 10px 0;
 }
 .player-metadata .title {
-    border-bottom: 1px dotted #305492;
     color: #CDE1FA;
     font-weight: bold;
     padding-bottom: 10px;
-}
-.player-metadata .description {
-    padding-top: 15px;
 }
 .subtitle {
     text-transform: uppercase;
@@ -51,6 +46,10 @@
     line-height: 20px;
     padding-right: 25px;
 }
+#content .gallery-footer a:hover {
+    color: #D1E2FF !important;
+    text-decoration: underline;
+}
 
 .videogallery-tile .selected {
     display: none;
@@ -62,6 +61,7 @@
     text-align: center;
     overflow: hidden;
     float: left;
+    margin: 0 5% 5% 0;
 }
 #content .gallery-element-link img {
     border-radius: 0 0 0 0;
@@ -82,10 +82,6 @@
     height: 60px;
     overflow: hidden;
 }
-.gallery-element-metadata .title {
-    margin-left: 15px;
-    display: block;
-}
 .gallery-element-metadata .description {
     display: none;
 }
@@ -95,42 +91,72 @@
     height: auto;
 }
 
-
-.gallery-2-columns .gallery-element{
+/* 8 or 10 grids for 2 cols */
+.width-8 .videogallery-tile .gallery-footer,
+.width-10 .videogallery-tile .gallery-footer {
+    border-top: none;
+}
+.width-8 .gallery-element,
+.width-10 .gallery-element,
+.gallery-2-columns .gallery-element {
     width: 50%;
 }
+.width-8 .gallery-element-wrapper,
+.width-10 .gallery-element-wrapper,
+.gallery-2-columns .gallery-element-wrapper {
+    border-left: 1px dotted #305491;
+}
+.width-8 .player-video,
+.width-10 .player-video,
 .gallery-2-columns .player-video {
     width: 50%;
+    margin-right: 5%;
     float: left;
 }
+.width-8 .player-holder,
+.width-10 .player-holder,
 .gallery-2-columns .player-holder {
-    padding-left: 15px;
-    padding-bottom: 15px;
+    padding: 4%;
 }
+.width-8 .player-metadata,
+.width-10 .player-metadata,
 .gallery-2-columns .player-metadata {
     padding: 0;
     border-bottom: medium none;
 }
-.gallery-2-columns .player-metadata-wrapper {
-    padding-left: 50%;
-    padding-right: 15px;
-    margin-left: 10px;
-}
+
+.width-8 .galery-items,
+.width-10 .galery-items,
 .gallery-2-columns .galery-items {
     border-top: 1px solid #305492;
 }
 
+/* 15 or 16 grids for 3 cols */
+.width-16 .gallery-3-columns .player-holder,
+.width-15 .gallery-3-columns .player-holder {
+    width: 60%;
+    padding: 2.5% 2.5% 0;
+    border-right: 1px dotted #305492;
+}
+.width-16 .gallery-3-columns .galery-items,
+.width-15 .gallery-3-columns .galery-items {
+    width: 34%;
+}
+.width-15 .gallery-element.last,
+.width-16 .gallery-element.last {
+    border-bottom: none !important;
+}
 
-.gallery-3-columns .player-holder{
-    width: 505px;
+.gallery-3-columns .player-holder {
     float: left;
 }
 .gallery-3-columns .galery-items {
-    width: 230px;
     float: left;
     margin: 0;
 }
-
+.gallery-3-columns .player-metadata .title {
+    border-bottom: medium none;
+}
 .gallery-3-columns .player-metadata .title {
     border-bottom: medium none;
 }
@@ -138,9 +164,33 @@
     border-bottom: medium none;
 }
 .gallery-3-columns .galery-items-wrapper {
-    margin-left: 15px;
     border-left: 1px solid #305492;
-    display: inline-block;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 960px) {
+    .width-8 .gallery-element-metadata,
+    .width-10 .gallery-element-metadata {
+        height: 70px !important;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .galery-items {
+        border-top: 1px solid #305492;
+    }
+    .width-8 .gallery-element,
+    .width-10 .gallery-element {
+        width: 100% !important;
+    }
+    .width-8 .player-video,
+    .width-10 .player-video {
+        width: 100% !important;
+        margin: 0 0 5% 0 !important;
+    }
+    .player-holder {
+        border-bottom: none !important;
+        padding: 4%;
+    }
 }
 
 
@@ -223,11 +273,6 @@
     background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
     text-transform: uppercase;
 }
-
-
-
-
-
 
 /*
  * Skin for jPlayer Plugin (jQuery JavaScript Library)
