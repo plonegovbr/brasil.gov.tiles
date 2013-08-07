@@ -35,10 +35,11 @@
         </div>
         <div class="visualClear"></div>
       </div>
-      <div class="galery-items">
+      <div class="galery-items"
+           tal:define="last_item python:items[-1] if items else None">
         <div class="galery-items-wrapper">
           <tal:items repeat="item items">
-            <div class="gallery-element" tal:attributes="class python:'gallery-element' + (' selected' if repeat['item'].start else '')">
+            <div class="gallery-element" tal:attributes="class python:'gallery-element' + (' selected' if repeat['item'].start else '') + (' last' if item == last_item else '')">
               <div class="gallery-element-wrapper">
                 <a tal:attributes="href item/absolute_url;
                                    data-player-dom item/embed_html;
