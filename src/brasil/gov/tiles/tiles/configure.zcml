@@ -139,4 +139,16 @@
       i18n:attributes="title; description"
       />
 
+    <plone:tile
+        name="banner_rotativo"
+        title="Banner Rotativo"
+        description="Tile que exibe um banner rotativo com links e imagens"
+        add_permission="cmf.ModifyPortalContent"
+        schema=".banner_rotativo.IBannerRotativoTile"
+        class=".banner_rotativo.BannerRotativoTile"
+        permission="zope2.View"
+        for="*"
+        i18n:attributes="title; description"
+        />
+
 </configure>
