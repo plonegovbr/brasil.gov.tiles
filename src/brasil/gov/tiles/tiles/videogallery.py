@@ -1,21 +1,31 @@
 # -*- coding: utf-8 -*-
 
 from collective.cover import _
-from collective.cover.tiles.list import IListTile
-from collective.cover.tiles.list import ListTile
+from collective.cover.tiles.list import IListTile, ListTile
+from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone.directives import form
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.interface import implements
 
 
-class IVideoGalleryTile(IListTile):
+class IVideoGalleryTile(IListTile, form.Schema):
     """
     """
 
+    header = schema.TextLine(
+        title=_(u'Header'),
+        required=False,
+    )
+
+    form.omitted('title')
+    form.no_omit(IDefaultConfigureForm, 'title')
     title = schema.TextLine(
         title=_(u'Title'),
         required=False,
+        readonly=True,
     )
 
     subtitle = schema.TextLine(
@@ -30,6 +40,8 @@ class IVideoGalleryTile(IListTile):
         readonly=False,
     )
 
+    form.omitted('uuids')
+    form.no_omit(IDefaultConfigureForm, 'uuids')
     uuids = schema.List(
         title=_(u'Videos'),
         value_type=schema.TextLine(),
@@ -38,6 +50,8 @@ class IVideoGalleryTile(IListTile):
 
 
 class VideoGalleryTile(ListTile):
+    implements(IVideoGalleryTile)
+
     index = ViewPageTemplateFile("templates/videogallery.pt")
     is_configurable = True
     is_editable = True
@@ -50,10 +64,12 @@ class VideoGalleryTile(ListTile):
         # XXX
 
         self.set_limit()
+        header = obj.Title()  # use collection's title as header
         uuid = IUUID(obj, None)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
+        old_data['header'] = header
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
@@ -92,3 +108,6 @@ class VideoGalleryTile(ListTile):
                     results.append(catalog_results[i].getObject())
 
         return results
+
+    def show_header(self):
+        return self._field_is_visible('header')
