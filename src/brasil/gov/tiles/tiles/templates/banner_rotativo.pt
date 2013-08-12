@@ -5,32 +5,39 @@
       i18n:domain="collective.cover">
 
 <head>
-  <link rel="stylesheet" type="text/css"
-        tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/galleria.classic.css" />
-  <script type="text/javascript" tal:content="structure view/init_js">
-  </script>
+    <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/banner_rotativo.js"></script>
 </head>
 
-<body tal:define="tile_id view/id;
-                  autoplay python:str(view.autoplay()).lower();">
-  <div class="galleria slide"
-       tal:attributes="id string:galleria-$tile_id">
-    <!-- Carousel items -->
-    <div class="galleria-inner">
-      <tal:items repeat="item view/results">
-              <img tal:define="scales item/@@images;
-                               thumbnail python:scales.scale('image', width=1000, height=1000);
-                               uid python:view.get_uid(item);"
-                   tal:condition="python:thumbnail and uid"
-                   tal:attributes="src thumbnail/url;
-                                   width thumbnail/width;
-                                   height thumbnail/height;
-                                   data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
-                                   data-description item/Description;
-                                   data-link string:${item/absolute_url}/view;
-                                   data-uid uid;" />
-      </tal:items>
-    </div>
-  </div>
+<body>
+    <ul id="banner_rotativo">
+        <li id="banner1">
+            <a class="button-nav activeSlide" href="#">1</a>
+            <a class="banner activeSlideItem" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/00CED1/FFF/?text=banner+1+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 1 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+        <li id="banner2">
+            <a class="button-nav" href="#">2</a>
+            <a class="banner" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/ff00ff/FFF/?text=banner+2+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 2 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+        <li id="banner3">
+            <a class="button-nav" href="#">3</a>
+            <a class="banner" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/ff44dd/FFF/?text=banner+3+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 3 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+        <li id="banner4">
+            <a class="button-nav" href="#">4</a>
+            <a class="banner" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/4455ff/FFF/?text=banner+4+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 4 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+    </ul>
 </body>
 </html>
