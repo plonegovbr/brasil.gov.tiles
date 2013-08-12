@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+
+<head>
+    <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/banner_rotativo.js"></script>
+</head>
+
+<body>
+    <ul id="banner_rotativo">
+        <li id="banner1">
+            <a class="button-nav activeSlide" href="#">1</a>
+            <a class="banner activeSlideItem" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/00CED1/FFF/?text=banner+1+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 1 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+        <li id="banner2">
+            <a class="button-nav" href="#">2</a>
+            <a class="banner" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/ff00ff/FFF/?text=banner+2+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 2 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+        <li id="banner3">
+            <a class="button-nav" href="#">3</a>
+            <a class="banner" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/ff44dd/FFF/?text=banner+3+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 3 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+        <li id="banner4">
+            <a class="button-nav" href="#">4</a>
+            <a class="banner" rel="internal" href="#">
+                <img src="http://fakeimg.pl/766x240/4455ff/FFF/?text=banner+4+766+pixels+por+240+pixels" alt=""/>
+                <span class="descr">Lorem ipsum dolor sit amet consectetur sobre o banner 4 e que contenha no máximo 150 caracteres para adequar o texto dentro do conteúdo.</span>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
