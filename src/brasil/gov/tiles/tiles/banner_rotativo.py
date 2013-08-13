@@ -16,18 +16,11 @@ class IBannerRotativoTile(IListTile):
     """
     """
 
-    autoplay = schema.Bool(
-        title=_(u'Auto play'),
-        required=False,
-        default=True,
-    )
-
     form.widget(uuids=TextLinesSortableFieldWidget)
     uuids = schema.List(
         title=_(u'Elements'),
         value_type=schema.TextLine(),
         required=False,
-        readonly=False,
     )
 
 
@@ -36,7 +29,7 @@ class BannerRotativoTile(ListTile):
 
     index = ViewPageTemplateFile("templates/banner_rotativo.pt")
     is_configurable = True
-    is_editable = True
+    is_editable = False
 
     def populate_with_object(self, obj):
         super(BannerRotativoTile, self).populate_with_object(obj)  # check permission
@@ -63,20 +56,9 @@ class BannerRotativoTile(ListTile):
             old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
-    def autoplay(self):
-        if self.data['autoplay'] is None:
-            return True  # default value
-
-        return self.data['autoplay']
-
-    def init_js(self):
-        return """
-$(function() {
-    Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");
-    Galleria.run('#galleria-%s .galleria-inner');
-
-    if($('body').hasClass('template-view')) {
-        Galleria.configure({ autoplay: %s });
-    };
-});
-""" % (self.id, str(self.autoplay()).lower())
+    def scale(self, item):
+        scales = item.restrictedTraverse('@@images')
+        try:
+            return scales.scale('image', width=1000, height=1000)
+        except:
+            return None
