@@ -870,3 +870,21 @@ div.error { padding: 1em; }
 }
 .banner-tile .copyright + a,
 .newsImageContainer .copyright + a { display: block; clear:both; }
+
+/* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
+#content .newsImageContainer .carrossel-images {
+    margin: 0;
+    float: left;
+    clear: left;
+    width: 100%;
+    max-width: 200px;
+    display: none;
+}
+
+#content .newsImageContainer .carrossel-images li {
+    float: left;
+    margin: .5em.5em 0 0;
+    list-style: outside none;
+} #content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
+
+#content .newsImageContainer .carrossel-images li a { float:left; }

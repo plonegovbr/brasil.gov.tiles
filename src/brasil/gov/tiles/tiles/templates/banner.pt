@@ -15,7 +15,7 @@
                    has_image view/has_image;
                    remote_url view/getRemoteUrl">
    <a class="copyright" tal:attributes="href view/Rights"
-      tal:condition="view/Rights">Credito</a>
+      tal:condition="view/Rights">Crédito</a>
     <tal:image condition="has_image">
         <a tal:attributes="href remote_url">
           <img tal:define="scale view/scale;
