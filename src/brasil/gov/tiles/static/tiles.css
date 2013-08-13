@@ -883,8 +883,10 @@ div.error { padding: 1em; }
 
 #content .newsImageContainer .carrossel-images li {
     float: left;
-    margin: .5em.5em 0 0;
+    margin: 0.5em 0.5em 0.5em 0;
     list-style: outside none;
-} #content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
+}
+
+#content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
 
 #content .newsImageContainer .carrossel-images li a { float:left; }
