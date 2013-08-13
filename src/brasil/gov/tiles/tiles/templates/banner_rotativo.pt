@@ -17,10 +17,10 @@
         <li tal:define="idx repeat/item/index;
                         idx python:idx+1"
             tal:attributes="id string:banner$idx">
-            <a tal:attributes="href string:#;
+            <a tal:attributes="href string:${item/absolute_url}/view;
                                class python:'button-nav' + (' activeSlide' if item == first_item else '')"
                tal:content="idx" />
-            <a tal:attributes="href string:#;
+            <a tal:attributes="href string:${item/absolute_url}/view;
                                rel string:internal;
                                class python:'banner' + (' activeSlideItem' if item == first_item else '')">
                 <img tal:define="scale python:view.scale(item)"
