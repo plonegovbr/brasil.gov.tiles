@@ -762,6 +762,12 @@ div.error { padding: 1em; }
 .formControls input.searchButton { display: none; }
 
 /* Tile Banner Rotativo */
+#content .tile[data-tile*="banner_rotativo"] {
+    margin-bottom: 0;
+    max-height: 240px;
+    overflow: hidden;
+}
+
 #content #banner_rotativo {
     position: relative;
     width: 100%;
@@ -824,14 +830,15 @@ div.error { padding: 1em; }
 #banner_rotativo .banner .descr {
     position: absolute;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
-    z-index: 100;
+    z-index: 3;
     width: 100%;
-    max-width: 676px;
     font-family: Arial;
+    max-width: 676px;
     font-size: 10px;
     font-style: italic;
     color: #fff;
-    padding: 0 0 0 10px;
+    padding:0 0 0 10px;
     bottom: 0;
+    left: 0;
     line-height: 20px;
 }
