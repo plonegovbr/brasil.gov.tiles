@@ -842,3 +842,16 @@ div.error { padding: 1em; }
     left: 0;
     line-height: 20px;
 }
+
+/* Tile Banner Estatico */
+.banner-tile { float: left; }
+.banner-tile img { margin:0; }
+.banner-tile .copyright {
+    float: right;
+    line-height: 2em;
+    margin: 0 .8em 0 0;
+    font-style: italic;
+    font-family: Arial;
+    font-size: .9em;
+}
+.banner-tile .copyright + a { display: block; clear:both; }
