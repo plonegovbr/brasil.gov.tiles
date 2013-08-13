@@ -5,23 +5,20 @@ var portalBrasil = {
     // Tile Banner Rotativo
     tileBannerRotativo: function () {
         if ($('#tile_banner_rotativo').length > 0) {
-            $('#tile_banner_rotativo .button-nav').click(function (e) {
+
+            $('#tile_banner_rotativo .button-nav').on('click',function (e) {
                 e.preventDefault();
                 $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
                 $(this).addClass('activeSlide');
                 $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
                 $(this).parent().find('.banner').addClass('activeSlideItem');
-            });
-
-            $('#tile_banner_rotativo .button-nav').focus(function (e) {
+            }).on('focus',function (e) {
                 e.preventDefault();
                 $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
                 $(this).addClass('activeSlide');
                 $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
                 $(this).parent().find('.banner').addClass('activeSlideItem');
-            });
-
-            $('#tile_banner_rotativo .button-nav').hover(function (e) {
+            }).on('mouseover',function (e) {
                 e.preventDefault();
                 $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
                 $(this).addClass('activeSlide');
