@@ -64,6 +64,13 @@ class MediaCarouselTile(ListTile):
         except:
             return None
 
+    def scale(self, item):
+        scales = item.restrictedTraverse('@@images')
+        try:
+            return scales.scale('image', width=692, height=433)
+        except:
+            return None
+
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
         """
@@ -80,7 +87,11 @@ class MediaCarouselTile(ListTile):
                 catalog_results = obj.results()
                 limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({"portal_type": ["sc.embedder", "Image"]})
+                catalog_results = obj.getFolderContents({
+                    "portal_type": ['sc.embedder',
+                                    'Image',
+                                    'collective.nitf.content']
+                })
                 limit = len(catalog_results) if catalog_results else 0
 
             if catalog_results:
@@ -95,8 +106,11 @@ class MediaCarouselTile(ListTile):
         url = ''
         if portal_type == "sc.embedder":
             url = obj.url
-        elif portal_type == "Image":
+        elif portal_type == 'Image':
             url = obj.absolute_url() + '/@@images/image'
+        elif portal_type == 'collective.nitf.content':
+            scale = self.scale(obj)
+            url = scale.url
 
         return url
 

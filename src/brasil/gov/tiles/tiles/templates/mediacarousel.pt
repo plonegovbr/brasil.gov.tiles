@@ -25,8 +25,7 @@
     <div tal:condition="items" tal:attributes="id string:mediacarousel-gallerie-$tile_id">
       <tal:items repeat="item items">
         <a tal:attributes="href python: view.get_media_url(item)">
-              <img tal:define="scales item/@@images;
-                               thumbnail  python:scales.scale('image', scale='tile');
+              <img tal:define="thumbnail python:view.thumbnail(item);
                                uid python:view.get_uid(item);"
                    tal:condition="python:thumbnail and uid"
                    tal:attributes="alt item/Description;
