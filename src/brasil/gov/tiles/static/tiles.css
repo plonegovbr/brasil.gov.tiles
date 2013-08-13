@@ -768,7 +768,7 @@ div.error { padding: 1em; }
     overflow: hidden;
 }
 
-#tile_content #banner_rotativo {
+#content #tile_banner_rotativo {
     position: relative;
     width: 100%;
     max-width: 766px;
