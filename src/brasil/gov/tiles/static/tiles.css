@@ -846,8 +846,8 @@ div.error { padding: 1em; }
 /* Tile Banner Estatico */
 .banner-tile { float: left; }
 .banner-tile img { margin:0; }
-.banner-tile .copyright,
-.newsImageContainer .copyright {
+#content .banner-tile .copyright,
+#content .newsImageContainer .copyright {
     color: #000;
     float: right;
     font-style: italic;
@@ -875,4 +875,16 @@ div.error { padding: 1em; }
     list-style: outside none;
 } #content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
 
-#content .newsImageContainer .carrossel-images li a { float:left; }
+#content .newsImageContainer .carrossel-images li a {
+    float:left;
+    position: relative;
+    z-index: 1;
+}
+/* credito lightbox da galeria de imagens */
+.galleria-info .copyright {
+    color: #fff;
+    font-style: italic;
+    font-family: Arial;
+    font-size: 1em;
+    line-height: 2em;
+}
