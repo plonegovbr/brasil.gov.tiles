@@ -52,6 +52,8 @@ class BannerTile(PersistentCoverTile):
         super(BannerTile, self).populate_with_object(obj)  # check permissions
         obj = aq_base(obj)  # avoid acquisition
         title = obj.Title()
+        rights = obj.Rights() if hasattr(obj, 'Rights') else None
+
         # if image, store a copy of its data
         if obj.portal_type == 'Image':
             if hasattr(obj, 'getImage'):
@@ -68,10 +70,15 @@ class BannerTile(PersistentCoverTile):
             'title': title,
             'image': image,
             'remote_url': remote_url,
+            'rights': rights,
         })
 
     def Title(self):
         return self.data.get('title', None)
+
+    @property
+    def Rights(self):
+        return self.data.get('rights', None)
 
     @property
     def has_image(self):

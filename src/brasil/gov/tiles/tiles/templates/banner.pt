@@ -9,6 +9,8 @@
     Drag&amp;drop an image or link here to populate the tile.
   </p>
 
+  <a tal:attributes="href view/Rights"
+     tal:condition="view/Rights">Credito</a>
   <div class="banner-tile"
        tal:condition="not:is_empty"
        tal:define="title view/Title;
