@@ -59,6 +59,6 @@ class BannerRotativoTile(ListTile):
     def scale(self, item):
         scales = item.restrictedTraverse('@@images')
         try:
-            return scales.scale('image', width=1000, height=1000)
+            return scales.scale('image', width=766, height=248)
         except:
             return None
