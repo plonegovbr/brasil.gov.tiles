@@ -4,44 +4,44 @@ var portalBrasil = {
     },
     // Tile Banner Rotativo
     tileBannerRotativo: function () {
-        if ($('#banner_rotativo').length > 0) {
-            $('#banner_rotativo .button-nav').click(function (e) {
+        if ($('#tile_banner_rotativo').length > 0) {
+            $('#tile_banner_rotativo .button-nav').click(function (e) {
                 e.preventDefault();
-                $('#banner_rotativo .button-nav').removeClass('activeSlide');
+                $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
                 $(this).addClass('activeSlide');
-                $('#banner_rotativo .banner').removeClass('activeSlideItem');
+                $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
                 $(this).parent().find('.banner').addClass('activeSlideItem');
             });
 
-            $('#banner_rotativo .button-nav').focus(function (e) {
+            $('#tile_banner_rotativo .button-nav').focus(function (e) {
                 e.preventDefault();
-                $('#banner_rotativo .button-nav').removeClass('activeSlide');
+                $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
                 $(this).addClass('activeSlide');
-                $('#banner_rotativo .banner').removeClass('activeSlideItem');
+                $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
                 $(this).parent().find('.banner').addClass('activeSlideItem');
             });
 
-            $('#banner_rotativo .button-nav').hover(function (e) {
+            $('#tile_banner_rotativo .button-nav').hover(function (e) {
                 e.preventDefault();
-                $('#banner_rotativo .button-nav').removeClass('activeSlide');
+                $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
                 $(this).addClass('activeSlide');
-                $('#banner_rotativo .banner').removeClass('activeSlideItem');
+                $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
                 $(this).parent().find('.banner').addClass('activeSlideItem');
             });
 
             var updateCarrossel = function () {
-                if (($('#banner_rotativo a:hover').length == 0) &&
-                    ($('#banner_rotativo a:focus').length == 0)) {
+                if (($('#tile_banner_rotativo a:hover').length == 0) &&
+                    ($('#tile_banner_rotativo a:focus').length == 0)) {
                     var totalSlides = 4;
-                    var activeSlide = $('#banner_rotativo .activeSlide');
-                    var activeSlideItem = $('#banner_rotativo .activeSlideItem');
+                    var activeSlide = $('#tile_banner_rotativo .activeSlide');
+                    var activeSlideItem = $('#tile_banner_rotativo .activeSlideItem');
                     var activeSlideNumber = parseInt(activeSlide.html());
                     var nextSlideNumber = (activeSlideNumber % totalSlides) + 1;
                     var nextSlide = $('#banner' + nextSlideNumber + ' .button-nav');
                     var nextSlideItem = $('#banner' + nextSlideNumber + ' .banner');
 
-                    $('#banner_rotativo .button-nav').removeClass('activeSlide');
-                    $('#banner_rotativo .banner').removeClass('activeSlideItem');
+                    $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
+                    $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
 
                     nextSlide.addClass('activeSlide');
                     nextSlideItem.addClass('activeSlideItem');

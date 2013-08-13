@@ -768,7 +768,7 @@ div.error { padding: 1em; }
     overflow: hidden;
 }
 
-#content #banner_rotativo {
+#tile_content #banner_rotativo {
     position: relative;
     width: 100%;
     max-width: 766px;
@@ -778,7 +778,7 @@ div.error { padding: 1em; }
     margin: 0;
 }
 
-#banner_rotativo .button-nav {
+#tile_banner_rotativo .button-nav {
     width: 19px;
     height: 20px;
     background-color: #0e561f;
@@ -793,8 +793,8 @@ div.error { padding: 1em; }
     z-index: 3;
 }
 
-#banner_rotativo .button-nav:hover,
-#banner_rotativo .button-nav.activeSlide {
+#tile_banner_rotativo .button-nav:hover,
+#tile_banner_rotativo .button-nav.activeSlide {
     background-position: 0 100%;
     background-color: #054112;
 }
@@ -804,11 +804,11 @@ div.error { padding: 1em; }
 #banner3 .button-nav { right: 20px; }
 #banner4 .button-nav { right:  0px; }
 
-#banner_rotativo li {
+#tile_banner_rotativo li {
     height: 240px;
 }
 
-#banner_rotativo .banner img {
+#tile_banner_rotativo .banner img {
     border-radius: 5px;
     width: 100%;
     max-width: 766px;
@@ -816,7 +816,7 @@ div.error { padding: 1em; }
     max-height: 240px;
 }
 
-#banner_rotativo .banner {
+#tile_banner_rotativo .banner {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -825,9 +825,9 @@ div.error { padding: 1em; }
     z-index: 1;
 }
 
-#banner_rotativo .banner.activeSlideItem { z-index: 2; }
+#tile_banner_rotativo .banner.activeSlideItem { z-index: 2; }
 
-#banner_rotativo .banner .descr {
+#tile_banner_rotativo .banner .descr {
     position: absolute;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     z-index: 3;

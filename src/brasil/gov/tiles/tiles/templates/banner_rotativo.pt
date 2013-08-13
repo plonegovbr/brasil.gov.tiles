@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <ul id="banner_rotativo">
+    <ul id="tile_banner_rotativo">
       <tal:items tal:define="results view/results;
                              first_item python:results[0] if results else None;
                              last_item python:results[-1] if results else None"
