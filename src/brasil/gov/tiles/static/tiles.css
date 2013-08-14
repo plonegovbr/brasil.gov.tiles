@@ -125,8 +125,20 @@
     border-bottom: medium none;
 }
 
+.width-5 .gallery-3-columns .player-metadata,
+.width-5 .gallery-3-columns .player-holder iframe {
+    width: 90%;
+    padding: 2% 5%;
+}
+
+.width-5 .gallery-2-columns .player-video,
+.width-5 .gallery-2-columns .gallery-element {
+    width: 100%;
+}
+
 .width-8 .galery-items,
 .width-10 .galery-items,
+.width-5 .galery-items,
 .gallery-2-columns .galery-items {
     border-top: 1px solid #305492;
 }
@@ -846,8 +858,8 @@ div.error { padding: 1em; }
 /* Tile Banner Estatico */
 .banner-tile { float: left; }
 .banner-tile img { margin:0; }
-.banner-tile .copyright,
-.newsImageContainer .copyright {
+#content .banner-tile .copyright,
+#content .newsImageContainer .copyright {
     color: #000;
     float: right;
     font-style: italic;
@@ -856,5 +868,38 @@ div.error { padding: 1em; }
     line-height: 2em;
     margin: 0 .8em 0 0;
 }
+
 .banner-tile .copyright + a,
 .newsImageContainer .copyright + a { display: block; clear:both; }
+
+/* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
+#content .newsImageContainer .carrossel-images {
+    margin: 0;
+    float: left;
+    clear: left;
+    width: 100%;
+    max-width: 200px;
+    display: none;
+}
+
+#content .newsImageContainer .carrossel-images li {
+    float: left;
+    margin: 0.5em 0.5em 0.5em 0;
+    list-style: outside none;
+}
+
+#content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
+
+#content .newsImageContainer .carrossel-images li a {
+    float:left;
+    position: relative;
+    z-index: 1;
+}
+/* credito lightbox da galeria de imagens */
+.galleria-info .copyright {
+    color: #fff;
+    font-style: italic;
+    font-family: Arial;
+    font-size: 1em;
+    line-height: 2em;
+}
