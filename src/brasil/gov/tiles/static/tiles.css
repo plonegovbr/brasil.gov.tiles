@@ -869,11 +869,6 @@ div.error { padding: 1em; }
     margin: 0 .8em 0 0;
 }
 
-#content .banner-tile .copyright:hover,
-#content .newsImageContainer .copyright:hover {
-    color: #75ad0a !important;
-}
-
 .banner-tile .copyright + a,
 .newsImageContainer .copyright + a { display: block; clear:both; }
 
