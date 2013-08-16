@@ -13,6 +13,7 @@
       <element>social</element>
       <element>standaloneheader</element>
       <element>video</element>
+      <element>banner_rotativo</element>
     </value>
   </record>
 </registry>
