@@ -21,9 +21,6 @@ from zope.component import queryUtility
 from zope.interface import implements
 from zope.schema import getFieldsInOrder
 
-from collective.cover.tiles.configuration import ITilesConfigurationScreen
-from zope.component import getMultiAdapter
-
 
 # XXX: we must refactor this tile
 class IListTile(IPersistentCoverTile, form.Schema):
@@ -76,18 +73,6 @@ class ListTile(PersistentCoverTile):
     is_editable = False
     limit = 5
     configured_fields = {}
-
-    def get_tile_configuration(self):
-        tile_conf_adapter = getMultiAdapter(
-            (self.context, self.request, self), ITilesConfigurationScreen)
-        default = tile_conf_adapter._set_default_configuration()
-        configuration = tile_conf_adapter.get_configuration()
-
-        if configuration == default:
-            configuration['image']['visibility'] = u'off'
-            tile_conf_adapter.set_configuration(configuration)
-
-        return configuration
 
     def results(self):
         """ Return the list of objects stored in the tile.
