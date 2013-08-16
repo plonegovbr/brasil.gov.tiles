@@ -879,7 +879,7 @@ div.error { padding: 1em; }
     clear: left;
     width: 100%;
     max-width: 200px;
-    display: none;
+    /*display: none;*/
 }
 
 #content .newsImageContainer .carrossel-images li {
