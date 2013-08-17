@@ -18,19 +18,7 @@
       description="Remove este pacote"
       provides="Products.GenericSetup.interfaces.EXTENSION" />
 
-  <genericsetup:registerProfile
-      name="upgrade_to_1001"
-      title="brasil.gov.tiles upgrade to version 1001"
-      directory="profiles/upgrade_to_1001"
-      description="brasil.gov.tiles add tile banner."
-      provides="Products.GenericSetup.interfaces.EXTENSION" />
-
-  <genericsetup:upgradeStep
-      title="Add tile banner"
-      description=""
-      source="1000"
-      destination="1001"
-      handler="brasil.gov.tiles.setuphandlers.upgrade_to_1001"
-      profile="brasil.gov.tiles:default" />
+  <!-- Upgrades -->
+  <include package=".upgrades" />
 
 </configure>
