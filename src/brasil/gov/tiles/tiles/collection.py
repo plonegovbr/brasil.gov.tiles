@@ -14,6 +14,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import queryUtility
 from zope.schema import getFieldsInOrder
+from collections import OrderedDict
 
 
 class ICollectionTile(IPersistentCoverTile, form.Schema):
@@ -132,7 +133,7 @@ class CollectionTile(PersistentCoverTile):
 
         fields = getFieldsInOrder(tileType.schema)
 
-        results = {}
+        results = OrderedDict()
         for name, obj in fields:
             field = {'title': obj.title}
             if name in conf:
