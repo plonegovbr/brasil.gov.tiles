@@ -25,7 +25,7 @@
                      tal:repeat="item results">
                     <tal:items tal:define="obj item/getObject;">
                         <tal:fields tal:repeat="field conf_fields">
-                            <tal:conf tal:define="conf python:conf_fields.get(field)">
+                            <tal:conf tal:define="config python:conf_fields.get(field)">
                                 <tal:image tal:define="thumbnail python:view.thumbnail(obj);"
                                            tal:condition="python:field=='image' and thumbnail">
                                     <a tal:attributes="href obj/absolute_url;
@@ -36,8 +36,7 @@
                                                              alt obj/Description|obj/Title" />
                                     </a>
                                 </tal:image>
-                                <tal:title tal:define="config python:conf_fields.get('title');
-                                                       htmltag python:config.get('htmltag', 'h1')"
+                                <tal:title tal:define="htmltag python:config.get('htmltag', 'h1')"
                                            tal:condition="python:field=='title'">
                                     <h1 tal:condition="python:htmltag=='h1'">
                                         <a tal:attributes="href obj/absolute_url;
