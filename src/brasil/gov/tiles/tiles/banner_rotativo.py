@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
 from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
 from plone.autoform import directives as form
+from plone.memoize import view
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -62,3 +63,9 @@ class BannerRotativoTile(ListTile):
             return scales.scale('image', width=766, height=248)
         except:
             return None
+
+    @view.memoize
+    def accepted_ct(self):
+        results = ListTile.accepted_ct(self)
+        results.append(u'ExternalContent')
+        return results
