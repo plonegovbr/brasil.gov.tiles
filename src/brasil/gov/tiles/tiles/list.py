@@ -197,11 +197,17 @@ class ListTile(PersistentCoverTile):
         return settings.searchable_content_types
 
     def thumbnail(self, item):
+        tile_conf = self.get_tile_configuration()
+        image_conf = tile_conf.get('image', None)
         scales = item.restrictedTraverse('@@images')
-        try:
-            return scales.scale('image', 'mini')
-        except:
-            return None
+        if image_conf:
+            scaleconf = image_conf['imgsize']
+            # scale string is something like: 'mini 200:200'
+            scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'
+            try:
+                return scales.scale('image', scale)
+            except:
+                return None
 
 
 class CollectionUIDsProvider(object):
