@@ -2,11 +2,13 @@
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
+from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
 from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
 from plone.autoform import directives as form
 from plone.memoize import view
+from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from zope import schema
@@ -17,11 +19,45 @@ class IBannerRotativoTile(IListTile):
     """
     """
 
-    form.widget(uuids=TextLinesSortableFieldWidget)
+    form.omitted('title')
+    form.no_omit(IDefaultConfigureForm, 'title')
+    title = schema.TextLine(
+        title=_(u'Title'),
+        required=False,
+        readonly=True,
+    )
+
+    form.omitted('description')
+    form.no_omit(IDefaultConfigureForm, 'description')
+    description = schema.Text(
+        title=_(u'Description'),
+        required=False,
+        readonly=True,
+    )
+
+    form.omitted('date')
+    form.no_omit(IDefaultConfigureForm, 'date')
+    date = schema.Datetime(
+        title=_(u'Date'),
+        required=False,
+        readonly=True,
+    )
+
+    form.omitted('image')
+    form.no_omit(IDefaultConfigureForm, 'image')
+    image = NamedImage(
+        title=_(u'Image'),
+        required=False,
+        readonly=True,
+    )
+
+    form.omitted('uuids')
+    form.no_omit(IDefaultConfigureForm, 'uuids')
     uuids = schema.List(
         title=_(u'Elements'),
         value_type=schema.TextLine(),
         required=False,
+        readonly=True,
     )
 
 
