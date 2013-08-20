@@ -15,6 +15,13 @@ class IMediaCarouselTile(IListTile):
     """
     """
 
+    header = schema.TextLine(
+        title=_(u'Header'),
+        required=False,
+    )
+
+    form.omitted('title')
+    form.no_omit(IDefaultConfigureForm, 'title')
     title = schema.TextLine(
         title=_(u'Title'),
         required=False,
@@ -47,10 +54,12 @@ class MediaCarouselTile(ListTile):
         # XXX
 
         self.set_limit()
+        header = obj.Title()  # use collection's title as header
         uuid = IUUID(obj, None)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
+        old_data['header'] = header
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
@@ -113,6 +122,9 @@ class MediaCarouselTile(ListTile):
             url = scale.url
 
         return url
+
+    def show_header(self):
+        return self._field_is_visible('header')
 
     def init_js(self):
         return """
