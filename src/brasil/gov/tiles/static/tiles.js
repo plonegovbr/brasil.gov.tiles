@@ -1,24 +1,24 @@
-/* 
+/*
   Comentario
 */
 $(document).ready(function() {
     //video gallery
     if ($('.videogallery-tile')[0] !== undefined) {
         var videoResponsiveResize, root;
-     
+
         root = typeof exports !== "undefined" && exports !== null ? exports : this;
-     
+
         root.VideoResponsiveResize = function () {
             var _Singleton, _base;
             _Singleton = (function () {
                 function _Singleton() {}
-     
+
                 _Singleton.prototype.qtd_coluna_anterior = '';
                 _Singleton.prototype.scrollbar = false;
-     
+
                 _Singleton.prototype.resize = function () {
                     var qtd_coluna_atual;
-     
+
                     qtd_coluna_atual = 1;
 
                     if ($(window).width() > 480) {
@@ -29,14 +29,14 @@ $(document).ready(function() {
                     if ($(window).width() > 960) {
                         qtd_coluna_atual = 3;
                     }
-     
+
                     if (this.qtd_coluna_anterior !== qtd_coluna_atual) {
                         this.qtd_coluna_anterior = qtd_coluna_atual;
 
                         $('.videogallery-tile').each(function(){
                             $(this).removeClass('gallery-2-columns');
                             $(this).removeClass('gallery-3-columns');
-                            
+
                             if (qtd_coluna_atual === 2) {
                                 $(this).addClass('gallery-2-columns');
                             } else if (qtd_coluna_atual === 3) { // Desktop
@@ -46,24 +46,24 @@ $(document).ready(function() {
                             //resize video onload
                             var video_width = $('.player-holder iframe').width();
                             $('.player-holder iframe').height(video_width/1.3333);
-                             
+
                             //video loading logic
                             var video_gallery = $(this);
                             var gallery_link = video_gallery.find('.gallery-element').find('.gallery-element-link');
                             gallery_link.click(function(e){
                                 e.preventDefault();
-                             
+
                                 var player = $(this).data('player-dom');
                                 var metadata = $(this).siblings('.gallery-element-metadata');
-                             
+
                                 video_gallery.find('.selected').removeClass('selected');
                                 $(this).parents('.gallery-element').addClass('selected');
-                                
+
                                 var player_slot = video_gallery.find('.player-holder');
                                 player_slot.find('.player-video').html(player);
                                 player_slot.find('.title').html(metadata.find('.title').html());
                                 player_slot.find('.description').html(metadata.find('.description').html());
-                             
+
                                 //resize video onload
                                 var video_width = $('.player-holder iframe').width();
                                 $('.player-holder iframe').height(video_width/1.3333);
@@ -71,31 +71,32 @@ $(document).ready(function() {
                         });
                     }
                 };
-     
+
                 return _Singleton;
             })();
-     
-     
+
+
             if ((_base = root.VideoResponsiveResize).instance == null) {
                 _base.instance = new _Singleton();
             }
             return root.VideoResponsiveResize.instance;
         };
-     
+
         var resize = function () {
             videoResponsiveResize = new root.VideoResponsiveResize();
             videoResponsiveResize.resize();
         }
-     
+
         $(window).resize(function () {
             resize();
         });
-     
+
         resize();
     }
 
 
     //video player tile
+    /*
     if($('.video-tile')[0] !== undefined ) {
         $('.video-tile .video-container').height(function(){
             var video = $(this).find('iframe');
@@ -103,9 +104,13 @@ $(document).ready(function() {
             var ow = video.width();
             var proportion = ow/oh;
             video.width('100%');
-            video.height(video.width()/proportion);
+            //video.height(video.width()/proportion);
+
+            // aspect ratio calculator for standard size
+            video.height(video.width()* 3 / 4);
         });
     }
+    */
 
 });
 
@@ -138,7 +143,7 @@ $(document).ready(function() {
              * XXX at this point is not really used because a bug in the player
              **/
             get_media: function(urls){
-                //right now works for only 1 media type but should be modify 
+                //right now works for only 1 media type but should be modify
                 //to iterate over urls and provide multiple supplied and sources
                 var media = {'media_urls':{}, 'supplied':''};
                 var media_type = self.get_media_type(urls);
@@ -161,9 +166,9 @@ $(document).ready(function() {
 
             /**
              * Function to gleam the media type from the URL
-             * 
+             *
              **/
-            get_media_type: function(url) { 
+            get_media_type: function(url) {
                 var mediaType = false;
                 if(/\.mp3$/i.test(url)) {
                     mediaType = 'mp3';
