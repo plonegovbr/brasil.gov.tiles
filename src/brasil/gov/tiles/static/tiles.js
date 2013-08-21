@@ -300,6 +300,25 @@ $(document).ready(function() {
                     imageCrop: 'width',
                     _toggleInfo: false,
                 });
+
+                Galleria.on('loadfinish', function(e) {
+                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
+                    if (($('.galleria-layer>.rights', mediacarousel).length > 0) &&
+                        ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel) > 0)) {
+                        $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).remove();
+                    }
+                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
+                    
+                    // Move the layer element to the right place
+                    $('.galleria-info-text', mediacarousel).append($('.galleria-layer>.rights', mediacarousel));
+                    // Move the layer element to the right place
+
+                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
+                    $('.rights', mediacarousel).css('display', 'none');
+                    $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
+                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
+                });
+
                 Galleria.run('#' + galleria_id);
             },
 
