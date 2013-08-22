@@ -67,6 +67,7 @@ class BannerRotativoTile(ListTile):
     index = ViewPageTemplateFile("templates/banner_rotativo.pt")
     is_configurable = True
     is_editable = False
+    limit = 4
 
     def populate_with_object(self, obj):
         super(BannerRotativoTile, self).populate_with_object(obj)  # check permission

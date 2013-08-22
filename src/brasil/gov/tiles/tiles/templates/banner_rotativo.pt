@@ -16,7 +16,8 @@
                  tal:repeat="item results">
         <li tal:define="idx repeat/item/index;
                         idx python:idx+1"
-            tal:attributes="id string:banner$idx">
+            tal:attributes="id string:banner$idx;
+                            data-uid python:view.get_uid(item)">
             <a tal:attributes="href string:${item/absolute_url}/view;
                                class python:'button-nav' + (' activeSlide' if item == first_item else '')"
                tal:content="idx" />
