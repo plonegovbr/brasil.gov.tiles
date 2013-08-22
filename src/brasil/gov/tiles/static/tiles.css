@@ -915,7 +915,18 @@ div.error { padding: 1em; }
 .banner-tile { float: left; }
 .banner-tile img { margin:0; }
 #content .banner-tile .copyright,
-#content .newsImageContainer .copyright {
+#content .newsImageContainer .copyright,
+#content .mediacarousel .rights {
+    color: #000;
+    float: right;
+    font-style: italic;
+    font-family: Arial;
+    font-size: .9em;
+    line-height: 2em;
+    margin: 0 .8em 0 0;
+}
+
+#content .mediacarousel .mediacarousel-tile+div .rights {
     color: #000;
     float: right;
     font-style: italic;

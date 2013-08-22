@@ -39,14 +39,17 @@
       <tal:items repeat="item items">
         <a tal:attributes="href python: view.get_media_url(item)">
               <img tal:define="thumbnail python:view.thumbnail(item);
-                               uid python:view.get_uid(item);"
+                               uid python:view.get_uid(item);
+                               rights python:view.get_rights(item);"
                    tal:condition="python:thumbnail and uid"
                    tal:attributes="alt item/Description;
                                    src thumbnail/url;
                                    width thumbnail/width;
                                    height thumbnail/height;
+                                   data-uid uid;
                                    data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
-                                   data-description item/Description;" />
+                                   data-description item/Description;
+                                   data-layer string:<div class='rights' data-index='${repeat/item/index}'>$rights</div>" />
         </a>
       </tal:items>
     </div>

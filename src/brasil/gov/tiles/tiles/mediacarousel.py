@@ -123,6 +123,10 @@ class MediaCarouselTile(ListTile):
 
         return url
 
+    def get_rights(self, obj):
+        rights = obj.Rights() if hasattr(obj, 'Rights') else None
+        return rights
+
     def show_header(self):
         return self._field_is_visible('header')
 
