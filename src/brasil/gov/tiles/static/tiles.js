@@ -330,9 +330,12 @@ $(document).ready(function() {
 
                     if ($('.galleria-container.galleria-height-resize').length == 0) {
                         $('.galleria-container').addClass('galleria-height-resize');
-                        var divMediacarousel = $('.galleria-container');
-                        var divMediacarouselHeight = divMediacarousel.height();
+                        var divMediacarousel = $('.mediacarousel [id*="mediacarousel-gallerie-"]'),
+                            divGalleriaContainer = $('.galleria-container');
+                        var divMediacarouselHeight = divMediacarousel.height(),
+                            divGalleriaContainerHeight = divGalleriaContainer.height();
                         divMediacarousel.height(divMediacarouselHeight + 20);
+                        divGalleriaContainer.height(divGalleriaContainerHeight + 20);
                     }
 
                 });

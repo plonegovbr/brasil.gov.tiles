@@ -282,7 +282,7 @@
 .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
     padding-right: 30px;
     display: inline-block;
-    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
+    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right center transparent;
     text-transform: uppercase;
 }
 .mediacarousel .galleria-info {
