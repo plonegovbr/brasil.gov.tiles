@@ -976,3 +976,64 @@ div.error { padding: 1em; }
     font-size: 1em;
     line-height: 2em;
 }
+
+/* POLL TILE */
+#content .poll-tile {
+    background-color: #eeeff1;
+    border-radius: 0.5em 0.5em 0 0;
+    border: 1px solid #d4d5d7; }
+    #content .poll-tile .poll-tile-header {
+        border-bottom: 1px solid #d4d5d7;
+        padding: 0.5em 1em; }
+        #content .poll-tile .poll-tile-header>.header {
+            color: #444a53;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-transform: uppercase; }
+    #content .poll-tile .tile-content-wrapper>div {
+        padding: 0 1em; }
+    #content .poll-tile .tile-content-wrapper>.poll-spinner {
+        padding: 0; }
+    #content .poll-tile .tile-content-wrapper>h3 {
+        background-color: #f8f9f9;
+        color: #365073;
+        font-size: 1em;
+        padding: 1.7em 1em; }
+    #content .poll-tile .tile-content-wrapper>h4 {
+        font-size: 1em;
+        font-weight: bold;
+        padding: 1em; }
+    #content .poll-tile .tile-content-wrapper>form>br {
+        display: none;
+    }
+    #content .poll-tile .tile-content-wrapper>form>input[type=radio] {
+        clear: both;
+        float: left;
+        margin: 1em 0 1em 1em; }
+        #content .poll-tile .tile-content-wrapper>form>input[type=radio]+span {
+            color: #335277;
+            display: block;
+            line-height: 3.3em;
+            margin-left: 2.8em; }
+    #content .poll-tile .tile-content-wrapper>form>input[type=submit] {
+        background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
+        border: none;
+        color: #fff;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 1em;
+        padding: 0.8em 0px 0.8em 3em;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%; }
+    #content .poll-tile .tile-content-wrapper>.result-text,
+    #content .poll-tile .tile-content-wrapper>.tile-poll-more {
+        text-align: right;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        padding-top: 1em; }
+    #content .poll-tile .tile-content-wrapper>.tile-poll-more {
+        padding-bottom: 1em; }
+/* POLL TILE */
