@@ -285,6 +285,12 @@
     background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
     text-transform: uppercase;
 }
+.mediacarousel .galleria-info {
+    bottom: 60px;
+}
+#content .mediacarousel .rights {
+    float: left !important;
+}
 
 /*
  * Skin for jPlayer Plugin (jQuery JavaScript Library)

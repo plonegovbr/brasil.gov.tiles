@@ -314,13 +314,11 @@ $(document).ready(function() {
                         ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0)) {
                         $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).remove();
                     }
-                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
-                        
+
                     // Move the layer element to the right place
                     if ($('.galleria-layer>.rights', mediacarousel).length > 0) {
                         $('.galleria-info-text', mediacarousel).append($('.galleria-layer>.rights', mediacarousel));
                     }
-                    // Move the layer element to the right place
 
                     // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
                     if ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0) {
@@ -329,7 +327,14 @@ $(document).ready(function() {
                         });
                         $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
                     }
-                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
+
+                    if ($('.galleria-container.galleria-height-resize').length == 0) {
+                        $('.galleria-container').addClass('galleria-height-resize');
+                        var divMediacarousel = $('.galleria-container');
+                        var divMediacarouselHeight = divMediacarousel.height();
+                        divMediacarousel.height(divMediacarouselHeight + 20);
+                    }
+
                 });
 
                 Galleria.run('#' + galleria_id);
@@ -342,6 +347,7 @@ $(document).ready(function() {
             }
         });
         self.init();
+
     }
     $.fn.mediacarousel = function() {
 
@@ -349,12 +355,12 @@ $(document).ready(function() {
         var el = this.data("mediacarousel");
         if (el) { return el; }
 
-
         var default_settings = this.data('mediacarousel-settings');
 
         return this.each(function() {
             el = new MediaCarousel($(this));
             $(this).data("mediacarousel", el);
+
         });
 
     };
