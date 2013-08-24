@@ -7,39 +7,16 @@
 <body>
     <div class="poll-tile vote-container">
         <div
-          tal:define="can_vote view/can_vote;
-                      closed view/is_closed;
+          tal:define="closed view/is_closed;
                       poll view/poll;
-                      results python: view.getVotingResults() if poll else None ;
                       toLocalizedTime nocall:context/@@plone/toLocalizedTime;"
           tal:condition="nocall:poll">
             <div class="poll-tile-header">
-                <div class="header" i18n:translate="">Poll</div>
+                <div class="header" i18n:translate="">Enquete</div>
             </div>
             <div class="tile-content-wrapper">
                 <h3 tal:content="poll/Title"/>
-                <tal:results condition="python:(not can_vote) and results">
-                    <tal:poll_results condition="nocall:results">
-                        <h4 tal:condition="not:closed" i18n:translate="">Partial results</h4>
-                        <h4 tal:condition="closed" i18n:translate="">Results</h4>
-                        <div class="poll-data"
-                             tal:attributes="class python:'poll-data ' + ('bar-poll' if poll.results_graph == 'bar' else 'pie-poll')">
-                            <div class="portletpollresultholder"></div>
-                            <ul class="poll-results">
-                              <li tal:repeat="option_result results">
-                                  <span class="option_description" tal:content="python: option_result[0]" />:
-                                  <span class="option_result" tal:content="python: option_result[1]" />
-                              </li>
-                            </ul>
-                        </div>
-                    </tal:poll_results>
-                </tal:results>
 
-                <tal:no_results condition="python:not (can_vote or results)">
-                    <h4 i18n:translate="">Nothing to see here</h4>
-                </tal:no_results>
-
-                <tal:voting condition="view/can_vote">
                     <form action="#" method="post"
                             tal:attributes="action poll/absolute_url">
 
@@ -60,7 +37,6 @@
                                tal:attributes="value view/poll_uid" />
                         <input type="submit" name="poll.submit" value="Submit" class="context" i18n:attributes="value" />
                     </form>
-                </tal:voting>
                 <tal:spinner>
                     <div class="poll-spinner">
                         <img alt="spiner" src="/spinner.gif"
@@ -68,14 +44,10 @@
                           i18n:attributes="alt" />
                     </div>
                 </tal:spinner>
-                <div class="result-text">
-                    <span i18n:translate="">Total votes:</span>
-                    <span tal:replace="poll/total_votes">23</span>
-                </div>
+
                 <div class="tile-poll-more">
                   <a tal:define="portal_url context/@@plone_portal_state/portal_url"
-                     tal:attributes="href string:${portal_url}/enquetes"
-                     i18n:translate="">See previous polls</a>
+                     tal:attributes="href string:${portal_url}/enquetes">Veja as enquetes anteriores</a>
                 </div>
             </div>
         </div>
