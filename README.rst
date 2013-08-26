@@ -26,7 +26,7 @@ código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes pode ser visto na imagem a seguir:
 
-.. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.tiles.png
+.. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.tiles.png?branch=master
     :target: http://travis-ci.org/plonegovbr/brasil.gov.tiles
 
 Instalação
