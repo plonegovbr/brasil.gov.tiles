@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0rc1 (unreleased)
+1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
 
   * Implementação de funcionalidades drag & drop no Tile Banner rotativo [felipeduardo]
