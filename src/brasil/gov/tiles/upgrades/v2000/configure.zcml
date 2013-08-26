@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+    <gs:registerProfile
+        name="default"
+        title="Upgrade brasil.gov.tiles (v2000)"
+        directory="profile"
+        description="Upgrade brasil.gov.tiles add Tile Banner Rotativo."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        />
+
+    <gs:upgradeSteps
+        source="1000"
+        destination="2000"
+        profile="brasil.gov.tiles:default">
+    
+    <gs:upgradeStep
+        title="Add Tile Banner Rotativo"
+        description=""
+        handler=".handler.apply_profile"
+        />
+
+    </gs:upgradeSteps>
+
+</configure>

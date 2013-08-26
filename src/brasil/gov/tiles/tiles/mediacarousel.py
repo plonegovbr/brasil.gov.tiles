@@ -15,6 +15,13 @@ class IMediaCarouselTile(IListTile):
     """
     """
 
+    header = schema.TextLine(
+        title=_(u'Header'),
+        required=False,
+    )
+
+    form.omitted('title')
+    form.no_omit(IDefaultConfigureForm, 'title')
     title = schema.TextLine(
         title=_(u'Title'),
         required=False,
@@ -47,10 +54,12 @@ class MediaCarouselTile(ListTile):
         # XXX
 
         self.set_limit()
+        header = obj.Title()  # use collection's title as header
         uuid = IUUID(obj, None)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
+        old_data['header'] = header
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
@@ -61,6 +70,13 @@ class MediaCarouselTile(ListTile):
         scales = item.restrictedTraverse('@@images')
         try:
             return scales.scale('image', width=80, height=60)
+        except:
+            return None
+
+    def scale(self, item):
+        scales = item.restrictedTraverse('@@images')
+        try:
+            return scales.scale('image', width=692, height=433)
         except:
             return None
 
@@ -80,7 +96,11 @@ class MediaCarouselTile(ListTile):
                 catalog_results = obj.results()
                 limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({"portal_type": ["sc.embedder", "Image"]})
+                catalog_results = obj.getFolderContents({
+                    "portal_type": ['sc.embedder',
+                                    'Image',
+                                    'collective.nitf.content']
+                })
                 limit = len(catalog_results) if catalog_results else 0
 
             if catalog_results:
@@ -95,10 +115,20 @@ class MediaCarouselTile(ListTile):
         url = ''
         if portal_type == "sc.embedder":
             url = obj.url
-        elif portal_type == "Image":
+        elif portal_type == 'Image':
             url = obj.absolute_url() + '/@@images/image'
+        elif portal_type == 'collective.nitf.content':
+            scale = self.scale(obj)
+            url = scale.url
 
         return url
+
+    def get_rights(self, obj):
+        rights = obj.Rights() if hasattr(obj, 'Rights') else None
+        return rights
+
+    def show_header(self):
+        return self._field_is_visible('header')
 
     def init_js(self):
         return """

@@ -1,0 +1,44 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="brasil.gov.tiles">
+
+  <plone:tile
+      name="collective.cover.banner"
+      title="Banner Tile"
+      description="A tile that shows an image with a link."
+      icon="++resource++collective.cover/tile-banner.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".banner.IBannerTile"
+      class=".banner.BannerTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
+      name="collective.cover.collection"
+      title="Collection Tile"
+      description="A tile that shows the result of a collection."
+      icon="++resource++collective.cover/tile-collection.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".collection.ICollectionTile"
+      class=".collection.CollectionTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
+      name="collective.cover.list"
+      title="List Tile"
+      description="A tile that shows a list of items."
+      icon="++resource++collective.cover/tile-list.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".list.IListTile"
+      class=".list.ListTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+
+</configure>

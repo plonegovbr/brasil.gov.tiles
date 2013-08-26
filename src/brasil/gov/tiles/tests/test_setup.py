@@ -28,6 +28,7 @@ TILES = [
     'social',
     'standaloneheader',
     'video',
+    'banner_rotativo',
 ]
 
 

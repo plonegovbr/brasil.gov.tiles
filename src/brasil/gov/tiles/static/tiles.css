@@ -15,17 +15,12 @@
 }
 
 .videogallery-tile .player-metadata {
-    padding: 10px 15px;
-    border-bottom: 1px solid #305492;
+    padding: 10px 0;
 }
 .player-metadata .title {
-    border-bottom: 1px dotted #305492;
     color: #CDE1FA;
     font-weight: bold;
     padding-bottom: 10px;
-}
-.player-metadata .description {
-    padding-top: 15px;
 }
 .subtitle {
     text-transform: uppercase;
@@ -51,6 +46,10 @@
     line-height: 20px;
     padding-right: 25px;
 }
+#content .gallery-footer a:hover {
+    color: #D1E2FF !important;
+    text-decoration: underline;
+}
 
 .videogallery-tile .selected {
     display: none;
@@ -62,6 +61,7 @@
     text-align: center;
     overflow: hidden;
     float: left;
+    margin: 0 5% 5% 0;
 }
 #content .gallery-element-link img {
     border-radius: 0 0 0 0;
@@ -82,10 +82,6 @@
     height: 60px;
     overflow: hidden;
 }
-.gallery-element-metadata .title {
-    margin-left: 15px;
-    display: block;
-}
 .gallery-element-metadata .description {
     display: none;
 }
@@ -95,42 +91,84 @@
     height: auto;
 }
 
-
-.gallery-2-columns .gallery-element{
+/* 8 or 10 grids for 2 cols */
+.width-8 .videogallery-tile .gallery-footer,
+.width-10 .videogallery-tile .gallery-footer {
+    border-top: none;
+}
+.width-8 .gallery-element,
+.width-10 .gallery-element,
+.gallery-2-columns .gallery-element {
     width: 50%;
 }
+.width-8 .gallery-element-wrapper,
+.width-10 .gallery-element-wrapper,
+.gallery-2-columns .gallery-element-wrapper {
+    border-left: 1px dotted #305491;
+}
+.width-8 .player-video,
+.width-10 .player-video,
 .gallery-2-columns .player-video {
     width: 50%;
+    margin-right: 5%;
     float: left;
 }
+.width-8 .player-holder,
+.width-10 .player-holder,
 .gallery-2-columns .player-holder {
-    padding-left: 15px;
-    padding-bottom: 15px;
+    padding: 4%;
 }
+.width-8 .player-metadata,
+.width-10 .player-metadata,
 .gallery-2-columns .player-metadata {
     padding: 0;
     border-bottom: medium none;
 }
-.gallery-2-columns .player-metadata-wrapper {
-    padding-left: 50%;
-    padding-right: 15px;
-    margin-left: 10px;
+
+.width-5 .gallery-3-columns .player-metadata,
+.width-5 .gallery-3-columns .player-holder iframe {
+    width: 90%;
+    padding: 2% 5%;
 }
+
+.width-5 .gallery-2-columns .player-video,
+.width-5 .gallery-2-columns .gallery-element {
+    width: 100%;
+}
+
+.width-8 .galery-items,
+.width-10 .galery-items,
+.width-5 .galery-items,
 .gallery-2-columns .galery-items {
     border-top: 1px solid #305492;
 }
 
+/* 15 or 16 grids for 3 cols */
+.width-16 .gallery-3-columns .player-holder,
+.width-15 .gallery-3-columns .player-holder {
+    width: 60%;
+    padding: 2.5% 2.5% 0;
+    border-right: 1px dotted #305492;
+}
+.width-16 .gallery-3-columns .galery-items,
+.width-15 .gallery-3-columns .galery-items {
+    width: 34%;
+}
+.width-15 .gallery-element.last,
+.width-16 .gallery-element.last {
+    border-bottom: none !important;
+}
 
-.gallery-3-columns .player-holder{
-    width: 505px;
+.gallery-3-columns .player-holder {
     float: left;
 }
 .gallery-3-columns .galery-items {
-    width: 230px;
     float: left;
     margin: 0;
 }
-
+.gallery-3-columns .player-metadata .title {
+    border-bottom: medium none;
+}
 .gallery-3-columns .player-metadata .title {
     border-bottom: medium none;
 }
@@ -138,9 +176,33 @@
     border-bottom: medium none;
 }
 .gallery-3-columns .galery-items-wrapper {
-    margin-left: 15px;
     border-left: 1px solid #305492;
-    display: inline-block;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 960px) {
+    .width-8 .gallery-element-metadata,
+    .width-10 .gallery-element-metadata {
+        height: 70px !important;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .galery-items {
+        border-top: 1px solid #305492;
+    }
+    .width-8 .gallery-element,
+    .width-10 .gallery-element {
+        width: 100% !important;
+    }
+    .width-8 .player-video,
+    .width-10 .player-video {
+        width: 100% !important;
+        margin: 0 0 5% 0 !important;
+    }
+    .player-holder {
+        border-bottom: none !important;
+        padding: 4%;
+    }
 }
 
 
@@ -220,14 +282,15 @@
 .mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
     padding-right: 30px;
     display: inline-block;
-    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
+    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right center transparent;
     text-transform: uppercase;
 }
-
-
-
-
-
+.mediacarousel .galleria-info {
+    bottom: 60px;
+}
+#content .mediacarousel .rights {
+    float: left !important;
+}
 
 /*
  * Skin for jPlayer Plugin (jQuery JavaScript Library)
@@ -690,7 +753,6 @@ ul.css-tabs a.current {
 
 
 .outstanding-header {
-    border-top:4px solid #CCC;
     position: relative;
 }
 
@@ -709,10 +771,269 @@ ul.css-tabs a.current {
 div.error { padding: 1em; }
 
 /* tile do video container */
+.video-tile {
+    max-width: 766px;
+    max-height: 575px;
+}
+
 .video-container {
-    max-width: 270px;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
     overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container + a {
+    line-height: 2em;
+    clear: both;
 }
 
 /* botão de busca dos filtros da página de resultado de busca */
 .formControls input.searchButton { display: none; }
+
+/* Tile Banner Rotativo */
+#content .tile[data-tile*="banner_rotativo"] {
+    margin-bottom: 0;
+    max-height: 240px;
+    overflow: hidden;
+}
+
+#content #tile_banner_rotativo {
+    position: relative;
+    width: 100%;
+    max-width: 766px;
+    height: 100%;
+    max-height: 260px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.orderTiles .button-nav,
+#tile_banner_rotativo .button-nav {
+    width: 19px;
+    height: 20px;
+    background-color: #0e561f;
+    position: absolute;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #0e561f url("++resource++brasil.gov.tiles//bull.gif") no-repeat;
+    border-right: 1px solid #446b5d;
+    bottom: 20px;
+    right: 0;
+    z-index: 3;
+}
+
+.orderTiles {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.orderTiles .button-nav {
+    width: 20px;
+    height: 20px;
+    position: static;
+}
+
+#tile_banner_rotativo .button-nav:hover,
+#tile_banner_rotativo .button-nav.activeSlide {
+    background-position: 0 100%;
+    background-color: #054112;
+}
+
+#banner1 .button-nav { right: 60px; }
+#banner2 .button-nav { right: 40px; }
+#banner3 .button-nav { right: 20px; }
+#banner4 .button-nav { right:  0px; }
+
+#tile_banner_rotativo li {
+    height: 240px;
+}
+
+.template-compose #tile_banner_rotativo li {
+    position: relative;
+    float: left;
+    width: 190px;
+}
+
+.template-compose #tile_banner_rotativo .banner,
+.template-compose #tile_banner_rotativo .banner img {
+    width: 190px;
+}
+
+.template-compose #tile_banner_rotativo .button-nav {
+    display: none;
+}
+
+#tile_banner_rotativo .banner img {
+    max-width: 766px;
+    max-height: 240px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+#tile_banner_rotativo .banner {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    max-width: 766px;
+    height: 240px;
+    z-index: 1;
+}
+
+#tile_banner_rotativo .banner.activeSlideItem { z-index: 2; }
+
+#tile_banner_rotativo .banner .descr {
+    position: absolute;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    z-index: 3;
+    width: 100%;
+    font-family: Arial;
+    max-width: 676px;
+    font-size: 10px;
+    font-style: italic;
+    color: #fff;
+    padding:0 0 0 10px;
+    bottom: 0;
+    left: 0;
+    line-height: 20px;
+}
+
+.tile-remove-item {
+    z-index: 10 !important;
+}
+
+/* Tile Banner Estatico */
+.banner-tile { float: left; }
+.banner-tile img { margin:0; }
+#content .banner-tile .copyright,
+#content .newsImageContainer .copyright,
+#content .mediacarousel .rights {
+    color: #000;
+    float: right;
+    font-style: italic;
+    font-family: Arial;
+    font-size: .9em;
+    line-height: 2em;
+    margin: 0 .8em 0 0;
+}
+
+#content .mediacarousel .mediacarousel-tile+div .rights {
+    color: #000;
+    float: right;
+    font-style: italic;
+    font-family: Arial;
+    font-size: .9em;
+    line-height: 2em;
+    margin: 0 .8em 0 0;
+}
+
+.banner-tile .copyright + a,
+.newsImageContainer .copyright + a { display: block; clear:both; }
+
+/* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
+#content .newsImageContainer .carrossel-images {
+    margin: 0;
+    float: left;
+    clear: left;
+    width: 100%;
+    max-width: 200px;
+    /*display: none;*/
+}
+
+#content .newsImageContainer .carrossel-images li {
+    float: left;
+    margin: 0.5em 0.5em 0.5em 0;
+    list-style: outside none;
+}
+
+#content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
+
+#content .newsImageContainer .carrossel-images li a {
+    float:left;
+    position: relative;
+    z-index: 1;
+}
+/* credito lightbox da galeria de imagens */
+.galleria-info .copyright {
+    color: #fff;
+    font-style: italic;
+    font-family: Arial;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+/* POLL TILE */
+#content .poll-tile {
+    background-color: #eeeff1;
+    border-radius: 0.5em 0.5em 0 0;
+    border: 1px solid #d4d5d7; }
+    #content .poll-tile .poll-tile-header {
+        border-bottom: 1px solid #d4d5d7;
+        padding: 0.5em 1em; }
+        #content .poll-tile .poll-tile-header>.header {
+            color: #444a53;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-transform: uppercase; }
+    #content .poll-tile .tile-content-wrapper>div {
+        padding: 0 1em; }
+    #content .poll-tile .tile-content-wrapper>.poll-spinner {
+        padding: 0; }
+    #content .poll-tile .tile-content-wrapper>h3 {
+        background-color: #f8f9f9;
+        color: #365073;
+        font-size: 1em;
+        padding: 1.7em 1em; }
+    #content .poll-tile .tile-content-wrapper>h4 {
+        font-size: 1em;
+        font-weight: bold;
+        padding: 1em; }
+    #content .poll-tile .tile-content-wrapper>form>br {
+        display: none;
+    }
+    #content .poll-tile .tile-content-wrapper>form>input[type=radio] {
+        clear: both;
+        float: left;
+        margin: 1em 0 1em 1em; }
+        #content .poll-tile .tile-content-wrapper>form>input[type=radio]+span {
+            color: #335277;
+            display: block;
+            line-height: 3.3em;
+            margin-left: 2.8em; }
+    #content .poll-tile .tile-content-wrapper>form>input[type=submit] {
+        background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
+        border: none;
+        color: #fff;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 1em;
+        padding: 0.8em 0px 0.8em 3em;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%; }
+    #content .poll-tile .tile-content-wrapper>.result-text,
+    #content .poll-tile .tile-content-wrapper>.tile-poll-more {
+        text-align: right;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        padding-top: 1em; }
+    #content .poll-tile .tile-content-wrapper>.tile-poll-more {
+        padding-bottom: 1em; }
+/* POLL TILE */
