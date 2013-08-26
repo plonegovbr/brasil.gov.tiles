@@ -1,8 +1,8 @@
 Changelog
 ---------
 
-1.0a1 (unreleased)
-^^^^^^^^^^^^^^^^^^^^^^^^
+1.0rc1 (unreleased)
+^^^^^^^^^^^^^^^^^^^
 
   * Implementação de funcionalidades drag & drop no Tile Banner rotativo [felipeduardo]
   * Ajustes de CSS no Tile Media Carousel [felipeduardo]
@@ -15,5 +15,10 @@ Changelog
   * Atividade 196: Adicionar funções no tile List [rodfersou]
   * Atividade 313: Título do Media Carousel - campo foi removido do 'compor' [rodfersou]
   * Tile de enquete sempre exibir form [dbarbato]
+
+
+1.0a1 (2013-07-22)
+^^^^^^^^^^^^^^^^^^
+
   * Versão inicial do pacote
     [ericof]
