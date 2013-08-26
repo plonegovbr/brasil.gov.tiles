@@ -18,6 +18,8 @@ class BannerRotativoTileTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.request = self.layer['request']
         self.name = u"brasil.gov.tiles.banner_rotativo"
+        self.portal.invokeFactory('collective.cover.content', 'frontpage',
+                                  template_layout='Layout A')
         self.cover = self.portal['frontpage']
         self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
         self.tile = self.tile['test']
