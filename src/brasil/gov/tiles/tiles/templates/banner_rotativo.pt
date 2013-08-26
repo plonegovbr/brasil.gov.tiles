@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+
+<head>
+    <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/banner_rotativo.js"></script>
+</head>
+
+<body>
+    <ul id="tile_banner_rotativo">
+      <tal:items tal:define="results view/results;
+                             first_item python:results[0] if results else None;
+                             last_item python:results[-1] if results else None"
+                 tal:repeat="item results">
+        <li tal:define="idx repeat/item/index;
+                        idx python:idx+1"
+            tal:attributes="id string:banner$idx;
+                            data-uid python:view.get_uid(item)">
+            <a tal:attributes="href string:${item/absolute_url}/view;
+                               class python:'button-nav' + (' activeSlide' if item == first_item else '')"
+               tal:content="idx" />
+            <a tal:attributes="href string:${item/absolute_url}/view;
+                               rel string:internal;
+                               class python:'banner' + (' activeSlideItem' if item == first_item else '')">
+                <img tal:define="scale python:view.scale(item)"
+                     tal:condition="python:scale"
+                     tal:attributes="src scale/url;
+                                     alt item/title" />
+                <span class="descr"
+                      tal:content="item/title" />
+            </a>
+        </li>
+      </tal:items>
+    </ul>
+</body>
+</html>

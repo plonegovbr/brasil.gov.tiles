@@ -56,6 +56,7 @@ setup(
     extras_require={
         'test': [
             'plone.app.testing',
+            'Products.PloneFormGen',
         ]
     },
     entry_points="""
