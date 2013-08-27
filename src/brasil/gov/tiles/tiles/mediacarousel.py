@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from cgi import escape
 from collective.cover import _
+from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
 from plone.autoform import directives as form
-from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -129,6 +130,18 @@ class MediaCarouselTile(ListTile):
 
     def show_header(self):
         return self._field_is_visible('header')
+
+    def get_title(self, item):
+        title = ''
+        if self._field_is_visible('title'):
+            title = '<a href="'+item.absolute_url()+'/view">'+item.title+'</a>'
+        return title
+
+    def get_description(self, item):
+        description = ''
+        if self._field_is_visible('description'):
+            description = item.Description()
+        return description
 
     def init_js(self):
         return """

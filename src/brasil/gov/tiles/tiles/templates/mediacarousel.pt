@@ -3,60 +3,60 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="collective.cover">
-
-<head>
-  <link rel="stylesheet" type="text/css"
-      tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/galleria.classic.css" />
-  <script type="text/javascript" tal:content="structure view/init_js">
-  </script>
-</head>
-
-<body tal:define="tile_id view/id;">
-  <div class="mediacarousel"
-       tal:attributes="id string:mediacarousel-$tile_id"
-       tal:define="conf_fields view/get_configured_fields;
-                   results view/results;
-                   collection python:results[0] if results else None;
-                   items python:view.get_elements(collection)">
-    <!-- Gallery items -->
-    <tal:header define="config python:conf_fields.get('header');
-                        htmltag python:config.get('htmltag', 'h1')">
-      <h1 class="mediacarousel-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h1'" />
-      <h2 class="mediacarousel-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h2'" />
-      <h3 class="mediacarousel-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h3'" />
-      <h4 class="mediacarousel-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h4'" />
-    </tal:header>
-    <!-- Carousel items -->
-    <div tal:condition="items" tal:attributes="id string:mediacarousel-gallerie-$tile_id">
-      <tal:items repeat="item items">
-        <a tal:attributes="href python: view.get_media_url(item)">
-              <img tal:define="thumbnail python:view.thumbnail(item);
-                               uid python:view.get_uid(item);
-                               rights python:view.get_rights(item);"
-                   tal:condition="python:thumbnail and uid"
-                   tal:attributes="alt item/Description;
-                                   src thumbnail/url;
-                                   width thumbnail/width;
-                                   height thumbnail/height;
-                                   data-uid uid;
-                                   data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
-                                   data-description item/Description;
-                                   data-layer string:<div class='rights' data-index='${repeat/item/index}'>$rights</div>" />
-        </a>
-      </tal:items>
-    </div>
-    <div tal:condition="collection" class="mediacarousel-footer-container">
-      <a class="mediacarousel-footer-link" tal:content="view/data/footer_text"
-          tal:attributes="href collection/absolute_url"></a>
-    </div>
-  </div>
-</body>
+    <head>
+        <link rel="stylesheet" type="text/css"
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/galleria.classic.css" />
+        <script type="text/javascript" tal:content="structure view/init_js">
+        </script>
+    </head>
+    <body tal:define="tile_id view/id;">
+        <div class="mediacarousel"
+             tal:attributes="id string:mediacarousel-$tile_id"
+             tal:define="conf_fields view/get_configured_fields;
+                         results view/results;
+                         collection python:results[0] if results else None;
+                         items python:view.get_elements(collection)">
+            <!-- Gallery items -->
+            <tal:header tal:define="config python:conf_fields.get('header');
+                                    htmltag python:config.get('htmltag', 'h1')"
+                        tal:condition="view/show_header">
+                <h1 class="mediacarousel-tile"
+                    tal:content="view/data/header"
+                    tal:condition="python:htmltag == 'h1'" />
+                <h2 class="mediacarousel-tile"
+                    tal:content="view/data/header"
+                    tal:condition="python:htmltag == 'h2'" />
+                <h3 class="mediacarousel-tile"
+                    tal:content="view/data/header"
+                    tal:condition="python:htmltag == 'h3'" />
+                <h4 class="mediacarousel-tile"
+                    tal:content="view/data/header"
+                    tal:condition="python:htmltag == 'h4'" />
+            </tal:header>
+            <!-- Carousel items -->
+            <div tal:condition="items"
+                 tal:attributes="id string:mediacarousel-gallerie-$tile_id">
+                <tal:items tal:repeat="item items">
+                    <a tal:attributes="href python: view.get_media_url(item)">
+                        <img tal:define="thumbnail python:view.thumbnail(item);
+                                         uid python:view.get_uid(item);
+                                         rights python:view.get_rights(item);"
+                             tal:condition="python:thumbnail and uid"
+                             tal:attributes="alt python:view.get_description(item);
+                                             src thumbnail/url;
+                                             width thumbnail/width;
+                                             height thumbnail/height;
+                                             data-uid uid;
+                                             data-title python:view.get_title(item);
+                                             data-description python:view.get_description(item);
+                                             data-layer string:<div class='rights' data-index='${repeat/item/index}'>$rights</div>" />
+                    </a>
+                </tal:items>
+            </div>
+            <div tal:condition="collection" class="mediacarousel-footer-container">
+                <a class="mediacarousel-footer-link" tal:content="view/data/footer_text"
+                   tal:attributes="href collection/absolute_url"></a>
+            </div>
+        </div>
+    </body>
 </html>
