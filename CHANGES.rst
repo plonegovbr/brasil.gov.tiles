@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+  * Alterado para esconder o cabeçalho, título e descrição do player quando escondido
+    na aba layout. [rodfersou]
 
 
 1.0rc1 (2013-08-26)
@@ -28,3 +29,5 @@ Changelog
 
   * Versão inicial do pacote
     [ericof]
+
+.. _`#7`: https://github.com/plonegovbr/brasil.gov.tiles/issues/7
