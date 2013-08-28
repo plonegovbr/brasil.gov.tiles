@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
+  (closes `#8`_). [rodfersou]
 
 
 1.0rc1 (2013-08-26)
@@ -28,3 +29,5 @@ Changelog
 
   * Versão inicial do pacote
     [ericof]
+
+.. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
