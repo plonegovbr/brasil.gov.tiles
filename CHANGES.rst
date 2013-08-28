@@ -6,7 +6,7 @@ Changelog
 
   * Alterado para esconder o cabeçalho, título e descrição do player quando escondido
     na aba layout. [rodfersou]
-
+  * Removido o 'buraco' quando não visualizando título e descrição (remoção de visualização por configs aba layout). [rennanrodrigues]
 
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
