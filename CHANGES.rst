@@ -4,17 +4,15 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-<<<<<<< HEAD
+  * Removido o 'buraco' quando não visualizando título e descrição
+  (remoção de visualização por configs aba layout) (closes `#7`_). [rennanrodrigues]
+  * Alterado para esconder o cabeçalho, título e descrição do player quando escondido
+    na aba layout. [rodfersou]
   * Adicionado título no tile list (closes `#12`_). [rodfersou]
   * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
   * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
     (closes `#8`_). [rodfersou]
 
-=======
-  * Alterado para esconder o cabeçalho, título e descrição do player quando escondido
-    na aba layout. [rodfersou]
-  * Removido o 'buraco' quando não visualizando título e descrição (remoção de visualização por configs aba layout). [rennanrodrigues]
->>>>>>> issue_7
 
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
@@ -38,11 +36,7 @@ Changelog
   * Versão inicial do pacote
     [ericof]
 
-<<<<<<< HEAD
+.. _`#7`: https://github.com/plonegovbr/brasil.gov.tiles/issues/7
 .. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
 .. _`#12`: https://github.com/plonegovbr/brasil.gov.tiles/issues/12
-
-=======
-.. _`#7`: https://github.com/plonegovbr/brasil.gov.tiles/issues/7
->>>>>>> issue_7
