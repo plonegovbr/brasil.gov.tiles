@@ -350,6 +350,8 @@ $(document).ready(function() {
                             divGalleriaContainer.height(divGalleriaContainerHeight - 20);
                             divMediacarousel.height(divMediacarouselHeight - 20);
                             divGalleriaInfo.css('bottom', 20);
+                        } if ( ($('.galleria-info-text .rights').text() == 'Crédito do vídeo') ) {
+                            $('.galleria-thumbnails-container').css('bottom',15);
                         }
                     }
 
