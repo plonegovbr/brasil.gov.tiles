@@ -4,7 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+  * Adicionado título no tile list (closes `#12`_). [rodfersou]
 
 
 1.0rc1 (2013-08-26)
@@ -28,3 +28,5 @@ Changelog
 
   * Versão inicial do pacote
     [ericof]
+
+.. _`#12`: https://github.com/plonegovbr/brasil.gov.tiles/issues/12
