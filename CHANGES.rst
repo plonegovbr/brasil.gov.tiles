@@ -4,8 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
-  (closes `#8`_). [rodfersou]
+  * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
+  * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
+    (closes `#8`_). [rodfersou]
 
 
 1.0rc1 (2013-08-26)
@@ -31,3 +32,4 @@ Changelog
     [ericof]
 
 .. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
+.. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
