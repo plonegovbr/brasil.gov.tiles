@@ -4,6 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Adicionado título no tile list (closes `#12`_). [rodfersou]
   * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
   * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
   (closes `#8`_). [rodfersou]
@@ -33,3 +34,4 @@ Changelog
 
 .. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
+.. _`#12`: https://github.com/plonegovbr/brasil.gov.tiles/issues/12
