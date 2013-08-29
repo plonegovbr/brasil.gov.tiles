@@ -39,3 +39,14 @@ class EmbedTile(PersistentCoverTile):
         return not (self.data.get('embed', None) or
                     self.data.get('title', None) or
                     self.data.get('description', None))
+
+    def at_compose_tab(self):
+        """Check if you are at compose tab
+        """
+        # Get parent request
+        last_url = self.request['PARENT_REQUEST']
+        # Get url from parent request
+        last_url = last_url.getURL()
+        # Get last item
+        last_url = last_url.split('/')[-1]
+        return (last_url == 'compose')
