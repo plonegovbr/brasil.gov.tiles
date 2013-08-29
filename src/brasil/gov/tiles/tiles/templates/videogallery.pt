@@ -21,8 +21,9 @@
        tal:condition="collection">
 
     <!-- Gallery items -->
-    <tal:header define="config python:conf_fields.get('header');
-                        htmltag python:config.get('htmltag', 'h1')">
+    <tal:header define="config python:conf_fields.get('header', None);
+                        htmltag python:config.get('htmltag', 'h1') if config else 'h1'"
+                condition="view/show_header">
       <h1 class="gallery-tile"
           tal:content="view/data/header"
           tal:condition="python:htmltag == 'h1'" />
