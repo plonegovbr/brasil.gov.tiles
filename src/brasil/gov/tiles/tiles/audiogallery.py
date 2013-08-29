@@ -101,6 +101,9 @@ class AudioGalleryTile(ListTile):
             url = item.absolute_url()
         return url
 
+    def show_header(self):
+        return self._field_is_visible('header')
+
     def init_js(self):
         return """
 $(document).ready(function() {
