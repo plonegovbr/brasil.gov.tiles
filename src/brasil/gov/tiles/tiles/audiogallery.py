@@ -96,7 +96,7 @@ class AudioGalleryTile(ListTile):
         url = ''
 
         if (item.portal_type == 'Audio'):
-            url = [a.absolute_url() for a in item.listFolderContents()][0]
+            url = ';'.join([a.absolute_url() for a in item.listFolderContents()])
         else:
             url = item.absolute_url()
         return url

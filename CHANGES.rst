@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Corrigido tile audiogallery para utilizar fallbacks de formato cadastrados no
+    tipo Audio (closes `#16`_). [rodfersou]
   * Corrigido tile audiogallery para tocar tipo de dados Audio (closes `#14`_).
     [rodfersou]
   * Removido o 'buraco' quando não visualizando título e descrição
@@ -43,3 +45,4 @@ Changelog
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
 .. _`#12`: https://github.com/plonegovbr/brasil.gov.tiles/issues/12
 .. _`#14`: https://github.com/plonegovbr/brasil.gov.tiles/issues/14
+.. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16
