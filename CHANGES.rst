@@ -32,3 +32,4 @@ Changelog
     [ericof]
 
 .. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
+.. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
