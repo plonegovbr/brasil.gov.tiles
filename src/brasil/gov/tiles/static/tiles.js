@@ -336,6 +336,23 @@ $(document).ready(function() {
                             divGalleriaContainerHeight = divGalleriaContainer.height();
                         divMediacarousel.height(divMediacarouselHeight + 20);
                         divGalleriaContainer.height(divGalleriaContainerHeight + 20);
+
+                        // Remove the blank area devoid of content
+                        var divGalleriaInfo = $('.mediacarousel .galleria-info');
+                        var divGalleriaInfoHeight = divGalleriaInfo.height();
+
+                        if ( $('.galleria-info-description').text() == "" ) {
+                            divGalleriaContainer.height(divGalleriaContainerHeight - 32);
+                            divMediacarousel.height(divMediacarouselHeight - 32);
+                            divGalleriaInfo.css('bottom', 32);
+
+                        } if ( $('.galleria-info-title').text() == "" ) {
+                            divGalleriaContainer.height(divGalleriaContainerHeight - 20);
+                            divMediacarousel.height(divMediacarouselHeight - 20);
+                            divGalleriaInfo.css('bottom', 20);
+                        } if ( ($('.galleria-info-text .rights').text() == 'Crédito do vídeo') ) {
+                            $('.galleria-thumbnails-container').css('bottom',15);
+                        }
                     }
 
                 });
