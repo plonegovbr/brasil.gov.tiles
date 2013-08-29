@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
+  * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
+  * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
   (closes `#8`_). [rodfersou]
 
 
