@@ -87,8 +87,19 @@ class AudioGalleryTile(ListTile):
 
         return results
 
-    def show_header(self):
-        return self._field_is_visible('header')
+    def get_item_url(self, item):
+        """
+        Return the audio file url
+        Arguments:
+        - `item`: audio item
+        """
+        url = ''
+
+        if (item.portal_type == 'Audio'):
+            url = [a.absolute_url() for a in item.listFolderContents()][0]
+        else:
+            url = item.absolute_url()
+        return url
 
     def init_js(self):
         return """
