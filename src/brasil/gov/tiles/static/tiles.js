@@ -162,7 +162,7 @@ $(document).ready(function() {
                         media['supplied'] += media_type;
 
                     }
-                }                
+                }
 
                 return media;
             },
@@ -316,6 +316,7 @@ $(document).ready(function() {
                 Galleria.configure({
                     imageCrop: 'width',
                     _toggleInfo: false,
+                    debug: false
                 });
 
                 Galleria.on('image', function(e) {
