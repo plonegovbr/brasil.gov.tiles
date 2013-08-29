@@ -140,13 +140,8 @@ $(document).ready(function() {
 
             /**
              * Construct the setMedia list of option and the supplied list
-             * XXX at this point is not really used because a bug in the player
              **/
             get_media: function(urls){
-                console.log('get_media urls');
-
-                //right now works for only 1 media type but should be modify
-                //to iterate over urls and provide multiple supplied and sources
                 var media = {'media_urls':{}, 'supplied':''};
                 var media_type, url, _i, _len;
 
