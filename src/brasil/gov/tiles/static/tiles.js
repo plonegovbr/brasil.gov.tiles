@@ -94,24 +94,6 @@ $(document).ready(function() {
         resize();
     }
 
-
-    //video player tile
-    /*
-    if($('.video-tile')[0] !== undefined ) {
-        $('.video-tile .video-container').height(function(){
-            var video = $(this).find('iframe');
-            var oh = video.height();
-            var ow = video.width();
-            var proportion = ow/oh;
-            video.width('100%');
-            //video.height(video.width()/proportion);
-
-            // aspect ratio calculator for standard size
-            video.height(video.width()* 3 / 4);
-        });
-    }
-    */
-
 });
 
 
@@ -301,9 +283,13 @@ $(document).ready(function() {
                 self.setup_size();
 
                 Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
+
                 Galleria.configure({
-                    imageCrop: 'width',
-                    _toggleInfo: false,
+                    _toggleInfo : false, // Set this to false if you want the caption to show always
+                    debug       : false, // Set this to false to prevent debug messages
+                    imageCrop   : true,  // Defines how Galleria will crop the image
+                    wait        : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
+                    responsive  : true   // This option sets thew Gallery in responsive mode
                 });
 
                 Galleria.on('image', function(e) {
@@ -328,42 +314,17 @@ $(document).ready(function() {
                         $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
                     }
 
-                    if ($('.galleria-container.galleria-height-resize').length == 0) {
-                        $('.galleria-container').addClass('galleria-height-resize');
-                        var divMediacarousel = $('.mediacarousel [id*="mediacarousel-gallerie-"]'),
-                            divGalleriaContainer = $('.galleria-container');
-                        var divMediacarouselHeight = divMediacarousel.height(),
-                            divGalleriaContainerHeight = divGalleriaContainer.height();
-                        divMediacarousel.height(divMediacarouselHeight + 20);
-                        divGalleriaContainer.height(divGalleriaContainerHeight + 20);
-
-                        // Remove the blank area devoid of content
-                        var divGalleriaInfo = $('.mediacarousel .galleria-info');
-                        var divGalleriaInfoHeight = divGalleriaInfo.height();
-
-                        if ( $('.galleria-info-description').text() == "" ) {
-                            divGalleriaContainer.height(divGalleriaContainerHeight - 32);
-                            divMediacarousel.height(divMediacarouselHeight - 32);
-                            divGalleriaInfo.css('bottom', 32);
-
-                        } if ( $('.galleria-info-title').text() == "" ) {
-                            divGalleriaContainer.height(divGalleriaContainerHeight - 20);
-                            divMediacarousel.height(divMediacarouselHeight - 20);
-                            divGalleriaInfo.css('bottom', 20);
-                        } if ( ($('.galleria-info-text .rights').text() == 'Crédito do vídeo') ) {
-                            $('.galleria-thumbnails-container').css('bottom',15);
-                        }
-                    }
-
                 });
 
                 Galleria.run('#' + galleria_id);
+
+                // Falta modificar a posicao da div .galleria-thumbnails-container para baixo da div .galleria-info
             },
 
             setup_size: function() {
                 //proportions is going to be 4/3, requeriment defined.
                 var width = mediacarousel.width();
-                mediacarousel.height(width/1.33333 + 60);
+                mediacarousel.height((width*3) / 4);
             }
         });
         self.init();
