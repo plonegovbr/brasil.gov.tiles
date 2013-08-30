@@ -3,12 +3,10 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="brasil.gov.tiles">
-
     <head>
         <script type="text/javascript" tal:content="structure view/init_js">
         </script>
     </head>
-
     <body tal:define="tile_id view/id;">
         <div class="audiogallery-tile"
              tal:attributes="id string:audiogallery-$tile_id"
@@ -41,7 +39,7 @@
             <!-- Audio item player -->
             <div class="audiogallery-player-container" tal:define="first_item python:items[0]">
                 <div class="jp-jplayer"
-                     tal:attributes="data-audio-url python:first_item.absolute_url();
+                     tal:attributes="data-audio-url python:view.get_item_url(first_item);
                                      data-audio-title first_item/title;
                                      id string:audiogallery_jplayer_$tile_id"></div>
                 <div class="jp-audio" tal:attributes="id string:audiogallery_jpcontainer_$tile_id">
@@ -75,30 +73,26 @@
                         </div>
                     </div>
                 </div>
-
                 <div>
                     <h4 class="audiogallery-item-title" tal:content="first_item/title"></h4>
                 </div>
-
             </div>
             <div class="audiogallery-items-container">
                 <ul>
                     <tal:block tal:repeat="item items">
                         <li tal:attributes="class python:'selected' if repeat['item'].start else ''">
-                            <a class="audiogallery-item" tal:attributes="data-audio-url item/absolute_url;
-                                                                         href item/absolute_url;
+                            <a class="audiogallery-item" tal:attributes="data-audio-url python:view.get_item_url(item);
+                                                                         href python:view.get_item_url(item);
                                                                          title item/description"
                                tal:content="item/title"></a>
                         </li>
                     </tal:block>
                 </ul>
             </div>
-
             <div class="audiogallery-footer-container">
                 <a class="audiogallery-footer-link" tal:content="view/data/footer_text"
                    tal:attributes="href collection/absolute_url"></a>
             </div>
-
         </div>
     </body>
 </html>

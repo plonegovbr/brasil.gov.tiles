@@ -5,6 +5,10 @@ Changelog
 ^^^^^^^^^^^^^^^^^^^
 
   * Retirado modo debug do mediacarousel (closes `#6`_). [rodfersou]
+  * Corrigido tile audiogallery para utilizar fallbacks de formato cadastrados no
+    tipo Audio (closes `#16`_). [rodfersou]
+  * Corrigido tile audiogallery para tocar tipo de dados Audio (closes `#14`_).
+    [rodfersou]
   * Adicionado título no tile list (closes `#12`_). [rodfersou]
   * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
   * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
@@ -37,3 +41,5 @@ Changelog
 .. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
 .. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
 .. _`#12`: https://github.com/plonegovbr/brasil.gov.tiles/issues/12
+.. _`#14`: https://github.com/plonegovbr/brasil.gov.tiles/issues/14
+.. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16

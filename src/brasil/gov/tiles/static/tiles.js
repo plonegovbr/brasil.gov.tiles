@@ -131,7 +131,7 @@ $(document).ready(function() {
                         $(this).jPlayer("setMedia", media.media_urls);
                     },
                     swfPath: "/++resource++brasil.gov.tiles",
-                    supplied: 'mp3,m4a,oga,webma',
+                    supplied: media.supplied,
                     cssSelectorAncestor: cssSelectorAncestor,
                     solution:"html,flash",
                     wmode: "window"
@@ -140,18 +140,25 @@ $(document).ready(function() {
 
             /**
              * Construct the setMedia list of option and the supplied list
-             * XXX at this point is not really used because a bug in the player
              **/
             get_media: function(urls){
-                //right now works for only 1 media type but should be modify
-                //to iterate over urls and provide multiple supplied and sources
                 var media = {'media_urls':{}, 'supplied':''};
-                var media_type = self.get_media_type(urls);
+                var media_type, url, _i, _len;
 
-                if (media_type){
-                    media['media_urls'][media_type] = urls;
-                    media['supplied'] = media_type;
-                }
+                urls = urls.split(';');
+                for (_i = 0, _len = urls.length; _i < _len; _i++) {
+                    url = urls[_i];
+                    media_type = self.get_media_type(url);
+                    if (media_type){
+                        media['media_urls'][media_type] = url;
+                        if (media['supplied']) {
+                            media['supplied'] += ', ';
+                        }
+                        media['supplied'] += media_type;
+
+                    }
+                }                
+
                 return media;
             },
 
