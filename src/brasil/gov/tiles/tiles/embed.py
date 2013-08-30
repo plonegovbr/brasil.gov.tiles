@@ -44,9 +44,7 @@ class EmbedTile(PersistentCoverTile):
         """Check if you are at compose tab
         """
         # Get parent request
-        last_url = self.request['PARENT_REQUEST']
-        # Get url from parent request
-        last_url = last_url.getURL()
+        last_url = self.request['PATH_TRANSLATED']
         # Get last item
         last_url = last_url.split('/')[-1]
         return (last_url == 'compose')
