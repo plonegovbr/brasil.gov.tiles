@@ -8,7 +8,7 @@
 	display: block;
 	clear: both;
 	float: left;
-	width: 100%;
+	width: 100% !important;
 	padding: 0;
 	border: 0 none;
 }
