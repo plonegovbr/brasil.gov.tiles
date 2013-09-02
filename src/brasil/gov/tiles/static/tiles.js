@@ -283,40 +283,40 @@ $(document).ready(function() {
                 Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
 
                 Galleria.configure({
-                    _toggleInfo : false, // Set this to false if you want the caption to show always
-                    debug       : false, // Set this to false to prevent debug messages
-                    imageCrop   : false,  // Defines how Galleria will crop the image
-                    wait        : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
-                    responsive  : false   // This option sets thew Gallery in responsive mode
+                    _toggleInfo: false, // Set this to false if you want the caption to show always
+                    debug      : false, // Set this to false to prevent debug messages
+                    imageCrop  : false, // Defines how Galleria will crop the image
+                    wait       : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
+                    responsive : false  // This option sets thew Gallery in responsive mode
                 });
 
                 Galleria.on('image', function(e) {
-                    var mediacarousel = '#'+galleria_id;
+                    var mediacarousel = '#'+this._target.id;
 
-                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
-                    if (($('.galleria-layer>.rights', mediacarousel).length > 0) &&
-                        ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0)) {
-                        $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).remove();
-                    }
+                    if (!$(mediacarousel).hasClass('image')){
+                        $(mediacarousel).addClass('image');
+                        console.log('#'+this._target.id);
 
-                    // Move the layer element to the right place
-                    if ($('.galleria-layer>.rights', mediacarousel).length > 0) {
-                        $('.galleria-info-text', mediacarousel).append($('.galleria-layer>.rights', mediacarousel));
-                    }
+                        // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
+                        if (($('.galleria-layer>.rights', mediacarousel).length > 0) &&
+                            ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0)) {
+                            $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).remove();
+                        }
 
-                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
-                    if ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0) {
-                        $('.rights', mediacarousel).each(function(){
-                            $(this).css('display', 'none');
-                        });
-                        $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
-                    }
+                        // Move the layer element to the right place
+                        if ($('.galleria-layer>.rights', mediacarousel).length > 0) {
+                            $('.galleria-info-text', mediacarousel).append($('.galleria-layer>.rights', mediacarousel));
+                        }
 
-                    if (!$(mediacarousel).hasClass('ready')){
-                        $(mediacarousel).addClass('ready');
+                        // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
+                        if ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0) {
+                            $('.rights', mediacarousel).each(function(){
+                                $(this).css('display', 'none');
+                            });
+                            $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
+                        }
 
-                        $('.galleria-thumbnails-container', mediacarousel).insertAfter('.galleria-info', mediacarousel);
-
+                        $('.galleria-thumbnails-container', mediacarousel).insertAfter($('.galleria-info', mediacarousel));
                         var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
                                            $('.galleria-thumbnails-container', mediacarousel).height();
                         var bottomContainer = $(mediacarousel).offset().top +
@@ -326,34 +326,34 @@ $(document).ready(function() {
                                                bottomContainer)         +
                                               ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
                                               8;
-
                         $(mediacarousel).animate({
                             height: heightContainer
                         });
-
                         $('.galleria-thumbnails-container, .galleria-info').animate({
                             opacity: 1
                         });
                     }
                 });
 
-                Galleria.run('#' + galleria_id);
+                Galleria.run('#'+galleria_id);
 
                 Galleria.ready(function() {
-                    var galleriaContainer       = $('#'+galleria_id),
+                    var galleriaContainer       = $('#'+this._target.id),
                         galleriaContainerWidth  = galleriaContainer.width(),
                         galleriaContainerHeight = (galleriaContainerWidth*3)/4;
-                    this.resize({
-                        width: galleriaContainerWidth,
-                        height: galleriaContainerHeight
-                    });
+                    if (!galleriaContainer.hasClass('.ready')) {
+                        galleriaContainer.addClass('.ready');
+                        this.resize({
+                            width: galleriaContainerWidth,
+                            height: galleriaContainerHeight
+                        });
+                    }
                 });
 
                 // Falta modificar a posicao da div .galleria-thumbnails-container para baixo da div .galleria-info
             },
         });
         self.init();
-
     }
     $.fn.mediacarousel = function() {
 
