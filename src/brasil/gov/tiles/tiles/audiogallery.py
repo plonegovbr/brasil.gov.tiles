@@ -13,6 +13,11 @@ class IAudioGalleryTile(IListTile):
     """
     """
 
+    header = schema.TextLine(
+        title=_(u'Header'),
+        required=False,
+    )
+
     title = schema.TextLine(
         title=_(u'Title'),
         required=False,
@@ -44,10 +49,12 @@ class AudioGalleryTile(ListTile):
         # XXX
 
         self.set_limit()
+        header = obj.Title()  # use collection's title as header
         uuid = IUUID(obj, None)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
+        old_data['header'] = header
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
@@ -79,6 +86,23 @@ class AudioGalleryTile(ListTile):
                     results.append(catalog_results[i].getObject())
 
         return results
+
+    def get_item_url(self, item):
+        """
+        Return the audio file url
+        Arguments:
+        - `item`: audio item
+        """
+        url = ''
+
+        if (item.portal_type == 'Audio'):
+            url = ';'.join([a.absolute_url() for a in item.listFolderContents()])
+        else:
+            url = item.absolute_url()
+        return url
+
+    def show_header(self):
+        return self._field_is_visible('header')
 
     def init_js(self):
         return """

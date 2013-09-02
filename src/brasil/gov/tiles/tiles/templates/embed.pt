@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+    <body tal:define="is_empty view/is_empty">
+        <p tal:condition="is_empty" i18n:translate="">
+            Please edit the tile to add the code to be embedded.
+        </p>
+        <div tal:condition="not: is_empty">
+            <tal:fields repeat="field view/get_configured_fields">
+                <tal:embed condition="python:field['id'] == 'embed' and not view.at_compose_tab()">
+                    <!-- FIXME -->
+                    <div tal:replace="structure python:field['content']" />
+                </tal:embed>
+                <tal:embed condition="python:field['id'] == 'embed' and view.at_compose_tab()">
+                    <!-- FIXME -->
+                    <div tal:replace="string:Video inserido com sucesso (acesse a aba view para ver funcionando)" />
+                </tal:embed>
+                <tal:title define="htmltag python:field.get('htmltag', 'h1')"
+                           condition="python:field['id'] == 'title'">
+                    <h1 tal:condition="python:htmltag == 'h1'"
+                        tal:content="python:field['content']" />
+                    <h2 tal:condition="python:htmltag == 'h2'"
+                        tal:content="python:field['content']" />
+                    <h3 tal:condition="python:htmltag == 'h3'"
+                        tal:content="python:field['content']" />
+                </tal:title>
+                <tal:description condition="python:field['id'] == 'description'">
+                    <!-- FIXME -->
+                    <p tal:content="python:field['content']">Summary</p>
+                </tal:description>
+                <tal:last condition="repeat/field/end">
+                    <div class="visualClear"><!-- --></div>
+                </tal:last>
+            </tal:fields>
+        </div>
+    </body>
+</html>

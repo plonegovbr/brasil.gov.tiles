@@ -9,6 +9,18 @@ Changelog
     escondido na aba layout. [rodfersou]
   * Removido espaçamento que estava sendo exibido quando não visualizando título e
     descrição (remoção de visualização por configs aba layout). [rennanrodrigues]
+  * Alterado para não carregar conteúdo do tile embed na aba compor (closes `#20`_).
+    [rodfersou]
+  * Retirado modo debug do mediacarousel (closes `#6`_). [rodfersou]
+
+  * Corrigido tile audiogallery para utilizar fallbacks de formato cadastrados no
+    tipo Audio (closes `#16`_). [rodfersou]
+  * Corrigido tile audiogallery para tocar tipo de dados Audio (closes `#14`_).
+    [rodfersou]
+  * Adicionado título no tile list (closes `#12`_). [rodfersou]
+  * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
+  * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
+  (closes `#8`_). [rodfersou]
 
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
@@ -32,4 +44,11 @@ Changelog
   * Versão inicial do pacote
     [ericof]
 
+.. _`#6`: https://github.com/plonegovbr/brasil.gov.tiles/issues/6
 .. _`#7`: https://github.com/plonegovbr/brasil.gov.tiles/issues/7
+.. _`#8`: https://github.com/plonegovbr/brasil.gov.tiles/issues/8
+.. _`#10`: https://github.com/plonegovbr/brasil.gov.tiles/issues/10
+.. _`#12`: https://github.com/plonegovbr/brasil.gov.tiles/issues/12
+.. _`#14`: https://github.com/plonegovbr/brasil.gov.tiles/issues/14
+.. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16
+.. _`#20`: https://github.com/plonegovbr/brasil.gov.tiles/issues/20
