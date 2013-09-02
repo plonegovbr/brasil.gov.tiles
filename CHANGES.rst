@@ -11,7 +11,7 @@ Changelog
     tipo Audio (closes `#16`_). [rodfersou]
   * Corrigido tile audiogallery para tocar tipo de dados Audio (closes `#14`_).
     [rodfersou]
-  * Removido espaçanto que estava sendo exibido quando não visualizando título e
+  * Removido espaçamento que estava sendo exibido quando não visualizando título e
     descrição (closes `#7`_). [rennanrodrigues]
   * Aumentada a altura mínima do elemento da galleria-container (closes `#7`_). [rennanrodrigues]
   * Alterado para esconder o cabeçalho, título e descrição do player quando escondido
