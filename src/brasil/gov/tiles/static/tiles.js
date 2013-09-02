@@ -94,24 +94,86 @@ $(document).ready(function() {
         resize();
     }
 
+    if ($('.mediacarousel-tile')[0] !== undefined) {
+        var carouselResponsiveResize, root;
 
-    //video player tile
-    /*
-    if($('.video-tile')[0] !== undefined ) {
-        $('.video-tile .video-container').height(function(){
-            var video = $(this).find('iframe');
-            var oh = video.height();
-            var ow = video.width();
-            var proportion = ow/oh;
-            video.width('100%');
-            //video.height(video.width()/proportion);
+        root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-            // aspect ratio calculator for standard size
-            video.height(video.width()* 3 / 4);
+        root.CarouselResponsiveResize = function () {
+            var _Singleton, _base;
+            _Singleton = (function () {
+                function _Singleton() {}
+
+                _Singleton.prototype.qtd_coluna_anterior = '';
+                _Singleton.prototype.scrollbar = false;
+
+                _Singleton.prototype.resize = function () {
+                    var qtd_coluna_atual;
+
+                    qtd_coluna_atual = 1;
+
+                    if ($(window).width() > 480) {
+                        qtd_coluna_atual = 2;
+                    }
+
+                    // 3 columns, 460 + 30 padding
+                    if ($(window).width() > 960) {
+                        qtd_coluna_atual = 3;
+                    }
+
+                    if (this.qtd_coluna_anterior !== qtd_coluna_atual) {
+                        this.qtd_coluna_anterior = qtd_coluna_atual;
+                        
+                        $('.mediacarousel-tile').each(function(i) {
+                            var g = Galleria.get(i);
+                            if (g) {
+                                var mediacarousel = '#' + g._target.id;
+                                g.resize({
+                                    width: g._stageWidth,
+                                    height: g._stageWidth*3/4
+                                });
+                                $(mediacarousel).css({
+                                    height: g._stageWidth*3/4
+                                });
+
+                                var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
+                                    $('.galleria-thumbnails-container', mediacarousel).height();
+                                var bottomContainer = $(mediacarousel).offset().top +
+                                    $(mediacarousel).height();
+                                var heightContainer = $(mediacarousel).height() +
+                                    (bottomThumbs             -
+                                     bottomContainer)         +
+                                    ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
+                                    8;
+                                $(mediacarousel).css({
+                                    height: heightContainer
+                                });
+                            }
+                        });
+                    }
+                };
+
+                return _Singleton;
+            })();
+
+
+            if ((_base = root.CarouselResponsiveResize).instance == null) {
+                _base.instance = new _Singleton();
+            }
+            return root.CarouselResponsiveResize.instance;
+        };
+
+        var resize = function () {
+            carouselResponsiveResize = new root.CarouselResponsiveResize();
+            carouselResponsiveResize.resize();
+        }
+
+        $(window).resize(function () {
+            resize();
         });
-    }
-    */
 
+        resize();
+    }
 });
 
 
@@ -305,17 +367,18 @@ $(document).ready(function() {
 
         $.extend(self, {
             init: function(){
-                self.setup_size();
-
                 Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
+
                 Galleria.configure({
-                    imageCrop: 'width',
-                    _toggleInfo: false,
-                    debug: false,
+                    _toggleInfo: false, // Set this to false if you want the caption to show always
+                    debug      : false, // Set this to false to prevent debug messages
+                    imageCrop  : false, // Defines how Galleria will crop the image
+                    wait       : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
+                    responsive : false  // This option sets thew Gallery in responsive mode
                 });
 
                 Galleria.on('image', function(e) {
-                    var mediacarousel = '#'+galleria_id;
+                    var mediacarousel = '#'+this._target.id;
 
                     // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
                     if (($('.galleria-layer>.rights', mediacarousel).length > 0) &&
@@ -336,46 +399,46 @@ $(document).ready(function() {
                         $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
                     }
 
-                    if ($('.galleria-container.galleria-height-resize').length == 0) {
-                        $('.galleria-container').addClass('galleria-height-resize');
-                        var divMediacarousel = $('.mediacarousel [id*="mediacarousel-gallerie-"]'),
-                            divGalleriaContainer = $('.galleria-container');
-                        var divMediacarouselHeight = divMediacarousel.height(),
-                            divGalleriaContainerHeight = divGalleriaContainer.height();
-                        divMediacarousel.height(divMediacarouselHeight + 20);
-                        divGalleriaContainer.height(divGalleriaContainerHeight + 20);
 
-                        // Remove the blank area devoid of content
-                        var divGalleriaInfo = $('.mediacarousel .galleria-info');
-                        var divGalleriaInfoHeight = divGalleriaInfo.height();
+                    if (!$(mediacarousel).hasClass('image')){
+                        $(mediacarousel).addClass('image');
 
-                        if ( $('.galleria-info-description').text() == "" ) {
-                            divGalleriaContainer.height(divGalleriaContainerHeight - 32);
-                            divMediacarousel.height(divMediacarouselHeight - 32);
-                            divGalleriaInfo.css('bottom', 32);
-
-                        } if ( $('.galleria-info-title').text() == "" ) {
-                            divGalleriaContainer.height(divGalleriaContainerHeight - 20);
-                            divMediacarousel.height(divMediacarouselHeight - 20);
-                            divGalleriaInfo.css('bottom', 20);
-                        } if ( ($('.galleria-info-text .rights').text() == 'Crédito do vídeo') ) {
-                            $('.galleria-thumbnails-container').css('bottom',15);
-                        }
+                        $('.galleria-thumbnails-container', mediacarousel).insertAfter($('.galleria-info', mediacarousel));
+                        var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
+                                           $('.galleria-thumbnails-container', mediacarousel).height();
+                        var bottomContainer = $(mediacarousel).offset().top +
+                                              $(mediacarousel).height();
+                        var heightContainer = $(mediacarousel).height() +
+                                              (bottomThumbs             -
+                                               bottomContainer)         +
+                                              ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
+                                              8;
+                        $(mediacarousel).animate({
+                            height: heightContainer
+                        });
+                        $('.galleria-thumbnails-container, .galleria-info').animate({
+                            opacity: 1
+                        });
                     }
-
                 });
 
-                Galleria.run('#' + galleria_id);
-            },
+                Galleria.run('#'+galleria_id);
 
-            setup_size: function() {
-                //proportions is going to be 4/3, requeriment defined.
-                var width = mediacarousel.width();
-                mediacarousel.height(width/1.33333 + 60);
-            }
+                Galleria.ready(function() {
+                    var galleriaContainer = $('#'+this._target.id);
+                    if (!galleriaContainer.hasClass('ready')) {
+                        galleriaContainer.addClass('ready');
+                        var galleriaContainerWidth  = galleriaContainer.width(),
+                            galleriaContainerHeight = (galleriaContainerWidth*3)/4;
+                        this.resize({
+                            width: galleriaContainerWidth,
+                            height: galleriaContainerHeight
+                        });
+                    }
+                });
+            },
         });
         self.init();
-
     }
     $.fn.mediacarousel = function() {
 
@@ -390,6 +453,5 @@ $(document).ready(function() {
             $(this).data("mediacarousel", el);
 
         });
-
     };
 })(jQuery);
