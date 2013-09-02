@@ -49,7 +49,7 @@
                                              data-uid uid;
                                              data-title python:view.get_title(item);
                                              data-description python:view.get_description(item);
-                                             data-layer string:<div class='rights' data-index='${repeat/item/index}'>$rights</div>" />
+                                             data-layer string:<div class='rights' style='display:none' data-index='${repeat/item/index}'>$rights</div>" />
                     </a>
                 </tal:items>
             </div>

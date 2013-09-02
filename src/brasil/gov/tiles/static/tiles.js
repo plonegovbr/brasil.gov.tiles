@@ -287,34 +287,34 @@ $(document).ready(function() {
                     debug      : false, // Set this to false to prevent debug messages
                     imageCrop  : false, // Defines how Galleria will crop the image
                     wait       : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
-                    responsive : false  // This option sets thew Gallery in responsive mode
+                    responsive : true   // This option sets thew Gallery in responsive mode
                 });
 
                 Galleria.on('image', function(e) {
                     var mediacarousel = '#'+this._target.id;
 
+                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
+                    if (($('.galleria-layer>.rights', mediacarousel).length > 0) &&
+                        ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0)) {
+                        $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).remove();
+                    }
+
+                    // Move the layer element to the right place
+                    if ($('.galleria-layer>.rights', mediacarousel).length > 0) {
+                        $('.galleria-info-text', mediacarousel).append($('.galleria-layer>.rights', mediacarousel));
+                    }
+
+                    // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
+                    if ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0) {
+                        $('.rights', mediacarousel).each(function(){
+                            $(this).css('display', 'none');
+                        });
+                        $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
+                    }
+
+
                     if (!$(mediacarousel).hasClass('image')){
                         $(mediacarousel).addClass('image');
-                        console.log('#'+this._target.id);
-
-                        // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and remove duplicates
-                        if (($('.galleria-layer>.rights', mediacarousel).length > 0) &&
-                            ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0)) {
-                            $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).remove();
-                        }
-
-                        // Move the layer element to the right place
-                        if ($('.galleria-layer>.rights', mediacarousel).length > 0) {
-                            $('.galleria-info-text', mediacarousel).append($('.galleria-layer>.rights', mediacarousel));
-                        }
-
-                        // Sometimes (I don't know why) Galleria fails, so I need to check if it worked and hide duplicates
-                        if ($('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).length > 0) {
-                            $('.rights', mediacarousel).each(function(){
-                                $(this).css('display', 'none');
-                            });
-                            $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
-                        }
 
                         $('.galleria-thumbnails-container', mediacarousel).insertAfter($('.galleria-info', mediacarousel));
                         var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
