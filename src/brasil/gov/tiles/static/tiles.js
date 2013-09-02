@@ -94,6 +94,60 @@ $(document).ready(function() {
         resize();
     }
 
+    if ($('.mediacarousel-tile')[0] !== undefined) {
+        var carouselResponsiveResize, root;
+
+        root = typeof exports !== "undefined" && exports !== null ? exports : this;
+
+        root.CarouselResponsiveResize = function () {
+            var _Singleton, _base;
+            _Singleton = (function () {
+                function _Singleton() {}
+
+                _Singleton.prototype.qtd_coluna_anterior = '';
+                _Singleton.prototype.scrollbar = false;
+
+                _Singleton.prototype.resize = function () {
+                    var qtd_coluna_atual;
+
+                    qtd_coluna_atual = 1;
+
+                    if ($(window).width() > 480) {
+                        qtd_coluna_atual = 2;
+                    }
+
+                    // 3 columns, 460 + 30 padding
+                    if ($(window).width() > 960) {
+                        qtd_coluna_atual = 3;
+                    }
+
+                    if (this.qtd_coluna_anterior !== qtd_coluna_atual) {
+                        this.qtd_coluna_anterior = qtd_coluna_atual;
+                        console.log('qtd_coluna_atual: ', qtd_coluna_atual);
+                    }
+                };
+
+                return _Singleton;
+            })();
+
+
+            if ((_base = root.CarouselResponsiveResize).instance == null) {
+                _base.instance = new _Singleton();
+            }
+            return root.CarouselResponsiveResize.instance;
+        };
+
+        var resize = function () {
+            carouselResponsiveResize = new root.CarouselResponsiveResize();
+            carouselResponsiveResize.resize();
+        }
+
+        $(window).resize(function () {
+            resize();
+        });
+
+        resize();
+    }
 });
 
 
