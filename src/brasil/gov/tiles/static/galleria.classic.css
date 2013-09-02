@@ -25,8 +25,8 @@
 	width: 100%;
 	height: 100%;
 	/* 3:4 measures */
-	min-width: 320px;
-	min-height: 240px;
+	min-width: 230px;
+	min-height: 172px;
 	background-color: #000;
 	position: relative;
 	border: 0 none;
@@ -227,6 +227,11 @@
 	display: block;
 }
 
+.galleria-thumb-nav-left.disabled,
+.galleria-thumb-nav-right.disabled { display: none; }
+
+.galleria-thumb-nav-left.disabled + .galleria-thumbnails-list { margin-left: 10px; }
+
 .galleria-thumb-nav-left,
 .galleria-thumb-nav-right,
 .galleria-info-link,
@@ -246,6 +251,9 @@
 	float: left;
 	clear: both;
 	width: 100%;
+	min-width: 230px;
+	min-height: 172px;
+
 }
 
 /* titulo do container da galeria */

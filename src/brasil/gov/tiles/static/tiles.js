@@ -287,7 +287,7 @@ $(document).ready(function() {
                     debug      : false, // Set this to false to prevent debug messages
                     imageCrop  : false, // Defines how Galleria will crop the image
                     wait       : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
-                    responsive : true   // This option sets thew Gallery in responsive mode
+                    responsive : false  // This option sets thew Gallery in responsive mode
                 });
 
                 Galleria.on('image', function(e) {
