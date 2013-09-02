@@ -280,16 +280,14 @@ $(document).ready(function() {
 
         $.extend(self, {
             init: function(){
-                self.setup_size();
-
                 Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
 
                 Galleria.configure({
                     _toggleInfo : false, // Set this to false if you want the caption to show always
                     debug       : false, // Set this to false to prevent debug messages
-                    imageCrop   : true,  // Defines how Galleria will crop the image
+                    imageCrop   : false,  // Defines how Galleria will crop the image
                     wait        : true,  // Defines if and how Galleria should wait until it can be displayed using user interaction
-                    responsive  : true   // This option sets thew Gallery in responsive mode
+                    responsive  : false   // This option sets thew Gallery in responsive mode
                 });
 
                 Galleria.on('image', function(e) {
@@ -314,18 +312,45 @@ $(document).ready(function() {
                         $('.galleria-info-text>.rights[data-index='+e.index+']', mediacarousel).css('display', 'block');
                     }
 
+                    if (!$(mediacarousel).hasClass('ready')){
+                        $(mediacarousel).addClass('ready');
+
+                        $('.galleria-thumbnails-container', mediacarousel).insertAfter('.galleria-info', mediacarousel);
+
+                        var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
+                                           $('.galleria-thumbnails-container', mediacarousel).height();
+                        var bottomContainer = $(mediacarousel).offset().top +
+                                              $(mediacarousel).height();
+                        var heightContainer = $(mediacarousel).height() +
+                                              (bottomThumbs             -
+                                               bottomContainer)         +
+                                              ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
+                                              8;
+
+                        $(mediacarousel).animate({
+                            height: heightContainer
+                        });
+
+                        $('.galleria-thumbnails-container, .galleria-info').animate({
+                            opacity: 1
+                        });
+                    }
                 });
 
                 Galleria.run('#' + galleria_id);
 
+                Galleria.ready(function() {
+                    var galleriaContainer       = $('#'+galleria_id),
+                        galleriaContainerWidth  = galleriaContainer.width(),
+                        galleriaContainerHeight = (galleriaContainerWidth*3)/4;
+                    this.resize({
+                        width: galleriaContainerWidth,
+                        height: galleriaContainerHeight
+                    });
+                });
+
                 // Falta modificar a posicao da div .galleria-thumbnails-container para baixo da div .galleria-info
             },
-
-            setup_size: function() {
-                //proportions is going to be 4/3, requeriment defined.
-                var width = mediacarousel.width();
-                mediacarousel.height((width*3) / 4);
-            }
         });
         self.init();
 

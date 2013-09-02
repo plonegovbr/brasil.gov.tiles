@@ -1009,3 +1009,11 @@ div.error { padding: 1em; }
     #content .poll-tile .tile-content-wrapper>.tile-poll-more {
         padding-bottom: 1em; }
 /* POLL TILE */
+
+/* Butotn alignment of tile compose */
+.template-compose .tile-container { position: relative; }
+.template-compose .tile-container .edit-tile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
