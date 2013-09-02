@@ -338,11 +338,11 @@ $(document).ready(function() {
                 Galleria.run('#'+galleria_id);
 
                 Galleria.ready(function() {
-                    var galleriaContainer       = $('#'+this._target.id),
-                        galleriaContainerWidth  = galleriaContainer.width(),
-                        galleriaContainerHeight = (galleriaContainerWidth*3)/4;
+                    var galleriaContainer = $('#'+this._target.id);
                     if (!galleriaContainer.hasClass('.ready')) {
                         galleriaContainer.addClass('.ready');
+                        var galleriaContainerWidth  = galleriaContainer.width(),
+                            galleriaContainerHeight = (galleriaContainerWidth*3)/4;
                         this.resize({
                             width: galleriaContainerWidth,
                             height: galleriaContainerHeight
