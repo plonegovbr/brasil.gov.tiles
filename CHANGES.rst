@@ -12,7 +12,6 @@ Changelog
   * Alterado para não carregar conteúdo do tile embed na aba compor (closes `#20`_).
     [rodfersou]
   * Retirado modo debug do mediacarousel (closes `#6`_). [rodfersou]
-
   * Corrigido tile audiogallery para utilizar fallbacks de formato cadastrados no
     tipo Audio (closes `#16`_). [rodfersou]
   * Corrigido tile audiogallery para tocar tipo de dados Audio (closes `#14`_).
