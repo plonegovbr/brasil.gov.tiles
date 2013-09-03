@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collections import OrderedDict
 from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
@@ -16,6 +15,7 @@ from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
 from zope.component import queryUtility
