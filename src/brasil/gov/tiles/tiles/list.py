@@ -117,8 +117,7 @@ class ListTile(PersistentCoverTile):
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
-        header = obj.Title()
-        old_data['header'] = header
+        old_data['header'] = _(u'Título do tile List')
         for uuid in uuids:
             if old_data['uuids']:
                 if type(old_data['uuids']) != list:
