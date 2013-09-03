@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from brasil.gov.tiles import _
 from collections import OrderedDict
-from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
@@ -12,6 +11,7 @@ from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import queryUtility
 from zope.schema import getFieldsInOrder

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from collective.cover import _
+from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager

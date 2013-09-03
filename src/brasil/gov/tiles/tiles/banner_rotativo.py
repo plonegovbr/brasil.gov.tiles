@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from collective.cover import _
+from brasil.gov.tiles import _
+from brasil.gov.tiles.tiles.list import IListTile, ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
-from collective.cover.tiles.list import IListTile
-from collective.cover.tiles.list import ListTile
 from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
 from plone.autoform import directives as form
 from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from Acquisition import aq_base
-from collective.cover import _
+from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone.namedfile import field
