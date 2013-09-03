@@ -219,7 +219,7 @@ $(document).ready(function() {
                         media['supplied'] += media_type;
 
                     }
-                }                
+                }
 
                 return media;
             },
