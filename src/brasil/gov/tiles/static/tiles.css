@@ -264,34 +264,6 @@
     margin-bottom: 15px;
 }
 
-
-/* GALLERY */
-.mediacarousel {
-    background: none repeat scroll 0 0 #EEEFF1;
-    border:1px solid #d5d5d5;
-}
-.mediacarousel .mediacarousel-tile {
-    padding: 10px 15px;
-    font-weight: bold;
-}
-.mediacarousel .mediacarousel-footer-container {
-    border-top: 1px solid #d5d5d5;
-    padding: 10px;
-    text-align: right;
-}
-.mediacarousel .mediacarousel-footer-container .mediacarousel-footer-link {
-    padding-right: 30px;
-    display: inline-block;
-    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right center transparent;
-    text-transform: uppercase;
-}
-.mediacarousel .galleria-info {
-    bottom: 60px;
-}
-#content .mediacarousel .rights {
-    float: left !important;
-}
-
 /*
  * Skin for jPlayer Plugin (jQuery JavaScript Library)
  */
@@ -1037,3 +1009,11 @@ div.error { padding: 1em; }
     #content .poll-tile .tile-content-wrapper>.tile-poll-more {
         padding-bottom: 1em; }
 /* POLL TILE */
+
+/* Button alignment of tile compose */
+.template-compose .tile-container { position: relative; }
+.template-compose .tile-container .edit-tile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
