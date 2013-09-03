@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.tiles import _
-from collective.cover.tiles.basic import BasicTile
-from collective.cover.tiles.basic import IBasicTile
+from collective.cover import _
+from collective.cover.tiles.basic import BasicTile, IBasicTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.autoform import directives as form
 from plone.tiles.interfaces import ITileDataManager

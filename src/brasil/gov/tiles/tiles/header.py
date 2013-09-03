@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.tiles.tiles.list import IListTile, ListTile
 from collective.cover import _
-from collective.cover.tiles.list import IListTile
-from collective.cover.tiles.list import ListTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
