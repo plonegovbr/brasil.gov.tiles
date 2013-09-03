@@ -4,6 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Corrige configurações da Galeria de video [ericof]
   * Aumentada a altura mínima do elemento da galleria-container. [rennanrodrigues]
   * Alterado para esconder o cabeçalho, título e descrição do player quando
     escondido na aba layout. [rodfersou]

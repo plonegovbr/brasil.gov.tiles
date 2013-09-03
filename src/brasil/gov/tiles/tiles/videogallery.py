@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from collective.cover import _
-from collective.cover.tiles.list import IListTile, ListTile
+from brasil.gov.tiles.tiles.list import IListTile, ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.directives import form
 from plone.tiles.interfaces import ITileDataManager
