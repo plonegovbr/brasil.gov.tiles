@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.tiles import _
 from collections import OrderedDict
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
+from collective.cover import _
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form
 from plone.namedfile.field import NamedBlobImage as NamedImage
-from plone.tiles.interfaces import ITileDataManager
-from plone.tiles.interfaces import ITileType
+from plone.tiles.interfaces import ITileDataManager, ITileType
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
