@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.PythonScripts.standard import url_quote
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
 from zope import schema
 from zope.interface import implements
 

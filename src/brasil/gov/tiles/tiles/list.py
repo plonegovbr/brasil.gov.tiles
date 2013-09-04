@@ -4,21 +4,18 @@ from collections import OrderedDict
 from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form
 from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
-from plone.tiles.interfaces import ITileDataManager
-from plone.tiles.interfaces import ITileType
+from plone.tiles.interfaces import ITileDataManager, ITileType
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
-from zope.component import getUtility
-from zope.component import queryUtility
+from zope.component import getUtility, queryUtility
 from zope.interface import implements
 from zope.schema import getFieldsInOrder
 

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from collective.cover import _
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile

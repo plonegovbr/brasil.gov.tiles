@@ -2,10 +2,8 @@
 
 from Acquisition import aq_base
 from collective.cover import _
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
-from plone.namedfile import field
-from plone.namedfile import NamedBlobImage
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
+from plone.namedfile import field, NamedBlobImage
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
