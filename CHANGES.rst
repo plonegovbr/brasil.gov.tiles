@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Corrigido tile carousel para funcionar com itens que não possuem imagem,
+    além de implementado re-scale de imagens segundo parametro da aba
+    layout (closes `#27`_). [rodfersou]
   * Corrige configurações da Galeria de video [ericof]
   * Aumentada a altura mínima do elemento da galleria-container. [rennanrodrigues]
   * Alterado para esconder o cabeçalho, título e descrição do player quando
@@ -52,3 +55,4 @@ Changelog
 .. _`#14`: https://github.com/plonegovbr/brasil.gov.tiles/issues/14
 .. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16
 .. _`#20`: https://github.com/plonegovbr/brasil.gov.tiles/issues/20
+.. _`#27`: https://github.com/plonegovbr/brasil.gov.tiles/issues/27
