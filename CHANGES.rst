@@ -7,12 +7,17 @@ Changelog
   * Corrigido tile carousel para funcionar com itens que não possuem imagem,
     além de implementado re-scale de imagens segundo parametro da aba
     layout (closes `#27`_). [rodfersou]
-  * Corrige configurações da Galeria de video [ericof]
-  * Aumentada a altura mínima do elemento da galleria-container. [rennanrodrigues]
+  * Correção no mediagallery para não dar mensagem de erro ao revisar tamanho
+    dos galleries (closes `#28`_). [rodfersou]
+  * Revisão de referências entre tiles customizados (closes `#24`_). [rodfersou]
+  * Corrige configurações da Galeria de video. [ericof]
+  * Aumentada a altura mínima do elemento da galleria-container (closes `#7`_).
+    [rennanrodrigues]
   * Alterado para esconder o cabeçalho, título e descrição do player quando
-    escondido na aba layout. [rodfersou]
+    escondido na aba layout (closes `#7`_). [rodfersou]
   * Removido espaçamento que estava sendo exibido quando não visualizando título e
-    descrição (remoção de visualização por configs aba layout). [rennanrodrigues]
+    descrição (remoção de visualização por configs aba layout) (closes `#7`_).
+    [rennanrodrigues]
   * Alterado para não carregar conteúdo do tile embed na aba compor (closes `#20`_).
     [rodfersou]
   * Retirado modo debug do mediacarousel (closes `#6`_). [rodfersou]
@@ -55,4 +60,6 @@ Changelog
 .. _`#14`: https://github.com/plonegovbr/brasil.gov.tiles/issues/14
 .. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16
 .. _`#20`: https://github.com/plonegovbr/brasil.gov.tiles/issues/20
+.. _`#24`: https://github.com/plonegovbr/brasil.gov.tiles/issues/24
 .. _`#27`: https://github.com/plonegovbr/brasil.gov.tiles/issues/27
+.. _`#28`: https://github.com/plonegovbr/brasil.gov.tiles/issues/28
