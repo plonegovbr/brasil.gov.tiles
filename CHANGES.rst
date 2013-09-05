@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Corrigido tile carousel para funcionar com itens que não possuem imagem,
+    além de implementado re-scale de imagens segundo parametro da aba
+    layout (closes `#27`_). [rodfersou]
   * Correção no mediagallery para não dar mensagem de erro ao revisar tamanho
     dos galleries (closes `#28`_). [rodfersou]
   * Revisão de referências entre tiles customizados (closes `#24`_). [rodfersou]
@@ -58,4 +61,5 @@ Changelog
 .. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16
 .. _`#20`: https://github.com/plonegovbr/brasil.gov.tiles/issues/20
 .. _`#24`: https://github.com/plonegovbr/brasil.gov.tiles/issues/24
+.. _`#27`: https://github.com/plonegovbr/brasil.gov.tiles/issues/27
 .. _`#28`: https://github.com/plonegovbr/brasil.gov.tiles/issues/28

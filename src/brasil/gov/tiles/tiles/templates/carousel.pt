@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+    <head>
+        <link rel="stylesheet" type="text/css"
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.cover/galleria-theme/galleria.cover_theme.css" />
+        <script type="text/javascript" tal:content="structure view/init_js">
+        </script>
+    </head>
+    <body tal:define="tile_id view/id;
+                      autoplay python:str(view.autoplay()).lower();
+                      results view/results|nothing;">
+        <div class="galleria slide"
+             tal:attributes="id string:galleria-$tile_id">
+            <!-- Carousel items -->
+            <div class="galleria-inner">
+                <tal:items repeat="item results">
+                    <img tal:define="thumbnail python:view.thumbnail(item);
+                                     uid python:view.get_uid(item);"
+                         tal:condition="python:thumbnail and uid"
+                         tal:attributes="src thumbnail/url;
+                                         width thumbnail/width;
+                                         height thumbnail/height;
+                                         data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
+                                         data-description item/Description;
+                                         data-link string:${item/absolute_url}/view;
+                                         data-uid uid;" />
+                </tal:items>
+            </div>
+        </div>
+    </body>
+</html>
