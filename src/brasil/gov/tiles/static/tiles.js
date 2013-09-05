@@ -123,9 +123,11 @@ $(document).ready(function() {
 
                     if (this.qtd_coluna_anterior !== qtd_coluna_atual) {
                         this.qtd_coluna_anterior = qtd_coluna_atual;
-                        
-                        $('.mediacarousel-tile').each(function(i) {
-                            var g = Galleria.get(i);
+                        var _i, _len;
+                        var gallerias = Galleria.get();
+
+                        for (_i = 0, _len = gallerias.length; _i < _len; _i++) {
+                            var g = gallerias[_i];
                             if (g) {
                                 var mediacarousel = '#' + g._target.id;
                                 g.resize({
@@ -149,7 +151,7 @@ $(document).ready(function() {
                                     height: heightContainer
                                 });
                             }
-                        });
+                        }
                     }
                 };
 
