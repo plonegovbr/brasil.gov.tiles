@@ -10,14 +10,14 @@
         </script>
     </head>
     <body tal:define="tile_id view/id;
-                      autoplay python:str(view.autoplay()).lower();">
+                      autoplay python:str(view.autoplay()).lower();
+                      results view/results|nothing;">
         <div class="galleria slide"
              tal:attributes="id string:galleria-$tile_id">
             <!-- Carousel items -->
             <div class="galleria-inner">
-                <tal:items repeat="item view/results">
-                    <img tal:define="scales item/@@images;
-                                     thumbnail python:scales.scale('image', width=1000, height=1000);
+                <tal:items repeat="item results">
+                    <img tal:define="thumbnail python:view.thumbnail(item);
                                      uid python:view.get_uid(item);"
                          tal:condition="python:thumbnail and uid"
                          tal:attributes="src thumbnail/url;

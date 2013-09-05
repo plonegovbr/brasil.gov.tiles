@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.tiles.list import IListTile, ListTile
+from brasil.gov.tiles.tiles.list import IListTile, ListTile
 from collective.cover import _
 from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
 from plone.autoform import directives as form
@@ -61,6 +61,19 @@ class CarouselTile(ListTile):
         else:
             old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
+
+    def thumbnail(self, item):
+        tile_conf = self.get_tile_configuration()
+        image_conf = tile_conf.get('image', None)
+        scales = item.restrictedTraverse('@@images')
+        if image_conf:
+            scaleconf = image_conf['imgsize']
+            # scale string is something like: 'mini 200:200'
+            scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'
+            try:
+                return scales.scale('image', scale)
+            except:
+                return None
 
     def autoplay(self):
         if self.data['autoplay'] is None:
