@@ -10,6 +10,7 @@
     color: #FFF;
     font-family: 'Open Sans';
     font-size: 22px;
+    font-weight: normal;
     margin: 0px;
     padding: 15px;
     text-transform: uppercase;
@@ -28,6 +29,10 @@
     color: #667cae;
     font-size: 11px;
     font-weight: bold;
+}
+.videogallery-tile .description {
+    font-family: Arial;
+    color: #d1e1ff;
 }
 
 .videogallery-tile .gallery-footer {
