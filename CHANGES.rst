@@ -4,6 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Revisão de fontes com fallbacks definidos (closes `#34`_). [rodfersou]
   * Revisão de estilos da capa de editoria (closes `#31`_). [rennanrodrigues]
   * Corrigido tile carousel para funcionar com itens que não possuem imagem,
     além de implementado re-scale de imagens segundo parametro da aba
@@ -65,3 +66,4 @@ Changelog
 .. _`#27`: https://github.com/plonegovbr/brasil.gov.tiles/issues/27
 .. _`#28`: https://github.com/plonegovbr/brasil.gov.tiles/issues/28
 .. _`#31`: https://github.com/plonegovbr/brasil.gov.tiles/issues/31
+.. _`#34`: https://github.com/plonegovbr/brasil.gov.tiles/issues/34
