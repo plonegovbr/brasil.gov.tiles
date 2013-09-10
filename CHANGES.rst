@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-  * Entre-linhas da descrição dos tiles de acordo com a arte (closes `#36`_). [rennanrodrigues]
+  * Entre-linhas da descrição dos tiles de acordo com a arte
+    (closes `#36`_). [rennanrodrigues]
   * Revisão de fontes com fallbacks definidos (closes `#34`_). [rodfersou]
   * Revisão de estilos da capa de editoria (closes `#31`_). [rennanrodrigues]
   * Corrigido tile carousel para funcionar com itens que não possuem imagem,
@@ -18,14 +19,14 @@ Changelog
     [rennanrodrigues]
   * Alterado para esconder o cabeçalho, título e descrição do player quando
     escondido na aba layout (closes `#7`_). [rodfersou]
-  * Removido espaçamento que estava sendo exibido quando não visualizando título e
-    descrição (remoção de visualização por configs aba layout) (closes `#7`_).
+  * Removido espaçamento que estava sendo exibido quando não visualizando título
+    e descrição (remoção de visualização por configs aba layout) (closes `#7`_).
     [rennanrodrigues]
-  * Alterado para não carregar conteúdo do tile embed na aba compor (closes `#20`_).
-    [rodfersou]
+  * Alterado para não carregar conteúdo do tile embed na aba compor
+    (closes `#20`_). [rodfersou]
   * Retirado modo debug do mediacarousel (closes `#6`_). [rodfersou]
-  * Corrigido tile audiogallery para utilizar fallbacks de formato cadastrados no
-    tipo Audio (closes `#16`_). [rodfersou]
+  * Corrigido tile audiogallery para utilizar fallbacks de formato cadastrados
+    no tipo Audio (closes `#16`_). [rodfersou]
   * Corrigido tile audiogallery para tocar tipo de dados Audio (closes `#14`_).
     [rodfersou]
   * Adicionado título no tile list (closes `#12`_). [rodfersou]
@@ -36,16 +37,19 @@ Changelog
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
 
-  * Implementação de funcionalidades drag & drop no Tile Banner rotativo [felipeduardo]
+  * Implementação de funcionalidades drag & drop no Tile Banner rotativo
+    [felipeduardo]
   * Ajustes de CSS no Tile Media Carousel [felipeduardo]
   * Correção na altura do Facebook do Tile Social [felipeduardo]
   * Ajustes para Galeria de Vídeos em 1 Coluna [felipeduardo]
   * Atividade 319: Largura do Tile de Vídeo Fixa em 1 coluna [rennanrodrigues]
   * Atividade 198: Fonte na imagem do Banner Estático [rennanrodrigues]
-  * Atividade 248: Deixar sempre visível o título do box Video Gallery [rodfersou]
+  * Atividade 248: Deixar sempre visível o título do box Video Gallery
+    [rodfersou]
   * Atividade 294: Tile Collection [rodfersou]
   * Atividade 196: Adicionar funções no tile List [rodfersou]
-  * Atividade 313: Título do Media Carousel - campo foi removido do 'compor' [rodfersou]
+  * Atividade 313: Título do Media Carousel - campo foi removido do 'compor'
+    [rodfersou]
   * Tile de enquete sempre exibir form [dbarbato]
 
 
