@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.tiles.tiles.list import IListTile, ListTile
+from brasil.gov.tiles.tiles.list import IListTile
+from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
