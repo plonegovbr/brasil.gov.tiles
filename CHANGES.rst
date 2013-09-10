@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Corrigido para não pré-carregar audio nos tiles audio e audiogallery
+    (closes `#38`_). [rodfersou]
   * Entre-linhas da descrição dos tiles de acordo com a arte
     (closes `#36`_). [rennanrodrigues]
   * Revisão de fontes com fallbacks definidos (closes `#34`_). [rodfersou]
@@ -73,3 +75,4 @@ Changelog
 .. _`#31`: https://github.com/plonegovbr/brasil.gov.tiles/issues/31
 .. _`#34`: https://github.com/plonegovbr/brasil.gov.tiles/issues/34
 .. _`#36`: https://github.com/plonegovbr/brasil.gov.tiles/issues/36
+.. _`#38`: https://github.com/plonegovbr/brasil.gov.tiles/issues/38
