@@ -198,7 +198,8 @@ $(document).ready(function() {
                     supplied: media.supplied,
                     cssSelectorAncestor: cssSelectorAncestor,
                     solution:"html,flash",
-                    wmode: "window"
+                    wmode: "window",
+                    preload: "none"
                 });
             },
 
