@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from AccessControl import Unauthorized
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
+from brasil.gov.tiles.tiles.base import IPersistentCoverTile
+from brasil.gov.tiles.tiles.base import PersistentCoverTile
 from collective.polls.polls import IPolls
 from plone.app.uuid.utils import uuidToObject
 from plone.tiles.interfaces import ITileDataManager

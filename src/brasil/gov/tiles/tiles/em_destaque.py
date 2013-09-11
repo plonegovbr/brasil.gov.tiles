@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.tiles.tiles.base import IPersistentCoverTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
-from collective.cover.tiles.base import IPersistentCoverTile
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements

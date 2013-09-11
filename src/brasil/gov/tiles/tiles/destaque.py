@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.tiles.tiles.base import IPersistentCoverTile
+from brasil.gov.tiles.tiles.base import PersistentCoverTile
 from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
 from plone.app.uuid.utils import uuidToObject
 from plone.memoize import view
 from plone.namedfile.field import NamedImage

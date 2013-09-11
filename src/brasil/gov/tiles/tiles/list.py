@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.tiles.tiles.base import IPersistentCoverTile
+from brasil.gov.tiles.tiles.base import PersistentCoverTile
 from collections import OrderedDict
 from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form

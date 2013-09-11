@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from Acquisition import aq_base
+from brasil.gov.tiles.tiles.base import IPersistentCoverTile
+from brasil.gov.tiles.tiles.base import PersistentCoverTile
 from collective.cover import _
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
 from plone.namedfile import field
 from plone.namedfile import NamedBlobImage
 from plone.tiles.interfaces import ITileDataManager
