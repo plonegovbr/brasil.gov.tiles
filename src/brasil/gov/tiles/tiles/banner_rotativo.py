@@ -4,7 +4,7 @@ from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
-from collective.cover.widgets.textlinessortable import\ TextLinesSortableFieldWidget
+from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
 from plone.autoform import directives as form
 from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
