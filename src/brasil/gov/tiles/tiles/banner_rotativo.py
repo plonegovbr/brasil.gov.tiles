@@ -94,12 +94,16 @@ class BannerRotativoTile(ListTile):
             old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
-    def scale(self, item):
-        scales = item.restrictedTraverse('@@images')
-        try:
+    def thumbnail(self, item):
+        """Return a thumbnail of an image if the item has an image field and
+        the field is visible in the tile.
+
+        :param item: [required]
+        :type item: content object
+        """
+        if self._has_image_field(item):
+            scales = item.restrictedTraverse('@@images')
             return scales.scale('image', width=766, height=248)
-        except:
-            return None
 
     @view.memoize
     def accepted_ct(self):

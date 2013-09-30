@@ -19,14 +19,14 @@
             tal:attributes="id string:banner$idx;
                             data-uid python:view.get_uid(item)">
             <a tal:attributes="href string:${item/absolute_url}/view;
-                               class python:'button-nav' + (' activeSlide' if item == first_item else '')"
+                               class python:'button-nav' + (' activeSlide' if item == first_item else '');"
                tal:content="idx" />
             <a tal:attributes="href string:${item/absolute_url}/view;
                                rel string:internal;
-                               class python:'banner' + (' activeSlideItem' if item == first_item else '')">
-                <img tal:define="scale python:view.scale(item)"
-                     tal:condition="python:scale"
-                     tal:attributes="src scale/url;
+                               class python:'banner' + (' activeSlideItem' if item == first_item else '');">
+                <img tal:define="thumbnail python:view.thumbnail(item);"
+                     tal:condition="thumbnail"
+                     tal:attributes="src thumbnail/url;
                                      alt item/title" />
                 <span class="descr"
                       tal:content="item/title" />
