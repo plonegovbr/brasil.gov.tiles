@@ -17,18 +17,6 @@
       />
 
   <plone:tile
-      name="collective.cover.basic"
-      title="Basic Tile"
-      description="A tile that shows general information about objects."
-      icon="++resource++collective.cover/tile-basic.png"
-      add_permission="cmf.ModifyPortalContent"
-      schema=".basic.IBasicTile"
-      class=".basic.BasicTile"
-      permission="zope2.View"
-      for="*"
-      />
-
-  <plone:tile
       name="collective.cover.collection"
       title="Collection Tile"
       description="A tile that shows the result of a collection."
