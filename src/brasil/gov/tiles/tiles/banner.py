@@ -106,7 +106,7 @@ class BannerTile(PersistentCoverTile):
         :param item: [required]
         :type item: content object
         """
-        if self._has_image_field(self) and self._field_is_visible('image'):
+        if self._field_is_visible('image'):
             tile_conf = self.get_tile_configuration()
             image_conf = tile_conf.get('image', None)
             if image_conf:
