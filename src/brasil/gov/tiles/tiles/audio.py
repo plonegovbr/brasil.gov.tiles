@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.tiles.tiles.base import IPersistentCoverTile
-from brasil.gov.tiles.tiles.base import PersistentCoverTile
 from collective.cover import _
+from collective.cover.tiles.base import IPersistentCoverTile
+from collective.cover.tiles.base import PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
