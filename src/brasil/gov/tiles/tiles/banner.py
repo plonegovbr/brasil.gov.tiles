@@ -99,14 +99,21 @@ class BannerTile(PersistentCoverTile):
             css_class = image_conf['position']
             return css_class
 
-    @property
-    def scale(self):
-        tile_conf = self.get_tile_configuration()
-        image_conf = tile_conf.get('image', None)
-        if image_conf:
-            scale = image_conf['imgsize']
-            # scale string is something like: 'mini 200:200'
-            return scale.split(' ')[0]  # we need the name only: 'mini'
+    def thumbnail(self, scales):
+        """Return a thumbnail of an image if the item has an image field and
+        the field is visible in the tile.
+
+        :param item: [required]
+        :type item: content object
+        """
+        if self._has_image_field(self) and self._field_is_visible('image'):
+            tile_conf = self.get_tile_configuration()
+            image_conf = tile_conf.get('image', None)
+            if image_conf:
+                scaleconf = image_conf['imgsize']
+                # scale string is something like: 'mini 200:200'
+                scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'
+                return scales.scale('image', scale)
 
     @property
     def htmltag(self):

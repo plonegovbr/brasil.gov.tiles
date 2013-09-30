@@ -18,6 +18,8 @@ def persistent_cover_tile():
             return True
         elif hasattr(obj, 'Schema'):  # Archetypes
             return 'image' in obj.Schema().keys()
+        elif isinstance(obj, PersistentCoverTile): # Cover Tile
+            return obj.data.has_key('image')
         else:
             return False
 
