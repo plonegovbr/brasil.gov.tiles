@@ -46,7 +46,7 @@
         <a class="imag" tal:attributes="href view/getURL;
                                         title description;">
           <img tal:define="scales view/@@images;
-                           thumbnail python: view.thumbnail(scales);"
+                           thumbnail python: view.thumbnail(field, scales);"
                tal:condition="thumbnail"
                tal:attributes="alt title|description;
                                src thumbnail/url;

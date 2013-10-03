@@ -45,5 +45,6 @@ class NITFBasicTile(BasicTile):
         data['section'] = obj.section
         data_mgr.set(data)
 
-    def thumbnail(self, scales):
-        return scales.scale('image', 'large')
+    def thumbnail(self, field, scales):
+        scale = field.get('scale', 'large')
+        return scales.scale('image', scale)
