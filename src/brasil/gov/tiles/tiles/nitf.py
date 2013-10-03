@@ -44,3 +44,6 @@ class NITFBasicTile(BasicTile):
         data['subtitle'] = obj.subtitle
         data['section'] = obj.section
         data_mgr.set(data)
+
+    def thumbnail(self, scales):
+        return scales.scale('image', 'large')
