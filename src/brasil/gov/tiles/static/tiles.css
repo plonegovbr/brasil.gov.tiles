@@ -20,19 +20,23 @@
 .videogallery-tile .player-metadata {
     padding: 10px 0;
 }
+
 .player-metadata .title {
     color: #CDE1FA;
     font-weight: bold;
     padding-bottom: 10px;
 }
+
 .subtitle {
     text-transform: uppercase;
     color: #667cae;
     font-size: 11px;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
+
 .videogallery-tile .description {
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     color: #d1e1ff;
 }
 
@@ -93,7 +97,7 @@
     display: none;
 }
 #content .gallery-element-metadata .title {
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #d1e1ff;
 }
@@ -231,7 +235,8 @@
     padding: 10px 15px 10px 10px;
     border-bottom: 1px solid #d4d4d6;
     color: #454545;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 .audiogallery-player-container {
     padding: 10px 15px;
@@ -253,7 +258,8 @@
     padding-left: 20px;
     background: url("++resource++brasil.gov.tiles/sound-icon.png") no-repeat scroll left 0 transparent;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 .audiogallery-footer-container {
     text-align: right;
@@ -272,7 +278,8 @@
 /* AUDIO */
 .audio-tile .title {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
 }
 
@@ -945,7 +952,7 @@ div.error { padding: 1em; }
 .galleria-info .copyright {
     color: #fff;
     font-style: italic;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 2em;
 }
@@ -974,7 +981,8 @@ div.error { padding: 1em; }
         padding: 1.7em 1em; }
     #content .poll-tile .tile-content-wrapper>h4 {
         font-size: 1em;
-        font-weight: bold;
+        font-weight: normal;
+        font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
         padding: 1em; }
     #content .poll-tile .tile-content-wrapper>form>br {
         display: none;
