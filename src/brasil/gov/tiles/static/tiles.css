@@ -9,7 +9,7 @@
 #content .videogallery-tile .gallery-tile {
     border-bottom: 1px solid #2e5493;
     color: #FFF;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
     font-size: 22px;
     font-weight: normal;
     margin: 0px;
@@ -20,19 +20,23 @@
 .videogallery-tile .player-metadata {
     padding: 10px 0;
 }
+
 .player-metadata .title {
     color: #CDE1FA;
     font-weight: bold;
     padding-bottom: 10px;
 }
+
 .subtitle {
     text-transform: uppercase;
     color: #667cae;
     font-size: 11px;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
+
 .videogallery-tile .description {
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     color: #d1e1ff;
 }
 
@@ -93,7 +97,7 @@
     display: none;
 }
 #content .gallery-element-metadata .title {
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #d1e1ff;
 }
@@ -231,7 +235,8 @@
     padding: 10px 15px 10px 10px;
     border-bottom: 1px solid #d4d4d6;
     color: #454545;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 .audiogallery-player-container {
     padding: 10px 15px;
@@ -253,7 +258,8 @@
     padding-left: 20px;
     background: url("++resource++brasil.gov.tiles/sound-icon.png") no-repeat scroll left 0 transparent;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 .audiogallery-footer-container {
     text-align: right;
@@ -272,7 +278,8 @@
 /* AUDIO */
 .audio-tile .title {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
 }
 
@@ -563,9 +570,6 @@ div.jp-jplayer {
     background-color: #000000;
 }
 
-
-
-
 /***
 **  SKIN FOR AUDIO PLAYER
 **
@@ -664,10 +668,6 @@ a.jp-shuffle-off:hover {
 /* @end */
 
 
-
-
-
-
 /* root element for tabs  */
 ul.css-tabs {
     margin:0 !important;
@@ -718,7 +718,6 @@ ul.css-tabs a.current {
     cursor:default;
 }
 
-
 /* tab pane */
 .css-panes .pane {
     display:none;
@@ -732,9 +731,6 @@ ul.css-tabs a.current {
 #content .css-tabs li {
     list-style: none outside none;
 }
-
-
-
 
 .outstanding-header {
     position: relative;
@@ -886,7 +882,7 @@ div.error { padding: 1em; }
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     z-index: 3;
     width: 100%;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     max-width: 676px;
     font-size: 10px;
     font-style: italic;
@@ -910,7 +906,7 @@ div.error { padding: 1em; }
     color: #000;
     float: right;
     font-style: italic;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: .9em;
     line-height: 2em;
     margin: 0 .8em 0 0;
@@ -920,7 +916,7 @@ div.error { padding: 1em; }
     color: #000;
     float: right;
     font-style: italic;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: .9em;
     line-height: 2em;
     margin: 0 .8em 0 0;
@@ -956,7 +952,7 @@ div.error { padding: 1em; }
 .galleria-info .copyright {
     color: #fff;
     font-style: italic;
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 2em;
 }
@@ -971,9 +967,8 @@ div.error { padding: 1em; }
         padding: 0.5em 1em; }
         #content .poll-tile .poll-tile-header>.header {
             color: #444a53;
-            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
             font-size: 1.3em;
-            font-weight: bold;
             text-transform: uppercase; }
     #content .poll-tile .tile-content-wrapper>div {
         padding: 0 1em; }
@@ -986,7 +981,8 @@ div.error { padding: 1em; }
         padding: 1.7em 1em; }
     #content .poll-tile .tile-content-wrapper>h4 {
         font-size: 1em;
-        font-weight: bold;
+        font-weight: normal;
+        font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
         padding: 1em; }
     #content .poll-tile .tile-content-wrapper>form>br {
         display: none;
@@ -1004,9 +1000,8 @@ div.error { padding: 1em; }
         background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
         border: none;
         color: #fff;
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
         font-size: 1.1em;
-        font-weight: bold;
         margin-top: 1em;
         padding: 0.8em 0px 0.8em 3em;
         text-align: left;
