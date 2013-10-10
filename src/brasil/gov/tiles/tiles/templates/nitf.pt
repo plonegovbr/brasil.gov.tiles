@@ -42,12 +42,11 @@
       </tal:title>
 
       <tal:image condition="python:field['id'] == 'image'"
-      			 define="scale python:field.get('scale', 'large');
-      			         position python:field.get('position', '');">
+      			 define="position python:field.get('position', '');">
         <a class="imag" tal:attributes="href view/getURL;
                                         title description;">
           <img tal:define="scales view/@@images;
-                           thumbnail python: scales.scale('image', scale=scale);"
+                           thumbnail python: view.thumbnail(field, scales);"
                tal:condition="thumbnail"
                tal:attributes="alt title|description;
                                src thumbnail/url;

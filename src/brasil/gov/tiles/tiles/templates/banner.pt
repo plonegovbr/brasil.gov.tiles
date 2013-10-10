@@ -19,9 +19,8 @@
           tal:condition="view/Rights">Crédito</span>
     <tal:image condition="has_image">
         <a tal:attributes="href remote_url">
-          <img tal:define="scale view/scale;
-                           scales view/@@images;
-                           thumbnail python:scales.scale('image', scale=scale)"
+          <img tal:define="scales view/@@images;
+                           thumbnail python:view.thumbnail(scales);"
                tal:condition="thumbnail"
                tal:attributes="src thumbnail/url;
                                width thumbnail/width;
