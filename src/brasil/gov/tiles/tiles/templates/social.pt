@@ -11,6 +11,12 @@
         $("ul.social-tabs").tabs("div.social-panes > div");
     });
   </script>
+  <noscript>
+      <div class="error">
+        Seu navegador de internet está sem suporte à JavaScript.
+        Por esse motivo algumas funcionalidades do site podem não estar acessíveis.
+      </div>
+  </noscript>
 </head>
 <body>
     <tal:facebook tal:condition="view/facebook_available">
@@ -32,15 +38,15 @@
     </tal:facebook>
     <div>
         <ul class="social-tabs css-tabs">
-            <li tal:condition="view/facebook_available"><a href="">FACEBOOK</a></li>
-            <li tal:condition="view/twitter_available"><a href="">TWITTER</a></li>
+            <li tal:condition="view/facebook_available"><a title="" href="#">Facebook</a></li>
+            <li tal:condition="view/twitter_available"><a title="" href="#">Twitter</a></li>
         </ul>
     </div>
     <div class="social-panes css-panes">
         <div class="facebook-content pane" tal:condition="view/facebook_available">
-            <div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="210" data-show-faces="true" data-stream="false" data-header="true"
-                tal:attributes="data-href view/data/facebook_page;
-                                data-width view/get_columns_size">
+            <div class="fb-like-box" data-href="http://www.facebook.com/platform"
+                 data-width="210" data-show-faces="true" data-stream="false" data-header="true"
+                 tal:attributes="data-href view/data/facebook_page; data-width view/get_columns_size">
             </div>
         </div>
         <div class="twitter-content pane" tal:condition="view/twitter_available">
@@ -62,8 +68,8 @@
     </div>
     <noscript>
       <div class="error">
-        <p><a target="_blank" href="https://www.facebook.com/pages/Pal%C3%A1cio-do-Planalto/137381902950775?rf=154166594613961">Página do Facebook do Portal Brasil</a></p>
-        <p><a target="_blank" href="https://twitter.com/portalbrasil">Micro-blog Twitter do Portal Brasil</a></p>
+        <p><a href="https://www.facebook.com/pages/Pal%C3%A1cio-do-Planalto/137381902950775?rf=154166594613961">Página do Facebook do Portal Brasil</a></p>
+        <p><a href="https://twitter.com/portalbrasil">Micro-blog Twitter do Portal Brasil</a></p>
       </div>
     </noscript>
 </body>
