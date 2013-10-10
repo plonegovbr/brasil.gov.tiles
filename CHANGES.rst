@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Removido o atributo utilizado para abrir em nova aba os links;
+    Implementação da tag <noscript> com mensagem de erro
+    (closes `#46`_). [rennanrodrigues]
   * Corrigido para não pré-carregar audio nos tiles audio e audiogallery
     (closes `#38`_). [rodfersou]
   * Entre-linhas da descrição dos tiles de acordo com a arte
@@ -76,3 +79,4 @@ Changelog
 .. _`#34`: https://github.com/plonegovbr/brasil.gov.tiles/issues/34
 .. _`#36`: https://github.com/plonegovbr/brasil.gov.tiles/issues/36
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.tiles/issues/38
+.. _`#46`: https://github.com/plonegovbr/brasil.gov.tiles/issues/46
