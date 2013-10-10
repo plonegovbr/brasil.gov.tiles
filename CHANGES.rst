@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Removido atributo style do template de destaques (closes `#49`_).
+    [rennanrodrigues]
   * Revisado método de redimensionamento de imagens nos tiles (closes `#33`_).
     [rodfersou]
   * Removido o atributo utilizado para abrir em nova aba os links;
@@ -83,3 +85,4 @@ Changelog
 .. _`#36`: https://github.com/plonegovbr/brasil.gov.tiles/issues/36
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.tiles/issues/38
 .. _`#46`: https://github.com/plonegovbr/brasil.gov.tiles/issues/46
+.. _`#49`: https://github.com/plonegovbr/brasil.gov.tiles/issues/49
