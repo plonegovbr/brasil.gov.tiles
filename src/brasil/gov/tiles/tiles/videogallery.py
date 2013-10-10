@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from brasil.gov.tiles.tiles.list import IListTile, ListTile
+from brasil.gov.tiles.tiles.list import IListTile
+from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.directives import form
+from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -38,6 +40,14 @@ class IVideoGalleryTile(IListTile, form.Schema):
         title=_(u'Footer Link'),
         required=False,
         readonly=False,
+    )
+
+    form.omitted('image')
+    form.no_omit(IDefaultConfigureForm, 'image')
+    image = NamedImage(
+        title=_(u'Image'),
+        required=False,
+        readonly=True,
     )
 
     form.omitted('uuids')
@@ -77,11 +87,9 @@ class VideoGalleryTile(ListTile):
         return IUUID(obj)
 
     def thumbnail(self, item):
-        scales = item.restrictedTraverse('@@images')
-        try:
+        if self._has_image_field(item):
+            scales = item.restrictedTraverse('@@images')
             return scales.scale('image', width=80, height=60)
-        except:
-            return None
 
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
