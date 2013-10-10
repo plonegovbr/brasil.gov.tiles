@@ -17,18 +17,13 @@
     <div class="items-destaque">
       <tal:items repeat="item view/results"
                  define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <div style="position:relative"
-             tal:attributes="data-uid python:view.get_uid(item)">
+        <div class="item" tal:attributes="data-uid python:view.get_uid(item)">
           <tal:image tal:define="thumbnail python:view.thumbnail(item);"
                      condition="thumbnail">
             <a tal:attributes="href item/absolute_url;
                                title item/Description;
                                alt item/Description">
-              <!-- XXX -->
-              <img style="float: left; margin: 0 1em 0.5em 0;"
-                   tal:attributes="src thumbnail/url;
-                                   width thumbnail/width;
-                                   height thumbnail/height" />
+              <img tal:attributes="src thumbnail/url" />
             </a>
           </tal:image>
 
@@ -45,8 +40,6 @@
           <p tal:content="python:toLocalizedTime(item.Date())" />
 
         </div>
-
-        <div class="visualClear"><!-- --></div>
       </tal:items>
     </div>
   </div>

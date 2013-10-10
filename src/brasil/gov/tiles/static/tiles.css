@@ -1024,3 +1024,13 @@ div.error { padding: 1em; }
     top: 0;
     left: 0;
 }
+
+/* Tile Destaque */
+.destaque-tile .items-destaque .item {
+    position: relative;
+}
+
+.destaque-tile .items-destaque .item a img {
+    float: left;
+    margin: 0 1em 0.5em 0;
+}
