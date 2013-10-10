@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Revisado método de redimensionamento de imagens nos tiles (closes `#33`_).
+    [rodfersou]
   * Removido o atributo utilizado para abrir em nova aba os links;
     Implementação da tag <noscript> com mensagem de erro
     (closes `#46`_). [rennanrodrigues]
@@ -76,6 +78,7 @@ Changelog
 .. _`#27`: https://github.com/plonegovbr/brasil.gov.tiles/issues/27
 .. _`#28`: https://github.com/plonegovbr/brasil.gov.tiles/issues/28
 .. _`#31`: https://github.com/plonegovbr/brasil.gov.tiles/issues/31
+.. _`#33`: https://github.com/plonegovbr/brasil.gov.tiles/issues/33
 .. _`#34`: https://github.com/plonegovbr/brasil.gov.tiles/issues/34
 .. _`#36`: https://github.com/plonegovbr/brasil.gov.tiles/issues/36
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.tiles/issues/38
