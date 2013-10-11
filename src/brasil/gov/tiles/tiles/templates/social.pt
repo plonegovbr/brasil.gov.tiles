@@ -11,12 +11,6 @@
         $("ul.social-tabs").tabs("div.social-panes > div");
     });
   </script>
-  <noscript>
-      <div class="error">
-        Seu navegador de internet está sem suporte à JavaScript.
-        Por esse motivo algumas funcionalidades do site podem não estar acessíveis.
-      </div>
-  </noscript>
 </head>
 <body>
     <tal:facebook tal:condition="view/facebook_available">
