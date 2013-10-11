@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Customização do código HTML gerado pelo player de audio (closes `#51`_).
+    [rennanrodrigues]
   * Removido atributo style do template de destaques (closes `#49`_).
     [rennanrodrigues]
   * Revisado método de redimensionamento de imagens nos tiles (closes `#33`_).
@@ -86,3 +88,4 @@ Changelog
 .. _`#38`: https://github.com/plonegovbr/brasil.gov.tiles/issues/38
 .. _`#46`: https://github.com/plonegovbr/brasil.gov.tiles/issues/46
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.tiles/issues/49
+.. _`#51`: https://github.com/plonegovbr/brasil.gov.tiles/issues/51
