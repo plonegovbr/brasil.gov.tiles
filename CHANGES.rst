@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Inserção de estilos inline que estavam no template para o css dos tiles  (closes `#53`_).
+    [rennanrodrigues]
   * Customização do código HTML gerado pelo player de audio (closes `#51`_).
     [rennanrodrigues]
   * Removido atributo style do template de destaques (closes `#49`_).
@@ -89,3 +91,4 @@ Changelog
 .. _`#46`: https://github.com/plonegovbr/brasil.gov.tiles/issues/46
 .. _`#49`: https://github.com/plonegovbr/brasil.gov.tiles/issues/49
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.tiles/issues/51
+.. _`#53`: https://github.com/plonegovbr/brasil.gov.tiles/issues/53

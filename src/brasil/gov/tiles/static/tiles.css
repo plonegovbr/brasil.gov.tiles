@@ -1034,3 +1034,16 @@ div.error { padding: 1em; }
     float: left;
     margin: 0 1em 0.5em 0;
 }
+
+/* Tile Searchbox */
+.searchSection label { cursor: pointer; }
+
+/* Tile latest_selectionable_nitf */
+.centered { text-align: center; }
+.centered img { display: none; }
+
+/* Plone-addsite */
+fieldset#add-on-list { display: none; }
+
+/* Plone overview */
+form.inline-form { display: inline; }
