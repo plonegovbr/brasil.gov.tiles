@@ -1037,8 +1037,8 @@ div.error { padding: 1em; }
 
 /* Tile de embed de videos do collective cover */
 div[data-tile*="collective.cover.embed"] {
-    max-width: 497px;
-    max-height: 372px;
+    max-width: 766px;
+    max-height: 574px;
     overflow: hidden;
 }
 
@@ -1048,6 +1048,8 @@ div[data-tile*="collective.cover.embed"] .samba-player {
     padding-top: 30px;
     height: 0;
     overflow: hidden;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 div[data-tile*="collective.cover.embed"] .samba-player iframe,
