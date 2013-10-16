@@ -1047,3 +1047,31 @@ fieldset#add-on-list { display: none; }
 
 /* Plone overview */
 form.inline-form { display: inline; }
+
+/* Tile de embed de videos do collective cover */
+div[data-tile*="collective.cover.embed"] {
+    max-width: 766px;
+    max-height: 574px;
+    overflow: hidden;
+}
+
+div[data-tile*="collective.cover.embed"] .samba-player {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+div[data-tile*="collective.cover.embed"] .samba-player iframe,
+div[data-tile*="collective.cover.embed"] .samba-player object,
+div[data-tile*="collective.cover.embed"] .samba-player embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
