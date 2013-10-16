@@ -1035,6 +1035,19 @@ div.error { padding: 1em; }
     margin: 0 1em 0.5em 0;
 }
 
+/* Tile Searchbox */
+.searchSection label { cursor: pointer; }
+
+/* Tile latest_selectionable_nitf */
+.centered { text-align: center; }
+.centered img { display: none; }
+
+/* Plone-addsite */
+fieldset#add-on-list { display: none; }
+
+/* Plone overview */
+form.inline-form { display: inline; }
+
 /* Tile de embed de videos do collective cover */
 div[data-tile*="collective.cover.embed"] {
     max-width: 766px;
@@ -1061,3 +1074,4 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     width: 100%;
     height: 100%;
 }
+
