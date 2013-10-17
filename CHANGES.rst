@@ -4,9 +4,11 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Backend do novo banner rotativo  (closes `#57`_).
+    [rodfersou]
   * Inserção de estilos inline que estavam no template para o css dos tiles  (closes `#53`_).
     [rennanrodrigues]
-    * Player da TV NBR ajustado para funcionar responsivo (closes `#55`_).
+  * Player da TV NBR ajustado para funcionar responsivo (closes `#55`_).
     [rennanrodrigues]
   * Customização do código HTML gerado pelo player de audio (closes `#51`_).
     [rennanrodrigues]
@@ -95,4 +97,5 @@ Changelog
 .. _`#51`: https://github.com/plonegovbr/brasil.gov.tiles/issues/51
 .. _`#53`: https://github.com/plonegovbr/brasil.gov.tiles/issues/53
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.tiles/issues/55
+.. _`#57`: https://github.com/plonegovbr/brasil.gov.tiles/issues/57
 
