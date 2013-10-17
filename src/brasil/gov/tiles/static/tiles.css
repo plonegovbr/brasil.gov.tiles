@@ -846,15 +846,16 @@ div.error { padding: 1em; }
 .template-compose #tile_banner_rotativo li {
     position: relative;
     float: left;
-    width: 190px;
+    width: 25%;
 }
 
 .template-compose #tile_banner_rotativo .banner,
 .template-compose #tile_banner_rotativo .banner img {
-    width: 190px;
+    width: 100%;
 }
 
-.template-compose #tile_banner_rotativo .button-nav {
+.template-compose #tile_banner_rotativo .button-nav,
+.template-compose #tile_banner_rotativo span {
     display: none;
 }
 
