@@ -810,10 +810,11 @@ div.error { padding: 1em; }
     overflow: hidden;
     background: #0e561f url("++resource++brasil.gov.tiles//bull.gif") no-repeat;
     border-right: 1px solid #446b5d;
-    bottom: 20px;
     right: 0;
     z-index: 3;
 }
+
+#tile_banner_rotativo.banner .button-nav { bottom: 20px; }
 
 .orderTiles {
     position: absolute;
@@ -839,9 +840,7 @@ div.error { padding: 1em; }
 #banner3 .button-nav { right: 20px; }
 #banner4 .button-nav { right:  0px; }
 
-#tile_banner_rotativo li {
-    height: 240px;
-}
+#tile_banner_rotativo.banner li { height: 240px; }
 
 .template-compose #tile_banner_rotativo li {
     position: relative;
@@ -878,13 +877,13 @@ div.error { padding: 1em; }
 
 #tile_banner_rotativo .banner.activeSlideItem { z-index: 2; }
 
-#tile_banner_rotativo .banner .descr {
+#tile_banner_rotativo.banner .banner .title {
     position: absolute;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     z-index: 3;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 676px;
+    max-width: 740px;
     font-size: 10px;
     font-style: italic;
     color: #fff;
@@ -892,11 +891,75 @@ div.error { padding: 1em; }
     bottom: 0;
     left: 0;
     line-height: 20px;
+    border-radius: 0 0 5px 5px;
 }
 
 .tile-remove-item {
     z-index: 10 !important;
 }
+
+/* Banner Rotativo - Chamada com foto */
+#content .tile[data-tile*="banner_rotativo"] { max-height: 480px; }
+#content #tile_banner_rotativo.chamada_com_foto { max-height: 480px; }
+#content #tile_banner_rotativo.chamada_com_foto li { height: 480px; }
+#content #tile_banner_rotativo.chamada_com_foto .banner img { max-height: 320px; }
+#content #tile_banner_rotativo.chamada_com_foto .banner {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    max-width: 766px;
+    height: 460px;
+    z-index: 1;
+    opacity: 0;
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .banner.activeSlideItem { z-index: 2; opacity: 1;}
+/* pedír pro rodrigo mudar a ordem da faixa
+ * faixa
+ * titulo
+ * chamada
+ */
+#content #tile_banner_rotativo.chamada_com_foto .faixa {
+    position: absolute;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    z-index: 3;
+    width: 100%;
+    max-width: 750px;
+    height: 20px;
+    color: #fff;
+    top: 324px;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+#tile_banner_rotativo.chamada_com_foto .button-nav { top: 324px; }
+
+#content #tile_banner_rotativo.chamada_com_foto .credito {
+    font-size: 12px;
+    font-family: Arial;
+    font-style: italic;
+    color: #172938;
+    text-align: right;
+    display: block;
+    line-height: 24px;
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .title {
+    font-size: 34px;
+    font-family: Arial;
+    font-weight: bold;
+    display: block;
+    color: #172938;
+    margin: 15px 0 15px 0;
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .descr {
+    font-size: 14px;
+    font-family: Arial;
+    display: block;
+    color: #172938;
+}
+
 
 /* Tile Banner Estatico */
 .banner-tile { float: left; }
