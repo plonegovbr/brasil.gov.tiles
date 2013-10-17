@@ -138,10 +138,10 @@ class BannerRotativoTile(ListTile):
         return (self.data['layout'] == u'Banner')
 
     def tile_class(self):
-        if self.layout_banner:
+        if self.layout_banner():
             return 'banner'
         else:
-            return 'chamada-com-foto'
+            return 'chamada_com_foto'
 
     def show_nav(self):
         return (len(self.results()) > 1)
