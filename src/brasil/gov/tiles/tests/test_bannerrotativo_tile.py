@@ -36,9 +36,9 @@ class BannerRotativoTileTestCase(unittest.TestCase):
         self.assertTrue(verifyObject(IPersistentCoverTile, tile))
 
     def test_default_configuration(self):
-        self.assertTrue(self.tile.is_configurable)
+        self.assertFalse(self.tile.is_configurable)
         self.assertTrue(self.tile.is_droppable)
-        self.assertFalse(self.tile.is_editable)
+        self.assertTrue(self.tile.is_editable)
 
     def test_tile_is_empty(self):
         self.assertTrue(self.tile.is_empty())
