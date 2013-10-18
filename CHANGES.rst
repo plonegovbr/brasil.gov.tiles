@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Frontend do novo banner rotativo  (closes `#57`_).
+    [rennanrodrigues]
   * Backend do novo banner rotativo  (closes `#57`_).
     [rodfersou]
   * Inserção de estilos inline que estavam no template para o css dos tiles  (closes `#53`_).
