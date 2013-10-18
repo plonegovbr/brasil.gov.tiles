@@ -4,7 +4,7 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-  * Frontend do novo banner rotativo  (closes `#57`_).
+  * Front-end do novo banner rotativo  (closes `#57`_).
     [rennanrodrigues]
   * Backend do novo banner rotativo  (closes `#57`_).
     [rodfersou]

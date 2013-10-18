@@ -914,11 +914,7 @@ div.error { padding: 1em; }
 }
 
 #content #tile_banner_rotativo.chamada_com_foto .banner.activeSlideItem { z-index: 2; opacity: 1;}
-/* pedír pro rodrigo mudar a ordem da faixa
- * faixa
- * titulo
- * chamada
- */
+
 #content #tile_banner_rotativo.chamada_com_foto .faixa {
     position: absolute;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
@@ -927,7 +923,7 @@ div.error { padding: 1em; }
     max-width: 750px;
     height: 20px;
     color: #fff;
-    top: 324px;
+    top: 300px;
     left: 0;
     border-radius: 0 0 5px 5px;
 }
