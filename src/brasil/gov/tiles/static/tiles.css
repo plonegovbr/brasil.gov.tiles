@@ -782,6 +782,7 @@ div.error { padding: 1em; }
 /* botão de busca dos filtros da página de resultado de busca */
 .formControls input.searchButton { display: none; }
 
+
 /* Tile Banner Rotativo */
 #content .tile[data-tile*="banner_rotativo"] {
     margin-bottom: 0;
@@ -849,14 +850,10 @@ div.error { padding: 1em; }
 }
 
 .template-compose #tile_banner_rotativo .banner,
-.template-compose #tile_banner_rotativo .banner img {
-    width: 100%;
-}
+.template-compose #tile_banner_rotativo .banner img { width: 100%; }
 
 .template-compose #tile_banner_rotativo .button-nav,
-.template-compose #tile_banner_rotativo span {
-    display: none;
-}
+.template-compose #tile_banner_rotativo span { display: none; }
 
 #tile_banner_rotativo .banner img {
     max-width: 766px;
@@ -894,9 +891,7 @@ div.error { padding: 1em; }
     border-radius: 0 0 5px 5px;
 }
 
-.tile-remove-item {
-    z-index: 10 !important;
-}
+.tile-remove-item { z-index: 10 !important; }
 
 /* Banner Rotativo - Chamada com foto */
 #content .tile[data-tile*="banner_rotativo"] { max-height: 480px; }
@@ -931,26 +926,27 @@ div.error { padding: 1em; }
 #tile_banner_rotativo.chamada_com_foto .button-nav { top: 324px; }
 
 #content #tile_banner_rotativo.chamada_com_foto .credito {
-    font-size: 12px;
+    font-size: 1em;
     font-family: Arial;
     font-style: italic;
     color: #172938;
     text-align: right;
     display: block;
-    line-height: 24px;
+    line-height: 2em;
 }
 
 #content #tile_banner_rotativo.chamada_com_foto .title {
-    font-size: 34px;
+    font-size: 2.7em;
     font-family: Arial;
     font-weight: bold;
     display: block;
     color: #172938;
-    margin: 15px 0 15px 0;
+    margin: 0.450em 0 0.450em 0;
+    line-height: 1em;
 }
 
 #content #tile_banner_rotativo.chamada_com_foto .descr {
-    font-size: 14px;
+    font-size: 1.1em;
     font-family: Arial;
     display: block;
     color: #172938;
