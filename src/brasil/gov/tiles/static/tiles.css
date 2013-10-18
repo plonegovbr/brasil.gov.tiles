@@ -881,10 +881,10 @@ div.error { padding: 1em; }
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     max-width: 740px;
-    font-size: 10px;
+    font-size: .8em;
     font-style: italic;
     color: #fff;
-    padding:0 0 0 10px;
+    padding:0 0 0 1em;
     bottom: 0;
     left: 0;
     line-height: 20px;
