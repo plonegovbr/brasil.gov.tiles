@@ -782,6 +782,7 @@ div.error { padding: 1em; }
 /* botão de busca dos filtros da página de resultado de busca */
 .formControls input.searchButton { display: none; }
 
+
 /* Tile Banner Rotativo */
 #content .tile[data-tile*="banner_rotativo"] {
     margin-bottom: 0;
@@ -810,10 +811,11 @@ div.error { padding: 1em; }
     overflow: hidden;
     background: #0e561f url("++resource++brasil.gov.tiles//bull.gif") no-repeat;
     border-right: 1px solid #446b5d;
-    bottom: 20px;
     right: 0;
     z-index: 3;
 }
+
+#tile_banner_rotativo.chamada_sem_foto .button-nav { bottom: 20px; }
 
 .orderTiles {
     position: absolute;
@@ -834,29 +836,35 @@ div.error { padding: 1em; }
     background-color: #054112;
 }
 
-#banner1 .button-nav { right: 60px; }
-#banner2 .button-nav { right: 40px; }
-#banner3 .button-nav { right: 20px; }
-#banner4 .button-nav { right:  0px; }
+/* banner rotativo com 2 itens */
+#tile_banner_rotativo[data-quantidade="2"] #banner1 .button-nav { right: 20px; }
+#tile_banner_rotativo[data-quantidade="2"] #banner2 .button-nav { right: 0; border-radius: 0 0 3px 0; }
 
-#tile_banner_rotativo li {
-    height: 240px;
-}
+/* banner rotativo com 3 itens */
+#tile_banner_rotativo[data-quantidade="3"] #banner1 .button-nav { right: 40px; }
+#tile_banner_rotativo[data-quantidade="3"] #banner2 .button-nav { right: 20px; }
+#tile_banner_rotativo[data-quantidade="3"] #banner3 .button-nav { right: 0; border-radius: 0 0 3px 0; }
+
+/* banner rotativo com 3 itens */
+#tile_banner_rotativo[data-quantidade="4"] #banner1 .button-nav { right: 60px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner2 .button-nav { right: 40px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner3 .button-nav { right: 20px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner4 .button-nav { right: 0; border-radius: 0 0 3px 0; }
+
+
+#tile_banner_rotativo.chamada_sem_foto li { height: 240px; }
 
 .template-compose #tile_banner_rotativo li {
     position: relative;
     float: left;
-    width: 190px;
+    width: 25%;
 }
 
 .template-compose #tile_banner_rotativo .banner,
-.template-compose #tile_banner_rotativo .banner img {
-    width: 190px;
-}
+.template-compose #tile_banner_rotativo .banner img { width: 100%; }
 
-.template-compose #tile_banner_rotativo .button-nav {
-    display: none;
-}
+.template-compose #tile_banner_rotativo .button-nav,
+.template-compose #tile_banner_rotativo span { display: none; }
 
 #tile_banner_rotativo .banner img {
     max-width: 766px;
@@ -877,25 +885,84 @@ div.error { padding: 1em; }
 
 #tile_banner_rotativo .banner.activeSlideItem { z-index: 2; }
 
-#tile_banner_rotativo .banner .descr {
+#tile_banner_rotativo.chamada_sem_foto .banner .title {
     position: absolute;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     z-index: 3;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 676px;
-    font-size: 10px;
+    max-width: 740px;
+    font-size: .8em;
     font-style: italic;
     color: #fff;
-    padding:0 0 0 10px;
+    padding:0 0 0 1em;
     bottom: 0;
     left: 0;
     line-height: 20px;
+    border-radius: 0 0 5px 5px;
 }
 
-.tile-remove-item {
-    z-index: 10 !important;
+.tile-remove-item { z-index: 10 !important; }
+
+/* Banner Rotativo - Chamada com foto */
+#content .tile[data-tile*="banner_rotativo"] { max-height: 480px; }
+#content #tile_banner_rotativo.chamada_com_foto { max-height: 480px; }
+#content #tile_banner_rotativo.chamada_com_foto li { height: 480px; }
+#content #tile_banner_rotativo.chamada_com_foto .banner img { max-height: 320px; }
+#content #tile_banner_rotativo.chamada_com_foto .banner {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    max-width: 766px;
+    height: 460px;
+    z-index: 1;
+    opacity: 0;
 }
+
+#content #tile_banner_rotativo.chamada_com_foto .banner.activeSlideItem { z-index: 2; opacity: 1;}
+
+#content #tile_banner_rotativo.chamada_com_foto .faixa {
+    position: absolute;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    z-index: 3;
+    width: 100%;
+    max-width: 750px;
+    height: 20px;
+    color: #fff;
+    top: 300px;
+    left: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+#tile_banner_rotativo.chamada_com_foto .button-nav { top: 324px; }
+
+#content #tile_banner_rotativo.chamada_com_foto .credito {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: #172938;
+    text-align: right;
+    display: block;
+    line-height: 2em;
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .title {
+    font-size: 2.7em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: block;
+    color: #172938;
+    margin: 0.450em 0 0.450em 0;
+    line-height: 1em;
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .descr {
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    color: #172938;
+}
+
 
 /* Tile Banner Estatico */
 .banner-tile { float: left; }
