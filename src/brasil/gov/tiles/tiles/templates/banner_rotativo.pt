@@ -10,11 +10,13 @@
     </head>
     <body>
         <ul id="tile_banner_rotativo"
-            tal:attributes="class view/tile_class">
-            <tal:items tal:define="results view/results;
-                                   first_item python:results[0] if results else None;
-                                   last_item python:results[-1] if results else None"
-                       tal:repeat="item results">
+            tal:define="results view/results;
+                                qtd python:len(results);
+                                first_item python:results[0] if results else None;
+                                last_item python:results[-1] if results else None"
+            tal:attributes="class view/tile_class;
+                            data-quantidade qtd;">
+            <tal:items repeat="item results">
                 <li tal:define="idx repeat/item/index;
                                 idx python:idx+1"
                     tal:attributes="id string:banner$idx;

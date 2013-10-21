@@ -139,7 +139,7 @@ class BannerRotativoTile(ListTile):
 
     def tile_class(self):
         if self.layout_banner():
-            return 'banner'
+            return 'chamada_sem_foto'
         else:
             return 'chamada_com_foto'
 

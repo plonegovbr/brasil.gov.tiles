@@ -815,7 +815,7 @@ div.error { padding: 1em; }
     z-index: 3;
 }
 
-#tile_banner_rotativo.banner .button-nav { bottom: 20px; }
+#tile_banner_rotativo.chamada_sem_foto .button-nav { bottom: 20px; }
 
 .orderTiles {
     position: absolute;
@@ -836,12 +836,23 @@ div.error { padding: 1em; }
     background-color: #054112;
 }
 
-#banner1 .button-nav { right: 60px; }
-#banner2 .button-nav { right: 40px; }
-#banner3 .button-nav { right: 20px; }
-#banner4 .button-nav { right:  0px; }
+/* banner rotativo com 2 itens */
+#tile_banner_rotativo[data-quantidade="2"] #banner1 .button-nav { right: 20px; }
+#tile_banner_rotativo[data-quantidade="2"] #banner2 .button-nav { right: 0; border-radius: 0 0 3px 0; }
 
-#tile_banner_rotativo.banner li { height: 240px; }
+/* banner rotativo com 3 itens */
+#tile_banner_rotativo[data-quantidade="3"] #banner1 .button-nav { right: 40px; }
+#tile_banner_rotativo[data-quantidade="3"] #banner2 .button-nav { right: 20px; }
+#tile_banner_rotativo[data-quantidade="3"] #banner3 .button-nav { right: 0; border-radius: 0 0 3px 0; }
+
+/* banner rotativo com 3 itens */
+#tile_banner_rotativo[data-quantidade="4"] #banner1 .button-nav { right: 60px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner2 .button-nav { right: 40px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner3 .button-nav { right: 20px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner4 .button-nav { right: 0; border-radius: 0 0 3px 0; }
+
+
+#tile_banner_rotativo.chamada_sem_foto li { height: 240px; }
 
 .template-compose #tile_banner_rotativo li {
     position: relative;
@@ -874,7 +885,7 @@ div.error { padding: 1em; }
 
 #tile_banner_rotativo .banner.activeSlideItem { z-index: 2; }
 
-#tile_banner_rotativo.banner .banner .title {
+#tile_banner_rotativo.chamada_sem_foto .banner .title {
     position: absolute;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     z-index: 3;
