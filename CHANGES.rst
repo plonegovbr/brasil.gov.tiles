@@ -4,6 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Regras de fonte do Tile collection (closes `#59`_).
+    [rennanrodrigues]
   * Front-end do novo banner rotativo  (closes `#57`_).
     [rennanrodrigues]
   * Backend do novo banner rotativo  (closes `#57`_).
@@ -100,4 +102,5 @@ Changelog
 .. _`#53`: https://github.com/plonegovbr/brasil.gov.tiles/issues/53
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.tiles/issues/55
 .. _`#57`: https://github.com/plonegovbr/brasil.gov.tiles/issues/57
+.. _`#59`: https://github.com/plonegovbr/brasil.gov.tiles/issues/59
 
