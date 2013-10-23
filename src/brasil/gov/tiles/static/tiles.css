@@ -1142,132 +1142,128 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     height: 100%;
 }
 
-/*
-** Tile collection
-** Visão sumária de coleções - Listagem
- */
-body[class*="collection"] #viewlet-below-content-title { display: none; }
-
-body[class*="collection"] #content-core { margin-top: 0; }
-
-body[class*="collection"] #content .tileItem {
-    padding-bottom: 1.650em;
-    padding-left: 8.975em;
-    margin: 1.910em 0 0 0;
-    min-height: 8.900em;
+/* ==========================================================================
+   Tiles padronizados - estilo para listagem
+   ========================================================================== */
+.template-summary_view #content-core,
+body[class*="collection"] #content-core {
+    margin-top: 0;
 }
 
+#viewlet-below-content-title { display: none; }
+
+.template-summary_view #content h1.documentFirstHeading,
 body[class*="collection"] #content h1.documentFirstHeading {
-    margin: 0;
-    padding: .825em 0;
-    border-bottom: 1px solid #d9dbda;
-    font-size: 2.333em;
+    font-size: 28px;
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
     font-weight: normal;
+    margin: 24px 0 30px;
+    padding: 0 0 19px 0;
+    border: 0;
     color: #2c66ce;
     text-transform: uppercase;
+    border-bottom: 1px solid #d9dbda;
+    line-height: 28px;
 }
 
-body[class*="collection"] #content .subtitle {
+.template-summary_view #content .tileItem,
+body[class*="collection"] #content .tileItem {
+    margin: 0;
+    padding: 24px 0 24px 112px;
+    position: relative;
+    border-bottom: 1px solid #d7dbda;
+    clear: both;
+}
+
+.template-summary_view #content .tileItem:first-child,
+body[class*="collection"] #content .tileItemfirst-child { padding-top: 0; }
+
+.template-summary_view #content .tileItem .subtitle,
+body[class*="collection"] #content .tileItem .subtitle {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: .900em;
+    font-size: 12px;
     font-weight: normal;
+    margin: 0;
+    padding: 0;
 }
 
-body[class*="collection"] #content .tileHeadline {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.250em;
+.template-summary_view #content .tileItem .tileHeadline,
+body[class*="collection"] #content .tileItem .tileHeadline {
+    font-size: 16px;
     font-weight: bold;
+    margin: 7px 0;
+    padding: 0;
     color: #172938;
-    line-height: 1.350em;
-    margin: .400em 0 1em;
-}
-
-body[class*="collection"] #content .tileHeadline + p {
-    margin: 0 0 1.170em;
-}
-
-body[class*="collection"] #content .tileImage {
-    margin: 0 1.250em 0 0 !important;
-}
-
-body[class*="collection"] #content .description {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    color: #172938;
-    line-height: 1.170em;
 }
 
+.template-summary_view #content .tileItem .tileHeadline a,
+.template-summary_view #content .tileItem .description,
+body[class*="collection"] #content .tileItem .tileHeadline a,
+body[class*="collection"] #content .tileItem .description {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172938;
+    line-height: 21px;
+    margin: 0;
+    padding: 0;
+}
+
+.template-summary_view #content .tileItem p,
+body[class*="collection"] #content .tileItem p {
+    margin: 0;
+    padding: 0;
+}
+
+.template-summary_view #content .tileItem .keywords,
 body[class*="collection"] #content .tileItem .keywords {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    line-height: 1.290em;
+    font-size: 12px;
+    font-weight: normal;
+    color: #596e7f;
+    line-height: 16px;
+    margin: 15px 0 0;
+    padding: 0;
 }
 
-body[class*="collection"] #content .tileItem .keywords,
-body[class*="collection"] #content .tileItem .keywords span a,
-body[class*="collection"] #content .tileItem .documentByLine { color: #596e7f; }
-
+.template-summary_view #content .tileItem .documentByLine,
 body[class*="collection"] #content .tileItem .documentByLine {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    padding: 0 .850em 0 0;
-    margin: 0;
-    width: 100%;
-    max-width: 7em;
-    height: auto;
+    font-size: 12px;
+    color: #596E7F;
+    margin: 24px 0 0;
+    padding: 0;
+    min-width: 94px;
+    min-height: 130px;
 }
 
-/* icones - beaseado na semantica do font awesome */
-body[class*="collection"] #content .summary-view-icon {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    line-height: 1em;
-    color: #596e7f;
+.template-summary_view #content .tileItem:first-child .documentByLine,
+body[class*="collection"] .tileItem:first-child .documentByLine { margin-top: 0; }
+
+.template-summary_view #content .documentByLine .summary-view-icon,
+body[class*="collection"] #content .documentByLine .summary-view-icon {
     display: block;
-    margin-bottom: .5em;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0 0 12px;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+    color: #596e7f;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+/* Icones */
+#content .summary-view-icon [class*="icon"] {
     display: inline-block;
+    background-image: url("++resource++brasil.gov.portal/img/summary-view-icons-sprite.png");
+    background-repeat: no-repeat;
+    position: relative;
+    top: 1px;
     width: 14px;
     height: 14px;
-    line-height: 14px;
-    vertical-align: text-top;
-    background-image: url("summary-view-icons-sprite.png");
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    margin-top: 1px;
-    margin-right: 3px;
-}
-
-body[class*="collection"] #content .summary-view-icon .icon-day { background-position: -244px -392px; }
-body[class*="collection"] #content .summary-view-icon .icon-hour { background-position: -273px -393px; }
-body[class*="collection"] #content .summary-view-icon .icon-audio { background-position: -3px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-info { background-position: -63px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-gallery { background-position: -303px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-edit { background-position: -93px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-app { background-position: -155px -392px; }
-body[class*="collection"] #content .summary-view-icon .icon-image { background-position: -123px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-gallery,
-body[class*="collection"] #content .summary-view-icon .icon-image {
-    width: 15px;
     margin-right: 2px;
 }
 
-/* Contraste
- * icones - beaseado na semantica do font awesome*/
-body[class*="collection"].contraste #content .summary-view-icon .icon-day { background-position: -624px -392px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-audio { background-position: -383px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-multimidia { background-position: -413px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-info { background-position: -443px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-gallery { background-position: -683px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-edit { background-position: -473px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-image { background-position: -503px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-app { background-position: -535px -392px; }
-
-body[class*="collection"].contraste #content .description,
-body[class*="collection"].contraste #content .tileHeadline a { color: #fff !important; }
+#content .summary-view-icon .icon-audio { background-position: -3px -391px; }
+#content .summary-view-icon .icon-day { background-position: -244px -392px; width: 13px; }
+#content .summary-view-icon .icon-image { background-position: -123px -391px; }
+#content .summary-view-icon .icon-hour { background-position: -273px -393px; }
+#content .summary-view-icon .icon-noticia { background-position: -94px -391px; }
+#content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
