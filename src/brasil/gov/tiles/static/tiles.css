@@ -1143,16 +1143,12 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 }
 
 /* ==========================================================================
-   Tiles padronizados - estilo para listagem
+   Tile collection, do mesmo estilo que a summary view
    ========================================================================== */
-.template-summary_view #content-core,
-body[class*="collection"] #content-core {
-    margin-top: 0;
-}
+body[class*="collection"] #content-core { margin-top: 0; }
 
-#viewlet-below-content-title { display: none; }
+#viewlet-below-content-title { }
 
-.template-summary_view #content h1.documentFirstHeading,
 body[class*="collection"] #content h1.documentFirstHeading {
     font-size: 28px;
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
@@ -1166,7 +1162,6 @@ body[class*="collection"] #content h1.documentFirstHeading {
     line-height: 28px;
 }
 
-.template-summary_view #content .tileItem,
 body[class*="collection"] #content .tileItem {
     margin: 0;
     padding: 24px 0 24px 112px;
@@ -1175,10 +1170,8 @@ body[class*="collection"] #content .tileItem {
     clear: both;
 }
 
-.template-summary_view #content .tileItem:first-child,
 body[class*="collection"] #content .tileItemfirst-child { padding-top: 0; }
 
-.template-summary_view #content .tileItem .subtitle,
 body[class*="collection"] #content .tileItem .subtitle {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -1187,7 +1180,6 @@ body[class*="collection"] #content .tileItem .subtitle {
     padding: 0;
 }
 
-.template-summary_view #content .tileItem .tileHeadline,
 body[class*="collection"] #content .tileItem .tileHeadline {
     font-size: 16px;
     font-weight: bold;
@@ -1197,8 +1189,6 @@ body[class*="collection"] #content .tileItem .tileHeadline {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.template-summary_view #content .tileItem .tileHeadline a,
-.template-summary_view #content .tileItem .description,
 body[class*="collection"] #content .tileItem .tileHeadline a,
 body[class*="collection"] #content .tileItem .description {
     font-family: Arial, Helvetica, sans-serif;
@@ -1208,13 +1198,11 @@ body[class*="collection"] #content .tileItem .description {
     padding: 0;
 }
 
-.template-summary_view #content .tileItem p,
 body[class*="collection"] #content .tileItem p {
     margin: 0;
     padding: 0;
 }
 
-.template-summary_view #content .tileItem .keywords,
 body[class*="collection"] #content .tileItem .keywords {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -1225,7 +1213,6 @@ body[class*="collection"] #content .tileItem .keywords {
     padding: 0;
 }
 
-.template-summary_view #content .tileItem .documentByLine,
 body[class*="collection"] #content .tileItem .documentByLine {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -1236,10 +1223,8 @@ body[class*="collection"] #content .tileItem .documentByLine {
     min-height: 130px;
 }
 
-.template-summary_view #content .tileItem:first-child .documentByLine,
 body[class*="collection"] .tileItem:first-child .documentByLine { margin-top: 0; }
 
-.template-summary_view #content .documentByLine .summary-view-icon,
 body[class*="collection"] #content .documentByLine .summary-view-icon {
     display: block;
     font-size: 12px;
@@ -1248,22 +1233,3 @@ body[class*="collection"] #content .documentByLine .summary-view-icon {
     font-family: "open_sansregular", Arial, Helvetica, sans-serif;
     color: #596e7f;
 }
-
-/* Icones */
-#content .summary-view-icon [class*="icon"] {
-    display: inline-block;
-    background-image: url("++resource++brasil.gov.portal/img/summary-view-icons-sprite.png");
-    background-repeat: no-repeat;
-    position: relative;
-    top: 1px;
-    width: 14px;
-    height: 14px;
-    margin-right: 2px;
-}
-
-#content .summary-view-icon .icon-audio { background-position: -3px -391px; }
-#content .summary-view-icon .icon-day { background-position: -244px -392px; width: 13px; }
-#content .summary-view-icon .icon-image { background-position: -123px -391px; }
-#content .summary-view-icon .icon-hour { background-position: -273px -393px; }
-#content .summary-view-icon .icon-noticia { background-position: -94px -391px; }
-#content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
