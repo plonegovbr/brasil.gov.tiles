@@ -1147,8 +1147,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
    ========================================================================== */
 body[class*="collection"] #content-core { margin-top: 0; }
 
-#viewlet-below-content-title { }
-
 body[class*="collection"] #content h1.documentFirstHeading {
     font-size: 2.25em;
     font-family: "open_sansbold", Arial, Helvetica, sans-serif;
