@@ -55,7 +55,7 @@ Changelog
   * Adicionado título no tile list (closes `#12`_). [rodfersou]
   * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
   * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
-  (closes `#8`_). [rodfersou]
+    (closes `#8`_). [rodfersou]
 
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
