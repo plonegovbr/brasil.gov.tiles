@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.0rc2 (unreleased)
+1.0rc2 (2013-10-24)
 ^^^^^^^^^^^^^^^^^^^
 
   * Regra que estava no summary view para o tile collection (closes `#61`_).
