@@ -10,6 +10,8 @@ Changelog
 1.0rc2 (2013-10-24)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Removida a regra duplicada (closes `#63`_).
+    [rennanrodrigues]
   * Regra que estava no summary view para o tile collection (closes `#61`_).
     [rennanrodrigues]
   * Regras de fonte do Tile collection (closes `#59`_).
@@ -112,4 +114,5 @@ Changelog
 .. _`#57`: https://github.com/plonegovbr/brasil.gov.tiles/issues/57
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.tiles/issues/59
 .. _`#61`: https://github.com/plonegovbr/brasil.gov.tiles/issues/61
+.. _`#63`: https://github.com/plonegovbr/brasil.gov.tiles/issues/63
 
