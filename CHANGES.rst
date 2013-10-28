@@ -4,18 +4,17 @@ Changelog
 1.0rc3 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
-
-
-1.0rc2 (2013-10-24)
-^^^^^^^^^^^^^^^^^^^
-
   * Removida a regra duplicada (closes `#63`_).
     [rennanrodrigues]
   * Regra que estava no summary view para o tile collection (closes `#61`_).
     [rennanrodrigues]
   * Regras de fonte do Tile collection (closes `#59`_).
     [rennanrodrigues]
+
+
+1.0rc2 (2013-10-24)
+^^^^^^^^^^^^^^^^^^^
+
   * Front-end do novo banner rotativo  (closes `#57`_).
     [rennanrodrigues]
   * Backend do novo banner rotativo  (closes `#57`_).
