@@ -4,7 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Correção de bug de transição do banner rotativo no layout de chamada com foto (closes `#65`_).
+  [rennanrodrigues]
 
 
 1.0 (2013-10-29)
@@ -120,4 +121,5 @@ Changelog
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.tiles/issues/59
 .. _`#61`: https://github.com/plonegovbr/brasil.gov.tiles/issues/61
 .. _`#63`: https://github.com/plonegovbr/brasil.gov.tiles/issues/63
+.. _`#65`: https://github.com/plonegovbr/brasil.gov.tiles/issues/65
 
