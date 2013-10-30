@@ -919,7 +919,23 @@ div.error { padding: 1em; }
     opacity: 0;
 }
 
-#content #tile_banner_rotativo.chamada_com_foto .banner.activeSlideItem { z-index: 2; opacity: 1;}
+#content #tile_banner_rotativo.chamada_com_foto .banner.activeSlideItem { z-index: 2; opacity: 1; }
+
+#content #tile_banner_rotativo.chamada_com_foto .button-nav {
+    background-image: url("++resource++brasil.gov.tiles/bullets-branco-verde.gif");
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .button-nav:hover,
+#content #tile_banner_rotativo.chamada_com_foto .button-nav:focus,
+#content #tile_banner_rotativo.chamada_com_foto .button-nav.activeSlide {
+    background-color: #ffb400;
+    background-position: 100% 0;
+}
+
+#content #tile_banner_rotativo.chamada_com_foto .last-item .button-nav {
+    border-right: none;
+    width: 20px;
+}
 
 #content #tile_banner_rotativo.chamada_com_foto .faixa {
     position: absolute;

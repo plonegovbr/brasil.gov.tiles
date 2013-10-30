@@ -21,20 +21,24 @@ var portalBrasil = {
 
                     var iTotalSlides = $("#tile_banner_rotativo li").length;
 
-                    var totalSlides = iTotalSlides,
-                        activeSlide = $('#tile_banner_rotativo .activeSlide'),
-                        activeSlideItem = $('#tile_banner_rotativo .activeSlideItem'),
-                        activeSlideNumber = parseInt(activeSlide.html()),
-                        nextSlideNumber = (activeSlideNumber % totalSlides) + 1;
+                    if ( iTotalSlides > 1 ) {
+                        var totalSlides = iTotalSlides,
+                            activeSlide = $('#tile_banner_rotativo .activeSlide'),
+                            activeSlideItem = $('#tile_banner_rotativo .activeSlideItem'),
+                            activeSlideNumber = parseInt(activeSlide.html()),
+                            nextSlideNumber = (activeSlideNumber % totalSlides) + 1;
 
-                    var nextSlide = $('#banner' + nextSlideNumber + ' .button-nav'),
-                        nextSlideItem = $('#banner' + nextSlideNumber + ' .banner');
+                        var nextSlide = $('#banner' + nextSlideNumber + ' .button-nav'),
+                            nextSlideItem = $('#banner' + nextSlideNumber + ' .banner');
 
-                    $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
-                    $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
+                        $('#tile_banner_rotativo .button-nav').removeClass('activeSlide');
+                        $('#tile_banner_rotativo .banner').removeClass('activeSlideItem');
 
-                    nextSlide.addClass('activeSlide');
-                    nextSlideItem.addClass('activeSlideItem');
+                        nextSlide.addClass('activeSlide');
+                        nextSlideItem.addClass('activeSlideItem');
+                    }
+
+
                 }
 
                 window.setTimeout(updateCarrossel, 4000);
