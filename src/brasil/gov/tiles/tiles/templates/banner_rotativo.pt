@@ -21,9 +21,6 @@
                                 idx python:idx+1"
                     tal:attributes="id string:banner$idx;
                                     data-uid python:view.get_uid(item)">
-                    <span class="credito"
-                          tal:content="item/rights"
-                          tal:condition="not:view/layout_banner" />
                     <a tal:attributes="href string:${item/absolute_url}/view;
                                        class python:'button-nav' + (' activeSlide' if item == first_item else '');"
                        tal:content="idx"
@@ -31,6 +28,9 @@
                     <a tal:attributes="href string:${item/absolute_url}/view;
                                        rel string:internal;
                                        class python:'banner' + (' activeSlideItem' if item == first_item else '');">
+                        <span class="credito"
+                              tal:content="item/rights"
+                              tal:condition="not:view/layout_banner" />
                         <img tal:define="thumbnail python:view.thumbnail(item);"
                              tal:condition="thumbnail"
                              tal:attributes="src thumbnail/url;
