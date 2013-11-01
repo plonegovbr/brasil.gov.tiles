@@ -718,23 +718,7 @@ ul.css-tabs a.current {
     cursor:default;
 }
 
-/* tab pane */
-.css-panes .pane {
-    display:none;
-    padding:15px 20px;
-    min-height:150px;
-    height: 350px;
-    border:1px solid #d4d5d7;
-    border-width:0 1px 1px 1px;
-    background-color:#eeeff1;
-}
-#content .css-tabs li {
-    list-style: none outside none;
-}
-
-.outstanding-header {
-    position: relative;
-}
+.outstanding-header { position: relative; }
 
 .outstanding-link {
     right: 0;
@@ -742,9 +726,29 @@ ul.css-tabs a.current {
     float: right;
 }
 
-/*social*/
-.social-panes .pane {
-    padding:15px 4px;
+
+/* Tile de redes sociais
+   ========================================================================== */
+
+.css-panes .pane {
+    display: none;
+    padding: 10px 4px;
+    height: 340px;
+    border: 1px solid #d4d5d7;
+    border-radius: 0 5px 5px 5px;
+    background-color: #eeeff1;
+}
+
+#content .css-tabs li { list-style: none outside none; }
+
+/* Reset do plugin Facebook like box */
+#fb-root { display: none; }
+
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+    border: 0 none !important;
 }
 
 /* mensagem de erro na tag noscript */
