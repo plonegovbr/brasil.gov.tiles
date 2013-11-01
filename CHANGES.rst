@@ -4,7 +4,7 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-* Correlçai de altura do container de navegação do media carousel (closes `#70`_).
+* Correção de altura do container de navegação do media carousel (closes `#70`_).
   [rennanrodrigues]
 * Correção de bug de altura e sobreposição de conteúdo no Tile de Redes Sociais (Twitter)
   (closes `#68`_).
