@@ -4,6 +4,9 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Correção de bug de altura e sobreposição de conteúdo no Tile de Redes Sociais (Twitter)
+  (closes `#68`_).
+  [rennanrodrigues]
 * Correção de bug de transição do banner rotativo no layout de chamada com foto (closes `#65`_).
   [rennanrodrigues]
 
@@ -122,4 +125,5 @@ Changelog
 .. _`#61`: https://github.com/plonegovbr/brasil.gov.tiles/issues/61
 .. _`#63`: https://github.com/plonegovbr/brasil.gov.tiles/issues/63
 .. _`#65`: https://github.com/plonegovbr/brasil.gov.tiles/issues/65
+.. _`#68`: https://github.com/plonegovbr/brasil.gov.tiles/issues/68
 
