@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Refatorado o banner rotativo (closes `#74`_).
+  [rennanrodrigues]
 * Tile banner rotativo ajustado para foto ter a proporção de 21x11,85 cm. (closes `#72`_).
   [rennanrodrigues]
 * Correção de altura do container de navegação do media carousel (closes `#70`_).
@@ -132,4 +134,5 @@ Changelog
 .. _`#68`: https://github.com/plonegovbr/brasil.gov.tiles/issues/68
 .. _`#70`: https://github.com/plonegovbr/brasil.gov.tiles/issues/70
 .. _`#72`: https://github.com/plonegovbr/brasil.gov.tiles/issues/72
+.. _`#74`: https://github.com/plonegovbr/brasil.gov.tiles/issues/74
 

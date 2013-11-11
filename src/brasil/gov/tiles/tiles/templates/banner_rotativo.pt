@@ -20,14 +20,16 @@
                 <li tal:define="idx repeat/item/index;
                                 idx python:idx+1"
                     tal:attributes="id string:banner$idx;
+                                    class python:(' activeSlide' if item == first_item else '');
+                                    data-slidenumber idx;
                                     data-uid python:view.get_uid(item)">
                     <a tal:attributes="href string:${item/absolute_url}/view;
-                                       class python:'button-nav' + (' activeSlide' if item == first_item else '');"
+                                       class string:button-nav;"
                        tal:content="idx"
                        tal:condition="view/show_nav" />
                     <a tal:attributes="href string:${item/absolute_url}/view;
                                        rel string:internal;
-                                       class python:'banner' + (' activeSlideItem' if item == first_item else '');">
+                                       class string:banner;">
                         <span class="credito"
                               tal:content="item/rights"
                               tal:condition="not:view/layout_banner" />
