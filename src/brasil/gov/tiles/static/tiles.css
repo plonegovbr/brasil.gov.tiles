@@ -1035,6 +1035,8 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 /* tile com descrição */
 #content #tile_banner_rotativo.chamada_com_foto { opacity: 0; }
 
+#content #tile_banner_rotativo.chamada_com_foto li .banner { width: 100%; }
+
 /* itens do tile */
 #content #tile_banner_rotativo li {
     margin: 0;
