@@ -6,8 +6,8 @@ var portalBrasil = {
     // Tile Banner Rotativo
     corrigeAlturaFaixa: function() {
         var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
-            faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
-            botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
+        faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
+        botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
         console.log('aqui');
         // ajusta offsetY da faixa dos itens e dos botoes de navegação
         faixaBannerRotativo.css('top', imgBannerRotativo.height() - faixaBannerRotativo.height());
@@ -34,9 +34,9 @@ var portalBrasil = {
                     var totalSlides = $("#tile_banner_rotativo li").length;
                     if (totalSlides > 1) {
                         var activeSlide       = $('#tile_banner_rotativo li.activeSlide'),
-                            activeSlideNumber = parseInt(activeSlide.attr('data-slidenumber')),
-                            nextSlideNumber   = (activeSlideNumber % totalSlides) + 1,
-                            nextSlide         = $('#banner' + nextSlideNumber);
+                        activeSlideNumber = parseInt(activeSlide.attr('data-slidenumber')),
+                        nextSlideNumber   = (activeSlideNumber % totalSlides) + 1,
+                        nextSlide         = $('#banner' + nextSlideNumber);
                         activeSlide.removeClass('activeSlide');
                         nextSlide.addClass('activeSlide');
                         portalBrasil.corrigeAlturaFaixa();
@@ -49,15 +49,15 @@ var portalBrasil = {
     },
     resizeAlturaBannerRotativo: function() {
         var containerBannerRotativo = $('#tile_banner_rotativo'),
-            itemBannerRotativo      = $('#tile_banner_rotativo li');
+        itemBannerRotativo      = $('#tile_banner_rotativo li');
 
         // ajusta altura de cada item do banner
         var bannerMaior = 0;
         itemBannerRotativo.each(function() {
-           var altura = $(this).find('img').height()      +
-                        $(this).find('.credito').height() +
-                        $(this).find('.title').height()   +
-                        $(this).find('.descr').height();
+            var altura = ($(this).find('img') ? $(this).find('img').height() : 0)      +
+                         ($(this).find('.credito') ? $(this).find('.credito').height() : 0) +
+                         ($(this).find('.title') ? $(this).find('.title').height() : 0)   +
+                         ($(this).find('.descr') ? $(this).find('.descr').height() : 0);
             if (bannerMaior < altura) {
                 bannerMaior = altura;
             }
@@ -107,14 +107,14 @@ var portalBrasilCompor = {
             var tile_type = tile.attr("data-tile-type");
             var tile_id = tile.attr("id");
             $.ajax({
-                 url: "@@removeitemfromlisttile",
-                 data: {'tile-type': tile_type, 'tile-id': tile_id, 'uid': uid},
-                 success: function(info) {
-                     tile.html(info);
-                     objPortal.titleMarkupSetup();
-                     tile.find('.loading-mask').removeClass('show remove-tile');
-                     return false;
-                 }
+                url: "@@removeitemfromlisttile",
+                data: {'tile-type': tile_type, 'tile-id': tile_id, 'uid': uid},
+                success: function(info) {
+                    tile.html(info);
+                    objPortal.titleMarkupSetup();
+                    tile.find('.loading-mask').removeClass('show remove-tile');
+                    return false;
+                }
             });
         });
     },
@@ -143,18 +143,18 @@ var portalBrasilCompor = {
                 });
 
                 var tile = $(this).closest('.tile'),
-                    tile_type = tile.attr("data-tile-type"),
-                    tile_id = tile.attr("id");
+                tile_type = tile.attr("data-tile-type"),
+                tile_id = tile.attr("id");
 
                 $.ajax({
-                     url: "@@updatelisttilecontent",
-                     data: {'tile-type': tile_type, 'tile-id': tile_id, 'uids': uids},
-                     success: function(info) {
-                         tile.html(info);
-                         objPortal.removeObjFromTile();
-                         return false;
-                     }
-                 });
+                    url: "@@updatelisttilecontent",
+                    data: {'tile-type': tile_type, 'tile-id': tile_id, 'uids': uids},
+                    success: function(info) {
+                        tile.html(info);
+                        objPortal.removeObjFromTile();
+                        return false;
+                    }
+                });
             }
         });
 
