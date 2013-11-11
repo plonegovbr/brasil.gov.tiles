@@ -1101,6 +1101,7 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     border-radius: 0 0 5px 5px;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     color: #fff;
+    opacity: 0;
 }
 
 /* botões de navegação */
@@ -1119,6 +1120,7 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     background-repeat: no-repeat;
     text-indent: 100%;
     white-space: nowrap;
+    opacity: 0;
 }
 
 #tile_banner_rotativo .activeSlide .button-nav,
