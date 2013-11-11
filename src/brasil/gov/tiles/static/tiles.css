@@ -1150,6 +1150,28 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 
 
 /*
+ * Tile do Banner Rotativo - Sem descrição
+ */
+
+#tile_banner_rotativo.chamada_sem_foto li .banner { width: 100%; }
+
+#tile_banner_rotativo.chamada_sem_foto li .banner .faixa { display: none; }
+
+#tile_banner_rotativo.chamada_sem_foto li .banner .title  {
+    margin: -20px 0 0;
+    height: 20px;
+    border-radius: 0 0 5px 5px;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    color: #fff;
+    text-indent: 1em;
+    font-weight: normal;
+    font-style: italic;
+    font-size: .8em;
+    line-height: 20px;
+}
+
+
+/*
  * Tile do Banner Rotativo - Aba compor
  */
 
@@ -1182,10 +1204,10 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 .template-compose #content #tile_banner_rotativo span { display: none; }
 
 .template-compose #content #tile_banner_rotativo .title {
+    display: block;
+    margin: 3%;
     font-size: 1.2em;
     line-height: 1.2em;
-    margin: 3%;
-    display: block;
 }
 
 .template-compose #content #tile_banner_rotativo .tile-remove-item {
