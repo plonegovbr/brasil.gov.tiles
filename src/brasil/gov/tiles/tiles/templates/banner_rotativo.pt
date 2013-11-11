@@ -36,6 +36,8 @@
                         <img tal:define="thumbnail python:view.thumbnail(item);"
                              tal:condition="thumbnail"
                              tal:attributes="src thumbnail/url;
+                                             width thumbnail/width;
+                                             height thumbnail/height;
                                              alt item/title" />
                         <span class="faixa"
                               tal:condition="view/show_nav" />

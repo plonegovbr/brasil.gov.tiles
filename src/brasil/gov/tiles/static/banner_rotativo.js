@@ -81,7 +81,8 @@ var portalBrasil = {
 
             itemBannerRotativo.css('height', bannerMaior);
             // ajusta altura do container do banner rotativo (22px = margin bottom default dos tiles)
-            containerBannerRotativo.animate({'height': bannerMaior + 22}, 100, portalBrasil.corrigeAlturaFaixa);
+            containerBannerRotativo.css({'height': bannerMaior + 22});
+            portalBrasil.corrigeAlturaFaixa();
         }
     },
     alturaBannerRotativo: function() {
@@ -174,6 +175,14 @@ var portalBrasilCompor = {
         });
     }
 };
+
+$(function() {
+    if ($('#tile_banner_rotativo').length > 0) {
+        portalBrasil.init();
+        portalBrasilCompor.init();
+        portalBrasil.resizeAlturaBannerRotativo();
+    }
+});
 
 $(window).load(function() {
     if ($('#tile_banner_rotativo').length > 0) {
