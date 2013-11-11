@@ -8,11 +8,11 @@ var portalBrasil = {
         var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
             faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
             botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
-        // ajusta offsetY da faixa dos itens
-        faixaBannerRotativo.css('top', imgBannerRotativo.height() + 4);
-        // ajusta offsetY dos botões de navegação
-        botoesBannerRotativo.css('top', imgBannerRotativo.height() + 4);
-
+        console.log('aqui');
+        // ajusta offsetY da faixa dos itens e dos botoes de navegação
+        faixaBannerRotativo.css('top', imgBannerRotativo.height() - faixaBannerRotativo.height());
+        botoesBannerRotativo.css('top', imgBannerRotativo.height() - botoesBannerRotativo.height());
+        // Mostra faixa e botao na primeira execucao
         if (faixaBannerRotativo.css('opacity') == 0) {
             faixaBannerRotativo.animate({'opacity': 1}, 200);
             botoesBannerRotativo.animate({'opacity': 1}, 200);
