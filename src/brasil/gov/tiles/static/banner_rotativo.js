@@ -5,26 +5,28 @@ var portalBrasil = {
     },
     // Tile Banner Rotativo
     corrigeAlturaFaixa: function() {
-        var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
+        if ($(".template-compose #tile_banner_rotativo").length == 0) {
+            var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
             credito              = $('#tile_banner_rotativo .activeSlide .credito'),
             faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
             botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
 
-        // ajusta offsetY da faixa dos itens e dos botoes de navegação
-        faixaBannerRotativo.css('top',
-                                imgBannerRotativo.height() -
-                                faixaBannerRotativo.height() +
-                                (credito ? credito.height() : 0));
+            // ajusta offsetY da faixa dos itens e dos botoes de navegação
+            faixaBannerRotativo.css('top',
+                                    imgBannerRotativo.height()         -
+                                    faixaBannerRotativo.height()       +
+                                    (credito ? credito.height() : 0));
 
-        botoesBannerRotativo.css('top',
-                                imgBannerRotativo.height() -
-                                botoesBannerRotativo.height() +
-                                (credito ? credito.height() : 0));
+            botoesBannerRotativo.css('top',
+                                     imgBannerRotativo.height()         -
+                                     botoesBannerRotativo.height()      +
+                                     (credito ? credito.height() : 0));
 
-        // Mostra faixa e botao na primeira execucao
-        if (faixaBannerRotativo.css('opacity') == 0) {
-            faixaBannerRotativo.animate({'opacity': 1}, 200);
-            botoesBannerRotativo.animate({'opacity': 1}, 200);
+            // Mostra faixa e botao na primeira execucao
+            if (faixaBannerRotativo.css('opacity') == 0) {
+                faixaBannerRotativo.animate({'opacity': 1}, 200);
+                botoesBannerRotativo.animate({'opacity': 1}, 200);
+            }
         }
     },
     tileBannerRotativo: function () {
@@ -60,28 +62,30 @@ var portalBrasil = {
         }
     },
     resizeAlturaBannerRotativo: function() {
-        var containerBannerRotativo = $('#tile_banner_rotativo'),
+        if ($(".template-compose #tile_banner_rotativo").length == 0) {
+            var containerBannerRotativo = $('#tile_banner_rotativo'),
             itemBannerRotativo      = $('#tile_banner_rotativo li');
 
-        // ajusta altura de cada item do banner
-        var bannerMaior = 0;
+            // ajusta altura de cada item do banner
+            var bannerMaior = 0;
 
-        itemBannerRotativo.each(function() {
-            var altura = ($(this).find('img') ? $(this).find('img').height() : 0)      +
-                         ($(this).find('.credito') ? $(this).find('.credito').height() : 0) +
-                         ($(this).find('.title') ? $(this).find('.title').height() : 0)   +
-                         ($(this).find('.descr') ? $(this).find('.descr').height() : 0);
-            if (bannerMaior < altura) {
-                bannerMaior = altura;
-            }
-        });
+            itemBannerRotativo.each(function() {
+                var altura = ($(this).find('img')      ? $(this).find('img').height()      : 0)  +
+                             ($(this).find('.credito') ? $(this).find('.credito').height() : 0)  +
+                             ($(this).find('.title')   ? $(this).find('.title').height()   : 0)  +
+                             ($(this).find('.descr')   ? $(this).find('.descr').height()   : 0);
+                if (bannerMaior < altura) {
+                    bannerMaior = altura;
+                }
+            });
 
-        itemBannerRotativo.css('height', bannerMaior);
+            itemBannerRotativo.css('height', bannerMaior);
 
-        portalBrasil.corrigeAlturaFaixa();
+            portalBrasil.corrigeAlturaFaixa();
 
-        // ajusta altura do container do banner rotativo (22px = margin bottom default dos tiles)
-        containerBannerRotativo.css('height', bannerMaior + 22);
+            // ajusta altura do container do banner rotativo (22px = margin bottom default dos tiles)
+            containerBannerRotativo.css('height', bannerMaior + 22);
+        }
     },
     alturaBannerRotativo: function() {
         $(window).resize(portalBrasil.resizeAlturaBannerRotativo);
