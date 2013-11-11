@@ -221,7 +221,7 @@
     .width-8 .gallery-element-metadata,
     .width-10 .gallery-element-metadata {
         height: 70px !important;
-    };
+    }
 }
 
 @media only screen and (max-width : 768px) {
@@ -243,7 +243,7 @@
     .player-holder {
         padding: 4%;
         border-bottom: none !important;
-    };
+    }
 }
 
 
@@ -837,7 +837,6 @@ div.error {
     margin: 0;
     max-width: 200px;
     width: 100%;
-    /*display: none;*/;
 }
 
 #content .newsImageContainer .carrossel-images li {
@@ -855,6 +854,7 @@ div.error {
     z-index: 1;
     float: left;
 }
+
 /* credito lightbox da galeria de imagens */
 .galleria-info .copyright {
     color: #fff;
@@ -1105,7 +1105,8 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 }
 
 /* botões de navegação */
-#tile_banner_rotativo li .button-nav {
+#tile_banner_rotativo li .button-nav,
+.orderTiles .button-nav {
     position: absolute;
     top: 0;
     right: 0;
@@ -1157,12 +1158,15 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 
 #tile_banner_rotativo.chamada_sem_foto li .banner .faixa { display: none; }
 
+#tile_banner_rotativo.chamada_sem_foto li .banner img { max-height: 240px; }
+
 #tile_banner_rotativo.chamada_sem_foto li .banner .title  {
     margin: -20px 0 0;
     height: 20px;
     border-radius: 0 0 5px 5px;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     color: #fff;
+    position: relative;
     text-indent: 1em;
     font-weight: normal;
     font-style: italic;
@@ -1180,11 +1184,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     float: left;
     margin: 1% 1%;
     width: 23%;
-}
-
-.template-compose #content #tile_banner_rotativo li:hover {
-    opacity: .8;
-    filter: alpha(opacity=80);
 }
 
 .template-compose #content #tile_banner_rotativo .banner { margin: 10px 0 0; }
@@ -1228,3 +1227,12 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     top: 0;
     left: 0;
 }
+
+.orderTiles {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.orderTiles .button-nav { position: static; }
