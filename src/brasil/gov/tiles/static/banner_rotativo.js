@@ -6,10 +6,11 @@ var portalBrasil = {
     // Tile Banner Rotativo
     corrigeAlturaFaixa: function() {
         if ($(".template-compose #tile_banner_rotativo").length == 0) {
-            var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
-            credito              = $('#tile_banner_rotativo .activeSlide .credito'),
-            faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
-            botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
+            var bannerContainer      = $('#tile_banner_rotativo'),
+                imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
+                credito              = $('#tile_banner_rotativo .activeSlide .credito'),
+                faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
+                botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
 
             // ajusta offsetY da faixa dos itens e dos botoes de navegação
             faixaBannerRotativo.css('top',
@@ -23,9 +24,8 @@ var portalBrasil = {
                                      (credito ? credito.height() : 0));
 
             // Mostra faixa e botao na primeira execucao
-            if (faixaBannerRotativo.css('opacity') == 0) {
-                faixaBannerRotativo.animate({'opacity': 1}, 200);
-                botoesBannerRotativo.animate({'opacity': 1}, 200);
+            if (bannerContainer.css('opacity') == 0) {
+                bannerContainer.animate({ 'opacity' : 1 }, 100);
             }
         }
     },
@@ -80,11 +80,8 @@ var portalBrasil = {
             });
 
             itemBannerRotativo.css('height', bannerMaior);
-
-            portalBrasil.corrigeAlturaFaixa();
-
             // ajusta altura do container do banner rotativo (22px = margin bottom default dos tiles)
-            containerBannerRotativo.css('height', bannerMaior + 22);
+            containerBannerRotativo.animate({'height': bannerMaior + 22}, 100, portalBrasil.corrigeAlturaFaixa);
         }
     },
     alturaBannerRotativo: function() {
@@ -175,18 +172,13 @@ var portalBrasilCompor = {
                 });
             }
         });
-
     }
 };
 
-$(function () {
-    "use strict";
-    portalBrasil.init();
-    portalBrasilCompor.init();
-});
-
 $(window).load(function() {
     if ($('#tile_banner_rotativo').length > 0) {
+        portalBrasil.init();
+        portalBrasilCompor.init();
         portalBrasil.resizeAlturaBannerRotativo();
     }
 });
