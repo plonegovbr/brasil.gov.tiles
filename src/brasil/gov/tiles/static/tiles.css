@@ -1032,6 +1032,9 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     margin: 0 0 1.8em;
 }
 
+/* tile com descrição */
+#content #tile_banner_rotativo.chamada_com_foto { opacity: 0; }
+
 /* itens do tile */
 #content #tile_banner_rotativo li {
     margin: 0;
@@ -1080,7 +1083,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     font-size: 2.7em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1em;
-    opacity: 0;
 }
 
 /* descrição */
@@ -1089,7 +1091,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     color: #172938;
     font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
-    opacity: 0;
 }
 
 /* faixa */
@@ -1103,7 +1104,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     border-radius: 0 0 5px 5px;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     color: #fff;
-    opacity: 0;
 }
 
 /* botões de navegação */
@@ -1123,7 +1123,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     background-repeat: no-repeat;
     text-indent: 100%;
     white-space: nowrap;
-    opacity: 0;
 }
 
 #tile_banner_rotativo .activeSlide .button-nav,
