@@ -1145,3 +1145,62 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 #tile_banner_rotativo[data-quantidade="4"] #banner1 .button-nav { right: 60px; }
 #tile_banner_rotativo[data-quantidade="4"] #banner2 .button-nav { right: 40px; }
 #tile_banner_rotativo[data-quantidade="4"] #banner3 .button-nav { right: 20px; }
+
+
+/*
+ * Tile do Banner Rotativo - Aba compor
+ */
+
+.template-compose #content #tile_banner_rotativo li {
+    position: relative;
+    float: left;
+    margin: 1% 1%;
+    width: 23%;
+}
+
+.template-compose #content #tile_banner_rotativo li:hover {
+    opacity: .8;
+    filter: alpha(opacity=80);
+}
+
+.template-compose #content #tile_banner_rotativo .banner { margin: 10px 0 0; }
+
+.template-compose #content #tile_banner_rotativo .banner img {
+    margin: 0 3%;
+    width: 94%;
+}
+
+.template-compose #content #tile_banner_rotativo .banner,
+.template-compose #content #tile_banner_rotativo .banner img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.template-compose #content #tile_banner_rotativo .button-nav,
+.template-compose #content #tile_banner_rotativo span { display: none; }
+
+.template-compose #content #tile_banner_rotativo .title {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin: 3%;
+    display: block;
+}
+
+.template-compose #content #tile_banner_rotativo .tile-remove-item {
+    top: 0;
+    right: -5px;
+}
+
+.tile-remove-item {
+    z-index: 10 !important;
+}
+
+.template-compose .tile-container {
+    position: relative;
+}
+
+.template-compose .tile-container .edit-tile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
