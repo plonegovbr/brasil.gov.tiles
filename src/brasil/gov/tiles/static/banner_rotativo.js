@@ -8,7 +8,6 @@ var portalBrasil = {
         var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
         faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
         botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
-        console.log('aqui');
         // ajusta offsetY da faixa dos itens e dos botoes de navegação
         faixaBannerRotativo.css('top', imgBannerRotativo.height() - faixaBannerRotativo.height());
         botoesBannerRotativo.css('top', imgBannerRotativo.height() - botoesBannerRotativo.height());
