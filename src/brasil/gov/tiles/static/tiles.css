@@ -837,7 +837,6 @@ div.error {
     margin: 0;
     max-width: 200px;
     width: 100%;
-    /*display: none;*/;
 }
 
 #content .newsImageContainer .carrossel-images li {
@@ -855,6 +854,7 @@ div.error {
     z-index: 1;
     float: left;
 }
+
 /* credito lightbox da galeria de imagens */
 .galleria-info .copyright {
     color: #fff;
