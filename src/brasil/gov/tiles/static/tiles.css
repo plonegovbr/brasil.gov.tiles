@@ -1080,6 +1080,7 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     font-size: 2.7em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1em;
+    opacity: 0;
 }
 
 /* descrição */
@@ -1088,6 +1089,7 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     color: #172938;
     font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
 }
 
 /* faixa */

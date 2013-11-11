@@ -8,6 +8,8 @@ var portalBrasil = {
         if ($(".template-compose #tile_banner_rotativo").length == 0) {
             var imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
             credito              = $('#tile_banner_rotativo .activeSlide .credito'),
+            titleBannerRotativo  = $('#tile_banner_rotativo .title'),
+            descrBannerRotativo  = $('#tile_banner_rotativo .descr'),
             faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
             botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
 
@@ -24,6 +26,8 @@ var portalBrasil = {
 
             // Mostra faixa e botao na primeira execucao
             if (faixaBannerRotativo.css('opacity') == 0) {
+                titleBannerRotativo.animate({'opacity': 1}, 200);
+                descrBannerRotativo.animate({'opacity': 1}, 200);
                 faixaBannerRotativo.animate({'opacity': 1}, 200);
                 botoesBannerRotativo.animate({'opacity': 1}, 200);
             }
@@ -79,7 +83,7 @@ var portalBrasil = {
                 }
             });
 
-            itemBannerRotativo.css('height', bannerMaior);
+            itemBannerRotativo.animate({'height': bannerMaior}, 200);
 
             portalBrasil.corrigeAlturaFaixa();
 
