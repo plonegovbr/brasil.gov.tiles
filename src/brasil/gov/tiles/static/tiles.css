@@ -1184,6 +1184,12 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     float: left;
     margin: 1% 1%;
     width: 23%;
+    min-height: 250px;
+}
+
+.template-compose #content #tile_banner_rotativo li:hover {
+    opacity: .9;
+    filter: alpha(opacity=90);
 }
 
 .template-compose #content #tile_banner_rotativo .banner { margin: 10px 0 0; }
@@ -1207,6 +1213,12 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     margin: 3%;
     font-size: 1.2em;
     line-height: 1.2em;
+    font-style: normal;
+    background: transparent none;
+    color: #172938;
+    font-weight: bold;
+    text-indent: initial;
+    height: auto;
 }
 
 .template-compose #content #tile_banner_rotativo .tile-remove-item {
