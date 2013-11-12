@@ -9,24 +9,12 @@ var portalBrasil = {
             var bannerContainer      = $('#tile_banner_rotativo'),
                 imgBannerRotativo    = $('#tile_banner_rotativo .activeSlide .banner img'),
                 credito              = $('#tile_banner_rotativo .activeSlide .credito'),
-                faixaBannerRotativo  = $('#tile_banner_rotativo .faixa'),
                 botoesBannerRotativo = $('#tile_banner_rotativo .button-nav');
-
-            // ajusta offsetY da faixa dos itens e dos botoes de navegação
-            faixaBannerRotativo.css('top',
-                                    imgBannerRotativo.height()         -
-                                    faixaBannerRotativo.height()       +
-                                    (credito ? credito.height() : 0));
 
             botoesBannerRotativo.css('top',
                                      imgBannerRotativo.height()         -
                                      botoesBannerRotativo.height()      +
                                      (credito ? credito.height() : 0));
-
-            // Mostra faixa e botao na primeira execucao
-            if (bannerContainer.css('opacity') == 0) {
-                bannerContainer.animate({ 'opacity' : 1 }, 100);
-            }
         }
     },
     tileBannerRotativo: function () {
