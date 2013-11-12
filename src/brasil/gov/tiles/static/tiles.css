@@ -1033,7 +1033,7 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 }
 
 /* tile com descrição */
-#content #tile_banner_rotativo.chamada_com_foto { opacity: 0; }
+#content #tile_banner_rotativo.chamada_com_foto { min-height: 580px; }
 
 #content #tile_banner_rotativo.chamada_com_foto li .banner { width: 100%; }
 
@@ -1097,15 +1097,15 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 
 /* faixa */
 #tile_banner_rotativo li .banner .faixa {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    margin-top: -21px;
     max-width: 750px;
     width: 100%;
     height: 20px;
     border-radius: 0 0 5px 5px;
     background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
     color: #fff;
+    float: left;
 }
 
 /* botões de navegação */
