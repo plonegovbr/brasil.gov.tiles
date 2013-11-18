@@ -4,6 +4,8 @@ Changelog
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+* Acertando escala de imagem para banner rotativo.
+  [dbarbato]
 * Refatorado o banner rotativo (closes `#74`_).
   [rennanrodrigues]
 * Tile banner rotativo ajustado para foto ter a proporção de 21x11,85 cm. (closes `#72`_).

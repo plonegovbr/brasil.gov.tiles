@@ -123,7 +123,7 @@ class BannerRotativoTile(ListTile):
         """
         if self._has_image_field(item):
             scales = item.restrictedTraverse('@@images')
-            return scales.scale('image', width=766, height=248)
+            return scales.scale('image', width=750, height=423)
 
     @view.memoize
     def accepted_ct(self):
