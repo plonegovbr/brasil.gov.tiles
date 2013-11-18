@@ -5,8 +5,8 @@ O ``brasil.gov.tiles`` não seria possível sem a contribuição das seguintes p
 
 - André Nogueira
 - Érico Andrei
-- Héctor Velarde
 - Felipe Duardo
+- Héctor Velarde
 - Rennan Rodrigues
 - Rodrigo Ferreira de Souza
 - Silvestre Huens
