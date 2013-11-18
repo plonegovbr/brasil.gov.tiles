@@ -1,22 +1,22 @@
-Changelog
----------
+Alterações
+------------
 
 1.1 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-* Acertando escala de imagem para banner rotativo.
-  [dbarbato]
-* Refatorado o banner rotativo (closes `#74`_).
-  [rennanrodrigues]
-* Tile banner rotativo ajustado para foto ter a proporção de 21x11,85 cm. (closes `#72`_).
-  [rennanrodrigues]
-* Correção de altura do container de navegação do media carousel (closes `#70`_).
-  [rennanrodrigues]
-* Correção de bug de altura e sobreposição de conteúdo no Tile de Redes Sociais (Twitter)
-  (closes `#68`_).
-  [rennanrodrigues]
-* Correção de bug de transição do banner rotativo no layout de chamada com foto (closes `#65`_).
-  [rennanrodrigues]
+  * Acertando escala de imagem para banner rotativo.
+    [dbarbato]
+  * Refatorado o banner rotativo (closes `#74`_).
+    [rennanrodrigues]
+  * Tile banner rotativo ajustado para foto ter a proporção de 21x11,85 cm. (closes `#72`_).
+    [rennanrodrigues]
+  * Correção de altura do container de navegação do media carousel (closes `#70`_).
+    [rennanrodrigues]
+  * Correção de bug de altura e sobreposição de conteúdo no Tile de Redes Sociais (Twitter)
+    (closes `#68`_).
+    [rennanrodrigues]
+  * Correção de bug de transição do banner rotativo no layout de chamada com foto (closes `#65`_).
+    [rennanrodrigues]
 
 
 1.0 (2013-10-29)
