@@ -144,4 +144,5 @@ Alterações
 .. _`#70`: https://github.com/plonegovbr/brasil.gov.tiles/issues/70
 .. _`#72`: https://github.com/plonegovbr/brasil.gov.tiles/issues/72
 .. _`#74`: https://github.com/plonegovbr/brasil.gov.tiles/issues/74
+.. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
 
