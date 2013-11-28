@@ -4,7 +4,8 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+  * Adicionado suporte ao scale de imagem original (closes `#82`_).
+    [rodfersou]
 
 
 1.0.1 (2013-11-18)
