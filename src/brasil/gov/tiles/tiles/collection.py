@@ -170,8 +170,11 @@ class CollectionTile(PersistentCoverTile):
             image_conf = tile_conf.get('image', None)
             if image_conf:
                 scaleconf = image_conf['imgsize']
-                # scale string is something like: 'mini 200:200'
-                scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'
+                if (scaleconf != '_original'):
+                    # scale string is something like: 'mini 200:200'
+                    scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'
+                else:
+                    scale = None
                 scales = item.restrictedTraverse('@@images')
                 return scales.scale('image', scale)
 
