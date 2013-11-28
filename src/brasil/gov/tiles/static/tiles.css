@@ -830,6 +830,10 @@ div.error {
     clear: both;
 }
 
+#featured-content .banner-tile {
+    float: none;
+}
+
 /* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
 #content .newsImageContainer .carrossel-images {
     float: left;
