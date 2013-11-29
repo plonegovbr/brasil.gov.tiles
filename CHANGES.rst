@@ -4,6 +4,9 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Adicionada opção para variação de título nos tiles basic e
+    basic news article (nitf) (closes `#86`_).
+    [rodfersou]
   * Adicionado suporte ao scale de imagem original (closes `#82`_).
     [rodfersou]
 
@@ -145,4 +148,4 @@ Alterações
 .. _`#72`: https://github.com/plonegovbr/brasil.gov.tiles/issues/72
 .. _`#74`: https://github.com/plonegovbr/brasil.gov.tiles/issues/74
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
-
+.. _`#86`: https://github.com/plonegovbr/brasil.gov.tiles/issues/86
