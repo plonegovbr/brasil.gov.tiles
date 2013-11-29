@@ -5,6 +5,18 @@
     i18n_domain="brasil.gov.tiles">
 
   <plone:tile
+      name="collective.cover.basic"
+      title="Basic Tile"
+      description="A tile that shows general information about objects."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".basic.IBasicTile"
+      class=".basic.BasicTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
       name="collective.cover.banner"
       title="Banner Tile"
       description="A tile that shows an image with a link."
