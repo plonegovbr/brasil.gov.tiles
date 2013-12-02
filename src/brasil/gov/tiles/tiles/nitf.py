@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from brasil.gov.tiles.tiles.basic import BasicTile
+from brasil.gov.tiles.tiles.basic import IBasicTile
 from collective.cover import _
-from collective.cover.tiles.basic import BasicTile
-from collective.cover.tiles.basic import IBasicTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.autoform import directives as form
 from plone.tiles.interfaces import ITileDataManager
@@ -24,6 +24,17 @@ class INITFBasicTile(IBasicTile):
     section = schema.Text(
         title=_(u'Section'),
         required=False,
+    )
+
+    form.no_omit('variacao_titulo')
+    form.omitted(IDefaultConfigureForm, 'variacao_titulo')
+    variacao_titulo = schema.Choice(
+        title=u"Variação de Título",
+        values=(u'Normal',
+                u'Grande',
+                u'Gigante'),
+        default=u'Normal',
+        required=True,
     )
 
 
@@ -48,3 +59,12 @@ class NITFBasicTile(BasicTile):
     def thumbnail(self, field, scales):
         scale = field.get('scale', 'large')
         return scales.scale('image', scale)
+
+    def variacao_titulo(self):
+        tamanhos = {
+            u'Normal': None,
+            u'Grande': 'grande',
+            u'Gigante': 'gigante'
+        }
+        if self.data['variacao_titulo']:
+            return tamanhos[self.data['variacao_titulo']]

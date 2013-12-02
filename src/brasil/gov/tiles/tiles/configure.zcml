@@ -7,6 +7,18 @@
   <include package="plone.tiles" file="meta.zcml" />
 
   <plone:tile
+      name="collective.cover.basic"
+      title="Basic Tile"
+      description="A tile that shows general information about objects."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".basic.IBasicTile"
+      class=".basic.BasicTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
       name="nitf"
       title="Basic News Article Tile"
       description="A tile that shows a news article."
