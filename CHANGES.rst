@@ -4,6 +4,8 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Revisado tamanho do footer dos tiles. (closes `#88`_).
+    [rodfersou][rennanrodrigues]
   * Adicionado suporte ao scale de imagem original (closes `#82`_).
     [rodfersou]
 
@@ -145,4 +147,4 @@ Alterações
 .. _`#72`: https://github.com/plonegovbr/brasil.gov.tiles/issues/72
 .. _`#74`: https://github.com/plonegovbr/brasil.gov.tiles/issues/74
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
-
+.. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88
