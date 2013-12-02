@@ -4,6 +4,8 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Revisado tamanho do footer dos tiles. (closes `#88`_).
+    [rodfersou][rennanrodrigues]
   * Adicionada opção para variação de título nos tiles basic e
     basic news article (nitf) (closes `#86`_).
     [rodfersou]
@@ -149,3 +151,4 @@ Alterações
 .. _`#74`: https://github.com/plonegovbr/brasil.gov.tiles/issues/74
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
 .. _`#86`: https://github.com/plonegovbr/brasil.gov.tiles/issues/86
+.. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88

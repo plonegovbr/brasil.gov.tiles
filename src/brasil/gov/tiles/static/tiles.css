@@ -49,7 +49,7 @@
     background-color: #062458;
     text-align: right;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 0.916em;
 }
 
 .videogallery-tile .gallery-footer a {
@@ -301,11 +301,12 @@
 
 .audiogallery-footer-container .audiogallery-footer-link {
     display: inline-block;
+    margin-bottom: 6px;
     padding-right: 25px;
-    height: 20px;
     background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 0.916em;
+    line-height: 14px;
 }
 
 /* Título do tile de áudio */
