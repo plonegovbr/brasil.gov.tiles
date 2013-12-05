@@ -6,6 +6,8 @@ Alterações
 
   * Removida dependência no unittest2.
     [hvelarde]
+  * Adicionadas dependências do pacote.
+    [hvelarde]
   * Revisado tamanho do footer dos tiles. (closes `#88`_).
     [rodfersou][rennanrodrigues]
   * Adicionada opção para variação de título nos tiles basic e
