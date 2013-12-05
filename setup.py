@@ -50,6 +50,7 @@ setup(
         'five.grok',
         'plone.app.tiles',
         'plone.tiles',
+        'Products.CMFPlone >=4.3',
         'setuptools',
     ],
     extras_require={
