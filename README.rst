@@ -22,12 +22,17 @@ Estado deste pacote
 -------------------
 
 O **brasil.gov.tiles** tem testes automatizados e, a cada alteração em seu
-código os testes são executados pelo serviço Travis.
+código os testes são executados pelo serviço Travis CI.
 
 O estado atual dos testes pode ser visto na imagem a seguir:
 
 .. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.tiles.png?branch=master
+    :alt: Travis CI badge
     :target: http://travis-ci.org/plonegovbr/brasil.gov.tiles
+
+.. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.tiles/badge.png?branch=master
+    :alt: Coveralls badge
+    :target: https://coveralls.io/r/plonegovbr/brasil.gov.tiles
 
 Instalação
 ----------
