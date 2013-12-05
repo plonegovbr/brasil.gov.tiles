@@ -4,6 +4,8 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Removida dependência no unittest2.
+    [hvelarde]
   * Revisado tamanho do footer dos tiles. (closes `#88`_).
     [rodfersou][rennanrodrigues]
   * Adicionada opção para variação de título nos tiles basic e

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import unittest2 as unittest
+import unittest
 
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from collective.cover.tiles.base import IPersistentCoverTile
