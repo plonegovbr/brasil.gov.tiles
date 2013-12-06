@@ -6,6 +6,8 @@ Changelog
 1.0rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+  * Revisão do modo que é sobreescrito os tiles (closes `#91`_).
+    [rodfersou]
   * Regras de fonte do Tile collection (closes `#59`_).
     [rennanrodrigues]
   * Front-end do novo banner rotativo  (closes `#57`_).
@@ -105,4 +107,4 @@ Changelog
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.tiles/issues/55
 .. _`#57`: https://github.com/plonegovbr/brasil.gov.tiles/issues/57
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.tiles/issues/59
-
+.. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
