@@ -1,20 +1,22 @@
-#content .tile .tile-description { line-height: 16px; }
+#content .tile .tile-description {
+    line-height: 16px;
+}
 
 .videogallery-tile {
-    background-color: #072d6c;
     border-radius: 5px 5px 5px 5px;
+    background-color: #072d6c;
     color: #FFF;
 }
 
 #content .videogallery-tile .gallery-tile {
-    border-bottom: 1px solid #2e5493;
-    color: #FFF;
-    font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    font-weight: normal;
     margin: 0px;
     padding: 15px;
+    border-bottom: 1px solid #2e5493;
+    color: #FFF;
     text-transform: uppercase;
+    font-weight: normal;
+    font-size: 22px;
+    font-family: 'open_sansregular', Arial, Helvetica, sans-serif;
 }
 
 .videogallery-tile .player-metadata {
@@ -22,41 +24,43 @@
 }
 
 .player-metadata .title {
+    padding-bottom: 10px;
     color: #CDE1FA;
     font-weight: bold;
-    padding-bottom: 10px;
 }
 
 .subtitle {
-    text-transform: uppercase;
     color: #667cae;
-    font-size: 11px;
+    text-transform: uppercase;
     font-weight: normal;
+    font-size: 11px;
     font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 
 .videogallery-tile .description {
-    font-family: Arial, Helvetica, sans-serif;
     color: #d1e1ff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .videogallery-tile .gallery-footer {
-    font-size: 10px;
     padding: 15px;
+    border-top: 1px dotted #305492;
+    border-radius: 0 0 5px 5px;
+    background-color: #062458;
     text-align: right;
     text-transform: uppercase;
-    background-color: #062458;
-    border-radius: 0 0 5px 5px;
-    border-top: 1px dotted #305492;
+    font-size: 0.916em;
 }
+
 .videogallery-tile .gallery-footer a {
+    display: inline-block;
+    padding-right: 25px;
+    height: 20px;
     background: url("++resource++brasil.gov.tiles/footer-arrow.jpg") no-repeat scroll right 0 transparent;
     color: #D1E2FF !important;
-    display: inline-block;
-    height: 20px;
     line-height: 20px;
-    padding-right: 25px;
 }
+
 #content .gallery-footer a:hover {
     color: #D1E2FF !important;
     text-decoration: underline;
@@ -67,39 +71,45 @@
 }
 
 .gallery-element-link {
-    height: 60px;
-    width: 80px;
-    text-align: center;
-    overflow: hidden;
     float: left;
+    overflow: hidden;
     margin: 0 5% 5% 0;
+    width: 80px;
+    height: 60px;
+    text-align: center;
 }
+
 #content .gallery-element-link img {
     border-radius: 0 0 0 0;
 }
+
 .galery-items-wrapper {
     margin: 0;
 }
+
 .gallery-element-wrapper {
     padding: 15px 15px;
 }
+
 .gallery-element {
     float: left;
-    border-bottom: 1px dotted #305492;
     width: 100%;
+    border-bottom: 1px dotted #305492;
 }
 
 .gallery-element-metadata {
-    height: 60px;
     overflow: hidden;
+    height: 60px;
 }
+
 .gallery-element-metadata .description {
     display: none;
 }
+
 #content .gallery-element-metadata .title {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
     color: #d1e1ff;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .player-holder iframe {
@@ -112,28 +122,33 @@
 .width-10 .videogallery-tile .gallery-footer {
     border-top: none;
 }
+
 .width-8 .gallery-element,
 .width-10 .gallery-element,
 .gallery-2-columns .gallery-element {
     width: 50%;
 }
+
 .width-8 .gallery-element-wrapper,
 .width-10 .gallery-element-wrapper,
 .gallery-2-columns .gallery-element-wrapper {
     border-left: 1px dotted #305491;
 }
+
 .width-8 .player-video,
 .width-10 .player-video,
 .gallery-2-columns .player-video {
-    width: 50%;
-    margin-right: 5%;
     float: left;
+    margin-right: 5%;
+    width: 50%;
 }
+
 .width-8 .player-holder,
 .width-10 .player-holder,
 .gallery-2-columns .player-holder {
     padding: 4%;
 }
+
 .width-8 .player-metadata,
 .width-10 .player-metadata,
 .gallery-2-columns .player-metadata {
@@ -143,8 +158,8 @@
 
 .width-5 .gallery-3-columns .player-metadata,
 .width-5 .gallery-3-columns .player-holder iframe {
-    width: 90%;
     padding: 2% 5%;
+    width: 90%;
 }
 
 .width-5 .gallery-2-columns .player-video,
@@ -162,14 +177,16 @@
 /* 15 or 16 grids for 3 cols */
 .width-16 .gallery-3-columns .player-holder,
 .width-15 .gallery-3-columns .player-holder {
-    width: 60%;
     padding: 2.5% 2.5% 0;
+    width: 60%;
     border-right: 1px dotted #305492;
 }
+
 .width-16 .gallery-3-columns .galery-items,
 .width-15 .gallery-3-columns .galery-items {
     width: 34%;
 }
+
 .width-15 .gallery-element.last,
 .width-16 .gallery-element.last {
     border-bottom: none !important;
@@ -178,19 +195,24 @@
 .gallery-3-columns .player-holder {
     float: left;
 }
+
 .gallery-3-columns .galery-items {
     float: left;
     margin: 0;
 }
+
 .gallery-3-columns .player-metadata .title {
     border-bottom: medium none;
 }
+
 .gallery-3-columns .player-metadata .title {
     border-bottom: medium none;
 }
+
 .gallery-3-columns .player-metadata {
     border-bottom: medium none;
 }
+
 .gallery-3-columns .galery-items-wrapper {
     border-left: 1px solid #305492;
 }
@@ -206,31 +228,37 @@
     .galery-items {
         border-top: 1px solid #305492;
     }
+
     .width-8 .gallery-element,
     .width-10 .gallery-element {
         width: 100% !important;
     }
+
     .width-8 .player-video,
     .width-10 .player-video {
-        width: 100% !important;
         margin: 0 0 5% 0 !important;
+        width: 100% !important;
     }
+
     .player-holder {
-        border-bottom: none !important;
         padding: 4%;
+        border-bottom: none !important;
     }
 }
 
 
-/* AUDIO GALLERY*/
+/* Tile da Galeria de áudio
+   ========================================================================== */
 #content .audiogallery-tile .selected {
     display: none;
 }
+
 .audiogallery-tile {
-    background-color: #eeeff1;
-    border:1px solid #d4d4d6;
     margin-bottom: 20px;
+    border: 1px solid #d4d4d6;
+    background-color: #eeeff1;
 }
+
 .audiogallery-title-container .gallery-tile {
     padding: 10px 15px 10px 10px;
     border-bottom: 1px solid #d4d4d6;
@@ -238,10 +266,12 @@
     font-weight: normal;
     font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
+
 .audiogallery-player-container {
     padding: 10px 15px;
     border-bottom: 1px dotted #d4d4d6;
 }
+
 .audiogallery-player-container .audiogallery-item-title {
     padding-top: 10px;
 }
@@ -249,155 +279,149 @@
 #content .audiogallery-items-container ul {
     margin: 0px;
 }
+
 #content .audiogallery-items-container li {
-    list-style: none outside none;
-    border-bottom: 1px dotted #d4d4d6;
     padding: 10px 15px;
+    border-bottom: 1px dotted #d4d4d6;
+    list-style: none outside none;
 }
+
 #content .audiogallery-items-container .audiogallery-item {
+    display: block;
     padding-left: 20px;
     background: url("++resource++brasil.gov.tiles/sound-icon.png") no-repeat scroll left 0 transparent;
-    display: block;
     font-weight: normal;
     font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
+
 .audiogallery-footer-container {
-    text-align: right;
     padding: 5px 15px;
+    text-align: right;
 }
+
 .audiogallery-footer-container .audiogallery-footer-link {
-    text-transform: uppercase;
-    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
     display: inline-block;
-    height: 20px;
+    margin-bottom: 6px;
     padding-right: 25px;
-    font-size: 10px;
+    background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right 0 transparent;
+    text-transform: uppercase;
+    font-size: 0.916em;
+    line-height: 14px;
 }
 
-
-/* AUDIO */
+/* Título do tile de áudio */
 .audio-tile .title {
-    font-size: 15px;
-    font-weight: normal;
-    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 
-/*
- * Skin for jPlayer Plugin (jQuery JavaScript Library)
- */
-
+/* estilo default do jPlayer */
 div.jp-audio,
-div.jp-audio-stream{
-
-    /* Edit the font-size to counteract inherited font sizing.
-     * Eg. 1.25em = 1 / 0.8em
-     */
-
-    font-size:1.25em; /* 1.25em for testing in site pages */ /* No parent CSS that can effect the size in the demos ZIP */
-
-    font-family:Verdana, Arial, sans-serif;
-    line-height:1.6;
-    color: #666;
-    border:1px solid #e0e0e0;
-    background-color:#eee;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow:0 0 5px 1px #CCCCCC;
-}
-div.jp-audio {
-    width:100%;
-    margin-bottom: 5px;
-}
 div.jp-audio-stream {
-    width:182px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #eee;
+    box-shadow: 0 0 5px 1px #CCCCCC;
+    color: #666;
+    font-size: 1.25em;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.6;
 }
 
-div.jp-interface {
-    position: relative;
-    background-color:#edeef2;
-    width:100%;
-}
-
-div.jp-audio div.jp-type-single div.jp-interface {
-    height:48px;
-}
-
-div.jp-audio-stream div.jp-type-single div.jp-interface {
-    height:48px;
-}
-
-
-/* @group CONTROLS */
-
-div.jp-controls-holder {
-    clear: both;
-    width:440px;
-    margin:0 auto;
-    position: relative;
-    overflow:hidden;
-    top:-8px; /* This negative value depends on the size of the text in jp-currentTime and jp-duration */
-}
-
-div.jp-interface ul.jp-controls {
-    list-style-type:none;
-    margin:0;
-    padding: 0;
-    overflow:hidden;
-    position: absolute;
+div.jp-audio {
+    margin-bottom: 5px;
     width: 100%;
 }
 
+div.jp-audio-stream { width: 182px; }
+
+div.jp-interface {
+    position: relative;
+    width: 100%;
+    background-color: #edeef2;
+}
+
+div.jp-audio div.jp-type-single div.jp-interface,
+div.jp-audio-stream div.jp-type-single div.jp-interface {
+    height: 48px;
+}
+
+div.jp-controls-holder {
+    position: relative;
+    top: -8px;
+    clear: both;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 440px;
+}
+
+div.jp-interface ul.jp-controls {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
 div.jp-audio ul.jp-controls {
-    padding:10px 0;
     margin: 0 !important;
+    padding: 10px 0;
 }
 
 div.jp-audio-stream ul.jp-controls {
+    padding: 20px 20px 0 20px;
     width: 142px;
-    padding:20px 20px 0 20px;
 }
 
 div.jp-interface ul.jp-controls li {
-    display:inline !important;
+    display: inline !important;
     float: left;
 }
 
 div.jp-interface ul.jp-controls a {
-    display:block;
-    overflow:hidden;
-    text-indent:-9999px;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
 }
+
 a.jp-play,
 a.jp-pause {
-    height: 23px;
-    left: 10px;
     position: relative;
+    left: 10px;
     width: 23px;
+    height: 23px;
 }
 
 a.jp-play {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 0 no-repeat;
 }
+
 a.jp-play:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -41px 0 no-repeat;
 }
+
 a.jp-pause {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -42px no-repeat;
     display: none;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -42px no-repeat;
 }
+
 a.jp-pause:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -41px -42px no-repeat;
 }
 
 a.jp-previous, a.jp-next {
-    width:28px;
-    height:28px;
-    margin-top:6px;
+    margin-top: 6px;
+    width: 28px;
+    height: 28px;
 }
 
 a.jp-previous {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -112px no-repeat;
 }
+
 a.jp-previous:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -29px -112px no-repeat;
 }
@@ -405,67 +429,63 @@ a.jp-previous:hover {
 a.jp-next {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -141px no-repeat;
 }
+
 a.jp-next:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -29px -141px no-repeat;
 }
 
-/* @end */
-
-/* @group progress bar */
-
 div.jp-progress {
-    overflow:hidden;
+    overflow: hidden;
     background-color: #ddd;
 }
+
 div.jp-audio div.jp-progress {
-    clear: both;
-    display: block;
-    height: 15px;
     position: relative;
     top: 15px;
+    display: block;
+    clear: both;
+    height: 15px;
 }
+
 div.jp-audio div.jp-type-single div.jp-progress {
-    width:100%;
+    width: 100%;
 }
 
 .jp-progress-time-wrapper {
     display: block;
-    height: 50px;
-    padding-left: 45px;
     padding-right: 45px;
+    padding-left: 45px;
+    height: 50px;
 }
 
 div.jp-seek-bar {
+    width: 0px;
+    height: 100%;
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -202px repeat-x;
-    width:0px;
-    height:100%;
     cursor: pointer;
 }
+
 div.jp-play-bar {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -218px repeat-x ;
-    width:0px;
-    height:100%;
+    width: 0px;
+    height: 100%;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -218px repeat-x;
 }
 
-/* The seeking class is added/removed inside jPlayer */
 div.jp-seeking-bg {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.seeking.gif");
 }
 
-/* @end */
 
-/* @group volume controls */
-
-
+/* jPlayer - Controles do volume */
 a.jp-mute,
 a.jp-unmute {
-    height: 15px;
-    margin-top: 0;
     position: absolute;
-    right: 15px;
     top: 15px;
-    vertical-align: middle;
+    right: 15px;
+    margin-top: 0;
     width: 18px;
+    height: 15px;
+    vertical-align: middle;
 }
 
 div.jp-audio div.jp-type-single a.jp-mute,
@@ -475,137 +495,118 @@ div.jp-audio div.jp-type-single a.jp-unmute {
 
 div.jp-audio-stream div.jp-type-single a.jp-mute,
 div.jp-audio-stream div.jp-type-single a.jp-unmute {
-    margin-left:10px;
+    margin-left: 10px;
 }
-
 
 a.jp-mute {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -186px no-repeat;
 }
+
 a.jp-mute:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -19px -186px no-repeat;
 }
+
 a.jp-unmute {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -170px no-repeat;
     display: none;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -170px no-repeat;
 }
+
 a.jp-unmute:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -79px -170px no-repeat;
 }
 
 div.jp-volume-bar {
     position: absolute;
-    overflow:hidden;
+    overflow: hidden;
+    width: 35px;
+    height: 5px;
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -250px repeat-x;
-    width:35px;
-    height:5px;
     cursor: pointer;
 }
+
 div.jp-audio div.jp-volume-bar {
-    top:37px;
-    right:5px;
+    top: 37px;
+    right: 5px;
 }
+
 div.jp-audio-stream div.jp-volume-bar {
-    top:37px;
-    left:92px;
+    top: 37px;
+    left: 92px;
 }
 
 div.jp-volume-bar-value {
+    width: 0px;
+    height: 5px;
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -256px repeat-x;
-    width:0px;
-    height:5px;
 }
 
-/* @end */
 
-/* @group current time and duration */
-
+/* jPlayer - controles de duração */
 div.jp-audio div.jp-time-holder {
-    clear: both;
-    display: block;
-    font-size: 10px;
-    height: 15px;
-    line-height: 15px;
     position: relative;
-    text-align: right;
     top: 15px;
+    display: block;
+    clear: both;
+    height: 15px;
+    text-align: right;
+    font-size: 10px;
+    line-height: 15px;
 }
+
 div.jp-audio div.jp-type-single div.jp-time-holder {
-    width:100%;
+    width: 100%;
 }
 
 .jp-current-time,
 .jp-duration {
-    width:60px;
-    font-size:10px;
-    font-style:oblique;
-}
-.jp-current-time {
-}
-.jp-duration {
-    text-align: right;
+    width: 60px;
+    font-style: oblique;
+    font-size: 10px;
 }
 
+.jp-duration { text-align: right; }
 
-/* @end */
 
-/* @group playlist */
-
+/* jPlayer - Playlist */
 
 span.jp-artist {
-    font-size:.8em;
-    color:#666;
+    color: #666;
+    font-size: .8em;
 }
-
-/* @end */
-
 
 div.jp-jplayer audio,
 div.jp-jplayer {
-    width:0px;
-    height:0px;
+    width: 0px;
+    height: 0px;
 }
 
-div.jp-jplayer {
-    background-color: #000000;
-}
-
-/***
-**  SKIN FOR AUDIO PLAYER
-**
-***/
-/* @group TOGGLES */
-
-/* The audio toggles are nested inside jp-time-holder */
+div.jp-jplayer { background-color: #000; }
 
 ul.jp-toggles {
-    list-style-type:none;
-    padding:0;
-    margin:0 auto;
-    overflow:hidden;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
 }
 
-div.jp-audio .jp-type-single ul.jp-toggles {
-    width:25px;
-}
-
+div.jp-audio .jp-type-single ul.jp-toggles { width: 25px; }
 
 ul.jp-toggles li {
-    display:block;
-    float:right;
+    display: block;
+    float: right;
 }
 
 ul.jp-toggles li a {
-    display:block;
-    width:25px;
-    height:18px;
-    text-indent:-9999px;
-    line-height:100%; /* need this for IE6 */
+    display: block;
+    width: 25px;
+    height: 18px;
+    text-indent: -9999px;
+    line-height: 100%;
 }
 
 a.jp-full-screen {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -310px no-repeat;
     margin-left: 20px;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -310px no-repeat;
 }
 
 a.jp-full-screen:hover {
@@ -613,18 +614,17 @@ a.jp-full-screen:hover {
 }
 
 a.jp-restore-screen {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -310px no-repeat;
     margin-left: 20px;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -310px no-repeat;
 }
 
 a.jp-restore-screen:hover {
     background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -90px -310px no-repeat;
 }
 
-
 a.jp-shuffle {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -270px no-repeat;
     margin-left: 5px;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -270px no-repeat;
 }
 
 a.jp-shuffle:hover {
@@ -632,8 +632,8 @@ a.jp-shuffle:hover {
 }
 
 a.jp-shuffle-off {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -270px no-repeat;
     margin-left: 5px;
+    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -270px no-repeat;
 }
 
 a.jp-shuffle-off:hover {
@@ -641,28 +641,25 @@ a.jp-shuffle-off:hover {
 }
 
 
-/* @end */
-
 /* @group NO SOLUTION error feedback */
-
 .jp-no-solution {
-    padding:5px;
-    font-size:.8em;
-    background-color:#eee;
-    border:2px solid #009be3;
-    color:#000;
-    display:none;
+    display: none;
+    padding: 5px;
+    border: 2px solid #009be3;
+    background-color: #eee;
+    color: #000;
+    font-size: .8em;
 }
 
 .jp-no-solution a {
-    color:#000;
+    color: #000;
 }
 
 .jp-no-solution span {
-    font-size:1em;
-    display:block;
-    text-align:center;
-    font-weight:bold;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 /* @end */
@@ -670,66 +667,52 @@ a.jp-shuffle-off:hover {
 
 /* root element for tabs  */
 ul.css-tabs {
-    margin:0 !important;
-    padding:0;
-    height:30px;
-    border-bottom:1px solid #eeeff1;
+    margin: 0 !important;
+    padding: 0;
+    height: 30px;
+    border-bottom: 1px solid #eeeff1;
 }
 
 /* single tab */
 ul.css-tabs li {
-    float:left;
-    padding:0;
-    margin:0;
-    list-style-type:none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 /* link inside the tab. uses a background image */
 ul.css-tabs a {
-    float:left;
-    font-size:13px;
-    display:block;
-    padding:5px 30px;
-    text-decoration:none;
-    border:1px solid #d4d5d7;
-    border-bottom:0px;
-    height:18px;
-    background-color:#d5d5d5;
-    color:#777;
-    margin-right:2px;
-    position:relative;
-    top:1px;
-    outline:0;
-    -moz-border-radius:4px 4px 0 0;
+    position: relative;
+    top: 1px;
+    display: block;
+    float: left;
+    margin-right: 2px;
+    padding: 5px 30px;
+    height: 18px;
+    outline: 0;
+    border: 1px solid #d4d5d7;
+    border-bottom: 0px;
+    -moz-border-radius: 4px 4px 0 0;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
+    background-color: #d5d5d5;
+    color: #777;
+    text-decoration: none;
+    font-size: 13px;
 }
 
 ul.css-tabs a:hover {
-    background-color:#F7F7F7;
-    color:#333;
+    background-color: #F7F7F7;
+    color: #333;
 }
 
 /* selected tab */
 ul.css-tabs a.current {
-    background-color:#eeeff1;
-    border-bottom:1px solid #d4d5d7;
-    color:#000;
-    cursor:default;
-}
-
-/* tab pane */
-.css-panes .pane {
-    display:none;
-    border:1px solid #d4d5d7;
-    border-width:0 1px 1px 1px;
-    min-height:150px;
-    padding:15px 20px;
-    background-color:#eeeff1;
-    height: 350px;
-}
-#content .css-tabs li {
-    list-style: none outside none;
+    border-bottom: 1px solid #d4d5d7;
+    background-color: #eeeff1;
+    color: #000;
+    cursor: default;
 }
 
 .outstanding-header {
@@ -737,18 +720,44 @@ ul.css-tabs a.current {
 }
 
 .outstanding-link {
+    right: 0;
     display: inline-block;
     float: right;
-    right: 0;
 }
 
-/*social*/
-.social-panes .pane {
-    padding:15px 4px;
+
+/* Tile de redes sociais
+   ========================================================================== */
+
+.css-panes .pane {
+    display: none;
+    padding: 10px 4px;
+    height: 340px;
+    border: 1px solid #d4d5d7;
+    border-radius: 0 5px 5px 5px;
+    background-color: #eeeff1;
+}
+
+#content .css-tabs li {
+    list-style: none outside none;
+}
+
+/* Reset do plugin Facebook like box */
+#fb-root {
+    display: none;
+}
+
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+    border: 0 none !important;
 }
 
 /* mensagem de erro na tag noscript */
-div.error { padding: 1em; }
+div.error {
+    padding: 1em;
+}
 
 /* tile do video container */
 .video-tile {
@@ -758,10 +767,10 @@ div.error { padding: 1em; }
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
     overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 56.25%;
+    height: 0;
 }
 
 .video-container iframe,
@@ -775,231 +784,64 @@ div.error { padding: 1em; }
 }
 
 .video-container + a {
-    line-height: 2em;
     clear: both;
+    line-height: 2em;
 }
 
 /* botão de busca dos filtros da página de resultado de busca */
-.formControls input.searchButton { display: none; }
-
-
-/* Tile Banner Rotativo */
-#content .tile[data-tile*="banner_rotativo"] {
-    margin-bottom: 0;
-    max-height: 240px;
-    overflow: hidden;
-}
-
-#content #tile_banner_rotativo {
-    position: relative;
-    width: 100%;
-    max-width: 766px;
-    height: 100%;
-    max-height: 260px;
-    overflow: hidden;
-    margin: 0;
-}
-
-.orderTiles .button-nav,
-#tile_banner_rotativo .button-nav {
-    width: 19px;
-    height: 20px;
-    background-color: #0e561f;
-    position: absolute;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    background: #0e561f url("++resource++brasil.gov.tiles//bull.gif") no-repeat;
-    border-right: 1px solid #446b5d;
-    right: 0;
-    z-index: 3;
-}
-
-#tile_banner_rotativo.chamada_sem_foto .button-nav { bottom: 20px; }
-
-.orderTiles {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-}
-
-.orderTiles .button-nav {
-    width: 20px;
-    height: 20px;
-    position: static;
-}
-
-#tile_banner_rotativo .button-nav:hover,
-#tile_banner_rotativo .button-nav.activeSlide {
-    background-position: 0 100%;
-    background-color: #054112;
-}
-
-/* banner rotativo com 2 itens */
-#tile_banner_rotativo[data-quantidade="2"] #banner1 .button-nav { right: 20px; }
-#tile_banner_rotativo[data-quantidade="2"] #banner2 .button-nav { right: 0; border-radius: 0 0 3px 0; }
-
-/* banner rotativo com 3 itens */
-#tile_banner_rotativo[data-quantidade="3"] #banner1 .button-nav { right: 40px; }
-#tile_banner_rotativo[data-quantidade="3"] #banner2 .button-nav { right: 20px; }
-#tile_banner_rotativo[data-quantidade="3"] #banner3 .button-nav { right: 0; border-radius: 0 0 3px 0; }
-
-/* banner rotativo com 3 itens */
-#tile_banner_rotativo[data-quantidade="4"] #banner1 .button-nav { right: 60px; }
-#tile_banner_rotativo[data-quantidade="4"] #banner2 .button-nav { right: 40px; }
-#tile_banner_rotativo[data-quantidade="4"] #banner3 .button-nav { right: 20px; }
-#tile_banner_rotativo[data-quantidade="4"] #banner4 .button-nav { right: 0; border-radius: 0 0 3px 0; }
-
-
-#tile_banner_rotativo.chamada_sem_foto li { height: 240px; }
-
-.template-compose #tile_banner_rotativo li {
-    position: relative;
-    float: left;
-    width: 25%;
-}
-
-.template-compose #tile_banner_rotativo .banner,
-.template-compose #tile_banner_rotativo .banner img { width: 100%; }
-
-.template-compose #tile_banner_rotativo .button-nav,
-.template-compose #tile_banner_rotativo span { display: none; }
-
-#tile_banner_rotativo .banner img {
-    max-width: 766px;
-    max-height: 240px;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-}
-
-#tile_banner_rotativo .banner {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    max-width: 766px;
-    height: 240px;
-    z-index: 1;
-}
-
-#tile_banner_rotativo .banner.activeSlideItem { z-index: 2; }
-
-#tile_banner_rotativo.chamada_sem_foto .banner .title {
-    position: absolute;
-    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
-    z-index: 3;
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 740px;
-    font-size: .8em;
-    font-style: italic;
-    color: #fff;
-    padding:0 0 0 1em;
-    bottom: 0;
-    left: 0;
-    line-height: 20px;
-    border-radius: 0 0 5px 5px;
-}
-
-.tile-remove-item { z-index: 10 !important; }
-
-/* Banner Rotativo - Chamada com foto */
-#content .tile[data-tile*="banner_rotativo"] { max-height: 480px; }
-#content #tile_banner_rotativo.chamada_com_foto { max-height: 480px; }
-#content #tile_banner_rotativo.chamada_com_foto li { height: 480px; }
-#content #tile_banner_rotativo.chamada_com_foto .banner img { max-height: 320px; }
-#content #tile_banner_rotativo.chamada_com_foto .banner {
-    position: absolute;
-    top: 24px;
-    width: 100%;
-    max-width: 766px;
-    height: 460px;
-    z-index: 1;
-    opacity: 0;
-}
-
-#content #tile_banner_rotativo.chamada_com_foto .banner.activeSlideItem { z-index: 2; opacity: 1;}
-
-#content #tile_banner_rotativo.chamada_com_foto .faixa {
-    position: absolute;
-    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
-    z-index: 3;
-    width: 100%;
-    max-width: 750px;
-    height: 20px;
-    color: #fff;
-    top: 300px;
-    left: 0;
-    border-radius: 0 0 5px 5px;
-}
-
-#tile_banner_rotativo.chamada_com_foto .button-nav { top: 324px; }
-
-#content #tile_banner_rotativo.chamada_com_foto .credito {
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    color: #172938;
-    text-align: right;
-    display: block;
-    line-height: 2em;
-}
-
-#content #tile_banner_rotativo.chamada_com_foto .title {
-    font-size: 2.7em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    display: block;
-    color: #172938;
-    margin: 0.450em 0 0.450em 0;
-    line-height: 1em;
-}
-
-#content #tile_banner_rotativo.chamada_com_foto .descr {
-    font-size: 1.1em;
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-    color: #172938;
+.formControls input.searchButton {
+    display: none;
 }
 
 
 /* Tile Banner Estatico */
-.banner-tile { float: left; }
-.banner-tile img { margin:0; }
+.banner-tile {
+    float: left;
+}
+
+.banner-tile img {
+    margin: 0;
+}
+
 #content .banner-tile .copyright,
 #content .newsImageContainer .copyright,
 #content .mediacarousel .rights {
-    color: #000;
     float: right;
-    font-style: italic;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: .9em;
-    line-height: 2em;
     margin: 0 .8em 0 0;
+    color: #000;
+    font-style: italic;
+    font-size: .9em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2em;
 }
 
 #content .mediacarousel .mediacarousel-tile+div .rights {
-    color: #000;
     float: right;
-    font-style: italic;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: .9em;
-    line-height: 2em;
     margin: 0 .8em 0 0;
+    color: #000;
+    font-style: italic;
+    font-size: .9em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2em;
 }
 
 .banner-tile .copyright + a,
-.newsImageContainer .copyright + a { display: block; clear:both; }
+.newsImageContainer .copyright + a {
+    display: block;
+    clear: both;
+}
+
+#featured-content .banner-tile {
+    float: none;
+}
 
 /* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
 #content .newsImageContainer .carrossel-images {
-    margin: 0;
     float: left;
     clear: left;
-    width: 100%;
+    margin: 0;
     max-width: 200px;
-    /*display: none;*/
+    width: 100%;
 }
 
 #content .newsImageContainer .carrossel-images li {
@@ -1008,84 +850,113 @@ div.error { padding: 1em; }
     list-style: outside none;
 }
 
-#content .newsImageContainer .carrossel-images li.last-item { margin-right: 0; }
+#content .newsImageContainer .carrossel-images li.last-item {
+    margin-right: 0;
+}
 
 #content .newsImageContainer .carrossel-images li a {
-    float:left;
     position: relative;
     z-index: 1;
+    float: left;
 }
+
 /* credito lightbox da galeria de imagens */
 .galleria-info .copyright {
     color: #fff;
     font-style: italic;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 2em;
 }
 
 /* POLL TILE */
 #content .poll-tile {
-    background-color: #eeeff1;
+    border: 1px solid #d4d5d7;
     border-radius: 0.5em 0.5em 0 0;
-    border: 1px solid #d4d5d7; }
-    #content .poll-tile .poll-tile-header {
-        border-bottom: 1px solid #d4d5d7;
-        padding: 0.5em 1em; }
-        #content .poll-tile .poll-tile-header>.header {
-            color: #444a53;
-            font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-            font-size: 1.3em;
-            text-transform: uppercase; }
-    #content .poll-tile .tile-content-wrapper>div {
-        padding: 0 1em; }
-    #content .poll-tile .tile-content-wrapper>.poll-spinner {
-        padding: 0; }
-    #content .poll-tile .tile-content-wrapper>h3 {
-        background-color: #f8f9f9;
-        color: #365073;
-        font-size: 1em;
-        padding: 1.7em 1em; }
-    #content .poll-tile .tile-content-wrapper>h4 {
-        font-size: 1em;
-        font-weight: normal;
-        font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-        padding: 1em; }
-    #content .poll-tile .tile-content-wrapper>form>br {
-        display: none;
-    }
-    #content .poll-tile .tile-content-wrapper>form>input[type=radio] {
-        clear: both;
-        float: left;
-        margin: 1em 0 1em 1em; }
-        #content .poll-tile .tile-content-wrapper>form>input[type=radio]+span {
-            color: #335277;
-            display: block;
-            line-height: 3.3em;
-            margin-left: 2.8em; }
-    #content .poll-tile .tile-content-wrapper>form>input[type=submit] {
-        background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
-        border: none;
-        color: #fff;
-        font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
-        font-size: 1.1em;
-        margin-top: 1em;
-        padding: 0.8em 0px 0.8em 3em;
-        text-align: left;
-        text-transform: uppercase;
-        width: 100%; }
-    #content .poll-tile .tile-content-wrapper>.result-text,
+    background-color: #eeeff1;
+}
+
+#content .poll-tile .poll-tile-header {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #d4d5d7;
+}
+
+#content .poll-tile .poll-tile-header>.header {
+    color: #444a53;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+}
+
+#content .poll-tile .tile-content-wrapper>div {
+    padding: 0 1em;
+}
+
+#content .poll-tile .tile-content-wrapper>.poll-spinner {
+    padding: 0;
+}
+
+#content .poll-tile .tile-content-wrapper>h3 {
+    padding: 1.7em 1em;
+    background-color: #f8f9f9;
+    color: #365073;
+    font-size: 1em;
+}
+
+#content .poll-tile .tile-content-wrapper>h4 {
+    padding: 1em;
+    font-weight: normal;
+    font-size: 1em;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+}
+
+#content .poll-tile .tile-content-wrapper>form>br {
+    display: none;
+}
+
+#content .poll-tile .tile-content-wrapper>form>input[type=radio] {
+    float: left;
+    clear: both;
+    margin: 1em 0 1em 1em;
+}
+
+#content .poll-tile .tile-content-wrapper>form>input[type=radio]+span {
+    display: block;
+    margin-left: 2.8em;
+    color: #335277;
+    line-height: 3.3em;
+}
+
+#content .poll-tile .tile-content-wrapper>form>input[type=submit] {
+    margin-top: 1em;
+    padding: 0.8em 0px 0.8em 3em;
+    width: 100%;
+    border: none;
+    background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+}
+
+#content .poll-tile .tile-content-wrapper>.result-text,
     #content .poll-tile .tile-content-wrapper>.tile-poll-more {
-        text-align: right;
-        text-transform: uppercase;
-        font-size: 0.8em;
-        padding-top: 1em; }
-    #content .poll-tile .tile-content-wrapper>.tile-poll-more {
-        padding-bottom: 1em; }
-/* POLL TILE */
+    padding-top: 1em;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+#content .poll-tile .tile-content-wrapper>.tile-poll-more {
+    padding-bottom: 1em;
+}
 
 /* Button alignment of tile compose */
-.template-compose .tile-container { position: relative; }
+.template-compose .tile-container {
+    position: relative;
+}
+
 .template-compose .tile-container .edit-tile-link {
     position: absolute;
     top: 0;
@@ -1103,32 +974,45 @@ div.error { padding: 1em; }
 }
 
 /* Tile Searchbox */
-.searchSection label { cursor: pointer; }
+.searchSection label {
+    cursor: pointer;
+}
 
 /* Tile latest_selectionable_nitf */
-.centered { text-align: center; }
-.centered img { display: none; }
+.centered {
+    text-align: center;
+}
+
+.centered img {
+    display: none;
+}
 
 /* Plone-addsite */
-fieldset#add-on-list { display: none; }
+fieldset#add-on-list {
+    display: none;
+}
 
 /* Plone overview */
-form.inline-form { display: inline; }
+form.inline-form {
+    display: inline;
+}
 
-/* Tile de embed de videos do collective cover */
+/* Tile de embed de videos do collective cover
+   ========================================================================== */
+
 div[data-tile*="collective.cover.embed"] {
+    overflow: hidden;
     max-width: 766px;
     max-height: 574px;
-    overflow: hidden;
 }
 
 div[data-tile*="collective.cover.embed"] .samba-player {
     position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
     overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 56.25%;
     width: 100% !important;
+    height: 0;
     height: 100% !important;
 }
 
@@ -1142,132 +1026,233 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
     height: 100%;
 }
 
-/*
-** Tile collection
-** Visão sumária de coleções - Listagem
- */
-body[class*="collection"] #viewlet-below-content-title { display: none; }
 
-body[class*="collection"] #content-core { margin-top: 0; }
+/* Tile do Banner Rotativo
+   ========================================================================== */
 
-body[class*="collection"] #content .tileItem {
-    padding-bottom: 1.650em;
-    padding-left: 8.975em;
-    margin: 1.910em 0 0 0;
-    min-height: 8.900em;
+
+/* espaçamento padrão dos tiles */
+#content #tile_banner_rotativo {
+    overflow: hidden;
+    margin: 0 0 1.8em;
 }
 
-body[class*="collection"] #content h1.documentFirstHeading {
+/* tile com descrição */
+#content #tile_banner_rotativo.chamada_com_foto { min-height: 580px; }
+
+#content #tile_banner_rotativo.chamada_com_foto li .banner { width: 100%; }
+
+/* itens do tile */
+#content #tile_banner_rotativo li {
     margin: 0;
-    padding: .825em 0;
-    border-bottom: 1px solid #d9dbda;
-    font-size: 2.333em;
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    color: #2c66ce;
-    text-transform: uppercase;
+    list-style: outside none;
 }
 
-body[class*="collection"] #content .subtitle {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: .900em;
-    font-weight: normal;
-}
-
-body[class*="collection"] #content .tileHeadline {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.250em;
-    font-weight: bold;
+/* créditos */
+#tile_banner_rotativo li .credito {
+    display: block;
     color: #172938;
-    line-height: 1.350em;
-    margin: .400em 0 1em;
-}
-
-body[class*="collection"] #content .tileHeadline + p {
-    margin: 0 0 1.170em;
-}
-
-body[class*="collection"] #content .tileImage {
-    margin: 0 1.250em 0 0 !important;
-}
-
-body[class*="collection"] #content .description {
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    font-style: italic;
     font-size: 1em;
-    color: #172938;
-    line-height: 1.170em;
-}
-
-body[class*="collection"] #content .tileItem .keywords {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    line-height: 1.290em;
+    line-height: 2em;
 }
 
-body[class*="collection"] #content .tileItem .keywords,
-body[class*="collection"] #content .tileItem .keywords span a,
-body[class*="collection"] #content .tileItem .documentByLine { color: #596e7f; }
+/* elemento container da imagem */
+#tile_banner_rotativo li .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 
-body[class*="collection"] #content .tileItem .documentByLine {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    padding: 0 .850em 0 0;
-    margin: 0;
+/* elemento container da imagem ativo */
+#tile_banner_rotativo .activeSlide .banner {
+   z-index: 1;
+   opacity: 1;
+   filter: alpha(opacity=100);
+}
+
+/* imagem destaque */
+#tile_banner_rotativo li .banner img {
+    max-width: 750px;
     width: 100%;
-    max-width: 7em;
+}
+
+/* título */
+#tile_banner_rotativo li .banner .title {
+    display: block;
+    margin: 0.450em 0 0.450em 0;
+    color: #172938;
+    font-weight: bold;
+    font-size: 2.7em;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1em;
+}
+
+/* descrição */
+#tile_banner_rotativo li .banner .descr {
+    display: block;
+    color: #172938;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* faixa */
+#tile_banner_rotativo li .banner .faixa {
+    position: relative;
+    margin-top: -21px;
+    max-width: 750px;
+    width: 100%;
+    height: 20px;
+    border-radius: 0 0 5px 5px;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    color: #fff;
+    float: left;
+}
+
+/* botões de navegação */
+#tile_banner_rotativo li .button-nav,
+.orderTiles .button-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    overflow: hidden;
+    width: 21px;
+    height: 20px;
+    border-right: 1px solid #446b5d;
+    background-color: #0e561f;
+    background-image: url("++resource++brasil.gov.tiles/bullets-branco-verde.gif");
+    background-repeat: no-repeat;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+#tile_banner_rotativo .activeSlide .button-nav,
+#tile_banner_rotativo li .button-nav:hover,
+#tile_banner_rotativo li .button-nav:focus {
+    background-color: #ffb400;
+    background-position: -21px 0;
+}
+
+#tile_banner_rotativo .last-item .button-nav {
+    border: none;
+    border-radius: 0 0 3px 0;
+    right: 0;
+}
+
+/* botões de navegação - com 2 itens */
+#tile_banner_rotativo[data-quantidade="2"] #banner1 .button-nav { right: 20px; }
+
+/* botões de navegação - com 3 itens */
+#tile_banner_rotativo[data-quantidade="3"] #banner1 .button-nav { right: 40px; }
+#tile_banner_rotativo[data-quantidade="3"] #banner2 .button-nav { right: 20px; }
+
+/* botões de navegação - com 4 itens */
+#tile_banner_rotativo[data-quantidade="4"] #banner1 .button-nav { right: 60px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner2 .button-nav { right: 40px; }
+#tile_banner_rotativo[data-quantidade="4"] #banner3 .button-nav { right: 20px; }
+
+
+/*
+ * Tile do Banner Rotativo - Sem descrição
+ */
+
+#tile_banner_rotativo.chamada_sem_foto li .banner { width: 100%; }
+
+#tile_banner_rotativo.chamada_sem_foto li .banner .faixa { display: none; }
+
+#tile_banner_rotativo.chamada_sem_foto li .banner img { max-height: 240px; }
+
+#tile_banner_rotativo.chamada_sem_foto li .banner .title  {
+    margin: -20px 0 0;
+    height: 20px;
+    border-radius: 0 0 5px 5px;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    color: #fff;
+    position: relative;
+    text-indent: 1em;
+    font-weight: normal;
+    font-style: italic;
+    font-size: .8em;
+    line-height: 20px;
+}
+
+
+/*
+ * Tile do Banner Rotativo - Aba compor
+ */
+
+.template-compose #content #tile_banner_rotativo li {
+    position: relative;
+    float: left;
+    margin: 1% 1%;
+    width: 23%;
+    min-height: 250px;
+}
+
+.template-compose #content #tile_banner_rotativo li:hover {
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+
+.template-compose #content #tile_banner_rotativo .banner { margin: 10px 0 0; }
+
+.template-compose #content #tile_banner_rotativo .banner img {
+    margin: 0 3%;
+    width: 94%;
+}
+
+.template-compose #content #tile_banner_rotativo .banner,
+.template-compose #content #tile_banner_rotativo .banner img {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.template-compose #content #tile_banner_rotativo .button-nav,
+.template-compose #content #tile_banner_rotativo span { display: none; }
+
+.template-compose #content #tile_banner_rotativo .title {
+    display: block;
+    margin: 3%;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-style: normal;
+    background: transparent none;
+    color: #172938;
+    font-weight: bold;
+    text-indent: initial;
     height: auto;
 }
 
-/* icones - beaseado na semantica do font awesome */
-body[class*="collection"] #content .summary-view-icon {
-    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    line-height: 1em;
-    color: #596e7f;
-    display: block;
-    margin-bottom: .5em;
+.template-compose #content #tile_banner_rotativo .tile-remove-item {
+    top: 0;
+    right: -5px;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
-    vertical-align: text-top;
-    background-image: url("summary-view-icons-sprite.png");
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    margin-top: 1px;
-    margin-right: 3px;
+.tile-remove-item {
+    z-index: 10 !important;
 }
 
-body[class*="collection"] #content .summary-view-icon .icon-day { background-position: -244px -392px; }
-body[class*="collection"] #content .summary-view-icon .icon-hour { background-position: -273px -393px; }
-body[class*="collection"] #content .summary-view-icon .icon-audio { background-position: -3px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-multimidia { background-position: -33px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-info { background-position: -63px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-gallery { background-position: -303px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-edit { background-position: -93px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-app { background-position: -155px -392px; }
-body[class*="collection"] #content .summary-view-icon .icon-image { background-position: -123px -391px; }
-body[class*="collection"] #content .summary-view-icon .icon-gallery,
-body[class*="collection"] #content .summary-view-icon .icon-image {
-    width: 15px;
-    margin-right: 2px;
+.template-compose .tile-container {
+    position: relative;
 }
 
-/* Contraste
- * icones - beaseado na semantica do font awesome*/
-body[class*="collection"].contraste #content .summary-view-icon .icon-day { background-position: -624px -392px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-hour { background-position: -653px -393px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-audio { background-position: -383px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-multimidia { background-position: -413px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-info { background-position: -443px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-gallery { background-position: -683px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-edit { background-position: -473px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-image { background-position: -503px -391px; }
-body[class*="collection"].contraste #content .summary-view-icon .icon-app { background-position: -535px -392px; }
+.template-compose .tile-container .edit-tile-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-body[class*="collection"].contraste #content .description,
-body[class*="collection"].contraste #content .tileHeadline a { color: #fff !important; }
+.orderTiles {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.orderTiles .button-nav { position: static; }

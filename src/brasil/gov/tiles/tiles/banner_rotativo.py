@@ -123,7 +123,7 @@ class BannerRotativoTile(ListTile):
         """
         if self._has_image_field(item):
             scales = item.restrictedTraverse('@@images')
-            return scales.scale('image', width=766, height=248)
+            return scales.scale('image', width=750, height=423)
 
     @view.memoize
     def accepted_ct(self):
@@ -139,9 +139,9 @@ class BannerRotativoTile(ListTile):
 
     def tile_class(self):
         if self.layout_banner():
-            return 'chamada_sem_foto'
+            return 'chamada_sem_foto tile-content'
         else:
-            return 'chamada_com_foto'
+            return 'chamada_com_foto tile-content'
 
     def show_nav(self):
         return (len(self.results()) > 1)

@@ -1,13 +1,56 @@
-Changelog
----------
+Alterações
+------------
 
-1.0rc2 (unreleased)
-^^^^^^^^^^^^^^^^^^^
+1.0.2 (unreleased)
+^^^^^^^^^^^^^^^^^^
 
   * Revisão do modo que é sobreescrito os tiles (closes `#91`_).
     [rodfersou]
+  * Removida dependência no unittest2.
+    [hvelarde]
+  * Adicionadas dependências do pacote.
+    [hvelarde]
+  * Revisado tamanho do footer dos tiles. (closes `#88`_).
+    [rodfersou][rennanrodrigues]
+  * Adicionada opção para variação de título nos tiles basic e
+    basic news article (nitf) (closes `#86`_).
+    [rodfersou]
+  * Adicionado suporte ao scale de imagem original (closes `#82`_).
+    [rodfersou]
+
+
+1.0.1 (2013-11-18)
+^^^^^^^^^^^^^^^^^^^
+
+  * Acertando escala de imagem para banner rotativo.
+    [dbarbato]
+  * Refatorado o banner rotativo (closes `#74`_).
+    [rennanrodrigues]
+  * Tile banner rotativo ajustado para foto ter a proporção de 21x11,85 cm. (closes `#72`_).
+    [rennanrodrigues]
+  * Correção de altura do container de navegação do media carousel (closes `#70`_).
+    [rennanrodrigues]
+  * Correção de bug de altura e sobreposição de conteúdo no Tile de Redes Sociais (Twitter)
+    (closes `#68`_).
+    [rennanrodrigues]
+  * Correção de bug de transição do banner rotativo no layout de chamada com foto (closes `#65`_).
+    [rennanrodrigues]
+
+
+1.0 (2013-10-29)
+^^^^^^^^^^^^^^^^^^^
+
+  * Removida a regra duplicada (closes `#63`_).
+    [rennanrodrigues]
+  * Regra que estava no summary view para o tile collection (closes `#61`_).
+    [rennanrodrigues]
   * Regras de fonte do Tile collection (closes `#59`_).
     [rennanrodrigues]
+
+
+1.0rc2 (2013-10-24)
+^^^^^^^^^^^^^^^^^^^
+
   * Front-end do novo banner rotativo  (closes `#57`_).
     [rennanrodrigues]
   * Backend do novo banner rotativo  (closes `#57`_).
@@ -55,7 +98,7 @@ Changelog
   * Adicionado título no tile list (closes `#12`_). [rodfersou]
   * Adicionado título no audio gallery (closes `#10`_). [rodfersou]
   * Revisados headers selecionáveis para não quebrar caso o campo estiver oculto
-  (closes `#8`_). [rodfersou]
+    (closes `#8`_). [rodfersou]
 
 1.0rc1 (2013-08-26)
 ^^^^^^^^^^^^^^^^^^^
@@ -105,4 +148,14 @@ Changelog
 .. _`#55`: https://github.com/plonegovbr/brasil.gov.tiles/issues/55
 .. _`#57`: https://github.com/plonegovbr/brasil.gov.tiles/issues/57
 .. _`#59`: https://github.com/plonegovbr/brasil.gov.tiles/issues/59
+.. _`#61`: https://github.com/plonegovbr/brasil.gov.tiles/issues/61
+.. _`#63`: https://github.com/plonegovbr/brasil.gov.tiles/issues/63
+.. _`#65`: https://github.com/plonegovbr/brasil.gov.tiles/issues/65
+.. _`#68`: https://github.com/plonegovbr/brasil.gov.tiles/issues/68
+.. _`#70`: https://github.com/plonegovbr/brasil.gov.tiles/issues/70
+.. _`#72`: https://github.com/plonegovbr/brasil.gov.tiles/issues/72
+.. _`#74`: https://github.com/plonegovbr/brasil.gov.tiles/issues/74
+.. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
+.. _`#86`: https://github.com/plonegovbr/brasil.gov.tiles/issues/86
+.. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88
 .. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
