@@ -4,6 +4,8 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Revisão do modo que é sobreescrito os tiles (closes `#91`_).
+    [rodfersou]
   * Removida dependência no unittest2.
     [hvelarde]
   * Adicionadas dependências do pacote.
@@ -156,3 +158,4 @@ Alterações
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
 .. _`#86`: https://github.com/plonegovbr/brasil.gov.tiles/issues/86
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88
+.. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
