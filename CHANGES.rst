@@ -4,11 +4,13 @@ Alterações
 1.0.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Revisado modo que os tiles são sobreescritos (closes `#91`_).
+    [rodfersou]
   * Removida dependência no unittest2.
     [hvelarde]
   * Adicionadas dependências do pacote.
     [hvelarde]
-  * Revisado tamanho do footer dos tiles. (closes `#88`_).
+  * Revisado tamanho do footer dos tiles (closes `#88`_).
     [rodfersou][rennanrodrigues]
   * Adicionada opção para variação de título nos tiles basic e
     basic news article (nitf) (closes `#86`_).
@@ -156,3 +158,4 @@ Alterações
 .. _`#82`: https://github.com/plonegovbr/brasil.gov.tiles/issues/82
 .. _`#86`: https://github.com/plonegovbr/brasil.gov.tiles/issues/86
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88
+.. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
