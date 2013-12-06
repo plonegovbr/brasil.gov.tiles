@@ -2,7 +2,6 @@
 
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
-from cgi import escape
 from collective.cover import _
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.autoform import directives as form
@@ -139,7 +138,7 @@ class MediaCarouselTile(ListTile):
     def get_title(self, item):
         title = ''
         if self._field_is_visible('title'):
-            title = '<a href="'+item.absolute_url()+'/view">'+item.title+'</a>'
+            title = '<a href="' + item.absolute_url() + '/view">' + item.title + '</a>'
         return title
 
     def get_description(self, item):

@@ -27,9 +27,11 @@ class ISocialTile(IPersistentCoverTile):
 
     number_of_columns = schema.Choice(
         title=u"Columns",
-        values=(u'1',
+        values=(
+            u'1',
             u'2',
-            u'3',),
+            u'3',
+        ),
         required=True,
     )
 
