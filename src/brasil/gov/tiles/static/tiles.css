@@ -825,6 +825,10 @@ div.error {
     line-height: 2em;
 }
 
+#content .mediacarousel .mediacarousel-footer-link {
+    font-size: 0.9em;
+}
+
 .banner-tile .copyright + a,
 .newsImageContainer .copyright + a {
     display: block;
