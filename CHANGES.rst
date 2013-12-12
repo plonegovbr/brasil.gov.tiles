@@ -1,7 +1,7 @@
 Alterações
 ------------
 
-1.0.2 (unreleased)
+1.0.2 (2013-12-12)
 ^^^^^^^^^^^^^^^^^^
 
   * Revisado modo que os tiles são sobreescritos (closes `#91`_).
