@@ -13,7 +13,7 @@ long_description = (
 setup(
     name='brasil.gov.tiles',
     version=version,
-    description="Tiles para o Portal Modelo do Governo Federal",
+    description="Tiles para o Portal Padrão do Governo Federal",
     long_description=long_description,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
