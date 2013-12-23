@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
-<registry>
-  <record name="plone.app.tiles">
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+
+  <record field="available_tiles"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.available_tiles">
     <value purge="true">
       <element>em_destaque</element>
       <element>nitf</element>
@@ -16,4 +20,5 @@
       <element>banner_rotativo</element>
     </value>
   </record>
+
 </registry>

@@ -24,14 +24,6 @@ class DestaqueTileTestCase(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.request = self.layer['request']
         self.name = u"destaque"
-        self.portal.invokeFactory('collective.cover.content', 'frontpage',
-                                  template_layout='Layout A')
-        self.portal.invokeFactory('collective.cover.content', 'my-document',
-                                  template_layout='Layout A')
-        self.portal.invokeFactory('collective.cover.content', 'my-image',
-                                  template_layout='Layout A')
-        self.portal.invokeFactory('collective.cover.content', 'my-news-item',
-                                  template_layout='Layout A')
         self.cover = self.portal['frontpage']
         self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
         self.tile = self.tile['test']

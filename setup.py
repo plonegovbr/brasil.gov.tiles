@@ -49,7 +49,7 @@ setup(
         'collective.prettydate',
         'five.grok',
         'plone.app.blocks',
-        'plone.app.dexterity',
+        'plone.app.dexterity [grok, relations]',
         'plone.app.iterate',
         'plone.app.layout',
         'plone.app.registry',
@@ -67,18 +67,20 @@ setup(
         'Products.CMFPlone >=4.3',
         'Products.GenericSetup',
         'setuptools',
+        'z3c.unconfigure',
         'zope.component',
         'zope.interface',
         'zope.schema',
     ],
     extras_require={
         'test': [
-            'plone.app.testing',
+            'mock',
+            'plone.app.robotframework',
+            'plone.app.testing [robot] >=4.2.2',
             'plone.browserlayer',
-            'plone.registry',
+            'plone.cachepurging',
             'plone.testing',
             'Products.PloneFormGen',
-            'robotsuite',
         ]
     },
     entry_points="""

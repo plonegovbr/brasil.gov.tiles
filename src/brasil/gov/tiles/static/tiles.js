@@ -403,9 +403,6 @@ $(document).ready(function() {
                     }
 
 
-                    if (!$(mediacarousel).hasClass('image')){
-                        $(mediacarousel).addClass('image');
-
                         $('.galleria-thumbnails-container', mediacarousel).insertAfter($('.galleria-info', mediacarousel));
                         var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
                                            $('.galleria-thumbnails-container', mediacarousel).height();
@@ -416,6 +413,8 @@ $(document).ready(function() {
                                                bottomContainer)         +
                                               ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
                                               8;
+                    if (!$(mediacarousel).hasClass('image')){
+                        $(mediacarousel).addClass('image');
                         $(mediacarousel).animate({
                             height: heightContainer
                         });
@@ -424,7 +423,24 @@ $(document).ready(function() {
                         });
                     }
                 });
-
+                Galleria.on('loadfinish', function(e) {
+                    var mediacarousel = '#'+this._target.id;
+                        $('.galleria-thumbnails-container', mediacarousel).insertAfter($('.galleria-info', mediacarousel));
+                        var bottomThumbs = $('.galleria-thumbnails-container', mediacarousel).offset().top +
+                                           $('.galleria-thumbnails-container', mediacarousel).height();
+                        var bottomContainer = $(mediacarousel).offset().top +
+                                              $(mediacarousel).height();
+                        var heightContainer = $(mediacarousel).height() +
+                                              (bottomThumbs             -
+                                               bottomContainer)         +
+                                              ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
+                                              8;
+                    if ($(mediacarousel).hasClass('image')){
+                        $(mediacarousel).css({
+                            height: heightContainer
+                        });
+                    }
+                });
                 Galleria.run('#'+galleria_id);
 
                 Galleria.ready(function() {
@@ -457,4 +473,13 @@ $(document).ready(function() {
 
         });
     };
+    $(document).on(
+        'submit',
+        'form[action*=edit-tile\\/mediacarousel]',
+        function(){
+            setTimeout(function() {
+                location.reload();
+            }, 400);
+        }
+    );
 })(jQuery);
