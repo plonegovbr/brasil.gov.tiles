@@ -43,15 +43,14 @@ Test Mediacarousel Tile
     Compose Cover
     Page Should Contain  Arraste uma pasta ou coleção para popular o tile.
 
-    # drag&drop an Image
+    # drag&drop an Collection
     Open Content Chooser
     Drag And Drop  css=${collection_selector}  css=${tile_selector}
-    Sleep  1s  Wait for mediacarousel to load
-    Wait Until Page Contains Element  css=div.mediacarousel.tile-content div.ready.image div.galleria-image.active img
+    Wait Until Page Contains Element  css=div.mediacarousel.tile-content h2.mediacarousel-tile+div
 
     # move to the default view and check tile persisted
     Click Link  link=View
-    Page Should Contain Image  css=div.mediacarousel.tile-content div.galleria-image.active img
+    Page Should Contain Element  css=div.mediacarousel.tile-content h2.mediacarousel-tile
 
     # edit the tile and check AJAX refresh
     Compose Cover

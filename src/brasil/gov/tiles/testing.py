@@ -84,12 +84,6 @@ class Fixture(PloneSandboxLayer):
         self.applyProfile(portal, 'collective.cover:testfixture')
         self.applyProfile(portal, 'brasil.gov.tiles:default')
         self.applyProfile(portal, 'brasil.gov.tiles:testfixture')
-        query = [{
-            'i': 'Type',
-            'o': 'plone.app.querystring.operation.string.is',
-            'v': 'Image',
-        }]
-        portal['my-collection'].setQuery(query)
         portal['my-image'].setImage(generate_jpeg(50, 50))
         portal['my-image1'].setImage(generate_jpeg(50, 50))
         portal['my-image2'].setImage(generate_jpeg(50, 50))
