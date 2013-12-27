@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <registry>
   <record name="plone.app.tiles">
-    <value purge="true">
+    <value purge="false">
       <element>em_destaque</element>
       <element>nitf</element>
       <element>poll</element>
