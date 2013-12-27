@@ -93,7 +93,6 @@ class Fixture(PloneSandboxLayer):
         portal['my-image'].setImage(generate_jpeg(50, 50))
         portal['my-image1'].setImage(generate_jpeg(50, 50))
         portal['my-image2'].setImage(generate_jpeg(50, 50))
-        portal['my-image2'].setDescription(loadFile('lorem_ipsum.txt'))
         portal['my-file'].setFile(loadFile('lorem_ipsum.txt'))
         portal['my-file'].reindexObject()
         portal['my-news-item'].setImage(generate_jpeg(50, 50))
