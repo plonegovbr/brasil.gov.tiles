@@ -10,6 +10,9 @@ Alterações
 1.0.2 (2013-12-12)
 ^^^^^^^^^^^^^^^^^^
 
+  * Fix mediacarousel tile to hide items (layoutedit tab). Fix mediacarousel tile transiction
+    beetween slides to grow or shrink tile as needed. (closes `#96`_).
+    [rodfersou]
   * Revisado modo que os tiles são sobreescritos (closes `#91`_).
     [rodfersou]
   * Removida dependência no unittest2.
@@ -165,3 +168,4 @@ Alterações
 .. _`#86`: https://github.com/plonegovbr/brasil.gov.tiles/issues/86
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88
 .. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
+.. _`#96`: https://github.com/plonegovbr/brasil.gov.tiles/issues/96
