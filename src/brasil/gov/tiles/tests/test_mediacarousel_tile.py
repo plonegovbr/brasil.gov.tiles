@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import unittest
-
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
-from collective.cover.tiles.base import IPersistentCoverTile
 from brasil.gov.tiles.tiles.mediacarousel import MediaCarouselTile
+from collective.cover.tiles.base import IPersistentCoverTile
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from zope.component import getMultiAdapter
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+import unittest
 
 
 class MediaCarouselTileTestCase(unittest.TestCase):
