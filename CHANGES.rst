@@ -4,7 +4,8 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+  * Alteração do Tile de Rede Social para português.
+    [dbarbato]
 
 
 1.0.2 (2013-12-12)
