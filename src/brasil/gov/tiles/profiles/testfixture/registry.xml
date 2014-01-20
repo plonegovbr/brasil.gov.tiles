@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+
+  <record field="available_tiles"
+          interface="collective.cover.controlpanel.ICoverSettings"
+          name="collective.cover.controlpanel.ICoverSettings.available_tiles">
+    <value purge="true">
+      <element>em_destaque</element>
+      <element>nitf</element>
+      <element>poll</element>
+      <element>destaque</element>
+      <element>videogallery</element>
+      <element>audio</element>
+      <element>audiogallery</element>
+      <element>mediacarousel</element>
+      <element>social</element>
+      <element>standaloneheader</element>
+      <element>video</element>
+      <element>banner_rotativo</element>
+    </value>
+  </record>
+
+</registry>

@@ -21,3 +21,7 @@ parts/
 src/collective.cover/
 var/
 dist/
+log.html
+output.xml
+report.html
+selenium-screenshot-*.png

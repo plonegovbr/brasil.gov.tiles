@@ -28,12 +28,6 @@ class IMediaCarouselTile(IListTile):
         required=False,
     )
 
-    footer_text = schema.TextLine(
-        title=_(u'Footer Link'),
-        required=False,
-        readonly=False,
-    )
-
     form.omitted('image')
     form.no_omit(IDefaultConfigureForm, 'image')
     image = NamedImage(
@@ -48,6 +42,12 @@ class IMediaCarouselTile(IListTile):
         title=_(u'Elements'),
         value_type=schema.TextLine(),
         required=False,
+    )
+
+    footer_text = schema.TextLine(
+        title=_(u'Footer Link'),
+        required=False,
+        readonly=False,
     )
 
 

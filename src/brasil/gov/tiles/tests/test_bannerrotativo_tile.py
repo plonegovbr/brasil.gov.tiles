@@ -22,7 +22,6 @@ class BannerRotativoTileTestCase(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.request = self.layer['request']
         self.name = u"banner_rotativo"
-        self.portal.invokeFactory('collective.cover.content', 'frontpage')
         self.cover = self.portal['frontpage']
         self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
         self.tile = self.tile['test']
