@@ -2,6 +2,10 @@
     line-height: 16px;
 }
 
+#content #tile-configure.modal {
+    top: 10% !important;
+}
+
 .videogallery-tile {
     border-radius: 5px 5px 5px 5px;
     background-color: #072d6c;
@@ -815,6 +819,10 @@ div.error {
     line-height: 2em;
 }
 
+div[data-tile*="mediacarousel"] {
+    overflow: hidden;
+}
+
 #content .mediacarousel .mediacarousel-tile+div .rights {
     float: right;
     margin: 0 .8em 0 0;
@@ -823,6 +831,15 @@ div.error {
     font-size: .9em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 2em;
+}
+
+#content .mediacarousel {
+    min-height: 100px;
+    height: 100%;
+}
+
+#content .mediacarousel img {
+    border-radius: 0px;
 }
 
 #content .mediacarousel .mediacarousel-footer-link {
