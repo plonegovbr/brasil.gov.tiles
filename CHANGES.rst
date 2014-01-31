@@ -4,6 +4,8 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Enhancements in tile mediacarousel layout. (closes `#99`_).
+    [rodfersou]
   * Alteração do Tile de Rede Social para português.
     [dbarbato]
 
@@ -170,3 +172,4 @@ Alterações
 .. _`#88`: https://github.com/plonegovbr/brasil.gov.tiles/issues/88
 .. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
 .. _`#96`: https://github.com/plonegovbr/brasil.gov.tiles/issues/96
+.. _`#99`: https://github.com/plonegovbr/brasil.gov.tiles/issues/99
