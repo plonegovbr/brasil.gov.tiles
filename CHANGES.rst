@@ -4,6 +4,8 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Disabled robot tests executed by travis (see issue `#98`_). (closes `#99`_).
+    [rodfersou]
   * Enhancements in tile mediacarousel layout. (closes `#99`_).
     [rodfersou]
   * Alteração do Tile de Rede Social para português.
@@ -173,3 +175,4 @@ Alterações
 .. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
 .. _`#96`: https://github.com/plonegovbr/brasil.gov.tiles/issues/96
 .. _`#99`: https://github.com/plonegovbr/brasil.gov.tiles/issues/99
+.. _`#98`: https://github.com/plonegovbr/brasil.gov.tiles/issues/98
