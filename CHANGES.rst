@@ -16,7 +16,7 @@ Alterações
 ^^^^^^^^^^^^^^^^^^
 
   * Correções na opção de esconder items no tile mediacarousel (aba layoutedit). Corrigida
-    transição de slides para crescer ou diminuir o tile conform necessário. (closes `#96`_).
+    transição de slides para aumentar ou diminuir o tile conforme necessário. (closes `#96`_).
     [rodfersou]
   * Revisado modo que os tiles são sobreescritos (closes `#91`_).
     [rodfersou]
