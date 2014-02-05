@@ -150,6 +150,10 @@ $(document).ready(function() {
                                 $(mediacarousel).css({
                                     height: heightContainer
                                 });
+                                var tile = $(mediacarousel).parent().parent();
+                                $('.loading-mask', tile).css({
+                                    height: tile.height() + 15
+                                });
                             }
                         }
                     }
@@ -420,6 +424,11 @@ $(document).ready(function() {
                         });
                         $('.galleria-thumbnails-container, .galleria-info').animate({
                             opacity: 1
+                        }, function () {
+                            var tile = $(mediacarousel).parent().parent();
+                            $('.loading-mask', tile).css({
+                                height: tile.height() + 15
+                            });
                         });
                     }
                 });
@@ -438,6 +447,10 @@ $(document).ready(function() {
                     if ($(mediacarousel).hasClass('image')){
                         $(mediacarousel).css({
                             height: heightContainer
+                        });
+                        var tile = $(mediacarousel).parent().parent();
+                        $('.loading-mask', tile).css({
+                            height: tile.height() + 15
                         });
                     }
                 });

@@ -820,7 +820,7 @@ div.error {
 }
 
 div[data-tile*="mediacarousel"] {
-    overflow: hidden;
+    float: left;
 }
 
 #content .mediacarousel .mediacarousel-tile+div .rights {

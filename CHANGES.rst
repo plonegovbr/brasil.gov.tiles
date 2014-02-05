@@ -4,7 +4,9 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-  * Enhancements in tile mediacarousel layout. (closes `#99`_).
+  * Desabilitado testes robot executados pelo travis (veja issue `#98`_). (closes `#99`_).
+    [rodfersou]
+  * Melhorias no layout do tile mediacarousel. (closes `#99`_).
     [rodfersou]
   * Alteração do Tile de Rede Social para português.
     [dbarbato]
@@ -13,8 +15,8 @@ Alterações
 1.0.2 (2013-12-12)
 ^^^^^^^^^^^^^^^^^^
 
-  * Fix mediacarousel tile to hide items (layoutedit tab). Fix mediacarousel tile transiction
-    beetween slides to grow or shrink tile as needed. (closes `#96`_).
+  * Correções na opção de esconder items no tile mediacarousel (aba layoutedit). Corrigida
+    transição de slides para aumentar ou diminuir o tile conforme necessário. (closes `#96`_).
     [rodfersou]
   * Revisado modo que os tiles são sobreescritos (closes `#91`_).
     [rodfersou]
@@ -173,3 +175,4 @@ Alterações
 .. _`#91`: https://github.com/plonegovbr/brasil.gov.tiles/issues/91
 .. _`#96`: https://github.com/plonegovbr/brasil.gov.tiles/issues/96
 .. _`#99`: https://github.com/plonegovbr/brasil.gov.tiles/issues/99
+.. _`#98`: https://github.com/plonegovbr/brasil.gov.tiles/issues/98
