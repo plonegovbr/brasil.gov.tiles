@@ -4,9 +4,9 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-  * Disabled robot tests executed by travis (see issue `#98`_). (closes `#99`_).
+  * Desabilitado testes robot executados pelo travis (veja issue `#98`_). (closes `#99`_).
     [rodfersou]
-  * Enhancements in tile mediacarousel layout. (closes `#99`_).
+  * Melhorias no layout do tile mediacarousel. (closes `#99`_).
     [rodfersou]
   * Alteração do Tile de Rede Social para português.
     [dbarbato]
@@ -15,8 +15,8 @@ Alterações
 1.0.2 (2013-12-12)
 ^^^^^^^^^^^^^^^^^^
 
-  * Fix mediacarousel tile to hide items (layoutedit tab). Fix mediacarousel tile transiction
-    beetween slides to grow or shrink tile as needed. (closes `#96`_).
+  * Correções na opção de esconder items no tile mediacarousel (aba layoutedit). Corrigida
+    transição de slides para crescer ou diminuir o tile conform necessário. (closes `#96`_).
     [rodfersou]
   * Revisado modo que os tiles são sobreescritos (closes `#91`_).
     [rodfersou]
