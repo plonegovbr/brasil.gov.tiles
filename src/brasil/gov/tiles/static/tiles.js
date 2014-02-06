@@ -1,7 +1,7 @@
 /*
   Comentario
 */
-$(document).ready(function() {
+(function($) {
     //video gallery
     if ($('.videogallery-tile')[0] !== undefined) {
         var videoResponsiveResize, root;
@@ -180,10 +180,7 @@ $(document).ready(function() {
 
         resize();
     }
-});
 
-
-(function($) {
     function AudioPlayer(audio_element, conf) {
         var self = this,
             cssSelectorAncestor = conf.cssSelectorAncestor,
@@ -313,9 +310,6 @@ $(document).ready(function() {
         });
 
     };
-})(jQuery);
-
-(function($) {
 
     function AudioGallery(gallery) {
         var self = this,
@@ -363,10 +357,6 @@ $(document).ready(function() {
         });
 
     };
-})(jQuery);
-
-
-(function($) {
 
     function MediaCarousel(mediacarousel) {
         var self = this,
@@ -495,4 +485,51 @@ $(document).ready(function() {
             }, 400);
         }
     );
+
+    // Tile Galeria de Albuns
+    var albuns = {
+        // View de álbum carrossel (carrossel de imagens do álbum)
+        carrossel: function () {
+            var obj = this;
+            $('.cycle-slideshow').on('cycle-next cycle-prev', function (e, opts) {
+                var $galeria = $(this).parent().parent();
+                var $slideshows = $('.cycle-slideshow', $galeria);
+                $slideshows.not(this).cycle('goto', opts.currSlide);
+                obj.layoutAdjustment($galeria, opts.currSlide);
+            });
+
+            // Aplicando o mesmo controle de navegacao para os thumbs e galerias
+            $('.cycle-carrossel .thumb-itens').click(function (e){
+                e.preventDefault();
+                var $thumbs = $(this).parent().parent();
+                var $galeria = $thumbs.parent().parent();
+                var $slideshows = $('.cycle-slideshow', $galeria);
+                var index = $thumbs.data('cycle.API').getSlideIndex(this);
+                $slideshows.cycle('goto', index);
+                obj.layoutAdjustment($galeria, index);
+            });
+
+            // Adicionando navegação por teclado
+            $(document.documentElement).keyup(function (event) {
+                if (event.keyCode == 37) {
+                    $('.slideshow-carrossel .cycle-prev').trigger('click');
+                } else if (event.keyCode == 39) {
+                    $('.slideshow-carrossel .cycle-next').trigger('click');
+                }
+            });
+        },
+
+        layoutAdjustment: function($galeria, index){
+            // Pula primeiro elemento
+            index = index + 1;
+
+            var aElem = $(".cycle-player .cycle-slide", $galeria);
+
+            var elem = aElem[index];
+            var novaaltura = $(elem).height();
+
+            $(".cycle-sentinel").height(novaaltura);
+        }
+    };
+    albuns.carrossel();
 })(jQuery);

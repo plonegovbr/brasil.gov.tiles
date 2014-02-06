@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <gs:registerProfile
+      name="default"
+      title="Upgrade brasil.gov.tiles (v3000)"
+      directory="profiles/default"
+      description="Upgrade brasil.gov.tiles add Tile Galeria de Albuns."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+  <gs:upgradeSteps
+      source="2000"
+      destination="3000"
+      profile="brasil.gov.tiles:default">
+    
+    <gs:upgradeStep
+        title="Add Tile Galeria de Albuns"
+        description=""
+        handler=".handler.apply_profile"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>
