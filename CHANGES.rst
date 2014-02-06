@@ -5,7 +5,7 @@ Alterações
 ^^^^^^^^^^^^^^^^^^
 
   * Criado tile de galeria de albuns. (closes `#102`_).
-    [rodfersou]
+    [rodfersou][rennanrodrigues]
   * Desabilitado testes robot executados pelo travis (veja issue `#98`_). (closes `#99`_).
     [rodfersou]
   * Melhorias no layout do tile mediacarousel. (closes `#99`_).
