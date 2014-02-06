@@ -6,7 +6,6 @@ from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form
-from plone.memoize import forever
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from Products.CMFCore.utils import getToolByName
@@ -64,7 +63,7 @@ class AlbunsTile(PersistentCoverTile):
         super(AlbunsTile, self).populate_with_object(obj)  # check permissions
 
         if ((obj.portal_type in self.accepted_ct()) and
-            (obj.getLayout() == 'galeria_de_albuns')):
+           (obj.getLayout() == 'galeria_de_albuns')):
             title = _(u'Galeria de álbuns')
             link_url = obj.absolute_url()
             link_text = _(u'Acesse todos os álbuns')
