@@ -533,5 +533,7 @@
             $(".cycle-sentinel").height(novaaltura);
         }
     };
-    albuns.carrossel();
+    $(window).load(function(){
+        albuns.carrossel();
+    });
 })(jQuery);
