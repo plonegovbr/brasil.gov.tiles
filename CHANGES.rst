@@ -4,6 +4,8 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Criado tile de galeria de albuns. (closes `#102`_).
+    [rodfersou]
   * Desabilitado testes robot executados pelo travis (veja issue `#98`_). (closes `#99`_).
     [rodfersou]
   * Melhorias no layout do tile mediacarousel. (closes `#99`_).
@@ -176,3 +178,4 @@ Alterações
 .. _`#96`: https://github.com/plonegovbr/brasil.gov.tiles/issues/96
 .. _`#99`: https://github.com/plonegovbr/brasil.gov.tiles/issues/99
 .. _`#98`: https://github.com/plonegovbr/brasil.gov.tiles/issues/98
+.. _`#102`: https://github.com/plonegovbr/brasil.gov.tiles/issues/102
