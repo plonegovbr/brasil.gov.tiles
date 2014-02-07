@@ -19,11 +19,6 @@ ${footer_field_id}  mediacarousel-footer_text
 ${footer_sample}  http://www.plone.org
 ${footer_other_sample}  http://www.google.com
 
-*** Keywords ***
-
-Add Column
-    Drag And Drop  css=${column_button_selector}  css=${column_drop_area_selector}
-
 *** Test cases ***
 
 Test Mediacarousel Tile
@@ -34,8 +29,6 @@ Test Mediacarousel Tile
     # add a mediacarousel tile to the layout
     Edit Cover Layout
     Page Should Contain  Export layout
-    Add Column
-    Add Column
     Add Tile  ${mediacarousel_tile_location}
     Save Cover Layout
 
@@ -52,18 +45,18 @@ Test Mediacarousel Tile
     Click Link  link=View
     Page Should Contain Element  css=div.mediacarousel.tile-content h2.mediacarousel-tile
 
-    # edit the tile and check AJAX refresh
+    # edit the title and check AJAX refresh
     Compose Cover
     Click Link  css=${edit_link_selector}
-    Wait until page contains element  id=${title_field_id}
+    Page Should Contain Element  css=#${title_field_id}
     Input Text  id=${title_field_id}  ${title_sample}
     Click Button  Save
     Wait Until Page Contains  ${title_sample}
 
-    # edit the tile but cancel operation
+    # edit the title but cancel operation
     Compose Cover
     Click Link  css=${edit_link_selector}
-    Wait until page contains element  id=${title_field_id}
+    Page Should Contain Element  css=#${title_field_id}
     Input Text  id=${title_field_id}  ${title_other_sample}
     Click Button  Cancel
     Wait Until Page Contains  ${title_sample}
@@ -72,7 +65,7 @@ Test Mediacarousel Tile
     Compose Cover
     Click Link  css=${edit_link_selector}
     Sleep  1s  Wait for overlay
-    Wait until page contains element  id=${footer_field_id}
+    Page Should Contain Element  css=#${footer_field_id}
     Input Text  id=${footer_field_id}  ${footer_sample}
     Click Button  Save
     Wait Until Page Contains  ${footer_sample}
@@ -81,7 +74,7 @@ Test Mediacarousel Tile
     Compose Cover
     Click Link  css=${edit_link_selector}
     Sleep  1s  Wait for overlay
-    Wait until page contains element  id=${footer_field_id}
+    Page Should Contain Element  css=#${footer_field_id}
     Input Text  id=${footer_field_id}  ${footer_other_sample}
     Click Button  Cancel
     Wait Until Page Contains  ${footer_sample}
