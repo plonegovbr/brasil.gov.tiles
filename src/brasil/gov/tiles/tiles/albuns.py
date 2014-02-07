@@ -89,8 +89,10 @@ class AlbunsTile(PersistentCoverTile):
         """
         albuns = []
         uuid = self.data.get('uuid', None)
+        obj = None
         if uuid:
             obj = uuidToObject(uuid)
+        if obj:
             catalog = getToolByName(self.context, 'portal_catalog')
 
             # Procuro todas subpastas na pasta do album
