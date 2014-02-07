@@ -7,11 +7,7 @@
         <div class="album-tile tile-content"
              tal:attributes="id string:album-$tile_id"
              tal:define="albuns view/get_albuns">
-            <div tal:condition="not:albuns">
-                Arraste um álbum para popular o tile.
-            </div>
-            <tal:fields repeat="field view/get_configured_fields"
-                        condition="albuns">
+            <tal:fields repeat="field view/get_configured_fields">
                 <tal:title define="htmltag python:field.get('htmltag', 'h1')"
                            condition="python:field['id']=='title'">
                     <h1 tal:condition="python:htmltag=='h1'"
@@ -31,7 +27,7 @@
                         ${view/data/title}
                     </h4>
                 </tal:title>
-                <tal:player condition="python:field['id']=='player'">
+                <tal:player condition="python:field['id']=='player' and albuns">
                     <div class="slideshow-player">
                         <div class="cycle-player cycle-slideshow"
                              data-cycle-slides="> div"
@@ -60,7 +56,7 @@
                         </div><!-- cycle-1 -->
                     </div><!-- player -->
                 </tal:player>
-                <tal:carrossel condition="python:field['id']=='carrossel'">
+                <tal:carrossel condition="python:field['id']=='carrossel' and albuns">
                     <div class="slideshow-carrossel">
                         <div class="cycle-carrossel cycle-slideshow"
                              data-cycle-slides="> div"
@@ -83,6 +79,9 @@
                         </div>
                     </div><!-- carrossel -->
                 </tal:carrossel>
+                <div tal:condition="not:albuns">
+                    Arraste um álbum para popular o tile.
+                </div>
                 <tal:footer condition="python:field['id']=='footer'">
                     <div class="footer">
                         <a href="${view/data/link_url}">${view/data/link_text}</a>
