@@ -518,19 +518,28 @@
                         $('.slideshow-carrossel .cycle-next').trigger('click');
                     }
                 });
+
+                $('.cycle-slideshow').each(function(){
+                    var $galeria = $(this).parent().parent();
+                    obj.layoutAdjustment($galeria, 0);
+                });
             }
         },
 
         layoutAdjustment: function($galeria, index){
+            var aElem = $(".cycle-player .cycle-slide", $galeria),
+                elem,
+                novaaltura,
+                alturaimagem;
+
             // Pula primeiro elemento
             index = index + 1;
+            elem = aElem[index],
+            novaaltura = $(elem).height();
+            alturaimagem = $('.cycle-sentinel img', $galeria).height();
 
-            var aElem = $(".cycle-player .cycle-slide", $galeria);
-
-            var elem = aElem[index];
-            var novaaltura = $(elem).height();
-
-            $(".cycle-sentinel").height(novaaltura);
+            $('.cycle-sentinel', $galeria).height(novaaltura);
+            $('.cycle-hover', $galeria).height(alturaimagem);
         }
     };
     $(window).load(function(){

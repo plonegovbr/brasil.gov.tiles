@@ -12,28 +12,30 @@
                 <tal:title define="htmltag python:field.get('htmltag', 'h1')"
                            condition="python:field['id']=='title'">
                     <h1 tal:condition="python:htmltag=='h1'"
-                        class="title">
+                        class="gallery-title">
                         ${view/data/title}
                     </h1>
                     <h2 tal:condition="python:htmltag=='h2'"
-                        class="title">
+                        class="gallery-title">
                         ${view/data/title}
                     </h2>
                     <h3 tal:condition="python:htmltag=='h3'"
-                        class="title">
+                        class="gallery-title">
                         ${view/data/title}
                     </h3>
                     <h4 tal:condition="python:htmltag=='h4'"
-                        class="title">
+                        class="gallery-title">
                         ${view/data/title}
                     </h4>
                 </tal:title>
                 <tal:player condition="python:field['id']=='player' and albuns">
-                    <div class="slideshow-player">
+                    <div class="player">
                         <div class="cycle-player cycle-slideshow"
                              data-cycle-slides="> div"
                              data-cycle-timeout="0"
                              data-allow-wrap="false"
+                             data-cycle-prev="#album-${tile_id} .player .cycle-prev"
+                             data-cycle-next="#album-${tile_id} .player .cycle-next"
                              data-cycle-fx="fade">
                             <div tal:repeat="album albuns">
                                 <tal:image define="scale python:view.scale(album);"
@@ -41,31 +43,33 @@
                                     <a href="${album/absolute_url}">
                                         <img src="${scale/src}" alt="${scale/alt}">
                                     </a>
-                                    <div class="title">
+                                    <div class="album-title">
                                         ${album/Title}
                                     </div>
-                                    <div class="description">
+                                    <div class="album-description">
                                         ${album/Description}
                                     </div>
-                                    <a href="${album/absolute_url}">
-                                        <div class="acesse-o-album">
-                                            Acesse o álbum
-                                        </div>
+                                    <a href="${album/absolute_url}" class="open-album">
+                                      Acesse o álbum <i class="icon-camera"></i>
                                     </a>
                                 </tal:image>
                             </div>
                         </div><!-- cycle-1 -->
+                        <div class="cycle-hover">
+                            <a href="#" class="cycle-prev">&laquo; Anterior</a>
+                            <a href="#" class="cycle-next">Próximo &raquo;</a>
+                        </div>
                     </div><!-- player -->
                 </tal:player>
                 <tal:carrossel condition="python:field['id']=='carrossel' and albuns">
-                    <div class="slideshow-carrossel">
+                    <div class="carousel">
                         <div class="cycle-carrossel cycle-slideshow"
                              data-cycle-slides="> div"
                              data-cycle-timeout="0"
                              data-cycle-fx="carousel"
                              data-cycle-carousel-fluid="true"
-                             data-cycle-prev="#album-${tile_id} .slideshow-carrossel .cycle-prev"
-                             data-cycle-next="#album-${tile_id} .slideshow-carrossel .cycle-next"
+                             data-cycle-prev="#album-${tile_id} .carousel .cycle-prev"
+                             data-cycle-next="#album-${tile_id} .carousel .cycle-next"
                              data-allow-wrap="false">
                             <div class="thumb-itens" tal:repeat="album view/get_albuns">
                                 <tal:image define="thumbnail python:view.thumbnail(album);"
