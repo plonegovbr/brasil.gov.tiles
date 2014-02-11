@@ -821,6 +821,7 @@ div.error {
 
 div[data-tile*="mediacarousel"] {
     float: left;
+    width: 100%;
 }
 
 #content .mediacarousel .mediacarousel-tile+div .rights {
