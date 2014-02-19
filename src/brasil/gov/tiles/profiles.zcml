@@ -1,6 +1,8 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="brasil.gov.tiles">
 
   <genericsetup:registerProfile
@@ -24,6 +26,19 @@
       directory="profiles/testfixture"
       description="This fixture creates generic content to be used in tests."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+
+  <!-- Oculta products -->
+  <utility
+      factory=".config.HiddenProducts"
+      name="brasil.gov.tiles" />
+
+  <!-- Oculta profile -->
+  <utility
+      factory=".config.HiddenProfiles"
+      name="brasil.gov.tiles"
+      provides="Products.CMFPlone.interfaces.INonInstallable"
       />
   
   <!-- Upgrades -->
