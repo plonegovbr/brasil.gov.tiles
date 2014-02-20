@@ -7,7 +7,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Brasil.gov.br: Blocos de Conteúdo"
+      title=".gov.br: Blocos de Conteúdo"
       directory="profiles/default"
       description="Instala e configura elementos reutilizáveis de interface"
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -15,32 +15,19 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Brasil.gov.br: Blocos de Conteúdo (remover)"
+      title=".gov.br: Blocos de Conteúdo (remover)"
       directory="profiles/uninstall"
-      description="Remove este pacote"
+      description="Remove os elementos reutilizáveis de interface"
       provides="Products.GenericSetup.interfaces.EXTENSION" />
 
   <genericsetup:registerProfile
       name="testfixture"
-      title="brasil.gov.tiles: testfixture"
+      title=".gov.br: Blocos de Conteúdo (Testes)"
       directory="profiles/testfixture"
-      description="This fixture creates generic content to be used in tests."
+      description="Perfil de testes para o pacote de Blocos de Conteúdo."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-
-  <!-- Oculta products -->
-  <utility
-      factory=".config.HiddenProducts"
-      name="brasil.gov.tiles" />
-
-  <!-- Oculta profile -->
-  <utility
-      factory=".config.HiddenProfiles"
-      name="brasil.gov.tiles"
-      provides="Products.CMFPlone.interfaces.INonInstallable"
-      />
-  
   <!-- Upgrades -->
   <include package=".upgrades" />
 
