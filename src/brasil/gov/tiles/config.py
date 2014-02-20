@@ -22,6 +22,7 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         return [
             u'brasil.gov.tiles:uninstall',
+            u'brasil.gov.tiles:testfixture',
             u'brasil.gov.tiles.upgrades.v2000:default',
             u'brasil.gov.tiles.upgrades.v3000:default'
         ]
