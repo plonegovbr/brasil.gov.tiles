@@ -1,5 +1,5 @@
 *********************************
-Brasil.gov.br: Blocos de Conteúdo
+.gov.br: Blocos de Conteúdo
 *********************************
 
 .. contents:: Conteúdo

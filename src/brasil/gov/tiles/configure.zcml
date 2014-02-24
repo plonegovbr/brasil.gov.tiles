@@ -8,17 +8,34 @@
 
     <includeDependencies package="." />
 
-    <grok:grok package="." />
-
-    <i18n:registerTranslations directory="locales" />
-
     <include package=".tiles" />
 
+    <!-- Inicializamos a magia do Grok -->
+    <include package="five.grok" />
+    <grok:grok package="." />
+
+    <!-- Profiles de Generic Setup -->
     <include file="profiles.zcml" />
 
+    <!-- Registra pasta de traducoes -->
+    <i18n:registerTranslations directory="locales" />
+
+    <!-- Registra pasta de elementos estaticos -->
     <browser:resourceDirectory
             name="brasil.gov.tiles"
             directory="static"
     />
+
+    <!-- Oculta products -->
+    <utility
+      factory=".config.HiddenProducts"
+      name="brasil.gov.tiles" />
+
+    <!-- Oculta profile -->
+    <utility
+      factory=".config.HiddenProfiles"
+      name="brasil.gov.tiles"
+      provides="Products.CMFPlone.interfaces.INonInstallable"
+      />
 
 </configure>

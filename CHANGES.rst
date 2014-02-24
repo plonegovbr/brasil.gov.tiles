@@ -4,6 +4,8 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Oculta upgrade steps.
+    [dbarbato]
   * Criado tile de galeria de albuns. (closes `#102`_).
     [rodfersou][felipeduardo]
   * Desabilitado testes robot executados pelo travis (veja issue `#98`_). (closes `#99`_).

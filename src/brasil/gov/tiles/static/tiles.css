@@ -857,6 +857,10 @@ div[data-tile*="mediacarousel"] {
     float: none;
 }
 
+#content .mediacarousel .galleria-thumbnails-list {
+    margin-right: 10px;
+}
+
 /* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
 #content .newsImageContainer .carrossel-images {
     float: left;

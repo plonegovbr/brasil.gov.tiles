@@ -432,7 +432,16 @@
                                            bottomContainer)         +
                                           ($(mediacarousel+' + .mediacarousel-footer-container a').text === '' ? 39: 18) +
                                           8;
-                    if ($(mediacarousel).hasClass('image')){
+
+                    var tile           = $(mediacarousel).parent().parent(),
+                        thumbGaleria   = $('.galleria-thumbnails-list', tile),
+                        navGaleriaNext = $('.galleria-thumb-nav-right', tile);
+                    if (navGaleriaNext.hasClass('disabled')) {
+                        thumbGaleria.css({ 'margin-right': 10 });
+                    } else {
+                        thumbGaleria.css({ 'margin-right': 40 });
+                    }
+                    if ($(mediacarousel).hasClass('image')) {
                         $(mediacarousel).css({
                             height: heightContainer
                         });
@@ -445,7 +454,8 @@
                 Galleria.run('#'+galleria_id);
 
                 Galleria.ready(function() {
-                    var galleriaContainer = $('#'+this._target.id);
+                    var galleriaContainer = $('#'+this._target.id),
+                        tile = $(galleriaContainer).parent().parent();
                     if (!galleriaContainer.hasClass('ready')) {
                         galleriaContainer.addClass('ready');
                         var galleriaContainerWidth  = galleriaContainer.width(),
@@ -455,6 +465,15 @@
                             height: galleriaContainerHeight
                         });
                     }
+                    $('.galleria-thumb-nav-left, .galleria-thumb-nav-right, .galleria-thumbnails .galleria-image img', tile).on('click', function() {
+                        var thumbGaleria   = $('.galleria-thumbnails-list', tile),
+                            navGaleriaNext = $('.galleria-thumb-nav-right', tile);
+                        if (navGaleriaNext.hasClass('disabled')) {
+                            thumbGaleria.css({ 'margin-right': 10 });
+                        } else {
+                            thumbGaleria.css({ 'margin-right': 40 });
+                        }
+                    });
                 });
             },
         });

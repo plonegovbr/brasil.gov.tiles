@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
-
-import unittest
-
+from brasil.gov.tiles.testing import INTEGRATION_TESTING
+from brasil.gov.tiles.tiles.destaque import DestaqueTile
+from collective.cover.tiles.base import IPersistentCoverTile
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.uuid.interfaces import IUUID
 from zope.component import getMultiAdapter
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
-from brasil.gov.tiles.testing import INTEGRATION_TESTING
-from brasil.gov.tiles.tiles.destaque import DestaqueTile
-from collective.cover.tiles.base import IPersistentCoverTile
-
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
-from plone.uuid.interfaces import IUUID
+import unittest
 
 
 class DestaqueTileTestCase(unittest.TestCase):
