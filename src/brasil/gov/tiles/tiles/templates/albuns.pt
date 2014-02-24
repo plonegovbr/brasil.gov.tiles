@@ -74,7 +74,7 @@
                             <div class="thumb-itens" tal:repeat="album view/get_albuns">
                                 <tal:image define="thumbnail python:view.thumbnail(album);"
                                            condition="thumbnail">
-                                    <img src="${thumbnail/src}" alt="${thumbnail/alt}">
+                                    <div class="table-align"><img src="${thumbnail/src}" alt="${thumbnail/alt}"></div>
                                 </tal:image>
                             </div>
                         </div><!-- cycle-2 -->
@@ -84,7 +84,7 @@
                         </div>
                     </div><!-- carrossel -->
                 </tal:carrossel>
-                <div tal:condition="python:field['id']=='link_text' and not(albuns)">
+                <div tal:condition="python:field['id']=='link_text' and not(albuns)" class="no-albums">
                     Arraste um álbum para popular o tile.
                 </div>
                 <tal:footer condition="python:field['id']=='link_text'">
@@ -93,7 +93,7 @@
                     </div>
                 </tal:footer>
             </tal:fields>
-            <div tal:condition="python:not(fields) and not(albuns)">
+            <div tal:condition="python:not(fields) and not(albuns)" class="no-albums">
                 Arraste um álbum para popular o tile.
             </div>
         </div>
