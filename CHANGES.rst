@@ -4,6 +4,8 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Correção no carregamento do tile mediacarousel na home. (closes `#107`_).
+    [rodfersou]
   * Oculta upgrade steps.
     [dbarbato]
   * Criado tile de galeria de albuns. (closes `#102`_).
@@ -181,3 +183,4 @@ Alterações
 .. _`#99`: https://github.com/plonegovbr/brasil.gov.tiles/issues/99
 .. _`#98`: https://github.com/plonegovbr/brasil.gov.tiles/issues/98
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.tiles/issues/102
+.. _`#107`: https://github.com/plonegovbr/brasil.gov.tiles/issues/107

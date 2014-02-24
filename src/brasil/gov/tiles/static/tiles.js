@@ -362,7 +362,7 @@
 
         $.extend(self, {
             init: function(){
-                Galleria.loadTheme('++resource++brasil.gov.tiles/galleria.classic.min.js');
+                Galleria.loadTheme(window.location.href.trim('/') + '/++resource++brasil.gov.tiles/galleria.classic.min.js');
 
                 Galleria.configure({
                     _toggleInfo: false, // Set this to false if you want the caption to show always
