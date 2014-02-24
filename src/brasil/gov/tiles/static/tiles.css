@@ -1282,3 +1282,299 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 }
 
 .orderTiles .button-nav { position: static; }
+
+
+/* Tile galeria de albuns
+   ========================================================================== */
+
+.album-tile .no-albums {
+	display: table-cell;
+	padding: 10px;
+	height: 80px;
+	vertical-align: middle;
+}
+
+.album-tile {
+	background-color: #edeff1;
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+}
+
+#content .album-tile img {
+	border-radius: 0px;
+	border-top: 1px solid #505050;
+	border-bottom: 1px solid #505050;
+}
+
+.tile .gallery-title,
+.tile .album-title {
+	color: #454545;
+	font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+}
+
+.tile .gallery-title {
+	margin: 14px 12px 23px 12px;
+	padding: 0;
+	font-size: 1.25em;
+}
+
+.width-16 .tile .album-title,
+.width-16 .tile .album-description {
+	width: 420px !important;
+	min-height: 1px;
+}
+
+.width-16 .tile .album-title,
+.width-16 .tile .album-description,
+.width-10 .tile .album-title,
+.width-10 .tile .album-description {
+	max-height: 2.8em;
+	overflow: hidden;
+}
+
+.width-10 .tile .album-description {
+	min-width: 468px;
+}
+
+.width-5 .tile .album-title,
+.width-5 .tile .album-description,
+.mobile .tile .album-title,
+.mobile .tile .album-description {
+	max-height: 5.8em !important;
+	overflow: hidden;
+}
+
+.tile .album-title,
+.tile .album-description {
+	display: block;
+	margin: 10px;
+	padding: 0;
+	min-width: 208px;
+	max-width: 468px;
+	font-size: 1.05em;
+}
+
+.tile .album-title {
+	display: block;
+	margin: 10px;
+}
+
+.tile .album-description {
+	float: left;
+	overflow: hidden;
+	margin: 0 10px 5px;
+	font-style: italic;
+}
+
+.mobile .album-tile .album-description,
+.mobile .album-tile .album-title {
+	width: 90% !important;
+	min-width: 90% !important;
+}
+
+.album-tile .player {
+	position: relative;
+}
+
+.album-tile .cycle-hover {
+	position: absolute;
+	top: 0px;
+	z-index: 100;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+}
+
+.album-tile .cycle-hover:hover .cycle-prev,
+.album-tile .cycle-hover:hover .cycle-next {
+	display: block;
+}
+
+.album-tile .cycle-hover .cycle-prev,
+.album-tile .cycle-hover .cycle-next {
+	position: absolute;
+	top: 50%;
+	z-index: 100;
+	display: none;
+	overflow: hidden;
+	margin-top: -20px;
+	width: 42px;
+	height: 40px;
+	background: url("++resource++brasil.gov.tiles/icons-setas.png");
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+#content .album-tile .thumb-itens {
+	margin: 7px;
+	width: 129px;
+	height: 85px;
+	border: 1px solid #d5d5d5 !important;
+	border-radius: 0;
+}
+
+.album-tile .thumb-itens .table-align {
+	display: table-cell;
+	vertical-align: middle;
+	height: 87px;
+}
+
+.album-tile .thumb-itens img {
+	width: 128px;
+	height: 85px;
+	border: none !important;
+	border-radius: 0;
+}
+
+.album-tile .cycle-hover .cycle-prev {
+	left: 20px;
+}
+
+.album-tile .cycle-hover .cycle-next {
+	right: 20px;
+	background-position: -43px 0;
+}
+
+.album-tile .cycle-carrossel {
+	margin: 0 36px !important;
+	height: 101px;
+	position: absolute !important;
+}
+
+.album-tile .carousel {
+	margin: 10px 5px 10px;
+	height: 101px;
+	border: 1px solid #d5d5d5;
+	background: #fff;
+	position: relative;
+}
+
+.album-tile .cycle-nagivation .cycle-prev,
+.album-tile .cycle-nagivation .cycle-next {
+	position: absolute;
+	top: 50%;
+	display: block;
+	overflow: hidden;
+	margin-top: -11px;
+	width: 22px;
+	height: 22px;
+	background: url("++resource++brasil.gov.tiles/icons-setas-min.png");
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+.album-tile .cycle-nagivation .cycle-prev {
+	left: 7px;
+}
+
+.album-tile .cycle-nagivation .cycle-next {
+	background-position: 22px 0;
+	right: 7px;
+}
+
+.album-tile .open-album,
+.album-tile .download-album {
+	display: block;
+	float: left;
+	overflow: hidden;
+	width: 112px;
+	color: #335277 !important;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	line-height: 2.5em;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.album-tile .open-album {
+	margin-right: 20px;
+}
+
+.album-tile .download-album {
+	width: 149px;
+}
+
+.album-tile .icon-camera,
+.album-tile .icon-download {
+	display: block;
+	float: right;
+	overflow: hidden;
+	width: 22px;
+	height: 22px;
+	background-image: url("++resource++brasil.gov.tiles/icon-camera-download.png");
+	white-space: nowrap;
+}
+
+.album-tile .icon-camera {
+	background-position: 0 0;
+}
+
+.album-tile .icon-download {
+	background-position: -36px 0;
+}
+
+.mobile .album-tile .footer {
+	width: 95%;
+}
+
+.album-tile .footer {
+	overflow: hidden;
+	padding: 10px 7px;
+	border-top: 1px solid #d5d5d5;
+	text-align: right;
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.album-tile .footer a {
+	float: right;
+	color: #335277 !important;
+}
+
+.album-tile .footer a:after {
+	display: block;
+	float: right;
+	width: 14px;
+	height: 14px;
+	content: "";
+	margin-left: 7px;
+	background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right center transparent;
+}
+
+
+/* Contraste
+   ========================================================================== */
+
+body.contraste .album-tile {
+	background: #000 !important;
+}
+
+body.contraste .album-tile .album-title {
+	color: #fff !important;
+}
+
+body.contraste .album-tile .icon-camera,
+body.contraste .album-tile .icon-download {
+	background-image: url("++resource++brasil.gov.tiles/icon-camera-download-contraste.png") !important;
+}
+
+body.contraste .album-tile .carousel {
+	border: 1px solid #fff;
+	background: #000;
+}
+
+body.contraste .album-tile .cycle-nagivation .cycle-prev,
+body.contraste .album-tile .cycle-nagivation .cycle-next {
+	background-image: url("++resource++brasil.gov.tiles/icons-setas-min-contraste.png");
+}
+
+body.contraste .album-tile .cycle-hover .cycle-prev,
+body.contraste .album-tile .cycle-hover .cycle-next {
+	background-image: url("++resource++brasil.gov.tiles/icons-setas-contraste.png");
+}
+
+body.contraste .album-tile .footer a:after {
+	width: 20px;
+	height: 20px;
+	background: url("++resource++brasil.gov.portal/img/seta_branca.png") no-repeat transparent !important;
+}

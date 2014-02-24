@@ -532,24 +532,37 @@
                 // Adicionando navegação por teclado
                 $(document.documentElement).keyup(function (event) {
                     if (event.keyCode == 37) {
-                        $('.slideshow-carrossel .cycle-prev').trigger('click');
+                        $('.cycle-prev').trigger('click');
                     } else if (event.keyCode == 39) {
-                        $('.slideshow-carrossel .cycle-next').trigger('click');
+                        $('.cycle-next').trigger('click');
                     }
+                });
+
+                $('.cycle-slideshow').each(function(){
+                    var $galeria = $(this).parent().parent();
+                    obj.layoutAdjustment($galeria, 0);
                 });
             }
         },
 
         layoutAdjustment: function($galeria, index){
+            var aElem = $(".cycle-player .cycle-slide", $galeria),
+                elem,
+                novaaltura,
+                alturaimagem,
+                larguracarosel;
+
             // Pula primeiro elemento
             index = index + 1;
+            elem = aElem[index],
+            novaaltura = $(elem).height();
+            alturaimagem = $('.cycle-sentinel img', $galeria).height();
+            larguracarosel = ($('.carousel', $galeria).width() -
+                              (36 * 2));             
 
-            var aElem = $(".cycle-player .cycle-slide", $galeria);
-
-            var elem = aElem[index];
-            var novaaltura = $(elem).height();
-
-            $(".cycle-sentinel").height(novaaltura);
+            $('.cycle-sentinel', $galeria).height(novaaltura);
+            $('.cycle-hover', $galeria).height(alturaimagem);
+            $('.cycle-carrossel', $galeria).width(larguracarosel); 
         }
     };
     $(window).load(function(){

@@ -101,7 +101,7 @@ class AlbunsTile(PersistentCoverTile):
                              path={'query': path},
                              sort_on='effective',
                              sort_order='reverse',
-                             review_state='published')
+                             review_state='published')[:10]
             # Procuro todas subpastas na pasta do album
 
             # Retiro as pastas que não são albuns
