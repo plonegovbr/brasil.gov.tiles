@@ -4,17 +4,17 @@ Alterações
 1.0.3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-  * Correção no carregamento do tile mediacarousel na home. (closes `#107`_).
+  * Corrige carregamento do tile Media Carousel na home (closes `#107`_).
     [rodfersou]
   * Oculta upgrade steps.
     [dbarbato]
-  * Criado tile de galeria de albuns. (closes `#102`_).
+  * Cria tile Galeria de albuns (closes `#102`_).
     [rodfersou][felipeduardo]
-  * Desabilitado testes robot executados pelo travis (veja issue `#98`_). (closes `#99`_).
+  * Desabilita testes robot executados pelo Travis (veja issue `#98`_) (closes `#99`_).
     [rodfersou]
-  * Melhorias no layout do tile mediacarousel. (closes `#99`_).
+  * Melhora layout do tile Media Carousel (closes `#99`_).
     [rodfersou]
-  * Alteração do Tile de Rede Social para português.
+  * Altera tile de Rede Social para português.
     [dbarbato]
 
 
