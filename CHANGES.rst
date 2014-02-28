@@ -4,7 +4,8 @@ Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+  * Acerta registro de javascript.
+    [dbarbato]
 
 
 1.0.3 (2014-02-28)
