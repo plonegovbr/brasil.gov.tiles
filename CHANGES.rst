@@ -1,7 +1,7 @@
 Alterações
 ------------
 
-1.0.3 (unreleased)
+1.0.3 (2014-02-28)
 ^^^^^^^^^^^^^^^^^^
 
   * Corrige carregamento do tile Media Carousel na home (closes `#107`_).
