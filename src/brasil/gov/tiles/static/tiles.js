@@ -1,9 +1,9 @@
 /*
   Comentario
 */
-var root = typeof exports !== "undefined" && exports !== null ? exports : this;
+(function($) {
+    var root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-$(function() {
     //video gallery
     if ($('.videogallery-tile')[0] !== undefined) {
         var videoResponsiveResize;
@@ -568,4 +568,4 @@ $(function() {
     $(window).load(function(){
         albuns.carrossel();
     });
-});
+})(jQuery);
