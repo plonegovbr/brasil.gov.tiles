@@ -3,7 +3,6 @@
 */
 $(function() {
     var root = typeof exports !== "undefined" && exports !== null ? exports : this;
-    
     //video gallery
     if ($('.videogallery-tile')[0] !== undefined) {
         var videoResponsiveResize;
