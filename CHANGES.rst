@@ -4,6 +4,8 @@ Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Diminui altura mínima do Tile de Banner Rotativo.
+    [dbarbato]
   * Acerta registro de javascript.
     [dbarbato]
 
