@@ -4,6 +4,8 @@ Alterações
 1.0.4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+  * Corrige carregamento de javascript (closes `#109`_).
+    [rodfersou]
   * Diminui altura mínima do Tile de Banner Rotativo.
     [dbarbato]
   * Acerta registro de javascript.
@@ -193,3 +195,4 @@ Alterações
 .. _`#98`: https://github.com/plonegovbr/brasil.gov.tiles/issues/98
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.tiles/issues/102
 .. _`#107`: https://github.com/plonegovbr/brasil.gov.tiles/issues/107
+.. _`#109`: https://github.com/plonegovbr/brasil.gov.tiles/issues/109

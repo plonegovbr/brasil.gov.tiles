@@ -1,7 +1,7 @@
 /*
   Comentario
 */
-(function($) {
+$(function() {
     var root = typeof exports !== "undefined" && exports !== null ? exports : this;
 
     //video gallery
@@ -568,4 +568,4 @@
     $(window).load(function(){
         albuns.carrossel();
     });
-})(jQuery);
+});
