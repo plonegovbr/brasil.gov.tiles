@@ -1,6 +1,12 @@
 Alterações
 ------------
 
+1.0.5 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.0.4 (2014-03-11)
 ^^^^^^^^^^^^^^^^^^
 * Corrige carregamento de javascript (closes `#109`_).
