@@ -3,8 +3,10 @@ Alterações
 
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
+* Updated Spanish a Brazilian Portuguese translations.
+  [macagua]
+* Added more improvements about i18n.
+  [macagua]
 
 
 1.0.4 (2014-03-11)
