@@ -12,7 +12,7 @@
                       toLocalizedTime nocall:context/@@plone/toLocalizedTime;"
           tal:condition="nocall:poll">
             <div class="poll-tile-header">
-                <div class="header" i18n:translate="">Enquete</div>
+                <div class="header" i18n:translate="">Poll</div>
             </div>
             <div class="tile-content-wrapper">
                 <h3 tal:content="poll/Title"/>
@@ -47,7 +47,7 @@
 
                 <div class="tile-poll-more">
                   <a tal:define="portal_url context/@@plone_portal_state/portal_url"
-                     tal:attributes="href string:${portal_url}/enquetes">Veja as enquetes anteriores</a>
+                     tal:attributes="href string:${portal_url}/enquetes" i18n:translate="">See previous polls</a>
                 </div>
             </div>
         </div>

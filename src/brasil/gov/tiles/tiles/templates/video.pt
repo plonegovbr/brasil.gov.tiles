@@ -12,7 +12,7 @@
     <a href="" tal:content="results/title" tal:attributes="href results/url"></a>
   </div>
   <noscript>
-      <div class="error">Seu navegador de internet esta sem suporte a javascript, por esse motivo alguns funcionalidades do site podem não estar acessíveis.</div>
+      <div class="error" i18n:translate="">Your internet browser this not support JavaScript, therefore some features of the website may not be accessible.</div>
   </noscript>
 </body>
 </html>

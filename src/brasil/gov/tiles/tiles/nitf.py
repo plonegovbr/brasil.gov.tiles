@@ -29,10 +29,11 @@ class INITFBasicTile(IBasicTile):
     form.no_omit('variacao_titulo')
     form.omitted(IDefaultConfigureForm, 'variacao_titulo')
     variacao_titulo = schema.Choice(
-        title=u"Variação de Título",
-        values=(u'Normal',
-                u'Grande',
-                u'Gigante'),
+        title=_(u'Change in Title'),
+        values=(_(u'Normal'),
+                _(u'Big'),
+                _(u'Giant')
+                ),
         default=u'Normal',
         required=True,
     )
@@ -63,8 +64,8 @@ class NITFBasicTile(BasicTile):
     def variacao_titulo(self):
         tamanhos = {
             u'Normal': None,
-            u'Grande': 'grande',
-            u'Gigante': 'gigante'
+            u'Big': 'grande',
+            u'Giant': 'gigante'
         }
         if self.data['variacao_titulo']:
             return tamanhos[self.data['variacao_titulo']]

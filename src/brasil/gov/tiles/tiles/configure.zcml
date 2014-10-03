@@ -32,8 +32,8 @@
 
   <plone:tile
       name="destaque"
-      title="A destaque tile"
-      description="A dropable tile that shows two images and descriptions that links to another page."
+      title="A highlight tile"
+      description="A droppable tile that shows two images and descriptions that links to another page."
       add_permission="cmf.ModifyPortalContent"
       schema=".destaque.IDestaqueTile"
       class=".destaque.DestaqueTile"
@@ -45,7 +45,7 @@
   <plone:tile
       name="videogallery"
       title="Video Gallery"
-      description="A dropable tile that shows a gallery of videos with descriptions and links."
+      description="A droppable tile that shows a gallery of videos with descriptions and links."
       add_permission="cmf.ModifyPortalContent"
       schema=".videogallery.IVideoGalleryTile"
       class=".videogallery.VideoGalleryTile"
@@ -57,7 +57,7 @@
   <plone:tile
       name="audio"
       title="Audio"
-      description="A dropable tile that shows an audio player with description, link and credits."
+      description="A droppable tile that shows an audio player with description, link and credits."
       add_permission="cmf.ModifyPortalContent"
       schema=".audio.IAudioTile"
       class=".audio.AudioTile"
@@ -69,7 +69,7 @@
   <plone:tile
       name="audiogallery"
       title="Audio Gallery"
-      description="A dropable tile that shows a gallery of audios with descriptions and links."
+      description="A droppable tile that shows a gallery of audios with descriptions and links."
       add_permission="cmf.ModifyPortalContent"
       schema=".audiogallery.IAudioGalleryTile"
       class=".audiogallery.AudioGalleryTile"
@@ -81,7 +81,7 @@
   <plone:tile
       name="mediacarousel"
       title="Media Carousel"
-      description="A dropable tile that shows a carousel of videos an images."
+      description="A droppable tile that shows a carousel of videos an images."
       add_permission="cmf.ModifyPortalContent"
       schema=".mediacarousel.IMediaCarouselTile"
       class=".mediacarousel.MediaCarouselTile"
@@ -129,8 +129,8 @@
 
   <plone:tile
       name="em_destaque"
-      title="Em Destaque"
-      description="Tile que exibe uma linha com lista de destaques"
+      title="Featured"
+      description="Tile which displays a line with list of highlights"
       add_permission="cmf.ModifyPortalContent"
       schema=".em_destaque.IEmDestaqueTile"
       class=".em_destaque.EmDestaqueTile"
@@ -141,8 +141,8 @@
 
   <plone:tile
       name="banner_rotativo"
-      title="Banner Rotativo"
-      description="Tile que exibe um banner rotativo com links e imagens"
+      title="Rotating Banner"
+      description="Tile which displays a rotating banner with links and images"
       add_permission="cmf.ModifyPortalContent"
       schema=".banner_rotativo.IBannerRotativoTile"
       class=".banner_rotativo.BannerRotativoTile"
@@ -153,8 +153,8 @@
 
   <plone:tile
       name="albuns"
-      title="Galeria de albuns"
-      description="Tile que exibe uma galeria de albuns"
+      title="Gallery albums"
+      description="Tile which displays a gallery of albums"
       add_permission="cmf.ModifyPortalContent"
       schema=".albuns.IAlbunsTile"
       class=".albuns.AlbunsTile"

@@ -19,7 +19,7 @@
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+          js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
         <noscript>
@@ -32,8 +32,8 @@
     </tal:facebook>
     <div>
         <ul class="social-tabs css-tabs">
-            <li tal:condition="view/facebook_available"><a title="" href="#">Facebook</a></li>
-            <li tal:condition="view/twitter_available"><a title="" href="#">Twitter</a></li>
+            <li tal:condition="view/facebook_available"><a title="Facebook" href="#" i18n:attributes="title" i18n:translate="">Facebook</a></li>
+            <li tal:condition="view/twitter_available"><a title="Twitter" href="#" i18n:attributes="title" i18n:translate="">Twitter</a></li>
         </ul>
     </div>
     <div class="social-panes css-panes">
@@ -62,8 +62,8 @@
     </div>
     <noscript>
       <div class="error">
-        <p><a href="https://www.facebook.com/pages/Pal%C3%A1cio-do-Planalto/137381902950775?rf=154166594613961">Página do Facebook do Portal Brasil</a></p>
-        <p><a href="https://twitter.com/portalbrasil">Micro-blog Twitter do Portal Brasil</a></p>
+        <p><a href="https://www.facebook.com/pages/Pal%C3%A1cio-do-Planalto/137381902950775?rf=154166594613961" i18n:translate="">Facebook page of the Brazil Portal</a></p>
+        <p><a href="https://twitter.com/portalbrasil" i18n:translate="">Twitter Microblog of the Brazil Portal</a></p>
       </div>
     </noscript>
 </body>

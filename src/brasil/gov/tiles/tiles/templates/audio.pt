@@ -25,11 +25,11 @@
       <div class="jp-type-single">
         <div class="jp-gui jp-interface">
           <ul class="jp-controls">
-            <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-            <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            <li><a href="javascript:;" class="jp-play" tabindex="1" i18n:attributes="title" i18n:translate="">play</a></li>
+            <li><a href="javascript:;" class="jp-pause" tabindex="1" i18n:attributes="title" i18n:translate="">pause</a></li>
+            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute" i18n:attributes="title" i18n:translate="">mute</a></li>
+            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute" i18n:attributes="title" i18n:translate="">unmute</a></li>
+            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume" i18n:attributes="title" i18n:translate="">max volume</a></li>
           </ul>
           <div class="jp-progress-time-wrapper">
             <div class="jp-progress">
@@ -47,13 +47,13 @@
           </div>
         </div>
         <div class="jp-no-solution">
-          <span>Update Required</span>
-          To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+          <span i18n:translate="">Update Required</span>
+          <span i18n:translate="">To play the media you will need to either update your browser to a recent version or update your</span> <a href="http://get.adobe.com/flashplayer/" target="_blank" i18n:translate="">Flash plugin</a>.
         </div>
       </div>
     </div>
     <p class="description" tal:content="view/data/description"></p>
-    <p class="credit" tal:condition="view/data/credit"><span i18n:translate="">Crédito: </span><span tal:replace="view/data/credit"></span></p>
+    <p class="credit" tal:condition="view/data/credit"><span i18n:translate="">Credit: </span><span tal:replace="view/data/credit"></span></p>
   </div>
 </body>
 </html>
