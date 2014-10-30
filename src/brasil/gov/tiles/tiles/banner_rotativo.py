@@ -138,7 +138,7 @@ class BannerRotativoTile(ListTile):
         elif (self.data['layout'] == u'Chamada de foto'):
             layout = 2
         else:
-            layout =3
+            layout = 3
 
         return layout
 

@@ -70,7 +70,7 @@ class VideoGalleryTile(ListTile):
     def populate_with_object(self, obj):
         super(ListTile, self).populate_with_object(obj)  # check permission
 
-        #here we should check if the embeded item has its a video
+        # here we should check if the embeded item has its a video
         # XXX
 
         self.set_limit()
