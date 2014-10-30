@@ -1184,6 +1184,33 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 #tile_banner_rotativo[data-quantidade="4"] #banner3 .button-nav { right: 20px; }
 
 
+/* Tile do Banner Rotativo - Texto sobreposto
+   ========================================================================== */
+
+#tile_banner_rotativo.chamada_sobrescrito li .banner { width: 100%; }
+
+#tile_banner_rotativo.chamada_sobrescrito li .banner .faixa { display: none; }
+
+#tile_banner_rotativo.chamada_sobrescrito li .banner img { max-height: 540px; }
+
+#tile_banner_rotativo.chamada_sobrescrito li .nav-wrapper { margin-top: -50px; }
+
+#tile_banner_rotativo.chamada_sobrescrito li .banner .title  {
+    margin: -57px 0 0;
+    height: 41px;
+    border-radius: 0 0 5px 5px;
+    background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
+    color: #fff;
+    position: relative;
+    padding: 5px 4.5em 10px 1em;
+    font-family: Arial, Verdana, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.45em;
+    line-height: 1.35em;
+    overflow: hidden;
+}
+
 /*
  * Tile do Banner Rotativo - Sem descrição
  */

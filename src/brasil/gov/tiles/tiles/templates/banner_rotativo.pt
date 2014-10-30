@@ -32,7 +32,7 @@
                                        class string:banner;">
                         <span class="credito"
                               tal:content="item/rights"
-                              tal:condition="not:view/layout_banner" />
+                              tal:condition="view/show_rights" />
                         <img tal:define="thumbnail python:view.thumbnail(item);"
                              tal:condition="thumbnail"
                              tal:attributes="src thumbnail/url;
@@ -43,7 +43,7 @@
                               tal:content="item/title" />
                         <span class="descr"
                               tal:content="item/description"
-                              tal:condition="not:view/layout_banner" />
+                              tal:condition="view/show_description" />
                     </a>
                 </li>
             </tal:items>

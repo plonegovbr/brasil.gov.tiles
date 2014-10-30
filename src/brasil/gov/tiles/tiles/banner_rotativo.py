@@ -61,7 +61,8 @@ class IBannerRotativoTile(IListTile):
     layout = schema.Choice(
         title=u"Layout",
         values=(u'Banner',
-                u'Chamada de foto'),
+                u'Chamada de foto',
+                u'Texto sobreposto'),
         default=u'Banner',
         required=True,
     )
@@ -132,16 +133,28 @@ class BannerRotativoTile(ListTile):
         return results
 
     def layout_banner(self):
-        if self.data['layout'] is None:
-            return True  # default value
+        if (self.data['layout'] == u'Banner' or self.data['layout'] is None):
+            layout = 1
+        elif (self.data['layout'] == u'Chamada de foto'):
+            layout = 2
+        else:
+            layout =3
 
-        return (self.data['layout'] == u'Banner')
+        return layout
+
+    def show_description(self):
+        return (self.data['layout'] == u'Chamada de foto')
+
+    def show_rights(self):
+        return (self.data['layout'] == u'Banner' or self.data['layout'] is None or self.data['layout'] == u'Texto sobreposto')
 
     def tile_class(self):
-        if self.layout_banner():
+        if self.layout_banner() == 1:
             return 'chamada_sem_foto tile-content'
-        else:
+        elif self.layout_banner() == 2:
             return 'chamada_com_foto tile-content'
+        else:
+            return 'chamada_sobrescrito tile-content'
 
     def show_nav(self):
         return (len(self.results()) > 1)

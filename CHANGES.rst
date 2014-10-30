@@ -4,7 +4,8 @@ Alterações
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+* Adiciona novo layout de texto sobreposto no tile de Banner Rotativo.
+  [dbarbato]
 
 
 1.0.4 (2014-03-11)
