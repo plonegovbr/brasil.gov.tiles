@@ -2,8 +2,8 @@
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from brasil.gov.tiles.tiles.banner_rotativo import BannerRotativoTile
 from collective.cover.tiles.base import IPersistentCoverTile
-from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 from zope.component import getMultiAdapter
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
@@ -19,7 +19,7 @@ class BannerRotativoTileTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.request = self.layer['request']
-        self.name = u"banner_rotativo"
+        self.name = u'banner_rotativo'
         self.cover = self.portal['frontpage']
         self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
         self.tile = self.tile['test']

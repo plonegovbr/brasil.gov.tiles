@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
@@ -12,7 +12,6 @@ from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
 from zope.component import queryUtility
@@ -52,7 +51,7 @@ class DestaqueTile(PersistentCoverTile):
 
     implements(IDestaqueTile)
 
-    index = ViewPageTemplateFile("templates/destaque.pt")
+    index = ViewPageTemplateFile('templates/destaque.pt')
 
     is_configurable = True
     is_droppable = True

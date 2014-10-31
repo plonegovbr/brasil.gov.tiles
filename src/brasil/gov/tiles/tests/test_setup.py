@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-
 from brasil.gov.tiles.config import PROJECTNAME
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
-from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 from plone.browserlayer.utils import registered_layers
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+
 
 import unittest
 

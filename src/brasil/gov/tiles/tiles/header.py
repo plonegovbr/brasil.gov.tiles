@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -35,7 +34,7 @@ class IHeaderTile(IPersistentCoverTile):
 
 class HeaderTile(PersistentCoverTile):
 
-    index = ViewPageTemplateFile("templates/header.pt")
+    index = ViewPageTemplateFile('templates/header.pt')
     implements(IPersistentCoverTile)
     is_configurable = True
     is_droppable = True

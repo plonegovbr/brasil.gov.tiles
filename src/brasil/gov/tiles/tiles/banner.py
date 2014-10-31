@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-
 from Acquisition import aq_base
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
-from plone.namedfile import field
 from plone.namedfile import NamedBlobImage
+from plone.namedfile import field
 from plone.tiles.interfaces import ITileDataManager
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 

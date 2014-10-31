@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collections import OrderedDict
 from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
@@ -11,7 +11,6 @@ from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import queryUtility
 from zope.schema import getFieldsInOrder
@@ -74,7 +73,7 @@ class ICollectionTile(IPersistentCoverTile, form.Schema):
 
 class CollectionTile(PersistentCoverTile):
 
-    index = ViewPageTemplateFile("templates/collection.pt")
+    index = ViewPageTemplateFile('templates/collection.pt')
 
     is_configurable = True
     is_editable = True

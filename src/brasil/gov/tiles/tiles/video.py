@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
@@ -39,7 +38,7 @@ class IVideoTile(IPersistentCoverTile):
 
 
 class VideoTile(PersistentCoverTile):
-    index = ViewPageTemplateFile("templates/video.pt")
+    index = ViewPageTemplateFile('templates/video.pt')
     is_configurable = False
     is_editable = True
     limit = 1

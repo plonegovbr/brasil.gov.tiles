@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
@@ -8,7 +8,6 @@ from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
@@ -52,7 +51,7 @@ class IMediaCarouselTile(IListTile):
 
 
 class MediaCarouselTile(ListTile):
-    index = ViewPageTemplateFile("templates/mediacarousel.pt")
+    index = ViewPageTemplateFile('templates/mediacarousel.pt')
     is_configurable = True
     is_editable = True
 
@@ -118,7 +117,7 @@ class MediaCarouselTile(ListTile):
     def get_media_url(self, obj):
         portal_type = obj.getPortalTypeName()
         url = ''
-        if portal_type == "sc.embedder":
+        if portal_type == 'sc.embedder':
             url = obj.url
         elif portal_type == 'Image':
             url = obj.absolute_url() + '/@@images/image'

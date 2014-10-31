@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tiles.base import IPersistentCoverTile
@@ -12,9 +14,6 @@ from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
 from zope.interface import implements
@@ -64,7 +63,7 @@ class IBasicTile(IPersistentCoverTile):
     form.no_omit('variacao_titulo')
     form.omitted(IDefaultConfigureForm, 'variacao_titulo')
     variacao_titulo = schema.Choice(
-        title=u"Variação de Título",
+        title=u'Variação de Título',
         values=(u'Normal',
                 u'Grande',
                 u'Gigante'),
@@ -77,7 +76,7 @@ class BasicTile(PersistentCoverTile):
 
     implements(IPersistentCoverTile)
 
-    index = ViewPageTemplateFile("templates/basic.pt")
+    index = ViewPageTemplateFile('templates/basic.pt')
 
     is_configurable = True
 

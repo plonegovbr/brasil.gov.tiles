@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
-
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from brasil.gov.tiles.tiles.mediacarousel import MediaCarouselTile
 from collective.cover.tiles.base import IPersistentCoverTile
 from mock import Mock
 from plone.app.imaging.interfaces import IImageScale
-from plone.app.testing import login
-from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
+from plone.app.testing import login
+from plone.app.testing import setRoles
 from zope.component import getMultiAdapter
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
@@ -24,7 +23,7 @@ class MediaCarouselTileTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.request = self.layer['request']
-        self.name = u"mediacarousel"
+        self.name = u'mediacarousel'
         self.cover = self.portal['frontpage']
         self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
         self.tile = self.tile['test']

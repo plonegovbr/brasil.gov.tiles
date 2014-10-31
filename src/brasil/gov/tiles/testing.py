@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-
 from App.Common import package_home
 from PIL import Image
+from StringIO import StringIO
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
-from StringIO import StringIO
+
 
 import os
 import random

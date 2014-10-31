@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
@@ -38,7 +37,7 @@ class IAudioGalleryTile(IListTile):
 
 
 class AudioGalleryTile(ListTile):
-    index = ViewPageTemplateFile("templates/audiogallery.pt")
+    index = ViewPageTemplateFile('templates/audiogallery.pt')
     is_configurable = True
     is_editable = True
 
@@ -77,7 +76,7 @@ class AudioGalleryTile(ListTile):
                 catalog_results = obj.results()
                 limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({"portal_type": "File"})
+                catalog_results = obj.getFolderContents({'portal_type': 'File'})
                 limit = len(catalog_results) if catalog_results else 0
 
             if catalog_results:

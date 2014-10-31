@@ -221,7 +221,7 @@ $(function() {
                         media['supplied'] += media_type;
 
                     }
-                }                
+                }
 
                 return media;
             },
@@ -558,11 +558,11 @@ $(function() {
             novaaltura = $(elem).height();
             alturaimagem = $('.cycle-sentinel img', $galeria).height();
             larguracarosel = ($('.carousel', $galeria).width() -
-                              (36 * 2));             
+                              (36 * 2));
 
             $('.cycle-sentinel', $galeria).height(novaaltura);
             $('.cycle-hover', $galeria).height(alturaimagem);
-            $('.cycle-carrossel', $galeria).width(larguracarosel); 
+            $('.cycle-carrossel', $galeria).width(larguracarosel);
         }
     };
     $(window).load(function(){

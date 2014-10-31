@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -27,7 +26,7 @@ class EmDestaqueTile(ListTile):
 
     implements(IEmDestaqueTile)
 
-    index = ViewPageTemplateFile("templates/em_destaque.pt")
+    index = ViewPageTemplateFile('templates/em_destaque.pt')
 
     is_configurable = True
     is_droppable = True

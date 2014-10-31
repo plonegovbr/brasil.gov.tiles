@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
@@ -9,7 +9,6 @@ from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -59,7 +58,7 @@ class IBannerRotativoTile(IListTile):
     )
 
     layout = schema.Choice(
-        title=u"Layout",
+        title=u'Layout',
         values=(u'Banner',
                 u'Chamada de foto',
                 u'Texto sobreposto'),
@@ -80,7 +79,7 @@ class IBannerRotativoTile(IListTile):
 class BannerRotativoTile(ListTile):
     implements(IBannerRotativoTile)
 
-    index = ViewPageTemplateFile("templates/banner_rotativo.pt")
+    index = ViewPageTemplateFile('templates/banner_rotativo.pt')
     is_configurable = False
     is_editable = True
     limit = 4

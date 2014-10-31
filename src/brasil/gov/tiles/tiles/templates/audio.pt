@@ -15,7 +15,7 @@
        tal:define="results view/data;">
     <h3 class="title" tal:content="view/data/title"></h3>
     <!-- Audio item player -->
-    <div class="jp-jplayer" 
+    <div class="jp-jplayer"
          tal:attributes="data-audio-url python:results.get('url', '');
                          data-audio-title results/title;
                          data-audio-description results/description;

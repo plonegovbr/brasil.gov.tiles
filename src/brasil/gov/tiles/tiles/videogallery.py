@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
@@ -8,7 +8,6 @@ from plone.directives import form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -62,7 +61,7 @@ class IVideoGalleryTile(IListTile, form.Schema):
 class VideoGalleryTile(ListTile):
     implements(IVideoGalleryTile)
 
-    index = ViewPageTemplateFile("templates/videogallery.pt")
+    index = ViewPageTemplateFile('templates/videogallery.pt')
     is_configurable = True
     is_editable = True
     limit = 6
@@ -107,7 +106,7 @@ class VideoGalleryTile(ListTile):
                 catalog_results = obj.results()
                 limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({"portal_type": "sc.embedder"})
+                catalog_results = obj.getFolderContents({'portal_type': 'sc.embedder'})
                 limit = len(catalog_results) if catalog_results else 0
 
             if catalog_results:
