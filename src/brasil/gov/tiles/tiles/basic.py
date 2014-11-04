@@ -36,6 +36,13 @@ class IBasicTile(IPersistentCoverTile):
         required=False,
     )
 
+    form.no_omit('image_description')
+    form.omitted(IDefaultConfigureForm, 'image_description')
+    image_description = schema.TextLine(
+        title=_(u'ALT'),
+        required=False,
+    )
+
     form.omitted('date')
     form.no_omit(IDefaultConfigureForm, 'date')
     date = schema.Datetime(
@@ -125,6 +132,7 @@ class BasicTile(PersistentCoverTile):
             'uuid': IUUID(obj, None),  # XXX: can we get None here? see below
             'date': True,
             'subjects': True,
+            'image_description': safe_unicode(obj.Description()) or safe_unicode(obj.Title()),
         }
 
         # TODO: if a Dexterity object does not have the IReferenceable
@@ -147,6 +155,11 @@ class BasicTile(PersistentCoverTile):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(ICoverSettings)
         return settings.searchable_content_types
+
+    def getAlt(self):
+        return (self.data.get('image_description', None) or
+                self.data.get('title', None) or
+                self.data.get('description', None))
 
     def variacao_titulo(self):
         tamanhos = {

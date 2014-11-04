@@ -4,6 +4,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
+from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone.autoform import directives as form
 from plone.namedfile import NamedBlobImage
 from plone.namedfile import field
 from plone.tiles.interfaces import ITileDataManager
@@ -20,6 +22,13 @@ class IBannerTile(IPersistentCoverTile):
 
     image = field.NamedBlobImage(
         title=_(u'Image'),
+        required=False,
+    )
+
+    form.no_omit('image_description')
+    form.omitted(IDefaultConfigureForm, 'image_description')
+    image_description = schema.TextLine(
+        title=_(u'ALT'),
         required=False,
     )
 
@@ -62,12 +71,14 @@ class BannerTile(PersistentCoverTile):
             image = NamedBlobImage(data)
         else:
             image = None
+        image_description = obj.Description() or obj.Title()
         remote_url = obj.getRemoteUrl() if obj.portal_type == 'Link' else None
 
         data_mgr = ITileDataManager(self)
         data_mgr.set({
             'title': title,
             'image': image,
+            'image_description': image_description,
             'remote_url': remote_url,
             'rights': rights,
         })
@@ -82,6 +93,9 @@ class BannerTile(PersistentCoverTile):
     @property
     def has_image(self):
         return self.data.get('image', None) is not None
+
+    def getAlt(self):
+        return self.data.get('image_description', None) or self.data.get('title', None)
 
     def getRemoteUrl(self):
         return self.data.get('remote_url', None)

@@ -54,6 +54,9 @@ class NITFBasicTile(BasicTile):
         data = data_mgr.get()
         data['subtitle'] = obj.subtitle
         data['section'] = obj.section
+        img = obj.getImage()
+        if img:
+            data['image_description'] = img.Description() or img.Title()
         data_mgr.set(data)
 
     def thumbnail(self, field, scales):
