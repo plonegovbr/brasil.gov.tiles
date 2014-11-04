@@ -95,7 +95,7 @@ class DestaqueTileTestCase(unittest.TestCase):
     def test_accepted_content_types(self):
         # all content types are accepted
         # XXX: return None don't work
-        #self.assertEqual(self.tile.accepted_ct(), None)
+        # self.assertEqual(self.tile.accepted_ct(), None)
         self.assertEqual(self.tile.accepted_ct(),
                          ['Collection', 'Document', 'File', 'Form Folder',
                           'Image', 'Link', 'News Item'])

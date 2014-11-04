@@ -18,38 +18,38 @@ class IAlbunsTile(IPersistentCoverTile):
     """
 
     title = schema.TextLine(
-        title=_(u'Título'),
+        title=_(u'Title'),
         required=False,
     )
     form.omitted('player')
     form.no_omit(IDefaultConfigureForm, 'player')
     player = schema.Text(
-        title=_(u'Imagem atual'),
+        title=_(u'Current image'),
         required=False,
     )
     form.omitted('carrossel')
     form.no_omit(IDefaultConfigureForm, 'carrossel')
     carrossel = schema.Text(
-        title=_(u'Carrossel de imagens'),
+        title=_(u'Carousel of images'),
         required=False,
     )
     form.omitted('footer')
     form.no_omit(IDefaultConfigureForm, 'footer')
     footer = schema.Text(
-        title=_(u'Rodapé'),
+        title=_(u'Footer'),
         required=False,
     )
 
     form.no_omit('link_text')
     form.omitted(IDefaultConfigureForm, 'link_text')
     link_text = schema.TextLine(
-        title=_(u'Texto do rodapé'),
+        title=_(u'Text footer'),
         required=False,
     )
     form.no_omit('link_url')
     form.omitted(IDefaultConfigureForm, 'link_url')
     link_url = schema.TextLine(
-        title=_(u'Link do rodapé'),
+        title=_(u'Link footer'),
         required=False,
     )
 
@@ -64,9 +64,9 @@ class AlbunsTile(PersistentCoverTile):
 
         if ((obj.portal_type in self.accepted_ct()) and
            (obj.getLayout() == 'galeria_de_albuns')):
-            title = _(u'Galeria de álbuns')
+            title = _(u'Gallery albums')
             link_url = obj.absolute_url()
-            link_text = _(u'Acesse todos os álbuns')
+            link_text = _(u'Access all Albums')
             uuid = IUUID(obj, None)
             data_mgr = ITileDataManager(self)
             data_mgr.set({

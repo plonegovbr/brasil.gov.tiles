@@ -41,7 +41,7 @@
                                 <tal:image define="scale python:view.scale(album);"
                                            condition="scale">
                                     <a href="${album/absolute_url}">
-                                        <img src="${scale/src}" alt="${scale/alt}">
+                                        <img src="${scale/src}" alt="${scale/alt}" i18n:attributes="alt" />
                                     </a>
                                     <div class="album-title">
                                         ${album/Title}
@@ -50,14 +50,14 @@
                                         ${album/Description}
                                     </div>
                                     <a href="${album/absolute_url}" class="open-album">
-                                      Acesse o álbum <i class="icon-camera"></i>
+                                      <span i18n:translate="">Visit the album</span> <i class="icon-camera"></i>
                                     </a>
                                 </tal:image>
                             </div>
                         </div><!-- cycle-1 -->
                         <div class="cycle-hover">
-                            <a href="#" class="cycle-prev">&laquo; Anterior</a>
-                            <a href="#" class="cycle-next">Próximo &raquo;</a>
+                            <a href="#" class="cycle-prev" i18n:translate="">&laquo; Previous</a>
+                            <a href="#" class="cycle-next" i18n:translate="">Next &raquo;</a>
                         </div>
                     </div><!-- player -->
                 </tal:player>
@@ -74,18 +74,18 @@
                             <div class="thumb-itens" tal:repeat="album view/get_albuns">
                                 <tal:image define="thumbnail python:view.thumbnail(album);"
                                            condition="thumbnail">
-                                    <div class="table-align"><img src="${thumbnail/src}" alt="${thumbnail/alt}"></div>
+                                    <div class="table-align"><img src="${thumbnail/src}" alt="${thumbnail/alt}" i18n:attributes="alt" /></div>
                                 </tal:image>
                             </div>
                         </div><!-- cycle-2 -->
                         <div class="cycle-nagivation">
-                            <a href="#" class="cycle-prev">&laquo; Anterior</a>
-                            <a href="#" class="cycle-next">Próximo &raquo;</a>
+                            <a href="#" class="cycle-prev" i18n:translate="">&laquo; Previous</a>
+                            <a href="#" class="cycle-next" i18n:translate="">Next &raquo;</a>
                         </div>
                     </div><!-- carrossel -->
                 </tal:carrossel>
-                <div tal:condition="python:field['id']=='link_text' and not(albuns)" class="no-albums">
-                    Arraste um álbum para popular o tile.
+                <div tal:condition="python:field['id']=='link_text' and not(albuns)" class="no-albums" i18n:translate="">
+                    Drag an album to the popular tile.
                 </div>
                 <tal:footer condition="python:field['id']=='link_text'">
                     <div class="footer">
@@ -93,8 +93,8 @@
                     </div>
                 </tal:footer>
             </tal:fields>
-            <div tal:condition="python:not(fields) and not(albuns)" class="no-albums">
-                Arraste um álbum para popular o tile.
+            <div tal:condition="python:not(fields) and not(albuns)" class="no-albums" i18n:translate="">
+                Drag an album to the popular tile.
             </div>
         </div>
     </body>

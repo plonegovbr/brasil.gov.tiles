@@ -47,7 +47,7 @@ class VideoTile(PersistentCoverTile):
     def populate_with_object(self, obj):
         super(VideoTile, self).populate_with_object(obj)  # check permission
 
-        #here we should check if the embeded item has its a video
+        # here we should check if the embeded item has its a video
         # XXX
         if obj.portal_type in self.accepted_ct():
 

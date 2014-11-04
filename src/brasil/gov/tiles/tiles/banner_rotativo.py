@@ -60,8 +60,9 @@ class IBannerRotativoTile(IListTile):
 
     layout = schema.Choice(
         title=u"Layout",
-        values=(u'Banner',
-                u'Chamada de foto'),
+        values=(_(u'Banner'),
+                _(u'Photocall')
+                ),
         default=u'Banner',
         required=True,
     )

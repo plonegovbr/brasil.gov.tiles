@@ -13,7 +13,7 @@
   <div id="em-destaque"
        tal:condition="not: is_empty">
     <ul class="sortable-tile cover-list-tile" >
-      <li id="em-destaque-titulo">Em destaque</li>
+      <li id="em-destaque-titulo" i18n:translate="">Featured</li>
     <tal:items repeat="item view/results"
                define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
       <li tal:define="last repeat/item/end" 
@@ -25,7 +25,7 @@
           <a tal:attributes="href item/absolute_url;
                              title item/Description"
              tal:content="item/Title" >
-             Destaque!
+             Featured!
           </a>
         </tal:title>
 

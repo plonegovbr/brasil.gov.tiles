@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -11,22 +12,22 @@ from zope.interface import implements
 class ISocialTile(IPersistentCoverTile):
 
     wid = schema.TextLine(
-        title=u'Twitter widget id',
+        title=_(u'Twitter widget id'),
         required=False,
     )
 
     username = schema.TextLine(
-        title=u'Twitter username',
+        title=_(u'Twitter username'),
         required=False,
     )
 
     facebook_page = schema.TextLine(
-        title=u'Facebook Page URL',
+        title=_(u'Facebook Page URL'),
         required=False,
     )
 
     number_of_columns = schema.Choice(
-        title=u"Columns",
+        title=_(u'Columns'),
         values=(
             u'1',
             u'2',
