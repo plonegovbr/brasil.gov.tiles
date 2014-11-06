@@ -9,11 +9,12 @@
     Drag&amp;drop an image or link here to populate the tile.
   </p>
 
-  <div class="banner-tile"
+  <div class="banner-tile tile-content"
        tal:condition="not:is_empty"
        tal:define="title view/Title;
                    has_image view/has_image;
-                   remote_url view/getRemoteUrl">
+                   remote_url view/getRemoteUrl;
+                   alt view/getAlt">
     <span class="copyright"
           tal:content="view/Rights"
           tal:condition="view/Rights">Crédito</span>
@@ -26,7 +27,7 @@
                                width thumbnail/width;
                                height thumbnail/height;
                                class view/css_class;
-                               alt title" />
+                               alt alt" />
         </a>
     </tal:image>
 

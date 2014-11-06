@@ -807,6 +807,10 @@ div.error {
     margin: 0;
 }
 
+div[data-tile*="collective\.cover\.banner"] {
+    overflow: hidden;
+}
+
 #content .banner-tile .copyright,
 #content .newsImageContainer .copyright,
 #content .mediacarousel .rights {

@@ -43,7 +43,8 @@
 
       <tal:image condition="python:field['id'] == 'image'"
                  define="scale python:field.get('scale', 'large');
-                         position python:field.get('position', '');">
+                         position python:field.get('position', '');
+                         alt view/getAlt;">
 
         <a class="imag" tal:attributes="href view/getURL;
                                         title description;">
@@ -54,7 +55,7 @@
                                width thumbnail/width;
                                height thumbnail/height;
                                class position;
-                               alt view/data/title" />
+                               alt alt" />
         </a>
       </tal:image>
 

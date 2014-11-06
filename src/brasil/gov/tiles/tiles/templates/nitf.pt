@@ -10,7 +10,8 @@
     Please drag&amp;drop a news article here.
   </p>
 
-  <div tal:condition="not: is_empty"
+  <div class="tile-content"
+       tal:condition="not: is_empty"
        tal:define="title view/data/title|nothing;
                    description view/data/description|title|nothing">
     <tal:fields repeat="field view/get_configured_fields">
@@ -43,13 +44,14 @@
       </tal:title>
 
       <tal:image condition="python:field['id'] == 'image'"
-                 define="position python:field.get('position', '');">
+             define="position python:field.get('position', '');
+                         alt view/getAlt">
         <a class="imag" tal:attributes="href view/getURL;
                                         title description;">
           <img tal:define="scales view/@@images;
                            thumbnail python: view.thumbnail(field, scales);"
                tal:condition="thumbnail"
-               tal:attributes="alt title|description;
+               tal:attributes="alt alt;
                                src thumbnail/url;
                                width thumbnail/width;
                                height thumbnail/height;
@@ -66,7 +68,7 @@
       </tal:date>
 
       <tal:subjects condition="python:field['id'] == 'subjects'">
-            <span metal:use-macro="context/@@tile_macros/subjects" />
+        <span metal:use-macro="context/@@tile_macros/subjects" />
       </tal:subjects>
 
       <tal:subtitle condition="python:field['id'] == 'subtitle'">
