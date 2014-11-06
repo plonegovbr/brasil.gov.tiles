@@ -59,11 +59,11 @@
                                            tal:content="obj/Title" />
                                     </h4>
                                 </tal:title>
-                                
+
                                 <p class="description"
                                    tal:content="obj/Description"
                                    tal:condition="python:field=='description'"/>
-                                
+
                                 <p tal:content="python:toLocalizedTime(obj.Date())"
                                    tal:condition="python:field=='date' and (hasattr(obj, 'Date') or hasattr(obj,'Schema') and 'Date' in obj.Schema().keys())" />
                             </tal:conf>

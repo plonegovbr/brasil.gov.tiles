@@ -16,7 +16,7 @@
       source="2000"
       destination="3000"
       profile="brasil.gov.tiles:default">
-    
+
     <gs:upgradeStep
         title="Add Tile Galeria de Albuns"
         description=""

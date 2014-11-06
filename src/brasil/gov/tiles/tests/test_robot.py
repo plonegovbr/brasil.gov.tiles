@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 
 from brasil.gov.tiles.testing import ROBOT_TESTING
 from plone.testing import layered

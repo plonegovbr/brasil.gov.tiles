@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
@@ -9,7 +9,6 @@ from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -59,9 +58,10 @@ class IBannerRotativoTile(IListTile):
     )
 
     layout = schema.Choice(
-        title=u"Layout",
+        title=u'Layout',
         values=(u'Banner',
-                u'Chamada de foto'),
+                u'Chamada de foto',
+                u'Texto sobreposto'),
         default=u'Banner',
         required=True,
     )
@@ -79,7 +79,7 @@ class IBannerRotativoTile(IListTile):
 class BannerRotativoTile(ListTile):
     implements(IBannerRotativoTile)
 
-    index = ViewPageTemplateFile("templates/banner_rotativo.pt")
+    index = ViewPageTemplateFile('templates/banner_rotativo.pt')
     is_configurable = False
     is_editable = True
     limit = 4
@@ -132,16 +132,28 @@ class BannerRotativoTile(ListTile):
         return results
 
     def layout_banner(self):
-        if self.data['layout'] is None:
-            return True  # default value
+        if (self.data['layout'] == u'Banner' or self.data['layout'] is None):
+            layout = 1
+        elif (self.data['layout'] == u'Chamada de foto'):
+            layout = 2
+        else:
+            layout = 3
 
-        return (self.data['layout'] == u'Banner')
+        return layout
+
+    def show_description(self):
+        return (self.data['layout'] == u'Chamada de foto')
+
+    def show_rights(self):
+        return (self.data['layout'] == u'Banner' or self.data['layout'] is None or self.data['layout'] == u'Texto sobreposto')
 
     def tile_class(self):
-        if self.layout_banner():
+        if self.layout_banner() == 1:
             return 'chamada_sem_foto tile-content'
-        else:
+        elif self.layout_banner() == 2:
             return 'chamada_com_foto tile-content'
+        else:
+            return 'chamada_sobrescrito tile-content'
 
     def show_nav(self):
         return (len(self.results()) > 1)

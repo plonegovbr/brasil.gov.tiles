@@ -14,16 +14,16 @@
        tal:define="title view/data/title|nothing;
                    description view/data/description|title|nothing">
     <tal:fields repeat="field view/get_configured_fields">
-    
+
          <tal:title define="htmltag python:field.get('htmltag', 'h1')"
                  condition="python:field['id'] == 'title'">
-      
+
           <h1 tal:condition="python:htmltag == 'h1'">
              <a tal:attributes="href view/getURL;
                                 title description"
               tal:content="python:field['content']" />
           </h1>
-         
+
           <h2 tal:condition="python:htmltag == 'h2'"
               tal:attributes="class view/variacao_titulo">
              <a tal:attributes="href view/getURL;
@@ -43,7 +43,7 @@
       </tal:title>
 
       <tal:image condition="python:field['id'] == 'image'"
-      			 define="position python:field.get('position', '');">
+                 define="position python:field.get('position', '');">
         <a class="imag" tal:attributes="href view/getURL;
                                         title description;">
           <img tal:define="scales view/@@images;
@@ -66,7 +66,7 @@
       </tal:date>
 
       <tal:subjects condition="python:field['id'] == 'subjects'">
-		    <span metal:use-macro="context/@@tile_macros/subjects" />
+            <span metal:use-macro="context/@@tile_macros/subjects" />
       </tal:subjects>
 
       <tal:subtitle condition="python:field['id'] == 'subtitle'">

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover import _
@@ -7,7 +7,6 @@ from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWid
 from plone.autoform import directives as form
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implements
 
@@ -34,7 +33,7 @@ class ICarouselTile(IListTile):
 class CarouselTile(ListTile):
     implements(ICarouselTile)
 
-    index = ViewPageTemplateFile("templates/carousel.pt")
+    index = ViewPageTemplateFile('templates/carousel.pt')
     is_configurable = True
     is_editable = True
 

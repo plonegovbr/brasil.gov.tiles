@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding: utf-8 -*-
 from brasil.gov.tiles.config import PROJECTNAME
 from collective.cover.tiles.base import PersistentCoverTile
 

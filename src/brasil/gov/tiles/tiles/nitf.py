@@ -29,7 +29,7 @@ class INITFBasicTile(IBasicTile):
     form.no_omit('variacao_titulo')
     form.omitted(IDefaultConfigureForm, 'variacao_titulo')
     variacao_titulo = schema.Choice(
-        title=u"Variação de Título",
+        title=u'Variação de Título',
         values=(u'Normal',
                 u'Grande',
                 u'Gigante'),
@@ -42,7 +42,7 @@ class NITFBasicTile(BasicTile):
     """A tile that shows general information about news articles.
     """
 
-    index = ViewPageTemplateFile("templates/nitf.pt")
+    index = ViewPageTemplateFile('templates/nitf.pt')
 
     def accepted_ct(self):
         return ['collective.nitf.content']

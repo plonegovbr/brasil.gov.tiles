@@ -2,8 +2,8 @@
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from brasil.gov.tiles.tiles.destaque import DestaqueTile
 from collective.cover.tiles.base import IPersistentCoverTile
-from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 from plone.uuid.interfaces import IUUID
 from zope.component import getMultiAdapter
 from zope.interface.verify import verifyClass
@@ -20,7 +20,7 @@ class DestaqueTileTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.request = self.layer['request']
-        self.name = u"destaque"
+        self.name = u'destaque'
         self.cover = self.portal['frontpage']
         self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
         self.tile = self.tile['test']
@@ -95,11 +95,11 @@ class DestaqueTileTestCase(unittest.TestCase):
     def test_accepted_content_types(self):
         # all content types are accepted
         # XXX: return None don't work
-        #self.assertEqual(self.tile.accepted_ct(), None)
+        # self.assertEqual(self.tile.accepted_ct(), None)
         self.assertEqual(self.tile.accepted_ct(),
                          ['Collection', 'Document', 'File', 'Form Folder',
                           'Image', 'Link', 'News Item'])
 
     def test_render_empty(self):
-        msg = "Please add up to 2 objects to the tile."
+        msg = 'Please add up to 2 objects to the tile.'
         self.assertTrue(msg in self.tile())
