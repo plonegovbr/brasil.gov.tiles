@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-10-03 14:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: Profile title in profile.zcml
+msgid ".gov.br: Blocks Content"
+msgstr ""
+
+#: Profile description in profile.zcml
+msgid "Install and configure reusable interface elements"
+msgstr ""
+
+#: Profile title in profile.zcml
+msgid ".gov.br: Blocks Content (Remove)"
+msgstr ""
+
+#: Profile description in profile.zcml
+msgid "Remove the reusable interface elements"
+msgstr ""
+
+#: Profile title in profile.zcml
+msgid ".gov.br: Blocks Content (Tests)"
+msgstr ""
+
+#: Profile description in profile.zcml
+msgid "Profile tests for the package Block Content."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Basic News Article Tile"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A tile that shows a news article."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A poll tile"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A tile that shows a poll."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A highlight tile"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows two images and descriptions that links to another page."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Video Gallery"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows a gallery of videos with descriptions and links."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Audio"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows an audio player with description, link and credits."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Audio Gallery"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows a gallery of audios with descriptions and links."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Media Carousel"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows a carousel of videos an images."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Social"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "social streams, from twitter and facebook."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Header"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Header tile, the element dropped populate the data."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Video"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Video tile, can reproduce embeded files."
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Featured"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Tile which displays a line with list of highlights"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Rotating Banner"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Tile which displays a rotating banner with links and images"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Gallery albums"
+msgstr ""
+
+#: tiles/configure.zcml
+msgid "Tile which displays a gallery of albums"
+msgstr ""
+

@@ -3,7 +3,6 @@ Alterações
 
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
 * Replica ajuste do Rodrigo para espaçamento de Tile Banner de Portal Brasil.
   [dbarbato]
 * Adiciona campo ALT em tile Basic, NITF e Banner conforme ajuste de rodfersou em
@@ -11,6 +10,10 @@ Alterações
   [dbarbato]
 * Adiciona novo layout de texto sobreposto no tile de Banner Rotativo.
   [dbarbato]
+* Updated Spanish a Brazilian Portuguese translations.
+  [macagua]
+* Added more improvements about i18n.
+  [macagua]
 
 
 1.0.4 (2014-03-11)

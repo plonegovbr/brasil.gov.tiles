@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
@@ -11,22 +12,22 @@ from zope.interface import implements
 class IHeaderTile(IPersistentCoverTile):
 
     title = schema.TextLine(
-        title=u'Title',
+        title=_(u'Title'),
         required=False,
     )
 
     link_text = schema.TextLine(
-        title=u'Link text',
+        title=_(u'Link text'),
         required=False,
     )
 
     link_url = schema.TextLine(
-        title=u'Link url',
+        title=_(u'Link url'),
         required=False,
     )
 
     uuid = schema.TextLine(
-        title=u'UUID',
+        title=_(u'UUID'),
         required=False,
         readonly=True,
     )
