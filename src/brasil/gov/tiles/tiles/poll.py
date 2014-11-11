@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from AccessControl import Unauthorized
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from collective.cover import _
+from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.polls.polls import IPolls

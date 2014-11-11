@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
-from collective.cover import _
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.autoform import directives as form
 from plone.memoize import view
@@ -59,10 +59,9 @@ class IBannerRotativoTile(IListTile):
 
     layout = schema.Choice(
         title=u'Layout',
-        values=(_(u'Banner'),
-                _(u'Photocall'),
-                _(u'Texto sobreposto')),
-
+        values=(u'Banner',
+                u'Chamada de foto',
+                u'Texto sobreposto'),
         default=u'Banner',
         required=True,
     )

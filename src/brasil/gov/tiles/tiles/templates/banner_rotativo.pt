@@ -2,7 +2,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="collective.cover">
+      i18n:domain="brasil.gov.tiles">
     <head>
         <script type="text/javascript"
                 tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/banner_rotativo.js">

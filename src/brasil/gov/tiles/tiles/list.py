@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from brasil.gov.tiles import _ as _
 from collections import OrderedDict
-from collective.cover import _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
 from collective.cover.tiles.base import IPersistentCoverTile

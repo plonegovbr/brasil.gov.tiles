@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-03 19:52+0000\n"
+"POT-Creation-Date: 2014-11-11 15:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,11 +74,16 @@ msgstr ""
 msgid "A tile that shows a poll."
 msgstr ""
 
-#: ./tiles/albuns.py:69
+#: ./tiles/banner.py:31
+#: ./tiles/basic.py:42
+msgid "ALT"
+msgstr ""
+
+#: ./tiles/albuns.py:68
 msgid "Access all Albums"
 msgstr ""
 
-#: ./tiles/audio.py:34
+#: ./tiles/audio.py:33
 msgid "Audio"
 msgstr ""
 
@@ -86,31 +91,23 @@ msgstr ""
 msgid "Audio Gallery"
 msgstr ""
 
-#: ./tiles/audiogallery.py:33
+#: ./tiles/audiogallery.py:32
 msgid "Audios"
 msgstr ""
 
-#: ./tiles/carousel.py:20
+#: ./tiles/carousel.py:19
 msgid "Auto play"
-msgstr ""
-
-#: ./tiles/banner_rotativo.py:63
-msgid "Banner"
 msgstr ""
 
 #: tiles/configure.zcml
 msgid "Basic News Article Tile"
 msgstr ""
 
-#: ./tiles/nitf.py:34
-msgid "Big"
-msgstr ""
-
-#: ./tiles/albuns.py:33
+#: ./tiles/albuns.py:32
 msgid "Carousel of images"
 msgstr ""
 
-#: ./tiles/nitf.py:32
+#: ./tiles/nitf.py:31
 msgid "Change in Title"
 msgstr ""
 
@@ -118,11 +115,11 @@ msgstr ""
 msgid "Click here."
 msgstr ""
 
-#: ./tiles/social.py:30
+#: ./tiles/social.py:29
 msgid "Columns"
 msgstr ""
 
-#: ./tiles/audio.py:28
+#: ./tiles/audio.py:27
 msgid "Credit"
 msgstr ""
 
@@ -130,19 +127,19 @@ msgstr ""
 msgid "Credit:"
 msgstr ""
 
-#: ./tiles/albuns.py:27
+#: ./tiles/albuns.py:26
 msgid "Current image"
 msgstr ""
 
-#: ./tiles/banner_rotativo.py:48
-#: ./tiles/basic.py:43
-#: ./tiles/collection.py:44
+#: ./tiles/banner_rotativo.py:47
+#: ./tiles/basic.py:49
+#: ./tiles/collection.py:43
 msgid "Date"
 msgstr ""
 
-#: ./tiles/audio.py:22
-#: ./tiles/banner_rotativo.py:40
-#: ./tiles/basic.py:31
+#: ./tiles/audio.py:21
+#: ./tiles/banner_rotativo.py:39
+#: ./tiles/basic.py:30
 msgid "Description"
 msgstr ""
 
@@ -150,13 +147,13 @@ msgstr ""
 msgid "Drag an album to the popular tile."
 msgstr ""
 
-#: ./tiles/banner_rotativo.py:73
-#: ./tiles/carousel.py:27
-#: ./tiles/destaque.py:27
+#: ./tiles/banner_rotativo.py:72
+#: ./tiles/carousel.py:26
+#: ./tiles/destaque.py:26
 msgid "Elements"
 msgstr ""
 
-#: ./tiles/embed.py:14
+#: ./tiles/embed.py:13
 msgid "Embedding code"
 msgstr ""
 
@@ -164,7 +161,7 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: ./tiles/social.py:25
+#: ./tiles/social.py:24
 msgid "Facebook Page URL"
 msgstr ""
 
@@ -180,28 +177,24 @@ msgstr ""
 msgid "Flash plugin"
 msgstr ""
 
-#: ./tiles/albuns.py:39
-#: ./tiles/collection.py:65
+#: ./tiles/albuns.py:38
+#: ./tiles/collection.py:64
 msgid "Footer"
 msgstr ""
 
-#: ./tiles/audiogallery.py:27
-#: ./tiles/mediacarousel.py:48
-#: ./tiles/videogallery.py:40
+#: ./tiles/audiogallery.py:26
+#: ./tiles/mediacarousel.py:47
+#: ./tiles/videogallery.py:39
 msgid "Footer Link"
 msgstr ""
 
-#: ./tiles/albuns.py:67
+#: ./tiles/albuns.py:66
 msgid "Gallery albums"
 msgstr ""
 
-#: ./tiles/nitf.py:35
-msgid "Giant"
-msgstr ""
-
-#: ./tiles/audiogallery.py:17
-#: ./tiles/banner_rotativo.py:24
-#: ./tiles/collection.py:23
+#: ./tiles/audiogallery.py:16
+#: ./tiles/banner_rotativo.py:23
+#: ./tiles/collection.py:22
 msgid "Header"
 msgstr ""
 
@@ -209,9 +202,9 @@ msgstr ""
 msgid "Header tile, the element dropped populate the data."
 msgstr ""
 
-#: ./tiles/banner.py:23
-#: ./tiles/banner_rotativo.py:56
-#: ./tiles/basic.py:36
+#: ./tiles/banner.py:24
+#: ./tiles/banner_rotativo.py:55
+#: ./tiles/basic.py:35
 msgid "Image"
 msgstr ""
 
@@ -219,15 +212,15 @@ msgstr ""
 msgid "Install and configure reusable interface elements"
 msgstr ""
 
-#: ./tiles/albuns.py:52
+#: ./tiles/albuns.py:51
 msgid "Link footer"
 msgstr ""
 
-#: ./tiles/header.py:21
+#: ./tiles/header.py:20
 msgid "Link text"
 msgstr ""
 
-#: ./tiles/header.py:26
+#: ./tiles/header.py:25
 msgid "Link url"
 msgstr ""
 
@@ -239,7 +232,7 @@ msgstr ""
 msgid "Media Carousel"
 msgstr ""
 
-#: ./tiles/collection.py:113
+#: ./tiles/collection.py:112
 msgid "More…"
 msgstr ""
 
@@ -251,20 +244,12 @@ msgstr ""
 msgid "Next &raquo;"
 msgstr ""
 
-#: ./tiles/nitf.py:33
-msgid "Normal"
-msgstr ""
-
-#: ./tiles/collection.py:59
+#: ./tiles/collection.py:58
 msgid "Number of items to display"
 msgstr ""
 
 #: ./tiles/templates/audiogallery.pt:50
 msgid "Pause"
-msgstr ""
-
-#: ./tiles/banner_rotativo.py:64
-msgid "Photocall"
 msgstr ""
 
 #: ./tiles/templates/audiogallery.pt:49
@@ -279,7 +264,7 @@ msgstr ""
 msgid "Poll"
 msgstr ""
 
-#: ./tiles/poll.py:19
+#: ./tiles/poll.py:18
 msgid "Poll uuid"
 msgstr ""
 
@@ -299,7 +284,7 @@ msgstr ""
 msgid "Rotating Banner"
 msgstr ""
 
-#: ./tiles/nitf.py:25
+#: ./tiles/nitf.py:24
 msgid "Section"
 msgstr ""
 
@@ -315,12 +300,12 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: ./tiles/nitf.py:18
-#: ./tiles/videogallery.py:34
+#: ./tiles/nitf.py:17
+#: ./tiles/videogallery.py:33
 msgid "Subtitle"
 msgstr ""
 
-#: ./tiles/albuns.py:46
+#: ./tiles/albuns.py:45
 msgid "Text footer"
 msgstr ""
 
@@ -336,9 +321,9 @@ msgstr ""
 msgid "Tile which displays a rotating banner with links and images"
 msgstr ""
 
-#: ./tiles/albuns.py:21
-#: ./tiles/audio.py:17
-#: ./tiles/audiogallery.py:22
+#: ./tiles/albuns.py:20
+#: ./tiles/audio.py:16
+#: ./tiles/audiogallery.py:21
 msgid "Title"
 msgstr ""
 
@@ -358,21 +343,21 @@ msgstr ""
 msgid "Twitter Microblog of the Brazil Portal"
 msgstr ""
 
-#: ./tiles/social.py:20
+#: ./tiles/social.py:19
 msgid "Twitter username"
 msgstr ""
 
-#: ./tiles/social.py:15
+#: ./tiles/social.py:14
 msgid "Twitter widget id"
 msgstr ""
 
-#: ./tiles/banner.py:28
+#: ./tiles/banner.py:36
 msgid "URL"
 msgstr ""
 
-#: ./tiles/basic.py:59
-#: ./tiles/collection.py:70
-#: ./tiles/header.py:31
+#: ./tiles/basic.py:65
+#: ./tiles/collection.py:69
+#: ./tiles/header.py:30
 msgid "UUID"
 msgstr ""
 
@@ -396,8 +381,8 @@ msgstr ""
 msgid "Video tile, can reproduce embeded files."
 msgstr ""
 
-#: ./tiles/video.py:22
-#: ./tiles/videogallery.py:56
+#: ./tiles/video.py:21
+#: ./tiles/videogallery.py:55
 msgid "Videos"
 msgstr ""
 
@@ -410,7 +395,7 @@ msgid "Your internet browser this not support JavaScript, therefore some feature
 msgstr ""
 
 #. Default: "Categories"
-#: ./tiles/basic.py:52
+#: ./tiles/basic.py:58
 msgid "label_categories"
 msgstr ""
 
@@ -440,7 +425,7 @@ msgstr ""
 msgid "spiner"
 msgstr ""
 
-#: ./tiles/list.py:120
+#: ./tiles/list.py:119
 msgid "tile List Title"
 msgstr ""
 

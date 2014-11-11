@@ -3,6 +3,8 @@ Alterações
 
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Adiciona internacionalização ao produto com suporte a Português e Espanhol.
+  [macagua]
 * Replica ajuste do Rodrigo para espaçamento de Tile Banner de Portal Brasil.
   [dbarbato]
 * Adiciona campo ALT em tile Basic, NITF e Banner conforme ajuste de rodfersou em

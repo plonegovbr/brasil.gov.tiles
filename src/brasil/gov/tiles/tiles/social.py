@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.PythonScripts.standard import url_quote
-from collective.cover import _
+from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from zope import schema

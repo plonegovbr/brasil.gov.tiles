@@ -2,7 +2,7 @@
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from collective.cover import _
+from collective.cover import _ as _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
