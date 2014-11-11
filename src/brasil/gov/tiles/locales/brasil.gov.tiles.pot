@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-11 15:47+0000\n"
+"POT-Creation-Date: 2014-11-11 16:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,7 +169,7 @@ msgstr ""
 msgid "Facebook page of the Brazil Portal"
 msgstr ""
 
-#: tiles/configure.zcml
+#: ./tiles/templates/em_destaque.pt:16
 msgid "Featured"
 msgstr ""
 
@@ -200,6 +200,10 @@ msgstr ""
 
 #: tiles/configure.zcml
 msgid "Header tile, the element dropped populate the data."
+msgstr ""
+
+#: ./tiles/templates/destaque.pt:14
+msgid "Hightlights"
 msgstr ""
 
 #: ./tiles/banner.py:24
@@ -254,6 +258,11 @@ msgstr ""
 
 #: ./tiles/templates/audiogallery.pt:49
 msgid "Play"
+msgstr ""
+
+#: ./tiles/templates/destaque.pt:9
+#: ./tiles/templates/em_destaque.pt:9
+msgid "Please add up to ${limit_objects} objects to the tile."
 msgstr ""
 
 #: ./tiles/templates/nitf.pt:9

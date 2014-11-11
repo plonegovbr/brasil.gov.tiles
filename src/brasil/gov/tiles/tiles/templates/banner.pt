@@ -17,7 +17,7 @@
                    alt view/getAlt">
     <span class="copyright"
           tal:content="view/Rights"
-          tal:condition="view/Rights">Crédito</span>
+          tal:condition="view/Rights">Credit</span>
     <tal:image condition="has_image">
         <a tal:attributes="href remote_url">
           <img tal:define="scales view/@@images;

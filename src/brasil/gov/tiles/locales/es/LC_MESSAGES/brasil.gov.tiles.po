@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: brasil.gov.tiles\n"
-"POT-Creation-Date: 2014-11-11 15:47+0000\n"
+"POT-Creation-Date: 2014-11-11 16:58+0000\n"
 "PO-Revision-Date: 2014-10-03 14:29-0430\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -173,7 +173,7 @@ msgstr "Dirección URL de la página Facebook"
 msgid "Facebook page of the Brazil Portal"
 msgstr "Página Facebook del Portal Brasil"
 
-#: tiles/configure.zcml
+#: ./tiles/templates/em_destaque.pt:16
 msgid "Featured"
 msgstr "Destacado"
 
@@ -205,6 +205,10 @@ msgstr "Encabezado"
 #: tiles/configure.zcml
 msgid "Header tile, the element dropped populate the data."
 msgstr "Un tile de encabezado, el elemento arrastrado rellenar los datos."
+
+#: ./tiles/templates/destaque.pt:14
+msgid "Hightlights"
+msgstr ""
 
 #: ./tiles/banner.py:24
 #: ./tiles/banner_rotativo.py:55
@@ -259,6 +263,11 @@ msgstr "Pausar"
 #: ./tiles/templates/audiogallery.pt:49
 msgid "Play"
 msgstr "Reproducir"
+
+#: ./tiles/templates/destaque.pt:9
+#: ./tiles/templates/em_destaque.pt:9
+msgid "Please add up to ${limit_objects} objects to the tile."
+msgstr ""
 
 #: ./tiles/templates/nitf.pt:9
 msgid "Please drag&amp;drop a news article here."
