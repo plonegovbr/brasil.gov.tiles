@@ -42,7 +42,7 @@ class CarouselTileTestCase(unittest.TestCase):
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'This carousel is empty; open the content chooser and drag-and-drop some items here.'
+        msg = u'Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");'
         self.assertIn(msg, rendered)
 
     def test_thumbnail(self):

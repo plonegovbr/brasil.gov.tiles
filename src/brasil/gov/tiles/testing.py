@@ -9,7 +9,6 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
-
 import os
 import random
 import unittest
@@ -77,6 +76,7 @@ class Fixture(PloneSandboxLayer):
             manage_addVirtualHostMonster(app, 'virtual_hosting')
         import brasil.gov.tiles
         self.loadZCML(package=brasil.gov.tiles)
+        self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
