@@ -1573,6 +1573,149 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 }
 
 
+/* Ícones dos Tiles na aba Layout do Cover
+   ========================================================================== */
+
+#tiles-list #audiogallery img {
+  background: url("++resource++brasil.gov.tiles/tile-audiogallery.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #audio img {
+  background: url("++resource++brasil.gov.tiles/tile-audio.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #nitf img {
+  background: url("++resource++brasil.gov.tiles/tile-article.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #videogallery img {
+  background: url("++resource++brasil.gov.tiles/tile-mediagallery.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #video img {
+  background: url("++resource++brasil.gov.tiles/tile-media.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #social img {
+  background: url("++resource++brasil.gov.tiles/tile-social.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #poll img {
+  background: url("++resource++brasil.gov.tiles/tile-poll.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #standaloneheader img {
+  background: url("++resource++brasil.gov.tiles/tile-header.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #agenda img {
+  background: url("++resource++brasil.gov.tiles/tile-agenda.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #destaque img {
+  background: url("++resource++brasil.gov.tiles/tile-destaque.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #em_destaque img {
+  background: url("++resource++brasil.gov.tiles/tile-em_destaque.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #albuns img {
+  background: url("++resource++brasil.gov.tiles/tile-albuns.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #mediacarousel img {
+  background: url("++resource++brasil.gov.tiles/tile-mediacarousel.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#tiles-list #banner_rotativo img {
+  background: url("++resource++brasil.gov.tiles/tile-banner_rotativo.png") no-repeat center center;
+  padding-left: 32px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 /* Contraste
    ========================================================================== */
 
