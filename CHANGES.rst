@@ -1,6 +1,12 @@
 Alterações
 ------------
 
+1.0.6 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.0.5 (2014-12-06)
 ^^^^^^^^^^^^^^^^^^
 * Adiciona testes para tiles de banner rotativo, basic e banner.
