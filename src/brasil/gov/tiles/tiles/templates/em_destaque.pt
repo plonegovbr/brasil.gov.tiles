@@ -2,7 +2,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="collective.cover">
+      i18n:domain="brasil.gov.tiles">
 
 <body tal:define="is_empty view/is_empty">
   <p tal:condition="is_empty" i18n:translate="">
@@ -13,7 +13,7 @@
   <div id="em-destaque"
        tal:condition="not: is_empty">
     <ul class="sortable-tile cover-list-tile" >
-      <li id="em-destaque-titulo">Em destaque</li>
+      <li id="em-destaque-titulo" i18n:translate="">Featured</li>
     <tal:items repeat="item view/results"
                define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
       <li tal:define="last repeat/item/end"
@@ -25,7 +25,7 @@
           <a tal:attributes="href item/absolute_url;
                              title item/Description"
              tal:content="item/Title" >
-             Destaque!
+             Featured!
           </a>
         </tal:title>
 

@@ -37,7 +37,7 @@ Test Albuns Tile
 
     # as tile is empty, we see default message
     Compose Cover
-    Page Should Contain  Arraste um álbum para popular o tile.
+    Page Should Contain  Drag an album to the popular tile.
 
     # drag&drop an Album
     # FIXME: Need to enable albuns and create an album content
@@ -45,13 +45,13 @@ Test Albuns Tile
     Click Link  css=${content_tree}
     Drag And Drop  css=${folder_selector}  css=${tile_selector}
     Wait Until Page Contains Element  css=div.album-tile
-    Page Should Contain  Arraste um álbum para popular o tile.
+    Page Should Contain  Drag an album to the popular tile.
 
     # move to the default view and check tile persisted
     # FIXME: Need to enable albuns and create an album content
     Click Link  link=View
     Wait Until Page Contains Element  css=div.album-tile
-    Page Should Contain  Arraste um álbum para popular o tile.
+    Page Should Contain  Drag an album to the popular tile.
 
     # edit the title and check AJAX refresh
     Compose Cover

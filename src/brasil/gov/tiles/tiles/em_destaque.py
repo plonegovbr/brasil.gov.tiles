@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import ListTile
-from collective.cover import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from zope import schema
 from zope.interface import implements

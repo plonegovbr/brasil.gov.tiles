@@ -3,7 +3,18 @@ Alterações
 
 1.0.5 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
+* Adiciona testes para tiles de banner rotativo, basic e banner.
+  [dbarbato]
+* Ajusta code-analysis para produto.
+  [dbarbato]
+* Adiciona icones de tiles customizados via CSS.
+  [dbarbato]
+* Adiciona internacionalização i18n com suporte a Português e Espanhol. (closes `#120`_).
+  [macagua]
+* Updated Spanish a Brazilian Portuguese translations.
+  [macagua]
+* Added more improvements about i18n.
+  [macagua]
 * Replica ajuste do Rodrigo para espaçamento de Tile Banner de Portal Brasil.
   [dbarbato]
 * Adiciona campo ALT em tile Basic, NITF e Banner conforme ajuste de rodfersou em
@@ -224,3 +235,4 @@ Alterações
 .. _`#102`: https://github.com/plonegovbr/brasil.gov.tiles/issues/102
 .. _`#107`: https://github.com/plonegovbr/brasil.gov.tiles/issues/107
 .. _`#109`: https://github.com/plonegovbr/brasil.gov.tiles/issues/109
+.. _`#120`: https://github.com/plonegovbr/brasil.gov.tiles/issues/120

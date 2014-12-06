@@ -7,24 +7,24 @@
 
   <genericsetup:registerProfile
       name="default"
-      title=".gov.br: Blocos de Conteúdo"
+      title=".gov.br: Blocks Content"
       directory="profiles/default"
-      description="Instala e configura elementos reutilizáveis de interface"
+      description="Install and configure reusable interface elements"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      title=".gov.br: Blocos de Conteúdo (remover)"
+      title=".gov.br: Blocks Content (Remove)"
       directory="profiles/uninstall"
-      description="Remove os elementos reutilizáveis de interface"
+      description="Remove the reusable interface elements"
       provides="Products.GenericSetup.interfaces.EXTENSION" />
 
   <genericsetup:registerProfile
       name="testfixture"
-      title=".gov.br: Blocos de Conteúdo (Testes)"
+      title=".gov.br: Blocks Content (Tests)"
       directory="profiles/testfixture"
-      description="Perfil de testes para o pacote de Blocos de Conteúdo."
+      description="Profile tests for the package Block Content."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

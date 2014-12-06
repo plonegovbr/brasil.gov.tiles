@@ -1,76 +1,449 @@
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-04-17 20:20+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: brasil.gov.tiles\n"
+"POT-Creation-Date: 2014-11-11 16:58+0000\n"
+"PO-Revision-Date: 2014-10-03 14:29-0430\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: brasil.gov.tiles\n"
+"Language: es\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
-#: brasil/gov/tiles/tiles/destaque.py:42
+#: ./tiles/templates/albuns.pt:44
+msgid "${scale/alt}"
+msgstr ""
+
+#: ./tiles/templates/albuns.pt:77
+msgid "${thumbnail/alt}"
+msgstr ""
+
+#: ./tiles/templates/albuns.pt:59
+msgid "&laquo; Previous"
+msgstr "&laquo; Anterior"
+
+#: Profile title in profile.zcml
+msgid ".gov.br: Blocks Content"
+msgstr ".gov.br: Bloques de contenido"
+
+#: Profile title in profile.zcml
+msgid ".gov.br: Blocks Content (Remove)"
+msgstr ".gov.br: Bloques de contenido (Desinstalar)"
+
+#: Profile title in profile.zcml
+msgid ".gov.br: Blocks Content (Tests)"
+msgstr ".gov.br: Bloques de contenido (Pruebas)"
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows a carousel of videos an images."
+msgstr "Un tile arrastrable que muestra un carrusel de unas imágenes de vídeos."
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows a gallery of audios with descriptions and links."
+msgstr "Un tile arrastrable que muestra una galería de audio con descripciones y enlaces."
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows a gallery of videos with descriptions and links."
+msgstr "Un tile arrastrable que muestra una galería de vídeos con descripciones y enlaces."
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows an audio player with description, link and credits."
+msgstr "Un tile arrastrable que muestra un reproductor de audio con descripciones, enlaces y créditos."
+
+#: tiles/configure.zcml
+msgid "A droppable tile that shows two images and descriptions that links to another page."
+msgstr "Un tile arrastrable que muestra dos imágenes y descripciones que enlaza a otras páginas."
+
+#: tiles/configure.zcml
+msgid "A highlight tile"
+msgstr "Tile para Destacar"
+
+#: tiles/configure.zcml
+msgid "A poll tile"
+msgstr "Tile para Encuesta"
+
+#: tiles/configure.zcml
+msgid "A tile that shows a news article."
+msgstr "Un tile que muestra un articulo de noticia."
+
+#: tiles/configure.zcml
+msgid "A tile that shows a poll."
+msgstr "Un tile que muestra una encuesta."
+
+#: ./tiles/banner.py:31
+#: ./tiles/basic.py:42
+msgid "ALT"
+msgstr ""
+
+#: ./tiles/albuns.py:68
+msgid "Access all Albums"
+msgstr "Acceso a todos los álbum"
+
+#: ./tiles/audio.py:33
+msgid "Audio"
+msgstr "Audio"
+
+#: tiles/configure.zcml
+msgid "Audio Gallery"
+msgstr "Galería de audio"
+
+#: ./tiles/audiogallery.py:32
+msgid "Audios"
+msgstr "Audios"
+
+#: ./tiles/carousel.py:19
+msgid "Auto play"
+msgstr "Auto reproducir"
+
+#: tiles/configure.zcml
+msgid "Basic News Article Tile"
+msgstr "Tile básico Articulo de noticias"
+
+#: ./tiles/albuns.py:32
+msgid "Carousel of images"
+msgstr "Carrusel de imágenes"
+
+#: ./tiles/nitf.py:31
+msgid "Change in Title"
+msgstr "Cambios en el título"
+
+#: ./tiles/templates/audiogallery.pt:72
+msgid "Click here."
+msgstr "Haga clic aquí."
+
+#: ./tiles/social.py:29
+msgid "Columns"
+msgstr "Columnas"
+
+#: ./tiles/audio.py:27
+msgid "Credit"
+msgstr "Crédito"
+
+#: ./tiles/templates/audio.pt:56
+msgid "Credit:"
+msgstr "Crédito:"
+
+#: ./tiles/albuns.py:26
+msgid "Current image"
+msgstr "Actual imagen"
+
+#: ./tiles/banner_rotativo.py:47
+#: ./tiles/basic.py:49
+#: ./tiles/collection.py:43
+msgid "Date"
+msgstr "Fecha"
+
+#: ./tiles/audio.py:21
+#: ./tiles/banner_rotativo.py:39
+#: ./tiles/basic.py:30
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
-#: brasil/gov/tiles/tiles/destaque.py:30
+#: ./tiles/templates/albuns.pt:87
+msgid "Drag an album to the popular tile."
+msgstr "Arrastre un álbum al tile popular."
+
+#: ./tiles/banner_rotativo.py:72
+#: ./tiles/carousel.py:26
+#: ./tiles/destaque.py:26
 msgid "Elements"
+msgstr "Elementos"
+
+#: ./tiles/embed.py:13
+msgid "Embedding code"
+msgstr "Código embebido"
+
+#: ./tiles/templates/social.pt:35
+msgid "Facebook"
+msgstr "Cuenta Facebook"
+
+#: ./tiles/social.py:24
+msgid "Facebook Page URL"
+msgstr "Dirección URL de la página Facebook"
+
+#: ./tiles/templates/social.pt:65
+msgid "Facebook page of the Brazil Portal"
+msgstr "Página Facebook del Portal Brasil"
+
+#: ./tiles/templates/em_destaque.pt:16
+msgid "Featured"
+msgstr "Destacado"
+
+#: ./tiles/templates/audio.pt:51
+msgid "Flash plugin"
+msgstr "plugin Flash"
+
+#: ./tiles/albuns.py:38
+#: ./tiles/collection.py:64
+msgid "Footer"
+msgstr "Pie de página"
+
+#: ./tiles/audiogallery.py:26
+#: ./tiles/mediacarousel.py:47
+#: ./tiles/videogallery.py:39
+msgid "Footer Link"
+msgstr "Enlace de pie de página"
+
+#: ./tiles/albuns.py:66
+msgid "Gallery albums"
+msgstr "Álbum de galería"
+
+#: ./tiles/audiogallery.py:16
+#: ./tiles/banner_rotativo.py:23
+#: ./tiles/collection.py:22
+msgid "Header"
+msgstr "Encabezado"
+
+#: tiles/configure.zcml
+msgid "Header tile, the element dropped populate the data."
+msgstr "Un tile de encabezado, el elemento arrastrado rellenar los datos."
+
+#: ./tiles/templates/destaque.pt:14
+msgid "Hightlights"
 msgstr ""
 
-#: brasil/gov/tiles/tiles/destaque.py:48
+#: ./tiles/banner.py:24
+#: ./tiles/banner_rotativo.py:55
+#: ./tiles/basic.py:35
 msgid "Image"
+msgstr "Imagen"
+
+#: Profile description in profile.zcml
+msgid "Install and configure reusable interface elements"
+msgstr "Instalación y configuración de elementos de la interfaz reutilizables"
+
+#: ./tiles/albuns.py:51
+msgid "Link footer"
+msgstr "Enlace del pie de página"
+
+#: ./tiles/header.py:20
+msgid "Link text"
+msgstr "Texto de enlace"
+
+#: ./tiles/header.py:25
+msgid "Link url"
+msgstr "Dirección URL del enlace"
+
+#: ./tiles/templates/audiogallery.pt:53
+msgid "Max volume"
+msgstr "Volumen máximo"
+
+#: tiles/configure.zcml
+msgid "Media Carousel"
+msgstr "Carrusel de medios"
+
+#: ./tiles/collection.py:112
+msgid "More…"
+msgstr "Mas..."
+
+#: ./tiles/templates/audiogallery.pt:51
+msgid "Mute"
+msgstr "Silenciar"
+
+#: ./tiles/templates/albuns.pt:60
+msgid "Next &raquo;"
+msgstr "Próximo &raquo;"
+
+#: ./tiles/collection.py:58
+msgid "Number of items to display"
+msgstr "Número de elementos a mostrar"
+
+#: ./tiles/templates/audiogallery.pt:50
+msgid "Pause"
+msgstr "Pausar"
+
+#: ./tiles/templates/audiogallery.pt:49
+msgid "Play"
+msgstr "Reproducir"
+
+#: ./tiles/templates/destaque.pt:9
+#: ./tiles/templates/em_destaque.pt:9
+msgid "Please add up to ${limit_objects} objects to the tile."
 msgstr ""
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:39
-msgid "Nothing to see here"
-msgstr ""
+#: ./tiles/templates/nitf.pt:9
+msgid "Please drag&amp;drop a news article here."
+msgstr "Por favor, sujete y arrastre un Articulo de noticias aquí."
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:23
-msgid "Partial results"
-msgstr ""
-
-#: brasil/gov/tiles/tiles/templates/poll.pt:17
+#: ./tiles/templates/poll.pt:15
 msgid "Poll"
-msgstr ""
+msgstr "Encuesta"
 
-#: brasil/gov/tiles/tiles/nitf.py:20
-msgid "Pretty dates"
-msgstr ""
+#: ./tiles/poll.py:18
+msgid "Poll uuid"
+msgstr "UUID de Encuesta"
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:24
-msgid "Results"
-msgstr ""
+#: Profile description in profile.zcml
+msgid "Profile tests for the package Block Content."
+msgstr "Perfil de pruebas para el paquete Bloque de contenido."
 
-#: brasil/gov/tiles/tiles/nitf.py:30
+#: Profile description in profile.zcml
+msgid "Remove the reusable interface elements"
+msgstr "Retire los elementos de la interfaz reutilizables"
+
+#: ./tiles/templates/audiogallery.pt:71
+msgid "Required Update"
+msgstr "Requiere actualizar"
+
+#: tiles/configure.zcml
+msgid "Rotating Banner"
+msgstr "Banner rotativo"
+
+#: ./tiles/nitf.py:24
 msgid "Section"
-msgstr ""
+msgstr "Sección"
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:76
+#: ./tiles/templates/poll.pt:49
 msgid "See previous polls"
-msgstr ""
+msgstr "Ver encuestas previas"
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:61
+#: tiles/configure.zcml
+msgid "Social"
+msgstr "Redes sociales"
+
+#: ./tiles/templates/poll.pt:38
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
-#: brasil/gov/tiles/tiles/nitf.py:25
+#: ./tiles/nitf.py:17
+#: ./tiles/videogallery.py:33
 msgid "Subtitle"
-msgstr ""
+msgstr "Subtitulo"
 
-#: brasil/gov/tiles/tiles/destaque.py:36
+#: ./tiles/albuns.py:45
+msgid "Text footer"
+msgstr "Texto de pie de página"
+
+#: tiles/configure.zcml
+msgid "Tile which displays a gallery of albums"
+msgstr "Un tile, el cual muestra una galería de álbum"
+
+#: tiles/configure.zcml
+msgid "Tile which displays a line with list of highlights"
+msgstr "Un tile, el cual muestra una línea con la lista de destacados"
+
+#: tiles/configure.zcml
+msgid "Tile which displays a rotating banner with links and images"
+msgstr "Un tile, el cual muestra un banner rotatorio con enlaces e imágenes"
+
+#: ./tiles/albuns.py:20
+#: ./tiles/audio.py:16
+#: ./tiles/audiogallery.py:21
 msgid "Title"
+msgstr "Título"
+
+#: ./tiles/templates/audio.pt:51
+msgid "To play the media you will need to either update your browser to a recent version or update your"
 msgstr ""
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:72
-msgid "Total votes:"
-msgstr ""
+#: ./tiles/templates/audiogallery.pt:72
+msgid "To view content you need Flash update support to a newer version."
+msgstr "Para ver el contenido que necesita soporte de la actualización de Flash a una versión más nueva."
 
-#: brasil/gov/tiles/tiles/templates/poll.pt:66
+#: ./tiles/templates/social.pt:36
+msgid "Twitter"
+msgstr "Cuenta Twitter"
+
+#: ./tiles/templates/social.pt:66
+msgid "Twitter Microblog of the Brazil Portal"
+msgstr "Micro-blog Twitter del Portal Brasil"
+
+#: ./tiles/social.py:19
+msgid "Twitter username"
+msgstr "Nombre de usuario Twitter"
+
+#: ./tiles/social.py:14
+msgid "Twitter widget id"
+msgstr "Id del widget Twitter"
+
+#: ./tiles/banner.py:36
+msgid "URL"
+msgstr "Dirección URL"
+
+#: ./tiles/basic.py:65
+#: ./tiles/collection.py:69
+#: ./tiles/header.py:30
+msgid "UUID"
+msgstr "UUID del objeto"
+
+#: ./tiles/templates/audiogallery.pt:52
+msgid "Unmute"
+msgstr "Reactivar volumen"
+
+#: ./tiles/templates/audio.pt:50
+msgid "Update Required"
+msgstr "Requiere actualizar"
+
+#: tiles/configure.zcml
+msgid "Video"
+msgstr "Tile para Vídeo"
+
+#: tiles/configure.zcml
+msgid "Video Gallery"
+msgstr "Galería de vídeo"
+
+#: tiles/configure.zcml
+msgid "Video tile, can reproduce embeded files."
+msgstr "Un tile de vídeo, puede reproducir archivos embebidos."
+
+#: ./tiles/video.py:21
+#: ./tiles/videogallery.py:55
+msgid "Videos"
+msgstr "Vídeos"
+
+#: ./tiles/templates/albuns.pt:53
+msgid "Visit the album"
+msgstr "Visite el álbum"
+
+#: ./tiles/templates/video.pt:15
+msgid "Your internet browser this not support JavaScript, therefore some features of the website may not be accessible."
+msgstr "Su navegador de Internet no soporta JavaScript, por lo tanto, algunas de las características de la página web pueden no ser accesibles."
+
+#. Default: "Categories"
+#: ./tiles/basic.py:58
+msgid "label_categories"
+msgstr "Categorías"
+
+#: ./tiles/templates/audio.pt:32
+#: ./tiles/templates/audiogallery.pt:53
+msgid "max volume"
+msgstr "volumen máximo"
+
+#: ./tiles/templates/audio.pt:30
+#: ./tiles/templates/audiogallery.pt:51
+msgid "mute"
+msgstr "silenciar"
+
+#: ./tiles/templates/audio.pt:29
+msgid "pause"
+msgstr "pausar"
+
+#: ./tiles/templates/audio.pt:28
+msgid "play"
+msgstr "reproducir"
+
+#: tiles/configure.zcml
+msgid "social streams, from twitter and facebook."
+msgstr "Actualizaciones de redes sociales, desde twitter y facebook."
+
+#: ./tiles/templates/poll.pt:42
 msgid "spiner"
-msgstr ""
+msgstr "Marcador incrementable"
+
+#: ./tiles/list.py:119
+msgid "tile List Title"
+msgstr "Título de tile de lista"
+
+#: ./tiles/templates/audio.pt:31
+#: ./tiles/templates/audiogallery.pt:52
+msgid "unmute"
+msgstr "reactivar volumen"
 

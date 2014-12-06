@@ -52,7 +52,7 @@ class AlbunsTileTestCase(unittest.TestCase):
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'Arraste um álbum para popular o tile.'
+        msg = u'Drag an album to the popular tile.'
         self.assertIn(msg, rendered)
 
     def test_delete_folder(self):
@@ -61,7 +61,7 @@ class AlbunsTileTestCase(unittest.TestCase):
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'Arraste um álbum para popular o tile.'
+        msg = u'Drag an album to the popular tile.'
         self.assertIn(msg, rendered)
 
         setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])

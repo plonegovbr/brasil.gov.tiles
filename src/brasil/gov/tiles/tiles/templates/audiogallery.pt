@@ -46,11 +46,11 @@
                     <div class="jp-type-single">
                         <div class="jp-gui jp-interface">
                             <ul class="jp-controls">
-                                <li><a href="#" class="jp-play">Iniciar</a></li>
-                                <li><a href="#" class="jp-pause">Parar</a></li>
-                                <li><a href="#" class="jp-mute" title="mute">Desativar som</a></li>
-                                <li><a href="#" class="jp-unmute" title="unmute">Ativar som</a></li>
-                                <li><a href="#" class="jp-volume-max" title="max volume">Volume máximo</a></li>
+                                <li><a href="#" class="jp-play" i18n:translate="">Play</a></li>
+                                <li><a href="#" class="jp-pause" i18n:translate="">Pause</a></li>
+                                <li><a href="#" class="jp-mute" title="mute" i18n:attributes="title" i18n:translate="">Mute</a></li>
+                                <li><a href="#" class="jp-unmute" title="unmute" i18n:attributes="title" i18n:translate="">Unmute</a></li>
+                                <li><a href="#" class="jp-volume-max" title="max volume" i18n:attributes="title" i18n:translate="">Max volume</a></li>
                             </ul>
                             <div class="jp-progress-time-wrapper">
                                 <div class="jp-progress">
@@ -68,8 +68,8 @@
                             </div>
                         </div>
                         <div class="jp-no-solution">
-                            <span>Atualização Necessária</span>
-                            Para exibir o conteúdo você precisa atualizar o suporte de Flash para uma versão mais recente. <a href="http://get.adobe.com/flashplayer/" title="">Clique aqui.</a>
+                            <span i18n:translate="">Required Update</span>
+                            <span i18n:translate="">To view content you need Flash update support to a newer version.</span> <a href="http://get.adobe.com/flashplayer/" title="" i18n:translate="">Click here.</a>
                         </div>
                     </div>
                 </div>
