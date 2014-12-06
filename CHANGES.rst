@@ -1,7 +1,7 @@
 Alterações
 ------------
 
-1.0.5 (unreleased)
+1.0.5 (2014-12-06)
 ^^^^^^^^^^^^^^^^^^
 * Adiciona testes para tiles de banner rotativo, basic e banner.
   [dbarbato]
