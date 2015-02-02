@@ -3,8 +3,8 @@ Alterações
 
 1.0.6 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
+* Altera exibição de crédito para layouts de tile Banner Rotativo.
+  [dbarbato]
 
 
 1.0.5 (2014-12-06)

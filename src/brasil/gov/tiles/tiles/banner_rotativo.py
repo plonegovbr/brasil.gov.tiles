@@ -145,7 +145,7 @@ class BannerRotativoTile(ListTile):
         return (self.data['layout'] == u'Chamada de foto')
 
     def show_rights(self):
-        return (self.data['layout'] == u'Banner' or self.data['layout'] is None or self.data['layout'] == u'Texto sobreposto')
+        return (self.data['layout'] == u'Chamada de foto' or self.data['layout'] == u'Texto sobreposto')
 
     def tile_class(self):
         if self.layout_banner() == 1:
