@@ -65,8 +65,8 @@ class NITFBasicTile(BasicTile):
     def variacao_titulo(self):
         tamanhos = {
             u'Normal': None,
-            u'Big': 'grande',
-            u'Giant': 'gigante'
+            u'Grande': 'grande',
+            u'Gigante': 'gigante'
         }
         if self.data['variacao_titulo']:
             return tamanhos[self.data['variacao_titulo']]

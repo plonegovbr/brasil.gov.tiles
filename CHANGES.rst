@@ -1,10 +1,10 @@
 Alterações
-------------
+----------
 
 1.0.7 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-
-- Nothing changed yet.
+* Ajusta dicionário tamanhos de tile Nitf para português. (closes `#123`_).
+  [dbarbato]
 
 
 1.0.6 (2015-02-06)
@@ -248,3 +248,4 @@ Alterações
 .. _`#107`: https://github.com/plonegovbr/brasil.gov.tiles/issues/107
 .. _`#109`: https://github.com/plonegovbr/brasil.gov.tiles/issues/109
 .. _`#120`: https://github.com/plonegovbr/brasil.gov.tiles/issues/120
+.. _`#123`: https://github.com/plonegovbr/brasil.gov.tiles/issues/123
