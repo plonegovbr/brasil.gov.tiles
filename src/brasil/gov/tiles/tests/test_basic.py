@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import BaseIntegrationTestCase
 from brasil.gov.tiles.tiles.basic import BasicTile
+from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tiles.base import IPersistentCoverTile
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
@@ -27,7 +30,12 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         self.assertTrue(self.tile.is_editable)
 
     def test_accepted_content_types(self):
-        self.assertEqual(self.tile.accepted_ct(), ['Collection', 'Document', 'File', 'Form Folder', 'Image', 'Link', 'News Item'])
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(ICoverSettings)
+        self.assertEqual(
+            self.tile.accepted_ct(),
+            settings.searchable_content_types
+        )
 
     def test_render_empty(self):
         rendered = self.tile()
@@ -40,14 +48,20 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         self.tile.populate_with_object(obj)
         rendered = self.tile()
         self.assertIn('<img ', rendered)
-        self.assertIn('alt="This image was created for testing purposes"', rendered)
+        self.assertIn(
+            'alt="This image was created for testing purposes"',
+            rendered
+        )
 
     def test_render_with_link(self):
         obj = self.portal['my-link']
         self.tile.populate_with_object(obj)
         rendered = self.tile()
         self.assertNotIn('<img ', rendered)
-        self.assertIn('<a class="imag" href="http://nohost/plone/my-link"', rendered)
+        self.assertIn(
+            '<a class="imag" href="http://nohost/plone/my-link"',
+            rendered
+        )
 
     def test_Subject(self):
         obj = self.portal['my-image']

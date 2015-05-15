@@ -105,7 +105,7 @@ class DestaqueTile(PersistentCoverTile):
         data_mgr.set(old_data)
 
     def replace_with_objects(self, uids):
-        super(DestaqueTile, self).replace_with_objects(uids)  # check permission
+        super(DestaqueTile, self).replace_with_objects(uids)  # check permission  # NOQA
         self.set_limit()
         data_mgr = ITileDataManager(self)
         old_data = data_mgr.get()
@@ -145,7 +145,7 @@ class DestaqueTile(PersistentCoverTile):
                      'title': obj.title}
             if name in conf:
                 field_conf = conf[name]
-                if ('visibility' in field_conf and field_conf['visibility'] == u'off'):
+                if ('visibility' in field_conf and field_conf['visibility'] == u'off'):  # NOQA
                     # If the field was configured to be invisible, then just
                     # ignore it
                     continue
