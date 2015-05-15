@@ -2,6 +2,7 @@
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from brasil.gov.tiles import _ as _b
 from collective.cover import _ as _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tiles.base import IPersistentCoverTile
@@ -70,7 +71,7 @@ class IBasicTile(IPersistentCoverTile):
     form.no_omit('variacao_titulo')
     form.omitted(IDefaultConfigureForm, 'variacao_titulo')
     variacao_titulo = schema.Choice(
-        title=u'Variação de Título',
+        title=_b(u'Title Change'),
         values=(u'Normal',
                 u'Grande',
                 u'Gigante'),
@@ -132,7 +133,7 @@ class BasicTile(PersistentCoverTile):
             'uuid': IUUID(obj, None),  # XXX: can we get None here? see below
             'date': True,
             'subjects': True,
-            'image_description': safe_unicode(obj.Description()) or safe_unicode(obj.Title()),
+            'image_description': safe_unicode(obj.Description()) or safe_unicode(obj.Title()),  # NOQA
         }
 
         # TODO: if a Dexterity object does not have the IReferenceable

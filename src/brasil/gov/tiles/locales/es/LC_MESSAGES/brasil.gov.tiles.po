@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: brasil.gov.tiles\n"
-"POT-Creation-Date: 2014-11-11 16:58+0000\n"
+"POT-Creation-Date: 2015-05-14 20:17+0000\n"
 "PO-Revision-Date: 2014-10-03 14:29-0430\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
@@ -79,9 +79,9 @@ msgid "A tile that shows a poll."
 msgstr "Un tile que muestra una encuesta."
 
 #: ./tiles/banner.py:31
-#: ./tiles/basic.py:42
+#: ./tiles/basic.py:43
 msgid "ALT"
-msgstr ""
+msgstr "ALT"
 
 #: ./tiles/albuns.py:68
 msgid "Access all Albums"
@@ -136,16 +136,20 @@ msgid "Current image"
 msgstr "Actual imagen"
 
 #: ./tiles/banner_rotativo.py:47
-#: ./tiles/basic.py:49
+#: ./tiles/basic.py:50
 #: ./tiles/collection.py:43
 msgid "Date"
 msgstr "Fecha"
 
 #: ./tiles/audio.py:21
 #: ./tiles/banner_rotativo.py:39
-#: ./tiles/basic.py:30
+#: ./tiles/basic.py:31
 msgid "Description"
 msgstr "Descripción"
+
+#: ./tiles/templates/mediacarousel.pt:55
+msgid "Drag a folder or collection to populate the tile."
+msgstr "Arrastre una carpeta o colección para poblar el tile."
 
 #: ./tiles/templates/albuns.pt:87
 msgid "Drag an album to the popular tile."
@@ -207,12 +211,12 @@ msgid "Header tile, the element dropped populate the data."
 msgstr "Un tile de encabezado, el elemento arrastrado rellenar los datos."
 
 #: ./tiles/templates/destaque.pt:14
-msgid "Hightlights"
-msgstr ""
+msgid "Highlights"
+msgstr "Destacados"
 
 #: ./tiles/banner.py:24
 #: ./tiles/banner_rotativo.py:55
-#: ./tiles/basic.py:35
+#: ./tiles/basic.py:36
 msgid "Image"
 msgstr "Imagen"
 
@@ -267,7 +271,7 @@ msgstr "Reproducir"
 #: ./tiles/templates/destaque.pt:9
 #: ./tiles/templates/em_destaque.pt:9
 msgid "Please add up to ${limit_objects} objects to the tile."
-msgstr ""
+msgstr "Por favor, añada hasta ${limit_objects} objetos en el tile."
 
 #: ./tiles/templates/nitf.pt:9
 msgid "Please drag&amp;drop a news article here."
@@ -342,7 +346,7 @@ msgstr "Título"
 
 #: ./tiles/templates/audio.pt:51
 msgid "To play the media you will need to either update your browser to a recent version or update your"
-msgstr ""
+msgstr "Para reproducir los medios de comunicación tendrá que actualizar su navegador a una versión más reciente o actualizar su"
 
 #: ./tiles/templates/audiogallery.pt:72
 msgid "To view content you need Flash update support to a newer version."
@@ -368,7 +372,7 @@ msgstr "Id del widget Twitter"
 msgid "URL"
 msgstr "Dirección URL"
 
-#: ./tiles/basic.py:65
+#: ./tiles/basic.py:66
 #: ./tiles/collection.py:69
 #: ./tiles/header.py:30
 msgid "UUID"
@@ -390,6 +394,10 @@ msgstr "Tile para Vídeo"
 msgid "Video Gallery"
 msgstr "Galería de vídeo"
 
+#: ./tiles/templates/embed.pt:18
+msgid "Video successfully inserted (access the view tab to view running)"
+msgstr "Vídeo insertado con éxito (acceso a la ficha visualizar para ver su funcionamento)"
+
 #: tiles/configure.zcml
 msgid "Video tile, can reproduce embeded files."
 msgstr "Un tile de vídeo, puede reproducir archivos embebidos."
@@ -404,11 +412,12 @@ msgid "Visit the album"
 msgstr "Visite el álbum"
 
 #: ./tiles/templates/video.pt:15
+#: ./tiles/templates/videogallery.pt:96
 msgid "Your internet browser this not support JavaScript, therefore some features of the website may not be accessible."
 msgstr "Su navegador de Internet no soporta JavaScript, por lo tanto, algunas de las características de la página web pueden no ser accesibles."
 
 #. Default: "Categories"
-#: ./tiles/basic.py:58
+#: ./tiles/basic.py:59
 msgid "label_categories"
 msgstr "Categorías"
 

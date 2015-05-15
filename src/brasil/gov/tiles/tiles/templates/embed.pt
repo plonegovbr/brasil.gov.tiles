@@ -15,7 +15,9 @@
                 </tal:embed>
                 <tal:embed condition="python:field['id'] == 'embed' and view.at_compose_tab()">
                     <!-- FIXME -->
-                    <div tal:replace="string:Video inserido com sucesso (acesse a aba view para ver funcionando)" />
+                    <div i18n:domain="brasil.gov.tiles" tal:omit-tag="" i18n:translate="">
+                        Video successfully inserted (access the view tab to view running)
+                    </div>
                 </tal:embed>
                 <tal:title define="htmltag python:field.get('htmltag', 'h1')"
                            condition="python:field['id'] == 'title'">

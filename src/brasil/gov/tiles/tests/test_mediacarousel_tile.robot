@@ -34,7 +34,7 @@ Test Mediacarousel Tile
 
     # as tile is empty, we see default message
     Compose Cover
-    Page Should Contain  Arraste uma pasta ou coleção para popular o tile.
+    Page Should Contain  Drag a folder or collection to populate the tile.
 
     # drag&drop an Collection
     Open Content Chooser

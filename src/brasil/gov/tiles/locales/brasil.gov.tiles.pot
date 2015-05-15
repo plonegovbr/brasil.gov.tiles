@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-11 16:58+0000\n"
+"POT-Creation-Date: 2015-05-14 20:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,7 @@ msgid "A tile that shows a poll."
 msgstr ""
 
 #: ./tiles/banner.py:31
-#: ./tiles/basic.py:42
+#: ./tiles/basic.py:43
 msgid "ALT"
 msgstr ""
 
@@ -132,15 +132,19 @@ msgid "Current image"
 msgstr ""
 
 #: ./tiles/banner_rotativo.py:47
-#: ./tiles/basic.py:49
+#: ./tiles/basic.py:50
 #: ./tiles/collection.py:43
 msgid "Date"
 msgstr ""
 
 #: ./tiles/audio.py:21
 #: ./tiles/banner_rotativo.py:39
-#: ./tiles/basic.py:30
+#: ./tiles/basic.py:31
 msgid "Description"
+msgstr ""
+
+#: ./tiles/templates/mediacarousel.pt:55
+msgid "Drag a folder or collection to populate the tile."
 msgstr ""
 
 #: ./tiles/templates/albuns.pt:87
@@ -203,12 +207,12 @@ msgid "Header tile, the element dropped populate the data."
 msgstr ""
 
 #: ./tiles/templates/destaque.pt:14
-msgid "Hightlights"
+msgid "Highlights"
 msgstr ""
 
 #: ./tiles/banner.py:24
 #: ./tiles/banner_rotativo.py:55
-#: ./tiles/basic.py:35
+#: ./tiles/basic.py:36
 msgid "Image"
 msgstr ""
 
@@ -364,7 +368,7 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: ./tiles/basic.py:65
+#: ./tiles/basic.py:66
 #: ./tiles/collection.py:69
 #: ./tiles/header.py:30
 msgid "UUID"
@@ -386,6 +390,10 @@ msgstr ""
 msgid "Video Gallery"
 msgstr ""
 
+#: ./tiles/templates/embed.pt:18
+msgid "Video successfully inserted (access the view tab to view running)"
+msgstr ""
+
 #: tiles/configure.zcml
 msgid "Video tile, can reproduce embeded files."
 msgstr ""
@@ -400,11 +408,12 @@ msgid "Visit the album"
 msgstr ""
 
 #: ./tiles/templates/video.pt:15
+#: ./tiles/templates/videogallery.pt:96
 msgid "Your internet browser this not support JavaScript, therefore some features of the website may not be accessible."
 msgstr ""
 
 #. Default: "Categories"
-#: ./tiles/basic.py:58
+#: ./tiles/basic.py:59
 msgid "label_categories"
 msgstr ""
 
