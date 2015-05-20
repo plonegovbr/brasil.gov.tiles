@@ -3,8 +3,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
-from collective.cover.tiles.base import IPersistentCoverTile
-from collective.cover.tiles.base import PersistentCoverTile
+from collective.cover.tiles.list import IListTile
+from collective.cover.tiles.list import ListTile
 from plone.app.uuid.utils import uuidToObject
 from plone.memoize import view
 from plone.namedfile.field import NamedImage
@@ -20,7 +20,7 @@ from zope.schema import getFieldsInOrder
 
 
 # XXX: we must refactor this tile
-class IDestaqueTile(IPersistentCoverTile):
+class IDestaqueTile(IListTile):
 
     uuids = schema.List(
         title=_(u'Elements'),
@@ -47,7 +47,7 @@ class IDestaqueTile(IPersistentCoverTile):
     )
 
 
-class DestaqueTile(PersistentCoverTile):
+class DestaqueTile(ListTile):
 
     implements(IDestaqueTile)
 
