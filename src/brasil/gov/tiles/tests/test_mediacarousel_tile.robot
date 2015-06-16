@@ -19,6 +19,21 @@ ${footer_field_id}  mediacarousel-footer_text
 ${footer_sample}  http://www.plone.org
 ${footer_other_sample}  http://www.google.com
 
+*** Keywords ***
+
+# FIXME: Customização de cover.robot em collective cover para poder aplicar a solução
+# presente em http://www.coactivate.org/projects/barcelona-sprint/lists/barcelona-sprint-discussion/archive/2013/02/1360419825199/forum_view
+# corrigindo o erro StaleElementReferenceException: Message: Element not found in the cache - perhaps the page has changed since it was looked up
+# Ver https://github.com/plonegovbr/brasil.gov.tiles/pull/128#issuecomment-102429107
+# O mais correto seria corrigir em collective.cover, daí o FIXME. Isso está em estudo.
+Compose Cover
+    [Documentation]  Click on Compose tab and wait until the layout has been
+    ...              loaded.
+    Wait Until Keyword Succeeds  5 sec  1 sec  Click Link  link=Compose
+    Sleep  1s  Wait for cover compose to load
+    Wait Until Page Contains Element  css=div#contentchooser-content-show-button
+    Page Should Contain  Add Content
+
 *** Test cases ***
 
 Test Mediacarousel Tile
