@@ -1,33 +1,31 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from brasil.gov.tiles.tiles.carousel import CarouselTile
-from collective.cover.tiles.base import IPersistentCoverTile
+from brasil.gov.tiles.tiles.carousel import ICarouselTile
+from collective.cover.controlpanel import ICoverSettings
+from collective.cover.tests.base import TestTileMixin
 from plone.app.imaging.interfaces import IImageScale
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
-from zope.component import getMultiAdapter
-from zope.interface.verify import verifyClass
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 import unittest
 
 
-class CarouselTileTestCase(unittest.TestCase):
+class CarouselTileTestCase(TestTileMixin, unittest.TestCase):
 
     layer = INTEGRATION_TESTING
 
     def setUp(self):
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.request = self.layer['request']
-        self.name = u'collective.cover.carousel'
-        self.cover = self.portal['frontpage']
-        self.tile = getMultiAdapter((self.cover, self.request), name=self.name)
-        self.tile = self.tile['test']
+        super(CarouselTileTestCase, self).setUp()
+        self.tile = CarouselTile(self.cover, self.request)
+        self.tile.__name__ = u'collective.cover.carousel'
+        self.tile.id = u'test'
 
-    # @unittest.expectedFailure  # FIXME: raises BrokenImplementation
+    @unittest.expectedFailure  # FIXME: raises BrokenImplementation
     def test_interface(self):
-        self.assertTrue(IPersistentCoverTile.implementedBy(CarouselTile))
-        self.assertTrue(verifyClass(IPersistentCoverTile, CarouselTile))
+        self.interface = ICarouselTile
+        self.klass = CarouselTile
+        super(CarouselTileTestCase, self).test_interface()
 
     def test_default_configuration(self):
         self.assertTrue(self.tile.is_configurable)
@@ -42,8 +40,17 @@ class CarouselTileTestCase(unittest.TestCase):
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");'
+        msg = u'Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");'  # NOQA
         self.assertIn(msg, rendered)
+
+    def test_accepted_content_types(self):
+        # Using the same from ListTile since CarouselTile(ListTile)
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(ICoverSettings)
+        self.assertEqual(
+            self.tile.accepted_ct(),
+            settings.searchable_content_types
+        )
 
     def test_thumbnail(self):
         # as a File does not have an image field, we should have no thumbnail

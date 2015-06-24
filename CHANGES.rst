@@ -3,6 +3,9 @@ Alterações
 
 1.0.7 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Ajusta internacionalização nas strings de templates com traduções faltantes  
+  no domínio brasil.gov.tiles. (closes `#26`_).
+  [idgserpro]
 * Ajusta dicionário tamanhos de tile Nitf para português. (closes `#123`_).
   [dbarbato]
 

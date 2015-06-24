@@ -52,8 +52,8 @@
                         </a>
                     </tal:items>
                 </div>
-                <div tal:condition="python:field=='uuids' and not(items)">
-                    Arraste uma pasta ou coleção para popular o tile.
+                <div i18n:domain="brasil.gov.tiles" tal:condition="python:field=='uuids' and not(items)" i18n:translate="">
+                    Drag a folder or collection to populate the tile.
                 </div>
                 <div tal:condition="python:field=='footer_text' and collection" class="mediacarousel-footer-container">
                     <a class="mediacarousel-footer-link" tal:content="view/data/footer_text"
