@@ -3,13 +3,14 @@ Alterações
 
 1.0.7 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+* Inclue opção de link para o título do cabeçalho de acordo com a recomendação 3.5 do eMAG. 
+  [caduviera]
 * Ajusta internacionalização nas strings de templates com traduções faltantes  
   no domínio brasil.gov.tiles. (closes `#26`_).
   [idgserpro]
 * Ajusta dicionário tamanhos de tile Nitf para português. (closes `#123`_).
   [dbarbato]
-* Inclue opção de link para o título do cabeçalho de acordo com a recomendação 3.5 do eMAG. 
-  [caduviera]
+
 
 1.0.6 (2015-02-06)
 ^^^^^^^^^^^^^^^^^^
