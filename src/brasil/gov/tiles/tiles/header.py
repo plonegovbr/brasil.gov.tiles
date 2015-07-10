@@ -52,7 +52,7 @@ class HeaderTile(PersistentCoverTile):
 
         title = obj.Title()
         url = obj.absolute_url()
-        link_title = obj.Link_title()
+        link_title = url
         link_text = title
         data_mgr = ITileDataManager(self)
         uuid = IUUID(obj)
