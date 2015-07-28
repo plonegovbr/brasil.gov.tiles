@@ -18,7 +18,7 @@ class IHeaderTile(IPersistentCoverTile):
 
     link_title = schema.TextLine(
         title=_(u'Link title'),
-        default=None,
+        default='',
         required=False,
     )
 
