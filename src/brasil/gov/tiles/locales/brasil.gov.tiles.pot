@@ -452,3 +452,6 @@ msgstr ""
 msgid "unmute"
 msgstr ""
 
+#: ./tiles/header.py:18
+msgid "Link title"
+msgstr ""

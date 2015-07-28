@@ -18,10 +18,10 @@
         <tal:title define="htmltag python:field.get('htmltag', 'h1')"
                  condition="python:field['id'] == 'title'">
 
-            <h1 class="outstanding-title" tal:content="view/data/title" tal:condition="python:htmltag == 'h1'"></h1>
-            <h2 class="outstanding-title" tal:content="view/data/title" tal:condition="python:htmltag == 'h2'"></h2>
-            <h3 class="outstanding-title" tal:content="view/data/title" tal:condition="python:htmltag == 'h3'"></h3>
-            <h4 class="outstanding-title" tal:content="view/data/title" tal:condition="python:htmltag == 'h4'"></h4>
+            <h1 class="outstanding-title" tal:condition="python:htmltag == 'h1'"><a tal:omit-tag="not:view/data/link_title" href="" tal:attributes="href view/data/link_title" tal:content="view/data/title"/></h1>
+            <h2 class="outstanding-title" tal:condition="python:htmltag == 'h2'"><a tal:omit-tag="not:view/data/link_title" href="" tal:attributes="href view/data/link_title" tal:content="view/data/title"/></h2>
+            <h3 class="outstanding-title" tal:condition="python:htmltag == 'h3'"><a tal:omit-tag="not:view/data/link_title" href="" tal:attributes="href view/data/link_title" tal:content="view/data/title"/></h3>
+            <h4 class="outstanding-title" tal:condition="python:htmltag == 'h4'"><a tal:omit-tag="not:view/data/link_title" href="" tal:attributes="href view/data/link_title" tal:content="view/data/title"/></h4>
 
         </tal:title>
     </tal:fields>

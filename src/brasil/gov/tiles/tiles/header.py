@@ -16,6 +16,12 @@ class IHeaderTile(IPersistentCoverTile):
         required=False,
     )
 
+    link_title = schema.TextLine(
+        title=_(u'Link title'),
+        default=(u''),
+        required=False,
+    )
+
     link_text = schema.TextLine(
         title=_(u'Link text'),
         required=False,
@@ -46,10 +52,12 @@ class HeaderTile(PersistentCoverTile):
 
         title = obj.Title()
         url = obj.absolute_url()
+        link_title = url
         link_text = title
         data_mgr = ITileDataManager(self)
         uuid = IUUID(obj)
         data_mgr.set({'title': title,
+                      'link_title': link_title,
                       'link_url': url,
                       'link_text': link_text,
                       'uuid': uuid

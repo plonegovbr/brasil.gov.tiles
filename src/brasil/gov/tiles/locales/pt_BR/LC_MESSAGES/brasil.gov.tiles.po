@@ -452,3 +452,7 @@ msgstr "Título do tile List"
 msgid "unmute"
 msgstr "Ativar som"
 
+#: ./tiles/header.py:18
+msgid "Link title"
+msgstr "Url para o título"
+
