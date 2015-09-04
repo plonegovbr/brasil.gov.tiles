@@ -3,7 +3,7 @@ Alterações
 
 1.0.7 (unreleased)
 ^^^^^^^^^^^^^^^^^^
-* Ajusta internacionalização nas strings de templates com traduções faltantes  
+* Ajusta internacionalização nas strings de templates com traduções faltantes
   no domínio brasil.gov.tiles. (closes `#26`_).
   [idgserpro]
 * Ajusta dicionário tamanhos de tile Nitf para português. (closes `#123`_).
@@ -219,6 +219,7 @@ Alterações
 .. _`#16`: https://github.com/plonegovbr/brasil.gov.tiles/issues/16
 .. _`#20`: https://github.com/plonegovbr/brasil.gov.tiles/issues/20
 .. _`#24`: https://github.com/plonegovbr/brasil.gov.tiles/issues/24
+.. _`#26`: https://github.com/plonegovbr/brasil.gov.tiles/issues/26
 .. _`#27`: https://github.com/plonegovbr/brasil.gov.tiles/issues/27
 .. _`#28`: https://github.com/plonegovbr/brasil.gov.tiles/issues/28
 .. _`#31`: https://github.com/plonegovbr/brasil.gov.tiles/issues/31
