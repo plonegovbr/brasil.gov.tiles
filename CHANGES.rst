@@ -1,6 +1,12 @@
 Alterações
 ----------
 
+1.0.8 (unreleased)
+^^^^^^^^^^^^^^^^^^
+
+- Nothing changed yet.
+
+
 1.0.7 (2015-09-03)
 ^^^^^^^^^^^^^^^^^^
 * Ajusta internacionalização nas strings de templates com traduções faltantes
