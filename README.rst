@@ -19,12 +19,13 @@ código os testes são executados pelo serviço Travis CI.
 
 O estado atual dos testes pode ser visto na imagem a seguir:
 
-.. image:: https://secure.travis-ci.org/plonegovbr/brasil.gov.tiles.png?branch=master
-    :alt: Travis CI badge
+.. image:: http://img.shields.io/pypi/v/brasil.gov.tiles.svg
+    :target: https://pypi.python.org/pypi/brasil.gov.tiles
+
+.. image:: https://img.shields.io/travis/plonegovbr/brasil.gov.tiles/master.svg
     :target: http://travis-ci.org/plonegovbr/brasil.gov.tiles
 
-.. image:: https://coveralls.io/repos/plonegovbr/brasil.gov.tiles/badge.png?branch=master
-    :alt: Coveralls badge
+.. image:: https://img.shields.io/coveralls/plonegovbr/brasil.gov.tiles/master.svg
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.tiles
 
 Instalação
@@ -46,5 +47,5 @@ buildout:
 
 3. Reinicie o Plone
 
-4. Acesse o painel de controle e na opção **Temas** você verá os temas
+4. Acesse o painel de controle e na opção **tiles** você verá os tiles
 providos por este pacote listados.
