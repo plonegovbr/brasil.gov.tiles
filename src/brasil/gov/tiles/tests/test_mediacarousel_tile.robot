@@ -34,6 +34,19 @@ Compose Cover
     Wait Until Page Contains Element  css=div#contentchooser-content-show-button
     Page Should Contain  Add Content
 
+# FIXME: Customização de cover.robot em collective cover para poder aplicar a solução
+# https://github.com/collective/collective.cover/commit/0d4c0ba8ba1f7c61d77e8b766d48a74b388b6269
+# Ver https://github.com/collective/collective.cover/issues/582#issuecomment-173333865
+# O mais correto seria corrigir em collective.cover, daí o FIXME. Isso está em estudo.
+Edit Cover Layout
+    [Documentation]  Click on Layout tab and wait until the layout has been
+    ...              loaded. Buttons related with layout operations must be
+    ...              also visible.
+    Wait Until Keyword Succeeds  10 sec  2 sec  Click Link  link=Layout
+    Sleep  1s  Wait for cover layout to load
+    Wait until page contains  Export layout
+    Wait until page contains  Saved
+
 *** Test cases ***
 
 Test Mediacarousel Tile
@@ -43,7 +56,7 @@ Test Mediacarousel Tile
 
     # add a mediacarousel tile to the layout
     Edit Cover Layout
-    Page Should Contain  Export layout
+    Wait until page contains  Export layout
     Add Tile  ${mediacarousel_tile_location}
     Save Cover Layout
 

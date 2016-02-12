@@ -23,6 +23,21 @@ ${footerurl_sample}  http://www.plone.org
 ${footertext_other_sample}  Google
 ${footerurl_other_sample}  http://www.google.com
 
+*** Keywords ***
+
+# FIXME: Customização de cover.robot em collective cover para poder aplicar a solução
+# https://github.com/collective/collective.cover/commit/0d4c0ba8ba1f7c61d77e8b766d48a74b388b6269
+# Ver https://github.com/collective/collective.cover/issues/582#issuecomment-173333865
+# O mais correto seria corrigir em collective.cover, daí o FIXME. Isso está em estudo.
+Edit Cover Layout
+    [Documentation]  Click on Layout tab and wait until the layout has been
+    ...              loaded. Buttons related with layout operations must be
+    ...              also visible.
+    Wait Until Keyword Succeeds  10 sec  2 sec  Click Link  link=Layout
+    Sleep  1s  Wait for cover layout to load
+    Wait until page contains  Export layout
+    Wait until page contains  Saved
+
 *** Test cases ***
 
 Test Albuns Tile

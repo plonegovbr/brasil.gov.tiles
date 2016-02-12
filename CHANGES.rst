@@ -4,8 +4,15 @@ Alterações
 1.0.8 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+.. Warning::
+    A estrutura de dados do tile "Destaque" foi alterada. Se você tiver algum
+    tile desse tipo em sua capa, ele não será renderizada até que o upgradeStep
+    de brasil.gov.tiles seja executado. Execute também os upgradeSteps de
+    collective.cover uma vez que collective.cover não é mais pinado no
+    buildout.cfg.
 
+- Corrige teste quando se utiliza collective.cover 1.0a11 (closes `#132`).
+  [idgserpro]
 
 1.0.7 (2015-09-03)
 ^^^^^^^^^^^^^^^^^^
@@ -259,3 +266,4 @@ Alterações
 .. _`#109`: https://github.com/plonegovbr/brasil.gov.tiles/issues/109
 .. _`#120`: https://github.com/plonegovbr/brasil.gov.tiles/issues/120
 .. _`#123`: https://github.com/plonegovbr/brasil.gov.tiles/issues/123
+.. _`#132`: https://github.com/plonegovbr/brasil.gov.tiles/issues/132

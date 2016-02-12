@@ -12,7 +12,8 @@ class HiddenProducts(object):
     def getNonInstallableProducts(self):
         return [
             u'brasil.gov.tiles.upgrades.v2000',
-            u'brasil.gov.tiles.upgrades.v3000'
+            u'brasil.gov.tiles.upgrades.v3000',
+            u'brasil.gov.tiles.upgrades.v4000'
         ]
 
 
@@ -25,5 +26,6 @@ class HiddenProfiles(object):
             u'brasil.gov.tiles:uninstall',
             u'brasil.gov.tiles:testfixture',
             u'brasil.gov.tiles.upgrades.v2000:default',
-            u'brasil.gov.tiles.upgrades.v3000:default'
+            u'brasil.gov.tiles.upgrades.v3000:default',
+            u'brasil.gov.tiles.upgrades.v4000:default',
         ]
