@@ -4,6 +4,13 @@ Alterações
 1.0.8 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+.. Warning::
+    A estrutura de dados do tile "Destaque" foi alterada. Se você tiver algum
+    tile desse tipo em sua capa, ele não será renderizada até que o upgradeStep
+    de brasil.gov.tiles seja executado. Execute também os upgradeSteps de
+    collective.cover uma vez que collective.cover não é mais pinado no
+    buildout.cfg.
+
 - Corrige teste quando se utiliza collective.cover 1.0a11 (closes `#132`).
   [idgserpro]
 
