@@ -96,7 +96,7 @@ class Fixture(PloneSandboxLayer):
         # Prevent kss validation errors in Plone 4.2
         portal_kss = getattr(portal, 'portal_kss', None)
         if portal_kss:
-            portal_kss.getResource('++resource++plone.app.z3cform').setEnabled(False)
+            portal_kss.getResource('++resource++plone.app.z3cform').setEnabled(False)  # NOQA
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
