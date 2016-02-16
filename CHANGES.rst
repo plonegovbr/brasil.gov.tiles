@@ -6,10 +6,15 @@ Alterações
 
 .. Warning::
     A estrutura de dados do tile "Destaque" foi alterada. Se você tiver algum
-    tile desse tipo em sua capa, ele não será renderizada até que o upgradeStep
+    tile desse tipo em sua capa, ele não será renderizado até que o upgradeStep
     de brasil.gov.tiles seja executado. Execute também os upgradeSteps de
     collective.cover uma vez que collective.cover não é mais pinado no
-    buildout.cfg.
+    buildout.cfg e as versões mais novas no momento desse release de
+    brasil.gov.tiles contém upgrades.
+
+- Corrige capa quebrada quando uma notícia (collective.nitf) sem imagem é
+  adicionada num MediaCarouselTile. (closes `#136`).
+  [idgserpro]
 
 - Corrige teste quando se utiliza collective.cover 1.0a11 (closes `#132`).
   [idgserpro]
@@ -267,3 +272,4 @@ Alterações
 .. _`#120`: https://github.com/plonegovbr/brasil.gov.tiles/issues/120
 .. _`#123`: https://github.com/plonegovbr/brasil.gov.tiles/issues/123
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.tiles/issues/132
+.. _`#136`: https://github.com/plonegovbr/brasil.gov.tiles/issues/136

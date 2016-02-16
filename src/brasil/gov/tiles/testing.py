@@ -2,6 +2,7 @@
 from App.Common import package_home
 from PIL import Image
 from StringIO import StringIO
+from plone import api
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
@@ -79,24 +80,54 @@ class Fixture(PloneSandboxLayer):
         self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
-        # Install into Plone site using portal_setup
-        self.applyProfile(portal, 'collective.cover:default')
-        self.applyProfile(portal, 'collective.cover:testfixture')
-        self.applyProfile(portal, 'brasil.gov.tiles:default')
-        self.applyProfile(portal, 'brasil.gov.tiles:testfixture')
-        portal['my-image'].setImage(generate_jpeg(50, 50))
-        portal['my-image1'].setImage(generate_jpeg(50, 50))
-        portal['my-image2'].setImage(generate_jpeg(50, 50))
-        portal['my-file'].setFile(loadFile('lorem_ipsum.txt'))
-        portal['my-file'].reindexObject()
-        portal['my-news-item'].setImage(generate_jpeg(50, 50))
-        portal_workflow = portal.portal_workflow
-        portal_workflow.setChainForPortalTypes(['Collection'],
-                                               ['plone_workflow'],)
-        # Prevent kss validation errors in Plone 4.2
-        portal_kss = getattr(portal, 'portal_kss', None)
-        if portal_kss:
-            portal_kss.getResource('++resource++plone.app.z3cform').setEnabled(False)  # NOQA
+
+        with api.env.adopt_roles(roles=['Manager']):
+
+            # Install into Plone site using portal_setup
+            self.applyProfile(portal, 'collective.cover:default')
+            self.applyProfile(portal, 'collective.cover:testfixture')
+            self.applyProfile(portal, 'brasil.gov.tiles:default')
+            self.applyProfile(portal, 'brasil.gov.tiles:testfixture')
+            portal['my-image'].setImage(generate_jpeg(50, 50))
+            portal['my-image1'].setImage(generate_jpeg(50, 50))
+            portal['my-image2'].setImage(generate_jpeg(50, 50))
+            portal['my-file'].setFile(loadFile('lorem_ipsum.txt'))
+            portal['my-file'].reindexObject()
+            portal['my-news-item'].setImage(generate_jpeg(50, 50))
+
+            api.content.create(
+                type='Folder',
+                title='my-news-folder',
+                container=portal
+            )
+            api.content.create(
+                type='collective.nitf.content',
+                title='my-nitf-without-image',
+                container=portal['my-news-folder']
+            )
+            api.content.create(
+                type='collective.nitf.content',
+                title='my-nitf-with-image',
+                container=portal['my-news-folder']
+            )
+            api.content.create(
+                type='Image',
+                title='my-image',
+                container=portal['my-news-folder']['my-nitf-with-image']
+            ).setImage(generate_jpeg(50, 50))
+            portal['my-news-folder'].reindexObject()
+            portal['my-news-folder']['my-nitf-with-image'].reindexObject()
+            portal['my-news-folder']['my-nitf-without-image'].reindexObject()
+            portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
+
+            portal_workflow = portal.portal_workflow
+            portal_workflow.setChainForPortalTypes(['Collection'],
+                                                   ['plone_workflow'],)
+            # Prevent kss validation errors in Plone 4.2
+            portal_kss = getattr(portal, 'portal_kss', None)
+            if portal_kss:
+                portal_kss.getResource('++resource++plone.app.z3cform').setEnabled(False)
+
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(

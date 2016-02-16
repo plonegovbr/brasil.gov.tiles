@@ -10,6 +10,10 @@ Suite Teardown  Close all browsers
 
 ${mediacarousel_tile_location}  'mediacarousel'
 ${collection_selector}  .ui-draggable .contenttype-collection
+# This xpath selector is for the <a> father of <span>my-news-folder</span>
+${my_news_folder_selector}  //span[contains(text(),'my-news-folder')]/..
+${title_nitf_with_image}  my-nitf-with-image
+${title_nitf_without_image}  my-nitf-without-image
 ${tile_selector}  div.tile-container div.tile
 ${edit_link_selector}  a.edit-tile-link
 ${title_field_id}  mediacarousel-header
@@ -106,6 +110,33 @@ Test Mediacarousel Tile
     Input Text  id=${footer_field_id}  ${footer_other_sample}
     Click Button  Cancel
     Wait Until Page Contains  ${footer_sample}
+
+    # delete the tile
+    Edit Cover Layout
+    Delete Tile
+    Save Cover Layout
+
+    # add a mediacarousel tile to the layout
+    Edit Cover Layout
+    Wait until page contains  Export layout
+    Add Tile  ${mediacarousel_tile_location}
+    Save Cover Layout
+
+    # as tile is empty, we see default message
+    Compose Cover
+    Page Should Contain  Drag a folder or collection to populate the tile.
+
+    # drag&drop a folder with nitf content
+    Open Content Chooser
+    Click Link  link=Content tree
+    Drag And Drop  xpath=${my_news_folder_selector}  css=${tile_selector}
+    Wait Until Page Contains Element  css=div.mediacarousel.tile-content h2.mediacarousel-tile+div
+    Wait Until Page Contains  ${title_nitf_with_image}
+    Page Should Not Contain  ${title_nitf_without_image}
+
+    # move to the default view and check tile persisted
+    Click Link  link=View
+    Page Should Contain Element  css=div.mediacarousel.tile-content h2.mediacarousel-tile
 
     # delete the tile
     Edit Cover Layout

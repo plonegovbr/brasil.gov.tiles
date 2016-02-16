@@ -40,7 +40,7 @@ class CarouselTileTestCase(TestTileMixin, unittest.TestCase):
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");'  # NOQA
+        msg = u'Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");'
         self.assertIn(msg, rendered)
 
     def test_accepted_content_types(self):

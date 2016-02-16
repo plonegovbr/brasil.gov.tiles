@@ -168,7 +168,7 @@ class ListTile(PersistentCoverTile):
             field = {'title': obj.title}
             if name in conf:
                 field_conf = conf[name]
-                if ('visibility' in field_conf and field_conf['visibility'] == u'off'):  # NOQA
+                if ('visibility' in field_conf and field_conf['visibility'] == u'off'):
                     # If the field was configured to be invisible, then just
                     # ignore it
                     continue
@@ -216,7 +216,7 @@ class ListTile(PersistentCoverTile):
                 scaleconf = image_conf['imgsize']
                 if (scaleconf != '_original'):
                     # scale string is something like: 'mini 200:200'
-                    scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'  # NOQA
+                    scale = scaleconf.split(' ')[0]  # we need the name only: 'mini'
                 else:
                     scale = None
                 scales = item.restrictedTraverse('@@images')
