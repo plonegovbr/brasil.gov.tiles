@@ -4,11 +4,13 @@ from brasil.gov.tiles.tiles.mediacarousel import IMediaCarouselTile
 from brasil.gov.tiles.tiles.mediacarousel import MediaCarouselTile
 from collective.cover.tests.base import TestTileMixin
 from mock import Mock
+from plone import api
 from plone.app.imaging.interfaces import IImageScale
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import login
 from plone.app.testing import setRoles
+from zope.component import getMultiAdapter
 
 import unittest
 
@@ -101,6 +103,24 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         obj = self.portal['my-file']
         self.assertFalse(self.tile.thumbnail(obj))
 
+        # nitf with Image, we should have a thumbnail
+        obj = self.portal['my-news-folder']['my-nitf-with-image']
+        [image_child] = [i for i in api.content.find(context=obj,
+                         depth=1, portal_type='Image')]
+        thumbnail = self.tile.thumbnail(image_child.getObject())
+        self.assertTrue(thumbnail)
+        # the thumbnail is an ImageScale
+        self.assertTrue(IImageScale.providedBy(thumbnail))
+
+        # nitf without Image, we shouldn't have a thumbnail
+        obj = self.portal['my-news-folder']['my-nitf-without-image']
+        [image_child] = [i for i in api.content.find(context=obj,
+                         depth=1, portal_type='Image')] or [None]
+        thumbnail = self.tile.thumbnail(image_child)
+        self.assertFalse(thumbnail)
+        # the thumbnail is an ImageScale
+        self.assertFalse(IImageScale.providedBy(thumbnail))
+
         # as an Image does have an image field, we should have a thumbnail
         obj = self.portal['my-image']
         thumbnail = self.tile.thumbnail(obj)
@@ -118,3 +138,31 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertTrue(self.tile.thumbnail(obj))
 
         # TODO: test against Dexterity-based content types
+
+    def test_crud_nitf(self):
+        # we start with an empty tile
+        self.assertTrue(self.tile.is_empty())
+
+        # now we add a couple of nitf objects in a folder to the carousel
+        obj1 = self.portal['my-news-folder']
+        self.tile.populate_with_object(obj1)
+
+        # tile's data attributed is cached so we should re-instantiate the tile
+        tile = getMultiAdapter(
+            (self.cover, self.request),
+            name=self.tile.__name__
+        )
+        tile = tile['test']
+
+        self.assertEqual(len(tile.data['uuids']), 1)
+        self.assertTrue(obj1 in tile.results())
+
+        # finally, we remove it from the carousel; the tile must be empty again
+        tile.remove_item(obj1.UID())
+        # tile's data attributed is cached so we should re-instantiate the tile
+        tile = getMultiAdapter(
+            (self.cover, self.request),
+            name=self.tile.__name__
+        )
+        tile = tile['test']
+        self.assertTrue(tile.is_empty())

@@ -133,7 +133,7 @@ class BasicTile(PersistentCoverTile):
             'uuid': IUUID(obj, None),  # XXX: can we get None here? see below
             'date': True,
             'subjects': True,
-            'image_description': safe_unicode(obj.Description()) or safe_unicode(obj.Title()),  # NOQA
+            'image_description': safe_unicode(obj.Description()) or safe_unicode(obj.Title()),
         }
 
         # TODO: if a Dexterity object does not have the IReferenceable

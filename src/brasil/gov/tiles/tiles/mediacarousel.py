@@ -123,7 +123,10 @@ class MediaCarouselTile(ListTile):
             url = obj.absolute_url() + '/@@images/image'
         elif portal_type == 'collective.nitf.content':
             scale = self.scale(obj)
-            url = scale.url
+            if scale is not None:
+                url = scale.url
+            else:
+                url = obj.absolute_url()
 
         return url
 
