@@ -53,6 +53,11 @@ setup(
         'plone.app.iterate',
         'plone.app.layout',
         'plone.app.registry',
+        # BBB: Pina plone.app.stagingbehavior pois ainda não
+        # estamos no Plone 5 e o próximo release de collective.cover
+        # remove essa dependência. Ver
+        # https://github.com/collective/collective.cover/commit/651cf0b86b45f9398dabc108a14d5c49f79367bf
+        'plone.app.stagingbehavior',
         'plone.app.textfield',
         'plone.app.tiles',
         'plone.app.upgrade',
