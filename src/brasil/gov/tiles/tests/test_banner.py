@@ -45,7 +45,7 @@ class BannerTileTestCase(BaseIntegrationTestCase):
         self.tile.populate_with_object(obj)
         rendered = self.tile()
         self.assertNotIn('<img ', rendered)
-        self.assertIn('<a href="http://">Test link</a>', rendered)
+        self.assertIn('">Test link</a>', rendered)
         self.assertFalse(self.tile.has_image)
 
     def test_title(self):
