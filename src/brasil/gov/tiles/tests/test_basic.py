@@ -3,6 +3,7 @@ from brasil.gov.tiles.testing import BaseIntegrationTestCase
 from brasil.gov.tiles.tiles.basic import BasicTile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tiles.base import IPersistentCoverTile
+from plone import api
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 from zope.interface.verify import verifyClass
@@ -77,3 +78,39 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         obj = self.portal['my-image']
         self.tile.populate_with_object(obj)
         self.assertEqual(self.tile.variacao_titulo(), None)
+
+    def test_nova_estrutura_icon_tiles(self):
+        """
+        FIXME: bin/instance está diferente de bin/test. Nesse contexto,
+        o método que retorna a tile e suas características, por algum motivo
+        retorna "None" no atributo 'icon' quando executamos bin/test: nesse
+        contexto, a template, ao receber None, popula o html com
+        tile-generic.png.
+
+        Com a nova versão de collective.cover 1.0a13, ele já retorna /img/tile
+        na template ao invés de só /tile e esse teste verifica isso, mas
+        renderizando o html da view.
+
+        Quando o issue
+
+            https://github.com/plone/plone.app.testing/issues/27
+
+        for finalizado, ele pode auxiliar na forma de melhorar esse teste, por
+        exemplo, apenas chamando o método "get_tile_metadata" de @@tile_list ao
+        invés de renderizar o html.
+
+        """
+        with api.env.adopt_roles(roles=['Manager']):
+            api.content.create(
+                type='collective.cover.content',
+                title='my-cover',
+                id='my-cover',
+                container=self.portal,
+                template_layout='Layout A'
+            )
+        view = self.portal['my-cover'].restrictedTraverse('@@tile_list')
+        view.update()
+        html = view()
+        prefix_icon = '++resource++collective.cover/img/tile-'
+        total_in_rendered_view = html.count(prefix_icon)
+        self.assertTrue(len(view.tiles) == total_in_rendered_view)

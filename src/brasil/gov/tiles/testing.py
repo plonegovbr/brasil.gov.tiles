@@ -2,12 +2,12 @@
 from App.Common import package_home
 from PIL import Image
 from StringIO import StringIO
+from collective.cover.testing import Fixture as CoverFixture
 from plone import api
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
-from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 import os
@@ -57,43 +57,23 @@ def generate_jpeg(width, height):
     return output.getvalue()
 
 
-class Fixture(PloneSandboxLayer):
+class Fixture(CoverFixture):
 
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        import Products.PloneFormGen
-        self.loadZCML(package=Products.PloneFormGen)
-        z2.installProduct(app, 'Products.PloneFormGen')
-
-        # Load ZCML
-        import collective.cover
-        self.loadZCML(package=collective.cover)
-        if 'virtual_hosting' not in app.objectIds():
-            # If ZopeLite was imported, we have no default virtual
-            # host monster
-            from Products.SiteAccess.VirtualHostMonster \
-                import manage_addVirtualHostMonster
-            manage_addVirtualHostMonster(app, 'virtual_hosting')
+        super(Fixture, self).setUpZope(app, configurationContext)
         import brasil.gov.tiles
         self.loadZCML(package=brasil.gov.tiles)
         self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
-
+        super(Fixture, self).setUpPloneSite(portal)
         with api.env.adopt_roles(roles=['Manager']):
 
             # Install into Plone site using portal_setup
-            self.applyProfile(portal, 'collective.cover:default')
-            self.applyProfile(portal, 'collective.cover:testfixture')
             self.applyProfile(portal, 'brasil.gov.tiles:default')
             self.applyProfile(portal, 'brasil.gov.tiles:testfixture')
-            portal['my-image'].setImage(generate_jpeg(50, 50))
-            portal['my-image1'].setImage(generate_jpeg(50, 50))
-            portal['my-image2'].setImage(generate_jpeg(50, 50))
-            portal['my-file'].setFile(loadFile('lorem_ipsum.txt'))
-            portal['my-file'].reindexObject()
-            portal['my-news-item'].setImage(generate_jpeg(50, 50))
 
             api.content.create(
                 type='Folder',
@@ -119,14 +99,6 @@ class Fixture(PloneSandboxLayer):
             portal['my-news-folder']['my-nitf-with-image'].reindexObject()
             portal['my-news-folder']['my-nitf-without-image'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
-
-            portal_workflow = portal.portal_workflow
-            portal_workflow.setChainForPortalTypes(['Collection'],
-                                                   ['plone_workflow'],)
-            # Prevent kss validation errors in Plone 4.2
-            portal_kss = getattr(portal, 'portal_kss', None)
-            if portal_kss:
-                portal_kss.getResource('++resource++plone.app.z3cform').setEnabled(False)
 
 
 FIXTURE = Fixture()

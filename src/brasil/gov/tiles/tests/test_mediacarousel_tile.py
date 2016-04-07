@@ -71,25 +71,27 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertIn(msg, self.tile())
 
     def test_collection_tile_render(self):
-        obj = self.portal['my-collection']
+        obj = self.portal['mandelbrot-set']
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'Drag a folder or collection to populate the tile.'
+        msg = u'Mandelbrot set'
         self.assertIn(msg, rendered)
 
     def test_delete_collection(self):
-        obj = self.portal['my-collection']
+        obj = self.portal['mandelbrot-set']
         self.tile.populate_with_object(obj)
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
-        msg = u'Drag a folder or collection to populate the tile.'
+        msg = u'Mandelbrot set'
         self.assertIn(msg, rendered)
 
         setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
         login(self.portal, TEST_USER_NAME)
-        self.portal.manage_delObjects(['my-collection'])
+        self.portal.manage_delObjects(['mandelbrot-set'])
+
+        msg = u'Drag a folder or collection to populate the tile.'
 
         rendered = self.tile()
         self.tile.is_compose_mode = Mock(return_value=True)

@@ -12,6 +12,11 @@ Alterações
     buildout.cfg e as versões mais novas no momento desse release de
     brasil.gov.tiles contém upgrades.
 
+- Corrige ícones dos tiles presentes em overrides já que nas versões de
+  collective.cover >= 1.0a13 a estrutura dos recursos estáticos foi alterada.
+  (closes `#140`).
+  [idgserpro]
+
 - Corrige capa quebrada quando uma notícia (collective.nitf) sem imagem é
   adicionada num MediaCarouselTile. (closes `#136`).
   [idgserpro]
@@ -273,3 +278,4 @@ Alterações
 .. _`#123`: https://github.com/plonegovbr/brasil.gov.tiles/issues/123
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.tiles/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.tiles/issues/136
+.. _`#140`: https://github.com/plonegovbr/brasil.gov.tiles/issues/140
