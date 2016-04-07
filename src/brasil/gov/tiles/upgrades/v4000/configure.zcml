@@ -14,6 +14,12 @@
         handler=".handler.fix_persistentmap_to_dict_destaque"
         />
 
+    <gs:upgradeStep
+        title="Recarrega tiles.js"
+        description="Com alteração no js preciso recarregar os js"
+        handler="..cook_javascript_resources"
+        />
+
   </gs:upgradeSteps>
 
 </configure>
