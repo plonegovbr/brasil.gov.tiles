@@ -55,9 +55,14 @@ setup(
         'plone.app.dexterity [grok, relations]',
         'plone.app.iterate',
         'plone.app.layout',
+        # BBB: Adiciona plone.app.referenceablebehavior pois ainda não
+        # estamos no Plone 5 e o release 1.1b1 de collective.cover
+        # remove essa dependência. Ver
+        # https://github.com/collective/collective.cover/commit/798ee6cc62c24cb21dacd92bbba70fdb867b8a4a
+        'plone.app.referenceablebehavior',
         'plone.app.registry',
-        # BBB: Pina plone.app.stagingbehavior pois ainda não
-        # estamos no Plone 5 e o próximo release de collective.cover
+        # BBB: Adiciona plone.app.stagingbehavior pois ainda não
+        # estamos no Plone 5 e release 1.1b1 de collective.cover
         # remove essa dependência. Ver
         # https://github.com/collective/collective.cover/commit/651cf0b86b45f9398dabc108a14d5c49f79367bf
         'plone.app.stagingbehavior',
