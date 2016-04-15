@@ -13,7 +13,7 @@ Alterações
     brasil.gov.tiles contém upgrades.
 
 - Corrige ícones dos tiles presentes em overrides já que nas versões de
-  collective.cover >= 1.0a13 a estrutura dos recursos estáticos foi alterada.
+  collective.cover >= 1.1b1 a estrutura dos recursos estáticos foi alterada.
   (closes `#140`).
   [idgserpro]
 
