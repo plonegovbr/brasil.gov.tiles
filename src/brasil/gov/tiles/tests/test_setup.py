@@ -99,10 +99,15 @@ class Upgrade3000to4000TestCase(Upgrade9to10TestCase):
         UpgradeTestCaseBase.setUp(self, u'3000', u'4000')
         self.profile_id = u'brasil.gov.tiles:default'
 
+    def test_upgrade_to_10_registrations(self):
+        # XXX: Como herdo de Upgrade9to10TestCase mas possuo dois upgradeSteps
+        # esse método dá erro, mas não preciso dele.
+        pass
+
     def test_upgrade_to_4000_registrations(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
         self.assertTrue(int(version) >= int(self.to_version))
-        self.assertEqual(self._how_many_upgrades_to_do(), 1)
+        self.assertEqual(self._how_many_upgrades_to_do(), 2)
 
     def test_new_uuids_structure(self):
         title = u'Atualiza estrutura no banco do tipo Destaque'

@@ -12,6 +12,10 @@ Alterações
     buildout.cfg e as versões mais novas no momento desse release de
     brasil.gov.tiles contém upgrades.
 
+- Corrige erro "Unexpected token <" quando se utiliza collective.cover com
+  suporte a proteção CSRF.
+  [idgserpro]
+
 - Corrige ícones dos tiles presentes em overrides já que nas versões de
   collective.cover >= 1.1b1 a estrutura dos recursos estáticos foi alterada.
   (closes `#140`).
