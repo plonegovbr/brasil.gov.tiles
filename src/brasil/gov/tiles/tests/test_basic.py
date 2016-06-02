@@ -15,7 +15,8 @@ class BasicTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(BasicTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@%s/%s' % ('collective.cover.basic', 'test-tile'))
+            '{0}/{1}'.format('collective.cover.basic', 'test-tile')
+        )
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(BasicTile))

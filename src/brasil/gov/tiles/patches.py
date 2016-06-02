@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.config import PROJECTNAME
 from collective.cover.tiles.base import PersistentCoverTile
+from Products.CMFPlone.utils import safe_hasattr
 
 import logging
 
@@ -14,9 +15,9 @@ def persistent_cover_tile():
         :param obj: [required]
         :type obj: content object
         """
-        if hasattr(obj, 'image'):  # Dexterity
+        if safe_hasattr(obj, 'image'):  # Dexterity
             return True
-        elif hasattr(obj, 'Schema'):  # Archetypes
+        elif safe_hasattr(obj, 'Schema'):  # Archetypes
             return 'image' in obj.Schema().keys()
         else:
             return False

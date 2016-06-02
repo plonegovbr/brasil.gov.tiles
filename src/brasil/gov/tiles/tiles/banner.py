@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_base
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone.autoform import directives as form
-from plone.namedfile import NamedBlobImage
 from plone.namedfile import field
+from plone.namedfile import NamedBlobImage
 from plone.tiles.interfaces import ITileDataManager
+from Products.CMFPlone.utils import safe_hasattr
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class IBannerTile(IPersistentCoverTile):
@@ -38,8 +39,8 @@ class IBannerTile(IPersistentCoverTile):
     )
 
 
+@implementer(IBannerTile)
 class BannerTile(PersistentCoverTile):
-    implements(IBannerTile)
 
     index = ViewPageTemplateFile('templates/banner.pt')
     is_configurable = True
@@ -60,11 +61,11 @@ class BannerTile(PersistentCoverTile):
         super(BannerTile, self).populate_with_object(obj)  # check permissions
         obj = aq_base(obj)  # avoid acquisition
         title = obj.Title()
-        rights = obj.Rights() if hasattr(obj, 'Rights') else None
+        rights = obj.Rights() if safe_hasattr(obj, 'Rights') else None
 
         # if image, store a copy of its data
         if obj.portal_type == 'Image':
-            if hasattr(obj, 'getImage'):
+            if safe_hasattr(obj, 'getImage'):
                 data = obj.getImage().data
             else:
                 data = obj.image.data

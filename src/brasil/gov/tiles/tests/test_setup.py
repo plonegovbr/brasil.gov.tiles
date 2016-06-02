@@ -3,13 +3,12 @@ from brasil.gov.tiles.config import PROJECTNAME
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from collective.cover.tests.test_upgrades import Upgrade9to10TestCase
 from collective.cover.tests.test_upgrades import UpgradeTestCaseBase
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.browserlayer.utils import registered_layers
 from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from zope.component import getUtility
-
 
 import unittest
 
@@ -44,13 +43,12 @@ class InstallTestCase(unittest.TestCase):
         self.qi = self.portal['portal_quickinstaller']
 
     def test_installed(self):
-        self.assertTrue(self.qi.isProductInstalled(PROJECTNAME),
-                        '%s not installed' % PROJECTNAME)
+        self.assertTrue(self.qi.isProductInstalled(PROJECTNAME))
 
     def test_dependencies(self):
         for p in DEPENDENCIES:
-            self.assertTrue(self.qi.isProductInstalled(p),
-                            '%s not installed' % p)
+            self.assertTrue(
+                self.qi.isProductInstalled(p), '{0} not installed'.format(p))
 
     def test_browserlayer(self):
         layers = [l.getName() for l in registered_layers()]
@@ -74,8 +72,8 @@ class UninstallTestCase(unittest.TestCase):
         self.qi.uninstallProducts(products=[PROJECTNAME])
 
     def test_uninstalled(self):
-        self.assertFalse(self.qi.isProductInstalled(PROJECTNAME),
-                         '%s not uninstalled' % PROJECTNAME)
+        self.assertFalse(
+            self.qi.isProductInstalled(PROJECTNAME))
 
     def test_browserlayer_removed(self):
         layers = [l.getName() for l in registered_layers()]

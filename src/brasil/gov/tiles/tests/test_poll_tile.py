@@ -12,7 +12,8 @@ class PollTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(PollTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@%s/%s' % ('poll', 'test-tile'))
+            '@@{0}/{1}'.format('poll', 'test-tile')
+        )
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(PollTile))

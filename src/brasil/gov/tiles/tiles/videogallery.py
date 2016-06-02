@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
@@ -8,8 +7,9 @@ from plone.directives import form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class IVideoGalleryTile(IListTile, form.Schema):
@@ -58,8 +58,8 @@ class IVideoGalleryTile(IListTile, form.Schema):
     )
 
 
+@implementer(IVideoGalleryTile)
 class VideoGalleryTile(ListTile):
-    implements(IVideoGalleryTile)
 
     index = ViewPageTemplateFile('templates/videogallery.pt')
     is_configurable = True

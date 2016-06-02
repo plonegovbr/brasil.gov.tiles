@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
@@ -9,9 +8,10 @@ from plone.memoize import view
 from plone.namedfile.field import NamedImage
 from plone.registry.interfaces import IRegistry
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
-from zope.interface import implements
+from zope.interface import implementer
 
 
 # XXX: we must refactor this tile
@@ -46,9 +46,8 @@ class IDestaqueTile(IListTile):
     )
 
 
+@implementer(IDestaqueTile)
 class DestaqueTile(ListTile):
-
-    implements(IDestaqueTile)
 
     index = ViewPageTemplateFile('templates/destaque.pt')
 
@@ -81,9 +80,8 @@ class DestaqueTile(ListTile):
             return scales.scale('image', 'mini')
 
 
+@implementer(ICoverUIDsProvider)
 class CollectionUIDsProvider(object):
-
-    implements(ICoverUIDsProvider)
 
     def __init__(self, context):
         self.context = context
@@ -94,9 +92,8 @@ class CollectionUIDsProvider(object):
         return [i.UID for i in self.context.queryCatalog()]
 
 
+@implementer(ICoverUIDsProvider)
 class FolderUIDsProvider(object):
-
-    implements(ICoverUIDsProvider)
 
     def __init__(self, context):
         self.context = context
@@ -107,9 +104,8 @@ class FolderUIDsProvider(object):
         return [i.UID for i in self.context.getFolderContents()]
 
 
+@implementer(ICoverUIDsProvider)
 class GenericUIDsProvider(object):
-
-    implements(ICoverUIDsProvider)
 
     def __init__(self, context):
         self.context = context

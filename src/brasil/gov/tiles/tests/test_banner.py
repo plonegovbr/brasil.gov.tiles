@@ -10,7 +10,8 @@ class BannerTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(BannerTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@%s/%s' % ('collective.cover.banner', 'test-tile'))
+            '{0}/{1}'.format('collective.cover.banner', 'test-tile')
+        )
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(BannerTile))
