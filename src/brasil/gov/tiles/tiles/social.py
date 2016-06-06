@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.PythonScripts.standard import url_quote
 from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.PythonScripts.standard import url_quote
 from zope import schema
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class ISocialTile(IPersistentCoverTile):
@@ -36,10 +36,10 @@ class ISocialTile(IPersistentCoverTile):
     )
 
 
+@implementer(IPersistentCoverTile)
 class SocialTile(PersistentCoverTile):
 
     index = ViewPageTemplateFile('templates/social.pt')
-    implements(IPersistentCoverTile)
     is_configurable = False
     is_droppable = False
     is_editable = True

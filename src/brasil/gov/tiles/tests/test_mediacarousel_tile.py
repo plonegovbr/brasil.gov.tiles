@@ -6,10 +6,10 @@ from collective.cover.tests.base import TestTileMixin
 from mock import Mock
 from plone import api
 from plone.app.imaging.interfaces import IImageScale
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import login
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
 from zope.component import getMultiAdapter
 
 import unittest
@@ -61,7 +61,7 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
 
         setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
         login(self.portal, TEST_USER_NAME)
-        self.portal.manage_delObjects(['my-folder'])
+        api.content.delete(obj=self.portal['my-folder'])
 
         rendered = self.tile()
         self.tile.is_compose_mode = Mock(return_value=True)
@@ -89,7 +89,7 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
 
         setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
         login(self.portal, TEST_USER_NAME)
-        self.portal.manage_delObjects(['mandelbrot-set'])
+        api.content.delete(obj=self.portal['mandelbrot-set'])
 
         msg = u'Drag a folder or collection to populate the tile.'
 

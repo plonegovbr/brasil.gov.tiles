@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
@@ -9,8 +8,9 @@ from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class IBannerRotativoTile(IListTile):
@@ -76,8 +76,8 @@ class IBannerRotativoTile(IListTile):
     )
 
 
+@implementer(IBannerRotativoTile)
 class BannerRotativoTile(ListTile):
-    implements(IBannerRotativoTile)
 
     index = ViewPageTemplateFile('templates/banner_rotativo.pt')
     is_configurable = False
@@ -86,11 +86,7 @@ class BannerRotativoTile(ListTile):
 
     def populate_with_object(self, obj):
         super(BannerRotativoTile, self).populate_with_object(obj)  # check permission
-        try:
-            scale = obj.restrictedTraverse('@@images').scale('image')
-        except:
-            scale = None
-        if not scale:
+        if not self._has_image_field(obj):
             return
         self.set_limit()
         uuid = IUUID(obj, None)

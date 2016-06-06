@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
@@ -8,6 +7,8 @@ from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
+from Products.CMFPlone.utils import safe_hasattr
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
 
@@ -101,7 +102,7 @@ class MediaCarouselTile(ListTile):
                 limit = catalog_results.length if catalog_results else 0
             elif portal_type == 'Folder':
                 catalog_results = obj.getFolderContents({
-                    "portal_type": ['sc.embedder',
+                    'portal_type': ['sc.embedder',
                                     'Image',
                                     'collective.nitf.content']
                 })
@@ -131,7 +132,7 @@ class MediaCarouselTile(ListTile):
         return url
 
     def get_rights(self, obj):
-        rights = obj.Rights() if hasattr(obj, 'Rights') else None
+        rights = obj.Rights() if safe_hasattr(obj, 'Rights') else None
         return rights
 
     def show_header(self):

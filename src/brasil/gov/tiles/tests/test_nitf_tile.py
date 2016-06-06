@@ -12,7 +12,8 @@ class NITFBasicTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(NITFBasicTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@%s/%s' % ('nitf', 'test-tile'))
+            '@@{0}/{1}'.format('nitf', 'test-tile')
+        )
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(NITFBasicTile))

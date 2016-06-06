@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _b
 from collective.cover import _ as _
 from collective.cover.controlpanel import ICoverSettings
@@ -15,9 +12,12 @@ from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
-from zope.interface import implements
+from zope.interface import implementer
 
 
 class IBasicTile(IPersistentCoverTile):
@@ -80,9 +80,8 @@ class IBasicTile(IPersistentCoverTile):
     )
 
 
+@implementer(IPersistentCoverTile)
 class BasicTile(PersistentCoverTile):
-
-    implements(IPersistentCoverTile)
 
     index = ViewPageTemplateFile('templates/basic.pt')
 

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from brasil.gov.tiles import _ as _
 from collections import OrderedDict
 from collective.cover.controlpanel import ICoverSettings
@@ -15,10 +14,11 @@ from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from plone.uuid.interfaces import IUUID
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
 from zope.component import queryUtility
-from zope.interface import implements
+from zope.interface import implementer
 from zope.schema import getFieldsInOrder
 
 
@@ -67,9 +67,8 @@ class IListTile(IPersistentCoverTile, form.Schema):
     )
 
 
+@implementer(IListTile)
 class ListTile(PersistentCoverTile):
-
-    implements(IListTile)
 
     index = ViewPageTemplateFile('templates/list.pt')
 
@@ -226,9 +225,8 @@ class ListTile(PersistentCoverTile):
         return self._field_is_visible('header')
 
 
+@implementer(ICoverUIDsProvider)
 class CollectionUIDsProvider(object):
-
-    implements(ICoverUIDsProvider)
 
     def __init__(self, context):
         self.context = context
@@ -239,9 +237,8 @@ class CollectionUIDsProvider(object):
         return [i.UID for i in self.context.queryCatalog()]
 
 
+@implementer(ICoverUIDsProvider)
 class FolderUIDsProvider(object):
-
-    implements(ICoverUIDsProvider)
 
     def __init__(self, context):
         self.context = context
@@ -252,9 +249,8 @@ class FolderUIDsProvider(object):
         return [i.UID for i in self.context.getFolderContents()]
 
 
+@implementer(ICoverUIDsProvider)
 class GenericUIDsProvider(object):
-
-    implements(ICoverUIDsProvider)
 
     def __init__(self, context):
         self.context = context

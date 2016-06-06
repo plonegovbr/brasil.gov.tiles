@@ -5,10 +5,10 @@ from brasil.gov.tiles.tiles.albuns import IAlbunsTile
 from collective.cover.tests.base import TestTileMixin
 from mock import Mock
 from plone import api
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import login
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
 
 import unittest
 
@@ -60,7 +60,7 @@ class AlbunsTileTestCase(TestTileMixin, unittest.TestCase):
 
         setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
         login(self.portal, TEST_USER_NAME)
-        self.portal.manage_delObjects(['my-folder'])
+        api.content.delete(obj=self.portal['my-folder'])
 
         rendered = self.tile()
         self.tile.is_compose_mode = Mock(return_value=True)
