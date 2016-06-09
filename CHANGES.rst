@@ -1,8 +1,8 @@
 Alterações
 ----------
 
-1.0.8 (unreleased)
-^^^^^^^^^^^^^^^^^^
+1.1rc1 (2016-06-09)
+^^^^^^^^^^^^^^^^^^^
 
 .. Warning::
     A estrutura de dados do tile "Destaque" foi alterada. Se você tiver algum
