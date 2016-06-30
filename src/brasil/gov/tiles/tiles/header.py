@@ -26,6 +26,11 @@ class IHeaderTile(IPersistentCoverTile):
         required=False,
     )
 
+    link_boolean = schema.Bool(
+        title=_(u'Title as link?'),
+        required=False,
+    )
+
     uuid = schema.TextLine(
         title=_(u'UUID'),
         required=False,

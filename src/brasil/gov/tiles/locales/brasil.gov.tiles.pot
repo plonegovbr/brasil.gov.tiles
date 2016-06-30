@@ -232,6 +232,10 @@ msgstr ""
 msgid "Link url"
 msgstr ""
 
+#: ./tiles/header.py:30
+msgid "Title as link?"
+msgstr ""
+
 #: ./tiles/templates/audiogallery.pt:53
 msgid "Max volume"
 msgstr ""

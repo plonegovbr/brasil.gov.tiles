@@ -4,7 +4,8 @@ Alterações
 1.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Adicionando opção de link no título do cabeçalho (closes `#157`).
+  [caduvieira]
 
 
 1.1rc1 (2016-06-09)
