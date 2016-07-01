@@ -4,7 +4,7 @@ Alterações
 1.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Adicionando opção de link no título do cabeçalho (closes `#157`).
+- Adicionando opção de link no título do cabeçalho do HeaderTile (closes `#157`).
   [caduvieira]
 
 
