@@ -51,11 +51,16 @@ class HeaderTile(PersistentCoverTile):
 
         title = obj.Title()
         url = obj.absolute_url()
+        try:
+            link_boolean = obj.link_boolean
+        except AttributeError:
+            link_boolean = False
         link_text = title
         data_mgr = ITileDataManager(self)
         uuid = IUUID(obj)
         data_mgr.set({'title': title,
                       'link_url': url,
                       'link_text': link_text,
+                      'link_boolean': link_boolean,
                       'uuid': uuid
                       })
