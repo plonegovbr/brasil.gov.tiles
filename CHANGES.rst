@@ -4,6 +4,9 @@ Alterações
 1.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Adiciona plone.api como dependência.
+  [idgserpro]
+
 - Adicionando opção de link no título do cabeçalho do HeaderTile (closes `#157`).
   [caduvieira]
 

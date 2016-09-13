@@ -2,8 +2,8 @@
 from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
+from plone import api
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
@@ -49,7 +49,7 @@ class AudioGalleryTile(ListTile):
 
         self.set_limit()
         header = obj.Title()  # use collection's title as header
-        uuid = IUUID(obj, None)
+        uuid = api.content.get_uuid(obj)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
@@ -63,7 +63,7 @@ class AudioGalleryTile(ListTile):
         return ['Collection', 'Folder']
 
     def get_uid(self, obj):
-        return IUUID(obj)
+        return api.content.get_uuid(obj)
 
     def get_elements(self, obj):
         results = []

@@ -3,11 +3,10 @@ from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
-from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
@@ -66,7 +65,7 @@ class AlbunsTile(PersistentCoverTile):
             title = _(u'Gallery albums')
             link_url = obj.absolute_url()
             link_text = _(u'Access all Albums')
-            uuid = IUUID(obj, None)
+            uuid = api.content.get_uuid(obj)
             data_mgr = ITileDataManager(self)
             data_mgr.set({
                 'title': title,
@@ -92,7 +91,7 @@ class AlbunsTile(PersistentCoverTile):
         if uuid:
             obj = uuidToObject(uuid)
         if obj:
-            catalog = getToolByName(self.context, 'portal_catalog')
+            catalog = api.portal.get_tool('portal_catalog')
 
             # Procuro todas subpastas na pasta do album
             path = '/'.join(obj.getPhysicalPath())
@@ -113,7 +112,7 @@ class AlbunsTile(PersistentCoverTile):
         return albuns
 
     def scale(self, item):
-        catalog = getToolByName(self.context, 'portal_catalog')
+        catalog = api.portal.get_tool('portal_catalog')
         path = '/'.join(item.getPhysicalPath())
         brains = catalog(Type=['Image', 'Folder'],
                          path={'query': path,
@@ -131,7 +130,7 @@ class AlbunsTile(PersistentCoverTile):
                 }
 
     def thumbnail(self, item):
-        catalog = getToolByName(self.context, 'portal_catalog')
+        catalog = api.portal.get_tool('portal_catalog')
         path = '/'.join(item.getPhysicalPath())
         brains = catalog(Type=['Image', 'Folder'],
                          path={'query': path,

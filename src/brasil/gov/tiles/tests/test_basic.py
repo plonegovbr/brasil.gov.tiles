@@ -33,7 +33,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
 
     def test_accepted_content_types(self):
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(ICoverSettings)
+        settings = registry.forInterface(ICoverSettings)  # noqa
         self.assertEqual(
             self.tile.accepted_ct(),
             settings.searchable_content_types

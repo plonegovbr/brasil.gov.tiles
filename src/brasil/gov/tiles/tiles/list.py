@@ -6,6 +6,7 @@ from collective.cover.interfaces import ICoverUIDsProvider
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form
 from plone.memoize import view
@@ -13,7 +14,6 @@ from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
@@ -151,7 +151,7 @@ class ListTile(PersistentCoverTile):
 
     # XXX: are we using this function somewhere? remove?
     def get_uid(self, obj):
-        return IUUID(obj, None)
+        return api.content.get_uuid(obj)
 
     # XXX: refactoring the tile's schema should be a way to avoid this
     def get_configured_fields(self):
@@ -198,7 +198,7 @@ class ListTile(PersistentCoverTile):
             please memoize if you're doing some very expensive calculation
         """
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(ICoverSettings)
+        settings = registry.forInterface(ICoverSettings)  # noqa
         return settings.searchable_content_types
 
     def thumbnail(self, item):
@@ -258,4 +258,4 @@ class GenericUIDsProvider(object):
     def getUIDs(self):
         """ Return a list of UIDs of collection objects.
         """
-        return [IUUID(self.context)]
+        return [api.content.get_uuid(self.context)]

@@ -5,14 +5,13 @@ from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone import api
 from plone.autoform import directives as form
 from plone.memoize import view
 from plone.memoize.instance import memoizedproperty
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
-from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
@@ -89,7 +88,7 @@ class BasicTile(PersistentCoverTile):
 
     @memoizedproperty
     def brain(self):
-        catalog = getToolByName(self.context, 'portal_catalog')
+        catalog = api.portal.get_tool('portal_catalog')
         uuid = self.data.get('uuid')
         result = catalog(UID=uuid) if uuid is not None else []
         assert len(result) <= 1
@@ -129,10 +128,12 @@ class BasicTile(PersistentCoverTile):
         data = {
             'title': safe_unicode(obj.Title()),
             'description': safe_unicode(obj.Description()),
-            'uuid': IUUID(obj, None),  # XXX: can we get None here? see below
+            # XXX: can we get None here? see below
+            'uuid': api.content.get_uuid(obj),
             'date': True,
             'subjects': True,
-            'image_description': safe_unicode(obj.Description()) or safe_unicode(obj.Title()),
+            'image_description': safe_unicode(obj.Description()) or
+            safe_unicode(obj.Title()),
         }
 
         # TODO: if a Dexterity object does not have the IReferenceable
@@ -153,7 +154,7 @@ class BasicTile(PersistentCoverTile):
             please memoize if you're doing some very expensive calculation
         """
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(ICoverSettings)
+        settings = registry.forInterface(ICoverSettings)  # noqa
         return settings.searchable_content_types
 
     def getAlt(self):

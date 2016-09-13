@@ -4,8 +4,8 @@ from brasil.gov.tiles.tiles.destaque import DestaqueTile
 from brasil.gov.tiles.tiles.destaque import IDestaqueTile
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tests.base import TestTileMixin
+from plone import api
 from plone.registry.interfaces import IRegistry
-from plone.uuid.interfaces import IUUID
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 
@@ -58,7 +58,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
 
         # next, we replace the destaque of objects with a different one
         obj3 = self.portal['my-news-item']
-        tile.replace_with_objects([IUUID(obj3, None)])
+        tile.replace_with_objects([api.content.get_uuid(obj3)])
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
@@ -86,8 +86,8 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
         # now we add a couple of objects to the destaque
         obj1 = self.portal['my-document']
         obj2 = self.portal['my-image']
-        self.tile.populate_with_uuids([IUUID(obj1, None),
-                                      IUUID(obj2, None)])
+        self.tile.populate_with_uuids([api.content.get_uuid(obj1),
+                                      api.content.get_uuid(obj2)])
 
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
@@ -101,7 +101,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
 
     def test_accepted_content_types(self):
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(ICoverSettings)
+        settings = registry.forInterface(ICoverSettings)  # noqa
         self.assertEqual(
             self.tile.accepted_ct(),
             settings.searchable_content_types

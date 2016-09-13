@@ -2,8 +2,8 @@
 from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
+from plone import api
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
@@ -57,7 +57,7 @@ class AudioTile(PersistentCoverTile):
             else:
                 url = obj.absolute_url()
                 content_type = ''
-            uuid = IUUID(obj)
+            uuid = api.content.get_uuid(obj)
             data_mgr = ITileDataManager(self)
             data_mgr.set({'title': title,
                           'description': description,
@@ -73,7 +73,7 @@ class AudioTile(PersistentCoverTile):
         return ['Audio']
 
     def get_uid(self, obj):
-        return IUUID(obj)
+        return api.content.get_uuid(obj)
 
     def init_js(self):
         return """

@@ -2,8 +2,8 @@
 from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
+from plone import api
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
@@ -57,7 +57,7 @@ class HeaderTile(PersistentCoverTile):
             link_boolean = False
         link_text = title
         data_mgr = ITileDataManager(self)
-        uuid = IUUID(obj)
+        uuid = api.content.get_uuid(obj)
         data_mgr.set({'title': title,
                       'link_url': url,
                       'link_text': link_text,
