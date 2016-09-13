@@ -4,10 +4,10 @@ from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
+from plone import api
 from plone.memoize import view
 from plone.namedfile.field import NamedImage
 from plone.registry.interfaces import IRegistry
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import getUtility
@@ -58,7 +58,7 @@ class DestaqueTile(ListTile):
 
     # XXX: are we using this function somewhere? remove?
     def get_uid(self, obj):
-        return IUUID(obj, None)
+        return api.content.get_uuid(obj)
 
     @view.memoize
     def accepted_ct(self):
@@ -71,7 +71,7 @@ class DestaqueTile(ListTile):
             please memoize if you're doing some very expensive calculation
         """
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(ICoverSettings)
+        settings = registry.forInterface(ICoverSettings)  # noqa
         return settings.searchable_content_types
 
     def thumbnail(self, item):
@@ -113,4 +113,4 @@ class GenericUIDsProvider(object):
     def getUIDs(self):
         """ Return a list of UIDs of collection objects.
         """
-        return [IUUID(self.context)]
+        return [api.content.get_uuid(self.context)]

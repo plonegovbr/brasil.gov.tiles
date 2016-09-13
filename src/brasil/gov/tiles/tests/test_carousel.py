@@ -46,7 +46,7 @@ class CarouselTileTestCase(TestTileMixin, unittest.TestCase):
     def test_accepted_content_types(self):
         # Using the same from ListTile since CarouselTile(ListTile)
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(ICoverSettings)
+        settings = registry.forInterface(ICoverSettings)  # noqa
         self.assertEqual(
             self.tile.accepted_ct(),
             settings.searchable_content_types

@@ -3,11 +3,11 @@ from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone import api
 from plone.autoform import directives as form
 from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
@@ -89,7 +89,7 @@ class BannerRotativoTile(ListTile):
         if not self._has_image_field(obj):
             return
         self.set_limit()
-        uuid = IUUID(obj, None)
+        uuid = api.content.get_uuid(obj)
         title = obj.Title()
         description = obj.Description()
         rights = obj.Rights()

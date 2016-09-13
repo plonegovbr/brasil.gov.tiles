@@ -4,9 +4,9 @@ from brasil.gov.tiles import _ as _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.polls.polls import IPolls
+from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.component import queryUtility
 from zope.schema import TextLine
@@ -84,7 +84,7 @@ class PollTile(PersistentCoverTile):
     def populate_with_object(self, obj):
         super(PollTile, self).populate_with_object(obj)
 
-        uuid = IUUID(obj, None)
+        uuid = api.content.get_uuid(obj)
         data_mgr = ITileDataManager(self)
         data_mgr.set({'uuid': uuid})
 
@@ -108,6 +108,5 @@ class PollTile(PersistentCoverTile):
     def is_closed(self):
         state = 'closed'
         if self.poll():
-            state = self.context.portal_workflow.getInfoFor(self.poll(),
-                                                            'review_state')
+            state = api.content.get_state(self.poll())
         return state == 'closed'

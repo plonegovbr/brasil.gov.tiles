@@ -3,10 +3,10 @@ from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone import api
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
-from plone.uuid.interfaces import IUUID
 from Products.CMFPlone.utils import safe_hasattr
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
@@ -64,7 +64,7 @@ class MediaCarouselTile(ListTile):
 
         self.set_limit()
         header = obj.Title()  # use collection's title as header
-        uuid = IUUID(obj, None)
+        uuid = api.content.get_uuid(obj)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
@@ -73,7 +73,7 @@ class MediaCarouselTile(ListTile):
         data_mgr.set(old_data)
 
     def get_uid(self, obj):
-        return IUUID(obj)
+        return api.content.get_uuid(obj)
 
     def thumbnail(self, item):
         if self._has_image_field(item):

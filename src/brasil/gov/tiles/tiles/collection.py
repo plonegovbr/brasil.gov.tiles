@@ -4,12 +4,12 @@ from collections import OrderedDict
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.directives import form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
-from plone.uuid.interfaces import IUUID
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.component import queryUtility
@@ -110,7 +110,7 @@ class CollectionTile(PersistentCoverTile):
         if obj.portal_type in self.accepted_ct():
             header = obj.Title()  # use collection's title as header
             footer = _(u'More…')  # XXX: can we use field's default?
-            uuid = IUUID(obj)
+            uuid = api.content.get_uuid(obj)
 
             data_mgr = ITileDataManager(self)
             data_mgr.set({

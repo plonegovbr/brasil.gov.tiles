@@ -76,7 +76,7 @@ class AlbunsTileTestCase(TestTileMixin, unittest.TestCase):
         self.tile.populate_with_object(gal_albuns)
         self.assertEqual(self.tile.get_albuns(), [])
 
-        gal_albuns.invokeFactory('Folder', 'galeria-de-fotos')
+        api.content.create(gal_albuns, 'Folder', 'galeria-de-fotos')
         gal_fotos = gal_albuns['galeria-de-fotos']
         with api.env.adopt_roles(['Manager']):
             api.content.transition(obj=gal_fotos, transition='publish')
