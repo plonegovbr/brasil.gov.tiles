@@ -77,6 +77,7 @@ setup(
         'plone.namedfile',
         'plone.tiles',
         'plone.uuid',
+        'plone4.csrffixes',
         'Products.CMFCore',
         'Products.CMFPlone >=4.3',
         'Products.GenericSetup',

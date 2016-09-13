@@ -4,6 +4,9 @@ Alterações
 1.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Adiciona plone4.csrffixes como dependência.
+  [idgserpro]
+
 - Adiciona plone.api como dependência.
   [idgserpro]
 
@@ -37,6 +40,7 @@ Alterações
 
 - Corrige teste quando se utiliza collective.cover 1.0a11 (closes `#132`).
   [idgserpro]
+
 
 1.0.7 (2015-09-03)
 ^^^^^^^^^^^^^^^^^^
