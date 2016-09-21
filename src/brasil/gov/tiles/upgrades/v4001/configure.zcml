@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <gs:upgradeSteps
+      source="4000"
+      destination="4001"
+      profile="brasil.gov.tiles:default">
+
+    <gs:upgradeStep
+        title="Upgrades carrossel cover"
+        description="Executa upgrades do cover que não foram executadas na tile de carrossel"
+        handler=".handler.upgrades_carosel_cover"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>

@@ -31,6 +31,7 @@ TILES = [
     'standaloneheader',
     'video',
     'banner_rotativo',
+    'collective.cover.carousel',
 ]
 
 

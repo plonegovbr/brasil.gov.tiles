@@ -4,6 +4,9 @@ Alterações
 1.1rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Remove tile de carrossel para utilizar a tile do cover. (closes `#156`)
+  [idgserpro]
+
 - Adiciona plone4.csrffixes como dependência.
   [idgserpro]
 
@@ -297,3 +300,4 @@ Alterações
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.tiles/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.tiles/issues/136
 .. _`#140`: https://github.com/plonegovbr/brasil.gov.tiles/issues/140
+.. _`#156`: https://github.com/plonegovbr/brasil.gov.tiles/issues/156
