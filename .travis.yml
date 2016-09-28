@@ -5,11 +5,16 @@ cache:
   directories:
   - eggs
   - parts/node
-env: PLONE_VERSION=4.3
+env:
+  matrix:
+    - MASTER=true
+    - PENDING_RELEASE=true
 matrix:
+  allow_failures:
+    - env: MASTER=true
   fast_finish: true
 install:
-- sed -i "s#test-4.3#test-$PLONE_VERSION#" buildout.cfg
+- test $MASTER && sed -ie '/https:\/\/raw\.githubusercontent\.com\/plonegovbr\/portal\.buildout\/master\/buildout\.d\/versions\.cfg/d' buildout.cfg || true
 - python bootstrap.py
 - bin/buildout annotate
 - bin/buildout
