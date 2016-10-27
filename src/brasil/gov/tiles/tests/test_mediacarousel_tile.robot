@@ -131,17 +131,6 @@ Test Mediacarousel Tile
     # drag&drop a folder with nitf content
     Open Content Chooser
     Click Link  link=Content tree
-    # Temos um bug no robots onde ele não consegue selecionar um ícone do overlay
-    # "Adicionar conteúdo" se for necessário usar o scroll, era como se ele não
-    # conseguisse "ver" o objeto: dessa forma, uso o filtro de items para mostrar
-    # menos itens e evitar esse problema.
-    # FIXME: https://github.com/robotframework/Selenium2Library/issues/591
-    Input Text  id=${filter_items}  ${my_news_folder}
-    # Acontece que, ao usar o filtro, o "Drag And Drop" acaba sendo executado
-    # ANTES do "Input Text" ter um retorno na tela, ou seja, ele é executado com
-    # o scroll "ainda ativo": por isso preciso desse "Sleep" logo abaixo para
-    # "forçar" que o "Drag And Drop" só seja executado após o "Input Text".
-    Sleep  1s
     Drag And Drop  xpath=${my_news_folder_selector}  css=${tile_selector}
     Wait Until Page Contains Element  css=div.mediacarousel.tile-content h2.mediacarousel-tile+div
     Wait Until Page Contains  ${title_nitf_with_image}
