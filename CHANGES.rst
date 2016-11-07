@@ -1,7 +1,7 @@
 Alterações
 ----------
 
-1.1rc2 (unreleased)
+1.2b1 (2016-11-07)
 ^^^^^^^^^^^^^^^^^^^
 
 - Remove tile de carrossel para utilizar a tile do cover. (closes `#156`)
