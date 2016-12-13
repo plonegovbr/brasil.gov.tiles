@@ -17,7 +17,7 @@
     <div class="items-destaque">
       <tal:items repeat="item view/results"
                  define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <div class="item" tal:attributes="data-uid python:view.get_uid(item)">
+        <div class="item" tal:attributes="data-uuid python:view.get_uuid(item)">
           <tal:image tal:define="thumbnail python:view.thumbnail(item);"
                      condition="thumbnail">
             <a tal:attributes="href item/absolute_url;

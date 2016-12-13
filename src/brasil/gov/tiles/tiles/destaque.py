@@ -57,7 +57,7 @@ class DestaqueTile(ListTile):
     limit = 2
 
     # XXX: are we using this function somewhere? remove?
-    def get_uid(self, obj):
+    def get_uuid(self, obj):
         return api.content.get_uuid(obj)
 
     @view.memoize

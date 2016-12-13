@@ -22,7 +22,7 @@
                     tal:attributes="id string:banner$idx;
                                     class python:('activeSlide first-item' if item == first_item else 'last-item' if item == last_item else '');
                                     data-slidenumber idx;
-                                    data-uid python:view.get_uid(item)">
+                                    data-uuid python:view.get_uuid(item)">
                     <a tal:attributes="href string:${item/absolute_url}/view;
                                        class string:button-nav;"
                        tal:content="idx"

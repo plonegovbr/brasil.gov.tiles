@@ -9,7 +9,7 @@ def fix_persistentmap_to_dict_destaque(context):
     O tile do tipo "Destaque" herda do tipo "Lista" de collective.cover.
 
     No momento que esse tile foi criado, herdando do tipo lista, os métodos que
-    "populam" a capa com os uids também foram copiados. Isso pode ser visto em
+    "populam" a capa com os uuids também foram copiados. Isso pode ser visto em
 
         https://raw.githubusercontent.com/plonegovbr/brasil.gov.tiles/1.0a1/src/brasil/gov/tiles/tiles/destaque.py
         https://raw.githubusercontent.com/collective/collective.cover/1.0a2/src/collective/cover/tiles/list.py

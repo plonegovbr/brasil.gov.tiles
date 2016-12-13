@@ -17,7 +17,7 @@
     <tal:items repeat="item view/results"
                define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
       <li tal:define="last repeat/item/end"
-          tal:attributes="data-uid python:view.get_uid(item);
+          tal:attributes="data-uuid python:view.get_uuid(item);
                           class python:(last and 'last-item') or '';">
 
         <tal:title>

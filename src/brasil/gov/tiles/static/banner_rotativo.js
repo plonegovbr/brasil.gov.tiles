@@ -108,7 +108,7 @@ var portalBrasilCompor = {
 
     $("#tile_banner_rotativo .tile-remove-item").remove();
     $("#tile_banner_rotativo").each(function () {
-      var child = $(this).children('*[data-uid]');
+      var child = $(this).children('*[data-uuid]');
       child.append("<i class='tile-remove-item'><span class='text'>remove</span></i>");
     });
 
@@ -116,7 +116,7 @@ var portalBrasilCompor = {
     $("#tile_banner_rotativo .tile-remove-item").click(function (e) {
       e.preventDefault();
       var obj = $(this).parent();
-      var uid = obj.attr("data-uid");
+      var uuid = obj.attr("data-uuid");
       var tile = obj.parents('.tile');
 
       tile.find('.loading-mask').addClass('show remove-tile');
@@ -124,7 +124,7 @@ var portalBrasilCompor = {
       var tile_id = tile.attr("id");
       $.ajax({
         url: "@@removeitemfromlisttile",
-        data: {'tile-type': tile_type, 'tile-id': tile_id, 'uid': uid},
+        data: {'tile-type': tile_type, 'tile-id': tile_id, 'uuid': uuid},
         success: function (info) {
           tile.html(info);
           objPortal.titleMarkupSetup();
@@ -150,11 +150,11 @@ var portalBrasilCompor = {
 
     $("#tile_banner_rotativo").liveSortable({
       stop: function (event, ui) {
-        var uids = [];
+        var uuids = [];
 
         $(this).children().each(function (index) {
-          if ($(this).attr("data-uid") !== undefined) {
-            uids.push($(this).attr("data-uid"));
+          if ($(this).attr("data-uuid") !== undefined) {
+            uuids.push($(this).attr("data-uuid"));
           }
         });
 
@@ -164,7 +164,7 @@ var portalBrasilCompor = {
 
         $.ajax({
           url: "@@updatelisttilecontent",
-          data: {'tile-type': tile_type, 'tile-id': tile_id, 'uids': uids},
+          data: {'tile-type': tile_type, 'tile-id': tile_id, 'uuids': uuids},
           success: function (info) {
             tile.html(info);
             objPortal.removeObjFromTile();

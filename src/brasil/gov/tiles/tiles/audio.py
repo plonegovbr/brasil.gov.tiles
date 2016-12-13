@@ -72,7 +72,7 @@ class AudioTile(PersistentCoverTile):
         """
         return ['Audio']
 
-    def get_uid(self, obj):
+    def get_uuid(self, obj):
         return api.content.get_uuid(obj)
 
     def init_js(self):

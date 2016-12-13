@@ -62,7 +62,7 @@ class AudioGalleryTile(ListTile):
         """
         return ['Collection', 'Folder']
 
-    def get_uid(self, obj):
+    def get_uuid(self, obj):
         return api.content.get_uuid(obj)
 
     def get_elements(self, obj):

@@ -34,7 +34,7 @@
             <tal:items tal:repeat="item view/results"
                        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
                 <div class="list-item"
-                     tal:attributes="data-uid python:view.get_uid(item)">
+                     tal:attributes="data-uuid python:view.get_uuid(item)">
                     <tal:fields tal:repeat="field conf_fields">
                         <tal:conf tal:define="config python:conf_fields.get(field)">
                             <tal:image tal:define="thumbnail python:view.thumbnail(item);"
