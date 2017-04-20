@@ -4,7 +4,8 @@ Alterações
 1.2rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Segue o padrão do collective.cover de usar uuid ao invés de uid. (partially closes `#145`)
+  [rodfersou, idgserpro]
 
 
 1.2b1 (2016-11-07)
@@ -306,4 +307,5 @@ Alterações
 .. _`#132`: https://github.com/plonegovbr/brasil.gov.tiles/issues/132
 .. _`#136`: https://github.com/plonegovbr/brasil.gov.tiles/issues/136
 .. _`#140`: https://github.com/plonegovbr/brasil.gov.tiles/issues/140
+.. _`#145`: https://github.com/plonegovbr/brasil.gov.tiles/issues/145
 .. _`#156`: https://github.com/plonegovbr/brasil.gov.tiles/issues/156

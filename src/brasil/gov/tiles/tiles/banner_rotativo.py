@@ -110,6 +110,13 @@ class BannerRotativoTile(ListTile):
         old_data['rights'] = rights
         data_mgr.set(old_data)
 
+    # FIXME: Usado para que o método em collective.cover 1.1b1 chame o
+    # corretamente o método enquanto não herdamos diretamente do List do cover.
+    # Utilizado principalmente quando muda a ordem de um item no banner rotativo.
+    def replace_with_uuids(self, uuids):
+        """Usado enquanto não herda do List do collective.cover."""
+        super(BannerRotativoTile, self).replace_with_uuids(uuids)
+
     def thumbnail(self, item):
         """Return a thumbnail of an image if the item has an image field and
         the field is visible in the tile.

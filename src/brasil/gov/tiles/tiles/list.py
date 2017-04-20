@@ -87,12 +87,12 @@ class ListTile(PersistentCoverTile):
         result = []
         if uuids:
             uuids = [uuids] if type(uuids) == str else uuids
-            for uid in uuids:
-                obj = uuidToObject(uid)
+            for uuid in uuids:
+                obj = uuidToObject(uuid)
                 if obj:
                     result.append(obj)
                 else:
-                    self.remove_item(uid)
+                    self.remove_item(uuid)
         return result[:self.limit]
 
     def is_empty(self):
@@ -106,11 +106,11 @@ class ListTile(PersistentCoverTile):
 
     def populate_with_object(self, obj):
         super(ListTile, self).populate_with_object(obj)  # check permission
-        uids = ICoverUIDsProvider(obj).getUIDs()
-        if uids:
-            self.populate_with_uids(uids)
+        uuids = ICoverUIDsProvider(obj).getUIDs()
+        if uuids:
+            self.populate_with_uuids(uuids)
 
-    def populate_with_uids(self, uuids):
+    def populate_with_uuids(self, uuids):
         self.set_limit()
         data_mgr = ITileDataManager(self)
 
@@ -127,30 +127,45 @@ class ListTile(PersistentCoverTile):
 
         data_mgr.set(old_data)
 
-    def replace_with_objects(self, uids):
-        super(ListTile, self).replace_with_objects(uids)  # check permission
+    def replace_with_objects(self, uuids):
+        super(ListTile, self).replace_with_objects(uuids)  # check permission
         self.set_limit()
         data_mgr = ITileDataManager(self)
         old_data = data_mgr.get()
-        if type(uids) == list:
-            old_data['uuids'] = [i for i in uids][:self.limit]
+        if type(uuids) == list:
+            old_data['uuids'] = [i for i in uuids][:self.limit]
         else:
-            old_data['uuids'] = [uids]
+            old_data['uuids'] = [uuids]
 
         data_mgr.set(old_data)
 
-    def remove_item(self, uid):
-        super(ListTile, self).remove_item(uid)
+    # FIXME: Usado enquanto o tipo lista não é herdado do cover. Ver
+    # https://github.com/plonegovbr/brasil.gov.tiles/issues/145
+    def replace_with_uuids(self, uuids):
+        """ Replaces the whole list of items with a new list of items
+        :param uuids: The list of objects' UUIDs to be used
+        :type uuids: List of strings
+        """
         data_mgr = ITileDataManager(self)
         old_data = data_mgr.get()
-        uids = data_mgr.get()['uuids']
-        if uid in uids:
-            del uids[uids.index(uid)]
-        old_data['uuids'] = uids
+        # Clean old data
+        old_data['uuids'] = dict()
+        data_mgr.set(old_data)
+        # Repopulate with clean list
+        self.populate_with_uuids(uuids)
+
+    def remove_item(self, uuid):
+        super(ListTile, self).remove_item(uuid)
+        data_mgr = ITileDataManager(self)
+        old_data = data_mgr.get()
+        uuids = data_mgr.get()['uuids']
+        if uuid in uuids:
+            del uuids[uuids.index(uuid)]
+        old_data['uuids'] = uuids
         data_mgr.set(old_data)
 
     # XXX: are we using this function somewhere? remove?
-    def get_uid(self, obj):
+    def get_uuid(self, obj):
         return api.content.get_uuid(obj)
 
     # XXX: refactoring the tile's schema should be a way to avoid this

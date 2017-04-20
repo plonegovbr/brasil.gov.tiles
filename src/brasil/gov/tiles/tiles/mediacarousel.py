@@ -72,7 +72,7 @@ class MediaCarouselTile(ListTile):
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
-    def get_uid(self, obj):
+    def get_uuid(self, obj):
         return api.content.get_uuid(obj)
 
     def thumbnail(self, item):

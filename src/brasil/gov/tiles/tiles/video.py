@@ -61,7 +61,7 @@ class VideoTile(PersistentCoverTile):
                           'embed_code': embed
                           })
 
-    def get_uid(self, obj):
+    def get_uuid(self, obj):
         return api.content.get_uuid(obj)
 
     def accepted_ct(self):

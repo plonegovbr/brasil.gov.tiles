@@ -40,10 +40,10 @@ class PollTile(PersistentCoverTile):
 
     def poll(self):
         utility = self.utility
-        uid = uuid = self.data.get('uuid', None)
+        uuid = self.data.get('uuid', None)
         poll = None
         if uuid is not None:
-            poll = utility.poll_by_uid(uid)
+            poll = utility.poll_by_uuid(uuid)
         if not poll:
             # if we have no open poll, try closed ones
             results = utility.recent_polls(show_all=True,
@@ -88,10 +88,10 @@ class PollTile(PersistentCoverTile):
         data_mgr = ITileDataManager(self)
         data_mgr.set({'uuid': uuid})
 
-    def poll_uid(self):
-        ''' Return uid for current poll '''
+    def poll_uuid(self):
+        ''' Return uuid for current poll '''
         utility = self.utility
-        return utility.uid_for_poll(self.poll())
+        return utility.uuid_for_poll(self.poll())
 
     def delete(self):
         data_mgr = ITileDataManager(self)
