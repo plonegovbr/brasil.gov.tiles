@@ -46,7 +46,7 @@ setup(
         # Após o commit 007adcde40d2031a15debd5122af8086a1db6fa6, necessito a
         # partir dessa versão pois alterei o caminho dos recursos estáticos no
         # overrides.zcml.
-        'collective.cover > 1.0a12',
+        'collective.cover >= 1.0a12',
         'collective.nitf',
         'collective.polls',
         'collective.prettydate',
