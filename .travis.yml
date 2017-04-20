@@ -5,8 +5,6 @@ cache:
   directories:
   - eggs
   - parts/node
-addons:
-  firefox: latest-esr
 env:
   matrix:
     - MASTER=true
