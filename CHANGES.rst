@@ -4,8 +4,8 @@ Alterações
 1.2rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Follow collective.cover using uuid instead of uid. (closes `#145`)
-  [rodfersou]
+- Segue o padrão do collective.cover de usar uuid ao invés de uid. (partially closes `#145`)
+  [rodfersou, idgserpro]
 
 
 1.2b1 (2016-11-07)

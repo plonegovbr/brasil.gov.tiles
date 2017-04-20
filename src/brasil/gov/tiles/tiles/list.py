@@ -139,6 +139,21 @@ class ListTile(PersistentCoverTile):
 
         data_mgr.set(old_data)
 
+    # FIXME: Usado enquanto o tipo lista não é herdado do cover. Ver
+    # https://github.com/plonegovbr/brasil.gov.tiles/issues/145
+    def replace_with_uuids(self, uuids):
+        """ Replaces the whole list of items with a new list of items
+        :param uuids: The list of objects' UUIDs to be used
+        :type uuids: List of strings
+        """
+        data_mgr = ITileDataManager(self)
+        old_data = data_mgr.get()
+        # Clean old data
+        old_data['uuids'] = dict()
+        data_mgr.set(old_data)
+        # Repopulate with clean list
+        self.populate_with_uuids(uuids)
+
     def remove_item(self, uuid):
         super(ListTile, self).remove_item(uuid)
         data_mgr = ITileDataManager(self)
