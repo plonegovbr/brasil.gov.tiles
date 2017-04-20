@@ -5,7 +5,7 @@
       i18n:domain="brasil.gov.tiles">
 <body>
 
-    <div class="outstanding-header">
+    <div class="outstanding-header tile-content">
     <tal:fields repeat="field view/get_configured_fields">
 
       <tal:link define="htmltag python:field.get('htmltag', 'h1')"
