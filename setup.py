@@ -43,10 +43,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        # Após o commit 007adcde40d2031a15debd5122af8086a1db6fa6, necessito a
-        # partir dessa versão pois alterei o caminho dos recursos estáticos no
-        # overrides.zcml.
-        'collective.cover > 1.0a12',
+        # O tile do tipo "Lista" presente em brasil.gov.tiles foi removido para
+        # usarmos o presente no collective.cover, com testes efetuados a partir
+        # dessa versão do cover.
+        'collective.cover >= 1.1b1',
         'collective.nitf',
         'collective.polls',
         'collective.prettydate',
@@ -98,7 +98,7 @@ setup(
             'plone.browserlayer',
             'plone.cachepurging',
             'plone.testing',
-            'Products.PloneFormGen',
+            'sc.embedder[test]',
         ]
     },
     entry_points="""

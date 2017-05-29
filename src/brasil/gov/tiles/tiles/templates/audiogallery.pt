@@ -6,92 +6,98 @@
     <head>
         <script type="text/javascript" tal:content="structure view/init_js">
         </script>
+        <tal:comment tal:replace="nothing">FIXME: Ver mediacarousel.pt para entender a regra css abaixo.</tal:comment>
+        <style type="text/css" media="screen">div[data-fieldname="audiogallery.more_link"]{display:none;}</style>
     </head>
     <body tal:define="tile_id view/id;">
         <div class="audiogallery-tile"
              tal:attributes="id string:audiogallery-$tile_id"
-             tal:define="conf_fields view/get_configured_fields;
-                         results view/results;
-                         collection python:results[0] if results else None;
-                         items python:view.get_elements(collection)"
-             tal:condition="python:collection and items">
+             tal:define="fields view/get_configured_fields;
+                         items view/results;">
             <!-- Gallery items -->
 
-            <tal:header tal:define="config python:conf_fields.get('header', None);
-                                    htmltag python:config.get('htmltag', 'h1') if config else 'h1'"
-                        tal:condition="view/show_header">
-                <div class="audiogallery-title-container">
-                    <h1 class="gallery-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h1'" />
-                    <h2 class="gallery-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h2'" />
-                    <h3 class="gallery-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h3'" />
-                    <h4 class="gallery-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h4'" />
-                </div>
-            </tal:header>
+            <tal:fields repeat="field fields">
+                <tal:tile_title condition="python:field['id']=='tile_title' and view.show_tile_title()">
+                    <div class="audiogallery-title-container"
+                        tal:define="htmltag python:field.get('htmltag', 'h2');
+                                    tile_title view/data/tile_title">
+                        <h1 class="gallery-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h1'" />
+                        <h2 class="gallery-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h2'" />
+                        <h3 class="gallery-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h3'" />
+                        <h4 class="gallery-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h4'" />
+                    </div>
+                </tal:tile_title>
+            </tal:fields>
 
             <!-- Audio item player -->
-            <div class="audiogallery-player-container" tal:define="first_item python:items[0]">
-                <div class="jp-jplayer"
-                     tal:attributes="data-audio-url python:view.get_item_url(first_item);
-                                     data-audio-title first_item/title;
-                                     id string:audiogallery_jplayer_$tile_id"></div>
-                <div class="jp-audio" tal:attributes="id string:audiogallery_jpcontainer_$tile_id">
-                    <div class="jp-type-single">
-                        <div class="jp-gui jp-interface">
-                            <ul class="jp-controls">
-                                <li><a href="#" class="jp-play" i18n:translate="">Play</a></li>
-                                <li><a href="#" class="jp-pause" i18n:translate="">Pause</a></li>
-                                <li><a href="#" class="jp-mute" title="mute" i18n:attributes="title" i18n:translate="">Mute</a></li>
-                                <li><a href="#" class="jp-unmute" title="unmute" i18n:attributes="title" i18n:translate="">Unmute</a></li>
-                                <li><a href="#" class="jp-volume-max" title="max volume" i18n:attributes="title" i18n:translate="">Max volume</a></li>
-                            </ul>
-                            <div class="jp-progress-time-wrapper">
-                                <div class="jp-progress">
-                                    <div class="jp-seek-bar">
-                                        <div class="jp-play-bar"></div>
+            <span tal:condition="items" tal:omit-tag="">
+                <div class="audiogallery-player-container" tal:define="first_item python:items[0]">
+                    <div class="jp-jplayer"
+                         tal:attributes="data-audio-url python:view.get_item_url(first_item);
+                                         data-audio-title first_item/title;
+                                         id string:audiogallery_jplayer_$tile_id"></div>
+                    <div class="jp-audio" tal:attributes="id string:audiogallery_jpcontainer_$tile_id">
+                        <div class="jp-type-single">
+                            <div class="jp-gui jp-interface">
+                                <ul class="jp-controls">
+                                    <li><a href="#" class="jp-play" i18n:translate="">Play</a></li>
+                                    <li><a href="#" class="jp-pause" i18n:translate="">Pause</a></li>
+                                    <li><a href="#" class="jp-mute" title="mute" i18n:attributes="title" i18n:translate="">Mute</a></li>
+                                    <li><a href="#" class="jp-unmute" title="unmute" i18n:attributes="title" i18n:translate="">Unmute</a></li>
+                                    <li><a href="#" class="jp-volume-max" title="max volume" i18n:attributes="title" i18n:translate="">Max volume</a></li>
+                                </ul>
+                                <div class="jp-progress-time-wrapper">
+                                    <div class="jp-progress">
+                                        <div class="jp-seek-bar">
+                                            <div class="jp-play-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="jp-time-holder">
+                                        <span class="jp-current-time"></span>/
+                                        <span class="jp-duration"></span>
                                     </div>
                                 </div>
-                                <div class="jp-time-holder">
-                                    <span class="jp-current-time"></span>/
-                                    <span class="jp-duration"></span>
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value"></div>
                                 </div>
                             </div>
-                            <div class="jp-volume-bar">
-                                <div class="jp-volume-bar-value"></div>
+                            <div class="jp-no-solution">
+                                <span i18n:translate="">Required Update</span>
+                                <span i18n:translate="">To view content you need Flash update support to a newer version.</span> <a href="http://get.adobe.com/flashplayer/" title="" i18n:translate="">Click here.</a>
                             </div>
                         </div>
-                        <div class="jp-no-solution">
-                            <span i18n:translate="">Required Update</span>
-                            <span i18n:translate="">To view content you need Flash update support to a newer version.</span> <a href="http://get.adobe.com/flashplayer/" title="" i18n:translate="">Click here.</a>
-                        </div>
+                    </div>
+                    <div>
+                        <h4 class="audiogallery-item-title" tal:content="first_item/title"></h4>
                     </div>
                 </div>
-                <div>
-                    <h4 class="audiogallery-item-title" tal:content="first_item/title"></h4>
+                <div class="audiogallery-items-container">
+                    <ul>
+                        <tal:block tal:repeat="item items">
+                            <li tal:attributes="class python:'selected' if repeat['item'].start else ''">
+                                <a class="audiogallery-item" tal:attributes="data-audio-url python:view.get_item_url(item);
+                                                                             href python:view.get_item_url(item);
+                                                                             title item/description"
+                                   tal:content="item/title"></a>
+                            </li>
+                        </tal:block>
+                    </ul>
                 </div>
-            </div>
-            <div class="audiogallery-items-container">
-                <ul>
-                    <tal:block tal:repeat="item items">
-                        <li tal:attributes="class python:'selected' if repeat['item'].start else ''">
-                            <a class="audiogallery-item" tal:attributes="data-audio-url python:view.get_item_url(item);
-                                                                         href python:view.get_item_url(item);
-                                                                         title item/description"
-                               tal:content="item/title"></a>
-                        </li>
-                    </tal:block>
-                </ul>
-            </div>
-            <div class="audiogallery-footer-container">
-                <a class="audiogallery-footer-link" tal:content="view/data/footer_text"
-                   tal:attributes="href collection/absolute_url"></a>
+            </span>
+            <div tal:condition="python:view.data.get('footer_text')" class="audiogallery-footer-container">
+                <a class="audiogallery-footer-link"
+                   tal:define="more_link_text python:view.data.get('more_link_text')"
+                   tal:content="python:more_link_text if more_link_text is not None else view.data.get('footer_text')"
+                   tal:attributes="href view/data/footer_text">
+                   </a>
             </div>
         </div>
     </body>

@@ -1,0 +1,42 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <gs:upgradeSteps
+      source="4001"
+      destination="4002"
+      profile="brasil.gov.tiles:default">
+
+    <!--Como agora estamos utilizando o lista do cover, precisamos executar os-->
+    <!--upgrades do lista do cover que não foram executados quando existia o-->
+    <!--tile lista no brasil.gov.tiles. O método do collective.cover pega não só-->
+    <!--o tipo lista mas todos aqueles que herdam dele. A principal mudança é a -->
+    <!--mudança da persistência do uuids que era uma lista de uuids para um dict.-->
+    <gs:upgradeStep
+        title="Upgrades lista cover"
+        description="Executa upgrades do cover que não foram executadas na tile de lista porque herdavam de brasil.gov.tiles e nao do proprio collective.cover"
+        handler="collective.cover.upgrades.upgrade_carousel_tiles_custom_url"
+        />
+
+    <gs:upgradeStep
+        title="Cook js resources"
+        description="Js foi alterado em 74d45e30e956d274bdddcb12f255fd78417f484a, portanto precisamos chamar cookResources"
+        handler="collective.cover.upgrades.cook_javascript_resources"
+        />
+
+    <gs:upgradeStep
+        title="Upgrade atributo header para tile_title"
+        description="Novos campos adicionados/migrados apos herdar o ListTile de collective.cover"
+        handler=".handler.upgrades_tile_header_tile_title"
+        />
+
+    <gs:upgradeStep
+        title="Corrige referência de coleção e diretório e seus filhos em audiogallery, videogallery e mediacarousel."
+        description="O método get_elements que, deliberadamente, pega itens de uma coleção ou Folder, foi removido e precisamos portanto armazenar os uuids associados à coleção ou ao Folder e setar a propriedade uuid do tile. Para mais detalhes, leia a docstring do método."
+        handler=".handler.corrige_uuids_se_colecao_ou_folder_e_seta_footer_text"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>

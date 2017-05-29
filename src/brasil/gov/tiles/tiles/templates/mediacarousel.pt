@@ -8,32 +8,38 @@
               tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/galleria.classic.css" />
         <script type="text/javascript" tal:content="structure view/init_js">
         </script>
+    <tal:comment tal:replace="nothing">
+        FIXME: Essa regra css pode ser removida quando o atributo footer_text for removido do tile MediaCarousel.
+        Veja mais detalhes em IMediaCarouselTile.
+    </tal:comment>
+    <style type="text/css" media="screen">div[data-fieldname="mediacarousel.more_link"]{display:none;}</style>
     </head>
     <body tal:define="tile_id view/id;">
         <div class="mediacarousel tile-content"
              tal:attributes="id string:mediacarousel-$tile_id"
-             tal:define="conf_fields view/get_configured_fields;
-                         results view/results;
-                         collection python:results[0] if results else None;
-                         items python:view.get_elements(collection)">
-            <tal:fields repeat="field conf_fields/keys">
-                <tal:header define="config python:conf_fields.get('header', None);
-                                    htmltag python:config.get('htmltag', 'h1') if config else 'h1'"
-                            condition="python:field=='title' and view.show_header()">
-                    <h1 class="mediacarousel-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h1'" />
-                    <h2 class="mediacarousel-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h2'" />
-                    <h3 class="mediacarousel-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h3'" />
-                    <h4 class="mediacarousel-tile"
-                        tal:content="view/data/header"
-                        tal:condition="python:htmltag == 'h4'" />
-                </tal:header>
-                <div tal:condition="python:field=='uuids' and items"
+             tal:define="fields view/get_configured_fields;
+                         items view/results">
+            <tal:fields repeat="field fields">
+                <tal:tile_title condition="python:field['id']=='tile_title' and view.show_tile_title()">
+                    <span tal:define="htmltag python:field.get('htmltag', 'h2');
+                                      tile_title view/data/tile_title"
+                          tal:omit-tag="">
+                        <h1 class="mediacarousel-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h1'" />
+                        <h2 class="mediacarousel-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h2'" />
+                        <h3 class="mediacarousel-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h3'" />
+                        <h4 class="mediacarousel-tile"
+                            tal:content="tile_title"
+                            tal:condition="python:htmltag == 'h4'" />
+                    </span>
+                </tal:tile_title>
+
+                <div tal:condition="python:field['id']=='uuids' and items"
                      tal:attributes="id string:mediacarousel-gallerie-$tile_id">
                     <tal:items tal:repeat="item items">
                         <a tal:attributes="href python: view.get_media_url(item)">
@@ -52,12 +58,15 @@
                         </a>
                     </tal:items>
                 </div>
-                <div i18n:domain="brasil.gov.tiles" tal:condition="python:field=='uuids' and not(items)" i18n:translate="">
+                <div i18n:domain="brasil.gov.tiles" tal:condition="python:field['id']=='uuids' and not(items)" i18n:translate="">
                     Drag a folder or collection to populate the tile.
                 </div>
-                <div tal:condition="python:field=='footer_text' and collection" class="mediacarousel-footer-container">
-                    <a class="mediacarousel-footer-link" tal:content="view/data/footer_text"
-                       tal:attributes="href collection/absolute_url"></a>
+                <div tal:condition="python:field['id']=='footer_text' and view.data.get('footer_text')" class="mediacarousel-footer-container">
+                    <a class="mediacarousel-footer-link"
+                       tal:define="more_link_text python:view.data.get('more_link_text')"
+                       tal:content="python:more_link_text if more_link_text is not None else view.data.get('footer_text')"
+                       tal:attributes="href view/data/footer_text">
+                       </a>
                 </div>
             </tal:fields>
         </div>
