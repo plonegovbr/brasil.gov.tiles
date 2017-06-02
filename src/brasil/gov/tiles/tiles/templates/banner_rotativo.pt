@@ -7,6 +7,8 @@
         <script type="text/javascript"
                 tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/banner_rotativo.js">
         </script>
+        <tal:comment tal:replace="nothing">FIXME: Ver mediacarousel.pt para entender as regra css abaixo.</tal:comment>
+        <style type="text/css" media="screen">div[data-fieldname="banner_rotativo.more_link"], div[data-fieldname="banner_rotativo.more_link_text"]{display:none;}</style>
     </head>
     <body>
         <ul id="tile_banner_rotativo"

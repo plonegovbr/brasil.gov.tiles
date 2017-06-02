@@ -4,6 +4,21 @@ Alterações
 1.2rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+.. Warning::
+    O tile de lista passou a usar a classe presente em collective.cover e não
+    mais o presente em brasil.gov.tiles. Dessa forma, é importante que os
+    upgradeSteps sejam executados logo que você atualize a versão pois a
+    estrutura para armazenar uuids foi alterada. A versão mínima necessária
+    agora de collective.cover para você usar o brasil.gov.tiles é a 1.1b1 (só
+    foi testado nessa versão, pode ser que funcione nas mais atuais mas não
+    é garantido).
+
+- Passa a usar o tile do tipo Lista do cover e não do brasil.gov.tiles. Com isso,
+  o tile de lista de brasil.gov.tiles foi removido. Com a utilização do tile
+  de lista do cover e outras adequações, a exclusão de itens de um Banner
+  Rotativo volta a funcionar. (closes `#145`)
+  [idgserpro]
+
 - Segue o padrão do collective.cover de usar uuid ao invés de uid. (partially closes `#145`)
   [rodfersou, idgserpro]
 

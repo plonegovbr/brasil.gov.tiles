@@ -53,7 +53,6 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
     def test_delete_folder(self):
         obj = self.portal['my-folder']
         self.tile.populate_with_object(obj)
-        self.tile.populate_with_object(obj)
 
         rendered = self.tile()
         msg = u'Drag a folder or collection to populate the tile.'
@@ -78,9 +77,8 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         msg = u'Mandelbrot set'
         self.assertIn(msg, rendered)
 
-    def test_delete_collection(self):
+    def test_delete_collection_children(self):
         obj = self.portal['mandelbrot-set']
-        self.tile.populate_with_object(obj)
         self.tile.populate_with_object(obj)
 
         rendered = self.tile()
@@ -89,7 +87,8 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
 
         setRoles(self.portal, TEST_USER_ID, ['Manager', 'Editor', 'Reviewer'])
         login(self.portal, TEST_USER_NAME)
-        api.content.delete(obj=self.portal['mandelbrot-set'])
+        for i in self.portal['mandelbrot-set'].results():
+            api.content.delete(obj=i.getObject())
 
         msg = u'Drag a folder or collection to populate the tile.'
 
@@ -120,7 +119,7 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
                          depth=1, portal_type='Image')] or [None]
         thumbnail = self.tile.thumbnail(image_child)
         self.assertFalse(thumbnail)
-        # the thumbnail is an ImageScale
+        # the thumbnail is not an ImageScale
         self.assertFalse(IImageScale.providedBy(thumbnail))
 
         # as an Image does have an image field, we should have a thumbnail
@@ -156,11 +155,13 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         )
         tile = tile['test']
 
-        self.assertEqual(len(tile.data['uuids']), 1)
-        self.assertTrue(obj1 in tile.results())
+        self.assertEqual(len(tile.data['uuids'].keys()), 2)
+        self.assertTrue(obj1['my-nitf-without-image'] in tile.results())
+        self.assertTrue(obj1['my-nitf-with-image'] in tile.results())
 
         # finally, we remove it from the carousel; the tile must be empty again
-        tile.remove_item(obj1.UID())
+        tile.remove_item(obj1['my-nitf-without-image'].UID())
+        tile.remove_item(obj1['my-nitf-with-image'].UID())
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),

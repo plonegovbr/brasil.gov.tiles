@@ -7,18 +7,33 @@ from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
+from plone.namedfile.file import NamedBlobFile
+from plone.namedfile.file import NamedImage
 from plone.testing import z2
 from StringIO import StringIO
 
 import os
+import pkg_resources
 import random
 import unittest
+
+
+try:
+    pkg_resources.get_distribution('sc.embedder')
+except pkg_resources.DistributionNotFound:
+    HAS_EMBEDDER = False
+else:
+    HAS_EMBEDDER = True
+
+
+VIDEO_PREFIX = 'youtube'
+TOTAL_VIDEOS = 4
 
 
 def loadFile(name, size=0):
     """Load file from testing directory
     """
-    path = os.path.join(package_home(globals()), 'tests/input', name)
+    path = os.path.join(package_home(globals()), 'tests/files', name)
     fd = open(path, 'rb')
     data = fd.read()
     fd.close()
@@ -65,6 +80,9 @@ class Fixture(CoverFixture):
         super(Fixture, self).setUpZope(app, configurationContext)
         import brasil.gov.tiles
         self.loadZCML(package=brasil.gov.tiles)
+        if HAS_EMBEDDER:
+            import sc.embedder
+            self.loadZCML(package=sc.embedder)
         self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
@@ -74,7 +92,10 @@ class Fixture(CoverFixture):
             # Install into Plone site using portal_setup
             self.applyProfile(portal, 'brasil.gov.tiles:default')
             self.applyProfile(portal, 'brasil.gov.tiles:testfixture')
+            if HAS_EMBEDDER:
+                self.applyProfile(portal, 'sc.embedder:default')
 
+            # NITF
             api.content.create(
                 type='Folder',
                 title='my-news-folder',
@@ -99,6 +120,73 @@ class Fixture(CoverFixture):
             portal['my-news-folder']['my-nitf-with-image'].reindexObject()
             portal['my-news-folder']['my-nitf-without-image'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
+            #
+
+            # AUDIO
+            # Esse arquivo veio de brasil.gov.portal.
+            mp3_blob = NamedBlobFile(
+                loadFile('file.mp3'),
+                'audio/mp3',
+                u'file.mp3'
+            )
+
+            api.content.create(
+                type='Folder',
+                title='my-audios',
+                container=portal
+            )
+            portal['my-audios'].reindexObject()
+
+            mp3_obj = api.content.create(
+                type='File',
+                container=portal['my-audios'],
+                id='my-audio'
+            )
+            mp3_obj.file = mp3_blob
+            portal['my-audios']['my-audio'].reindexObject()
+
+            mp3_obj1 = api.content.create(
+                type='File',
+                container=portal['my-audios'],
+                id='my-audio1'
+            )
+            mp3_obj1.file = mp3_blob
+            portal['my-audios']['my-audio1'].reindexObject()
+
+            mp3_obj2 = api.content.create(
+                type='File',
+                container=portal['my-audios'],
+                id='my-audio2'
+            )
+            mp3_obj2.file = mp3_blob
+            portal['my-audios']['my-audio2'].reindexObject()
+            #
+
+            # VIDEO
+            api.content.create(
+                type='Folder',
+                title='my-videos',
+                container=portal
+            )
+            portal['my-videos'].reindexObject()
+
+            if HAS_EMBEDDER:
+                from sc.embedder.tests.test_content import PROVIDERS
+                width = 459
+                height = 344
+                iframe = '<iframe allowfullscreen="" height="{0}" src="{1}" width="{2}"></iframe>'
+                for i in range(0, TOTAL_VIDEOS):
+                    obj = api.content.create(
+                        type='sc.embedder',
+                        title='{0}_{1}'.format(VIDEO_PREFIX, str(i)),
+                        container=portal['my-videos'],
+                        url=PROVIDERS['youtube'],
+                        width=width,
+                        height=height,
+                        embed_html=iframe.format(height, PROVIDERS['youtube'], width),
+                        image=NamedImage(generate_jpeg(459, 344))
+                    )
+                    obj.reindexObject()
 
 
 FIXTURE = Fixture()

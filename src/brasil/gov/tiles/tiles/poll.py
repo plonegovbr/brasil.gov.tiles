@@ -34,7 +34,6 @@ class PollTile(PersistentCoverTile):
 
     @property
     def utility(self):
-        ''' Access to IPolls utility '''
         utility = queryUtility(IPolls, name='collective.polls')
         return utility
 
@@ -89,7 +88,6 @@ class PollTile(PersistentCoverTile):
         data_mgr.set({'uuid': uuid})
 
     def poll_uuid(self):
-        ''' Return uuid for current poll '''
         utility = self.utility
         return utility.uuid_for_poll(self.poll())
 

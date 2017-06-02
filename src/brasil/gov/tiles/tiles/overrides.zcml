@@ -45,18 +45,6 @@
         />
 
     <plone:tile
-        name="collective.cover.list"
-        title="List Tile"
-        description="A tile that shows a list of items."
-        icon="++resource++collective.cover/img/tile-list.png"
-        add_permission="cmf.ModifyPortalContent"
-        schema=".list.IListTile"
-        class=".list.ListTile"
-        permission="zope2.View"
-        for="*"
-        />
-
-    <plone:tile
         name="collective.cover.embed"
         title="Embedding Tile"
         description="A tile to embed content from a remote source."
@@ -102,18 +90,6 @@
       add_permission="cmf.ModifyPortalContent"
       schema=".collection.ICollectionTile"
       class=".collection.CollectionTile"
-      permission="zope2.View"
-      for="*"
-      />
-
-  <plone:tile
-      name="collective.cover.list"
-      title="List Tile"
-      description="A tile that shows a list of items."
-      icon="++resource++collective.cover/img/tile-list.png"
-      add_permission="cmf.ModifyPortalContent"
-      schema=".list.IListTile"
-      class=".list.ListTile"
       permission="zope2.View"
       for="*"
       />

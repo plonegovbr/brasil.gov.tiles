@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles import _ as _
-from brasil.gov.tiles.tiles.list import IListTile
-from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
-from plone import api
+from collective.cover.tiles.list import IListTile
+from collective.cover.tiles.list import ListTile
 from plone.directives import form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
@@ -16,31 +15,21 @@ class IVideoGalleryTile(IListTile, form.Schema):
     """
     """
 
-    header = schema.TextLine(
-        title=_(u'Header'),
-        required=False,
-    )
-
-    form.omitted('title')
-    form.no_omit(IDefaultConfigureForm, 'title')
-    title = schema.TextLine(
-        title=_(u'Title'),
-        required=False,
-        readonly=True,
-    )
-
     subtitle = schema.TextLine(
         title=_(u'Subtitle'),
         required=False,
         readonly=False,
     )
 
+    # FIXME: Ver a documentação em mediacarousel.py.
     footer_text = schema.TextLine(
         title=_(u'Footer Link'),
         required=False,
         readonly=False,
     )
 
+    # FIXME: Ver como migrar NamedImage para NamedBlobImage, como está previsto
+    # em https://github.com/collective/collective.cover/blob/1.1b1/src/collective/cover/tiles/list.py#L66
     form.omitted('image')
     form.no_omit(IDefaultConfigureForm, 'image')
     image = NamedImage(
@@ -49,72 +38,39 @@ class IVideoGalleryTile(IListTile, form.Schema):
         readonly=True,
     )
 
-    form.omitted('uuids')
-    form.no_omit(IDefaultConfigureForm, 'uuids')
-    uuids = schema.List(
-        title=_(u'Videos'),
-        value_type=schema.TextLine(),
-        required=False,
-    )
-
 
 @implementer(IVideoGalleryTile)
 class VideoGalleryTile(ListTile):
 
     index = ViewPageTemplateFile('templates/videogallery.pt')
-    is_configurable = True
-    is_editable = True
     limit = 6
+    short_name = _(u'Video Gallery', default=u'Video Gallery')
 
     def populate_with_object(self, obj):
-        super(ListTile, self).populate_with_object(obj)  # check permission
-
-        # here we should check if the embeded item has its a video
-        # XXX
-
-        self.set_limit()
-        header = obj.Title()  # use collection's title as header
-        uuid = api.content.get_uuid(obj)
+        super(VideoGalleryTile, self).populate_with_object(obj)
+        # XXX: Ver a documentação em mediacarousel.py.
         data_mgr = ITileDataManager(self)
-
         old_data = data_mgr.get()
-        old_data['header'] = header
-        old_data['uuids'] = [uuid]
+        old_data['tile_title'] = obj.Title()
+        old_data['footer_text'] = obj.absolute_url()
+        # Uso na template para compor o id do item de video na tag <a>.
+        old_data['uuid_container'] = self.get_uuid(obj)
         data_mgr.set(old_data)
-
-    def get_uuid(self, obj):
-        return api.content.get_uuid(obj)
-
-    def thumbnail(self, item):
-        if self._has_image_field(item):
-            scales = item.restrictedTraverse('@@images')
-            return scales.scale('image', width=80, height=60)
 
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
         """
         return ['Collection', 'Folder']
 
-    def get_elements(self, obj):
-        results = []
-        if obj:
-            portal_type = obj.getPortalTypeName()
+    def thumbnail(self, item):
+        if self._has_image_field(item):
+            scales = item.restrictedTraverse('@@images')
+            return scales.scale('image', width=80, height=60)
 
-            limit = 0
-            catalog_results = []
-            if portal_type == 'Collection':
-                catalog_results = obj.results()
-                limit = catalog_results.length if catalog_results else 0
-            elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({'portal_type': 'sc.embedder'})
-                limit = len(catalog_results) if catalog_results else 0
+    def show_tile_title(self):
+        # FIXME: Ver documentação no mesmo método em mediacarousel.py.
+        return self._field_is_visible('tile_title')
 
-            if catalog_results:
-                limit = limit if limit <= self.limit else self.limit
-                for i in xrange(limit):
-                    results.append(catalog_results[i].getObject())
-
-        return results
-
-    def show_header(self):
-        return self._field_is_visible('header')
+    def results(self):
+        valid_portal_types = ['sc.embedder']
+        return super(VideoGalleryTile, self).results(portal_type=valid_portal_types)

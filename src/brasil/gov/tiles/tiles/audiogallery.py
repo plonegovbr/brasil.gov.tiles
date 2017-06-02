@@ -1,90 +1,45 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles import _ as _
-from brasil.gov.tiles.tiles.list import IListTile
-from brasil.gov.tiles.tiles.list import ListTile
-from plone import api
+from collective.cover.tiles.list import IListTile
+from collective.cover.tiles.list import ListTile
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.interface import implementer
+
+import pkg_resources
 
 
 class IAudioGalleryTile(IListTile):
     """
     """
 
-    header = schema.TextLine(
-        title=_(u'Header'),
-        required=False,
-    )
-
-    title = schema.TextLine(
-        title=_(u'Title'),
-        required=False,
-    )
-
+    # FIXME: Ver a documentação em mediacarousel.py.
     footer_text = schema.TextLine(
         title=_(u'Footer Link'),
         required=False,
         readonly=False,
     )
 
-    uuids = schema.List(
-        title=_(u'Audios'),
-        value_type=schema.TextLine(),
-        required=False,
-        readonly=True,
-    )
 
-
+@implementer(IAudioGalleryTile)
 class AudioGalleryTile(ListTile):
     index = ViewPageTemplateFile('templates/audiogallery.pt')
-    is_configurable = True
-    is_editable = True
+    short_name = _(u'Audio Gallery', default=u'Audio Gallery')
 
     def populate_with_object(self, obj):
-        super(ListTile, self).populate_with_object(obj)  # check permission
-
-        # here we should check if the embeded item has its a video
-        # XXX
-
-        self.set_limit()
-        header = obj.Title()  # use collection's title as header
-        uuid = api.content.get_uuid(obj)
+        super(AudioGalleryTile, self).populate_with_object(obj)
+        # XXX: Ver a documentação em mediacarousel.py.
         data_mgr = ITileDataManager(self)
-
         old_data = data_mgr.get()
-        old_data['header'] = header
-        old_data['uuids'] = [uuid]
+        old_data['tile_title'] = obj.Title()
+        old_data['footer_text'] = obj.absolute_url()
         data_mgr.set(old_data)
 
     def accepted_ct(self):
         """ Return a list of content types accepted by the tile.
         """
         return ['Collection', 'Folder']
-
-    def get_uuid(self, obj):
-        return api.content.get_uuid(obj)
-
-    def get_elements(self, obj):
-        results = []
-        if obj:
-            portal_type = obj.getPortalTypeName()
-
-            limit = 0
-            catalog_results = []
-            if portal_type == 'Collection':
-                catalog_results = obj.results()
-                limit = catalog_results.length if catalog_results else 0
-            elif portal_type == 'Folder':
-                catalog_results = obj.getFolderContents({'portal_type': 'File'})
-                limit = len(catalog_results) if catalog_results else 0
-
-            if catalog_results:
-                limit = limit if limit <= self.limit else self.limit
-                for i in xrange(limit):
-                    results.append(catalog_results[i].getObject())
-
-        return results
 
     def get_item_url(self, item):
         """
@@ -95,13 +50,27 @@ class AudioGalleryTile(ListTile):
         url = ''
 
         if (item.portal_type == 'Audio'):
-            url = ';'.join([a.absolute_url() for a in item.listFolderContents()])
+            url = ';'.join(
+                [a.absolute_url() for a in item.listFolderContents()]
+            )
         else:
             url = item.absolute_url()
         return url
 
-    def show_header(self):
-        return self._field_is_visible('header')
+    def show_tile_title(self):
+        # FIXME: Ver documentação no mesmo método em mediacarousel.py.
+        return self._field_is_visible('tile_title')
+
+    def results(self):
+        valid_portal_types = ['File']
+        try:
+            pkg_resources.get_distribution('brasil.gov.portal')
+            valid_portal_types.append('Audio')
+            valid_portal_types.append('MPEG Audio File')
+            valid_portal_types.append('OGG Audio File')
+        except pkg_resources.DistributionNotFound:
+            pass
+        return super(AudioGalleryTile, self).results(portal_type=valid_portal_types)
 
     def init_js(self):
         return """
