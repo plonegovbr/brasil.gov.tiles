@@ -10,12 +10,20 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.namedfile.file import NamedBlobFile
 from plone.namedfile.file import NamedImage
 from plone.testing import z2
-from sc.embedder.tests.test_content import PROVIDERS
 from StringIO import StringIO
 
 import os
+import pkg_resources
 import random
 import unittest
+
+
+try:
+    pkg_resources.get_distribution('sc.embedder')
+except pkg_resources.DistributionNotFound:
+    HAS_EMBEDDER = False
+else:
+    HAS_EMBEDDER = True
 
 
 VIDEO_PREFIX = 'youtube'
@@ -71,9 +79,10 @@ class Fixture(CoverFixture):
     def setUpZope(self, app, configurationContext):
         super(Fixture, self).setUpZope(app, configurationContext)
         import brasil.gov.tiles
-        import sc.embedder
         self.loadZCML(package=brasil.gov.tiles)
-        self.loadZCML(package=sc.embedder)
+        if HAS_EMBEDDER:
+            import sc.embedder
+            self.loadZCML(package=sc.embedder)
         self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
@@ -83,7 +92,8 @@ class Fixture(CoverFixture):
             # Install into Plone site using portal_setup
             self.applyProfile(portal, 'brasil.gov.tiles:default')
             self.applyProfile(portal, 'brasil.gov.tiles:testfixture')
-            self.applyProfile(portal, 'sc.embedder:default')
+            if HAS_EMBEDDER:
+                self.applyProfile(portal, 'sc.embedder:default')
 
             # NITF
             api.content.create(
@@ -159,22 +169,24 @@ class Fixture(CoverFixture):
                 container=portal
             )
             portal['my-videos'].reindexObject()
-            width = 459
-            height = 344
-            iframe = '<iframe allowfullscreen="" height="{0}" src="{1}" width="{2}"></iframe>'
-            for i in range(0, TOTAL_VIDEOS):
-                obj = api.content.create(
-                    type='sc.embedder',
-                    title='{0}_{1}'.format(VIDEO_PREFIX, str(i)),
-                    container=portal['my-videos'],
-                    url=PROVIDERS['youtube'],
-                    width=width,
-                    height=height,
-                    embed_html=iframe.format(height, PROVIDERS['youtube'], width),
-                    image=NamedImage(generate_jpeg(459, 344))
-                )
-                obj.reindexObject()
-            #
+
+            if HAS_EMBEDDER:
+                from sc.embedder.tests.test_content import PROVIDERS
+                width = 459
+                height = 344
+                iframe = '<iframe allowfullscreen="" height="{0}" src="{1}" width="{2}"></iframe>'
+                for i in range(0, TOTAL_VIDEOS):
+                    obj = api.content.create(
+                        type='sc.embedder',
+                        title='{0}_{1}'.format(VIDEO_PREFIX, str(i)),
+                        container=portal['my-videos'],
+                        url=PROVIDERS['youtube'],
+                        width=width,
+                        height=height,
+                        embed_html=iframe.format(height, PROVIDERS['youtube'], width),
+                        image=NamedImage(generate_jpeg(459, 344))
+                    )
+                    obj.reindexObject()
 
 
 FIXTURE = Fixture()

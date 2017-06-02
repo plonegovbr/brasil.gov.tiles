@@ -7,6 +7,7 @@ cache:
   - parts/node
 env:
   matrix:
+    - TEST_EGGS=sc.embedder[test]
     - MASTER=true
     - PENDING_RELEASE=true
 matrix:
@@ -18,8 +19,8 @@ install:
 # XXX: Veja a necessidade dessa pinagem em buildout.cfg.
 - test $PENDING_RELEASE && sed -ie 's/# selenium/selenium/g' buildout.cfg || true
 - python bootstrap.py
-- bin/buildout annotate
-- bin/buildout
+- bin/buildout buildout:test-eggs=$TEST_EGGS annotate
+- bin/buildout buildout:test-eggs=$TEST_EGGS
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start

@@ -98,7 +98,6 @@ setup(
             'plone.browserlayer',
             'plone.cachepurging',
             'plone.testing',
-            'sc.embedder[test]',
         ]
     },
     entry_points="""

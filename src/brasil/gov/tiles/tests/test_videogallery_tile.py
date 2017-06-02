@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.tiles.testing import HAS_EMBEDDER
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from brasil.gov.tiles.testing import TOTAL_VIDEOS
 from brasil.gov.tiles.testing import VIDEO_PREFIX
@@ -39,6 +40,7 @@ class VideoGalleryTileTestCase(TestTileMixin, unittest.TestCase):
         self.klass = VideoGalleryTile
         super(VideoGalleryTileTestCase, self).test_interface()
 
+    @unittest.skipIf(not HAS_EMBEDDER, 'This test need sc.embedder installed')
     def test_populate_with_object(self):
         # verifica a renderizacao com uma imagem
         obj = self.portal['my-videos']
