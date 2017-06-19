@@ -6,7 +6,7 @@ import logging
 
 
 def apply_profile(context):
-    ''' Apply upgrade profile '''
+    """Apply upgrade profile"""
     logger = logging.getLogger(PROJECTNAME)
     profile = 'profile-brasil.gov.tiles.upgrades.v2000:default'
     loadMigrationProfile(context, profile)

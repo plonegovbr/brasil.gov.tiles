@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.config import PROJECTNAME
 from collective.cover.upgrades import upgrade_carousel_tiles_custom_url
+
 import logging
 
 
