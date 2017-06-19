@@ -5,6 +5,7 @@ from Products.CMFPlone.utils import safe_hasattr
 
 import logging
 
+
 logger = logging.getLogger(PROJECTNAME)
 
 

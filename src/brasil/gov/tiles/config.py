@@ -3,6 +3,7 @@ from Products.CMFPlone import interfaces as plone_interfaces
 from Products.CMFQuickInstallerTool import interfaces as qi_interfaces
 from zope.interface import implementer
 
+
 PROJECTNAME = 'brasil.gov.tiles'
 
 
