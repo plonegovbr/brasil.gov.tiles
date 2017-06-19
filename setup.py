@@ -47,6 +47,7 @@ setup(
         # partir dessa versão pois alterei o caminho dos recursos estáticos no
         # overrides.zcml.
         'collective.cover > 1.0a12',
+        'collective.monkeypatcher',
         'collective.nitf',
         'collective.polls',
         'collective.prettydate',

@@ -4,6 +4,11 @@ Alterações
 1.2rc1 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
+- Corrige exclusão e reordenação de itens de um Banner Rotativo com o uso de um
+  patch. A correção definitiva deverá usar o tipo lista do collective.cover
+  em outra versão.
+  (partially closes `#145`)
+
 - Segue o padrão do collective.cover de usar uuid ao invés de uid. (partially closes `#145`)
   [rodfersou, idgserpro]
 
