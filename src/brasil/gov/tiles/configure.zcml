@@ -3,6 +3,7 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="brasil.gov.tiles">
 
@@ -39,5 +40,18 @@
       name="brasil.gov.tiles"
       provides="Products.CMFPlone.interfaces.INonInstallable"
       />
+
+  <!--FIXME: Correção de Banner Rotativo enquanto o tipo lista de brasil.gov.tiles-->
+  <!--não é substituído pelo de collective.cover.-->
+  <!--Exclusão-->
+  <monkey:patch
+    preconditions="collective.cover==1.1b1"
+    description="Testa interface lista do brasil.gov.tiles na hora de remover itens ao invés interface da lista de collective.cover."
+    class="collective.cover.browser.cover.RemoveItemFromListTile"
+    original="render"
+    replacement=".patches_banner_rotativo.render"
+    preserveOriginal="true"
+    />
+  <!--Exclusão-->
 
 </configure>
