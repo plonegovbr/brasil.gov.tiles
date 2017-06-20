@@ -55,6 +55,11 @@ setup(
         'plone.api',
         'plone.app.blocks',
         'plone.app.dexterity [grok, relations]',
+        # BBB: Com a atualização do collective.cover para 1.5b1 esse pacote
+        # foi removido mas ainda mantém utilities no ZODB para portais em produção. Quando 
+        # https://github.com/plonegovbr/brasil.gov.portal/issues/348#issuecomment-309847978
+        # for atendido pode-se estudar sua remoção.
+        'plone.app.drafts',
         'plone.app.iterate',
         'plone.app.layout',
         # BBB: Adiciona plone.app.referenceablebehavior pois ainda não
