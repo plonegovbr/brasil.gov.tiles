@@ -1,7 +1,7 @@
 Alterações
 ----------
 
-1.2rc1 (unreleased)
+1.2rc1 (2017-06-23)
 ^^^^^^^^^^^^^^^^^^^
 
 - Corrige exclusão e reordenação de itens de um Banner Rotativo com o uso de um
