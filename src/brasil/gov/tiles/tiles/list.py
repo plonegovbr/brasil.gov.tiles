@@ -140,7 +140,17 @@ class ListTile(PersistentCoverTile):
         data_mgr.set(old_data)
 
     # FIXME: Usado enquanto o tipo lista não é herdado do cover. Ver
+    # https://github.com/plonegovbr/brasil.gov.tiles/blob/7419efc721e133e694526fcecf9c24531faa64ab/src/brasil/gov/tiles/tiles/banner_rotativo.py#L116
+    # e
     # https://github.com/plonegovbr/brasil.gov.tiles/issues/145
+    # Entenda que, apesar dele adicionar, aqui, um dicionário em old_data['uuids'],
+    # em populate_with_object de vários tiles ele ainda usa uma lista, (exemplo:
+    # https://github.com/plonegovbr/brasil.gov.tiles/blob/7419efc721e133e694526fcecf9c24531faa64ab/src/brasil/gov/tiles/tiles/banner_rotativo.py#L98)
+    # pois é o jeito que o brasil.gov.tiles sempre funcionou. Isso é alterado para versões mais
+    # novas do cover para usar um dicionário (ver por exemplo o commit)
+    # https://github.com/collective/collective.cover/blob/00f25a5cd0926c0a9e0e343406537f8bb9cd96ec/src/collective/cover/tiles/list.py#L189)
+    # e ainda está em estudo uma melhor forma sobre essa migração, como proposto em
+    # https://github.com/plonegovbr/brasil.gov.tiles/pull/173
     def replace_with_uuids(self, uuids):
         """ Replaces the whole list of items with a new list of items
         :param uuids: The list of objects' UUIDs to be used
