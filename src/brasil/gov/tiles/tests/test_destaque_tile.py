@@ -58,7 +58,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
 
         # next, we replace the destaque of objects with a different one
         obj3 = self.portal['my-news-item']
-        tile.replace_with_objects([api.content.get_uuid(obj3)])
+        tile.replace_with_uuids([api.content.get_uuid(obj3)])
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),

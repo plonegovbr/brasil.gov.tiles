@@ -44,10 +44,11 @@
   <!--FIXME: Correção de Banner Rotativo enquanto o tipo lista de brasil.gov.tiles-->
   <!--não é substituído pelo de collective.cover.-->
   <!--Exclusão-->
+  <include package="collective.monkeypatcher" file="meta.zcml"/>
   <monkey:patch
     preconditions="collective.cover==1.1b1"
     description="Testa interface lista do brasil.gov.tiles na hora de remover itens ao invés interface da lista de collective.cover."
-    class="collective.cover.browser.cover.RemoveItemFromListTile"
+    class="collective.cover.browser.compose.RemoveItemFromListTile"
     original="render"
     replacement=".patches_banner_rotativo.render"
     preserveOriginal="true"
