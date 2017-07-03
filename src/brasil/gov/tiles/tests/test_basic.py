@@ -88,7 +88,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         contexto, a template, ao receber None, popula o html com
         tile-generic.png.
 
-        Com a nova versão de collective.cover 1.0a13, ele já retorna /img/tile
+        Com a nova versão de collective.cover, > 1.0a12, ele já retorna /img/tile
         na template ao invés de só /tile e esse teste verifica isso, mas
         renderizando o html da view.
 
@@ -109,8 +109,10 @@ class BasicTileTestCase(BaseIntegrationTestCase):
                 container=self.portal,
                 template_layout='Layout A'
             )
-        view = self.portal['my-cover'].restrictedTraverse('@@tile_list')
-        view.update()
+            # A partir da versão 1.3b1 de collective.cover, com a remoção do
+            # grok, essa view que tinha a permissão de 'zope2.View' passa a ter
+            # 'collective.cover.CanEditLayout'.
+            view = self.portal['my-cover'].restrictedTraverse('@@tile_list')
         html = view()
         prefix_icon = '++resource++collective.cover/img/tile-'
         total_in_rendered_view = html.count(prefix_icon)

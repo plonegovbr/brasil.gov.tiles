@@ -4,7 +4,13 @@ Alterações
 1.2rc2 (unreleased)
 ^^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+.. Warning::
+    A versão necessária do collective.cover para ser utilizada com esse pacote
+    passa a ser >= 1.3b1.
+
+- Adapta brasil.gov.tiles para funcionar na versão mais atual de collective.cover,
+  1.6b1.
+  [idgserpro]
 
 
 1.2rc1 (2017-06-23)

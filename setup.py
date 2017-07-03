@@ -43,10 +43,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        # Após o commit 007adcde40d2031a15debd5122af8086a1db6fa6, necessito a
-        # partir dessa versão pois alterei o caminho dos recursos estáticos no
-        # overrides.zcml.
-        'collective.cover > 1.0a12',
+        # O patch adicionado em configure.zcml espera uma classe presente em
+        # collective.cover.browser.compose.RemoveItemFromListTile, só
+        # só disponível a partir dessa versão.
+        'collective.cover >= 1.3b1',
         'collective.monkeypatcher',
         'collective.nitf',
         'collective.polls',
@@ -56,7 +56,7 @@ setup(
         'plone.app.blocks',
         'plone.app.dexterity [grok, relations]',
         # BBB: Com a atualização do collective.cover para 1.5b1 esse pacote
-        # foi removido mas ainda mantém utilities no ZODB para portais em produção. Quando 
+        # foi removido mas ainda mantém utilities no ZODB para portais em produção. Quando
         # https://github.com/plonegovbr/brasil.gov.portal/issues/348#issuecomment-309847978
         # for atendido pode-se estudar sua remoção.
         'plone.app.drafts',
