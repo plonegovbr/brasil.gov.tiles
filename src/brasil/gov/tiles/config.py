@@ -15,7 +15,7 @@ class HiddenProducts(object):
             u'brasil.gov.tiles.upgrades.v2000',
             u'brasil.gov.tiles.upgrades.v3000',
             u'brasil.gov.tiles.upgrades.v4000',
-            u'brasil.gov.tiles.upgrades.v4002'
+            u'brasil.gov.tiles.upgrades.v4002',
         ]
 
 

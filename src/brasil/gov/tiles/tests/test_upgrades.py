@@ -33,9 +33,9 @@ class Upgrade3000to4000TestCase(Upgrade9to10TestCase):
         self.profile_id = u'brasil.gov.tiles:default'
 
     def test_upgrade_to_10_registrations(self):
-        # XXX: Como herdo de Upgrade9to10TestCase mas possuo dois upgradeSteps
-        # esse método dá erro, mas não preciso dele.
-        pass
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertTrue(int(version) >= int(self.to_version))
+        self.assertEqual(self._how_many_upgrades_to_do(), 2)
 
     def test_upgrade_to_4000_registrations(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
