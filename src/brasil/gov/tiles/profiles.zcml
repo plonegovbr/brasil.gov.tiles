@@ -11,6 +11,7 @@
       directory="profiles/default"
       description="Install and configure reusable interface elements"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler="collective.nitf.Extensions.Install.remove_tile"
       />
 
   <genericsetup:registerProfile

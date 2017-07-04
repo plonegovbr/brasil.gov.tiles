@@ -4,7 +4,11 @@ Alterações
 1.3b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+.. Warning::
+    A versão necessária do collective.nitf para ser utilizada com esse pacote passa a ser >= 2.1b2.
+
+- Tile de notícia (nitf) passa a herdar do tile criado no release 2.x de collective.nitf.
+  [idgserpro]
 
 
 1.3b1 (2017-07-03)
