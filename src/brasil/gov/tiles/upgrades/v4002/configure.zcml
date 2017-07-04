@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <gs:upgradeSteps
+      source="4001"
+      destination="4002"
+      profile="brasil.gov.tiles:default">
+
+    <gs:upgradeStep
+        title="Remove tile collective.nitf"
+        description="Remove o tile pois usamos o nitf que herda de collective.nitf"
+        handler="collective.nitf.Extensions.Install.remove_tile"
+        />
+
+    <gs:upgradeStep
+        title="Cook css"
+        description="Css foi alterado, necessário chamar cookResources"
+        handler="collective.cover.upgrades.cook_css_resources"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>

@@ -48,7 +48,9 @@ setup(
         # só disponível a partir dessa versão.
         'collective.cover >= 1.3b1',
         'collective.monkeypatcher',
-        'collective.nitf',
+        # Passo a herdar do tile de nitf, que só foi disponibilizado a partir
+        # de 2.x.
+        'collective.nitf >= 2.1b2',
         'collective.polls',
         'collective.prettydate',
         'five.grok',

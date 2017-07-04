@@ -14,7 +14,8 @@ class HiddenProducts(object):
         return [
             u'brasil.gov.tiles.upgrades.v2000',
             u'brasil.gov.tiles.upgrades.v3000',
-            u'brasil.gov.tiles.upgrades.v4000'
+            u'brasil.gov.tiles.upgrades.v4000',
+            u'brasil.gov.tiles.upgrades.v4002',
         ]
 
 
@@ -29,4 +30,5 @@ class HiddenProfiles(object):
             u'brasil.gov.tiles.upgrades.v2000:default',
             u'brasil.gov.tiles.upgrades.v3000:default',
             u'brasil.gov.tiles.upgrades.v4000:default',
+            u'brasil.gov.tiles.upgrades.v4002:default',
         ]
