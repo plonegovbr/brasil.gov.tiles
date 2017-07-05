@@ -96,9 +96,11 @@ class NITFBasicTile(NITFTile):
 
         https://github.com/plonegovbr/brasil.gov.tiles/blob/caa250e9c3428d000174368321c42dae2fb48f92/src/brasil/gov/tiles/tiles/basic.py#L160
         """
-        return (self.data.get('image_description') or
-                self.data.get('description') or
-                self.data.get('title'))
+        return any((
+            self.data.get('image_description'),
+            self.data.get('description'),
+            self.data.get('title'),
+        ))
 
     @property
     def title_tag(self):
