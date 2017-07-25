@@ -677,16 +677,8 @@ ul.css-tabs {
     border-bottom: 1px solid #eeeff1;
 }
 
-/* single tab */
-ul.css-tabs li {
-    float: left;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
 /* link inside the tab. uses a background image */
-ul.css-tabs a {
+ul.css-tabs li {
     position: relative;
     top: 1px;
     display: block;
@@ -704,16 +696,18 @@ ul.css-tabs a {
     color: #777;
     text-decoration: none;
     font-size: 13px;
+    cursor: pointer;
+    cursor: hand;
 }
 
-ul.css-tabs a:hover {
+ul.css-tabs li:hover {
     background-color: #F7F7F7;
     color: #333;
 }
 
 /* selected tab */
-ul.css-tabs a.current {
-    border-bottom: 1px solid #d4d5d7;
+ul.css-tabs li.current {
+    border-bottom: 0 solid transparent;
     background-color: #eeeff1;
     color: #000;
     cursor: default;
