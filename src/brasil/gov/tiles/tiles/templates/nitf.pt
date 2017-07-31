@@ -25,13 +25,13 @@
       <tal:image
           condition="python:field['id'] == 'image'"
           define="scale python:field.get('scale', 'large');
-                  position python:field.get('position', '');">
-        <a class="imag" tal:attributes="href view/getURL;
+                  position python:field.get('position', '');
+                  scales view/@@images;
+                  thumbnail python: scales.scale('image', scale=scale);">
+        <a class="imag" tal:condition="thumbnail"
+                        tal:attributes="href view/getURL;
                                         title description;">
-          <img tal:define="scales view/@@images;
-                           thumbnail python: scales.scale('image', scale=scale);"
-               tal:condition="thumbnail"
-               tal:attributes="src thumbnail/url;
+          <img tal:attributes="src thumbnail/url;
                                width thumbnail/width;
                                height thumbnail/height;
                                class position;
