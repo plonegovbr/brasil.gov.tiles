@@ -1,6 +1,15 @@
 Alterações
 ----------
 
+unreleased
+
+- Altera o tile de notícia para corrigir o método alt que retornava sempre o valor True.
+
+- Altera o tile de notícia para não exibir links vazios quando não existir imagem a ser exibida.
+
+- Altera o tile de redes sociais para retirar o link das abas Facebook e Twitter para adequar a
+  acessibilidade.
+
 1.4b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
