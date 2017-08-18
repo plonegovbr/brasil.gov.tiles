@@ -32,7 +32,7 @@ class NITFBasicTileTestCase(BaseIntegrationTestCase):
         self.assertListEqual(
             self.tile.accepted_ct(), ['collective.nitf.content'])
 
-    def test_render_without_image(self):
+    def test_render_without_image_no_link(self):
         nitf = self.portal['my-news-folder']['my-nitf-without-image']
         self.tile.populate_with_object(nitf)
         rendered = self.tile()
