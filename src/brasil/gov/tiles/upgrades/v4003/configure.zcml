@@ -9,8 +9,8 @@
       profile="brasil.gov.tiles:default">
 
     <gs:upgradeStep
-        title="Cook css"
-        description="Css foi alterado, necessário chamar cookResources"
+        title="Cook CSS"
+        description="CSS foi alterado, necessário chamar cookResources"
         handler="collective.cover.upgrades.cook_css_resources"
         />
 

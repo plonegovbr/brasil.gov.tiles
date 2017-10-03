@@ -4,8 +4,7 @@ Alterações
 1.4b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Altera o tile de redes sociais para retirar o link das abas Facebook e Twitter para adequar a
-  acessibilidade.
+- Altera o tile de redes sociais para retirar o link das abas Facebook e Twitter para adequar a acessibilidade.
   [idgserpro]
 
 - Altera o tile de notícia para corrigir o método alt que retornava sempre o valor True.

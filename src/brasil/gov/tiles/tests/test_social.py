@@ -12,8 +12,7 @@ class SocialTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(SocialTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('social', 'test-tile')
-        )
+            '@@{0}/{1}'.format('social', 'test-tile'))
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(SocialTile))
