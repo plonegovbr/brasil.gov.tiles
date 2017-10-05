@@ -1,8 +1,8 @@
 Alterações
 ----------
 
-1.4b2 (unreleased)
-^^^^^^^^^^^^^^^^^^
+1.4rc1 (2017-10-05)
+^^^^^^^^^^^^^^^^^^^
 
 - Altera o tile de redes sociais para retirar o link das abas Facebook e Twitter para adequar a acessibilidade.
   [idgserpro]
