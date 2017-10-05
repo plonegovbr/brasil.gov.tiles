@@ -31,3 +31,17 @@ class NITFBasicTileTestCase(BaseIntegrationTestCase):
     def test_accepted_content_types(self):
         self.assertListEqual(
             self.tile.accepted_ct(), ['collective.nitf.content'])
+
+    def test_render_without_image_no_link(self):
+        nitf = self.portal['my-news-folder']['my-nitf-without-image']
+        self.tile.populate_with_object(nitf)
+        rendered = self.tile()
+        self.assertNotIn('<a class="imag"', rendered)
+        self.assertNotIn('<img', rendered)
+
+    def test_render_with_image(self):
+        nitf = self.portal['my-news-folder']['my-nitf-with-image']
+        self.tile.populate_with_object(nitf)
+        rendered = self.tile()
+        self.assertIn('<a class="imag"', rendered)
+        self.assertIn('<img', rendered)

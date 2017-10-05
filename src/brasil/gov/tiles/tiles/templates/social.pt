@@ -32,8 +32,8 @@
     </tal:facebook>
     <div>
         <ul class="social-tabs css-tabs">
-            <li tal:condition="view/facebook_available"><a title="Facebook" href="#" i18n:attributes="title" i18n:translate="">Facebook</a></li>
-            <li tal:condition="view/twitter_available"><a title="Twitter" href="#" i18n:attributes="title" i18n:translate="">Twitter</a></li>
+            <li tal:condition="view/facebook_available" i18n:translate="">Facebook</li>
+            <li tal:condition="view/twitter_available" i18n:translate="">Twitter</li>
         </ul>
     </div>
     <div class="social-panes css-panes">

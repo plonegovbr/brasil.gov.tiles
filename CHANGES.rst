@@ -4,7 +4,14 @@ Alterações
 1.4b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Altera o tile de redes sociais para retirar o link das abas Facebook e Twitter para adequar a acessibilidade.
+  [idgserpro]
+
+- Altera o tile de notícia para corrigir o método alt que retornava sempre o valor True.
+  [idgserpro]
+
+- Altera o tile de notícia para não exibir links vazios quando não existir imagem a ser exibida.
+  [idgserpro]
 
 
 1.4b1 (2017-07-05)
