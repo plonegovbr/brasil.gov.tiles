@@ -1,10 +1,11 @@
 Alterações
 ----------
 
-1.4 (unreleased)
+1.5 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Substitui o tile de enquete pelo tile padrão do collective.polls.
+  [hvelarde, rodfersou]
 
 
 1.4rc1 (2017-10-05)
