@@ -153,3 +153,23 @@ class Upgrade4001to4002TestCase(UpgradeTestCaseBrasilGovTitles):
 
         tiles = api.portal.get_registry_record('plone.app.tiles')
         self.assertNotIn(u'collective.nitf', tiles)
+
+
+class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        super(Upgrade4003to4004TestCase, self).setUp(u'4003', u'4004')
+
+    def test_replace_poll_tile(self):
+        title = u'Replace poll tile'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        pass
+
+        # run the upgrade step to validate the update
+        self._do_upgrade_step(step)
+        pass

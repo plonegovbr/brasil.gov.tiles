@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+      source="4003"
+      destination="4004"
+      profile="brasil.gov.tiles:default">
+
+    <genericsetup:upgradeStep
+        title="Replace poll tile"
+        description="Replace poll tile with the one in collective.polls."
+        handler=".replace_poll_tile"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>
