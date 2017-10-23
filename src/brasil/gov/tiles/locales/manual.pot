@@ -47,14 +47,6 @@ msgid "A tile that shows a news article."
 msgstr ""
 
 #: tiles/configure.zcml
-msgid "A poll tile"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "A tile that shows a poll."
-msgstr ""
-
-#: tiles/configure.zcml
 msgid "A highlight tile"
 msgstr ""
 

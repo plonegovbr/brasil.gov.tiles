@@ -63,15 +63,7 @@ msgid "A highlight tile"
 msgstr ""
 
 #: tiles/configure.zcml
-msgid "A poll tile"
-msgstr ""
-
-#: tiles/configure.zcml
 msgid "A tile that shows a news article."
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "A tile that shows a poll."
 msgstr ""
 
 #: ./tiles/banner.py:31
@@ -277,14 +269,6 @@ msgstr ""
 msgid "Please drag&amp;drop a news article here."
 msgstr ""
 
-#: ./tiles/templates/poll.pt:15
-msgid "Poll"
-msgstr ""
-
-#: ./tiles/poll.py:18
-msgid "Poll uuid"
-msgstr ""
-
 #: Profile description in profile.zcml
 msgid "Profile tests for the package Block Content."
 msgstr ""
@@ -305,16 +289,8 @@ msgstr ""
 msgid "Section"
 msgstr ""
 
-#: ./tiles/templates/poll.pt:49
-msgid "See previous polls"
-msgstr ""
-
 #: tiles/configure.zcml
 msgid "Social"
-msgstr ""
-
-#: ./tiles/templates/poll.pt:38
-msgid "Submit"
 msgstr ""
 
 #: ./tiles/nitf.py:17
@@ -441,10 +417,6 @@ msgstr ""
 
 #: tiles/configure.zcml
 msgid "social streams, from twitter and facebook."
-msgstr ""
-
-#: ./tiles/templates/poll.pt:42
-msgid "spiner"
 msgstr ""
 
 #: ./tiles/list.py:119
