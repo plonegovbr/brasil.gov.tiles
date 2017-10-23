@@ -53,10 +53,9 @@ setup(
         'collective.nitf >= 2.1b2',
         'collective.polls',
         'collective.prettydate',
-        'five.grok',
         'plone.api',
         'plone.app.blocks',
-        'plone.app.dexterity [grok, relations]',
+        'plone.app.dexterity [relations]',
         # BBB: Com a atualização do collective.cover para 1.5b1 esse pacote
         # foi removido mas ainda mantém utilities no ZODB para portais em produção. Quando
         # https://github.com/plonegovbr/brasil.gov.portal/issues/348#issuecomment-309847978
@@ -80,9 +79,11 @@ setup(
         'plone.app.upgrade',
         'plone.app.uuid',
         'plone.app.vocabularies',
+        'plone.autoform',
         'plone.dexterity',
         'plone.memoize',
         'plone.namedfile',
+        'plone.supermodel',
         'plone.tiles',
         'plone.uuid',
         'plone4.csrffixes',
