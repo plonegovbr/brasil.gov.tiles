@@ -19,7 +19,7 @@ DEPENDENCIES = [
 TILES = [
     'em_destaque',
     'nitf',
-    'poll',
+    'collective.polls',
     'destaque',
     'videogallery',
     'audio',
