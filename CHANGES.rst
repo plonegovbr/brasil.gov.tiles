@@ -4,6 +4,9 @@ Alterações
 1.5 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Substitui o tile poll do pacote pelo novo tile de collective.polls.
+  [rodfersou]
+
 - Remove 'five.grok' e plone.directives.form (closes `#185`)
   [caduvieira]
 
