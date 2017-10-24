@@ -114,6 +114,6 @@ class BasicTileTestCase(BaseIntegrationTestCase):
             # 'collective.cover.CanEditLayout'.
             view = self.portal['my-cover'].restrictedTraverse('@@tile_list')
         html = view()
-        prefix_icon = '++resource++collective.cover/img/tile-'
+        prefix_icon = '<img src="++resource++collective'
         total_in_rendered_view = html.count(prefix_icon)
         self.assertTrue(len(view.tiles) == total_in_rendered_view)
