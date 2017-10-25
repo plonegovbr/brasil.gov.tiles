@@ -4,7 +4,7 @@ from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone import api
-from plone.directives import form
+from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -12,7 +12,7 @@ from zope import schema
 from zope.interface import implementer
 
 
-class IVideoGalleryTile(IListTile, form.Schema):
+class IVideoGalleryTile(IListTile):
     """
     """
 

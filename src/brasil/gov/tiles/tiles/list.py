@@ -8,7 +8,7 @@ from collective.cover.tiles.base import PersistentCoverTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone import api
 from plone.app.uuid.utils import uuidToObject
-from plone.directives import form
+from plone.autoform import directives as form
 from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
@@ -23,7 +23,7 @@ from zope.schema import getFieldsInOrder
 
 
 # XXX: we must refactor this tile
-class IListTile(IPersistentCoverTile, form.Schema):
+class IListTile(IPersistentCoverTile):
 
     header = schema.TextLine(
         title=_(u'Header'),

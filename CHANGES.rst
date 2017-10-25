@@ -1,10 +1,11 @@
 Alterações
 ----------
 
-1.4 (unreleased)
+1.5 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove 'five.grok' e plone.directives.form (closes `#185`)
+  [caduvieira]
 
 
 1.4rc1 (2017-10-05)
