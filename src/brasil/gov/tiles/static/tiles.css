@@ -895,85 +895,65 @@ div[data-tile*="mediacarousel"] {
 
 /* POLL TILE */
 #content .poll-tile {
-    border: 1px solid #d4d5d7;
-    border-radius: 0.5em 0.5em 0 0;
-    background-color: #eeeff1;
+    border: 1px solid #D4D5D7;
+    border-radius: .5em .5em 0 0;
+    background-color: #EEEFF1;
 }
-
 #content .poll-tile .poll-tile-header {
-    padding: 0.5em 1em;
-    border-bottom: 1px solid #d4d5d7;
+    padding: 1.7em 1em;
+    border-bottom: 1px solid #D4D5D7;
+    border-radius: .5em .5em 0 0;
+    background-color: #F8F9F9;
 }
-
-#content .poll-tile .poll-tile-header>.header {
-    color: #444a53;
-    text-transform: uppercase;
-    font-size: 1.3em;
-    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+#content .poll-tile .poll-tile-header > h3 {
+    font-size: 1em;
+    color: #365073;
 }
-
-#content .poll-tile .tile-content-wrapper>div {
+#content .poll-tile .tile-content-wrapper > .poll-graph > p {
+    font-weight: bold;
+    padding: 1em 1em 0 1em;
+}
+#content .poll-tile .tile-content-wrapper > .poll-graph > .poll-data {
     padding: 0 1em;
 }
-
-#content .poll-tile .tile-content-wrapper>.poll-spinner {
+#content .poll-tile .tile-content-wrapper > .poll-spinner {
     padding: 0;
 }
-
-#content .poll-tile .tile-content-wrapper>h3 {
-    padding: 1.7em 1em;
-    background-color: #f8f9f9;
-    color: #365073;
-    font-size: 1em;
-}
-
-#content .poll-tile .tile-content-wrapper>h4 {
-    padding: 1em;
+#content .poll-tile .tile-content-wrapper form label {
     font-weight: normal;
-    font-size: 1em;
-    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+    display: inline-block;
 }
-
-#content .poll-tile .tile-content-wrapper>form>br {
-    display: none;
-}
-
-#content .poll-tile .tile-content-wrapper>form>input[type=radio] {
+#content .poll-tile .tile-content-wrapper form input[type=radio] {
     float: left;
     clear: both;
     margin: 1em 0 1em 1em;
 }
-
-#content .poll-tile .tile-content-wrapper>form>input[type=radio]+span {
+#content .poll-tile .tile-content-wrapper form input[type=radio] + span {
+    line-height: 3.3em;
     display: block;
     margin-left: 2.8em;
     color: #335277;
-    line-height: 3.3em;
 }
-
-#content .poll-tile .tile-content-wrapper>form>input[type=submit] {
-    margin-top: 1em;
-    padding: 0.8em 0px 0.8em 3em;
+#content .poll-tile .tile-content-wrapper form input[type=submit] {
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
     width: 100%;
-    border: none;
-    background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
-    color: #fff;
+    margin-top: 1em;
+    padding: .8em 0 .8em 3em;
     text-align: left;
     text-transform: uppercase;
-    font-size: 1.1em;
-    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+    color: #FFF;
+    border: none;
+    background: #456183 url(../++theme++verde/img/readmorewhiteblue.png) no-repeat 1em center;
 }
-
-#content .poll-tile .tile-content-wrapper>.result-text,
-    #content .poll-tile .tile-content-wrapper>.tile-poll-more {
+#content .poll-tile .poll-form > .toggle-result,
+#content .poll-tile .total-votes {
+    font-size: .8em;
+    display: block;
+    padding: 1em;
     padding-top: 1em;
     text-align: right;
     text-transform: uppercase;
-    font-size: 0.8em;
-}
-
-#content .poll-tile .tile-content-wrapper>.tile-poll-more {
-    padding-bottom: 1em;
 }
 
 /* Button alignment of tile compose */
@@ -1622,16 +1602,6 @@ div[data-tile*="collective.cover.embed"] .samba-player embed {
 
 #tiles-list #social img {
   background: url("++resource++brasil.gov.tiles/tile-social.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #poll img {
-  background: url("++resource++brasil.gov.tiles/tile-poll.png") no-repeat center center;
   padding-left: 32px;
   width: 32px;
   height: 32px;

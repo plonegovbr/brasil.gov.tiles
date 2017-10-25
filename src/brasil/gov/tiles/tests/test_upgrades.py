@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
+from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tests.test_upgrades import Upgrade9to10TestCase
 from collective.cover.tests.test_upgrades import UpgradeTestCaseBase
 from plone import api
@@ -153,3 +154,50 @@ class Upgrade4001to4002TestCase(UpgradeTestCaseBrasilGovTitles):
 
         tiles = api.portal.get_registry_record('plone.app.tiles')
         self.assertNotIn(u'collective.nitf', tiles)
+
+
+class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        super(Upgrade4003to4004TestCase, self).setUp(u'4003', u'4004')
+
+    def test_replace_poll_tile(self):
+        title = u'Replace poll tile'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+
+        # Simula a situação de ter isso registrado porque removemos esse tile
+        # no post_handler.
+        from brasil.gov.tiles.upgrades.v4004 import OLD_TILE
+        from brasil.gov.tiles.upgrades.v4004 import NEW_TILE
+
+        tiles = api.portal.get_registry_record('plone.app.tiles')
+        tiles.append(OLD_TILE)
+        tiles.remove(NEW_TILE)
+
+        record = dict(interface=ICoverSettings, name='available_tiles')
+        available_tiles = api.portal.get_registry_record(**record)
+        available_tiles.append(OLD_TILE)
+        available_tiles.remove(NEW_TILE)
+
+        tiles = api.portal.get_registry_record('plone.app.tiles')
+        self.assertIn(OLD_TILE, tiles)
+        self.assertNotIn(NEW_TILE, tiles)
+
+        record = dict(interface=ICoverSettings, name='available_tiles')
+        available_tiles = api.portal.get_registry_record(**record)
+        self.assertIn(OLD_TILE, available_tiles)
+        self.assertNotIn(NEW_TILE, available_tiles)
+
+        self._do_upgrade_step(step)
+
+        tiles = api.portal.get_registry_record('plone.app.tiles')
+        self.assertNotIn(OLD_TILE, tiles)
+        self.assertIn(NEW_TILE, tiles)
+
+        record = dict(interface=ICoverSettings, name='available_tiles')
+        available_tiles = api.portal.get_registry_record(**record)
+        self.assertNotIn(OLD_TILE, available_tiles)
+        self.assertIn(NEW_TILE, available_tiles)

@@ -67,16 +67,8 @@ msgid "A highlight tile"
 msgstr "Tile para Destacar"
 
 #: tiles/configure.zcml
-msgid "A poll tile"
-msgstr "Tile para Encuesta"
-
-#: tiles/configure.zcml
 msgid "A tile that shows a news article."
 msgstr "Un tile que muestra un articulo de noticia."
-
-#: tiles/configure.zcml
-msgid "A tile that shows a poll."
-msgstr "Un tile que muestra una encuesta."
 
 #: ./tiles/banner.py:31
 #: ./tiles/basic.py:43
@@ -281,14 +273,6 @@ msgstr "Por favor, añada hasta ${limit_objects} objetos en el tile."
 msgid "Please drag&amp;drop a news article here."
 msgstr "Por favor, sujete y arrastre un Articulo de noticias aquí."
 
-#: ./tiles/templates/poll.pt:15
-msgid "Poll"
-msgstr "Encuesta"
-
-#: ./tiles/poll.py:18
-msgid "Poll uuid"
-msgstr "UUID de Encuesta"
-
 #: Profile description in profile.zcml
 msgid "Profile tests for the package Block Content."
 msgstr "Perfil de pruebas para el paquete Bloque de contenido."
@@ -309,17 +293,9 @@ msgstr "Banner rotativo"
 msgid "Section"
 msgstr "Sección"
 
-#: ./tiles/templates/poll.pt:49
-msgid "See previous polls"
-msgstr "Ver encuestas previas"
-
 #: tiles/configure.zcml
 msgid "Social"
 msgstr "Redes sociales"
-
-#: ./tiles/templates/poll.pt:38
-msgid "Submit"
-msgstr "Enviar"
 
 #: ./tiles/nitf.py:17
 #: ./tiles/videogallery.py:33
@@ -446,10 +422,6 @@ msgstr "reproducir"
 #: tiles/configure.zcml
 msgid "social streams, from twitter and facebook."
 msgstr "Actualizaciones de redes sociales, desde twitter y facebook."
-
-#: ./tiles/templates/poll.pt:42
-msgid "spiner"
-msgstr "Marcador incrementable"
 
 #: ./tiles/list.py:119
 msgid "tile List Title"

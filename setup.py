@@ -51,7 +51,7 @@ setup(
         # Passo a herdar do tile de nitf, que só foi disponibilizado a partir
         # de 2.x.
         'collective.nitf >= 2.1b2',
-        'collective.polls',
+        'collective.polls >= 1.10b1',
         'collective.prettydate',
         'plone.api',
         'plone.app.blocks',

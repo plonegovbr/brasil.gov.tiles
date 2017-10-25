@@ -8,7 +8,7 @@
     <value purge="true">
       <element>em_destaque</element>
       <element>nitf</element>
-      <element>poll</element>
+      <element>collective.polls</element>
       <element>destaque</element>
       <element>videogallery</element>
       <element>audio</element>

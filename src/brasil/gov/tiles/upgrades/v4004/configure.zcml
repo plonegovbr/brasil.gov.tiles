@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <gs:upgradeSteps
+      source="4003"
+      destination="4004"
+      profile="brasil.gov.tiles:default">
+
+    <gs:upgradeStep
+        title="Replace poll tile"
+        description="Replace poll tile with the one in collective.polls."
+        handler=".replace_poll_tile"
+        />
+
+    <gs:upgradeStep
+        title="Cook css"
+        description="Css foi alterado, necessário chamar cookResources"
+        handler="collective.cover.upgrades.cook_css_resources"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>
