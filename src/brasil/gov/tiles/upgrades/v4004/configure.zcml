@@ -9,9 +9,9 @@
       profile="brasil.gov.tiles:default">
 
     <gs:upgradeStep
-        title="Rename poll tile"
-        description="Rename o tile do pacote e utiliza o tile de collective.polls"
-        handler=".rename_poll_tile"
+        title="Replace poll tile"
+        description="Replace poll tile with the one in collective.polls."
+        handler=".replace_poll_tile"
         />
 
     <gs:upgradeStep

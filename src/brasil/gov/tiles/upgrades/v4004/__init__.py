@@ -13,7 +13,7 @@ NEW_TILE = u'collective.polls'
 
 
 def _change_tile_type(layout, is_child=False):
-    """Recursivelly change tile type."""
+    """Recursively change tile type."""
     if not is_child:
         layout = json.loads(layout)
     fixed_layout = []
@@ -32,8 +32,8 @@ def _change_tile_type(layout, is_child=False):
         return fixed_layout.decode('utf-8')
 
 
-def rename_poll_tile(context):
-    """Rename poll tile"""
+def replace_poll_tile(context):
+    """Replace poll tile with the one in collective.polls."""
     logger = logging.getLogger(PROJECTNAME)
     tiles = api.portal.get_registry_record('plone.app.tiles')
     if OLD_TILE in tiles:
@@ -50,4 +50,4 @@ def rename_poll_tile(context):
     for brain in results:
         obj = brain.getObject()
         obj.cover_layout = _change_tile_type(obj.cover_layout)
-    logger.info('Renamed poll tile.')
+    logger.info('collective.polls tile replaced the poll tile')

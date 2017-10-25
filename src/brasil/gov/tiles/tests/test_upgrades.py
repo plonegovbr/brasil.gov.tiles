@@ -163,8 +163,8 @@ class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
     def setUp(self):
         super(Upgrade4003to4004TestCase, self).setUp(u'4003', u'4004')
 
-    def test_rename_polls_tile(self):
-        title = u'Rename poll tile'
+    def test_replace_poll_tile(self):
+        title = u'Replace poll tile'
         step = self._get_upgrade_step(title)
         self.assertIsNotNone(step)
 
