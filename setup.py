@@ -83,7 +83,6 @@ setup(
         'plone.dexterity',
         'plone.memoize',
         'plone.namedfile',
-        'plone.supermodel',
         'plone.tiles',
         'plone.uuid',
         'plone4.csrffixes',

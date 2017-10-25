@@ -6,14 +6,13 @@ from collective.cover.tiles.configuration_view import IDefaultConfigureForm
 from plone import api
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
-from plone.supermodel import model
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
 
 
-class IVideoGalleryTile(IListTile, model.Schema):
+class IVideoGalleryTile(IListTile):
     """
     """
 

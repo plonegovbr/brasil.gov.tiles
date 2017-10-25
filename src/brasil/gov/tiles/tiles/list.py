@@ -12,7 +12,6 @@ from plone.autoform import directives as form
 from plone.memoize import view
 from plone.namedfile.field import NamedBlobImage as NamedImage
 from plone.registry.interfaces import IRegistry
-from plone.supermodel import model
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -24,7 +23,7 @@ from zope.schema import getFieldsInOrder
 
 
 # XXX: we must refactor this tile
-class IListTile(IPersistentCoverTile, model.Schema):
+class IListTile(IPersistentCoverTile):
 
     header = schema.TextLine(
         title=_(u'Header'),

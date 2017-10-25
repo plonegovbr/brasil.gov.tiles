@@ -8,7 +8,6 @@ from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
-from plone.supermodel import model
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.interfaces import ITileType
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -17,7 +16,7 @@ from zope.component import queryUtility
 from zope.schema import getFieldsInOrder
 
 
-class ICollectionTile(IPersistentCoverTile, model.Schema):
+class ICollectionTile(IPersistentCoverTile):
 
     header = schema.TextLine(
         title=_(u'Header'),
