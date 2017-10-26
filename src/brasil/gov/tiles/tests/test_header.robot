@@ -8,10 +8,8 @@ Suite Teardown  Close all browsers
 
 *** Variables ***
 
-${filter_items}  contentchooser-content-trees
-${content_tree}  .formTabs .formTab:nth-child(2) a
 ${header_tile_location}  "standaloneheader"
-${folder_selector}  .ui-draggable .contenttype-folder
+${collection_selector}  .ui-draggable .contenttype-collection
 ${tile_selector}  div.tile-container div.tile
 ${edit_link_selector}  a.edit-tile-link
 ${title_field_id}  standaloneheader-title
@@ -68,52 +66,36 @@ Test Header Tile
     Compose Cover
     Page Should Contain Element  css=div.outstanding-header
 
-    # drag&drop an Header
-    # FIXME: Need to enable headers and create an header content
+    # drag&drop an Collection
     Open Content Chooser
-    Click Link  css=${content_tree}
-    Drag And Drop  css=${folder_selector}  css=${tile_selector}
+    Drag And Drop  css=${collection_selector}  css=${tile_selector}
     Wait Until Page Contains Element  css=div.outstanding-header
+    Wait Until Page Contains Element  css=a.outstanding-link
 
     # move to the default view and check tile persisted
-    # FIXME: Need to enable headers and create an header content
     Click Link  link=View
     Wait Until Page Contains Element  css=div.outstanding-header
 
-    # edit the title and check AJAX refresh
+    # edit and check AJAX refresh
     Compose Cover
     Click Link  css=${edit_link_selector}
     Page Should Contain Element  css=#${title_field_id}
     Input Text  id=${title_field_id}  ${title_sample}
+    Input Text  id=${link_text_field_id}  ${link_text_sample}
+    Input Text  id=${link_url_field_id}  ${link_url_sample}
     Click Button  Save
     Wait Until Page Contains  ${title_sample}
+    Wait Until Page Contains  ${link_text_sample}
 
-    # edit the title but cancel operation
+    # edit but cancel operation
     Compose Cover
     Click Link  css=${edit_link_selector}
     Page Should Contain Element  css=#${title_field_id}
     Input Text  id=${title_field_id}  ${title_other_sample}
-    Click Button  Cancel
-    Wait Until Page Contains  ${title_sample}
-
-    # edit the footer text and check AJAX refresh
-    Compose Cover
-    Click Link  css=${edit_link_selector}
-    Page Should Contain Element  css=#${link_text_field_id}
-    Input Text  id=${link_text_field_id}  ${link_text_sample}
-    Page Should Contain Element  css=#${link_url_field_id}
-    Input Text  id=${link_url_field_id}  ${link_url_sample}
-    Click Button  Save
-    Wait Until Page Contains  ${link_text_sample}
-
-    # edit the footer text but cancel operation
-    Compose Cover
-    Click Link  css=${edit_link_selector}
-    Page Should Contain Element  css=#${link_text_field_id}
-    Input Text  id=${link_text_field_id}  ${link_text_sample}
-    Page Should Contain Element  css=#${link_url_field_id}
+    Input Text  id=${link_text_field_id}  ${link_text_other_sample}
     Input Text  id=${link_url_field_id}  ${link_url_other_sample}
     Click Button  Cancel
+    Wait Until Page Contains  ${title_sample}
     Wait Until Page Contains  ${link_text_sample}
 
     # delete the tile
