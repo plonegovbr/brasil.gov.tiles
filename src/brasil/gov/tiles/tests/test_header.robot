@@ -73,13 +73,11 @@ Test Header Tile
     Click Link  css=${content_tree}
     Drag And Drop  css=${folder_selector}  css=${tile_selector}
     Wait Until Page Contains Element  css=div.outstanding-header
-    Page Should Contain  Drag an header to the popular tile.
 
     # move to the default view and check tile persisted
     # FIXME: Need to enable headers and create an header content
     Click Link  link=View
     Wait Until Page Contains Element  css=div.outstanding-header
-    Page Should Contain  Drag an header to the popular tile.
 
     # edit the title and check AJAX refresh
     Compose Cover
