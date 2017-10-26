@@ -9,6 +9,7 @@ Suite Teardown  Close all browsers
 *** Variables ***
 
 ${filter_items}  contentchooser-content-trees
+${content_tree}  .formTabs .formTab:nth-child(2) a
 ${header_tile_location}  "standaloneheader"
 ${folder_selector}  .ui-draggable .contenttype-folder
 ${tile_selector}  div.tile-container div.tile
