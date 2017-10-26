@@ -63,9 +63,9 @@ Test Header Tile
     Add Tile  ${header_tile_location}
     Save Cover Layout
 
-    # as tile is empty, we see default message
+    # as tile is empty
     Compose Cover
-    Page Should Contain  Drag an header to the popular tile.
+    Page Should Contain Element  css=div.outstanding-header
 
     # drag&drop an Header
     # FIXME: Need to enable headers and create an header content
