@@ -60,13 +60,12 @@ Test Header Tile
 
     # add a headers tile to the layout
     Edit Cover Layout
-    Wait until page contains  Export layout
     Add Tile  ${header_tile_location}
     Save Cover Layout
 
     # as tile is empty, we see default message
     Compose Cover
-    Page Should Contain  Drag an album to the popular tile.
+    Page Should Contain  Drag an header to the popular tile.
 
     # drag&drop an Header
     # FIXME: Need to enable headers and create an header content
