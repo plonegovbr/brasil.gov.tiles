@@ -4,6 +4,9 @@ Alterações
 1.5 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove patch desnecessário em método ``_has_image_field()`` toda vez que a versão do collective.cover foi atualizada (closes `#170 <https://github.com/plonegovbr/brasil.gov.tiles/issues/170>`_).
+  [hvelarde]
+
 - Corrige o titulo do tile "Cabeçalho" que não era mostrado após a edição (closes `#144`)
   [claytonc]
 
