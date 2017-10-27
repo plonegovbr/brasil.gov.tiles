@@ -26,8 +26,6 @@ ${footerurl_other_sample}  http://www.google.com
 *** Test cases ***
 
 Test Albuns Tile
-    [Setup]  Set Selenium Speed  .5
-
     Enable Autologin as  Site Administrator
     Go to Homepage
     Create Cover  Title  Description  Empty layout
