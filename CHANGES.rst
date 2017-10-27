@@ -4,6 +4,9 @@ Alterações
 1.5 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Corrige o titulo do tile "Cabeçalho" que não era mostrado após a edição (closes `#144`)
+  [claytonc]
+
 - Substitui o tile poll do pacote pelo novo tile de collective.polls.
   [rodfersou]
 
