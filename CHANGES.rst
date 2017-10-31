@@ -1,7 +1,7 @@
 Alterações
 ----------
 
-1.5 (unreleased)
+1.5 (2017-10-31)
 ^^^^^^^^^^^^^^^^
 
 - Remove patch desnecessário em método ``_has_image_field()`` toda vez que a versão do collective.cover foi atualizada (closes `#170 <https://github.com/plonegovbr/brasil.gov.tiles/issues/170>`_).
