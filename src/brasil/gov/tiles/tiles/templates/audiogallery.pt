@@ -8,7 +8,7 @@
         </script>
     </head>
     <body tal:define="tile_id view/id;">
-        <div class="audiogallery-tile"
+        <div class="audiogallery-tile tile-content"
              tal:attributes="id string:audiogallery-$tile_id"
              tal:define="conf_fields view/get_configured_fields;
                          results view/results;

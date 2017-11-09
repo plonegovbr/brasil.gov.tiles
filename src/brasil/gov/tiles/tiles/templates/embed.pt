@@ -7,7 +7,7 @@
         <p tal:condition="is_empty" i18n:translate="">
             Please edit the tile to add the code to be embedded.
         </p>
-        <div tal:condition="not: is_empty">
+        <div class="tile-content" tal:condition="not: is_empty">
             <tal:fields repeat="field view/get_configured_fields">
                 <tal:embed condition="python:field['id'] == 'embed' and not view.at_compose_tab()">
                     <!-- FIXME -->
