@@ -12,7 +12,7 @@
 </head> -->
 
 <body tal:define="tile_id view/id;">
-  <div class="videogallery-tile"
+  <div class="videogallery-tile tile-content"
        tal:attributes="id string:videogallery-$tile_id"
        tal:define="conf_fields view/get_configured_fields;
                    results view/results;

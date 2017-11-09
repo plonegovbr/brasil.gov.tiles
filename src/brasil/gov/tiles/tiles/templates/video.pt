@@ -5,7 +5,7 @@
       i18n:domain="brasil.gov.tiles">
 
 <body tal:define="tile_id view/id;">
-  <div class="video-tile"
+  <div class="video-tile tile-content"
        tal:attributes="id string:video-$tile_id"
        tal:define="results view/data;">
     <div class="video-container" tal:content="structure results/embed_code"></div>
