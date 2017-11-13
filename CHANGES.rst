@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5.1 (unreleased)
+1.5.1 (2017-11-13)
 ^^^^^^^^^^^^^^^^^^
 
 - Corrige bug no pache do banner rotativo que quebrava a remoção de itens nos demais tiles de lista (closes `#192 <https://github.com/plonegovbr/brasil.gov.tiles/issues/192>`_).
