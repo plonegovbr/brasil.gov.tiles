@@ -1,14 +1,15 @@
-Alterações
-----------
+Changelog
+---------
 
 1.5.1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Corrige bug no pache do banner rotativo que quebrava a remoção de itens nos demais tiles de lista (closes `#192 <https://github.com/plonegovbr/brasil.gov.tiles/issues/192>` _).
+- Corrige bug no pache do banner rotativo que quebrava a remoção de itens nos demais tiles de lista (closes `#192 <https://github.com/plonegovbr/brasil.gov.tiles/issues/192>`_).
   [rodfersou]
 
-- Corrige a edição de alguns tiles que não era exibidos após a edição de alguns campos titulos, rodapé etc (closes `#194 <https://github.com/plonegovbr/brasil.gov.tiles/issues/194>` _).
+- Corrige a edição de alguns tiles que não era exibidos após a edição de alguns campos títulos, rodapé, etc. (closes `#194 <https://github.com/plonegovbr/brasil.gov.tiles/issues/194>`_).
   [claytonc]
+
 
 1.5 (2017-10-31)
 ^^^^^^^^^^^^^^^^
