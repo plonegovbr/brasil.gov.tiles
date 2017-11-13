@@ -57,4 +57,4 @@ def render(self):
     if tile_type == 'banner_rotativo':
         render_banner_rotativo(self)
     else:
-        self._old_render(self)
+        self._old_render()
