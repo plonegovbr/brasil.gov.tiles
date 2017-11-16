@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from future.builtins import range  # isort:skip
 from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
@@ -110,7 +111,7 @@ class MediaCarouselTile(ListTile):
 
             if catalog_results:
                 limit = limit if limit <= self.limit else self.limit
-                for i in xrange(limit):
+                for i in range(limit):
                     results.append(catalog_results[i].getObject())
 
         return results

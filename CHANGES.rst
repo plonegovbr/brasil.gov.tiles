@@ -4,7 +4,8 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Melhora suporte para Python3 e adiciona dependência do future.
+  [caduvieira]
 
 
 1.5.1 (2017-11-13)

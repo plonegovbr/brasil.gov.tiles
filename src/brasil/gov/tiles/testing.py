@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+from __future__ import division  # isort:skip
+from future.builtins import range  # isort:skip
 from App.Common import package_home
 from collective.cover.testing import Fixture as CoverFixture
+from io import BytesIO
 from PIL import Image
 from plone import api
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
@@ -8,7 +11,6 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.testing import z2
-from StringIO import StringIO
 
 import os
 import random
@@ -52,7 +54,7 @@ def generate_jpeg(width, height):
             b = i % 16 * 16
             image.putpixel((x, y), b * 65536 + g * 256 + r)
 
-    output = StringIO()
+    output = BytesIO()
     image.save(output, format='PNG')
     return output.getvalue()
 
