@@ -53,6 +53,7 @@ setup(
         'collective.nitf >= 2.1b2',
         'collective.polls >= 1.10b1',
         'collective.prettydate',
+        'future',
         'plone.api',
         'plone.app.blocks',
         'plone.app.dexterity [relations]',
