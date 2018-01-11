@@ -18,7 +18,9 @@ before_install:
 install:
 - python bootstrap.py
 - bin/buildout annotate
-- bin/buildout
+# FIXME:
+# Avoids VersionConflict: (six 1.11.0 (/home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages), Requirement.parse('six==1.10.0'))
+- bin/buildout versions:six=
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
