@@ -194,3 +194,26 @@ class CollectionTile(PersistentCoverTile):
 
     def show_footer(self):
         return self._field_is_visible('footer')
+
+    # FIXME: Se a idéia que está proposta em
+    # https://github.com/plonegovbr/brasil.gov.tiles/blob/b1ace8d1370601468b8529455c8eda7567fe9046/src/brasil/gov/tiles/tiles/nitf.py#L84
+    # for aplicada upstream, o código desse método também deveria ser adaptado
+    # para o tile coleção de collective.cover.
+    def get_alt(self, obj):
+        """
+        Esse método é uma junção de
+
+        https://github.com/plonegovbr/brasil.gov.tiles/blob/b1ace8d1370601468b8529455c8eda7567fe9046/src/brasil/gov/tiles/tiles/nitf.py#L84
+
+        e
+
+        https://github.com/plonegovbr/brasil.gov.tiles/blob/b1ace8d1370601468b8529455c8eda7567fe9046/src/brasil/gov/tiles/tiles/nitf.py#L71
+
+        Para manter o comportamento de mostrar a descrição de uma imagem de uma
+        notícia num tile e, caso não tenha, a descrição ou título da própria
+        notícia. Isso já estava implementado no tile de nitf, mas não no tile
+        de coleção que possui objetos do tipo nitf.
+        """
+        image = obj.getImage()
+        image_alt = image.Description() or image.Title()
+        return image_alt or obj.Description() or obj.Title()

@@ -33,7 +33,7 @@
                                         <img tal:attributes="src thumbnail/url;
                                                              width thumbnail/width;
                                                              height thumbnail/height;
-                                                             alt obj/Description|obj/Title" />
+                                                             alt python:view.get_alt(obj);" />
                                     </a>
                                 </tal:image>
                                 <tal:title tal:define="htmltag python:config.get('htmltag', 'h1')"
