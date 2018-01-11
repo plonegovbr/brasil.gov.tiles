@@ -153,7 +153,7 @@ class MediaCarouselTile(ListTile):
 
     def init_js(self):
         return """
-$(document).ready(function() {
-    $('#mediacarousel-gallerie-%s').mediacarousel();
-});
-""" % (self.id)
+$(document).ready(function() {{
+    $('#mediacarousel-gallerie-{0}').mediacarousel();
+}});
+""".format(self.id)

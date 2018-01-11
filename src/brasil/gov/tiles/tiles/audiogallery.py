@@ -106,7 +106,7 @@ class AudioGalleryTile(ListTile):
 
     def init_js(self):
         return """
-$(document).ready(function() {
-    $('#audiogallery-%s').audiogallery();
-});
-""" % (self.id)
+$(document).ready(function() {{
+    $('#audiogallery-{0}').audiogallery();
+}});
+""".format(self.id)
