@@ -77,7 +77,7 @@ class AudioTile(PersistentCoverTile):
 
     def init_js(self):
         return """
-$(document).ready(function() {
-    $('#audio_jplayer_%s').audio_player({'cssSelectorAncestor':'#audio_jpcontainer_%s'});
-});
-""" % (self.id, self.id)
+$(document).ready(function() {{
+    $('#audio_jplayer_{0}').audio_player({{'cssSelectorAncestor':'#audio_jpcontainer_{1}'}});
+}});
+""".format(self.id, self.id)
