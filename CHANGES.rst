@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.5.2 (unreleased)
+1.6 (2018-01-19)
 ^^^^^^^^^^^^^^^^^^
 
 - Altera o tile de coleção quando contém notícias para ter o mesmo comportamento do tile de NITF.
