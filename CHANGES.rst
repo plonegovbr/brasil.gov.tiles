@@ -4,7 +4,7 @@ Changelog
 1.5.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Altera o tile de coleção quando contém notícias para ter o mesmo comportamento do tile de nitf.
+- Altera o tile de coleção quando contém notícias para ter o mesmo comportamento do tile de NITF.
   [idgserpro]
 
 - Melhora suporte para Python3 e adiciona dependência do future.
