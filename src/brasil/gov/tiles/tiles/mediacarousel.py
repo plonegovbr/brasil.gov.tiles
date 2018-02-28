@@ -39,9 +39,13 @@ class IMediaCarouselTile(IListTile):
 
     form.omitted('uuids')
     form.no_omit(IDefaultConfigureForm, 'uuids')
-    uuids = schema.List(
+    uuids = schema.Dict(
         title=_(u'Elements'),
-        value_type=schema.TextLine(),
+        key_type=schema.TextLine(),
+        value_type=schema.Dict(
+            key_type=schema.TextLine(),
+            value_type=schema.TextLine(),
+        ),
         required=False,
     )
 
@@ -70,8 +74,8 @@ class MediaCarouselTile(ListTile):
 
         old_data = data_mgr.get()
         old_data['header'] = header
-        old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
+        self.populate_with_uuids([uuid])
 
     def get_uuid(self, obj):
         return api.content.get_uuid(obj)

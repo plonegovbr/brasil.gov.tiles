@@ -68,11 +68,14 @@ class IBannerRotativoTile(IListTile):
 
     form.omitted('uuids')
     form.no_omit(IDefaultConfigureForm, 'uuids')
-    uuids = schema.List(
+    uuids = schema.Dict(
         title=_(u'Elements'),
-        value_type=schema.TextLine(),
+        key_type=schema.TextLine(),
+        value_type=schema.Dict(
+            key_type=schema.TextLine(),
+            value_type=schema.TextLine(),
+        ),
         required=False,
-        readonly=True,
     )
 
 
@@ -102,20 +105,14 @@ class BannerRotativoTile(ListTile):
             elif uuid not in uuids:
                 uuids.append(uuid)
 
-            old_data['uuids'] = uuids[:self.limit]
+            uuids = uuids[:self.limit]
         else:
-            old_data['uuids'] = [uuid]
+            uuids = [uuid]
         old_data['title'] = title
         old_data['description'] = description
         old_data['rights'] = rights
         data_mgr.set(old_data)
-
-    # FIXME: Usado para que o método em collective.cover 1.1b1 chame o
-    # corretamente o método enquanto não herdamos diretamente do List do cover.
-    # Utilizado principalmente quando muda a ordem de um item no banner rotativo.
-    def replace_with_uuids(self, uuids):
-        """Usado enquanto não herda do List do collective.cover."""
-        super(BannerRotativoTile, self).replace_with_uuids(uuids)
+        self.populate_with_uuids(uuids)
 
     def thumbnail(self, item):
         """Return a thumbnail of an image if the item has an image field and
