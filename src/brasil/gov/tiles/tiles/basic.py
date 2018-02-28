@@ -166,7 +166,7 @@ class BasicTile(PersistentCoverTile):
         tamanhos = {
             u'Normal': None,
             u'Grande': 'grande',
-            u'Gigante': 'gigante'
+            u'Gigante': 'gigante',
         }
         if self.data['variacao_titulo']:
             return tamanhos[self.data['variacao_titulo']]

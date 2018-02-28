@@ -15,7 +15,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(BasicTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '{0}/{1}'.format('collective.cover.basic', 'test-tile')
+            '{0}/{1}'.format('collective.cover.basic', 'test-tile'),
         )
 
     def test_interface(self):
@@ -36,7 +36,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         settings = registry.forInterface(ICoverSettings)  # noqa
         self.assertEqual(
             self.tile.accepted_ct(),
-            settings.searchable_content_types
+            settings.searchable_content_types,
         )
 
     def test_render_empty(self):
@@ -52,7 +52,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         self.assertIn('<img ', rendered)
         self.assertIn(
             'alt="This image was created for testing purposes"',
-            rendered
+            rendered,
         )
 
     def test_render_with_link(self):
@@ -62,7 +62,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
         self.assertNotIn('<img ', rendered)
         self.assertIn(
             '<a class="imag" href="http://nohost/plone/my-link"',
-            rendered
+            rendered,
         )
 
     def test_Subject(self):
@@ -107,7 +107,7 @@ class BasicTileTestCase(BaseIntegrationTestCase):
                 title='my-cover',
                 id='my-cover',
                 container=self.portal,
-                template_layout='Layout A'
+                template_layout='Layout A',
             )
             # A partir da versão 1.3b1 de collective.cover, com a remoção do
             # grok, essa view que tinha a permissão de 'zope2.View' passa a ter

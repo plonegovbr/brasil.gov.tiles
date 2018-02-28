@@ -34,7 +34,7 @@ class HeaderTileTestCase(BaseIntegrationTestCase):
         settings = registry.forInterface(ICoverSettings)  # noqa
         self.assertEqual(
             self.tile.accepted_ct(),
-            settings.searchable_content_types
+            settings.searchable_content_types,
         )
 
     def test_populate_with_object_com_link_boolean(self):
@@ -49,12 +49,12 @@ class HeaderTileTestCase(BaseIntegrationTestCase):
             '<h2 class="outstanding-title">' +
             '<a href="http://nohost/plone/my-news-' +
             'item">Test news item</a></h2>',
-            rendered
+            rendered,
         )
         self.assertIn(
             '<a class="outstanding-link" ' +
             'href="http://nohost/plone/my-news-item"',
-            rendered
+            rendered,
         )
 
     def test_populate_with_object_sem_link_boolean(self):
@@ -67,10 +67,10 @@ class HeaderTileTestCase(BaseIntegrationTestCase):
         self.assertIn(
             '<h2 class="outstanding-title">' +
             'Test news item</h2>',
-            rendered
+            rendered,
         )
         self.assertIn(
             '<a class="outstanding-link" ' +
             'href="http://nohost/plone/my-news-item"',
-            rendered
+            rendered,
         )

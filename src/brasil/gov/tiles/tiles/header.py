@@ -62,5 +62,5 @@ class HeaderTile(PersistentCoverTile):
                       'link_url': url,
                       'link_text': link_text,
                       'link_boolean': link_boolean,
-                      'uuid': uuid
+                      'uuid': uuid,
                       })

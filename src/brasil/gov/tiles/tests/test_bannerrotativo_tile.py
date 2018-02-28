@@ -54,7 +54,7 @@ class BannerRotativoTileTestCase(TestTileMixin, unittest.TestCase):
         self.tile.populate_with_object(obj)
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertFalse(tile.show_nav())
@@ -65,7 +65,7 @@ class BannerRotativoTileTestCase(TestTileMixin, unittest.TestCase):
         self.tile.populate_with_object(obj3)
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertTrue(tile.show_nav())
@@ -122,7 +122,7 @@ class BannerRotativoTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertIn(msg, rendered)
         self.assertEqual(
             self.tile.tile_class(),
-            'chamada_sem_foto tile-content'
+            'chamada_sem_foto tile-content',
         )
 
     def test_layout_chamada_sem_foto(self):
@@ -133,7 +133,7 @@ class BannerRotativoTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertIn(msg, rendered)
         self.assertEqual(
             self.tile.tile_class(),
-            'chamada_com_foto tile-content'
+            'chamada_com_foto tile-content',
         )
 
     def test_layout_texto_sobreposto(self):
@@ -144,5 +144,5 @@ class BannerRotativoTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertIn(msg, rendered)
         self.assertEqual(
             self.tile.tile_class(),
-            'chamada_sobrescrito tile-content'
+            'chamada_sobrescrito tile-content',
         )

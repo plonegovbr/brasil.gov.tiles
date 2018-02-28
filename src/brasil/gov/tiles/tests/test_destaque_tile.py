@@ -49,7 +49,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertEqual(len(tile.results()), 2)
@@ -62,7 +62,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertTrue(obj1 not in tile.results())
@@ -74,7 +74,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertTrue(tile.is_empty())
@@ -92,7 +92,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertEqual(len(tile.results()), 2)
@@ -104,7 +104,7 @@ class DestaqueTileTestCase(TestTileMixin, unittest.TestCase):
         settings = registry.forInterface(ICoverSettings)  # noqa
         self.assertEqual(
             self.tile.accepted_ct(),
-            settings.searchable_content_types
+            settings.searchable_content_types,
         )
 
     def test_render_empty(self):

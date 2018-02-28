@@ -80,22 +80,22 @@ class Fixture(CoverFixture):
             api.content.create(
                 type='Folder',
                 title='my-news-folder',
-                container=portal
+                container=portal,
             )
             api.content.create(
                 type='collective.nitf.content',
                 title='my-nitf-without-image',
-                container=portal['my-news-folder']
+                container=portal['my-news-folder'],
             )
             api.content.create(
                 type='collective.nitf.content',
                 title='my-nitf-with-image',
-                container=portal['my-news-folder']
+                container=portal['my-news-folder'],
             )
             api.content.create(
                 type='Image',
                 title='my-image',
-                container=portal['my-news-folder']['my-nitf-with-image']
+                container=portal['my-news-folder']['my-nitf-with-image'],
             ).setImage(generate_jpeg(50, 50))
             portal['my-news-folder'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image'].reindexObject()
