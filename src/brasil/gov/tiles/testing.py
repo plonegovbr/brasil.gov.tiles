@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division  # isort:skip
 from future.builtins import range  # isort:skip
-from App.Common import package_home
 from collective.cover.testing import Fixture as CoverFixture
 from io import BytesIO
 from PIL import Image
@@ -12,19 +11,8 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.testing import z2
 
-import os
 import random
 import unittest
-
-
-def loadFile(name, size=0):
-    """Load file from testing directory
-    """
-    path = os.path.join(package_home(globals()), 'tests/input', name)
-    fd = open(path, 'rb')
-    data = fd.read()
-    fd.close()
-    return data
 
 
 def generate_jpeg(width, height):
@@ -67,7 +55,6 @@ class Fixture(CoverFixture):
         super(Fixture, self).setUpZope(app, configurationContext)
         import brasil.gov.tiles
         self.loadZCML(package=brasil.gov.tiles)
-        self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
         super(Fixture, self).setUpPloneSite(portal)

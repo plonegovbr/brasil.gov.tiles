@@ -2,8 +2,8 @@
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from brasil.gov.tiles.tiles.banner_rotativo import BannerRotativoTile
 from brasil.gov.tiles.tiles.banner_rotativo import IBannerRotativoTile
-from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tests.base import TestTileMixin
+from collective.cover.tiles.list import ListTile
 from plone.app.imaging.interfaces import IImageScale
 from zope.component import getMultiAdapter
 

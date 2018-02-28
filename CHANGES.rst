@@ -4,6 +4,9 @@ Changelog
 1.7 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove tiles sobrescrevidos.
+  [rodfersou]
+
 - Remove upgrade steps antigos.
   [rodfersou]
 
