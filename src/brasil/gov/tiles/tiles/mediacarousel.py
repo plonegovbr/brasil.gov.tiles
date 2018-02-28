@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from future.builtins import range  # isort:skip
 from brasil.gov.tiles import _ as _
-from brasil.gov.tiles.tiles.list import IListTile
-from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from collective.cover.tiles.list import IListTile
+from collective.cover.tiles.list import ListTile
 from plone import api
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
@@ -39,9 +39,13 @@ class IMediaCarouselTile(IListTile):
 
     form.omitted('uuids')
     form.no_omit(IDefaultConfigureForm, 'uuids')
-    uuids = schema.List(
+    uuids = schema.Dict(
         title=_(u'Elements'),
-        value_type=schema.TextLine(),
+        key_type=schema.TextLine(),
+        value_type=schema.Dict(
+            key_type=schema.TextLine(),
+            value_type=schema.TextLine(),
+        ),
         required=False,
     )
 
@@ -70,8 +74,8 @@ class MediaCarouselTile(ListTile):
 
         old_data = data_mgr.get()
         old_data['header'] = header
-        old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
+        self.populate_with_uuids([uuid])
 
     def get_uuid(self, obj):
         return api.content.get_uuid(obj)
