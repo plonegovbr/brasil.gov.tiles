@@ -65,6 +65,7 @@ class InstallTestCase(unittest.TestCase):
         registered_tiles = self.registry['plone.app.tiles']
         self.assertNotIn(u'collective.nitf', registered_tiles)
 
+    @unittest.skipIf(True, 'There are still no upgrade steps in this package.')
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
         """
         Testa se o número do último upgradeStep disponível é o mesmo do

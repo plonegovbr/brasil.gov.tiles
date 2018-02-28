@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<registry>
-  <record name="plone.app.tiles">
-    <value purge="false">
-      <element>banner_rotativo</element>
-    </value>
-  </record>
-</registry>
