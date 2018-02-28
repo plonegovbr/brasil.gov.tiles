@@ -105,7 +105,7 @@ class MediaCarouselTile(ListTile):
                 catalog_results = obj.getFolderContents({
                     'portal_type': ['sc.embedder',
                                     'Image',
-                                    'collective.nitf.content']
+                                    'collective.nitf.content'],
                 })
                 limit = len(catalog_results) if catalog_results else 0
 

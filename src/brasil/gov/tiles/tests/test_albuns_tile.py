@@ -102,7 +102,7 @@ class AlbunsTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertIn('alt', scale)
         self.assertEqual(
             scale['alt'],
-            'This image was created for testing purposes'
+            'This image was created for testing purposes',
         )
 
         # turn visibility off, we should have no thumbnail
@@ -133,7 +133,7 @@ class AlbunsTileTestCase(TestTileMixin, unittest.TestCase):
         self.assertIn('alt', thumbnail)
         self.assertEqual(
             thumbnail['alt'],
-            'This image was created for testing purposes'
+            'This image was created for testing purposes',
         )
 
         # turn visibility off, we should have no thumbnail

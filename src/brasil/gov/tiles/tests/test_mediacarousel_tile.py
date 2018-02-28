@@ -152,7 +152,7 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
 
@@ -164,7 +164,7 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         # tile's data attributed is cached so we should re-instantiate the tile
         tile = getMultiAdapter(
             (self.cover, self.request),
-            name=self.tile.__name__
+            name=self.tile.__name__,
         )
         tile = tile['test']
         self.assertTrue(tile.is_empty())

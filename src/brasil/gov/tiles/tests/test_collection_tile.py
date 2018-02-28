@@ -28,7 +28,7 @@ COLLECTION_QUERY = [
         i='Subject',
         o='plone.app.querystring.operation.selection.is',
         v=FLAG,
-    )
+    ),
 ]
 
 
@@ -64,7 +64,7 @@ class CollectionTileTestCase(TestTileMixin, unittest.TestCase):
             api.content.create(
                 type='Folder',
                 title=NITF_FOLDER,
-                container=self.portal
+                container=self.portal,
             )
 
             # description-image: imagem tem descrição e é ela que tem de aparecer
@@ -72,13 +72,13 @@ class CollectionTileTestCase(TestTileMixin, unittest.TestCase):
             api.content.create(
                 type='collective.nitf.content',
                 title='description-image',
-                container=self.portal[NITF_FOLDER]
+                container=self.portal[NITF_FOLDER],
             )
             api.content.create(
                 type='Image',
                 title='description-image-title',
                 description='description-image-description',
-                container=self.portal[NITF_FOLDER]['description-image']
+                container=self.portal[NITF_FOLDER]['description-image'],
             ).setImage(generate_jpeg(50, 50))
 
             # title-image: imagem sem descrição mas com title, e é ele que tem de
@@ -86,12 +86,12 @@ class CollectionTileTestCase(TestTileMixin, unittest.TestCase):
             api.content.create(
                 type='collective.nitf.content',
                 title='title-image',
-                container=self.portal[NITF_FOLDER]
+                container=self.portal[NITF_FOLDER],
             )
             api.content.create(
                 type='Image',
                 title='title-image-title',
-                container=self.portal[NITF_FOLDER]['title-image']
+                container=self.portal[NITF_FOLDER]['title-image'],
             ).setImage(generate_jpeg(50, 50))
 
             # description-nitf: imagem sem título e descrição, mas notícia com
@@ -100,12 +100,12 @@ class CollectionTileTestCase(TestTileMixin, unittest.TestCase):
                 type='collective.nitf.content',
                 title='description-nitf',
                 description='description-nitf-description',
-                container=self.portal[NITF_FOLDER]
+                container=self.portal[NITF_FOLDER],
             )
             api.content.create(
                 type='Image',
                 id='description-nitf',
-                container=self.portal[NITF_FOLDER]['description-nitf']
+                container=self.portal[NITF_FOLDER]['description-nitf'],
             ).setImage(generate_jpeg(50, 50))
 
             # title-nitf: imagem sem título e descrição e notícia sem descrição,
@@ -113,12 +113,12 @@ class CollectionTileTestCase(TestTileMixin, unittest.TestCase):
             api.content.create(
                 type='collective.nitf.content',
                 title='title-nitf',
-                container=self.portal[NITF_FOLDER]
+                container=self.portal[NITF_FOLDER],
             )
             api.content.create(
                 type='Image',
                 id='title-nitf',
-                container=self.portal[NITF_FOLDER]['title-nitf']
+                container=self.portal[NITF_FOLDER]['title-nitf'],
             ).setImage(generate_jpeg(50, 50))
 
             self.portal[NITF_FOLDER].reindexObject()
@@ -129,7 +129,7 @@ class CollectionTileTestCase(TestTileMixin, unittest.TestCase):
                 self.portal,
                 'Collection',
                 'collection-get-alt',
-                query=COLLECTION_QUERY
+                query=COLLECTION_QUERY,
             )
             api.content.transition(obj, 'publish')
             assert len(obj.results()) == 1

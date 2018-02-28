@@ -64,7 +64,7 @@ class AudioTile(PersistentCoverTile):
                           'url': url,
                           'credit': rights,
                           'uuid': uuid,
-                          'content_type': content_type
+                          'content_type': content_type,
                           })
 
     def accepted_ct(self):

@@ -74,7 +74,7 @@ class AlbunsTile(PersistentCoverTile):
                 'player': True,
                 'carrossel': True,
                 'footer': True,
-                'uuid': uuid
+                'uuid': uuid,
             })
 
     def accepted_ct(self):
