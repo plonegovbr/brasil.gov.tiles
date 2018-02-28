@@ -4,7 +4,8 @@ Changelog
 1.7 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove upgrade steps antigos.
+  [rodfersou]
 
 
 1.6 (2018-01-19)
