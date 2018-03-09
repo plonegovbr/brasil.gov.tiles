@@ -193,7 +193,7 @@ $(function() {
                     ready: function () {
                         $(this).jPlayer("setMedia", media.media_urls);
                     },
-                    swfPath: "/++resource++brasil.gov.tiles",
+                    swfPath: "/++resource++brasil.gov.tiles/vendor",
                     supplied: media.supplied,
                     cssSelectorAncestor: cssSelectorAncestor,
                     solution:"html,flash",
@@ -270,7 +270,7 @@ $(function() {
                 var media = self.get_media(audio_url);
 
                 ae.jPlayer( "clearMedia" );
-                ae.jPlayer("option", 'swfPath', '/++resource++brasil.gov.tiles');
+                ae.jPlayer("option", 'swfPath', '/++resource++brasil.gov.tiles/vendor');
 
                 ae.jPlayer("option", "supplied", media.supplied);
                 ae.jPlayer("setMedia", media.media_urls);
@@ -362,7 +362,7 @@ $(function() {
 
         $.extend(self, {
             init: function(){
-                Galleria.loadTheme(window.location.protocol + '//' + window.location.host + location.pathname + '/++resource++brasil.gov.tiles/galleria.classic.min.js');
+                Galleria.loadTheme(window.location.protocol + '//' + window.location.host + location.pathname + '/++resource++brasil.gov.tiles/vendor/galleria.classic.min.js');
 
                 Galleria.configure({
                     _toggleInfo: false, // Set this to false if you want the caption to show always

@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
@@ -74,6 +75,11 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new CopyWebpackPlugin([{
+      from: 'app/vendor/*',
+      to: 'vendor',
+      flatten: true
+    }]),
     new ExtractTextPlugin({
       filename: 'brasilgovtiles.css',
       allChunks: true
