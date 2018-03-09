@@ -95,7 +95,7 @@
 
         color: #FFF;
         border-radius: 0 0 5px 5px;
-        background: url('++resource++brasil.gov.tiles/shadow-50.png') repeat top left;
+        background: url(./img/shadow-50.png) repeat top left;
       }
     }
     .button-nav {
@@ -115,7 +115,7 @@
 
       border-right: 1px solid #446B5D;
       background-color: #0E561F;
-      background-image: url('++resource++brasil.gov.tiles/bullets-branco-verde.gif');
+      background-image: url(./img/bullets-branco-verde.gif);
       background-repeat: no-repeat;
     }
   }
@@ -152,7 +152,7 @@
 
   border-right: 1px solid #446B5D;
   background-color: #0E561F;
-  background-image: url('++resource++brasil.gov.tiles/bullets-branco-verde.gif');
+  background-image: url(./img/bullets-branco-verde.gif);
   background-repeat: no-repeat;
 }
 
@@ -226,7 +226,7 @@
 
       color: #FFF;
       border-radius: 0 0 5px 5px;
-      background: url('++resource++brasil.gov.tiles/shadow-50.png') repeat top left;
+      background: url(./img/shadow-50.png) repeat top left;
     }
   }
   &.chamada_sem_foto li .banner {
@@ -252,7 +252,7 @@
 
       color: #FFF;
       border-radius: 0 0 5px 5px;
-      background: url('++resource++brasil.gov.tiles/shadow-50.png') repeat top left;
+      background: url(./img/shadow-50.png) repeat top left;
     }
   }
 }
