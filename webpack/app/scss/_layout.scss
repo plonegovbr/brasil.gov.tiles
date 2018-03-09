@@ -1,144 +1,134 @@
 /* Ícones dos Tiles na aba Layout do Cover
    ========================================================================== */
 
-#tiles-list #audiogallery img {
-  background: url("++resource++brasil.gov.tiles/tile-audiogallery.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #audio img {
-  background: url("++resource++brasil.gov.tiles/tile-audio.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #nitf img {
-  background: url("++resource++brasil.gov.tiles/tile-article.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #videogallery img {
-  background: url("++resource++brasil.gov.tiles/tile-mediagallery.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #video img {
-  background: url("++resource++brasil.gov.tiles/tile-media.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #social img {
-  background: url("++resource++brasil.gov.tiles/tile-social.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #standaloneheader img {
-  background: url("++resource++brasil.gov.tiles/tile-header.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #agenda img {
-  background: url("++resource++brasil.gov.tiles/tile-agenda.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #destaque img {
-  background: url("++resource++brasil.gov.tiles/tile-destaque.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #em_destaque img {
-  background: url("++resource++brasil.gov.tiles/tile-em_destaque.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #albuns img {
-  background: url("++resource++brasil.gov.tiles/tile-albuns.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #mediacarousel img {
-  background: url("++resource++brasil.gov.tiles/tile-mediacarousel.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
-#tiles-list #banner_rotativo img {
-  background: url("++resource++brasil.gov.tiles/tile-banner_rotativo.png") no-repeat center center;
-  padding-left: 32px;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+#tiles-list {
+  #audiogallery img {
+    background: url("++resource++brasil.gov.tiles/tile-audiogallery.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #audio img {
+    background: url("++resource++brasil.gov.tiles/tile-audio.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #nitf img {
+    background: url("++resource++brasil.gov.tiles/tile-article.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #videogallery img {
+    background: url("++resource++brasil.gov.tiles/tile-mediagallery.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #video img {
+    background: url("++resource++brasil.gov.tiles/tile-media.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #social img {
+    background: url("++resource++brasil.gov.tiles/tile-social.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #standaloneheader img {
+    background: url("++resource++brasil.gov.tiles/tile-header.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #agenda img {
+    background: url("++resource++brasil.gov.tiles/tile-agenda.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #destaque img {
+    background: url("++resource++brasil.gov.tiles/tile-destaque.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #em_destaque img {
+    background: url("++resource++brasil.gov.tiles/tile-em_destaque.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #albuns img {
+    background: url("++resource++brasil.gov.tiles/tile-albuns.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #mediacarousel img {
+    background: url("++resource++brasil.gov.tiles/tile-mediacarousel.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  #banner_rotativo img {
+    background: url("++resource++brasil.gov.tiles/tile-banner_rotativo.png") no-repeat center center;
+    padding-left: 32px;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  a[id="collective.nitf"] {
+    display: none !important;
+  }
 }
 
 /*XXX: Precisamos esconder o tile de nitf de collective.nitf, pois iremos usar*/
 /*o nosso herdando de collective.nitf. Apesar de já removermos ele via upgradeStep,*/
 /*achamos melhor também esconder via css caso o usuário execute os upgradeSteps*/
 /*em ordens aleatórias.*/
-#tiles-list a[id="collective.nitf"] {
-    display: none !important;
-}
 
 select#form-widgets-available_tiles-from option[value="collective.nitf"] {
-    display: none !important;
+  display: none !important;
 }

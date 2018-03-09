@@ -1,20 +1,13 @@
 /* Button alignment of tile compose */
 .template-compose .tile-container {
-    position: relative;
-}
-
-.template-compose .tile-container .edit-tile-link {
+  position: relative;
+  .edit-tile-link {
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.template-compose .tile-container {
-    position: relative;
-}
-
-.template-compose .tile-container .edit-tile-link {
     position: absolute;
     top: 0;
     left: 0;
+  }
+  position: relative;
 }

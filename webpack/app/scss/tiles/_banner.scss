@@ -1,19 +1,17 @@
 /* Tile Banner Estatico */
 .banner-tile {
-    float: left;
-}
-
-.banner-tile img {
+  float: left;
+  img {
     margin: 0;
+  }
 }
 
 div[data-tile*="collective\.cover\.banner"] {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-#content .banner-tile .copyright,
-#content .newsImageContainer .copyright,
-#content .mediacarousel .rights {
+#content {
+  .banner-tile .copyright, .newsImageContainer .copyright, .mediacarousel .rights {
     float: right;
     margin: 0 .8em 0 0;
     color: #000;
@@ -21,14 +19,14 @@ div[data-tile*="collective\.cover\.banner"] {
     font-size: .9em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 2em;
+  }
 }
 
-.banner-tile .copyright + a,
-.newsImageContainer .copyright + a {
-    display: block;
-    clear: both;
+.banner-tile .copyright + a, .newsImageContainer .copyright + a {
+  display: block;
+  clear: both;
 }
 
 #featured-content .banner-tile {
-    float: none;
+  float: none;
 }

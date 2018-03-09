@@ -1,56 +1,53 @@
 /* Tile da Galeria de áudio
    ========================================================================== */
 #content .audiogallery-tile .selected {
-    display: none;
+  display: none;
 }
 
 .audiogallery-tile {
-    margin-bottom: 20px;
-    border: 1px solid #d4d4d6;
-    background-color: #eeeff1;
+  margin-bottom: 20px;
+  border: 1px solid #d4d4d6;
+  background-color: #eeeff1;
 }
 
 .audiogallery-title-container .gallery-tile {
-    padding: 10px 15px 10px 10px;
-    border-bottom: 1px solid #d4d4d6;
-    color: #454545;
-    font-weight: normal;
-    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+  padding: 10px 15px 10px 10px;
+  border-bottom: 1px solid #d4d4d6;
+  color: #454545;
+  font-weight: normal;
+  font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
 }
 
 .audiogallery-player-container {
-    padding: 10px 15px;
-    border-bottom: 1px dotted #d4d4d6;
-}
-
-.audiogallery-player-container .audiogallery-item-title {
+  padding: 10px 15px;
+  border-bottom: 1px dotted #d4d4d6;
+  .audiogallery-item-title {
     padding-top: 10px;
+  }
 }
 
-#content .audiogallery-items-container ul {
+#content .audiogallery-items-container {
+  ul {
     margin: 0px;
-}
-
-#content .audiogallery-items-container li {
+  }
+  li {
     padding: 10px 15px;
     border-bottom: 1px dotted #d4d4d6;
     list-style: none outside none;
-}
-
-#content .audiogallery-items-container .audiogallery-item {
+  }
+  .audiogallery-item {
     display: block;
     padding-left: 20px;
     background: url("++resource++brasil.gov.tiles/sound-icon.png") no-repeat scroll left 0 transparent;
     font-weight: normal;
     font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+  }
 }
 
 .audiogallery-footer-container {
-    padding: 5px 15px;
-    text-align: right;
-}
-
-.audiogallery-footer-container .audiogallery-footer-link {
+  padding: 5px 15px;
+  text-align: right;
+  .audiogallery-footer-link {
     display: inline-block;
     margin-bottom: 6px;
     padding-right: 25px;
@@ -58,4 +55,5 @@
     text-transform: uppercase;
     font-size: 0.916em;
     line-height: 14px;
+  }
 }

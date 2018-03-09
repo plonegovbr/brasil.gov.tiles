@@ -1,65 +1,61 @@
 div[data-tile*="mediacarousel"] {
-    float: left;
-    width: 100%;
+  float: left;
+  width: 100%;
 }
 
-#content .mediacarousel .mediacarousel-tile+div .rights {
-    float: right;
-    margin: 0 .8em 0 0;
-    color: #000;
-    font-style: italic;
-    font-size: .9em;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 2em;
-}
-
-#content .mediacarousel {
+#content {
+  .mediacarousel {
+    .mediacarousel-tile + div .rights {
+      float: right;
+      margin: 0 .8em 0 0;
+      color: #000;
+      font-style: italic;
+      font-size: .9em;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 2em;
+    }
     min-height: 100px;
     height: 100%;
-}
-
-#content .mediacarousel img {
-    border-radius: 0px;
-}
-
-#content .mediacarousel .mediacarousel-footer-link {
-    font-size: 0.9em;
-}
-
-#content .mediacarousel .galleria-thumbnails-list {
-    margin-right: 10px;
-}
-
-/* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
-#content .newsImageContainer .carrossel-images {
+    img {
+      border-radius: 0px;
+    }
+    .mediacarousel-footer-link {
+      font-size: 0.9em;
+    }
+    .galleria-thumbnails-list {
+      margin-right: 10px;
+    }
+  }
+  .newsImageContainer .carrossel-images {
     float: left;
     clear: left;
     margin: 0;
     max-width: 200px;
     width: 100%;
+    li {
+      float: left;
+      margin: 0.5em 0.5em 0.5em 0;
+      list-style: outside none;
+      &.last-item {
+        margin-right: 0;
+      }
+      a {
+        position: relative;
+        z-index: 1;
+        float: left;
+      }
+    }
+  }
 }
 
-#content .newsImageContainer .carrossel-images li {
-    float: left;
-    margin: 0.5em 0.5em 0.5em 0;
-    list-style: outside none;
-}
-
-#content .newsImageContainer .carrossel-images li.last-item {
-    margin-right: 0;
-}
-
-#content .newsImageContainer .carrossel-images li a {
-    position: relative;
-    z-index: 1;
-    float: left;
-}
+/* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
 
 /* credito lightbox da galeria de imagens */
+
 .galleria-info .copyright {
-    color: #fff;
-    font-style: italic;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 2em;
+  color: #fff;
+  font-style: italic;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2em;
 }

@@ -1,45 +1,52 @@
 /* Tile de redes sociais
    ========================================================================== */
+
 .css-panes .pane {
-    display: none;
-    padding: 10px 4px;
-    height: 340px;
-    border: 1px solid #d4d5d7;
-    border-radius: 0 5px 5px 5px;
-    background-color: #eeeff1;
+  display: none;
+  padding: 10px 4px;
+  height: 340px;
+  border: 1px solid #d4d5d7;
+  border-radius: 0 5px 5px 5px;
+  background-color: #eeeff1;
 }
 
 #content .css-tabs li {
-    list-style: none outside none;
+  list-style: none outside none;
 }
 
 /* Reset do plugin Facebook like box */
+
 #fb-root {
-    display: none;
+  display: none;
 }
 
-.fb_iframe_widget,
-.fb_iframe_widget span,
-.fb_iframe_widget span iframe[style] {
+.fb_iframe_widget {
+  width: 100% !important;
+  border: 0 none !important;
+  span {
     width: 100% !important;
     border: 0 none !important;
+    iframe[style] {
+      width: 100% !important;
+      border: 0 none !important;
+    }
+  }
 }
 
 /* mensagem de erro na tag noscript */
+
 div.error {
-    padding: 1em;
+  padding: 1em;
 }
 
 /* root element for tabs  */
-ul.css-tabs {
-    margin: 0 !important;
-    padding: 0;
-    height: 30px;
-    border-bottom: 1px solid #eeeff1;
-}
 
-/* link inside the tab. uses a background image */
-ul.css-tabs li {
+ul.css-tabs {
+  margin: 0 !important;
+  padding: 0;
+  height: 30px;
+  border-bottom: 1px solid #eeeff1;
+  li {
     position: relative;
     top: 1px;
     display: block;
@@ -59,17 +66,19 @@ ul.css-tabs li {
     font-size: 13px;
     cursor: pointer;
     cursor: hand;
+    &:hover {
+      background-color: #F7F7F7;
+      color: #333;
+    }
+    &.current {
+      border-bottom: 0 solid transparent;
+      background-color: #eeeff1;
+      color: #000;
+      cursor: default;
+    }
+  }
 }
 
-ul.css-tabs li:hover {
-    background-color: #F7F7F7;
-    color: #333;
-}
+/* link inside the tab. uses a background image */
 
 /* selected tab */
-ul.css-tabs li.current {
-    border-bottom: 0 solid transparent;
-    background-color: #eeeff1;
-    color: #000;
-    cursor: default;
-}
