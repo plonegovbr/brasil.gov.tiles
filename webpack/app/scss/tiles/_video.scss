@@ -1,0 +1,30 @@
+/* Tile de video
+   ========================================================================== */
+.video-tile {
+    max-width: 766px;
+    max-height: 575px;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container + a {
+    clear: both;
+    line-height: 2em;
+}
+

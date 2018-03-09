@@ -1,1 +1,48 @@
 @import 'scss/sprite';
+
+@import 'scss/compose';
+@import 'scss/layout';
+
+@import 'scss/tiles/albuns';
+@import 'scss/tiles/audio';
+@import 'scss/tiles/audiogallery';
+@import 'scss/tiles/banner';
+@import 'scss/tiles/banner_rotativo';
+@import 'scss/tiles/destaque';
+@import 'scss/tiles/embed';
+@import 'scss/tiles/header';
+@import 'scss/tiles/mediacarousel';
+@import 'scss/tiles/poll';
+@import 'scss/tiles/social';
+@import 'scss/tiles/video';
+@import 'scss/tiles/videogallery';
+
+
+/* botão de busca dos filtros da página de resultado de busca */
+.formControls input.searchButton {
+    display: none;
+}
+
+/* Tile Searchbox */
+.searchSection label {
+    cursor: pointer;
+}
+
+/* Tile latest_selectionable_nitf */
+.centered {
+    text-align: center;
+}
+
+.centered img {
+    display: none;
+}
+
+/* Plone-addsite */
+fieldset#add-on-list {
+    display: none;
+}
+
+/* Plone overview */
+form.inline-form {
+    display: inline;
+}
