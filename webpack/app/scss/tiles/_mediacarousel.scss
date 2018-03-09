@@ -1,26 +1,30 @@
-div[data-tile*="mediacarousel"] {
+div[data-tile*='mediacarousel'] {
   float: left;
+
   width: 100%;
 }
 
 #content {
   .mediacarousel {
-    .mediacarousel-tile + div .rights {
-      float: right;
-      margin: 0 .8em 0 0;
-      color: #000;
-      font-style: italic;
-      font-size: .9em;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 2em;
-    }
-    min-height: 100px;
     height: 100%;
+    min-height: 100px;
+    .mediacarousel-tile + div .rights {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9em;
+      font-style: italic;
+      line-height: 2em;
+
+      float: right;
+
+      margin: 0 .8em 0 0;
+
+      color: #000;
+    }
     img {
-      border-radius: 0px;
+      border-radius: 0;
     }
     .mediacarousel-footer-link {
-      font-size: 0.9em;
+      font-size: .9em;
     }
     .galleria-thumbnails-list {
       margin-right: 10px;
@@ -29,12 +33,15 @@ div[data-tile*="mediacarousel"] {
   .newsImageContainer .carrossel-images {
     float: left;
     clear: left;
-    margin: 0;
-    max-width: 200px;
+
     width: 100%;
+    max-width: 200px;
+    margin: 0;
     li {
       float: left;
-      margin: 0.5em 0.5em 0.5em 0;
+
+      margin: .5em .5em .5em 0;
+
       list-style: outside none;
       &.last-item {
         margin-right: 0;
@@ -42,6 +49,7 @@ div[data-tile*="mediacarousel"] {
       a {
         position: relative;
         z-index: 1;
+
         float: left;
       }
     }
@@ -53,9 +61,10 @@ div[data-tile*="mediacarousel"] {
 /* credito lightbox da galeria de imagens */
 
 .galleria-info .copyright {
-  color: #fff;
-  font-style: italic;
-  font-size: 1em;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-style: italic;
   line-height: 2em;
+
+  color: #FFF;
 }

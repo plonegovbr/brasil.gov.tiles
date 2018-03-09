@@ -5,6 +5,7 @@
 
 #content #tile_banner_rotativo {
   overflow: hidden;
+
   margin: 0 0 1.8em;
   &.chamada_com_foto {
     min-height: 545px;
@@ -14,6 +15,7 @@
   }
   li {
     margin: 0;
+
     list-style: outside none;
   }
 }
@@ -27,75 +29,94 @@
 #tile_banner_rotativo {
   li {
     .credito {
-      display: block;
-      color: #172938;
-      text-align: right;
-      font-style: italic;
-      font-size: 1em;
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      font-style: italic;
       line-height: 2em;
+
+      display: block;
+
+      text-align: right;
+
+      color: #172938;
     }
     .banner {
       position: absolute;
       top: 0;
       left: 0;
+
       opacity: 0;
+
       filter: alpha(opacity = 0);
     }
   }
   .activeSlide .banner {
     z-index: 1;
+
     opacity: 1;
+
     filter: alpha(opacity = 100);
   }
   li {
     .banner {
       img {
-        max-width: 750px;
         width: 100%;
+        max-width: 750px;
       }
       .title {
-        display: block;
-        margin: 0.450em 0 0.450em 0;
-        color: #172938;
-        font-weight: bold;
-        font-size: 2.7em;
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.7em;
+        font-weight: bold;
         line-height: 1em;
+
+        display: block;
+
+        margin: .450em 0 .450em 0;
+
+        color: #172938;
       }
       .descr {
-        display: block;
-        color: #172938;
-        font-size: 1.1em;
         font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.1em;
+
+        display: block;
+
+        color: #172938;
       }
       .faixa {
         position: relative;
-        margin-top: -21px;
-        max-width: 750px;
-        width: 100%;
-        height: 20px;
-        border-radius: 0 0 5px 5px;
-        background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
-        color: #fff;
+
         float: left;
+
+        width: 100%;
+        max-width: 750px;
+        height: 20px;
+        margin-top: -21px;
+
+        color: #FFF;
+        border-radius: 0 0 5px 5px;
+        background: url('++resource++brasil.gov.tiles/shadow-50.png') repeat top left;
       }
     }
     .button-nav {
       position: absolute;
+      z-index: 2;
       top: 0;
       right: 0;
-      z-index: 2;
+
       display: block;
       overflow: hidden;
+
       width: 21px;
       height: 20px;
-      border-right: 1px solid #446b5d;
-      background-color: #0e561f;
-      background-image: url("++resource++brasil.gov.tiles/bullets-branco-verde.gif");
-      background-repeat: no-repeat;
-      text-indent: 100%;
+
       white-space: nowrap;
+      text-indent: 100%;
+
+      border-right: 1px solid #446B5D;
+      background-color: #0E561F;
+      background-image: url('++resource++brasil.gov.tiles/bullets-branco-verde.gif');
+      background-repeat: no-repeat;
     }
   }
 }
@@ -116,41 +137,47 @@
 
 .orderTiles .button-nav {
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 0;
-  z-index: 2;
+
   display: block;
   overflow: hidden;
+
   width: 21px;
   height: 20px;
-  border-right: 1px solid #446b5d;
-  background-color: #0e561f;
-  background-image: url("++resource++brasil.gov.tiles/bullets-branco-verde.gif");
-  background-repeat: no-repeat;
-  text-indent: 100%;
+
   white-space: nowrap;
+  text-indent: 100%;
+
+  border-right: 1px solid #446B5D;
+  background-color: #0E561F;
+  background-image: url('++resource++brasil.gov.tiles/bullets-branco-verde.gif');
+  background-repeat: no-repeat;
 }
 
 #tile_banner_rotativo {
   .activeSlide .button-nav {
-    background-color: #ffb400;
+    background-color: #FFB400;
     background-position: -21px 0;
   }
   li .button-nav {
-    &:hover, &:focus {
-      background-color: #ffb400;
+    &:hover,
+    &:focus {
+      background-color: #FFB400;
       background-position: -21px 0;
     }
   }
   .last-item .button-nav {
+    right: 0;
+
     border: none;
     border-radius: 0 0 3px 0;
-    right: 0;
   }
-  &[data-quantidade="2"] #banner1 .button-nav {
+  &[data-quantidade='2'] #banner1 .button-nav {
     right: 20px;
   }
-  &[data-quantidade="3"] {
+  &[data-quantidade='3'] {
     #banner1 .button-nav {
       right: 40px;
     }
@@ -158,7 +185,7 @@
       right: 20px;
     }
   }
-  &[data-quantidade="4"] {
+  &[data-quantidade='4'] {
     #banner1 .button-nav {
       right: 60px;
     }
@@ -183,19 +210,23 @@
       margin-top: -50px;
     }
     .banner .title {
-      margin: -57px 0 0;
-      height: 41px;
-      border-radius: 0 0 5px 5px;
-      background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
-      color: #fff;
-      position: relative;
-      padding: 5px 4.5em 10px 1em;
       font-family: Arial, Verdana, sans-serif;
+      font-size: 1.45em;
       font-weight: bold;
       font-style: normal;
-      font-size: 1.45em;
       line-height: 1.35em;
+
+      position: relative;
+
       overflow: hidden;
+
+      height: 41px;
+      margin: -57px 0 0;
+      padding: 5px 4.5em 10px 1em;
+
+      color: #FFF;
+      border-radius: 0 0 5px 5px;
+      background: url('++resource++brasil.gov.tiles/shadow-50.png') repeat top left;
     }
   }
   &.chamada_sem_foto li .banner {
@@ -207,17 +238,21 @@
       max-height: 240px;
     }
     .title {
-      margin: -20px 0 0;
-      height: 20px;
-      border-radius: 0 0 5px 5px;
-      background: url("++resource++brasil.gov.tiles/shadow-50.png") repeat top left;
-      color: #fff;
-      position: relative;
-      text-indent: 1em;
+      font-size: .8em;
       font-weight: normal;
       font-style: italic;
-      font-size: .8em;
       line-height: 20px;
+
+      position: relative;
+
+      height: 20px;
+      margin: -20px 0 0;
+
+      text-indent: 1em;
+
+      color: #FFF;
+      border-radius: 0 0 5px 5px;
+      background: url('++resource++brasil.gov.tiles/shadow-50.png') repeat top left;
     }
   }
 }
@@ -242,40 +277,52 @@
 .template-compose #content #tile_banner_rotativo {
   li {
     position: relative;
+
     float: left;
-    margin: 1% 1%;
+
     width: 23%;
     min-height: 250px;
+    margin: 1% 1%;
     &:hover {
       opacity: .9;
+
       filter: alpha(opacity = 90);
     }
   }
   .banner {
     margin: 10px 0 0;
+
+    opacity: 1;
+
+    filter: alpha(opacity = 100);
     img {
-      margin: 0 3%;
       width: 94%;
+      margin: 0 3%;
+
       opacity: 1;
+
       filter: alpha(opacity = 100);
     }
-    opacity: 1;
-    filter: alpha(opacity = 100);
   }
-  .button-nav, span {
+  .button-nav,
+  span {
     display: none;
   }
   .title {
-    display: block;
-    margin: 3%;
     font-size: 1.2em;
-    line-height: 1.2em;
-    font-style: normal;
-    background: transparent none;
-    color: #172938;
     font-weight: bold;
-    text-indent: initial;
+    font-style: normal;
+    line-height: 1.2em;
+
+    display: block;
+
     height: auto;
+    margin: 3%;
+
+    text-indent: initial;
+
+    color: #172938;
+    background: transparent none;
   }
   .tile-remove-item {
     top: 0;
@@ -289,9 +336,9 @@
 
 .orderTiles {
   position: absolute;
+  z-index: 10;
   right: 0;
   bottom: 0;
-  z-index: 10;
   .button-nav {
     position: static;
   }

@@ -3,54 +3,65 @@
 /* Título do tile de áudio */
 
 .audio-tile .title {
-  margin-bottom: 15px;
-  font-weight: normal;
-  font-size: 15px;
   font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+
+  margin-bottom: 15px;
 }
 
 /* estilo default do jPlayer */
 
 div {
-  &.jp-audio, &.jp-audio-stream {
-    border: 1px solid #e0e0e0;
-    border-radius: 5px 5px 5px 5px;
-    background-color: #eee;
-    box-shadow: 0 0 5px 1px #CCCCCC;
-    color: #666;
-    font-size: 1.25em;
+  &.jp-audio,
+  &.jp-audio-stream {
     font-family: Verdana, Arial, sans-serif;
+    font-size: 1.25em;
     line-height: 1.6;
+
+    color: #666;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #EEE;
+    box-shadow: 0 0 5px 1px #CCC;
   }
   &.jp-audio {
-    margin-bottom: 5px;
     width: 100%;
+    margin-bottom: 5px;
   }
   &.jp-audio-stream {
     width: 182px;
   }
   &.jp-interface {
     position: relative;
+
     width: 100%;
-    background-color: #edeef2;
+
+    background-color: #EDEEF2;
   }
-  &.jp-audio div.jp-type-single div.jp-interface, &.jp-audio-stream div.jp-type-single div.jp-interface {
+  &.jp-audio div.jp-type-single div.jp-interface,
+  &.jp-audio-stream div.jp-type-single div.jp-interface {
     height: 48px;
   }
   &.jp-controls-holder {
     position: relative;
     top: -8px;
+
     clear: both;
     overflow: hidden;
-    margin: 0 auto;
+
     width: 440px;
+    margin: 0 auto;
   }
   &.jp-interface ul.jp-controls {
     position: absolute;
+
     overflow: hidden;
+
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
+
     list-style-type: none;
   }
   &.jp-audio ul.jp-controls {
@@ -58,8 +69,8 @@ div {
     padding: 10px 0;
   }
   &.jp-audio-stream ul.jp-controls {
-    padding: 20px 20px 0 20px;
     width: 142px;
+    padding: 20px 20px 0 20px;
   }
   &.jp-interface ul.jp-controls {
     li {
@@ -69,46 +80,51 @@ div {
     a {
       display: block;
       overflow: hidden;
+
       text-indent: -9999px;
     }
   }
 }
 
 a {
-  &.jp-play, &.jp-pause {
+  &.jp-play,
+  &.jp-pause {
     position: relative;
     left: 10px;
+
     width: 23px;
     height: 23px;
   }
   &.jp-play {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 0 no-repeat;
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 0 no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -41px 0 no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -41px 0 no-repeat;
     }
   }
   &.jp-pause {
     display: none;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -42px no-repeat;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -42px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -41px -42px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -41px -42px no-repeat;
     }
   }
-  &.jp-previous, &.jp-next {
-    margin-top: 6px;
+  &.jp-previous,
+  &.jp-next {
     width: 28px;
     height: 28px;
+    margin-top: 6px;
   }
   &.jp-previous {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -112px no-repeat;
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -112px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -29px -112px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -29px -112px no-repeat;
     }
   }
   &.jp-next {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -141px no-repeat;
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -141px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -29px -141px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -29px -141px no-repeat;
     }
   }
 }
@@ -116,14 +132,17 @@ a {
 div {
   &.jp-progress {
     overflow: hidden;
-    background-color: #ddd;
+
+    background-color: #DDD;
   }
   &.jp-audio div {
     &.jp-progress {
       position: relative;
       top: 15px;
+
       display: block;
       clear: both;
+
       height: 15px;
     }
     &.jp-type-single div.jp-progress {
@@ -134,50 +153,59 @@ div {
 
 .jp-progress-time-wrapper {
   display: block;
+
+  height: 50px;
   padding-right: 45px;
   padding-left: 45px;
-  height: 50px;
 }
 
 div {
   &.jp-seek-bar {
-    width: 0px;
+    width: 0;
     height: 100%;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -202px repeat-x;
+
     cursor: pointer;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -202px repeat-x;
   }
   &.jp-play-bar {
-    width: 0px;
+    width: 0;
     height: 100%;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -218px repeat-x;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -218px repeat-x;
   }
   &.jp-seeking-bg {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.seeking.gif");
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.seeking.gif');
   }
 }
 
 /* jPlayer - Controles do volume */
 
 a {
-  &.jp-mute, &.jp-unmute {
+  &.jp-mute,
+  &.jp-unmute {
     position: absolute;
     top: 15px;
     right: 15px;
-    margin-top: 0;
+
     width: 18px;
     height: 15px;
+    margin-top: 0;
+
     vertical-align: middle;
   }
 }
 
 div {
   &.jp-audio div.jp-type-single a {
-    &.jp-mute, &.jp-unmute {
+    &.jp-mute,
+    &.jp-unmute {
       margin-left: 210px;
     }
   }
   &.jp-audio-stream div.jp-type-single a {
-    &.jp-mute, &.jp-unmute {
+    &.jp-mute,
+    &.jp-unmute {
       margin-left: 10px;
     }
   }
@@ -185,16 +213,17 @@ div {
 
 a {
   &.jp-mute {
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -186px no-repeat;
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -186px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -19px -186px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -19px -186px no-repeat;
     }
   }
   &.jp-unmute {
     display: none;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -170px no-repeat;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -60px -170px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -79px -170px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -79px -170px no-repeat;
     }
   }
 }
@@ -202,11 +231,15 @@ a {
 div {
   &.jp-volume-bar {
     position: absolute;
+
     overflow: hidden;
+
     width: 35px;
     height: 5px;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -250px repeat-x;
+
     cursor: pointer;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -250px repeat-x;
   }
   &.jp-audio div.jp-volume-bar {
     top: 37px;
@@ -217,20 +250,25 @@ div {
     left: 92px;
   }
   &.jp-volume-bar-value {
-    width: 0px;
+    width: 0;
     height: 5px;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -256px repeat-x;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -256px repeat-x;
   }
   &.jp-audio div {
     &.jp-time-holder {
-      position: relative;
-      top: 15px;
-      display: block;
-      clear: both;
-      height: 15px;
-      text-align: right;
       font-size: 10px;
       line-height: 15px;
+
+      position: relative;
+      top: 15px;
+
+      display: block;
+      clear: both;
+
+      height: 15px;
+
+      text-align: right;
     }
     &.jp-type-single div.jp-time-holder {
       width: 100%;
@@ -241,39 +279,46 @@ div {
 /* jPlayer - controles de duração */
 
 .jp-current-time {
-  width: 60px;
-  font-style: oblique;
   font-size: 10px;
+  font-style: oblique;
+
+  width: 60px;
 }
 
 .jp-duration {
-  width: 60px;
-  font-style: oblique;
   font-size: 10px;
+  font-style: oblique;
+
+  width: 60px;
+
   text-align: right;
 }
 
 /* jPlayer - Playlist */
 
 span.jp-artist {
-  color: #666;
   font-size: .8em;
+
+  color: #666;
 }
 
 div.jp-jplayer {
-  audio {
-    width: 0px;
-    height: 0px;
-  }
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
+
   background-color: #000;
+  audio {
+    width: 0;
+    height: 0;
+  }
 }
 
 ul.jp-toggles {
   overflow: hidden;
+
   margin: 0 auto;
   padding: 0;
+
   list-style-type: none;
 }
 
@@ -285,41 +330,48 @@ ul.jp-toggles li {
   display: block;
   float: right;
   a {
+    line-height: 100%;
+
     display: block;
+
     width: 25px;
     height: 18px;
+
     text-indent: -9999px;
-    line-height: 100%;
   }
 }
 
 a {
   &.jp-full-screen {
     margin-left: 20px;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -310px no-repeat;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -310px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -30px -310px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -30px -310px no-repeat;
     }
   }
   &.jp-restore-screen {
     margin-left: 20px;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -310px no-repeat;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -60px -310px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -90px -310px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -90px -310px no-repeat;
     }
   }
   &.jp-shuffle {
     margin-left: 5px;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") 0 -270px no-repeat;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') 0 -270px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -30px -270px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -30px -270px no-repeat;
     }
   }
   &.jp-shuffle-off {
     margin-left: 5px;
-    background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -60px -270px no-repeat;
+
+    background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -60px -270px no-repeat;
     &:hover {
-      background: url("++resource++brasil.gov.tiles/jplayer.blue.monday.jpg") -90px -270px no-repeat;
+      background: url('++resource++brasil.gov.tiles/jplayer.blue.monday.jpg') -90px -270px no-repeat;
     }
   }
 }
@@ -327,20 +379,25 @@ a {
 /* @group NO SOLUTION error feedback */
 
 .jp-no-solution {
-  display: none;
-  padding: 5px;
-  border: 2px solid #009be3;
-  background-color: #eee;
-  color: #000;
   font-size: .8em;
+
+  display: none;
+
+  padding: 5px;
+
+  color: #000;
+  border: 2px solid #009BE3;
+  background-color: #EEE;
   a {
     color: #000;
   }
   span {
-    display: block;
-    text-align: center;
-    font-weight: bold;
     font-size: 1em;
+    font-weight: bold;
+
+    display: block;
+
+    text-align: center;
   }
 }
 

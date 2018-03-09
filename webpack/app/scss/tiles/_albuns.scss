@@ -2,95 +2,116 @@
    ========================================================================== */
 
 .album-tile {
+  border: 1px solid #D5D5D5;
+  border-radius: 5px;
+  background-color: #EDEFF1;
   .no-albums {
     display: table-cell;
-    padding: 10px;
+
     height: 80px;
+    padding: 10px;
+
     vertical-align: middle;
   }
-  background-color: #edeff1;
-  border: 1px solid #d5d5d5;
-  border-radius: 5px;
 }
 
 #content .album-tile img {
-  border-radius: 0px;
   border-top: 1px solid #505050;
   border-bottom: 1px solid #505050;
+  border-radius: 0;
 }
 
 .tile {
-  .gallery-title, .album-title {
+  .gallery-title,
+  .album-title {
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+
     color: #454545;
-    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
   }
   .gallery-title {
+    font-size: 1.25em;
+
     margin: 14px 12px 23px 12px;
     padding: 0;
-    font-size: 1.25em;
   }
 }
 
 .width-16 .tile {
-  .album-title, .album-description {
+  .album-title,
+  .album-description {
     width: 420px !important;
     min-height: 1px;
   }
-  .album-title, .album-description {
-    max-height: 2.8em;
+  .album-title,
+  .album-description {
     overflow: hidden;
+
+    max-height: 2.8em;
   }
 }
 
 .width-10 .tile {
   .album-title {
-    max-height: 2.8em;
     overflow: hidden;
+
+    max-height: 2.8em;
   }
   .album-description {
-    max-height: 2.8em;
     overflow: hidden;
+
     min-width: 468px;
+    max-height: 2.8em;
   }
 }
 
 .width-5 .tile {
-  .album-title, .album-description {
-    max-height: 5.8em !important;
+  .album-title,
+  .album-description {
     overflow: hidden;
+
+    max-height: 5.8em !important;
   }
 }
 
 .mobile .tile {
-  .album-title, .album-description {
-    max-height: 5.8em !important;
+  .album-title,
+  .album-description {
     overflow: hidden;
+
+    max-height: 5.8em !important;
   }
 }
 
 .tile {
-  .album-title, .album-description {
+  .album-title,
+  .album-description {
+    font-size: 1.05em;
+
     display: block;
-    margin: 10px;
-    padding: 0;
+
     min-width: 208px;
     max-width: 468px;
-    font-size: 1.05em;
+    margin: 10px;
+    padding: 0;
   }
   .album-title {
     display: block;
+
     margin: 10px;
   }
   .album-description {
+    font-style: italic;
+
     float: left;
     overflow: hidden;
+
     margin: 0 10px 5px;
-    font-style: italic;
   }
 }
 
 .mobile .album-tile {
-  .album-description, .album-title {
+  .album-description,
+  .album-title {
     width: 90% !important;
     min-width: 90% !important;
   }
@@ -102,37 +123,46 @@
   }
   .cycle-hover {
     position: absolute;
-    top: 0px;
     z-index: 100;
+    top: 0;
+
     float: left;
     overflow: hidden;
+
     width: 100%;
     &:hover {
-      .cycle-prev, .cycle-next {
+      .cycle-prev,
+      .cycle-next {
         display: block;
       }
     }
-    .cycle-prev, .cycle-next {
+    .cycle-prev,
+    .cycle-next {
       position: absolute;
-      top: 50%;
       z-index: 100;
+      top: 50%;
+
       display: none;
       overflow: hidden;
-      margin-top: -20px;
+
       width: 42px;
       height: 40px;
-      background: url("++resource++brasil.gov.tiles/icons-setas.png");
-      text-indent: 100%;
+      margin-top: -20px;
+
       white-space: nowrap;
+      text-indent: 100%;
+
+      background: url('++resource++brasil.gov.tiles/icons-setas.png');
     }
   }
 }
 
 #content .album-tile .thumb-itens {
-  margin: 7px;
   width: 129px;
   height: 85px;
-  border: 1px solid #d5d5d5 !important;
+  margin: 7px;
+
+  border: 1px solid #D5D5D5 !important;
   border-radius: 0;
 }
 
@@ -140,12 +170,15 @@
   .thumb-itens {
     .table-align {
       display: table-cell;
-      vertical-align: middle;
+
       height: 87px;
+
+      vertical-align: middle;
     }
     img {
       width: 128px;
       height: 85px;
+
       border: none !important;
       border-radius: 0;
     }
@@ -156,53 +189,68 @@
     }
     .cycle-next {
       right: 20px;
+
       background-position: -43px 0;
     }
   }
   .cycle-carrossel {
-    margin: 0 36px !important;
-    height: 101px;
     position: absolute !important;
+
+    height: 101px;
+    margin: 0 36px !important;
   }
   .carousel {
-    margin: 10px 5px 10px;
-    height: 101px;
-    border: 1px solid #d5d5d5;
-    background: #fff;
     position: relative;
+
+    height: 101px;
+    margin: 10px 5px 10px;
+
+    border: 1px solid #D5D5D5;
+    background: #FFF;
   }
   .cycle-nagivation {
-    .cycle-prev, .cycle-next {
+    .cycle-prev,
+    .cycle-next {
       position: absolute;
       top: 50%;
+
       display: block;
       overflow: hidden;
-      margin-top: -11px;
+
       width: 22px;
       height: 22px;
-      background: url("++resource++brasil.gov.tiles/icons-setas-min.png");
-      text-indent: 100%;
+      margin-top: -11px;
+
       white-space: nowrap;
+      text-indent: 100%;
+
+      background: url('++resource++brasil.gov.tiles/icons-setas-min.png');
     }
     .cycle-prev {
       left: 7px;
     }
     .cycle-next {
-      background-position: 22px 0;
       right: 7px;
+
+      background-position: 22px 0;
     }
   }
-  .open-album, .download-album {
+  .open-album,
+  .download-album {
+    font-size: .8em;
+    line-height: 2.5em;
+
     display: block;
     float: left;
     overflow: hidden;
+
     width: 112px;
-    color: #335277 !important;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    line-height: 2.5em;
-    text-align: left;
     margin-left: 10px;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    color: #335277 !important;
   }
   .open-album {
     margin-right: 20px;
@@ -210,14 +258,18 @@
   .download-album {
     width: 149px;
   }
-  .icon-camera, .icon-download {
+  .icon-camera,
+  .icon-download {
     display: block;
     float: right;
     overflow: hidden;
+
     width: 22px;
     height: 22px;
-    background-image: url("++resource++brasil.gov.tiles/icon-camera-download.png");
+
     white-space: nowrap;
+
+    background-image: url('++resource++brasil.gov.tiles/icon-camera-download.png');
   }
   .icon-camera {
     background-position: 0 0;
@@ -232,23 +284,31 @@
 }
 
 .album-tile .footer {
+  font-size: .8em;
+
   overflow: hidden;
+
   padding: 10px 7px;
-  border-top: 1px solid #d5d5d5;
+
   text-align: right;
   text-transform: uppercase;
-  font-size: 0.8em;
+
+  border-top: 1px solid #D5D5D5;
   a {
     float: right;
+
     color: #335277 !important;
     &:after {
       display: block;
       float: right;
+
       width: 14px;
       height: 14px;
-      content: "";
       margin-left: 7px;
-      background: url("++resource++brasil.gov.tiles/footer-arrow.png") no-repeat scroll right center transparent;
+
+      content: '';
+
+      background: url('++resource++brasil.gov.tiles/footer-arrow.png') no-repeat scroll right center transparent;
     }
   }
 }
@@ -259,28 +319,32 @@
 body.contraste .album-tile {
   background: #000 !important;
   .album-title {
-    color: #fff !important;
+    color: #FFF !important;
   }
-  .icon-camera, .icon-download {
-    background-image: url("++resource++brasil.gov.tiles/icon-camera-download-contraste.png") !important;
+  .icon-camera,
+  .icon-download {
+    background-image: url('++resource++brasil.gov.tiles/icon-camera-download-contraste.png') !important;
   }
   .carousel {
-    border: 1px solid #fff;
+    border: 1px solid #FFF;
     background: #000;
   }
   .cycle-nagivation {
-    .cycle-prev, .cycle-next {
-      background-image: url("++resource++brasil.gov.tiles/icons-setas-min-contraste.png");
+    .cycle-prev,
+    .cycle-next {
+      background-image: url('++resource++brasil.gov.tiles/icons-setas-min-contraste.png');
     }
   }
   .cycle-hover {
-    .cycle-prev, .cycle-next {
-      background-image: url("++resource++brasil.gov.tiles/icons-setas-contraste.png");
+    .cycle-prev,
+    .cycle-next {
+      background-image: url('++resource++brasil.gov.tiles/icons-setas-contraste.png');
     }
   }
   .footer a:after {
     width: 20px;
     height: 20px;
-    background: url("++resource++brasil.gov.portal/img/seta_branca.png") no-repeat transparent !important;
+
+    background: url('++resource++brasil.gov.portal/img/seta_branca.png') no-repeat transparent !important;
   }
 }
