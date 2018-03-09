@@ -4,6 +4,9 @@ Changelog
 1.7 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Adiciona webpack.
+  [rodfersou]
+
 - Remove upgrade steps antigos.
   [rodfersou]
 
