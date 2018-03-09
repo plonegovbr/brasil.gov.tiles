@@ -1,7 +1,7 @@
 let cycle2_loaded = null;
 
 // Tile Galeria de Albuns
-export default Albuns = {
+let Albuns = {
   // View de álbum carrossel (carrossel de imagens do álbum)
   carrossel: function () {
     if (!cycle2_loaded) {
@@ -62,3 +62,6 @@ export default Albuns = {
     $('.cycle-carrossel', $galeria).width(larguracarosel);
   }
 };
+
+
+export default Albuns;

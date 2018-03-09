@@ -8,7 +8,7 @@
       expression="" inline="False" authenticated="False" insert-after="*" />
   <javascript id="++resource++brasil.gov.tiles/vendor/jquery.cycle2.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
-      expression="" inline="False" authenticated="False" insert-before="++resource++brasil.gov.tiles/tiles.js" />
+      expression="" inline="False" authenticated="False" insert-before="++resource++brasil.gov.tiles/brasilgovtiles.js" />
   <javascript id="++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
       expression="" inline="False" authenticated="False" insert-after="++resource++brasil.gov.tiles/vendor/jquery.cycle2.js" />

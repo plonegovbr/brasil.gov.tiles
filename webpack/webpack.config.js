@@ -11,6 +11,7 @@ module.exports = {
   output: {
     filename: 'brasilgovtiles.js',
     library: 'brasilgovtiles',
+    libraryExport: 'default',
     libraryTarget: 'umd',
     path: `${__dirname}/../src/brasil/gov/tiles/static`,
     pathinfo: true,

@@ -37,3 +37,13 @@ $(window).load(() => {
   }
   Albuns.carrossel();
 });
+
+
+export default {
+  Albuns,
+  AudioGallery,
+  BannerRotativo,
+  BannerRotativoCompor,
+  CarouselResponsiveResize,
+  VideoResponsiveResize,
+}
