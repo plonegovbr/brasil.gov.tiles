@@ -30,6 +30,6 @@
       />
 
   <!-- Upgrades -->
-  <!-- <include package=".upgrades" /> -->
+  <include package=".upgrades" />
 
 </configure>
