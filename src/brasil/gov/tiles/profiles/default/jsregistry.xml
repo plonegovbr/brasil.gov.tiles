@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts" purge="False">
-  <javascript id="++resource++brasil.gov.tiles/tiles.js"
+  <javascript id="++resource++brasil.gov.tiles/brasilgovtiles.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
       expression="" inline="False" authenticated="False" insert-after="*" />
-  <javascript id="++resource++brasil.gov.tiles/jquery.jplayer.min.js"
+  <javascript id="++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
       expression="" inline="False" authenticated="False" insert-after="*" />
-  <javascript id="++resource++brasil.gov.tiles/jquery.cycle2.js"
+  <javascript id="++resource++brasil.gov.tiles/vendor/jquery.cycle2.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
-      expression="" inline="False" authenticated="False" insert-before="++resource++brasil.gov.tiles/tiles.js" />
-  <javascript id="++resource++brasil.gov.tiles/jquery.cycle2.carousel.js"
+      expression="" inline="False" authenticated="False" insert-before="++resource++brasil.gov.tiles/brasilgovtiles.js" />
+  <javascript id="++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
-      expression="" inline="False" authenticated="False" insert-after="++resource++brasil.gov.tiles/jquery.cycle2.js" />
+      expression="" inline="False" authenticated="False" insert-after="++resource++brasil.gov.tiles/vendor/jquery.cycle2.js" />
 </object>

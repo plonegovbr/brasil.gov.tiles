@@ -1,0 +1,70 @@
+div[data-tile*='mediacarousel'] {
+  float: left;
+
+  width: 100%;
+}
+
+#content {
+  .mediacarousel {
+    height: 100%;
+    min-height: 100px;
+    .mediacarousel-tile + div .rights {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9em;
+      font-style: italic;
+      line-height: 2em;
+
+      float: right;
+
+      margin: 0 .8em 0 0;
+
+      color: #000;
+    }
+    img {
+      border-radius: 0;
+    }
+    .mediacarousel-footer-link {
+      font-size: .9em;
+    }
+    .galleria-thumbnails-list {
+      margin-right: 10px;
+    }
+  }
+  .newsImageContainer .carrossel-images {
+    float: left;
+    clear: left;
+
+    width: 100%;
+    max-width: 200px;
+    margin: 0;
+    li {
+      float: left;
+
+      margin: .5em .5em .5em 0;
+
+      list-style: outside none;
+      &.last-item {
+        margin-right: 0;
+      }
+      a {
+        position: relative;
+        z-index: 1;
+
+        float: left;
+      }
+    }
+  }
+}
+
+/* Carrosel pra quando tem colecao imagem na noticia (tipo de conteúdo NITF) */
+
+/* credito lightbox da galeria de imagens */
+
+.galleria-info .copyright {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-style: italic;
+  line-height: 2em;
+
+  color: #FFF;
+}

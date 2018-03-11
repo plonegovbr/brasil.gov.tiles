@@ -5,7 +5,7 @@
       i18n:domain="collective.cover">
     <head>
         <link rel="stylesheet" type="text/css"
-              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/galleria.classic.css" />
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/vendor/galleria.classic.css" />
         <script type="text/javascript" tal:content="structure view/init_js">
         </script>
     </head>

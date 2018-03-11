@@ -1,0 +1,95 @@
+/* Tile de redes sociais
+   ========================================================================== */
+
+.css-panes .pane {
+  display: none;
+
+  height: 340px;
+  padding: 10px 4px;
+
+  border: 1px solid #D4D5D7;
+  border-radius: 0 5px 5px 5px;
+  background-color: #EEEFF1;
+}
+
+#content .css-tabs li {
+  list-style: none outside none;
+}
+
+/* Reset do plugin Facebook like box */
+
+#fb-root {
+  display: none;
+}
+
+.fb_iframe_widget {
+  width: 100% !important;
+
+  border: 0 none !important;
+  span {
+    width: 100% !important;
+
+    border: 0 none !important;
+    iframe[style] {
+      width: 100% !important;
+
+      border: 0 none !important;
+    }
+  }
+}
+
+/* mensagem de erro na tag noscript */
+
+div.error {
+  padding: 1em;
+}
+
+/* root element for tabs  */
+
+ul.css-tabs {
+  height: 30px;
+  margin: 0 !important;
+  padding: 0;
+
+  border-bottom: 1px solid #EEEFF1;
+  li {
+    font-size: 13px;
+
+    position: relative;
+    top: 1px;
+
+    display: block;
+    float: left;
+
+    height: 18px;
+    margin-right: 2px;
+    padding: 5px 30px;
+
+    cursor: pointer;
+    cursor: hand;
+    text-decoration: none;
+
+    color: #777;
+    border: 1px solid #D4D5D7;
+    border-bottom: 0;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    outline: 0;
+    background-color: #D5D5D5;
+    &:hover {
+      color: #333;
+      background-color: #F7F7F7;
+    }
+    &.current {
+      cursor: default;
+
+      color: #000;
+      border-bottom: 0 solid transparent;
+      background-color: #EEEFF1;
+    }
+  }
+}
+
+/* link inside the tab. uses a background image */
+
+/* selected tab */

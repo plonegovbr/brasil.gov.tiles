@@ -1,0 +1,334 @@
+/* Tile galeria de albuns
+   ========================================================================== */
+
+.album-tile {
+  border: 1px solid #D5D5D5;
+  border-radius: 5px;
+  background-color: #EDEFF1;
+  .no-albums {
+    display: table-cell;
+
+    height: 80px;
+    padding: 10px;
+
+    vertical-align: middle;
+  }
+}
+
+#content .album-tile img {
+  border-top: 1px solid #505050;
+  border-bottom: 1px solid #505050;
+  border-radius: 0;
+}
+
+.tile {
+  .gallery-title,
+  .album-title {
+    font-family: 'open_sansbold', Arial, Helvetica, sans-serif;
+
+    color: #454545;
+  }
+  .gallery-title {
+    font-size: 1.25em;
+
+    margin: 14px 12px 23px 12px;
+    padding: 0;
+  }
+}
+
+.width-16 .tile {
+  .album-title,
+  .album-description {
+    width: 420px !important;
+    min-height: 1px;
+  }
+  .album-title,
+  .album-description {
+    overflow: hidden;
+
+    max-height: 2.8em;
+  }
+}
+
+.width-10 .tile {
+  .album-title {
+    overflow: hidden;
+
+    max-height: 2.8em;
+  }
+  .album-description {
+    overflow: hidden;
+
+    min-width: 468px;
+    max-height: 2.8em;
+  }
+}
+
+.width-5 .tile {
+  .album-title,
+  .album-description {
+    overflow: hidden;
+
+    max-height: 5.8em !important;
+  }
+}
+
+.mobile .tile {
+  .album-title,
+  .album-description {
+    overflow: hidden;
+
+    max-height: 5.8em !important;
+  }
+}
+
+.tile {
+  .album-title,
+  .album-description {
+    font-size: 1.05em;
+
+    display: block;
+
+    min-width: 208px;
+    max-width: 468px;
+    margin: 10px;
+    padding: 0;
+  }
+  .album-title {
+    display: block;
+
+    margin: 10px;
+  }
+  .album-description {
+    font-style: italic;
+
+    float: left;
+    overflow: hidden;
+
+    margin: 0 10px 5px;
+  }
+}
+
+.mobile .album-tile {
+  .album-description,
+  .album-title {
+    width: 90% !important;
+    min-width: 90% !important;
+  }
+}
+
+.album-tile {
+  .player {
+    position: relative;
+  }
+  .cycle-hover {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+
+    float: left;
+    overflow: hidden;
+
+    width: 100%;
+    &:hover {
+      .cycle-prev,
+      .cycle-next {
+        display: block;
+      }
+    }
+    .cycle-prev,
+    .cycle-next {
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+
+      display: none;
+      overflow: hidden;
+
+      width: 42px;
+      height: 40px;
+      margin-top: -20px;
+
+      white-space: nowrap;
+      text-indent: 100%;
+
+      background: url(./img/icons-setas.png);
+    }
+  }
+}
+
+#content .album-tile .thumb-itens {
+  width: 129px;
+  height: 85px;
+  margin: 7px;
+
+  border: 1px solid #D5D5D5 !important;
+  border-radius: 0;
+}
+
+.album-tile {
+  .thumb-itens {
+    .table-align {
+      display: table-cell;
+
+      height: 87px;
+
+      vertical-align: middle;
+    }
+    img {
+      width: 128px;
+      height: 85px;
+
+      border: none !important;
+      border-radius: 0;
+    }
+  }
+  .cycle-hover {
+    .cycle-prev {
+      left: 20px;
+    }
+    .cycle-next {
+      right: 20px;
+
+      background-position: -43px 0;
+    }
+  }
+  .cycle-carrossel {
+    position: absolute !important;
+
+    height: 101px;
+    margin: 0 36px !important;
+  }
+  .carousel {
+    position: relative;
+
+    height: 101px;
+    margin: 10px 5px 10px;
+
+    border: 1px solid #D5D5D5;
+    background: #FFF;
+  }
+  .cycle-nagivation {
+    .cycle-prev,
+    .cycle-next {
+      position: absolute;
+      top: 50%;
+
+      display: block;
+      overflow: hidden;
+
+      width: 22px;
+      height: 22px;
+      margin-top: -11px;
+
+      white-space: nowrap;
+      text-indent: 100%;
+
+      background: url(./img/icons-setas-min.png);
+    }
+    .cycle-prev {
+      left: 7px;
+    }
+    .cycle-next {
+      right: 7px;
+
+      background-position: 22px 0;
+    }
+  }
+  .open-album,
+  .download-album {
+    font-size: .8em;
+    line-height: 2.5em;
+
+    display: block;
+    float: left;
+    overflow: hidden;
+
+    width: 112px;
+    margin-left: 10px;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    color: #335277 !important;
+  }
+  .open-album {
+    margin-right: 20px;
+  }
+  .download-album {
+    width: 149px;
+  }
+  .icon-camera,
+  .icon-download {
+    display: block;
+    float: right;
+    overflow: hidden;
+
+    width: 22px;
+    height: 22px;
+
+    white-space: nowrap;
+
+    background-image: url(./img/icon-camera-download.png);
+  }
+  .icon-camera {
+    background-position: 0 0;
+  }
+  .icon-download {
+    background-position: -36px 0;
+  }
+}
+
+.mobile .album-tile .footer {
+  width: 95%;
+}
+
+.album-tile .footer {
+  font-size: .8em;
+
+  overflow: hidden;
+
+  padding: 10px 7px;
+
+  text-align: right;
+  text-transform: uppercase;
+
+  border-top: 1px solid #D5D5D5;
+  a {
+    float: right;
+
+    color: #335277 !important;
+    &:after {
+      display: block;
+      float: right;
+
+      width: 14px;
+      height: 14px;
+      margin-left: 7px;
+
+      content: '';
+
+      background: url(./img/footer-arrow.png) no-repeat scroll right center transparent;
+    }
+  }
+}
+
+/* Contraste
+   ========================================================================== */
+
+body.contraste .album-tile {
+  background: #000 !important;
+  .album-title {
+    color: #FFF !important;
+  }
+  .carousel {
+    border: 1px solid #FFF;
+    background: #000;
+  }
+  .footer a:after {
+    width: 20px;
+    height: 20px;
+
+    background: url(./img/seta_branca.png) no-repeat transparent !important;
+  }
+}

@@ -3,17 +3,6 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="brasil.gov.tiles">
-    <head>
-        <tal:comment tal:replace="nothing">
-            FIXME: Atribuo, no fim da chamada de javascript, o commit responsável por alteração no mesmo. Isso é necessário enquanto
-            https://github.com/plonegovbr/brasil.gov.tiles/issues/175 não é resolvido para evitar problemas com cache.
-            Toda alteração feita no javascript necessitará de uma mudança com uma string única enquanto o relato de colocar tudo
-            em jsregistry.xml não for resolvido.
-        </tal:comment>
-        <script type="text/javascript"
-                tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/banner_rotativo.js?v=74d45e30e956d274bdddcb12f255fd78417f484a">
-        </script>
-    </head>
     <body>
         <ul id="tile_banner_rotativo"
             tal:define="results view/results;
