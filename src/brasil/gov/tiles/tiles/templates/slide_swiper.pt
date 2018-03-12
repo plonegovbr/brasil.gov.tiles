@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+    <head>
+        <link rel="stylesheet"
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/swiper/css/swiper.min.css">
+
+        <script type="text/javascript"
+                tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/swiper/js/swiper.min.js">
+        </script>
+
+        <script type="text/javascript"
+                tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++brasil.gov.tiles/swiper/js/tile_slide_swiper.js">
+        </script>
+    </head>
+    <body>
+  <style type="text/css">
+    .swiper-container {
+    width: 600px;
+    height: 300px;
+}
+  </style>
+        <div id="tile_slide_swiper">
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+         
+            
+        </div>
+            
+        </div>
+    </body>
+</html>
