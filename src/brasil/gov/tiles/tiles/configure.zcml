@@ -8,18 +8,6 @@
   <include package="plone.tiles" file="meta.zcml" />
 
   <plone:tile
-      name="nitf"
-      title="Basic News Article Tile"
-      description="A tile that shows a news article."
-      add_permission="cmf.ModifyPortalContent"
-      schema=".nitf.INITFBasicTile"
-      class=".nitf.NITFBasicTile"
-      permission="zope2.View"
-      for="*"
-      i18n:attributes="title; description"
-      />
-
-  <plone:tile
       name="destaque"
       title="A highlight tile"
       description="A droppable tile that shows two images and descriptions that links to another page."
