@@ -42,8 +42,12 @@ def update_static_resources(setup_tool):
 
 
 # a list of tile tuples (deprecated, replacement)
+# if replacement is None, the tile will be removed from layouts
+# for collective.cover tiles we only need to update of the alt_text attribute
 DEPRECATED_TILES = [
     (u'banner_rotativo', None),
+    (u'collective.cover.banner', u'collective.cover.banner'),
+    (u'collective.cover.basic', u'collective.cover.basic'),
     (u'em_destaque', None),
     (u'mediacarousel', None),
     (u'nitf', u'collective.nitf'),
@@ -54,8 +58,10 @@ DEPRECATED_TILES = [
 def disable_deprecated_tiles(setup_tool):
     """Disable deprecated tiles."""
     from brasil.gov.tiles.utils import disable_tile
-    for tile, _ in DEPRECATED_TILES:
-        disable_tile(tile)
+    for old, new in DEPRECATED_TILES:
+        if old == new:
+            continue  # we're just removing an overrides
+        disable_tile(old)
 
 
 NEW_TILES = [
@@ -94,21 +100,10 @@ def migrate_deprecated_tiles(setup_tool):
         for old, new in DEPRECATED_TILES:
             if new is None:
                 layout = remove_tile(layout, old)
-            else:
+            elif old != new:
                 layout = replace_tile(layout, old, new)
             obj.cover_layout = json.dumps(layout)
             replace_attribute(obj, new, 'image_description', 'alt_text')
-
-    logger.info('Done')
-
-
-def update_banner_tile(setup_tool):
-    """Update Banner tile."""
-    tile = u'collective.cover.banner'
-
-    logger.info('Updating NITF tile on collective.cover objects')
-    for obj in get_valid_objects(portal_type='collective.cover.content'):
-        replace_attribute(obj, tile, 'image_description', 'alt_text')
 
     logger.info('Done')
 

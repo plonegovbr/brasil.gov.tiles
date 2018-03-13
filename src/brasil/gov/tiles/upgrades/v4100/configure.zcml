@@ -29,11 +29,6 @@
         />
 
     <genericsetup:upgradeStep
-        title="Update Banner tile"
-        handler=".update_banner_tile"
-        />
-
-    <genericsetup:upgradeStep
         title="Install sc.embedder"
         handler=".install_embedder"
         />
