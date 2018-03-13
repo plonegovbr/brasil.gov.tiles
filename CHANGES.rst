@@ -4,6 +4,9 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove override do tile de Coleção do collective.cover.
+  [hvelarde]
+
 - Remove override do tile Lista do collective.cover.
   [hvelarde, claytonc, rodfersou]
 
