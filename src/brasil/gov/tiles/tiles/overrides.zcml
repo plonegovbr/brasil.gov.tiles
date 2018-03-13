@@ -21,18 +21,6 @@
         />
 
     <plone:tile
-        name="collective.cover.banner"
-        title="Banner Tile"
-        description="A tile that shows an image with a link."
-        icon="++resource++collective.cover/img/tile-banner.png"
-        add_permission="cmf.ModifyPortalContent"
-        schema=".banner.IBannerTile"
-        class=".banner.BannerTile"
-        permission="zope2.View"
-        for="*"
-        />
-
-    <plone:tile
         name="collective.cover.collection"
         title="Collection Tile"
         description="A tile that shows the result of a collection."
@@ -78,18 +66,6 @@
       add_permission="cmf.ModifyPortalContent"
       schema=".basic.IBasicTile"
       class=".basic.BasicTile"
-      permission="zope2.View"
-      for="*"
-      />
-
-  <plone:tile
-      name="collective.cover.banner"
-      title="Banner Tile"
-      description="A tile that shows an image with a link."
-      icon="++resource++collective.cover/img/tile-banner.png"
-      add_permission="cmf.ModifyPortalContent"
-      schema=".banner.IBannerTile"
-      class=".banner.BannerTile"
       permission="zope2.View"
       for="*"
       />

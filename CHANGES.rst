@@ -20,6 +20,7 @@ Changelog
   [rodfersou]
 
 - Corrige dependências do pacote.
+- Remove override do tile de banner.
   [hvelarde]
 
 - Adiciona suporte para processamento de recursos estáticos usando o `webpack <http://webpack.js.org/>`_.
