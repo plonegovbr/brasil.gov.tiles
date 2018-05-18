@@ -38,13 +38,15 @@ def replace_poll_tile(context):
     tiles = api.portal.get_registry_record('plone.app.tiles')
     if OLD_TILE in tiles:
         tiles.remove(OLD_TILE)
-        tiles.append(NEW_TILE)
+        if NEW_TILE not in tiles:
+            tiles.append(NEW_TILE)
         api.portal.set_registry_record('plone.app.tiles', tiles)
     record = dict(interface=ICoverSettings, name='available_tiles')
     available_tiles = api.portal.get_registry_record(**record)
     if OLD_TILE in available_tiles:
         available_tiles.remove(OLD_TILE)
-        available_tiles.append(NEW_TILE)
+        if NEW_TILE not in available_tiles:
+            available_tiles.append(NEW_TILE)
         api.portal.set_registry_record(value=available_tiles, **record)
     results = api.content.find(object_provides=ICover.__identifier__)
     for brain in results:
