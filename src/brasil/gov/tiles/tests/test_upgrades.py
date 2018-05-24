@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
+from brasil.gov.tiles.upgrades.v4004 import NEW_TILE
+from brasil.gov.tiles.upgrades.v4004 import OLD_TILE
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tests.test_upgrades import Upgrade9to10TestCase
 from collective.cover.tests.test_upgrades import UpgradeTestCaseBase
@@ -170,9 +172,6 @@ class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
 
         # Simula a situação de ter isso registrado porque removemos esse tile
         # no post_handler.
-        from brasil.gov.tiles.upgrades.v4004 import OLD_TILE
-        from brasil.gov.tiles.upgrades.v4004 import NEW_TILE
-
         tiles = api.portal.get_registry_record('plone.app.tiles')
         tiles.append(OLD_TILE)
         tiles.remove(NEW_TILE)
@@ -191,13 +190,55 @@ class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
         self.assertIn(OLD_TILE, available_tiles)
         self.assertNotIn(NEW_TILE, available_tiles)
 
+        # Isso é o que é feito no upgrade v3 de collective.polls. Estamos
+        # rodando aqui para simular o erro em
+        # https://github.com/plonegovbr/brasil.gov.tiles/issues/212
+        # Ou seja, se rodar o upgradeStep de collective.polls antes desse,
+        # não pode duplicar o tile.
+        profile = 'profile-collective.polls:default'
+        setup_tool = api.portal.get_tool('portal_setup')
+        setup_tool.runImportStepFromProfile(profile, 'plone.app.registry')
+        tiles = api.portal.get_registry_record('plone.app.tiles')
+        self.assertIn(NEW_TILE, tiles)
+
         self._do_upgrade_step(step)
 
         tiles = api.portal.get_registry_record('plone.app.tiles')
         self.assertNotIn(OLD_TILE, tiles)
         self.assertIn(NEW_TILE, tiles)
 
+        # https://github.com/plonegovbr/brasil.gov.tiles/issues/212
+        self.assertTrue(len(tiles) == len(set(tiles)))
+
         record = dict(interface=ICoverSettings, name='available_tiles')
         available_tiles = api.portal.get_registry_record(**record)
         self.assertNotIn(OLD_TILE, available_tiles)
         self.assertIn(NEW_TILE, available_tiles)
+
+        # https://github.com/plonegovbr/brasil.gov.tiles/issues/212
+        self.assertTrue(len(available_tiles) == len(set(available_tiles)))
+
+
+class Upgrade4004to4005TestCase(UpgradeTestCaseBrasilGovTitles):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        super(Upgrade4004to4005TestCase, self).setUp(u'4004', u'4005')
+
+    def test_duplicated_collective_polls(self):
+        title = u'collective.polls duplicado'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+
+        # Simula a situação ter collective.polls duplicado.
+        tiles = api.portal.get_registry_record('plone.app.tiles')
+        self.assertTrue(len(tiles) == len(set(tiles)))
+        tiles.append(NEW_TILE)
+        api.portal.set_registry_record('plone.app.tiles', tiles)
+        self.assertFalse(len(tiles) == len(set(tiles)))
+
+        self._do_upgrade_step(step)
+
+        tiles = api.portal.get_registry_record('plone.app.tiles')
+        self.assertTrue(len(tiles) == len(set(tiles)))
