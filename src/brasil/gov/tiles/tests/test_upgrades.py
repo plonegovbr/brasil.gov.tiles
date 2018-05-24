@@ -208,7 +208,7 @@ class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
         self.assertIn(NEW_TILE, tiles)
 
         # https://github.com/plonegovbr/brasil.gov.tiles/issues/212
-        self.assertTrue(len(tiles) == len(set(tiles)))
+        self.assertEqual(len(tiles), len(set(tiles)))
 
         record = dict(interface=ICoverSettings, name='available_tiles')
         available_tiles = api.portal.get_registry_record(**record)
@@ -216,7 +216,7 @@ class Upgrade4003to4004TestCase(UpgradeTestCaseBrasilGovTitles):
         self.assertIn(NEW_TILE, available_tiles)
 
         # https://github.com/plonegovbr/brasil.gov.tiles/issues/212
-        self.assertTrue(len(available_tiles) == len(set(available_tiles)))
+        self.assertEqual(len(available_tiles), len(set(available_tiles)))
 
 
 class Upgrade4004to4005TestCase(UpgradeTestCaseBrasilGovTitles):
@@ -233,12 +233,12 @@ class Upgrade4004to4005TestCase(UpgradeTestCaseBrasilGovTitles):
 
         # Simula a situação ter collective.polls duplicado.
         tiles = api.portal.get_registry_record('plone.app.tiles')
-        self.assertTrue(len(tiles) == len(set(tiles)))
+        self.assertEqual(len(tiles), len(set(tiles)))
         tiles.append(NEW_TILE)
         api.portal.set_registry_record('plone.app.tiles', tiles)
-        self.assertFalse(len(tiles) == len(set(tiles)))
+        self.assertNotEqual(len(tiles), len(set(tiles)))
 
         self._do_upgrade_step(step)
 
         tiles = api.portal.get_registry_record('plone.app.tiles')
-        self.assertTrue(len(tiles) == len(set(tiles)))
+        self.assertEqual(len(tiles), len(set(tiles)))
