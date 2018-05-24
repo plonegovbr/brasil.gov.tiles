@@ -4,7 +4,8 @@ Changelog
 1.7 (unreleased)
 ^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige upgradeStep v4004 para evitar o erro "ValueError: term values must be unique: u'collective.polls'" em @@cover-settings. (closes `#212 <https://github.com/plonegovbr/brasil.gov.tiles/issues/212>`_).
+  [idgserpro]
 
 
 1.6 (2018-01-19)
@@ -391,3 +392,4 @@ Changelog
 .. _`#140`: https://github.com/plonegovbr/brasil.gov.tiles/issues/140
 .. _`#145`: https://github.com/plonegovbr/brasil.gov.tiles/issues/145
 .. _`#156`: https://github.com/plonegovbr/brasil.gov.tiles/issues/156
+.. _`#212`: https://github.com/plonegovbr/brasil.gov.tiles/issues/212

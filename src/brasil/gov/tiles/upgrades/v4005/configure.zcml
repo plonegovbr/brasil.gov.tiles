@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="brasil.gov.tiles">
+
+  <gs:upgradeSteps
+      source="4004"
+      destination="4005"
+      profile="brasil.gov.tiles:default">
+
+    <gs:upgradeStep
+        title="collective.polls duplicado"
+        description="Verifica se collective.polls está duplicado."
+        handler=".conserta_tile_poll_duplicado"
+        />
+
+  </gs:upgradeSteps>
+
+</configure>
