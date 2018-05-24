@@ -109,16 +109,16 @@ class MediaCarouselTileTestCase(TestTileMixin, unittest.TestCase):
         obj = self.portal['my-news-folder']['my-nitf-with-image']
         [image_child] = [i for i in api.content.find(context=obj,
                          depth=1, portal_type='Image')]
-        thumbnail = self.tile.thumbnail(image_child.getObject())
+        thumbnail = self.tile.thumbnail(image_child.getObject())  # noqa: E501; pylint: disable=W1662
         self.assertTrue(thumbnail)
         # the thumbnail is an ImageScale
         self.assertTrue(IImageScale.providedBy(thumbnail))
 
         # nitf without Image, we shouldn't have a thumbnail
         obj = self.portal['my-news-folder']['my-nitf-without-image']
-        [image_child] = [i for i in api.content.find(context=obj,
+        [image_child] = [i for i in api.content.find(context=obj,  # noqa: E501; pylint: disable=W1662
                          depth=1, portal_type='Image')] or [None]
-        thumbnail = self.tile.thumbnail(image_child)
+        thumbnail = self.tile.thumbnail(image_child)  # noqa: E501; pylint: disable=W1662
         self.assertFalse(thumbnail)
         # the thumbnail is an ImageScale
         self.assertFalse(IImageScale.providedBy(thumbnail))

@@ -13,7 +13,7 @@ def test_suite():
     current_dir = os.path.abspath(os.path.dirname(__file__))
     tests = [
         doc for doc in os.listdir(current_dir)
-        if doc.startswith('test_') and doc.endswith('.robot')
+        if doc.startswith('test_') and doc.endswith('.robot')  # noqa: E501; pylint: disable=W1662
     ]
     suite.addTests([
         layered(robotsuite.RobotTestSuite(t), layer=ROBOT_TESTING)
