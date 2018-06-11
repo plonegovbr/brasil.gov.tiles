@@ -1,15 +1,15 @@
 Changelog
 ---------
 
-1.7 (unreleased)
-^^^^^^^^^^^^^^^^
+1.6.1 (2018-06-11)
+^^^^^^^^^^^^^^^^^^
 
 - Corrige upgradeStep v4004 para evitar o erro "ValueError: term values must be unique: u'collective.polls'" em @@cover-settings. (closes `#212 <https://github.com/plonegovbr/brasil.gov.tiles/issues/212>`_).
   [idgserpro]
 
 
 1.6 (2018-01-19)
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 - Altera o tile de coleção quando contém notícias para ter o mesmo comportamento do tile de NITF.
   [idgserpro]
