@@ -28,6 +28,9 @@ O estado atual dos testes pode ser visto na imagem a seguir:
 .. image:: https://img.shields.io/coveralls/plonegovbr/brasil.gov.tiles/master.svg
     :target: https://coveralls.io/r/plonegovbr/brasil.gov.tiles
 
+.. image:: https://img.shields.io/codacy/grade/5a403e23e61d49d195fcb640d1566a89.svg
+    :target: https://www.codacy.com/project/plonegovbr/brasil.gov.tiles/dashboard
+
 Instalação
 ----------
 
@@ -75,7 +78,7 @@ Exemplo: você clonou o repositório do brasil.gov.portal na sua máquina, e deu
         https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
         https://raw.githubusercontent.com/plone/plone.app.robotframework/master/versions.cfg
         https://raw.githubusercontent.com/plonegovbr/portalpadrao.release/master/1.0.5/versions.cfg
-        
+
 Para saber qual arquivo de versões é compatível, no caso do brasil.gov.portal, é simples pois é a mesma versão (no máximo um bug fix, por exemplo, brasil.gov.portal é 1.1.3 e o arquivo de versão é 1.1.3.1). Para os demais pacotes, recomendamos comparar a data da tag do pacote e a data nos changelog entre uma versão e outra para adivinhar a versão compatível.
 
 Desenvolvimento
