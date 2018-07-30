@@ -27,6 +27,7 @@ ${footerurl_other_sample}  http://www.google.com
 
 Test Albuns Tile
     [Setup]  Set Selenium Speed  .5
+    [Tags]  Expected Failure
 
     Enable Autologin as  Site Administrator
     Go to Homepage
