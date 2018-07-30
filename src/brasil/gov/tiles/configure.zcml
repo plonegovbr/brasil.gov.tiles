@@ -10,8 +10,6 @@
 
     <include package=".tiles" />
 
-    <include package="plone4.csrffixes" />
-
     <!-- Profiles de Generic Setup -->
     <include file="profiles.zcml" />
 
