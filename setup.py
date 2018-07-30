@@ -43,6 +43,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'Acquisition',
         # O patch adicionado em configure.zcml espera uma classe presente em
         # collective.cover.browser.compose.RemoveItemFromListTile, só
         # só disponível a partir dessa versão.
@@ -52,62 +53,48 @@ setup(
         # de 2.x.
         'collective.nitf >= 2.1b2',
         'collective.polls >= 1.10b1',
-        'collective.prettydate',
         'future',
         'plone.api',
-        'plone.app.blocks',
-        'plone.app.dexterity [relations]',
-        # BBB: Com a atualização do collective.cover para 1.5b1 esse pacote
-        # foi removido mas ainda mantém utilities no ZODB para portais em produção. Quando
-        # https://github.com/plonegovbr/brasil.gov.portal/issues/348#issuecomment-309847978
-        # for atendido pode-se estudar sua remoção.
-        'plone.app.drafts',
-        'plone.app.iterate',
-        'plone.app.layout',
         # BBB: Adiciona plone.app.referenceablebehavior pois ainda não
         # estamos no Plone 5 e o release 1.1b1 de collective.cover
         # remove essa dependência. Ver
         # https://github.com/collective/collective.cover/commit/798ee6cc62c24cb21dacd92bbba70fdb867b8a4a
         'plone.app.referenceablebehavior',
-        'plone.app.registry',
         # BBB: Adiciona plone.app.stagingbehavior pois ainda não
         # estamos no Plone 5 e release 1.1b1 de collective.cover
         # remove essa dependência. Ver
         # https://github.com/collective/collective.cover/commit/651cf0b86b45f9398dabc108a14d5c49f79367bf
         'plone.app.stagingbehavior',
-        'plone.app.textfield',
-        'plone.app.tiles',
-        'plone.app.upgrade',
         'plone.app.uuid',
-        'plone.app.vocabularies',
         'plone.autoform',
-        'plone.dexterity',
         'plone.memoize',
         'plone.namedfile',
+        'plone.registry',
         'plone.tiles',
-        'plone.uuid',
-        'plone4.csrffixes',
-        'Products.CMFCore',
         'Products.CMFPlone >=4.3',
+        'Products.CMFQuickInstallerTool',
         'Products.GenericSetup',
+        'Products.PythonScripts',
         'setuptools',
         'z3c.unconfigure',
+        'zExceptions',
+        'zope.browserpage',
         'zope.component',
+        'zope.i18nmessageid',
         'zope.interface',
         'zope.schema',
     ],
     extras_require={
         'test': [
-            'collective.cover[test]',
+            'collective.cover [test]',
             'mock',
-            'five.pt',
             'plone.api',
+            'plone.app.imaging',
             'plone.app.robotframework',
-            'plone.app.testing [robot] >=4.2.2',
+            'plone.app.testing [robot]',
             'plone.browserlayer',
-            'plone.cachepurging',
             'plone.testing',
-            'Products.PloneFormGen',
+            'robotsuite',
         ]
     },
     entry_points="""
