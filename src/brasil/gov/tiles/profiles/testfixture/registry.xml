@@ -6,19 +6,7 @@
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.available_tiles">
     <value purge="true">
-      <element>em_destaque</element>
-      <element>nitf</element>
-      <element>collective.polls</element>
-      <element>destaque</element>
-      <element>videogallery</element>
-      <element>audio</element>
-      <element>audiogallery</element>
-      <element>mediacarousel</element>
-      <element>social</element>
       <element>standaloneheader</element>
-      <element>video</element>
-      <element>banner_rotativo</element>
-      <element>albuns</element>
     </value>
   </record>
 

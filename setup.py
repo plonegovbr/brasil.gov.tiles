@@ -48,11 +48,6 @@ setup(
         # collective.cover.browser.compose.RemoveItemFromListTile, só
         # só disponível a partir dessa versão.
         'collective.cover >= 1.3b1',
-        'collective.monkeypatcher',
-        # Passo a herdar do tile de nitf, que só foi disponibilizado a partir
-        # de 2.x.
-        'collective.nitf >= 2.1b2',
-        'collective.polls >= 1.10b1',
         'future',
         'plone.api',
         # BBB: Adiciona plone.app.referenceablebehavior pois ainda não
@@ -76,7 +71,6 @@ setup(
         'Products.GenericSetup',
         'Products.PythonScripts',
         'setuptools',
-        'z3c.unconfigure',
         'zExceptions',
         'zope.browserpage',
         'zope.component',
