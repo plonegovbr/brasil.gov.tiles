@@ -13,23 +13,9 @@ import unittest
 
 DEPENDENCIES = [
     'collective.cover',
-    'collective.nitf',
-    'collective.polls',
 ]
 TILES = [
-    'em_destaque',
-    'nitf',
-    'collective.polls',
-    'destaque',
-    'videogallery',
-    'audio',
-    'audiogallery',
-    'mediacarousel',
-    'social',
     'standaloneheader',
-    'video',
-    'banner_rotativo',
-    'collective.cover.carousel',
 ]
 
 
