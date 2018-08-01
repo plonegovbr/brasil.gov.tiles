@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove tiles antigos que não serão mais utilizados.
+  [rodfersou]
+
 - Corrige dependências do pacote.
   [hvelarde]
 

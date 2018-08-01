@@ -13,23 +13,9 @@ import unittest
 
 DEPENDENCIES = [
     'collective.cover',
-    'collective.nitf',
-    'collective.polls',
 ]
 TILES = [
-    'em_destaque',
-    'nitf',
-    'collective.polls',
-    'destaque',
-    'videogallery',
-    'audio',
-    'audiogallery',
-    'mediacarousel',
-    'social',
     'standaloneheader',
-    'video',
-    'banner_rotativo',
-    'collective.cover.carousel',
 ]
 
 
@@ -60,10 +46,6 @@ class InstallTestCase(unittest.TestCase):
         registered_tiles = self.registry['plone.app.tiles']
         for tile in TILES:
             self.assertIn(tile, registered_tiles)
-
-    def test_remove_collective_nitf_tile_on_install(self):
-        registered_tiles = self.registry['plone.app.tiles']
-        self.assertNotIn(u'collective.nitf', registered_tiles)
 
     @unittest.skipIf(True, 'There are still no upgrade steps in this package.')
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
