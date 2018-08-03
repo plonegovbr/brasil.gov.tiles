@@ -15,6 +15,7 @@
       <element>video</element>
       <element>banner_rotativo</element>
       <element>albuns</element>
+      <element>brasil.gov.tiles.quote</element>
     </value>
   </record>
 </registry>

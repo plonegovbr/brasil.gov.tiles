@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Add quote tile.
+  [rodfersou]
+
 - Corrige dependências do pacote.
   [hvelarde]
 
