@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from collective.cover.config import IS_PLONE_5
+from collective.cover.controlpanel import ICoverSettings
 from collective.cover.tests.test_upgrades import UpgradeTestCaseBase
 from plone import api
 
@@ -77,3 +78,48 @@ class Upgrade4004to4005TestCase(UpgradeTestCaseBrasilGovTitles):
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.cycle2.carousel.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.cycle2.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
+
+
+class Upgrade4005to4006TestCase(UpgradeTestCaseBrasilGovTitles):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        super(Upgrade4005to4006TestCase, self).setUp(u'4005', u'4006')
+
+    def test_registrations(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertTrue(int(version) >= int(self.to_version))
+        self.assertEqual(self._how_many_upgrades_to_do(), 2)
+
+    @unittest.skipIf(IS_PLONE_5, 'Upgrade step not supported under Plone 5')
+    def test_add_quote_tile(self):
+        # address also an issue with Setup permission
+        title = u'Add Quote Tile'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+
+        tile = u'brasil.gov.tiles.quote'
+        record = dict(name='plone.app.tiles')
+        registered_tiles = api.portal.get_registry_record(**record)
+        if tile in registered_tiles:
+            registered_tiles.remove(tile)
+        api.portal.set_registry_record(value=registered_tiles, **record)
+        self.assertNotIn(tile, registered_tiles)
+        record = dict(interface=ICoverSettings, name='available_tiles')
+        available_tiles = api.portal.get_registry_record(**record)
+        if tile in available_tiles:
+            available_tiles.remove(tile)
+        api.portal.set_registry_record(value=available_tiles, **record)
+        self.assertNotIn(tile, available_tiles)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade_step(step)
+
+        tile = u'brasil.gov.tiles.quote'
+        record = dict(name='plone.app.tiles')
+        registered_tiles = api.portal.get_registry_record(**record)
+        self.assertIn(tile, registered_tiles)
+        record = dict(interface=ICoverSettings, name='available_tiles')
+        available_tiles = api.portal.get_registry_record(**record)
+        self.assertIn(tile, available_tiles)
