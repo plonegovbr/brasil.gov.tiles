@@ -1,0 +1,62 @@
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="brasil.gov.tiles">
+
+<body tal:define="is_empty nocall:view/is_empty">
+  <p tal:condition="python:is_empty() and view.is_compose_mode()" i18n:translate="">
+    Drag&amp;drop a News Article here.
+  </p>
+
+  <div tal:condition="not:is_empty"
+       tal:attributes="class string:brasil-quote-tile tile-content ${view/color_class}">
+    <div class="quote-article" tal:define="description view/data/description|nothing">
+      <div class="quote-article-content">
+      <tal:fields repeat="field view/get_configured_fields">
+        <tal:title condition="python:field['id'] == 'title'">
+          <h1 tal:replace="structure view/title_tag" />
+        </tal:title>
+
+        <tal:subtitle condition="python:field['id'] == 'subtitle'">
+          <p tal:content="python:field['content']" class="tile-subtitle">Subtitle</p>
+        </tal:subtitle>
+
+        <tal:image
+            condition="python:field['id'] == 'image'"
+            define="scale python:field.get('scale', 'large');
+                    position python:field.get('position', '');">
+          <a class="imag" tal:attributes="href view/getURL;
+                                          title description;">
+            <img tal:define="scales view/@@images;
+                             thumbnail python: scales.scale('image', scale=scale);"
+                 tal:condition="thumbnail"
+                 tal:attributes="src thumbnail/url;
+                                 width thumbnail/width;
+                                 height thumbnail/height;
+                                 class position;
+                                 alt view/data/title"
+                                 />
+          </a>
+        </tal:image>
+
+        <tal:last condition="repeat/field/end">
+          <div class="visualClear"><!-- --></div>
+        </tal:last>
+      </tal:fields>
+      </div>
+    </div>
+    <div class="quote">
+      <div class="quote-text">
+        <span class="quote-left">"</span>
+        <span tal:replace="view/quote" />
+        <span class="quote-right">"</span>
+      </div>
+      <div class="quote-rights"
+           tal:content="view/quote_rights" />
+    </div>
+  </div>
+</body>
+</html>
+

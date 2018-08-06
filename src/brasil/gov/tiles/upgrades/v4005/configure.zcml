@@ -4,6 +4,7 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="brasil.gov.tiles">
 
+  <!-- FIXME: move all steps to 4100 -->
   <genericsetup:upgradeSteps
       source="4004"
       destination="4005"
