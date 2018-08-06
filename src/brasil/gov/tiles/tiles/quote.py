@@ -15,7 +15,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 class IQuoteTile(INITFTile):
-
     """A tile that shows an article quote."""
 
     form.omitted('quote_color')
@@ -47,7 +46,6 @@ class IQuoteTile(INITFTile):
 
 @implementer(IQuoteTile)
 class QuoteTile(NITFTile):
-
     """A tile that shows an article quote."""
 
     index = ViewPageTemplateFile('templates/quote.pt')

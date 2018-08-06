@@ -8,7 +8,7 @@
       profile="brasil.gov.tiles:default">
 
     <genericsetup:upgradeStep
-        title="Add Quote Tile"
+        title="Add Quote tile"
         handler=".add_quote_tile"
         />
 

@@ -3,5 +3,5 @@ from brasil.gov.tiles.upgrades import add_tile
 
 
 def add_quote_tile(context):
-    """Add Quote Tile."""
+    """Add Quote tile."""
     add_tile(u'brasil.gov.tiles.quote')

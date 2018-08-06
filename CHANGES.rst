@@ -4,7 +4,7 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Adiciona o tile Quote, que mostra uma citação da matéria.
+- Adiciona um tile para mostrar uma citação de uma matéria.
   [rodfersou]
 
 - Corrige dependências do pacote.

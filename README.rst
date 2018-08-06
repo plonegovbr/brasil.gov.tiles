@@ -84,9 +84,13 @@ Para saber qual arquivo de versões é compatível, no caso do brasil.gov.portal
 Tiles do pacote
 ---------------
 
-Tile Quote - Tile que mostra uma citação da matéria.
+Citação
+    Mostra uma citação de uma matéria.
 
-.. image:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/Quote.png
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/quote.png
+    :align: center
+    :height: 250px
+    :width: 530px
 
 Desenvolvimento
 ---------------
