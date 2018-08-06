@@ -85,12 +85,22 @@ Tiles do pacote
 ---------------
 
 Citação
-    Mostra uma citação de uma matéria.
+^^^^^^^
+Mostra uma citação de uma matéria.
 
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/quote.png
     :align: center
     :height: 250px
     :width: 530px
+
+Foto do Día
+^^^^^^^^^^^
+Mostra uma foto excepcional selecionada diariamente.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/potd.png
+    :align: center
+    :height: 577px
+    :width: 867px
 
 Desenvolvimento
 ---------------

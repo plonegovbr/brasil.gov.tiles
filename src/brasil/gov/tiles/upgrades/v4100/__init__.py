@@ -30,6 +30,11 @@ def update_static_resources(setup_tool):
     logger.info('JavaScript resources were updated')
 
 
-def add_quote_tile(context):
+def add_quote_tile(setup_tool):
     """Add Quote tile."""
     add_tile(u'brasil.gov.tiles.quote')
+
+
+def add_potd_tile(setup_tool):
+    """Add Photo of the Day tile."""
+    add_tile(u'brasil.gov.tiles.potd')
