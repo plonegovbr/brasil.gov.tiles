@@ -8,6 +8,11 @@
       profile="brasil.gov.tiles:default">
 
     <genericsetup:upgradeStep
+        title="Use resources compiled from webpack"
+        handler=".update_static_resources"
+        />
+
+    <genericsetup:upgradeStep
         title="Add Quote tile"
         handler=".add_quote_tile"
         />
@@ -16,6 +21,12 @@
         title="Cook CSS resources"
         description="There were changes in the CSS files, so we need to cook the resources."
         handler="..cook_css_resources"
+        />
+
+    <genericsetup:upgradeStep
+        title="Cook JavaScripts resources"
+        description="There were changes in the JS files, so we need to cook the resources."
+        handler="..cook_javascript_resources"
         />
 
   </genericsetup:upgradeSteps>
