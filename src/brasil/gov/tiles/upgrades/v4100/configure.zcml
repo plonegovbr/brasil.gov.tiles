@@ -3,8 +3,8 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
   <genericsetup:upgradeSteps
-      source="4005"
-      destination="4006"
+      source="*"
+      destination="4100"
       profile="brasil.gov.tiles:default">
 
     <genericsetup:upgradeStep

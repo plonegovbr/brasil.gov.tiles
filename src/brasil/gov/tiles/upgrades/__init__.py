@@ -19,17 +19,17 @@ def cook_javascript_resources(context):  # pragma: no cover
 
 
 def add_tile(tile):
-    """Add Quote Tile."""
+    """Register a tile and make it available."""
     record = dict(name='plone.app.tiles')
     registered_tiles = api.portal.get_registry_record(**record)
     if tile not in registered_tiles:
         registered_tiles.append(tile)
         api.portal.set_registry_record(value=registered_tiles, **record)
+        logger.info('{0} tile registered'.format(tile))
 
     record = dict(interface=ICoverSettings, name='available_tiles')
     available_tiles = api.portal.get_registry_record(**record)
     if tile not in available_tiles:
         available_tiles.append(tile)
         api.portal.set_registry_record(value=available_tiles, **record)
-
-    logger.info('{0} tile registered and made available'.format(tile))
+        logger.info('{0} tile made available'.format(tile))

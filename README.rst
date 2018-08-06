@@ -81,6 +81,13 @@ Exemplo: você clonou o repositório do brasil.gov.portal na sua máquina, e deu
 
 Para saber qual arquivo de versões é compatível, no caso do brasil.gov.portal, é simples pois é a mesma versão (no máximo um bug fix, por exemplo, brasil.gov.portal é 1.1.3 e o arquivo de versão é 1.1.3.1). Para os demais pacotes, recomendamos comparar a data da tag do pacote e a data nos changelog entre uma versão e outra para adivinhar a versão compatível.
 
+Tiles do pacote
+---------------
+
+Tile Quote - Tile que mostra uma citação da matéria.
+
+.. image:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/Quote.png
+
 Desenvolvimento
 ---------------
 

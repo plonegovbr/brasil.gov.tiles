@@ -11,8 +11,7 @@ class QuoteTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(QuoteTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.quote', 'test-tile'),
-        )
+            '@@{0}/{1}'.format('brasil.gov.tiles.quote', 'test-tile'))
         self.tile.data['quote_color'] = u'blue'
 
     def test_interface(self):

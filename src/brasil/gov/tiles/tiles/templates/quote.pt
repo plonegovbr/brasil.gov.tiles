@@ -3,7 +3,7 @@
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="collective.nitf">
+    i18n:domain="brasil.gov.tiles">
 
 <body tal:define="is_empty nocall:view/is_empty">
   <p tal:condition="python:is_empty() and view.is_compose_mode()" i18n:translate="">

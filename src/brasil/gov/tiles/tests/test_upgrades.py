@@ -80,12 +80,12 @@ class Upgrade4004to4005TestCase(UpgradeTestCaseBrasilGovTitles):
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
 
 
-class Upgrade4005to4006TestCase(UpgradeTestCaseBrasilGovTitles):
+class UpgradeTo4100TestCase(UpgradeTestCaseBrasilGovTitles):
 
     layer = INTEGRATION_TESTING
 
     def setUp(self):
-        super(Upgrade4005to4006TestCase, self).setUp(u'4005', u'4006')
+        super(UpgradeTo4100TestCase, self).setUp(u'4005', u'4100')
 
     def test_registrations(self):
         version = self.setup.getLastVersionForProfile(self.profile_id)[0]
@@ -102,21 +102,16 @@ class Upgrade4005to4006TestCase(UpgradeTestCaseBrasilGovTitles):
         tile = u'brasil.gov.tiles.quote'
         record = dict(name='plone.app.tiles')
         registered_tiles = api.portal.get_registry_record(**record)
-        if tile in registered_tiles:
-            registered_tiles.remove(tile)
+        registered_tiles.remove(tile)
         api.portal.set_registry_record(value=registered_tiles, **record)
         self.assertNotIn(tile, registered_tiles)
         record = dict(interface=ICoverSettings, name='available_tiles')
         available_tiles = api.portal.get_registry_record(**record)
-        if tile in available_tiles:
-            available_tiles.remove(tile)
-        api.portal.set_registry_record(value=available_tiles, **record)
         self.assertNotIn(tile, available_tiles)
 
         # run the upgrade step to validate the update
         self._do_upgrade_step(step)
 
-        tile = u'brasil.gov.tiles.quote'
         record = dict(name='plone.app.tiles')
         registered_tiles = api.portal.get_registry_record(**record)
         self.assertIn(tile, registered_tiles)
