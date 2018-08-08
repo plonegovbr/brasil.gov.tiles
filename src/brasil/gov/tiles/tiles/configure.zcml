@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="brasil.gov.tiles">
@@ -175,6 +176,14 @@
       permission="zope2.View"
       schema=".potd.IPOTDTile"
       title="Photo of the Day"
+      />
+
+  <browser:page
+      name="tile-download"
+      for="*"
+      class=".downloadview.DownloadView"
+      layer="brasil.gov.tiles.interfaces.IBrasilGovTiles"
+      permission="zope.Public"
       />
 
 </configure>
