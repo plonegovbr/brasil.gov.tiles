@@ -67,6 +67,7 @@ class POTDTile(PersistentCoverTile):
             data = obj.getImage().data
         else:
             data = obj.image.data
+        image = NamedBlobImage(data)
 
         data_mgr = ITileDataManager(self)
         data = data_mgr.get()
