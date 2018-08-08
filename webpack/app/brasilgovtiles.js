@@ -5,6 +5,8 @@ import CarouselResponsiveResize from './js/tiles/mediacarousel.js';
 import VideoResponsiveResize from './js/tiles/videogallery.js';
 import POTDTile from './js/tiles/potd.js';
 
+// https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
+jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
 $(() => {
   if ($('.mediacarousel-tile')[0] !== undefined) {

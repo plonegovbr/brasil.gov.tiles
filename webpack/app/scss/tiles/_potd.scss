@@ -32,16 +32,20 @@
 
     .zoom-icon {
         background-image: url(./img/image-zoom.png);
-        width: 27px;
-        height: 27px;
+        background-repeat: no-repeat;
+        width: 29px;
+        height: 29px;
         text-indent: -5000px;
+        border-bottom: none !important;
     }
 
     .download-icon {
         background-image: url(./img/image-download.png);
-        width: 27px;
-        height: 27px;
+        background-repeat: no-repeat;
+        width: 29px;
+        height: 29px;
         text-indent: -5000px;
+        border-bottom: none !important;
     }
 
     .bottom-bar {

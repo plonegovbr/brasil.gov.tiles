@@ -68,11 +68,6 @@ class POTDTile(PersistentCoverTile):
         else:
             data = obj.image.data
 
-        if data:
-            image = NamedBlobImage(data)
-        else:
-            image = None
-
         data_mgr = ITileDataManager(self)
         data = data_mgr.get()
         data['title'] = obj.title
