@@ -72,7 +72,7 @@ class POTDTile(PersistentCoverTile):
         data_mgr = ITileDataManager(self)
         data = data_mgr.get()
         data['title'] = obj.title
-        data['description'] = obj.description
+        data['description'] = obj.Description()
         data['image'] = image
         data['uuid'] = api.content.get_uuid(obj=obj)
         data['photo_credits'] = obj.Rights()
@@ -82,3 +82,6 @@ class POTDTile(PersistentCoverTile):
     @property
     def is_empty(self):
         return not self.has_image
+
+    def getAlt(self):
+        return self.data.get('description', None) or self.data.get('title', None)

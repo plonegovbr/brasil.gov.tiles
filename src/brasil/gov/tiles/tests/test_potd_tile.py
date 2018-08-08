@@ -30,5 +30,26 @@ class POTDTileTestCase(BaseIntegrationTestCase):
         self.assertListEqual(
             self.tile.accepted_ct(), ['Image'])
 
-    def test_render(self):
-        pass
+    def test_render_with_image(self):
+        obj = self.portal['my-image']
+        self.tile.populate_with_object(obj)
+        rendered = self.tile()
+        self.assertIn('<img ', rendered)
+        self.assertIn('alt="This image was created for testing purposes"', rendered)
+        self.assertTrue(self.tile.has_image)
+
+    def test_title(self):
+        obj = self.portal['my-image']
+        self.tile.populate_with_object(obj)
+        self.assertEqual(self.tile.data['title'], 'Test image')
+
+    def test_description(self):
+        obj = self.portal['my-image']
+        self.tile.populate_with_object(obj)
+        self.assertEqual(self.tile.data['description'], 'This image was created for testing purposes')
+
+    def test_credits(self):
+        obj = self.portal['my-image']
+        obj.setRights('Test credits')
+        self.tile.populate_with_object(obj)
+        self.assertEqual(self.tile.data['photo_credits'], 'Test credits')

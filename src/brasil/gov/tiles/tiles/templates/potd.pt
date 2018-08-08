@@ -15,12 +15,14 @@
 
     <div class="image-container"
             tal:define="scale view/scale;
-                       scales view/@@images;
-                       thumbnail python:scales.scale('image', scale=None)">
+                        scales view/@@images;
+                        alt view/getAlt;
+                        thumbnail python:scales.scale('image', scale=None)">
       <img tal:condition="thumbnail"
            tal:attributes="src thumbnail/url;
                            width thumbnail/width;
-                           height thumbnail/height;" />
+                           height thumbnail/height;
+                           alt alt" />
 
       <div class="text-body">
         <h2 tal:content="view/data/title">Title</h2>
