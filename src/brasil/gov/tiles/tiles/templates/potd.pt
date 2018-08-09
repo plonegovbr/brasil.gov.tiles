@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="brasil.gov.tiles">
+<body tal:define="is_empty view/is_empty">
+
+  <p tal:condition="python: is_empty and view.is_compose_mode()" i18n:translate="">
+    Drag&amp;drop an image here to populate the tile.
+  </p>
+
+  <div class="potd-tile tile-content"
+      tal:condition="not:is_empty"
+      tal:attributes="id string:potd-${view/id}">
+
+    <div class="image-container"
+            tal:define="scale view/scale;
+                        scales view/@@images;
+                        alt view/getAlt;
+                        thumbnail python:scales.scale('image', scale=None)">
+      <img tal:condition="thumbnail"
+           tal:attributes="src thumbnail/url;
+                           width thumbnail/width;
+                           height thumbnail/height;
+                           alt alt" />
+
+      <div class="text-body">
+        <h2 tal:content="view/data/title">Title</h2>
+        <p tal:content="view/data/description">Description</p>
+      </div>
+
+      <div class="bottom-bar">
+        <span class="tile-credits" tal:content="view/data/photo_credits">Credits</span>
+        <a tal:attributes="href string:${view/url}/@@tile-download/image" class="download-icon">Download</a>
+        <a tal:attributes="href string:${thumbnail/url}" class="zoom-icon">Zoom</a>
+      </div>
+    </div>
+
+    <div class="visualClear"><!-- --></div>
+
+  </div>
+</body>
+</html>

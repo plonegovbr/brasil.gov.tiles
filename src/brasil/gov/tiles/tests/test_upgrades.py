@@ -42,7 +42,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 4)
+        self.assertEqual(steps, 5)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -92,27 +92,50 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.cycle2.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
 
+    @staticmethod
+    def get_registered_tiles():
+        return api.portal.get_registry_record(name='plone.app.tiles')
+
+    @staticmethod
+    def set_registered_tiles(value):
+        api.portal.set_registry_record(name='plone.app.tiles', value=value)
+
+    @staticmethod
+    def get_available_tiles():
+        record = dict(interface=ICoverSettings, name='available_tiles')
+        return api.portal.get_registry_record(**record)
+
+    def unregister_tile(self, tile):
+        registered_tiles = self.get_registered_tiles()
+        registered_tiles.remove(tile)
+        self.set_registered_tiles(value=registered_tiles)
+        self.assertNotIn(tile, self.get_registered_tiles())
+        self.assertNotIn(tile, self.get_available_tiles())
+
+    def test_add_potd_tile(self):
+        title = u'Add POTD tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        tile = u'brasil.gov.tiles.potd'
+        self.unregister_tile(tile)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.assertIn(tile, self.get_registered_tiles())
+        self.assertIn(tile, self.get_available_tiles())
+
     def test_add_quote_tile(self):
         title = u'Add Quote tile'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         tile = u'brasil.gov.tiles.quote'
-        name = 'plone.app.tiles'
-        registered_tiles = api.portal.get_registry_record(name=name)
-        registered_tiles.remove(tile)
-        api.portal.set_registry_record(name=name, value=registered_tiles)
-        self.assertNotIn(tile, registered_tiles)
-        record = dict(interface=ICoverSettings, name='available_tiles')
-        available_tiles = api.portal.get_registry_record(**record)
-        self.assertNotIn(tile, available_tiles)
+        self.unregister_tile(tile)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        name = 'plone.app.tiles'
-        registered_tiles = api.portal.get_registry_record(name=name)
-        self.assertIn(tile, registered_tiles)
-        record = dict(interface=ICoverSettings, name='available_tiles')
-        available_tiles = api.portal.get_registry_record(**record)
-        self.assertIn(tile, available_tiles)
+        self.assertIn(tile, self.get_registered_tiles())
+        self.assertIn(tile, self.get_available_tiles())

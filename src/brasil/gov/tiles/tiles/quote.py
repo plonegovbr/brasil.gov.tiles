@@ -6,8 +6,8 @@ from collective.nitf.tiles.nitf import NITFTile
 from plone import api
 from plone.autoform import directives as form
 from plone.tiles.interfaces import ITileDataManager
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
-from zope.browserpage import ViewPageTemplateFile
 from zope.interface import implementer
 from zope.schema import Choice
 from zope.schema.vocabulary import SimpleTerm
