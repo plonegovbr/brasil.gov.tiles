@@ -5,7 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona um tile para mostrar a Foto do Dia.
-  [clayton, hvelarde]
+  [claytonc, hvelarde]
 
 - Adiciona um tile para mostrar uma citação de uma matéria.
   [rodfersou]
