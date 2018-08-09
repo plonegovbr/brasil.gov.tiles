@@ -4,8 +4,8 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Adiciona um tile para mostrar a Foto do Día.
-  [rodfersou, hvelarde]
+- Adiciona um tile para mostrar a Foto do Dia.
+  [clayton, hvelarde]
 
 - Adiciona um tile para mostrar uma citação de uma matéria.
   [rodfersou]
