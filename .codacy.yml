@@ -1,5 +1,5 @@
 exclude_paths:
 - bootstrap.py
 - setup.py
-- swiper.min.js
-- swiper.min.css
+- webpack/app/vendor/swiper.min.css
+- webpack/app/vendor/swiper.min.js
