@@ -6,10 +6,12 @@ from plone import api
 
 RESOURCES_TO_UPDATE = {
     '++resource++brasil.gov.tiles/tiles.css': '++resource++brasil.gov.tiles/brasilgovtiles.css',
+    '++resource++brasil.gov.tiles/vendor/swiper.min.css': '++resource++brasil.gov.tiles/vendor/swiper.min.css',
     '++resource++brasil.gov.tiles/tiles.js': '++resource++brasil.gov.tiles/brasilgovtiles.js',
     '++resource++brasil.gov.tiles/jquery.cycle2.carousel.js': '++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js',
     '++resource++brasil.gov.tiles/jquery.cycle2.js': '++resource++brasil.gov.tiles/vendor/jquery.cycle2.js',
     '++resource++brasil.gov.tiles/jquery.jplayer.min.js': '++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js',
+    '++resource++brasil.gov.tiles/vendor/swiper.min.js': '++resource++brasil.gov.tiles/vendor/vendor/swiper.min.js',
 }
 
 
@@ -38,3 +40,8 @@ def add_quote_tile(setup_tool):
 def add_potd_tile(setup_tool):
     """Add Photo of the Day tile."""
     add_tile(u'brasil.gov.tiles.potd')
+
+
+def add_photogallery_tile(setup_tool):
+    """Add Photo Gallery tile."""
+    add_tile(u'brasil.gov.tiles.photogallery')
