@@ -93,7 +93,7 @@ Mostra uma citação de uma matéria.
     :height: 250px
     :width: 530px
 
-Foto do Día
+Foto do Dia
 ^^^^^^^^^^^
 Mostra uma foto excepcional selecionada diariamente.
 
@@ -101,6 +101,15 @@ Mostra uma foto excepcional selecionada diariamente.
     :align: center
     :height: 577px
     :width: 867px
+
+Galeria de fotos
+^^^^^^^^^^^^^^^^
+Mostra uma galeria de fotos.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/photogallery.png
+    :align: center
+    :height: 533px
+    :width: 800px
 
 Desenvolvimento
 ---------------

@@ -1,0 +1,58 @@
+.brasil-photogallery-tile {
+
+    .gallery-title {
+      text-align: center;
+    }
+  
+    .container-bar {
+      position: relative;
+      background: #ccc;
+      top: 91%;
+      padding: 15px 0;
+      width: 100%;
+      background: rgba(0, 0, 0, .5);
+      margin-top: -63px;
+      height: 30px;
+  
+      .text-bottom {
+        .credits, .description {
+          margin-bottom: 0 !important;
+          line-height: 1.2em !important;
+          margin-left: 30px;
+          color: #fff;
+          font-size: 0.875rem !important;
+        }
+        .credits{
+          font-weight: 800;
+        }
+
+      }
+  
+      .links-bottom {
+        .zoom-icon, .download-icon {
+          top: 15px;
+          position: absolute;
+          right: 0;
+          margin-right: 30px;
+        }
+        .download-icon {
+          margin-right: 80px;
+        }
+      }
+    }
+  
+    .swiper-button-prev.swiper-button-white, 
+    .swiper-container-rtl .swiper-button-next.swiper-button-white,
+    .swiper-button-next.swiper-button-white, 
+    .swiper-container-rtl .swiper-button-prev.swiper-button-white {
+      background-color: rgba(0, 0, 0, .5);
+      border-radius: 47px;
+      padding: 0px;
+      width: 48px;
+      height: 48px;
+      background-size: 30%;
+    }
+  }
+  
+  
+  

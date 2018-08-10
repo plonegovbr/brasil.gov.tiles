@@ -12,4 +12,7 @@
   <javascript id="++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js"
       cacheable="True" compression="none" cookable="True" enabled="True"
       expression="" inline="False" authenticated="False" insert-after="++resource++brasil.gov.tiles/vendor/jquery.cycle2.js" />
+  <javascript id="++resource++brasil.gov.tiles/vendor/swiper.min.js"
+      cacheable="True" compression="none" cookable="True" enabled="True"
+      expression="" inline="False" authenticated="False" insert-after="++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js" />
 </object>

@@ -17,6 +17,7 @@
       <element>albuns</element>
       <element>brasil.gov.tiles.potd</element>
       <element>brasil.gov.tiles.quote</element>
+      <element>brasil.gov.tiles.photogallery</element>
     </value>
   </record>
 </registry>
