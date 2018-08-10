@@ -33,7 +33,8 @@ class PhotoGalleryTile(ListTile):
     is_editable = True
     limit = 5 * 3
 
-    def accepted_ct(self):
+    @staticmethod
+    def accepted_ct():
         return ['Image']
 
     def get_description(self, item):
@@ -56,5 +57,6 @@ class PhotoGalleryTile(ListTile):
                 description = uuids[uuid].get('custom_description')
         return description
 
-    def get_credits(self, item):
+    @staticmethod
+    def get_credits(item):
         return item.Rights()
