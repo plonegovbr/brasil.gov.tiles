@@ -103,7 +103,7 @@ Mostra uma foto excepcional selecionada diariamente.
     :width: 867px
 
 Galeria de fotos
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 Mostra uma galeria de fotos.
 
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/photogallery.png

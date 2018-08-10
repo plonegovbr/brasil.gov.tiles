@@ -12,7 +12,7 @@ from zope.interface import implementer
 
 
 class IPhotoGalleryTile(IListTile):
-    """Displays a list photos gallery"""
+    """A tile that shows an photo gallery."""
 
     tile_description = schema.Text(title=_(u'Tile Description'), required=False)
     form.omitted('tile_description')
@@ -24,7 +24,7 @@ class IPhotoGalleryTile(IListTile):
 
 @implementer(IPhotoGalleryTile)
 class PhotoGalleryTile(ListTile):
-    """Displays a list of tags."""
+    """A tile that shows an photo gallery."""
 
     index = ViewPageTemplateFile('templates/photogallery.pt')
     short_name = _(u'msg_short_photo_gallery', default=u'Photo Gallery')
