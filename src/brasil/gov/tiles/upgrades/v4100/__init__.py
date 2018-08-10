@@ -6,12 +6,12 @@ from plone import api
 
 RESOURCES_TO_UPDATE = {
     '++resource++brasil.gov.tiles/tiles.css': '++resource++brasil.gov.tiles/brasilgovtiles.css',
-    '++resource++brasil.gov.tiles/vendor/swiper.min.css': '++resource++brasil.gov.tiles/vendor/swiper.min.css',
+    '++resource++brasil.gov.tiles/swiper.min.css': '++resource++brasil.gov.tiles/vendor/swiper.min.css',
     '++resource++brasil.gov.tiles/tiles.js': '++resource++brasil.gov.tiles/brasilgovtiles.js',
     '++resource++brasil.gov.tiles/jquery.cycle2.carousel.js': '++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js',
     '++resource++brasil.gov.tiles/jquery.cycle2.js': '++resource++brasil.gov.tiles/vendor/jquery.cycle2.js',
     '++resource++brasil.gov.tiles/jquery.jplayer.min.js': '++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js',
-    '++resource++brasil.gov.tiles/vendor/swiper.min.js': '++resource++brasil.gov.tiles/vendor/vendor/swiper.min.js',
+    '++resource++brasil.gov.tiles/swiper.min.js': '++resource++brasil.gov.tiles/vendor/swiper.min.js',
 }
 
 
