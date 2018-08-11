@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import BaseIntegrationTestCase
 from brasil.gov.tiles.tiles.carousel import CarouselTile
-from collective.cover.testing import ALL_CONTENT_TYPES
 from collective.cover.tiles.base import IPersistentCoverTile
 from mock import Mock
 from plone import api
@@ -31,7 +30,16 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.assertTrue(self.tile.is_droppable)
 
     def test_accepted_content_types(self):
-        self.assertEqual(self.tile.accepted_ct(), ALL_CONTENT_TYPES)
+        types = [
+            'Collection',
+            'Document',
+            'File',
+            'Image',
+            'Link',
+            'News Item',
+            'ExternalContent',
+        ]
+        self.assertEqual(self.tile.accepted_ct(), types)
 
     def test_tile_is_empty(self):
         self.assertTrue(self.tile.is_empty())
@@ -67,6 +75,7 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         data['tile_title'] = 'My title'
         data['more_link'] = api.content.get_uuid(obj2)
         data['more_link_text'] = 'Read much more...'
+        data['switch_text'] = 'Test switch text'
         # Save the new data.
         data_mgr = ITileDataManager(self.tile)
         data_mgr.set(data)

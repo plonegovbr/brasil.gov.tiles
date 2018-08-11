@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.tiles.logger import logger
 from collective.cover.utils import get_types_use_view_action_in_listings
 from collective.cover.utils import uuidToObject
 from collective.cover.widgets.interfaces import ITextLinesSortableWidget
@@ -44,7 +45,8 @@ class TextLinesSortableWidget(textlines.TextLinesWidget):
         else:
             return []
 
-    def thumbnail(self, item):
+    @staticmethod
+    def thumbnail(item):
         """ Returns the 'tile' scale for the image added to the item
 
         :param item: [required] The object to take the image from
@@ -53,13 +55,15 @@ class TextLinesSortableWidget(textlines.TextLinesWidget):
         """
         if not item:
             return None
-        scales = item.restrictedTraverse('@@images')
         try:
+            scales = item.restrictedTraverse('@@images')
             return scales.scale('image', 'tile')
-        except:  # noqa: B901
+        except Exception as ex:  # noqa: B901
+            logger.error('Error in try generate  scale: ' + str(ex))
             return None
 
-    def isExpired(self, item):
+    @staticmethod
+    def isExpired(item):
         if base_hasattr(item, 'expires'):
             return item.expires().isPast()
         return False

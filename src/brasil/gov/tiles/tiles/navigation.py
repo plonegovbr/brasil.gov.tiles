@@ -41,7 +41,8 @@ class NavigationTile(PersistentCoverTile):
         except AttributeError:
             pass
 
-    def _exclude_from_nav(self, obj):
+    @staticmethod
+    def _exclude_from_nav(obj):
         """Check DX and AT way if is a menu item."""
         if obj is None:
             return True
