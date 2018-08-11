@@ -4,8 +4,14 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="brasil.gov.tiles">
   <body tal:define="is_empty view/is_empty">
+
+    <p tal:condition="python: is_empty and view.is_compose_mode()" i18n:translate="">
+        This gallery is empty; open the content chooser and drag-and-drop some items here.
+    </p>
+
     <div class="brasil-gallery-tile tile-content"
-         tal:attributes="id string:gallery-${view/id}">
+         tal:attributes="id string:gallery-${view/id}"
+         tal:condition="not:is_empty">
       <div class="swiper-container gallery-top">
         <div class="gallery-global-information">
           <div class="gallery-title" tal:content="view/tile_title" />

@@ -46,21 +46,21 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.tile.populate_with_object(obj1)
         self.tile.populate_with_object(obj2)
         # tile's data attribute is cached; reinstantiate it
-        self.tile = self.cover.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test'))
-        self.assertEqual(len(self.tile.results()), 2)
-        self.assertIn(obj1, self.tile.results())
-        self.assertIn(obj2, self.tile.results())
+        self.tile = self.portal.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+        self.assertEqual(len(max(self.tile.results())), 2)
+        self.assertIn(obj1, self.tile.results().next())
+        self.assertIn(obj2, self.tile.results().next())
 
         # next, we replace the list of objects with a different one
         obj3 = self.portal['my-news-item']
         self.tile.replace_with_uuids([api.content.get_uuid(obj3)])
         # tile's data attribute is cached; reinstantiate it
-        self.tile = self.cover.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test'))
-        self.assertNotIn(obj1, self.tile.results())
-        self.assertNotIn(obj2, self.tile.results())
-        self.assertIn(obj3, self.tile.results())
+        self.tile = self.portal.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+        self.assertNotIn(obj1, self.tile.results().next())
+        self.assertNotIn(obj2, self.tile.results().next())
+        self.assertIn(obj3, self.tile.results().next())
 
         # We edit the tile to give it a title and a 'more...' link.
         data = self.tile.data
@@ -72,8 +72,8 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         data_mgr.set(data)
 
         # tile's data attribute is cached; reinstantiate it
-        self.tile = self.cover.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test'))
+        self.tile = self.portal.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
         self.assertEqual(self.tile.tile_title, 'My title')
         self.assertEqual(
             self.tile.more_link,
@@ -83,8 +83,8 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         # finally, we remove it from the list; the tile must be empty again
         self.tile.remove_item(obj3.UID())
         # tile's data attribute is cached; reinstantiate it
-        self.tile = self.cover.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test'))
+        self.tile = self.portal.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
         self.assertTrue(self.tile.is_empty())
 
     def test_render_empty(self):
@@ -105,3 +105,36 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         obj = self.portal['my-image']
         thumbnail = self.tile.thumbnail(obj)
         self.assertIsNotNone(thumbnail)
+
+    def test_title(self):
+        obj = self.portal['my-image']
+        self.tile.populate_with_object(obj)
+        self.assertEqual(self.tile.get_title(obj), 'Test image')
+
+    def test_description(self):
+        obj = self.portal['my-image']
+        self.tile.populate_with_object(obj)
+        self.assertEqual(self.tile.get_description(obj), 'This image was created for testing purposes')
+
+    def test_render_with_image(self):
+        obj1 = self.portal['my-image']
+        obj2 = self.portal['my-document']
+        self.tile.populate_with_object(obj1)
+
+        data = self.tile.data
+        data['tile_title'] = 'Carousel title'
+        data['tile_description'] = 'Carousel description'
+        data['more_link'] = api.content.get_uuid(obj2)
+        data['more_link_text'] = 'Read much more...'
+        data_mgr = ITileDataManager(self.tile)
+        data_mgr.set(data)
+
+        rendered = self.tile()
+
+        self.assertFalse(self.tile.is_empty())
+        self.assertIn('<img ', rendered)
+        self.assertIn('alt="This image was created for testing purposes"', rendered)
+        self.assertIn('<h2>Carousel title</h2>', rendered)
+        self.assertIn('<p>Carousel description</p>', rendered)
+        self.assertIn('Read much more...', rendered)
+        self.assertIn('<a href="http://nohost/plone/my-document"', rendered)

@@ -231,7 +231,7 @@
       description="Display a carousel of items."
       add_permission="cmf.ModifyPortalContent"
       schema=".carousel.ICarouselTile"
-      icon="++resource++collective.cover/img/tile-generic.png"
+      icon="++resource++collective.cover/img/tile-carousel.png"
       class=".carousel.CarouselTile"
       permission="zope2.View"
       for="*"

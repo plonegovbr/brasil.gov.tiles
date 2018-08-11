@@ -28,7 +28,7 @@
         />
 
     <genericsetup:upgradeStep
-        title="Add navigation tile"
+        title="Add Navigation tile"
         handler=".add_navigation_tile"
         />
 
