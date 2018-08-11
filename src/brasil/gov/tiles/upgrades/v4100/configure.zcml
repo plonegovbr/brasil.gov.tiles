@@ -28,6 +28,21 @@
         />
 
     <genericsetup:upgradeStep
+        title="Add navigation tile"
+        handler=".add_navigation_tile"
+        />
+
+    <genericsetup:upgradeStep
+        title="Add Gallery tile"
+        handler=".add_gallery_tile"
+        />
+
+    <genericsetup:upgradeStep
+        title="Add Carousel tile"
+        handler=".add_carousel_tile"
+        />
+
+    <genericsetup:upgradeStep
         title="Cook CSS resources"
         description="There were changes in the CSS files, so we need to cook the resources."
         handler="..cook_css_resources"

@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+  <body tal:define="is_empty view/is_empty">
+    <div class="brasil-gallery-tile tile-content"
+         tal:attributes="id string:gallery-${view/id}">
+      <div class="swiper-container gallery-top">
+        <div class="gallery-global-information">
+          <div class="gallery-title" tal:content="view/tile_title" />
+          <div class="gallery-description" tal:content="view/tile_description" />
+        </div>
+        <div class="swiper-wrapper">
+          <tal:items repeat="obj view/results">
+            <div class="swiper-slide"
+                 tal:attributes="data-tile-id view/id;
+                                 data-content-type obj/portal_type;
+                                 data-content-uuid python:view.get_uuid(obj)">
+              <tal:image define="thumbnail python:view.thumbnail(obj, scale=None)"
+                         condition="thumbnail">
+                <img tal:attributes="src thumbnail/url;
+                                     class string:gallery-image ${view/get_image_position};
+                                     alt python:view.get_alt(obj);" />
+              </tal:image>
+              <div class="gallery-information">
+                <div class="gallery-subtitle"
+                     tal:define="subtitle python:view.get_subtitle(obj)"
+                     tal:condition="subtitle"
+                     tal:content="subtitle" />
+                <div class="gallery-title" tal:content="python:view.get_title(obj)" />
+                <div class="gallery-description" tal:content="python:view.get_description(obj)" />
+                <a class="gallery-more" tal:attributes="href python:view.get_url(obj)">Saiba mais</a>
+              </div>
+            </div>
+          </tal:items>
+        </div>
+      </div>
+      <div class="gallery-thumbs-container">
+        <div class="gallery-thumbs swiper-container">
+          <div class="swiper-wrapper">
+            <tal:items repeat="obj view/results">
+              <div class="swiper-slide">
+                <tal:image define="thumbnail python:view.thumbnail(obj, scale='mini')"
+                           condition="thumbnail">
+                  <img tal:attributes="src thumbnail/url|string:${item/absolute_url}/download;
+                                       width thumbnail/width;
+                                       height thumbnail/height;
+                                       class string:gallery-image ${view/get_image_position};
+                                       alt python:view.get_alt(obj);" />
+                </tal:image>
+                <div class="thumb-title" tal:content="python:view.get_title(obj)" />
+              </div>
+            </tal:items>
+          </div>
+        </div>
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
+    </div>
+  </body>
+</html>
