@@ -4,7 +4,7 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Adiciona um tile para mostrar uma navegação.
+- Adiciona um tile para mostrar um menu de navegação.
   [claytonc]
 
 - Adiciona um tile para mostrar uma Galeria de fotos.

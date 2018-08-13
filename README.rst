@@ -113,7 +113,7 @@ Mostra uma galeria de fotos.
 
 Navegação
 ^^^^^^^^^
-Mostra um menu de navegação exibindos os conteúdos como itens de menu a partir do caminho que foi adicionado.
+Mostra um menu de navegação exibindo os conteúdos como itens de menu a partir do caminho que foi adicionado.
 
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/navigation.png
     :align: center

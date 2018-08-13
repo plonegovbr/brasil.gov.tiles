@@ -4,18 +4,18 @@ from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone import api
-from plone.dexterity.interfaces import IDexterityContent
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.interface import implementer
 
 
 class INavigationTile(IPersistentCoverTile):
-    """Display a navigation of items."""
+    """Display a section navigation."""
 
 
 @implementer(INavigationTile)
 class NavigationTile(PersistentCoverTile):
-    """Display a navigation of items."""
+    """Display a section navigation."""
 
     index = ViewPageTemplateFile('templates/navigation.pt')
     short_name = _(u'msg_short_name_navigation', default=u'Navigation')
@@ -24,44 +24,26 @@ class NavigationTile(PersistentCoverTile):
     is_droppable = False
     is_editable = False
 
-    def __init__(self, context, request):
-        super(NavigationTile, self).__init__(context, request)
+    def __call__(self):
         self._setup()
+        return self.render()
+
+    def render(self):
+        return self.index()
 
     def _setup(self):
         self.menu_items = []
-        self.session = aq_parent(self.context)
-        try:
-            for o in self.context.listFolderContents():
-                if self._exclude_from_nav(o):
-                    continue
-                if api.content.get_state(o, '') != 'published':
-                    continue
-                self.menu_items.append(o)
-        except AttributeError:
-            pass
+        context = self.context
+        if not IPloneSiteRoot.providedBy(self.context):
+            context = aq_parent(self.context)
 
-    @staticmethod
-    def _exclude_from_nav(obj):
-        """Check DX and AT way if is a menu item."""
-        if obj is None:
-            return True
-        if IDexterityContent.providedBy(obj):
-            try:
-                # Dexterity
-                exclude_from_nav = obj.exclude_from_nav
-                if callable(exclude_from_nav):
-                    return True
-                return exclude_from_nav
-            except AttributeError:
-                pass
-        else:
-            try:
-                # Archetypes
-                return obj.getExcludeFromNav()
-            except AttributeError:
-                pass
-        return True  # For some content type that can't be a Menu
+        self.section = context
+        items = api.content.find(context=context,
+                                 depth=1,
+                                 exclude_from_nav='False',
+                                 review_state='published')
+        for item in items:
+            self.menu_items.append(item)
 
     def first_items(self):
         return self.menu_items[:3]
