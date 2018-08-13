@@ -45,3 +45,8 @@ def add_potd_tile(setup_tool):
 def add_photogallery_tile(setup_tool):
     """Add Photo Gallery tile."""
     add_tile(u'brasil.gov.tiles.photogallery')
+
+
+def add_navigation_tile(setup_tool):
+    """Add Navigation tile."""
+    add_tile(u'brasil.gov.tiles.navigation')
