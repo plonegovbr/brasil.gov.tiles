@@ -4,7 +4,6 @@ from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone import api
-from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.interface import implementer
 
@@ -33,12 +32,9 @@ class NavigationTile(PersistentCoverTile):
 
     def _setup(self):
         self.menu_items = []
-        context = self.context
-        if not IPloneSiteRoot.providedBy(self.context):
-            context = aq_parent(self.context)
+        self.section = aq_parent(self.context)
 
-        self.section = context
-        items = api.content.find(context=context,
+        items = api.content.find(context=self.section,
                                  depth=1,
                                  exclude_from_nav='False',
                                  review_state='published')

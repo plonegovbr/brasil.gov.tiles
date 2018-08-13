@@ -28,9 +28,13 @@ class NavigationTileTestCase(BaseIntegrationTestCase):
         self.assertFalse(self.tile.is_editable)
         self.assertFalse(self.tile.is_droppable)
 
-    def test_render(self):
+    def test_render_in_root(self):
 
         with api.env.adopt_roles(['Manager']):
+
+            cover = api.content.create(
+                self.portal, 'collective.cover.content', 'cover1')
+
             obj1 = self.portal['my-folder']
             obj2 = self.portal['my-news-folder']
             obj3 = self.portal['mandelbrot-set']
@@ -41,23 +45,28 @@ class NavigationTileTestCase(BaseIntegrationTestCase):
             api.content.transition(obj=obj3, transition='publish')
             api.content.transition(obj=obj4, transition='publish')
 
-        rendered = self.tile()
+        rendered = cover.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.navigation', 'test-tile'))()
+
         self.assertIn('<h2 class="navigation-title">Plone site</h2>', rendered)
         self.assertIn('<a href="http://nohost/plone/my-news-item">Test news item</a>', rendered)
         self.assertIn('<li class="navigation-more"><a href="#">Mais</a></li>', rendered)
 
-    def test_render_sub_path(self):
+    def test_render_in_folder(self):
 
         with api.env.adopt_roles(['Manager']):
+
+            cover = api.content.create(
+                self.portal['my-news-folder'], 'collective.cover.content', 'cover1')
+
             obj1 = self.portal['my-news-folder']['my-nitf-without-image']
             obj2 = self.portal['my-news-folder']['my-nitf-with-image']
 
             api.content.transition(obj=obj1, transition='publish')
             api.content.transition(obj=obj2, transition='publish')
 
-        tile = obj1.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.navigation', 'test-tile'))
+        rendered = cover.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.navigation', 'test-tile'))()
 
-        rendered = tile()
         self.assertIn('<h2 class="navigation-title">my-news-folder</h2>', rendered)
         self.assertIn('<a href="http://nohost/plone/my-news-folder/my-nitf-with-image">my-nitf-with-image</a>', rendered)
