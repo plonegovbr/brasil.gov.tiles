@@ -64,5 +64,6 @@ export default {
   VideoResponsiveResize,
   POTDTile,
   PhotoGalleryTile,
+  NavigationTile,
 }
 
