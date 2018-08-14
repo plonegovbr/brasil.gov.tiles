@@ -10,6 +10,7 @@ from z3c.form import widget
 from z3c.form.browser import textlines
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 
+import six
 import zope.interface
 
 
@@ -162,14 +163,14 @@ class TextLinesSortableWidget(textlines.TextLinesWidget):
         for index, uuid in enumerate(uuids):
             obj = uuidToObject(uuid)
             results[uuid] = {
-                u'order': unicode(index),
+                u'order': six.text_type(index),
             }
             custom_title = self.request.get(
                 '{0}.custom_title.{1}'.format(self.name, uuid), '',
             )
             if (custom_title != u'' and
                custom_title != safe_unicode(obj.Title())):
-                results[uuid][u'custom_title'] = unicode(custom_title)
+                results[uuid][u'custom_title'] = six.text_type(custom_title)
             custom_subtitle = self.request.get(
                 '{0}.custom_subtitle.{1}'.format(self.name, uuid), '',
             )
@@ -177,13 +178,13 @@ class TextLinesSortableWidget(textlines.TextLinesWidget):
             if (custom_subtitle != u'' and
                subtitle is not None and
                custom_subtitle != safe_unicode(subtitle)):
-                results[uuid][u'custom_subtitle'] = unicode(custom_subtitle)
+                results[uuid][u'custom_subtitle'] = six.text_type(custom_subtitle)
             custom_description = self.request.get(
                 '{0}.custom_description.{1}'.format(self.name, uuid), '',
             )
             if (custom_description != u'' and
                custom_description != safe_unicode(obj.Description())):
-                results[uuid][u'custom_description'] = unicode(custom_description)
+                results[uuid][u'custom_description'] = six.text_type(custom_description)
             custom_url = self.request.get(
                 '{0}.custom_url.{1}'.format(self.name, uuid), '',
             )
@@ -192,7 +193,7 @@ class TextLinesSortableWidget(textlines.TextLinesWidget):
                 url += '/view'
             if (custom_url != u'' and
                custom_url != url):
-                results[uuid][u'custom_url'] = unicode(custom_url)
+                results[uuid][u'custom_url'] = six.text_type(custom_url)
         return results
 
 
