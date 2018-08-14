@@ -24,21 +24,18 @@ class NavigationTile(PersistentCoverTile):
     is_editable = False
 
     def __call__(self):
-        self._setup()
-        return self.render()
-
-    def render(self):
+        self.setup()
         return self.index()
 
-    def _setup(self):
+    def setup(self):
         self.menu_items = []
         self.section = aq_parent(self.context)
 
-        items = api.content.find(context=self.section,
-                                 depth=1,
-                                 review_state='published')
-        for item in items:
-            if item.exclude_from_nav is False:
+        results = api.content.find(
+            context=self.section, depth=1, review_state='published')
+
+        for item in results:
+            if not item.exclude_from_nav:
                 self.menu_items.append(item)
 
     def first_items(self):
