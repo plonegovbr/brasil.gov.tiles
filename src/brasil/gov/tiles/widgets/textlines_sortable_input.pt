@@ -1,0 +1,119 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      tal:omit-tag="">
+<style media="screen" type="text/css">
+.textline-sortable-element {
+    float: left;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.tileImage {
+    float: left;
+    margin: 1em 1em 0 0;
+}
+.tileProperties {
+    float: left;
+    min-width: 80%;
+}
+.tileProperties span,
+.tileProperties input,
+.tileProperties textarea {
+    float: right;
+}
+div.tileProperties input {
+    min-width: 65%
+}
+div.tileProperties textarea {
+    width: 65%
+}
+.tileProperties span {
+    margin-right: .5em;
+}
+</style>
+<div data-carousel="carousel-sort">
+    <textarea
+        id="" name="" class="" cols="" rows=""
+        tabindex="" disabled="" readonly="" accesskey=""
+        tal:attributes="id view/id;
+                        name view/name;
+                        class view/klass;
+                        style view/style;
+                        title view/title;
+                        lang view/lang;
+                        onclick view/onclick;
+                        ondblclick view/ondblclick;
+                        onmousedown view/onmousedown;
+                        onmouseup view/onmouseup;
+                        onmouseover view/onmouseover;
+                        onmousemove view/onmousemove;
+                        onmouseout view/onmouseout;
+                        onkeypress view/onkeypress;
+                        onkeydown view/onkeydown;
+                        onkeyup view/onkeyup;
+                        disabled view/disabled;
+                        tabindex view/tabindex;
+                        onfocus view/onfocus;
+                        onblur view/onblur;
+                        onchange view/onchange;
+                        cols view/cols;
+                        rows view/rows;
+                        readonly view/readonly;
+                        accesskey view/accesskey;
+                        onselect view/onselect"
+        tal:content="structure view/value" />
+
+    <div>
+      <div class="sortable">
+        <tal:items repeat="item view/sort_results">
+          <div class="textline-sortable-element"
+               tal:define="obj nocall:item/obj;
+                           uuid item/uuid;
+                           isExpired python:view.isExpired(obj) and 'expired' or '';"
+               tal:attributes="data-content-uuid uuid; class string:textline-sortable-element ${isExpired};">
+            <img class="tileImage"
+                 tal:define="thumbnail python:view.thumbnail(obj)"
+                 tal:condition="thumbnail"
+                 tal:attributes="src thumbnail/url;
+                                 width thumbnail/width;
+                                 height thumbnail/height" />
+            <div class="tileProperties">
+              <div class="tileExpired" tal:condition="python:isExpired == 'expired'">
+                <span i18n:translate="">This item has expired</span>
+              </div>
+              <div class="tileTitle">
+                <input class="custom-title-input"
+                       tal:attributes="name python:'{0}.custom_title.{1}'.format(view.name, uuid);
+                                       value python:view.get_custom_title(uuid)">
+                <span i18n:translate="">Custom Title</span>
+              </div>
+              <div class="subtileTitle"
+                   tal:define="subtitle python:view.get_custom_subtitle(uuid)"
+                   tal:condition="subtitle">
+                <input class="custom-subtitle-input"
+                       tal:attributes="name python:'{0}.custom_subtitle.{1}'.format(view.name, uuid);
+                                       value subtitle">
+                <span i18n:translate="">Custom Subtitle</span>
+              </div>
+              <div class="tileDescription">
+                <textarea class="custom-description-input"
+                          tal:attributes="name python:'{0}.custom_description.{1}'.format(view.name, uuid)"
+                          tal:content="python:view.get_custom_description(uuid)">
+                </textarea>
+                <span i18n:translate="">Custom Description</span>
+              </div>
+              <div class="tileURL">
+                <input class="custom-url-input"
+                       tal:attributes="name python:'{0}.custom_url.{1}'.format(view.name, uuid);
+                                       value python:view.get_custom_url(uuid)">
+                <span i18n:translate="">Custom URL</span>
+              </div>
+            </div>
+          </div>
+        </tal:items>
+      </div>
+    </div>
+</div>
+</html>

@@ -48,4 +48,11 @@
     />
   <!--Exclusão-->
 
+  <class class=".widgets.textlinessortable.TextLinesSortableWidget">
+    <require
+        permission="zope.Public"
+        interface="collective.cover.widgets.interfaces.ITextLinesSortableWidget"
+        />
+  </class>
+
 </configure>

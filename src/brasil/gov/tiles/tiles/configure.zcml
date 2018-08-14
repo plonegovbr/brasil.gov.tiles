@@ -199,4 +199,17 @@
       i18n:attributes="title; description"
       />
 
+  <plone:tile
+      name="brasil.gov.tiles.gallery"
+      title="Gallery"
+      description="Display an image gallery."
+      add_permission="cmf.ModifyPortalContent"
+      schema=".gallery.IGalleryTile"
+      icon="++resource++collective.cover/img/tile-generic.png"
+      class=".gallery.GalleryTile"
+      permission="zope2.View"
+      for="*"
+      i18n:attributes="title; description"
+      />
+
 </configure>
