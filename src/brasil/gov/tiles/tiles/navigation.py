@@ -36,10 +36,10 @@ class NavigationTile(PersistentCoverTile):
 
         items = api.content.find(context=self.section,
                                  depth=1,
-                                 exclude_from_nav='False',
                                  review_state='published')
         for item in items:
-            self.menu_items.append(item)
+            if item.exclude_from_nav is False:
+                self.menu_items.append(item)
 
     def first_items(self):
         return self.menu_items[:3]
