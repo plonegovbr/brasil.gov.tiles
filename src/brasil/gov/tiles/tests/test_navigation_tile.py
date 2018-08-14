@@ -70,3 +70,24 @@ class NavigationTileTestCase(BaseIntegrationTestCase):
 
         self.assertIn('<h2 class="navigation-title">my-news-folder</h2>', rendered)
         self.assertIn('<a href="http://nohost/plone/my-news-folder/my-nitf-with-image">my-nitf-with-image</a>', rendered)
+
+    def test_render_with_exclude_from_nav(self):
+
+        with api.env.adopt_roles(['Manager']):
+
+            cover = api.content.create(
+                self.portal['my-news-folder'], 'collective.cover.content', 'cover1')
+
+            obj1 = self.portal['my-news-folder']['my-nitf-without-image']
+            obj2 = self.portal['my-news-folder']['my-nitf-with-image']
+            obj2.exclude_from_nav = True
+
+            api.content.transition(obj=obj1, transition='publish')
+            api.content.transition(obj=obj2, transition='publish')
+
+        rendered = cover.restrictedTraverse(
+            '@@{0}/{1}'.format('brasil.gov.tiles.navigation', 'test-tile'))()
+
+        self.assertIn('<h2 class="navigation-title">my-news-folder</h2>', rendered)
+        self.assertNotIn('<a href="http://nohost/plone/my-news-folder/my-nitf-with-image">my-nitf-with-image</a>', rendered)
+        self.assertIn('<a href="http://nohost/plone/my-news-folder/my-nitf-without-image">my-nitf-without-image</a>', rendered)
