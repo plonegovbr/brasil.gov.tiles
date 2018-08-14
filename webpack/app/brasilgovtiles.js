@@ -6,7 +6,7 @@ import VideoResponsiveResize from './js/tiles/videogallery.js';
 import POTDTile from './js/tiles/potd.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
 import NavigationTile from './js/tiles/navigation.js';
-import CarouselTile from './js/tiles/carousel.js';
+import GroupCarouselTile from './js/tiles/groupcarousel.js';
 
 // https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
 jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
@@ -42,8 +42,8 @@ $(() => {
   for (let navigation of $('.brasil-navigation-tile')) {
     new NavigationTile(navigation);
   }
-  for (let carousel of $('.brasil-carousel-tile')) {
-    new CarouselTile(carousel);
+  for (let carousel of $('.brasil-groupcarousel-tile')) {
+    new GroupCarouselTile(carousel);
   }
 });
 
@@ -68,6 +68,6 @@ export default {
   POTDTile,
   PhotoGalleryTile,
   NavigationTile,
-  CarouselTile,
+  GroupCarouselTile,
 }
 

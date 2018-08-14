@@ -32,8 +32,8 @@
         handler=".add_navigation_tile"
 
     <genericsetup:upgradeStep
-        title="Add Carousel tile"
-        handler=".add_carousel_tile"
+        title="Add Group Carousel tile"
+        handler=".add_groupcarousel_tile"
         />
 
     <genericsetup:upgradeStep

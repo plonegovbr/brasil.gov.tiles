@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import BaseIntegrationTestCase
-from brasil.gov.tiles.tiles.carousel import CarouselTile
+from brasil.gov.tiles.tiles.groupcarousel import GroupCarouselTile
 from collective.cover.tiles.base import IPersistentCoverTile
 from mock import Mock
 from plone import api
@@ -14,13 +14,13 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
     def setUp(self):
         super(CarouselTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.groupcarousel', 'test-tile'))
 
     def test_interface(self):
-        self.assertTrue(IPersistentCoverTile.implementedBy(CarouselTile))
-        self.assertTrue(verifyClass(IPersistentCoverTile, CarouselTile))
+        self.assertTrue(IPersistentCoverTile.implementedBy(GroupCarouselTile))
+        self.assertTrue(verifyClass(IPersistentCoverTile, GroupCarouselTile))
 
-        tile = CarouselTile(None, None)
+        tile = GroupCarouselTile(None, None)
         self.assertTrue(IPersistentCoverTile.providedBy(tile))
         self.assertTrue(verifyObject(IPersistentCoverTile, tile))
 
@@ -37,7 +37,7 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
             'Image',
             'Link',
             'News Item',
-            'ExternalContent',
+            # 'ExternalContent',
         ]
         self.assertEqual(self.tile.accepted_ct(), types)
 
@@ -55,7 +55,7 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.tile.populate_with_object(obj2)
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.groupcarousel', 'test-tile'))
         self.assertEqual(len(max(self.tile.results())), 2)
         self.assertIn(obj1, next(self.tile.results()))
         self.assertIn(obj2, next(self.tile.results()))
@@ -65,7 +65,7 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.tile.replace_with_uuids([api.content.get_uuid(obj3)])
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.groupcarousel', 'test-tile'))
         self.assertNotIn(obj1, next(self.tile.results()))
         self.assertNotIn(obj2, next(self.tile.results()))
         self.assertIn(obj3, next(self.tile.results()))
@@ -82,7 +82,7 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
 
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.groupcarousel', 'test-tile'))
         self.assertEqual(self.tile.tile_title, 'My title')
         self.assertEqual(
             self.tile.more_link,
@@ -93,11 +93,11 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.tile.remove_item(obj3.UID())
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.groupcarousel', 'test-tile'))
         self.assertTrue(self.tile.is_empty())
 
     def test_render_empty(self):
-        msg = 'Please add up to 12 objects to the tile.'
+        msg = 'Add up to 12 objects to the tile.'
 
         self.tile.is_compose_mode = Mock(return_value=True)
         self.assertIn(msg, self.tile())

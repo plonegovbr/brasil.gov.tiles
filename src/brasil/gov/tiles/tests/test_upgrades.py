@@ -177,11 +177,11 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIn(tile, self.get_available_tiles())
 
     def test_add_carousel_tile(self):
-        title = u'Add Carousel tile'
+        title = u'Add Group Carousel tile'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
-        tile = u'brasil.gov.tiles.carousel'
+        tile = u'brasil.gov.tiles.groupcarossel'
         self.unregister_tile(tile)
 
         # run the upgrade step to validate the update

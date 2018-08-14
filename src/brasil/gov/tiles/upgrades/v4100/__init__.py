@@ -52,6 +52,6 @@ def add_navigation_tile(setup_tool):
     add_tile(u'brasil.gov.tiles.navigation')
 
 
-def add_carousel_tile(setup_tool):
-    """Add Carousel tile."""
-    add_tile(u'brasil.gov.tiles.carousel')
+def add_groupcarousel_tile(setup_tool):
+    """Add Group Carousel tile."""
+    add_tile(u'brasil.gov.tiles.groupcarousel')

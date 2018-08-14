@@ -19,7 +19,7 @@
       <element>brasil.gov.tiles.quote</element>
       <element>brasil.gov.tiles.photogallery</element>
       <element>brasil.gov.tiles.navigation</element>
-      <element>brasil.gov.tiles.carousel</element>
+      <element>brasil.gov.tiles.groupcarousel</element>
     </value>
   </record>
 </registry>
