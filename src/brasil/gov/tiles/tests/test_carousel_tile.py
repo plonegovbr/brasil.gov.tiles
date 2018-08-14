@@ -57,8 +57,8 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.tile = self.portal.restrictedTraverse(
             '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
         self.assertEqual(len(max(self.tile.results())), 2)
-        self.assertIn(obj1, self.tile.results().next())
-        self.assertIn(obj2, self.tile.results().next())
+        self.assertIn(obj1, next(self.tile.results()))
+        self.assertIn(obj2, next(self.tile.results()))
 
         # next, we replace the list of objects with a different one
         obj3 = self.portal['my-news-item']
@@ -66,9 +66,9 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
             '@@{0}/{1}'.format('brasil.gov.tiles.carousel', 'test-tile'))
-        self.assertNotIn(obj1, self.tile.results().next())
-        self.assertNotIn(obj2, self.tile.results().next())
-        self.assertIn(obj3, self.tile.results().next())
+        self.assertNotIn(obj1, next(self.tile.results()))
+        self.assertNotIn(obj2, next(self.tile.results()))
+        self.assertIn(obj3, next(self.tile.results()))
 
         # We edit the tile to give it a title and a 'more...' link.
         data = self.tile.data
