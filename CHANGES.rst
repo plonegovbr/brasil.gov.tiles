@@ -3,6 +3,10 @@ Changelog
 
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
+
+- Adiciona um tile para mostrar um Carousel de itens.
+  [claytonc]
+
 - Adiciona um tile para mostrar uma Galeria de fotos.
   [claytonc]
 
