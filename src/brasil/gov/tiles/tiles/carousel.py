@@ -40,7 +40,7 @@ class CarouselTile(ListTile):
     limit = 4 * 3
 
     @property
-    def tile_description(self):
+    def description(self):
         return self.data['tile_description']
 
     @property
@@ -48,6 +48,7 @@ class CarouselTile(ListTile):
         return self.data['switch_text']
 
     def results(self):
+        """Return the list of objects stored in the tile."""
         page = []
 
         for i, item in enumerate(super(CarouselTile, self).results()):
@@ -122,8 +123,9 @@ class CarouselTile(ListTile):
         return url
 
     def is_empty(self):
+        """Check if the tile is empty."""
         try:
             next(self.results())
         except StopIteration:
             return True
-        return None
+        return False
