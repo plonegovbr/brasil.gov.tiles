@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+  <body>
+    <div class="brasil-navigation-tile tile-content"
+         tal:define="first_items view/first_items;
+                     more_items view/more_items">
+      <div class="navigation-row">
+        <h2 class="navigation-title" tal:content="view/section/Title" />
+        <ul class="navigation-items"
+            tal:condition="first_items">
+          <li class="navigation-item" tal:repeat="item first_items">
+            <a tal:attributes="href item/getURL"
+               tal:content="item/Title" />
+          </li>
+          <li class="navigation-more" tal:condition="more_items"><a href="#">Mais</a></li>
+        </ul>
+      </div>
+      <ul class="navigation-more-items"
+          tal:condition="more_items">
+        <li class="navigation-more-item"
+            tal:repeat="item more_items">
+          <a tal:attributes="href item/getURL"
+             tal:content="item/Title" />
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -111,6 +111,15 @@ Mostra uma galeria de fotos.
     :height: 533px
     :width: 800px
 
+Navegação
+^^^^^^^^^
+Mostra um menu de navegação exibindo os conteúdos como itens de menu a partir do caminho que foi adicionado.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/navigation.png
+    :align: center
+    :height: 100px
+    :width: 800px
+
 Desenvolvimento
 ---------------
 
