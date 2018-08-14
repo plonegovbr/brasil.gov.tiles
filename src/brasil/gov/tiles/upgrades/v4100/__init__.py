@@ -47,6 +47,6 @@ def add_photogallery_tile(setup_tool):
     add_tile(u'brasil.gov.tiles.photogallery')
 
 
-def add_carousel_tile(setup_tool):
-    """Add Carousel tile."""
-    add_tile(u'brasil.gov.tiles.carousel')
+def add_groupcarousel_tile(setup_tool):
+    """Add Group Carousel tile."""
+    add_tile(u'brasil.gov.tiles.groupcarousel')

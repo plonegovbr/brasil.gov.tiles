@@ -1,4 +1,4 @@
-export default class CarouselTile {
+export default class GroupCarouselTile {
   constructor(tile) {
     this.tile = tile;
 
@@ -19,7 +19,7 @@ export default class CarouselTile {
   }
   initSecondCarousel() {
     let $column = $(this.tile).parents('.column');
-    this.$tiles = $('.brasil-carousel-tile', $column);
+    this.$tiles = $('.brasil-groupcarousel-tile', $column);
     if (this.$tiles.length !== 2) {
       return;
     }
