@@ -8,6 +8,7 @@ import PhotoGalleryTile from './js/tiles/photogallery.js';
 import NavigationTile from './js/tiles/navigation.js';
 import GroupCarouselTile from './js/tiles/groupcarousel.js';
 
+
 // https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
 jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
