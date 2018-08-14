@@ -435,3 +435,8 @@ msgstr ""
 #: ./tiles/templates/groupcarousel.pt:8
 msgid "Add up to ${limit_objects} objects to the tile."
 msgstr ""
+
+#. Default: "Group Carousel"
+#: ./tiles/groupcarousel.py:35
+msgid "msg_short_name_groupcarousel"
+msgstr ""
