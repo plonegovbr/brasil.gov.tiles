@@ -5,6 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Adiciona um tile para mostrar um menu de navegação.
+- Adiciona um tile para mostrar um Carousel de itens.
   [claytonc]
 
 - Adiciona um tile para mostrar uma Galeria de fotos.

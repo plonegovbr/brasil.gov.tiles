@@ -118,6 +118,13 @@ Mostra um menu de navegação exibindo os conteúdos como itens de menu a partir
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/navigation.png
     :align: center
     :height: 100px
+
+Carossel
+^^^^^^^^
+Mostra um carrosel de itens com imagens.
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/carousel.png
+    :align: center
+    :height: 393px
     :width: 800px
 
 Desenvolvimento
