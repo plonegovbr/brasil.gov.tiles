@@ -120,6 +120,16 @@ Mostra um menu de navegação exibindo os conteúdos como itens de menu a partir
     :height: 100px
     :width: 800px
 
+
+Galeria de videos
+^^^^^^^^^^^^^^^^^
+Mostra uma galeria de videos.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/carouselvideos.png
+    :align: center
+    :height: 367px
+    :width: 1253px
+
 Desenvolvimento
 ---------------
 

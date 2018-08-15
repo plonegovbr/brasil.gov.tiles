@@ -2,10 +2,11 @@ import Albuns from './js/tiles/albuns.js';
 import AudioGallery from './js/tiles/audiogallery.js';
 import { BannerRotativo, BannerRotativoCompor } from './js/tiles/banner_rotativo.js';
 import CarouselResponsiveResize from './js/tiles/mediacarousel.js';
-import VideoResponsiveResize from './js/tiles/videogallery.js';
-import POTDTile from './js/tiles/potd.js';
-import PhotoGalleryTile from './js/tiles/photogallery.js';
+import CarouselVideosTile from './js/tiles/carouselvideos.js';
 import NavigationTile from './js/tiles/navigation.js';
+import PhotoGalleryTile from './js/tiles/photogallery.js';
+import POTDTile from './js/tiles/potd.js';
+import VideoResponsiveResize from './js/tiles/videogallery.js';
 
 
 // https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
@@ -41,6 +42,9 @@ $(() => {
   }
   for (let navigation of $('.brasil-navigation-tile')) {
     new NavigationTile(navigation);
+  }
+  for (let carouselvideos of $('.brasil-carouselvideos-tile')) {
+    new CarouselVideosTile(carouselvideos);
   }
 });
 

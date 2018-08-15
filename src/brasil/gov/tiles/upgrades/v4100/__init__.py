@@ -4,6 +4,7 @@ from brasil.gov.tiles.upgrades import add_tile
 from brasil.gov.tiles.upgrades import get_valid_objects
 from brasil.gov.tiles.upgrades import replace_attribute
 from brasil.gov.tiles.upgrades import replace_tile
+from collective.cover.controlpanel import ICoverSettings
 from plone import api
 
 import json
@@ -11,13 +12,14 @@ import json
 
 RESOURCES_TO_UPDATE = {
     '++resource++brasil.gov.tiles/tiles.css': '++resource++brasil.gov.tiles/brasilgovtiles.css',
-    '++resource++brasil.gov.tiles/swiper.min.css': '++resource++brasil.gov.tiles/vendor/swiper.min.css',
     '++resource++brasil.gov.tiles/tiles.js': '++resource++brasil.gov.tiles/brasilgovtiles.js',
     '++resource++brasil.gov.tiles/jquery.cycle2.carousel.js': '++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js',
     '++resource++brasil.gov.tiles/jquery.cycle2.js': '++resource++brasil.gov.tiles/vendor/jquery.cycle2.js',
     '++resource++brasil.gov.tiles/jquery.jplayer.min.js': '++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js',
-    '++resource++brasil.gov.tiles/swiper.min.js': '++resource++brasil.gov.tiles/vendor/swiper.min.js',
 }
+
+SWIPER_CSS = '++resource++brasil.gov.tiles/vendor/swiper.min.css'
+SWIPER_JS = '++resource++brasil.gov.tiles/vendor/swiper.min.js'
 
 
 def _rename_resources(tool, from_to):
@@ -30,10 +32,13 @@ def update_static_resources(setup_tool):
     """Fix resource references after static files reorganization."""
     css_tool = api.portal.get_tool('portal_css')
     _rename_resources(css_tool, RESOURCES_TO_UPDATE)
+    css_tool.registerResource(SWIPER_CSS)
+
     logger.info('CSS resources were updated')
 
     js_tool = api.portal.get_tool('portal_javascripts')
     _rename_resources(js_tool, RESOURCES_TO_UPDATE)
+    js_tool.registerResource(SWIPER_JS)
     logger.info('JavaScript resources were updated')
 
 
@@ -96,3 +101,29 @@ def update_banner_tile(setup_tool):
         replace_attribute(obj, tile, 'image_description', 'alt_text')
 
     logger.info('Done')
+
+
+def add_carouselvideos_tile(setup_tool):
+    """Add Carousel Videos tile."""
+    add_tile(u'brasil.gov.tiles.carouselvideos')
+
+
+def install_embedder(setup_tool):
+    """Install sc.embedder."""
+    addon = 'sc.embedder'
+    qi = api.portal.get_tool('portal_quickinstaller')
+    if not qi.isProductInstalled(addon):
+        qi.installProduct(addon)
+        logger.info(addon + ' was installed')
+
+
+def make_embedder_searchable(setup_tool):
+    """Make Embedder searchable at collective.cover."""
+    content_type = 'sc.embedder'
+    record = dict(interface=ICoverSettings, name='searchable_content_types')
+    searchable_content_types = api.portal.get_registry_record(**record)
+    if content_type not in searchable_content_types:
+        searchable_content_types.append(content_type)
+        api.portal.set_registry_record(value=searchable_content_types, **record)
+        logger.info(
+            'Embedder was made searchable in collective.cover configlet')

@@ -48,6 +48,21 @@
         />
 
     <genericsetup:upgradeStep
+        title="Add Carousel Videos tile"
+        handler=".add_carouselvideos_tile"
+        />
+
+    <genericsetup:upgradeStep
+        title="Install sc.embedder"
+        handler=".install_embedder"
+        />
+
+    <genericsetup:upgradeStep
+        title="Make Embedder searchable at collective.cover"
+        handler=".make_embedder_searchable"
+        />
+
+    <genericsetup:upgradeStep
         title="Cook CSS resources"
         description="There were changes in the CSS files, so we need to cook the resources."
         handler="..cook_css_resources"

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles import utils
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
+from collective.cover.controlpanel import ICoverSettings
 from plone import api
 
 import unittest
@@ -42,7 +43,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 10)
+        self.assertEqual(steps, 13)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -57,13 +58,14 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         css_tool = api.portal.get_tool('portal_css')
         _rename_resources(css_tool, RESOURCES_TO_UPDATE_INVERSE)
+        css_tool.unregisterResource('++resource++brasil.gov.tiles/vendor/swiper.min.css')
 
         js_tool = api.portal.get_tool('portal_javascripts')
         _rename_resources(js_tool, RESOURCES_TO_UPDATE_INVERSE)
+        js_tool.unregisterResource('++resource++brasil.gov.tiles/vendor/swiper.min.js')
 
         css_ids = css_tool.getResourceIds()
         self.assertIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
-        self.assertIn('++resource++brasil.gov.tiles/swiper.min.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/swiper.min.css', css_ids)
 
@@ -72,7 +74,6 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIn('++resource++brasil.gov.tiles/jquery.cycle2.carousel.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.cycle2.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
-        self.assertIn('++resource++brasil.gov.tiles/swiper.min.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/brasilgovtiles.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.js', js_ids)
@@ -201,4 +202,53 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        # no easy way to test image_description attribute change
+        # no easy way to test image_description attribute chan
+
+    def test_add_carouselvideos_tile(self):
+        title = u'Add Carousel Videos tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        tile = u'brasil.gov.tiles.carouselvideos'
+        utils.disable_tile(tile)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.assertIn(tile, utils.get_registered_tiles())
+        self.assertIn(tile, utils.get_available_tiles())
+
+    def test_install_keyword_manager(self):
+        title = u'Install sc.embedder'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        addon = 'sc.embedder'
+        qi = api.portal.get_tool('portal_quickinstaller')
+        with api.env.adopt_roles(['Manager']):
+            qi.uninstallProducts([addon])
+        self.assertFalse(qi.isProductInstalled(addon))
+
+        # execute upgrade step and verify changes were applied
+        self._do_upgrade(step)
+        self.assertTrue(qi.isProductInstalled(addon))
+
+    def test_make_embedder_searchable(self):
+        title = u'Make Embedder searchable at collective.cover'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        content_type = 'sc.embedder'
+        record = dict(interface=ICoverSettings, name='searchable_content_types')
+        searchable_content_types = api.portal.get_registry_record(**record)
+        searchable_content_types.remove(content_type)
+        api.portal.set_registry_record(value=searchable_content_types, **record)
+        searchable_content_types = api.portal.get_registry_record(**record)
+        self.assertNotIn(content_type, searchable_content_types)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        searchable_content_types = api.portal.get_registry_record(**record)
+        self.assertIn(content_type, searchable_content_types)

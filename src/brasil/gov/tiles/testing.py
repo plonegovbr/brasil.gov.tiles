@@ -10,6 +10,7 @@ from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
+from plone.namedfile.file import NamedBlobImage
 from plone.testing import z2
 
 import os
@@ -97,10 +98,18 @@ class Fixture(CoverFixture):
                 title='my-image',
                 container=portal['my-news-folder']['my-nitf-with-image'],
             ).setImage(generate_jpeg(50, 50))
+            api.content.create(
+                type='sc.embedder',
+                title='multimedia',
+                container=portal,
+            )
+            image = NamedBlobImage(generate_jpeg(50, 50), 'image/jpeg', u'image.jpg')
+            portal['multimedia'].image = image
             portal['my-news-folder'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image'].reindexObject()
             portal['my-news-folder']['my-nitf-without-image'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
+            portal['multimedia'].reindexObject()
 
 
 FIXTURE = Fixture()
