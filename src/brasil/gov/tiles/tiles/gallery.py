@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles import _
-from brasil.gov.tiles.widgets.textlinessortable import TextLinesSortableFieldWidget
+from brasil.gov.tiles.widgets.textlines_sortable_subtitle import TextLinesSortableSubtitleFieldWidget
 from collective.cover.interfaces import ITileEditForm
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
@@ -21,7 +21,7 @@ class IGalleryTile(IListTile):
     form.no_omit(ITileEditForm, 'tile_description')
 
     form.no_omit(ITileEditForm, 'uuids')
-    form.widget(uuids=TextLinesSortableFieldWidget)
+    form.widget(uuids=TextLinesSortableSubtitleFieldWidget)
 
 
 @implementer(IGalleryTile)

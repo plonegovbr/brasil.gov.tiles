@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="brasil.gov.tiles">
+
+  <class class=".textlines_sortable_subtitle.TextLinesSortableSubtitleWidget">
+   <require
+      permission="zope.Public"
+      interface="collective.cover.widgets.interfaces.ITextLinesSortableWidget"
+    />
+  </class>
+
+</configure>

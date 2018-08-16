@@ -15,6 +15,7 @@ DEPENDENCIES = [
     'collective.cover',
     'collective.nitf',
     'collective.polls',
+    'plone.app.imagecropping',
 ]
 TILES = [
     'em_destaque',

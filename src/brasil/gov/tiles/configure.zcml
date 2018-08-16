@@ -9,6 +9,7 @@
     <includeDependencies package="." />
 
     <include package=".tiles" />
+    <include package=".widgets" />
 
     <!-- Profiles de Generic Setup -->
     <include file="profiles.zcml" />
@@ -48,11 +49,6 @@
     />
   <!--Exclusão-->
 
-  <class class=".widgets.textlinessortable.TextLinesSortableWidget">
-    <require
-        permission="zope.Public"
-        interface="collective.cover.widgets.interfaces.ITextLinesSortableWidget"
-        />
-  </class>
+
 
 </configure>

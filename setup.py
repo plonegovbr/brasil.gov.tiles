@@ -71,6 +71,7 @@ setup(
         'plone.namedfile',
         'plone.registry',
         'plone.tiles',
+        'plone.app.imagecropping == 1.4',
         'Products.CMFPlone >=4.3',
         'Products.CMFQuickInstallerTool',
         'Products.GenericSetup',

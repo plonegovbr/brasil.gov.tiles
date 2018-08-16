@@ -5,5 +5,6 @@
     <dependency>profile-collective.cover:default</dependency>
     <dependency>profile-collective.nitf:default</dependency>
     <dependency>profile-collective.polls:default</dependency>
+    <dependency>profile-plone.app.imagecropping:default</dependency>
   </dependencies>
 </metadata>

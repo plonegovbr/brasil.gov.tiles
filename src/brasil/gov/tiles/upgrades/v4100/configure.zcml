@@ -44,6 +44,10 @@
         handler="..cook_javascript_resources"
         />
 
+    <genericsetup:upgradeStep
+        title="Install plone.app.imagecropping"
+        handler=".install_imagecropping_manager"
+        />
   </genericsetup:upgradeSteps>
 
 </configure>

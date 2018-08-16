@@ -50,3 +50,12 @@ def add_photogallery_tile(setup_tool):
 def add_gallery_tile(setup_tool):
     """Add Gallery tile."""
     add_tile(u'brasil.gov.tiles.gallery')
+
+
+def install_imagecropping_manager(setup_tool):
+    """Install plone.app.imagecropping."""
+    addon = 'plone.app.imagecropping'
+    qi = api.portal.get_tool('portal_quickinstaller')
+    if not qi.isProductInstalled(addon):
+        qi.installProduct(addon)
+        logger.info(addon + ' was installed')
