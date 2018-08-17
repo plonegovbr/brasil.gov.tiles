@@ -12,8 +12,8 @@ from zope import schema
 from zope.interface import implementer
 
 
-class IGalleryTile(IListTile):
-    """Display a gallery of items."""
+class ICARHTTile(IListTile):
+    """Display a carousel of items."""
 
     tile_description = schema.Text(title=_(u'Tile Description'), required=False)
     form.omitted('tile_description')
@@ -23,12 +23,12 @@ class IGalleryTile(IListTile):
     form.widget(uuids=TextLinesSortableSubtitleFieldWidget)
 
 
-@implementer(IGalleryTile)
-class GalleryTile(CarouselTile):
-    """Display a gallery of items."""
+@implementer(ICARHTTile)
+class CARHTTile(CarouselTile):
+    """Display a carousel of items."""
 
-    index = ViewPageTemplateFile('templates/gallery.pt')
-    short_name = _(u'msg_short_name_gallery', default=u'Gallery')
+    index = ViewPageTemplateFile('templates/carht.pt')
+    short_name = _(u'msg_short_name_carht', default=u'Carousel Highlights')
 
     is_configurable = False
     is_droppable = True

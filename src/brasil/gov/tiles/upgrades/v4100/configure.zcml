@@ -28,8 +28,8 @@
         />
 
     <genericsetup:upgradeStep
-        title="Add Gallery tile"
-        handler=".add_gallery_tile"
+        title="Add Carousel Highlights tile"
+        handler=".add_carht_tile"
         />
 
     <genericsetup:upgradeStep

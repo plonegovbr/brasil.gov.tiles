@@ -200,13 +200,13 @@
       />
 
   <plone:tile
-      name="brasil.gov.tiles.gallery"
-      title="Gallery"
-      description="Display an image gallery."
+      name="brasil.gov.tiles.carht"
+      title="Carousel Highlights"
+      description="Display an carousel highlights."
       add_permission="cmf.ModifyPortalContent"
-      schema=".gallery.IGalleryTile"
-      icon="++resource++collective.cover/img/tile-generic.png"
-      class=".gallery.GalleryTile"
+      schema=".carht.ICARHTTile"
+      icon="++resource++collective.cover/img/tile-carousel.png"
+      class=".carht.CARHTTile"
       permission="zope2.View"
       for="*"
       i18n:attributes="title; description"

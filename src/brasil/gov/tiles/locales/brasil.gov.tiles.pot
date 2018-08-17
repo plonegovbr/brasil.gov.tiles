@@ -428,3 +428,46 @@ msgstr ""
 msgid "unmute"
 msgstr ""
 
+#: ./tiles/templates/carht.pt:9
+msgid "This carousel is empty; open the content chooser and drag-and-drop some items here."
+msgstr ""
+
+#: ./tiles/configure.zcml:204
+msgid "Carousel Highlights"
+msgstr ""
+
+#: ./tiles/carht.py:31
+msgid "msg_short_name_carht"
+msgstr ""
+
+#: ./tiles/templates/quote.pt:10
+msgid "Drag&amp;drop a News Article here."
+msgstr ""
+
+#: ./tiles/quote.py:52
+msgid "msg_short_name_quote"
+msgstr ""
+
+#: ./tiles/configure.zcml:157
+msgid "Quote"
+msgstr ""
+
+#: ./tiles/templates/potd.pt:9
+msgid "Drag&amp;drop an image here to populate the tile."
+msgstr ""
+
+#: ./tiles/potd.py:53
+msgid "msg_short_name_potd"
+msgstr ""
+
+#: ./tiles/configure.zcml:178
+msgid "Photo of the Day"
+msgstr ""
+
+#: ./tiles/potd.py:30
+msgid "msg_short_photo_gallery"
+msgstr ""
+
+#: ./tiles/configure.zcml:191
+msgid "Photo Gallery"
+msgstr ""

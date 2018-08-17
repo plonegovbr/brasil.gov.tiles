@@ -1,36 +1,36 @@
-export default class GalleryTile {
+export default class CARHTTile {
   constructor(tile) {
     this.tile = tile;
     this.initSwiper();
     this.composeMode();
   }
   initSwiper() {
-    this.galleryTop = new Swiper(`#${this.tile.id} .gallery-top`, {
+    this.carouselTop = new Swiper(`#${this.tile.id} .carousel-top`, {
       grabCursor: true
     });
-    this.galleryThumbs = new Swiper(`#${this.tile.id} .gallery-thumbs`, {
+    this.carouselThumbs = new Swiper(`#${this.tile.id} .carousel-thumbs`, {
       virtualTranslate: true,
       navigation: {
-        nextEl: `#${this.tile.id} .gallery-thumbs-container .swiper-button-next`,
-        prevEl: `#${this.tile.id} .gallery-thumbs-container .swiper-button-prev`,
+        nextEl: `#${this.tile.id} .carousel-thumbs-container .swiper-button-next`,
+        prevEl: `#${this.tile.id} .carousel-thumbs-container .swiper-button-prev`,
       },
       centeredSlides: true,
       slidesPerView: 'auto',
       touchRatio: 0.2,
       slideToClickedSlide: true,
     });
-    this.galleryThumbs.on('slideChange', this.slideChange);
-    this.galleryTop.controller.control = this.galleryThumbs;
-    this.galleryThumbs.controller.control = this.galleryTop;
+    this.carouselThumbs.on('slideChange', this.slideChange);
+    this.carouselTop.controller.control = this.carouselThumbs;
+    this.carouselThumbs.controller.control = this.carouselTop;
   }
   composeMode() {
     if ($('.template-compose').length === 0) {
       return;
     }
-    $(`#${this.tile.id} .gallery-thumbs`).prepend(
+    $(`#${this.tile.id} .carousel-thumbs`).prepend(
       '<div class="crop-warning">Recorte a imagem na opção "mini" para corrigir as miniaturas.</div>'
     );
-    for (let thumbnail of $(`#${this.tile.id} .gallery-thumbs .swiper-slide`)) {
+    for (let thumbnail of $(`#${this.tile.id} .carousel-thumbs .swiper-slide`)) {
       let $thumbnail = $(thumbnail);
       let $img = $('img', $thumbnail);
       let parser = document.createElement('a');

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import BaseIntegrationTestCase
-from brasil.gov.tiles.tiles.gallery import GalleryTile
-from collective.cover.testing import ALL_CONTENT_TYPES
+from brasil.gov.tiles.tiles.carht import CARHTTile
 from collective.cover.tiles.base import IPersistentCoverTile
 from mock import Mock
 from plone import api
@@ -10,18 +9,18 @@ from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
 
-class GalleryTileTestCase(BaseIntegrationTestCase):
+class CARHTTileTestCase(BaseIntegrationTestCase):
 
     def setUp(self):
-        super(GalleryTileTestCase, self).setUp()
+        super(CARHTTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.gallery', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.carht', 'test-tile'))
 
     def test_interface(self):
-        self.assertTrue(IPersistentCoverTile.implementedBy(GalleryTile))
-        self.assertTrue(verifyClass(IPersistentCoverTile, GalleryTile))
+        self.assertTrue(IPersistentCoverTile.implementedBy(CARHTTile))
+        self.assertTrue(verifyClass(IPersistentCoverTile, CARHTTile))
 
-        tile = GalleryTile(None, None)
+        tile = CARHTTile(None, None)
         self.assertTrue(IPersistentCoverTile.providedBy(tile))
         self.assertTrue(verifyObject(IPersistentCoverTile, tile))
 
@@ -30,14 +29,11 @@ class GalleryTileTestCase(BaseIntegrationTestCase):
         self.assertTrue(self.tile.is_editable)
         self.assertTrue(self.tile.is_droppable)
 
-    def test_accepted_content_types(self):
-        self.assertEqual(self.tile.accepted_ct(), ALL_CONTENT_TYPES)
-
     def test_tile_is_empty(self):
         self.assertTrue(self.tile.is_empty())
 
     def test_render_empty(self):
-        msg = 'This gallery is empty; open the content chooser and drag-and-drop some items here.'
+        msg = 'This carousel is empty; open the content chooser and drag-and-drop some items here.'
 
         self.tile.is_compose_mode = Mock(return_value=True)
         self.assertIn(msg, self.tile())
@@ -56,9 +52,10 @@ class GalleryTileTestCase(BaseIntegrationTestCase):
         self.tile.populate_with_object(obj2)
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.gallery', 'test-tile'))
-        self.assertEqual(len(self.tile.results()), 2)
-        self.assertIn(obj1, self.tile.results())
+            '@@{0}/{1}'.format('brasil.gov.tiles.carht', 'test-tile'))
+        self.assertEqual(len(self.tile.results()), 1)
+        # If the object does not have image associated, it will not included.
+        self.assertNotIn(obj1, self.tile.results())
         self.assertIn(obj2, self.tile.results())
 
         # next, we replace the list of objects with a different one
@@ -66,7 +63,7 @@ class GalleryTileTestCase(BaseIntegrationTestCase):
         self.tile.replace_with_uuids([api.content.get_uuid(obj3)])
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.gallery', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.carht', 'test-tile'))
         self.assertNotIn(obj1, self.tile.results())
         self.assertNotIn(obj2, self.tile.results())
         self.assertIn(obj3, self.tile.results())
@@ -82,7 +79,7 @@ class GalleryTileTestCase(BaseIntegrationTestCase):
 
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.gallery', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.carht', 'test-tile'))
         self.assertEqual(self.tile.tile_title, 'My title')
         self.assertEqual(
             self.tile.more_link,
@@ -93,7 +90,7 @@ class GalleryTileTestCase(BaseIntegrationTestCase):
         self.tile.remove_item(obj3.UID())
         # tile's data attribute is cached; reinstantiate it
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.gallery', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.carht', 'test-tile'))
         self.assertTrue(self.tile.is_empty())
 
     def test_render_with_image(self):
@@ -104,23 +101,23 @@ class GalleryTileTestCase(BaseIntegrationTestCase):
 
         self.assertIn('<img ', rendered)
         self.assertIn('alt="This image was created for testing purposes"', rendered)
-        self.assertIn('class="gallery-title">Test image', rendered)
-        self.assertIn('class="gallery-description">This image was created for testing purposes', rendered)
+        self.assertIn('class="carousel-title">Test image', rendered)
+        self.assertIn('class="carousel-description">This image was created for testing purposes', rendered)
 
         # test thums container
-        self.assertIn('<div class="gallery-thumbs swiper-container">', rendered)
+        self.assertIn('<div class="carousel-thumbs swiper-container">', rendered)
         self.assertIn('class="thumb-title">Test image', rendered)
 
         # test title tile and description
         data = self.tile.data
-        data['tile_title'] = 'Gallery title'
-        data['tile_description'] = 'Gallery description'
+        data['tile_title'] = 'Carousel title'
+        data['tile_description'] = 'Carousel description'
         data_mgr = ITileDataManager(self.tile)
         data_mgr.set(data)
         rendered = self.tile()
 
-        self.assertIn('<div class="gallery-title">Gallery title</div>', rendered)
-        self.assertIn('<div class="gallery-description">Gallery description</div>', rendered)
+        self.assertIn('<div class="carousel-title">Carousel title</div>', rendered)
+        self.assertIn('<div class="carousel-description">Carousel description</div>', rendered)
 
     def test_thumbnail(self):
         obj = self.portal['my-image']

@@ -161,3 +161,17 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         self.assertIn(tile, self.get_registered_tiles())
         self.assertIn(tile, self.get_available_tiles())
+
+    def test_add_carht_tile(self):
+        title = u'Add Carousel Highlights tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        tile = u'brasil.gov.tiles.carht'
+        self.unregister_tile(tile)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.assertIn(tile, self.get_registered_tiles())
+        self.assertIn(tile, self.get_available_tiles())

@@ -47,9 +47,9 @@ def add_photogallery_tile(setup_tool):
     add_tile(u'brasil.gov.tiles.photogallery')
 
 
-def add_gallery_tile(setup_tool):
-    """Add Gallery tile."""
-    add_tile(u'brasil.gov.tiles.gallery')
+def add_carht_tile(setup_tool):
+    """Add Carousel Highlights tile."""
+    add_tile(u'brasil.gov.tiles.carht')
 
 
 def install_imagecropping_manager(setup_tool):

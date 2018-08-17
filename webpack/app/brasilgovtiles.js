@@ -5,7 +5,7 @@ import CarouselResponsiveResize from './js/tiles/mediacarousel.js';
 import VideoResponsiveResize from './js/tiles/videogallery.js';
 import POTDTile from './js/tiles/potd.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
-import GalleryTile from './js/tiles/gallery.js';
+import CARHTTile from './js/tiles/carht.js';
 
 // https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
 jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
@@ -38,8 +38,8 @@ $(() => {
     new POTDTile();
     new PhotoGalleryTile(tile);
   }
-  for (let gallery of $('.brasil-gallery-tile')) {
-    new GalleryTile(gallery);
+  for (let tile of $('.brasil-carht-tile')) {
+    new CARHTTile(tile);
   }
 });
 
@@ -63,5 +63,6 @@ export default {
   VideoResponsiveResize,
   POTDTile,
   PhotoGalleryTile,
+  CARHTTile,
 }
 

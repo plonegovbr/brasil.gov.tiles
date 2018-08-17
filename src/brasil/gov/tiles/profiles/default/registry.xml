@@ -18,7 +18,7 @@
       <element>brasil.gov.tiles.potd</element>
       <element>brasil.gov.tiles.quote</element>
       <element>brasil.gov.tiles.photogallery</element>
-      <element>brasil.gov.tiles.gallery</element>
+      <element>brasil.gov.tiles.carht</element>
     </value>
   </record>
 </registry>
