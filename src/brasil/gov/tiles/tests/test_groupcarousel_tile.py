@@ -29,18 +29,6 @@ class CarouselTileTestCase(BaseIntegrationTestCase):
         self.assertTrue(self.tile.is_editable)
         self.assertTrue(self.tile.is_droppable)
 
-    def test_accepted_content_types(self):
-        types = [
-            'Collection',
-            'Document',
-            'File',
-            'Image',
-            'Link',
-            'News Item',
-            # 'ExternalContent',
-        ]
-        self.assertEqual(self.tile.accepted_ct(), types)
-
     def test_tile_is_empty(self):
         self.assertTrue(self.tile.is_empty())
 
