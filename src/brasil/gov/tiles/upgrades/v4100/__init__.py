@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.logger import logger
 from brasil.gov.tiles.upgrades import add_tile
+from brasil.gov.tiles.upgrades import get_valid_objects
+from brasil.gov.tiles.upgrades import replace_tile
 from plone import api
+
+import json
 
 
 RESOURCES_TO_UPDATE = {
@@ -50,3 +54,19 @@ def add_photogallery_tile(setup_tool):
 def add_navigation_tile(setup_tool):
     """Add Navigation tile."""
     add_tile(u'brasil.gov.tiles.navigation')
+
+
+def replace_nitf_tile(setup_tool):
+    """Replace NITF tile."""
+    add_tile(u'collective.nitf')
+
+    logger.info('Replacing NITF tile on collective.cover objects')
+    for obj in get_valid_objects(portal_type='collective.cover.content'):
+        try:
+            layout = json.loads(obj.cover_layout)
+        except TypeError:
+            continue  # empty layout?
+        layout = replace_tile(layout, 'nitf', 'collective.nitf')
+        obj.cover_layout = json.dumps(layout)
+
+    logger.info('Done')

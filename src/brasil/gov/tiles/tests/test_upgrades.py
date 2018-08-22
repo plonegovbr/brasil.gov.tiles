@@ -42,7 +42,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 7)
+        self.assertEqual(steps, 8)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -175,3 +175,25 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         self.assertIn(tile, self.get_registered_tiles())
         self.assertIn(tile, self.get_available_tiles())
+
+    def test_replace_nitf_tile(self):
+        title = u'Replace NITF tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        tile = u'collective.nitf'
+        self.unregister_tile(tile)
+        with api.env.adopt_roles(['Manager']):
+            obj = api.content.create(
+                self.portal, 'collective.cover.content', 'foo')
+        obj.cover_layout = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "nitf", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
+        obj.reindexObject()
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.assertIn(tile, self.get_registered_tiles())
+        self.assertIn(tile, self.get_available_tiles())
+        expected = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.nitf", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
+        import json
+        self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
