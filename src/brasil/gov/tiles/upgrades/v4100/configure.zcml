@@ -33,6 +33,11 @@
         />
 
     <genericsetup:upgradeStep
+        title="Add Group Carousel tile"
+        handler=".add_groupcarousel_tile"
+        />
+
+    <genericsetup:upgradeStep
         title="Cook CSS resources"
         description="There were changes in the CSS files, so we need to cook the resources."
         handler="..cook_css_resources"

@@ -428,3 +428,15 @@ msgstr "Título do tile List"
 msgid "unmute"
 msgstr "Ativar som"
 
+#: tiles/configure.zcml
+msgid "Group Carousel"
+msgstr "Carrossel de grupo"
+
+#: ./tiles/templates/groupcarousel.pt:8
+msgid "Add up to ${limit_objects} objects to the tile."
+msgstr "Adicione até ${limit_objects} objetos ao tile."
+
+#. Default: "Group Carousel"
+#: ./tiles/groupcarousel.py:35
+msgid "msg_short_name_groupcarousel"
+msgstr "Carrossel de grupo"

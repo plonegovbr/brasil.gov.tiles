@@ -42,7 +42,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 7)
+        self.assertEqual(steps, 8)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -168,6 +168,20 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         tile = u'brasil.gov.tiles.navigation'
+        self.unregister_tile(tile)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.assertIn(tile, self.get_registered_tiles())
+        self.assertIn(tile, self.get_available_tiles())
+
+    def test_add_groupcarousel_tile(self):
+        title = u'Add Group Carousel tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        tile = u'brasil.gov.tiles.groupcarousel'
         self.unregister_tile(tile)
 
         # run the upgrade step to validate the update

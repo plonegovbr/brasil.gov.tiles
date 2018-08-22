@@ -120,6 +120,15 @@ Mostra um menu de navegação exibindo os conteúdos como itens de menu a partir
     :height: 100px
     :width: 800px
 
+Carrossel de grupo
+^^^^^^^^^^^^^^^^^^
+Mostra um carrossel de itens com imagens.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/carousel.png
+    :align: center
+    :height: 393px
+
+
 Desenvolvimento
 ---------------
 
