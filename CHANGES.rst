@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove override do tile de matéria (NITF).
+  [hvelarde]
+
 - Adiciona um tile para mostrar um menu de navegação.
   [claytonc]
 
