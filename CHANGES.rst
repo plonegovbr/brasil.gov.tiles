@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove override do tile de banner.
+  [hvelarde]
+
 - Remove override do tile de matéria (NITF).
   [hvelarde]
 
