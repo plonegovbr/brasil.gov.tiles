@@ -1,7 +1,7 @@
 import Youtube from '../youtube.js';
 
 
-export default class CarouselVideosTile {
+export default class VideoCarouselTile {
   constructor(tile) {
     this.tile = tile;
 
@@ -24,7 +24,7 @@ export default class CarouselVideosTile {
   }
   initSecondCarousel() {
     let $column = $(this.tile).parents('.column');
-    this.$tiles = $('.brasil-carouselvideos-tile', $column);
+    this.$tiles = $('.brasil-videocarousel-tile', $column);
     if (this.$tiles.length !== 2) {
       return;
     }

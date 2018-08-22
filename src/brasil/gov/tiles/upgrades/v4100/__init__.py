@@ -72,6 +72,11 @@ def add_navigation_tile(setup_tool):
     add_tile(u'brasil.gov.tiles.navigation')
 
 
+def add_videocarousel_tile(setup_tool):
+    """Add Video Carousel tile."""
+    add_tile(u'brasil.gov.tiles.videocarousel')
+
+
 def replace_nitf_tile(setup_tool):
     """Replace NITF tile."""
     tile = u'collective.nitf'
@@ -101,11 +106,6 @@ def update_banner_tile(setup_tool):
         replace_attribute(obj, tile, 'image_description', 'alt_text')
 
     logger.info('Done')
-
-
-def add_carouselvideos_tile(setup_tool):
-    """Add Carousel Videos tile."""
-    add_tile(u'brasil.gov.tiles.carouselvideos')
 
 
 def install_embedder(setup_tool):

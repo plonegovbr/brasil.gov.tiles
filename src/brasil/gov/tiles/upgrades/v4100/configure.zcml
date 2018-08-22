@@ -48,8 +48,8 @@
         />
 
     <genericsetup:upgradeStep
-        title="Add Carousel Videos tile"
-        handler=".add_carouselvideos_tile"
+        title="Add Video Carousel tile"
+        handler=".add_videocarousel_tile"
         />
 
     <genericsetup:upgradeStep

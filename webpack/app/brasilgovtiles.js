@@ -2,7 +2,7 @@ import Albuns from './js/tiles/albuns.js';
 import AudioGallery from './js/tiles/audiogallery.js';
 import { BannerRotativo, BannerRotativoCompor } from './js/tiles/banner_rotativo.js';
 import CarouselResponsiveResize from './js/tiles/mediacarousel.js';
-import CarouselVideosTile from './js/tiles/carouselvideos.js';
+import VideoCarouselTile from './js/tiles/videocarousel.js';
 import NavigationTile from './js/tiles/navigation.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
 import POTDTile from './js/tiles/potd.js';
@@ -43,8 +43,8 @@ $(() => {
   for (let navigation of $('.brasil-navigation-tile')) {
     new NavigationTile(navigation);
   }
-  for (let carouselvideos of $('.brasil-carouselvideos-tile')) {
-    new CarouselVideosTile(carouselvideos);
+  for (let videocarousel of $('.brasil-videocarousel-tile')) {
+    new VideoCarouselTile(videocarousel);
   }
 });
 

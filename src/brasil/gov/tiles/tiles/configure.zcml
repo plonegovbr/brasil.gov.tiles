@@ -201,16 +201,15 @@
       />
 
   <plone:tile
-      name="brasil.gov.tiles.carouselvideos"
+      name="brasil.gov.tiles.videocarousel"
       for="*"
-      title="Carousel Videos"
+      title="Video Carousel"
       description="Display a carousel of videos."
       icon="++resource++collective.cover/img/tile-generic.png"
       add_permission="cmf.ModifyPortalContent"
-      schema=".carouselvideos.ICarouselVideosTile"
-      class=".carouselvideos.CarouselVideosTile"
+      schema=".videocarousel.IVideoCarouselTile"
+      class=".videocarousel.VideoCarouselTile"
       permission="zope2.View"
-      template="templates/carouselvideos.pt"
       />
 
 </configure>

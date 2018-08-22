@@ -204,12 +204,12 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         # no easy way to test image_description attribute chan
 
-    def test_add_carouselvideos_tile(self):
-        title = u'Add Carousel Videos tile'
+    def test_add_videocarousel_tile(self):
+        title = u'Add Video Carousel tile'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
-        tile = u'brasil.gov.tiles.carouselvideos'
+        tile = u'brasil.gov.tiles.videocarousel'
         utils.disable_tile(tile)
 
         # run the upgrade step to validate the update
@@ -218,7 +218,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIn(tile, utils.get_registered_tiles())
         self.assertIn(tile, utils.get_available_tiles())
 
-    def test_install_keyword_manager(self):
+    def test_install_embedder(self):
         title = u'Install sc.embedder'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)

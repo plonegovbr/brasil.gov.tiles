@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import BaseIntegrationTestCase
-from brasil.gov.tiles.tiles.carouselvideos import CarouselVideosTile
+from brasil.gov.tiles.tiles.videocarousel import VideoCarouselTile
 from collective.cover.tiles.base import IPersistentCoverTile
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
 
 
-class CarouselVideosTileTestCase(BaseIntegrationTestCase):
+class VideoCarouselTileTestCase(BaseIntegrationTestCase):
 
     def setUp(self):
-        super(CarouselVideosTileTestCase, self).setUp()
+        super(VideoCarouselTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
-            '@@{0}/{1}'.format('brasil.gov.tiles.carouselvideos', 'test-tile'))
+            '@@{0}/{1}'.format('brasil.gov.tiles.videocarousel', 'test-tile'))
 
     def test_interface(self):
-        self.assertTrue(IPersistentCoverTile.implementedBy(CarouselVideosTile))
-        self.assertTrue(verifyClass(IPersistentCoverTile, CarouselVideosTile))
+        self.assertTrue(IPersistentCoverTile.implementedBy(VideoCarouselTile))
+        self.assertTrue(verifyClass(IPersistentCoverTile, VideoCarouselTile))
 
-        tile = CarouselVideosTile(None, None)
+        tile = VideoCarouselTile(None, None)
         self.assertTrue(IPersistentCoverTile.providedBy(tile))
         self.assertTrue(verifyObject(IPersistentCoverTile, tile))
 
