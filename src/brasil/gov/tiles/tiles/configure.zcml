@@ -212,7 +212,7 @@
       i18n:attributes="title; description"
       />
 
-  <plone:tile 
+  <plone:tile
       name="brasil.gov.tiles.groupcarousel"
       title="Group Carousel"
       description="Display a carousel of items."
