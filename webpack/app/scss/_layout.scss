@@ -132,16 +132,4 @@
 
     background: url(./img/tile-banner_rotativo.png) no-repeat center center;
   }
-  a[id='collective.nitf'] {
-    display: none !important;
-  }
-}
-
-/*XXX: Precisamos esconder o tile de nitf de collective.nitf, pois iremos usar*/
-/*o nosso herdando de collective.nitf. Apesar de já removermos ele via upgradeStep,*/
-/*achamos melhor também esconder via css caso o usuário execute os upgradeSteps*/
-/*em ordens aleatórias.*/
-
-select#form-widgets-available_tiles-from option[value='collective.nitf'] {
-  display: none !important;
 }

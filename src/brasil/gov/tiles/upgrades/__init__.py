@@ -33,3 +33,45 @@ def add_tile(tile):
         available_tiles.append(tile)
         api.portal.set_registry_record(value=available_tiles, **record)
         logger.info('{0} tile made available'.format(tile))
+
+
+def get_valid_objects(**kw):
+    """Generate a list of objects associated with valid brains."""
+    results = api.content.find(**kw)
+    logger.info('Found {0} objects in the catalog'.format(len(results)))
+    for b in results:
+        try:
+            obj = b.getObject()
+        except (AttributeError, KeyError):
+            obj = None
+
+        if obj is None:  # warn on broken entries in the catalog
+            msg = 'Invalid object reference in the catalog: {0}'
+            logger.warn(msg.format(b.getPath()))
+            continue
+
+        yield obj
+
+
+def replace_tile(layout, old, new):
+    """Replace tile type on a layout."""
+    new_layout = []
+    for e in layout:
+        if 'tile-type' in e and e['tile-type'] == old:
+            e['tile-type'] = new
+        if e['type'] in ('row', 'group'):
+            e['children'] = replace_tile(e['children'], old, new)
+        new_layout.append(e)
+    return new_layout
+
+
+def replace_attribute(obj, type_, old, new):
+    """Replace attribute on tiles."""
+    from plone.tiles.interfaces import ITileDataManager
+    for id_ in obj.list_tiles(type_):
+        tile = obj.get_tile(id_)
+        data_mgr = ITileDataManager(tile)
+        data = data_mgr.get()
+        if data.get(old):
+            data[new] = data.pop(old)
+            data_mgr.set(data)
