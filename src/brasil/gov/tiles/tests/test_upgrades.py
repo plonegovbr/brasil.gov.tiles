@@ -183,6 +183,8 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         tile = u'collective.nitf'
         self.unregister_tile(tile)
+
+        # add object with an old tile on its layout
         with api.env.adopt_roles(['Manager']):
             obj = api.content.create(
                 self.portal, 'collective.cover.content', 'foo')
@@ -194,6 +196,9 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         self.assertIn(tile, self.get_registered_tiles())
         self.assertIn(tile, self.get_available_tiles())
+
         expected = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.nitf", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
         import json
         self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
+
+        # no easy way to set test image_description attribute
