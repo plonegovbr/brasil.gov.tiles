@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove override do tile de banner.
+  [hvelarde]
+
 - Remove override do tile de matéria (NITF).
   [hvelarde]
 
@@ -20,7 +23,6 @@ Changelog
   [rodfersou]
 
 - Corrige dependências do pacote.
-- Remove override do tile de banner.
   [hvelarde]
 
 - Adiciona suporte para processamento de recursos estáticos usando o `webpack <http://webpack.js.org/>`_.

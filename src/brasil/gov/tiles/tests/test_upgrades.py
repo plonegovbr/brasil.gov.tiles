@@ -42,7 +42,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 8)
+        self.assertEqual(steps, 9)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -201,4 +201,14 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         import json
         self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
 
-        # no easy way to set test image_description attribute
+        # no easy way to test image_description attribute change
+
+    def test_update_tile(self):
+        title = u'Update Banner tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        # no easy way to test image_description attribute change

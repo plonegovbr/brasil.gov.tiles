@@ -75,3 +75,14 @@ def replace_nitf_tile(setup_tool):
         replace_attribute(obj, tile, 'image_description', 'alt_text')
 
     logger.info('Done')
+
+
+def update_banner_tile(setup_tool):
+    """Update Banner tile."""
+    tile = u'collective.cover.banner'
+
+    logger.info('Updating NITF tile on collective.cover objects')
+    for obj in get_valid_objects(portal_type='collective.cover.content'):
+        replace_attribute(obj, tile, 'image_description', 'alt_text')
+
+    logger.info('Done')
