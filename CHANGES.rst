@@ -4,8 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Adiciona um tile para mostrar um menu de navegação.
-- Adiciona um tile para mostrar um Carousel de itens.
+- Adiciona um tile para mostrar um Carroussel de grupo.
+  [claytonc]
+
 - Adiciona um tile para mostrar um menu de navegação.
   [claytonc]
 
