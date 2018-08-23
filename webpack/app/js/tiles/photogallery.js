@@ -1,3 +1,6 @@
+import Swiper from 'swiper';
+
+
 export default class PhotoGalleryTile {
     constructor(tile) {
       this.tile = tile;
