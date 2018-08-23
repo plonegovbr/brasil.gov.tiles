@@ -13,6 +13,11 @@
         />
 
     <genericsetup:upgradeStep
+        title="Remove deprecated tiles"
+        handler=".remove_deprecated_tiles"
+        />
+
+    <genericsetup:upgradeStep
         title="Add POTD tile"
         handler=".add_potd_tile"
         />
