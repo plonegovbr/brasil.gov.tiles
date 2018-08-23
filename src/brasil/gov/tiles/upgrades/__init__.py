@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 from brasil.gov.tiles.logger import logger
-from collective.cover.controlpanel import ICoverSettings
 from plone import api
 
 
@@ -20,19 +19,9 @@ def cook_javascript_resources(context):  # pragma: no cover
 
 def add_tile(tile):
     """Register a tile and make it available."""
-    name = 'plone.app.tiles'
-    registered_tiles = api.portal.get_registry_record(name=name)
-    if tile not in registered_tiles:
-        registered_tiles.append(tile)
-        api.portal.set_registry_record(name=name, value=registered_tiles)
-        logger.info('{0} tile registered'.format(tile))
-
-    record = dict(interface=ICoverSettings, name='available_tiles')
-    available_tiles = api.portal.get_registry_record(**record)
-    if tile not in available_tiles:
-        available_tiles.append(tile)
-        api.portal.set_registry_record(value=available_tiles, **record)
-        logger.info('{0} tile made available'.format(tile))
+    from brasil.gov.tiles.utils import enable_tile
+    enable_tile(tile)
+    logger.info('{0} tile added'.format(tile))
 
 
 def get_valid_objects(**kw):
@@ -57,10 +46,11 @@ def replace_tile(layout, old, new):
     """Replace tile type on a layout."""
     new_layout = []
     for e in layout:
-        if 'tile-type' in e and e['tile-type'] == old:
+        if e.get('tile-type') == old:
             e['tile-type'] = new
         if e['type'] in ('row', 'group'):
-            e['children'] = replace_tile(e['children'], old, new)
+            if 'children' in e:
+                e['children'] = replace_tile(e['children'], old, new)
         new_layout.append(e)
     return new_layout
 

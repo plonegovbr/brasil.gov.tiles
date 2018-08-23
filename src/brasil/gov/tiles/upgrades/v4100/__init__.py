@@ -37,6 +37,16 @@ def update_static_resources(setup_tool):
     logger.info('JavaScript resources were updated')
 
 
+DEPRECATED_TILES = [u'nitf']
+
+
+def remove_deprecated_tiles(setup_tool):
+    """Remove deprecated tiles."""
+    from brasil.gov.tiles.utils import disable_tile
+    for tile in DEPRECATED_TILES:
+        disable_tile(tile)
+
+
 def add_quote_tile(setup_tool):
     """Add Quote tile."""
     add_tile(u'brasil.gov.tiles.quote')

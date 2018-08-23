@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.tiles import utils
 from brasil.gov.tiles.testing import INTEGRATION_TESTING
-from collective.cover.controlpanel import ICoverSettings
 from plone import api
 
 import unittest
@@ -42,7 +42,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 9)
+        self.assertEqual(steps, 10)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -100,25 +100,15 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/swiper.min.js', js_ids)
 
-    @staticmethod
-    def get_registered_tiles():
-        return api.portal.get_registry_record(name='plone.app.tiles')
+    def test_remove_deprecated_tiles(self):
+        title = u'Remove deprecated tiles'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
 
-    @staticmethod
-    def set_registered_tiles(value):
-        api.portal.set_registry_record(name='plone.app.tiles', value=value)
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
 
-    @staticmethod
-    def get_available_tiles():
-        record = dict(interface=ICoverSettings, name='available_tiles')
-        return api.portal.get_registry_record(**record)
-
-    def unregister_tile(self, tile):
-        registered_tiles = self.get_registered_tiles()
-        registered_tiles.remove(tile)
-        self.set_registered_tiles(value=registered_tiles)
-        self.assertNotIn(tile, self.get_registered_tiles())
-        self.assertNotIn(tile, self.get_available_tiles())
+        # no easy way to test tile removal: raises ConstraintNotSatisfied
 
     def test_add_potd_tile(self):
         title = u'Add POTD tile'
@@ -126,13 +116,13 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         tile = u'brasil.gov.tiles.potd'
-        self.unregister_tile(tile)
+        utils.disable_tile(tile)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        self.assertIn(tile, self.get_registered_tiles())
-        self.assertIn(tile, self.get_available_tiles())
+        self.assertIn(tile, utils.get_registered_tiles())
+        self.assertIn(tile, utils.get_available_tiles())
 
     def test_add_quote_tile(self):
         title = u'Add Quote tile'
@@ -140,13 +130,13 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         tile = u'brasil.gov.tiles.quote'
-        self.unregister_tile(tile)
+        utils.disable_tile(tile)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        self.assertIn(tile, self.get_registered_tiles())
-        self.assertIn(tile, self.get_available_tiles())
+        self.assertIn(tile, utils.get_registered_tiles())
+        self.assertIn(tile, utils.get_available_tiles())
 
     def test_add_photogallery_tile(self):
         title = u'Add Photo Gallery tile'
@@ -154,13 +144,13 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         tile = u'brasil.gov.tiles.photogallery'
-        self.unregister_tile(tile)
+        utils.disable_tile(tile)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        self.assertIn(tile, self.get_registered_tiles())
-        self.assertIn(tile, self.get_available_tiles())
+        self.assertIn(tile, utils.get_registered_tiles())
+        self.assertIn(tile, utils.get_available_tiles())
 
     def test_add_navigation_tile(self):
         title = u'Add Navigation tile'
@@ -168,13 +158,13 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         tile = u'brasil.gov.tiles.navigation'
-        self.unregister_tile(tile)
+        utils.disable_tile(tile)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        self.assertIn(tile, self.get_registered_tiles())
-        self.assertIn(tile, self.get_available_tiles())
+        self.assertIn(tile, utils.get_registered_tiles())
+        self.assertIn(tile, utils.get_available_tiles())
 
     def test_replace_nitf_tile(self):
         title = u'Replace NITF tile'
@@ -182,7 +172,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         tile = u'collective.nitf'
-        self.unregister_tile(tile)
+        utils.disable_tile(tile)
 
         # add object with an old tile on its layout
         with api.env.adopt_roles(['Manager']):
@@ -194,8 +184,8 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        self.assertIn(tile, self.get_registered_tiles())
-        self.assertIn(tile, self.get_available_tiles())
+        self.assertIn(tile, utils.get_registered_tiles())
+        self.assertIn(tile, utils.get_available_tiles())
 
         expected = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.nitf", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
         import json
