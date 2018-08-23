@@ -12,8 +12,6 @@ addons:
   firefox: 45.9.0esr
 matrix:
   fast_finish: true
-before_install:
-- pip install coveralls pylint
 install:
 - python bootstrap.py
 - bin/buildout annotate
@@ -26,9 +24,16 @@ before_script:
 script:
 - bin/code-analysis
 - bin/test
-- pylint --py3k --disable=no-absolute-import src/brasil/gov/tiles
+- bin/pylint --py3k --disable=no-absolute-import src/brasil/gov/tiles
 after_success:
-- bin/createcoverage --output-dir=htmlcov -t "--layer=!Acceptance"
+- pip install coverage
+- coverage run bin/test --layer=\!Robot
+# Coveralls
+- pip install coveralls
 - coveralls
+# Codacy
+- coverage xml
+- pip install codacy-coverage
+- python-codacy-coverage -r coverage.xml
 notifications:
   irc: irc.freenode.org#plonegovbr
