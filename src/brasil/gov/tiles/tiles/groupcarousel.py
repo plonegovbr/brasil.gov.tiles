@@ -72,8 +72,4 @@ class GroupCarouselTile(CarouselTile):
 
     def is_empty(self):
         """Check if the tile is empty."""
-        try:
-            next(self.results())
-        except StopIteration:
-            return True
-        return False
+        return super(GroupCarouselTile, self).results() == []
