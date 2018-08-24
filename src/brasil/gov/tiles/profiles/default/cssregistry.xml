@@ -3,7 +3,4 @@
  <stylesheet title="" cacheable="True" compression="safe" cookable="True"
     enabled="1" expression="" id="++resource++brasil.gov.tiles/brasilgovtiles.css" media="screen"
     rel="stylesheet" rendering="link" insert-after="*" />
- <stylesheet title="" cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression="" id="++resource++brasil.gov.tiles/vendor/swiper.min.css" media="screen"
-    rel="stylesheet" rendering="link" insert-after="*" />
 </object>
