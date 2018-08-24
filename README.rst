@@ -125,7 +125,7 @@ Galeria de videos
 ^^^^^^^^^^^^^^^^^
 Mostra uma galeria de videos.
 
-.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/carouselvideos.png
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/videocarousel.png
     :align: center
     :height: 367px
     :width: 1253px
