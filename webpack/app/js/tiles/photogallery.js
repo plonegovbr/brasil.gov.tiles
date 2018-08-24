@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper.js';
 
 
 export default class PhotoGalleryTile {
