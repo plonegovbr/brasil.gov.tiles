@@ -204,7 +204,7 @@
       name="brasil.gov.tiles.videocarousel"
       for="*"
       title="Video Carousel"
-      description="Display a carousel of videos."
+      description="A tile that shows a carousel of videos."
       icon="++resource++collective.cover/img/tile-generic.png"
       add_permission="cmf.ModifyPortalContent"
       schema=".videocarousel.IVideoCarouselTile"

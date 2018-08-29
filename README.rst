@@ -121,9 +121,9 @@ Mostra um menu de navegação exibindo os conteúdos como itens de menu a partir
     :width: 800px
 
 
-Galeria de videos
-^^^^^^^^^^^^^^^^^
-Mostra uma galeria de videos.
+Carrossel de vídeos
+^^^^^^^^^^^^^^^^^^^
+Mostra um carrossel de vídeos.
 
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/videocarousel.png
     :align: center

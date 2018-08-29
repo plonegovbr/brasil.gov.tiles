@@ -11,7 +11,7 @@ from zope.interface import implementer
 
 
 class IVideoCarouselTile(IListTile):
-    """Display a carousel of videos."""
+    """A tile that shows a carousel of videos."""
 
     tile_description = schema.Text(title=_(u'Tile Description'), required=False)
     form.omitted('tile_description')
@@ -27,13 +27,13 @@ class IVideoCarouselTile(IListTile):
 
 @implementer(IVideoCarouselTile)
 class VideoCarouselTile(CarouselTile):
-    """Display a carousel of videos."""
+    """A tile that shows a carousel of videos."""
 
     index = ViewPageTemplateFile('templates/videocarousel.pt')
     is_configurable = True
     is_droppable = True
     is_editable = True
-    short_name = _(u'msg_short_name_carousel_videos', default=u'Carousel Videos')
+    short_name = _(u'msg_short_name_video_carousel', default=u'Video Carousel')
 
     @staticmethod
     def accepted_ct():

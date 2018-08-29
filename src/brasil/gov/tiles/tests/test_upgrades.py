@@ -234,21 +234,30 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
         self.assertTrue(qi.isProductInstalled(addon))
 
+    @staticmethod
+    def get_searchable_content_types():
+        """Return a list of searchable content types."""
+        record = dict(interface=ICoverSettings, name='searchable_content_types')
+        return api.portal.get_registry_record(**record)
+
+    @staticmethod
+    def set_searchable_content_types(value):
+        """Set a list of searchable content types."""
+        record = dict(interface=ICoverSettings, name='searchable_content_types')
+        api.portal.set_registry_record(value=value, **record)
+
     def test_make_embedder_searchable(self):
         title = u'Make Embedder searchable at collective.cover'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         content_type = 'sc.embedder'
-        record = dict(interface=ICoverSettings, name='searchable_content_types')
-        searchable_content_types = api.portal.get_registry_record(**record)
+        searchable_content_types = self.get_searchable_content_types()
         searchable_content_types.remove(content_type)
-        api.portal.set_registry_record(value=searchable_content_types, **record)
-        searchable_content_types = api.portal.get_registry_record(**record)
-        self.assertNotIn(content_type, searchable_content_types)
+        self.set_searchable_content_types(searchable_content_types)
+        self.assertNotIn(content_type, self.get_searchable_content_types())
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        searchable_content_types = api.portal.get_registry_record(**record)
-        self.assertIn(content_type, searchable_content_types)
+        self.assertIn(content_type, self.get_searchable_content_types())
