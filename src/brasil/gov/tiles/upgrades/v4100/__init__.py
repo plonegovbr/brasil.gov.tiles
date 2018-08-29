@@ -43,6 +43,7 @@ def update_static_resources(setup_tool):
 
 DEPRECATED_TILES = [
     u'em_destaque',
+    u'mediacarousel',
     u'nitf',
 ]
 
@@ -107,6 +108,11 @@ def remove_em_destaque_tile(setup_tool):
         obj.cover_layout = json.dumps(layout)
 
     logger.info('Done')
+
+
+def replace_mediacarousel_tile(setup_tool):
+    """Replace Media Carousel tile."""
+    # TODO
 
 
 def update_banner_tile(setup_tool):

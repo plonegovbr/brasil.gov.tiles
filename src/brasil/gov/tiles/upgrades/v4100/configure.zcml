@@ -34,6 +34,11 @@
         />
 
     <genericsetup:upgradeStep
+        title="Replace Media Carousel tile"
+        handler=".replace_mediacarousel_tile"
+        />
+
+    <genericsetup:upgradeStep
         title="Update Banner tile"
         handler=".update_banner_tile"
         />

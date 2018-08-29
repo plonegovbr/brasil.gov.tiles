@@ -44,7 +44,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 10)
+        self.assertEqual(steps, 11)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -174,6 +174,16 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
 
         # no easy way to test image_description attribute change
+
+    def test_replace_mediacarousel_tile(self):
+        title = u'Replace Media Carousel tile'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+
+        self.fail('TODO: Not Implemented')
 
     def test_update_tile(self):
         title = u'Update Banner tile'
