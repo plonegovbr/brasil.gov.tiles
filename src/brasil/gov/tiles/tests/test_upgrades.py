@@ -43,7 +43,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 13)
+        self.assertEqual(steps, 9)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -111,61 +111,21 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         # no easy way to test tile removal: raises ConstraintNotSatisfied
 
-    def test_add_potd_tile(self):
-        title = u'Add POTD tile'
+    def test_add_new_tiles(self):
+        title = u'Add new tiles'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
-        tile = u'brasil.gov.tiles.potd'
-        utils.disable_tile(tile)
+        from brasil.gov.tiles.upgrades.v4100 import NEW_TILES
+        for tile in NEW_TILES:
+            utils.disable_tile(tile)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        self.assertIn(tile, utils.get_registered_tiles())
-        self.assertIn(tile, utils.get_available_tiles())
-
-    def test_add_quote_tile(self):
-        title = u'Add Quote tile'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        tile = u'brasil.gov.tiles.quote'
-        utils.disable_tile(tile)
-
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
-
-        self.assertIn(tile, utils.get_registered_tiles())
-        self.assertIn(tile, utils.get_available_tiles())
-
-    def test_add_photogallery_tile(self):
-        title = u'Add Photo Gallery tile'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        tile = u'brasil.gov.tiles.photogallery'
-        utils.disable_tile(tile)
-
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
-
-        self.assertIn(tile, utils.get_registered_tiles())
-        self.assertIn(tile, utils.get_available_tiles())
-
-    def test_add_navigation_tile(self):
-        title = u'Add Navigation tile'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        tile = u'brasil.gov.tiles.navigation'
-        utils.disable_tile(tile)
-
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
-
-        self.assertIn(tile, utils.get_registered_tiles())
-        self.assertIn(tile, utils.get_available_tiles())
+        for tile in NEW_TILES:
+            self.assertIn(tile, utils.get_registered_tiles())
+            self.assertIn(tile, utils.get_available_tiles())
 
     def test_replace_nitf_tile(self):
         title = u'Replace NITF tile'
@@ -203,20 +163,6 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
 
         # no easy way to test image_description attribute chan
-
-    def test_add_videocarousel_tile(self):
-        title = u'Add Video Carousel tile'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        tile = u'brasil.gov.tiles.videocarousel'
-        utils.disable_tile(tile)
-
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
-
-        self.assertIn(tile, utils.get_registered_tiles())
-        self.assertIn(tile, utils.get_available_tiles())
 
     def test_install_embedder(self):
         title = u'Install sc.embedder'

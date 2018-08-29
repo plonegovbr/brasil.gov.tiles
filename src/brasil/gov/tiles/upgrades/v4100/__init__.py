@@ -52,29 +52,19 @@ def remove_deprecated_tiles(setup_tool):
         disable_tile(tile)
 
 
-def add_quote_tile(setup_tool):
-    """Add Quote tile."""
-    add_tile(u'brasil.gov.tiles.quote')
+NEW_TILES = [
+    u'brasil.gov.tiles.quote',
+    u'brasil.gov.tiles.potd',
+    u'brasil.gov.tiles.photogallery',
+    u'brasil.gov.tiles.navigation',
+    u'brasil.gov.tiles.videocarousel',
+]
 
 
-def add_potd_tile(setup_tool):
-    """Add Photo of the Day tile."""
-    add_tile(u'brasil.gov.tiles.potd')
-
-
-def add_photogallery_tile(setup_tool):
-    """Add Photo Gallery tile."""
-    add_tile(u'brasil.gov.tiles.photogallery')
-
-
-def add_navigation_tile(setup_tool):
-    """Add Navigation tile."""
-    add_tile(u'brasil.gov.tiles.navigation')
-
-
-def add_videocarousel_tile(setup_tool):
-    """Add Video Carousel tile."""
-    add_tile(u'brasil.gov.tiles.videocarousel')
+def add_new_tiles(setup_tool):
+    """Add new tiles."""
+    for tile in NEW_TILES:
+        add_tile(tile)
 
 
 def replace_nitf_tile(setup_tool):

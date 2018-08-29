@@ -18,23 +18,8 @@
         />
 
     <genericsetup:upgradeStep
-        title="Add POTD tile"
-        handler=".add_potd_tile"
-        />
-
-    <genericsetup:upgradeStep
-        title="Add Quote tile"
-        handler=".add_quote_tile"
-        />
-
-    <genericsetup:upgradeStep
-        title="Add Photo Gallery tile"
-        handler=".add_photogallery_tile"
-        />
-
-    <genericsetup:upgradeStep
-        title="Add Navigation tile"
-        handler=".add_navigation_tile"
+        title="Add new tiles"
+        handler=".add_new_tiles"
         />
 
     <genericsetup:upgradeStep
@@ -45,11 +30,6 @@
     <genericsetup:upgradeStep
         title="Update Banner tile"
         handler=".update_banner_tile"
-        />
-
-    <genericsetup:upgradeStep
-        title="Add Video Carousel tile"
-        handler=".add_videocarousel_tile"
         />
 
     <genericsetup:upgradeStep
