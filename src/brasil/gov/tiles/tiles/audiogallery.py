@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from future.builtins import range  # isort:skip
+from six.moves import range  # noqa: I001
 from brasil.gov.tiles import _ as _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
