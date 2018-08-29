@@ -57,9 +57,9 @@ class GroupCarouselTile(CarouselTile):
         """Return the list of objects stored in the tile."""
         page = []
 
-        for i, item in enumerate(super(GroupCarouselTile, self).results()):
+        for i, item in enumerate(super(GroupCarouselTile, self).results(), start=1):
             page.append(item)
-            if (i + 1) % 4 == 0:
+            if i % 4 == 0:
                 yield page
                 page = []
         if page:
