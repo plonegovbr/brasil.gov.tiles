@@ -6,8 +6,6 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="brasil.gov.tiles">
 
-    <includeDependencies package="." />
-
     <include package="sc.embedder" />
 
     <include package=".tiles" />

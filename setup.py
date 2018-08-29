@@ -44,27 +44,12 @@ setup(
     zip_safe=False,
     install_requires=[
         'Acquisition',
-        # O patch adicionado em configure.zcml espera uma classe presente em
-        # collective.cover.browser.compose.RemoveItemFromListTile, só
-        # só disponível a partir dessa versão.
-        'collective.cover >= 1.3b1',
+        'collective.cover',
         'collective.monkeypatcher',
-        # Passo a herdar do tile de nitf, que só foi disponibilizado a partir
-        # de 2.x.
-        'collective.nitf >= 2.1b2',
-        'collective.polls >= 1.10b1',
+        'collective.nitf',
+        'collective.polls',
         'future',
         'plone.api',
-        # BBB: Adiciona plone.app.referenceablebehavior pois ainda não
-        # estamos no Plone 5 e o release 1.1b1 de collective.cover
-        # remove essa dependência. Ver
-        # https://github.com/collective/collective.cover/commit/798ee6cc62c24cb21dacd92bbba70fdb867b8a4a
-        'plone.app.referenceablebehavior',
-        # BBB: Adiciona plone.app.stagingbehavior pois ainda não
-        # estamos no Plone 5 e release 1.1b1 de collective.cover
-        # remove essa dependência. Ver
-        # https://github.com/collective/collective.cover/commit/651cf0b86b45f9398dabc108a14d5c49f79367bf
-        'plone.app.stagingbehavior',
         'plone.app.uuid',
         'plone.autoform',
         'plone.memoize',
@@ -79,7 +64,6 @@ setup(
         'setuptools',
         'z3c.unconfigure',
         'zExceptions',
-        'zope.browserpage',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',
@@ -91,6 +75,7 @@ setup(
             'mock',
             'plone.api',
             'plone.app.imaging',
+            'plone.app.referenceablebehavior',  # needed by collective.cover
             'plone.app.robotframework',
             'plone.app.testing [robot]',
             'plone.browserlayer',
