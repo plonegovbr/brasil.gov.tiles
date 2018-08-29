@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Usa o `six <https://pypi.python.org/pypi/six>`_ ao invés do ``future`` para compatibilidade futura com o Python 3.
+  [rodfersou]
+
 - Adiciona um tile para mostrar um Carrossel de vídeos.
   [rodfersou]
 

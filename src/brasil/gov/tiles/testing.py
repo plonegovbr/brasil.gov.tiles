@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division  # isort:skip
-from future.builtins import range  # isort:skip
+from six.moves import range  # noqa: I001
 from App.Common import package_home
 from collective.cover.testing import Fixture as CoverFixture
 from io import BytesIO
