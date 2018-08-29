@@ -200,4 +200,16 @@
       i18n:attributes="title; description"
       />
 
+  <plone:tile
+      name="brasil.gov.tiles.videocarousel"
+      for="*"
+      title="Video Carousel"
+      description="A tile that shows a carousel of videos."
+      icon="++resource++collective.cover/img/tile-generic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".videocarousel.IVideoCarouselTile"
+      class=".videocarousel.VideoCarouselTile"
+      permission="zope2.View"
+      />
+
 </configure>

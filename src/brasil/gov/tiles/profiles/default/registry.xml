@@ -18,6 +18,12 @@
       <element>brasil.gov.tiles.quote</element>
       <element>brasil.gov.tiles.photogallery</element>
       <element>brasil.gov.tiles.navigation</element>
+      <element>brasil.gov.tiles.videocarousel</element>
+    </value>
+  </record>
+  <record name="collective.cover.controlpanel.ICoverSettings.searchable_content_types">
+    <value purge="false">
+      <element>sc.embedder</element>
     </value>
   </record>
 </registry>

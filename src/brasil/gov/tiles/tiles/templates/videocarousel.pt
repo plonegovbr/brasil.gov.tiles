@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="governo.mdh.portal">
+  <body tal:define="is_empty view/is_empty">
+    <p tal:condition="python: is_empty and view.is_compose_mode()" i18n:translate="">
+      Add up to <span i18n:name="limit_objects" tal:replace="view/limit"/> objects to the tile.
+    </p>
+
+    <div class="brasil-videocarousel-tile tile-content"
+         tal:condition="not:is_empty"
+         tal:attributes="id string:carousel-${view/id}">
+      <div class="tile-header" tal:condition="view/tile_title">
+        <h2 tal:content="view/tile_title" />
+        <p tal:content="view/tile_description" />
+      </div>
+      <div class="switch-carousel" tal:attributes="data-text view/switch_text"></div>
+      <div class="swiper-container carousel-thumbs">
+        <div class="swiper-wrapper">
+          <tal:pages repeat="page view/results">
+            <div class="swiper-slide">
+              <tal:items repeat="obj page">
+                <div class="swiper-video">
+                    <a class="imag"
+                       tal:attributes="href python:view.get_url(obj);
+                                       data-url python:view.get_url(obj)">
+                        <tal:image define="thumbnail python:view.thumbnail(obj);">
+                          <img  tal:condition="thumbnail"
+                                tal:attributes="src thumbnail/url;
+                                                width thumbnail/width;
+                                                height thumbnail/height;
+                                                alt python:view.get_alt(obj);
+                                                title python:view.get_alt(obj);
+                                                data-url python:view.get_url(obj)">
+                        </tal:image>
+                    </a>
+                    <h4>
+                        <a tal:content="python:view.get_title(obj)"
+                           tal:attributes="href python:view.get_url(obj)">O Touro Ferdinando | Trailer Oficial | Dublado HD</a>
+                    </h4>
+                    <p tal:content="python:view.get_description(obj)">Vivamus lacinia turpis eros, in pellentesque neque tristique ac. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                </div>
+              </tal:items>
+            </div>
+          </tal:pages>
+        </div>
+        <div class="swiper-button-next swiper-button-black"></div>
+        <div class="swiper-button-prev swiper-button-black"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="tile-footer" tal:condition="view/more_link">
+        <a tal:attributes="href view/more_link/href" tal:content="view/more_link/text"></a>
+      </div>
+    </div>
+  </body>
+</html>

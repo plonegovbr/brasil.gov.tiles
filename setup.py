@@ -75,6 +75,7 @@ setup(
         'Products.CMFQuickInstallerTool',
         'Products.GenericSetup',
         'Products.PythonScripts',
+        'sc.embedder',
         'setuptools',
         'z3c.unconfigure',
         'zExceptions',

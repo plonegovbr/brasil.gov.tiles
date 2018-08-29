@@ -8,6 +8,8 @@
 
     <includeDependencies package="." />
 
+    <include package="sc.embedder" />
+
     <include package=".tiles" />
 
     <!-- Profiles de Generic Setup -->

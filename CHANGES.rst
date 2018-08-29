@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona um tile para mostrar um Carrossel de vídeos.
+  [rodfersou]
+
 - Remove override do tile de banner.
   [hvelarde]
 
