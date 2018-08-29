@@ -1,3 +1,6 @@
+import Swiper from 'swiper/dist/js/swiper.js';
+
+
 export default class HighlightsCarouselTile {
   constructor(tile) {
     this.tile = tile;
