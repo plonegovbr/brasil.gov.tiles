@@ -130,6 +130,15 @@ Mostra um carrossel de vídeos.
     :height: 367px
     :width: 1253px
 
+Carrossel de grupo
+^^^^^^^^^^^^^^^^^^
+Mostra um carrossel de itens com imagens.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/groupcarousel.png
+    :align: center
+    :height: 393px
+    :width: 800px
+
 Desenvolvimento
 ---------------
 

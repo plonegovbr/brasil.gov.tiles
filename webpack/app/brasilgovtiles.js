@@ -7,6 +7,7 @@ import NavigationTile from './js/tiles/navigation.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
 import POTDTile from './js/tiles/potd.js';
 import VideoResponsiveResize from './js/tiles/videogallery.js';
+import GroupCarouselTile from './js/tiles/groupcarousel.js';
 
 
 // https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
@@ -46,6 +47,9 @@ $(() => {
   for (let videocarousel of $('.brasil-videocarousel-tile')) {
     new VideoCarouselTile(videocarousel);
   }
+  for (let carousel of $('.brasil-groupcarousel-tile')) {
+    new GroupCarouselTile(carousel);
+  }
 });
 
 
@@ -69,5 +73,6 @@ export default {
   POTDTile,
   PhotoGalleryTile,
   NavigationTile,
+  GroupCarouselTile,
 }
 

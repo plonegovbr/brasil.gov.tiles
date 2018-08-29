@@ -58,6 +58,7 @@ NEW_TILES = [
     u'brasil.gov.tiles.photogallery',
     u'brasil.gov.tiles.navigation',
     u'brasil.gov.tiles.videocarousel',
+    u'brasil.gov.tiles.groupcarousel',
 ]
 
 

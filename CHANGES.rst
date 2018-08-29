@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Adiciona um tile para mostrar um Carrossel de grupo.
+  [claytonc]
+
 - Remove override do tile de embed.
   [hvelarde]
 
