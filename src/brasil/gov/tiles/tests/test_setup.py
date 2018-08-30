@@ -18,7 +18,6 @@ DEPENDENCIES = [
 ]
 TILES = [
     'collective.polls',
-    'destaque',
     'videogallery',
     'audio',
     'audiogallery',
