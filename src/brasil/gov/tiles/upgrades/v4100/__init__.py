@@ -43,6 +43,7 @@ def update_static_resources(setup_tool):
 
 # a list of tile tuples (deprecated, replacement)
 DEPRECATED_TILES = [
+    (u'banner_rotativo', None),
     (u'em_destaque', None),
     (u'mediacarousel', None),
     (u'nitf', u'collective.nitf'),

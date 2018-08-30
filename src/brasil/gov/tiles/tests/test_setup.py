@@ -24,7 +24,6 @@ TILES = [
     'audiogallery',
     'standaloneheader',
     'video',
-    'banner_rotativo',
     'collective.cover.carousel',
 ]
 
