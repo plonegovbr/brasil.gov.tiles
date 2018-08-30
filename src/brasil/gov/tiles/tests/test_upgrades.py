@@ -44,7 +44,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 8)
+        self.assertEqual(steps, 9)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission

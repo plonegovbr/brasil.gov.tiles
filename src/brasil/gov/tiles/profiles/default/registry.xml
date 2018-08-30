@@ -16,6 +16,7 @@
       <element>brasil.gov.tiles.navigation</element>
       <element>brasil.gov.tiles.videocarousel</element>
       <element>brasil.gov.tiles.groupcarousel</element>
+      <element>brasil.gov.tiles.highlightscarousel</element>
     </value>
   </record>
   <record name="collective.cover.controlpanel.ICoverSettings.searchable_content_types">
