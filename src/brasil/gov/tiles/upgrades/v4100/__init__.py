@@ -46,6 +46,7 @@ DEPRECATED_TILES = [
     (u'em_destaque', None),
     (u'mediacarousel', None),
     (u'nitf', u'collective.nitf'),
+    (u'social', None),
 ]
 
 

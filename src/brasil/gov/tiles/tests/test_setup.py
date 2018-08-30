@@ -22,7 +22,6 @@ TILES = [
     'videogallery',
     'audio',
     'audiogallery',
-    'social',
     'standaloneheader',
     'video',
     'banner_rotativo',

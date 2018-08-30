@@ -6,9 +6,9 @@ Changelog
 
 .. Warning::
     Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
-    Esta versão remove os tiles Em destaque e Carrossel de mídia dos layouts existentes pois eles não são utilizados no IDG v2.
+    Esta versão remove os tiles Em destaque, Carrossel de mídia e Social dos layouts existentes pois eles não são utilizados no IDG v2.
 
-- Remove os tiles Em destaque e Carrossel de mídia.
+- Remove os tiles Em destaque, Carrossel de mídia e Social.
   [hvelarde]
 
 - Adiciona um tile para mostrar um Carrossel de grupo.
