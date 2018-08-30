@@ -22,7 +22,6 @@ TILES = [
     'videogallery',
     'audio',
     'audiogallery',
-    'mediacarousel',
     'social',
     'standaloneheader',
     'video',

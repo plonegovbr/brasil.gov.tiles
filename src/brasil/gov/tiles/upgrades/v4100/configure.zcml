@@ -13,8 +13,8 @@
         />
 
     <genericsetup:upgradeStep
-        title="Remove deprecated tiles"
-        handler=".remove_deprecated_tiles"
+        title="Disable deprecated tiles"
+        handler=".disable_deprecated_tiles"
         />
 
     <genericsetup:upgradeStep
@@ -23,14 +23,9 @@
         />
 
     <genericsetup:upgradeStep
-        title="Replace NITF tile"
-        handler=".replace_nitf_tile"
-        />
-
-    <genericsetup:upgradeStep
-        title="Remove Em destaque tile"
-        description="The tile is not used on IDG v2 and there's no substitute for it."
-        handler=".remove_em_destaque_tile"
+        title="Migrate deprecated tiles"
+        description="Tiles with a substitute will be migrated; tiles with no substitute will be removed."
+        handler=".migrate_deprecated_tiles"
         />
 
     <genericsetup:upgradeStep

@@ -41,16 +41,18 @@ def update_static_resources(setup_tool):
     logger.info('JavaScript resources were updated')
 
 
+# a list of tile tuples (deprecated, replacement)
 DEPRECATED_TILES = [
-    u'em_destaque',
-    u'nitf',
+    (u'em_destaque', None),
+    (u'mediacarousel', None),
+    (u'nitf', u'collective.nitf'),
 ]
 
 
-def remove_deprecated_tiles(setup_tool):
-    """Remove deprecated tiles."""
+def disable_deprecated_tiles(setup_tool):
+    """Disable deprecated tiles."""
     from brasil.gov.tiles.utils import disable_tile
-    for tile in DEPRECATED_TILES:
+    for tile, _ in DEPRECATED_TILES:
         disable_tile(tile)
 
 
@@ -70,41 +72,30 @@ def add_new_tiles(setup_tool):
         add_tile(tile)
 
 
-def replace_nitf_tile(setup_tool):
-    """Replace NITF tile."""
-    from brasil.gov.tiles.upgrades import replace_tile
-    tile = u'collective.nitf'
-    add_tile(tile)
+def migrate_deprecated_tiles(setup_tool):
+    """Migrate deprecated tiles.
 
-    logger.info('Replacing NITF tile on collective.cover objects')
-    for obj in get_valid_objects(portal_type='collective.cover.content'):
-        try:
-            layout = json.loads(obj.cover_layout)
-        except TypeError:
-            continue  # empty layout?
-
-        layout = replace_tile(layout, 'nitf', tile)
-        obj.cover_layout = json.dumps(layout)
-
-        replace_attribute(obj, tile, 'image_description', 'alt_text')
-
-    logger.info('Done')
-
-
-def remove_em_destaque_tile(setup_tool):
-    """Remove Em destaque tile.
-    The tile is not used on IDG v2 and there's no substitute for it.
+    - tiles with a substitute will be migrated
+    - tiles with no substitute will be removed
     """
     from brasil.gov.tiles.upgrades import remove_tile
-    logger.info('Removing Em destaque tile from collective.cover objects')
+    from brasil.gov.tiles.upgrades import replace_tile
+
+    logger.info('Migrating IDG tiles on collective.cover objects')
+    logger.warn('All tiles with no substitute will be removed from layouts')
     for obj in get_valid_objects(portal_type='collective.cover.content'):
         try:
             layout = json.loads(obj.cover_layout)
         except TypeError:
             continue  # empty layout?
 
-        layout = remove_tile(layout, 'em_destaque')
-        obj.cover_layout = json.dumps(layout)
+        for old, new in DEPRECATED_TILES:
+            if new is None:
+                layout = remove_tile(layout, old)
+            else:
+                layout = replace_tile(layout, old, new)
+            obj.cover_layout = json.dumps(layout)
+            replace_attribute(obj, new, 'image_description', 'alt_text')
 
     logger.info('Done')
 
