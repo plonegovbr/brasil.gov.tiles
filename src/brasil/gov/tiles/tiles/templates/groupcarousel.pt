@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+  <body tal:define="is_empty view/is_empty">
+    <p tal:condition="python: is_empty and view.is_compose_mode()" i18n:translate="">
+      Add up to <span i18n:name="limit_objects" tal:replace="view/limit"/> objects to the tile.
+    </p>
+
+    <div class="brasil-groupcarousel-tile tile-content"
+         tal:condition="not:is_empty"
+         tal:attributes="id string:carousel-${view/id}">
+      <div class="tile-header" tal:condition="view/tile_title">
+        <h2 tal:content="view/tile_title" />
+        <p tal:content="view/description" />
+      </div>
+      <div class="switch-carousel" tal:attributes="data-text view/switch_text"></div>
+      <div class="swiper-container carousel-thumbs">
+        <div class="swiper-wrapper">
+          <tal:pages repeat="page view/results">
+            <div class="swiper-slide">
+              <tal:items repeat="obj page">
+                <div class="carousel-item"
+                     tal:attributes="data-tile-id view/id;
+                                     data-content-type obj/portal_type;
+                                     data-content-uuid python:view.get_uuid(obj)">
+                  <tal:image define="thumbnail python:view.thumbnail(obj);"
+                             condition="thumbnail">
+                    <a tal:attributes="href python:view.get_url(obj)">
+                      <img tal:attributes="src thumbnail/url;
+                                           width thumbnail/width;
+                                           height thumbnail/height;
+                                           class view/get_image_position;
+                                           alt python:view.get_alt(obj);" />
+                    </a>
+                  </tal:image>
+                  <h2>
+                    <a tal:attributes="href python:view.get_url(obj);"
+                       tal:content="python:view.get_title(obj)" />
+                  </h2>
+                  <p tal:content="python:view.get_description(obj)" />
+                </div>
+              </tal:items>
+            </div>
+          </tal:pages>
+        </div>
+        <div class="swiper-button-next swiper-button-black"></div>
+        <div class="swiper-button-prev swiper-button-black"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="tile-footer" tal:condition="view/more_link">
+        <a tal:attributes="href view/more_link/href" tal:content="view/more_link/text"></a>
+      </div>
+    </div>
+  </body>
+</html>

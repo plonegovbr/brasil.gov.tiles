@@ -428,3 +428,14 @@ msgstr ""
 msgid "unmute"
 msgstr ""
 
+#: tiles/configure.zcml
+msgid "Group Carousel"
+msgstr ""
+
+#: ./tiles/groupcarousel.py:33
+msgid "msg_short_name_groupcarousel"
+msgstr ""
+
+#: ./tiles/templates/groupcarousel.pt:8
+msgid "Add up to ${limit_objects} objects to the tile."
+msgstr ""
