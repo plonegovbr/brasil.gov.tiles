@@ -2,15 +2,14 @@
 from brasil.gov.tiles import _
 from collective.cover.interfaces import ITileEditForm
 from collective.cover.tiles.carousel import CarouselTile
-from collective.cover.tiles.list import IListTile
-from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWidget
+from collective.cover.tiles.carousel import ICarouselTile
 from plone.autoform import directives as form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
 
 
-class IGroupCarouselTile(IListTile):
+class IGroupCarouselTile(ICarouselTile):
     """Display a carousel of items."""
 
     tile_description = schema.Text(title=_(u'Tile Description'), required=False)
@@ -21,8 +20,7 @@ class IGroupCarouselTile(IListTile):
     form.omitted('switch_text')
     form.no_omit(ITileEditForm, 'switch_text')
 
-    form.no_omit(ITileEditForm, 'uuids')
-    form.widget(uuids=TextLinesSortableFieldWidget)
+    form.omitted('autoplay')
 
 
 @implementer(IGroupCarouselTile)
@@ -50,7 +48,6 @@ class GroupCarouselTile(CarouselTile):
         :param obj: [required] The object to be added
         :type obj: Content object
         """
-        super(GroupCarouselTile, self).populate_with_object(obj)  # check permission
         self.populate_with_uuids([self.get_uuid(obj)])
 
     def results(self):
@@ -64,11 +61,6 @@ class GroupCarouselTile(CarouselTile):
                 page = []
         if page:
             yield page
-
-    @staticmethod
-    def autoplay():
-        """Method for override acquired in inheritance."""
-        return False
 
     def is_empty(self):
         """Check if the tile is empty."""
