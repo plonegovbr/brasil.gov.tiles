@@ -56,18 +56,6 @@
       />
 
   <plone:tile
-      name="social"
-      title="Social"
-      description="social streams, from twitter and facebook."
-      add_permission="cmf.ModifyPortalContent"
-      schema=".social.ISocialTile"
-      class=".social.SocialTile"
-      permission="zope2.View"
-      for="*"
-      i18n:attributes="title; description"
-      />
-
-  <plone:tile
       name="standaloneheader"
       title="Header"
       description="Header tile, the element dropped populate the data."
