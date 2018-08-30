@@ -1,6 +1,5 @@
 import Albuns from './js/tiles/albuns.js';
 import AudioGallery from './js/tiles/audiogallery.js';
-import { BannerRotativo, BannerRotativoCompor } from './js/tiles/banner_rotativo.js';
 import VideoCarouselTile from './js/tiles/videocarousel.js';
 import NavigationTile from './js/tiles/navigation.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
@@ -43,11 +42,6 @@ $(() => {
 
 
 $(window).load(() => {
-  if ($('#tile_banner_rotativo').length > 0) {
-    BannerRotativo.init();
-    BannerRotativoCompor.init();
-    BannerRotativo.resizeAlturaBannerRotativo();
-  }
   Albuns.carrossel();
 });
 
@@ -55,12 +49,9 @@ $(window).load(() => {
 export default {
   Albuns,
   AudioGallery,
-  BannerRotativo,
-  BannerRotativoCompor,
   VideoResponsiveResize,
   POTDTile,
   PhotoGalleryTile,
   NavigationTile,
   GroupCarouselTile,
 }
-

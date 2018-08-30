@@ -45,7 +45,6 @@ setup(
     install_requires=[
         'Acquisition',
         'collective.cover',
-        'collective.monkeypatcher',
         'collective.nitf',
         'collective.polls',
         'plone.api',
@@ -58,12 +57,10 @@ setup(
         'Products.CMFPlone >=4.3',
         'Products.CMFQuickInstallerTool',
         'Products.GenericSetup',
-        'Products.PythonScripts',
         'sc.embedder',
         'setuptools',
         'six',
         'z3c.unconfigure',
-        'zExceptions',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',
@@ -74,7 +71,6 @@ setup(
             'collective.cover [test]',
             'mock',
             'plone.api',
-            'plone.app.imaging',
             'plone.app.referenceablebehavior',  # needed by collective.cover
             'plone.app.robotframework',
             'plone.app.testing [robot]',
