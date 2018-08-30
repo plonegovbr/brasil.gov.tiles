@@ -28,7 +28,7 @@
                   <tal:image define="thumbnail python:view.thumbnail(obj);"
                              condition="thumbnail">
                     <a tal:attributes="href python:view.get_url(obj)">
-                      <img tal:attributes="src thumbnail/url|string:${item/absolute_url}/download;
+                      <img tal:attributes="src thumbnail/url;
                                            width thumbnail/width;
                                            height thumbnail/height;
                                            class view/get_image_position;
