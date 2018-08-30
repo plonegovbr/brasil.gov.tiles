@@ -3,7 +3,6 @@ from brasil.gov.tiles.logger import logger
 from brasil.gov.tiles.upgrades import add_tile
 from brasil.gov.tiles.upgrades import get_valid_objects
 from brasil.gov.tiles.upgrades import replace_attribute
-from brasil.gov.tiles.upgrades import replace_tile
 from collective.cover.controlpanel import ICoverSettings
 from plone import api
 
@@ -42,7 +41,10 @@ def update_static_resources(setup_tool):
     logger.info('JavaScript resources were updated')
 
 
-DEPRECATED_TILES = [u'nitf']
+DEPRECATED_TILES = [
+    u'em_destaque',
+    u'nitf',
+]
 
 
 def remove_deprecated_tiles(setup_tool):
@@ -70,6 +72,7 @@ def add_new_tiles(setup_tool):
 
 def replace_nitf_tile(setup_tool):
     """Replace NITF tile."""
+    from brasil.gov.tiles.upgrades import replace_tile
     tile = u'collective.nitf'
     add_tile(tile)
 
@@ -84,6 +87,24 @@ def replace_nitf_tile(setup_tool):
         obj.cover_layout = json.dumps(layout)
 
         replace_attribute(obj, tile, 'image_description', 'alt_text')
+
+    logger.info('Done')
+
+
+def remove_em_destaque_tile(setup_tool):
+    """Remove Em destaque tile.
+    The tile is not used on IDG v2 and there's no substitute for it.
+    """
+    from brasil.gov.tiles.upgrades import remove_tile
+    logger.info('Removing Em destaque tile from collective.cover objects')
+    for obj in get_valid_objects(portal_type='collective.cover.content'):
+        try:
+            layout = json.loads(obj.cover_layout)
+        except TypeError:
+            continue  # empty layout?
+
+        layout = remove_tile(layout, 'em_destaque')
+        obj.cover_layout = json.dumps(layout)
 
     logger.info('Done')
 

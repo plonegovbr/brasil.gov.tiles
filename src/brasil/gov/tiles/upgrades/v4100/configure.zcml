@@ -28,6 +28,12 @@
         />
 
     <genericsetup:upgradeStep
+        title="Remove Em destaque tile"
+        description="The tile is not used on IDG v2 and there's no substitute for it."
+        handler=".remove_em_destaque_tile"
+        />
+
+    <genericsetup:upgradeStep
         title="Update Banner tile"
         handler=".update_banner_tile"
         />

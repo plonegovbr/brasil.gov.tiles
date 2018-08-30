@@ -55,6 +55,19 @@ def replace_tile(layout, old, new):
     return new_layout
 
 
+def remove_tile(layout, tile_type):
+    """Remove tile type from a layout."""
+    new_layout = []
+    for e in layout:
+        if e.get('tile-type') == tile_type:
+            continue  # don't add the tile to the new layout
+        if e['type'] in ('row', 'group'):
+            if 'children' in e:
+                e['children'] = remove_tile(e['children'], tile_type)
+        new_layout.append(e)
+    return new_layout
+
+
 def replace_attribute(obj, type_, old, new):
     """Replace attribute on tiles."""
     from plone.tiles.interfaces import ITileDataManager
