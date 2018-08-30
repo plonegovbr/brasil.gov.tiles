@@ -116,8 +116,9 @@ class Fixture(CoverFixture):
             image = NamedBlobImage(generate_jpeg(50, 50), 'image/jpeg', u'image.jpg')
             portal['multimedia'].image = image
             portal['my-news-folder'].reindexObject()
-            portal['my-news-folder']['my-nitf-with-image'].image = image
             portal['my-news-folder']['my-nitf-with-image'].reindexObject()
+            portal['my-news-folder']['my-nitf-with-image']['my-image'].image = image
+            portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
             portal['my-news-folder']['my-nitf-without-image'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
             portal['multimedia'].reindexObject()

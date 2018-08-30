@@ -4,7 +4,6 @@ from collective.cover.interfaces import ITileEditForm
 from collective.cover.tiles.carousel import CarouselTile
 from collective.cover.tiles.carousel import ICarouselTile
 from plone.autoform import directives as form
-from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
@@ -35,23 +34,3 @@ class HighlightsCarousel(CarouselTile):
     @property
     def tile_description(self):
         return self.data['tile_description']
-
-    def get_subtitle(self, item):
-        """Get the subtitle of the item, or the custom subtitle if set.
-
-        :param item: [required] The item for which we want the subtitle
-        :type item: Content object
-        :returns: the item subtitle
-        :rtype: unicode
-        """
-        # First we get the subtitle for the item itself
-        subtitle = getattr(item, 'subtitle', None)
-        uuid = self.get_uuid(item)
-        data_mgr = ITileDataManager(self)
-        data = data_mgr.get()
-        uuids = data['uuids']
-        if uuid in uuids:
-            if uuids[uuid].get('custom_subtitle', u''):
-                # If we had a custom subtitle set, then get that
-                subtitle = uuids[uuid].get('custom_subtitle')
-        return subtitle
