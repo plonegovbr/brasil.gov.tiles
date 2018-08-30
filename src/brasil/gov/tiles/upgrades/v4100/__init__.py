@@ -48,6 +48,7 @@ DEPRECATED_TILES = [
     (u'banner_rotativo', None),
     (u'collective.cover.banner', u'collective.cover.banner'),
     (u'collective.cover.basic', u'collective.cover.basic'),
+    (u'destaque', None),
     (u'em_destaque', None),
     (u'mediacarousel', None),
     (u'nitf', u'collective.nitf'),
