@@ -1,7 +1,6 @@
 import Albuns from './js/tiles/albuns.js';
 import AudioGallery from './js/tiles/audiogallery.js';
 import { BannerRotativo, BannerRotativoCompor } from './js/tiles/banner_rotativo.js';
-import CarouselResponsiveResize from './js/tiles/mediacarousel.js';
 import VideoCarouselTile from './js/tiles/videocarousel.js';
 import NavigationTile from './js/tiles/navigation.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
@@ -14,16 +13,6 @@ import GroupCarouselTile from './js/tiles/groupcarousel.js';
 jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
 $(() => {
-  if ($('.mediacarousel-tile')[0] !== undefined) {
-    let resize = function () {
-      let carouselResponsiveResize = new CarouselResponsiveResize();
-      carouselResponsiveResize.resize();
-    }
-    $(window).resize(function () {
-      resize();
-    });
-    resize();
-  }
   if ($('.videogallery-tile')[0] !== undefined) {
     let resize = function () {
       let videoResponsiveResize = new VideoResponsiveResize();
@@ -68,7 +57,6 @@ export default {
   AudioGallery,
   BannerRotativo,
   BannerRotativoCompor,
-  CarouselResponsiveResize,
   VideoResponsiveResize,
   POTDTile,
   PhotoGalleryTile,
