@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Remove tile Em destaque.
+  [hvelarde]
+
 - Adiciona um tile para mostrar um Carrossel de grupo.
   [claytonc]
 

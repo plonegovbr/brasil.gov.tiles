@@ -105,18 +105,6 @@
 
 
   <plone:tile
-      name="em_destaque"
-      title="Featured"
-      description="Tile which displays a line with list of highlights"
-      add_permission="cmf.ModifyPortalContent"
-      schema=".em_destaque.IEmDestaqueTile"
-      class=".em_destaque.EmDestaqueTile"
-      permission="zope2.View"
-      for="*"
-      i18n:attributes="title; description"
-      />
-
-  <plone:tile
       name="banner_rotativo"
       title="Rotating Banner"
       description="Tile which displays a rotating banner with links and images"
