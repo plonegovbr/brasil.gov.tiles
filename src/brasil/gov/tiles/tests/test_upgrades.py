@@ -44,7 +44,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 11)
+        self.assertEqual(steps, 9)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -102,15 +102,15 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/swiper.min.js', js_ids)
 
-    def test_remove_deprecated_tiles(self):
-        title = u'Remove deprecated tiles'
+    def test_disable_deprecated_tiles(self):
+        title = u'Disable deprecated tiles'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        # no easy way to test tile removal: raises ConstraintNotSatisfied
+        # no easy way to test it as adding them raises ConstraintNotSatisfied
 
     def test_add_new_tiles(self):
         title = u'Add new tiles'
@@ -128,62 +128,37 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
             self.assertIn(tile, utils.get_registered_tiles())
             self.assertIn(tile, utils.get_available_tiles())
 
-    def test_replace_nitf_tile(self):
-        title = u'Replace NITF tile'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
-
-        tile = u'collective.nitf'
-        utils.disable_tile(tile)
-
-        # add object with an old tile on its layout
-        with api.env.adopt_roles(['Manager']):
-            obj = api.content.create(
-                self.portal, 'collective.cover.content', 'foo')
-        obj.cover_layout = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "nitf", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
-        obj.reindexObject()
-
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
-
-        self.assertIn(tile, utils.get_registered_tiles())
-        self.assertIn(tile, utils.get_available_tiles())
-
-        expected = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.nitf", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
-        self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
-
-        # no easy way to test image_description attribute change
-
-    def test_remove_em_destaque_tile(self):
-        title = u'Remove Em destaque tile'
+    def test_migrate_deprecated_tiles(self):
+        title = u'Migrate deprecated tiles'
         step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         # add object with an old tile on its layout
+        from brasil.gov.tiles.upgrades.v4100 import DEPRECATED_TILES
         with api.env.adopt_roles(['Manager']):
             obj = api.content.create(
                 self.portal, 'collective.cover.content', 'foo')
-        obj.cover_layout = '[{"type": "row", "children": [{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}]}, {"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{"tile-type": "em_destaque", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}]}]}]'  # noqa: E501
-        obj.reindexObject()
 
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
+        for old, new in DEPRECATED_TILES:
+            layout = '[{{"type": "row", "children": [{{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}}]}}, {{"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{{"tile-type": "{0}", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}}]}}]}}]'  # noqa: E501
+            obj.cover_layout = layout.format(old)
+            obj.reindexObject()
 
-        self.assertEqual(obj.list_tiles('em_destaque'), [])  # tile not listed
-        expected = '[{"type": "row", "children": [{"children": [{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}], "type": "group", "id": "group1", "roles": ["Manager"], "column-size": 6}, {"type": "group", "children": [], "roles": ["Manager"], "column-size": 6}]}]'  # noqa: E501
-        self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
+            # run the upgrade step to validate the update
+            self._do_upgrade(step)
 
-        # no easy way to test image_description attribute change
+            # self.assertEqual(obj.list_tiles(old), [])  # tile not listed
+            if new is None:
+                # tile must be removed from layout
+                layout = '[{{"type": "row", "children": [{{"children": [{{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}}], "type": "group", "id": "group1", "roles": ["Manager"], "column-size": 6}}, {{"type": "group", "children": [], "roles": ["Manager"], "column-size": 6}}]}}]'  # noqa: E501
+            else:
+                # tile must be migrated in layout
+                layout = '[{{"type": "row", "children": [{{"id": "group1", "type": "group", "column-size": 6, "roles": ["Manager"], "children": [{{"tile-type": "collective.cover.basic", "type": "tile", "id": "4ebc5e6678044918b76280ec0204041a"}}]}}, {{"type": "group", "column-size": 6, "roles": ["Manager"], "children": [{{"tile-type": "{0}", "type": "tile", "id": "7d68fd4cf0e34073aea99568f1e8eef6"}}]}}]}}]'  # noqa: E501
 
-    def test_replace_mediacarousel_tile(self):
-        title = u'Replace Media Carousel tile'
-        step = self._get_upgrade_step_by_title(title)
-        self.assertIsNotNone(step)
+            expected = layout.format(new)
+            self.assertEqual(json.loads(obj.cover_layout), json.loads(expected))
 
-        # run the upgrade step to validate the update
-        self._do_upgrade(step)
-
-        self.fail('TODO: Not Implemented')
+            # TODO: no easy way to test image_description attribute change
 
     def test_update_tile(self):
         title = u'Update Banner tile'
@@ -193,7 +168,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
-        # no easy way to test image_description attribute chan
+        # no easy way to test image_description attribute change
 
     def test_install_embedder(self):
         title = u'Install sc.embedder'

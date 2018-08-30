@@ -68,10 +68,13 @@ def remove_tile(layout, tile_type):
     return new_layout
 
 
-def replace_attribute(obj, type_, old, new):
+def replace_attribute(obj, tile_type, old, new):
     """Replace attribute on tiles."""
+    if tile_type is None:
+        return
+
     from plone.tiles.interfaces import ITileDataManager
-    for id_ in obj.list_tiles(type_):
+    for id_ in obj.list_tiles(tile_type):
         tile = obj.get_tile(id_)
         data_mgr = ITileDataManager(tile)
         data = data_mgr.get()
