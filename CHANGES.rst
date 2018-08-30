@@ -4,6 +4,13 @@ Changelog
 2.0a1 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+.. Warning::
+    Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
+    Esta versão remove o tile Em destaque dos layouts existentes pois ele não é utilizado no IDG v2.
+
+- Remove tile Em destaque.
+  [hvelarde]
+
 - Adiciona um tile para mostrar um Carrossel de grupo.
   [claytonc]
 

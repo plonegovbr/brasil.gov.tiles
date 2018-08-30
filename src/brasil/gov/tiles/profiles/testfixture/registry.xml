@@ -6,7 +6,6 @@
           interface="collective.cover.controlpanel.ICoverSettings"
           name="collective.cover.controlpanel.ICoverSettings.available_tiles">
     <value purge="true">
-      <element>em_destaque</element>
       <element>collective.polls</element>
       <element>destaque</element>
       <element>videogallery</element>

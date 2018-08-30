@@ -17,7 +17,6 @@ DEPENDENCIES = [
     'collective.polls',
 ]
 TILES = [
-    'em_destaque',
     'collective.polls',
     'destaque',
     'videogallery',
