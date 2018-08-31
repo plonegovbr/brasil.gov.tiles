@@ -139,6 +139,15 @@ Mostra um carrossel de itens com imagens.
     :height: 393px
     :width: 800px
 
+Carrossel de destaques
+^^^^^^^^^^^^^^^^^^^^^^
+Mostra um carrossel de imagens em destaques.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/highlightscarousel.png
+    :align: center
+    :height: 550px
+    :width: 1000px
+
 Desenvolvimento
 ---------------
 

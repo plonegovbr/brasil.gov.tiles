@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="brasil.gov.tiles">
+  <body tal:define="is_empty view/is_empty">
+
+    <p tal:condition="python: is_empty and view.is_compose_mode()" i18n:translate="">
+        This carousel is empty; open the content chooser and drag-and-drop some items here.
+    </p>
+
+    <div class="brasil-highlightscarousel-tile tile-content"
+         tal:attributes="id string:carousel-${view/id}"
+         tal:condition="not:is_empty">
+      <div class="swiper-container carousel-top">
+        <div class="carousel-global-information">
+          <div class="carousel-title" tal:content="view/tile_title" />
+          <div class="carousel-description" tal:content="view/tile_description" />
+        </div>
+        <div class="swiper-wrapper">
+          <tal:items repeat="obj view/results">
+            <div class="swiper-slide"
+                 tal:attributes="data-tile-id view/id;
+                                 data-content-type obj/portal_type;
+                                 data-content-uuid python:view.get_uuid(obj)">
+              <tal:image define="scales obj/@@images;
+                                 thumbnail python:scales.scale('image', scale=None)"
+                         condition="thumbnail">
+                <img tal:attributes="src thumbnail/url|string:${obj/absolute_url}/download;
+                                     class string:carousel-image ${view/get_image_position};
+                                     alt python:view.get_alt(obj);" />
+              </tal:image>
+              <div class="carousel-information">
+                <div class="carousel-title" tal:content="python:view.get_title(obj)" />
+                <div class="carousel-description" tal:content="python:view.get_description(obj)" />
+                <a class="carousel-more" tal:attributes="href python:view.get_url(obj)">Saiba mais</a>
+              </div>
+            </div>
+          </tal:items>
+        </div>
+      </div>
+      <div class="carousel-thumbs-container">
+        <div class="carousel-thumbs swiper-container">
+          <div class="swiper-wrapper">
+            <tal:items repeat="obj view/results">
+              <div class="swiper-slide">
+                <tal:image define="scales obj/@@images;
+                                   thumbnail python:scales.scale('image', scale='mini')"
+                           condition="thumbnail">
+                  <img tal:attributes="src thumbnail/url|string:${item/absolute_url}/download;
+                                       width thumbnail/width;
+                                       height thumbnail/height;
+                                       class string:carousel-image ${view/get_image_position};
+                                       alt python:view.get_alt(obj);" />
+                </tal:image>
+                <div class="thumb-title" tal:content="python:view.get_title(obj)" />
+              </div>
+            </tal:items>
+          </div>
+        </div>
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
+    </div>
+  </body>
+</html>

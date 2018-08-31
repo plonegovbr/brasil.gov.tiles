@@ -176,4 +176,17 @@
       i18n:attributes="title; description"
       />
 
+  <plone:tile
+      name="brasil.gov.tiles.highlightscarousel"
+      title="Highlights Carousel"
+      description="Display an highlights carousel."
+      add_permission="cmf.ModifyPortalContent"
+      schema=".highlightscarousel.IHighlightsCarousel"
+      icon="++resource++collective.cover/img/tile-carousel.png"
+      class=".highlightscarousel.HighlightsCarousel"
+      permission="zope2.View"
+      for="*"
+      i18n:attributes="title; description"
+      />
+
 </configure>

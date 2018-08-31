@@ -71,6 +71,7 @@ NEW_TILES = [
     u'brasil.gov.tiles.navigation',
     u'brasil.gov.tiles.videocarousel',
     u'brasil.gov.tiles.groupcarousel',
+    u'brasil.gov.tiles.highlightscarousel',
 ]
 
 
@@ -127,3 +128,12 @@ def make_embedder_searchable(setup_tool):
         api.portal.set_registry_record(value=searchable_content_types, **record)
         logger.info(
             'Embedder was made searchable in collective.cover configlet')
+
+
+def install_imagecropping_manager(setup_tool):
+    """Install plone.app.imagecropping."""
+    addon = 'plone.app.imagecropping'
+    qi = api.portal.get_tool('portal_quickinstaller')
+    if not qi.isProductInstalled(addon):
+        qi.installProduct(addon)
+        logger.info(addon + ' was installed')
