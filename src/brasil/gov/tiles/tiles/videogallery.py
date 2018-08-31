@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from six.moves import range  # noqa: I001
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
@@ -14,7 +14,8 @@ from zope.interface import implementer
 
 
 class IVideoGalleryTile(IListTile):
-    """
+    """A droppable tile that shows a gallery of videos with
+    descriptions and links.
     """
 
     header = schema.TextLine(
@@ -61,6 +62,9 @@ class IVideoGalleryTile(IListTile):
 
 @implementer(IVideoGalleryTile)
 class VideoGalleryTile(ListTile):
+    """A droppable tile that shows a gallery of videos with
+    descriptions and links.
+    """
 
     index = ViewPageTemplateFile('templates/videogallery.pt')
     is_configurable = True
@@ -83,7 +87,8 @@ class VideoGalleryTile(ListTile):
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
-    def get_uuid(self, obj):
+    @staticmethod
+    def get_uuid(obj):
         return api.content.get_uuid(obj)
 
     def thumbnail(self, item):
@@ -91,9 +96,9 @@ class VideoGalleryTile(ListTile):
             scales = item.restrictedTraverse('@@images')
             return scales.scale('image', width=80, height=60)
 
-    def accepted_ct(self):
-        """ Return a list of content types accepted by the tile.
-        """
+    @staticmethod
+    def accepted_ct():
+        """Return a list of content types accepted by the tile."""
         return ['Collection', 'Folder']
 
     def get_elements(self, obj):

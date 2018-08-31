@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone import api
@@ -10,6 +10,7 @@ from zope.interface import implementer
 
 
 class IHeaderTile(IPersistentCoverTile):
+    """Header tile, the element dropped populate the data."""
 
     title = schema.TextLine(
         title=_(u'Title'),
@@ -40,6 +41,7 @@ class IHeaderTile(IPersistentCoverTile):
 
 @implementer(IPersistentCoverTile)
 class HeaderTile(PersistentCoverTile):
+    """Header tile, the element dropped populate the data."""
 
     index = ViewPageTemplateFile('templates/header.pt')
     is_configurable = True

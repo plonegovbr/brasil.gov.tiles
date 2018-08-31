@@ -9,11 +9,11 @@ from plone.autoform import directives as form
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.interface import implementer
 
 
 class IAlbunsTile(IPersistentCoverTile):
-    """
-    """
+    """Tile which displays a gallery of albums."""
 
     title = schema.TextLine(
         title=_(u'Title'),
@@ -52,7 +52,10 @@ class IAlbunsTile(IPersistentCoverTile):
     )
 
 
+@implementer(IAlbunsTile)
 class AlbunsTile(PersistentCoverTile):
+    """Tile which displays a gallery of albums."""
+
     index = ViewPageTemplateFile('templates/albuns.pt')
     is_configurable = True
     limit = 1
@@ -77,14 +80,13 @@ class AlbunsTile(PersistentCoverTile):
                 'uuid': uuid,
             })
 
-    def accepted_ct(self):
-        """ Return a list of content types accepted by the tile.
-        """
+    @staticmethod
+    def accepted_ct():
+        """Return a list of content types accepted by the tile."""
         return ['Folder']
 
     def get_albuns(self):
-        """ Return a list of albuns
-        """
+        """Return a list of albuns."""
         albuns = []
         uuid = self.data.get('uuid', None)
         obj = None
@@ -111,7 +113,8 @@ class AlbunsTile(PersistentCoverTile):
 
         return albuns
 
-    def scale(self, item):
+    @staticmethod
+    def scale(item):
         catalog = api.portal.get_tool('portal_catalog')
         path = '/'.join(item.getPhysicalPath())
         brains = catalog(Type=['Image', 'Folder'],
@@ -129,7 +132,8 @@ class AlbunsTile(PersistentCoverTile):
                     'alt': image.Description(),
                 }
 
-    def thumbnail(self, item):
+    @staticmethod
+    def thumbnail(item):
         catalog = api.portal.get_tool('portal_catalog')
         path = '/'.join(item.getPhysicalPath())
         brains = catalog(Type=['Image', 'Folder'],

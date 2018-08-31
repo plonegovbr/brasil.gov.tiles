@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from collections import OrderedDict
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile

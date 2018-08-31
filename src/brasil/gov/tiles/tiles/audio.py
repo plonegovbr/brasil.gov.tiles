@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone import api
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.interface import implementer
 
 
 class IAudioTile(IPersistentCoverTile):
-    """
+    """A droppable tile that shows an audio player with description,
+    link and credits.
     """
 
     title = schema.TextLine(
@@ -37,7 +39,12 @@ class IAudioTile(IPersistentCoverTile):
     )
 
 
+@implementer(IAudioTile)
 class AudioTile(PersistentCoverTile):
+    """A droppable tile that shows an audio player with description,
+    link and credits.
+    """
+
     index = ViewPageTemplateFile('templates/audio.pt')
     is_configurable = False
     is_editable = True
@@ -67,12 +74,13 @@ class AudioTile(PersistentCoverTile):
                           'content_type': content_type,
                           })
 
-    def accepted_ct(self):
-        """ Return a list of content types accepted by the tile.
-        """
+    @staticmethod
+    def accepted_ct():
+        """Return a list of content types accepted by the tile."""
         return ['Audio']
 
-    def get_uuid(self, obj):
+    @staticmethod
+    def get_uuid(obj):
         return api.content.get_uuid(obj)
 
     def init_js(self):

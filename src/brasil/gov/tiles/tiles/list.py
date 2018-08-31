@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from collections import OrderedDict
 from collective.cover.controlpanel import ICoverSettings
 from collective.cover.interfaces import ICoverUIDsProvider
