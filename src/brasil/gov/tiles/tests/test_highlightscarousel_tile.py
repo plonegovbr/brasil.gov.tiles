@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from brasil.gov.tiles.testing import BaseIntegrationTestCase
-from brasil.gov.tiles.testing import HAS_DEXTERITY
 from brasil.gov.tiles.tiles.highlightscarousel import HighlightsCarousel
 from collective.cover.tiles.base import IPersistentCoverTile
 from mock import Mock
@@ -8,14 +7,6 @@ from plone import api
 from plone.tiles.interfaces import ITileDataManager
 from zope.interface.verify import verifyClass
 from zope.interface.verify import verifyObject
-
-import unittest
-
-
-if not HAS_DEXTERITY:
-    # skip all tests if not running on Dexterity-based content types
-    def test_suite():
-        return unittest.TestSuite()
 
 
 class HighlightsCarouselTileTestCase(BaseIntegrationTestCase):

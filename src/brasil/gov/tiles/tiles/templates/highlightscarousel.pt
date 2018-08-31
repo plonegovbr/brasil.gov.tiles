@@ -26,7 +26,7 @@
               <tal:image define="scales obj/@@images;
                                  thumbnail python:scales.scale('image', scale=None)"
                          condition="thumbnail">
-                <img tal:attributes="src thumbnail/url;
+                <img tal:attributes="src thumbnail/url|string:${obj/absolute_url}/download;
                                      class string:carousel-image ${view/get_image_position};
                                      alt python:view.get_alt(obj);" />
               </tal:image>

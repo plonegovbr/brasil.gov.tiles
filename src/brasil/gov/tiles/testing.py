@@ -9,23 +9,13 @@ from plone import api
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
+from plone.app.testing import PLONE_FIXTURE
 from plone.namedfile.file import NamedBlobImage
 from plone.testing import z2
 
 import os
-import pkg_resources
 import random
 import unittest
-
-
-try:
-    pkg_resources.get_distribution('plone.app.contenttypes')
-except pkg_resources.DistributionNotFound:
-    from plone.app.testing import PLONE_FIXTURE
-    HAS_DEXTERITY = False
-else:
-    from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE as PLONE_FIXTURE
-    HAS_DEXTERITY = True
 
 
 def loadFile(name, size=0):
@@ -107,7 +97,7 @@ class Fixture(CoverFixture):
                 type='Image',
                 title='my-image',
                 container=portal['my-news-folder']['my-nitf-with-image'],
-            )
+            ).setImage(generate_jpeg(50, 50))
             api.content.create(
                 type='sc.embedder',
                 title='multimedia',
@@ -117,8 +107,6 @@ class Fixture(CoverFixture):
             portal['multimedia'].image = image
             portal['my-news-folder'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image'].reindexObject()
-            portal['my-news-folder']['my-nitf-with-image']['my-image'].image = image
-            portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
             portal['my-news-folder']['my-nitf-without-image'].reindexObject()
             portal['my-news-folder']['my-nitf-with-image']['my-image'].reindexObject()
             portal['multimedia'].reindexObject()
