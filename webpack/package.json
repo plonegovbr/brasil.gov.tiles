@@ -25,6 +25,7 @@
   "repository": {},
   "license": "GPL-2.0",
   "dependencies": {
+    "clipboard": "^2.0.1",
     "copy-webpack-plugin": "^4.5.1",
     "sc.recipe.staticresources": "simplesconsultoria/sc.recipe.staticresources#1.0b1",
     "swiper": "^4.3.5"

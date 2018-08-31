@@ -11,6 +11,7 @@
     <include package="plone.app.imagecropping" />
     <include package="sc.embedder" />
 
+    <include package=".browser" />
     <include package=".tiles" />
 
     <include file="profiles.zcml" />

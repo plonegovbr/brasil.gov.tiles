@@ -136,6 +136,22 @@ Mostra um carrossel de imagens em destaques.
     :height: 550px
     :width: 1000px
 
+Compartilhamento de tiles na capa
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Este pacote adiciona compartilhamento nos tiles da capa, seguindo o seguinte critério:
+
+Tile NITF
+    Seu primeiro link aponte para um conteúdo interno.
+
+Tile Rich Text
+    Caso este tile possua uma configuração de classe modificada (aba layout).
+    E seu primeiro link aponte para um conteúdo interno.
+
+.. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/tileshare.png
+    :align: center
+    :height: 713px
+    :width: 1092px
+
 Desenvolvimento
 ---------------
 
