@@ -6,14 +6,14 @@ Changelog
 
 .. warning::
     Atualizações da branch 1.x do pacote só serão suportadas da versão mais recente dessa branch.
-    Esta versão remove os tiles Banner rotativo, Carrossel de mídia, Em destaque e Social dos layouts existentes pois eles não são utilizados no IDG v2.
+    Esta versão remove os tiles Banner rotativo, Cabeçalho, Carrossel de mídia, Em destaque e Social dos layouts existentes pois eles não são utilizados no IDG v2.
     Esta versão também remove os overrides dos tiles padrão do collective.cover e collective.nitf.
     Um processo de migração atualiza o atributo ``alt_text`` nesses tiles (o atributo ``variacao_titulo`` e simplesmente ignorado por ser um recurso que também não existe mais).
 
 - Adiciona um tile para mostrar um Carrossel de destaques.
   [claytonc]
 
-- Remove os tiles Banner rotativo, Carrossel de mídia, Em destaque e Social.
+- Remove os tiles Banner rotativo, Cabeçalho, Carrossel de mídia, Em destaque e Social.
   [hvelarde]
 
 - Adiciona um tile para mostrar um Carrossel de grupo.
