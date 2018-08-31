@@ -70,7 +70,7 @@
   <plone:tile
       name="albuns"
       title="Gallery albums"
-      description="Tile which displays a gallery of albums"
+      description="Tile which displays a gallery of albums."
       add_permission="cmf.ModifyPortalContent"
       schema=".albuns.IAlbunsTile"
       class=".albuns.AlbunsTile"

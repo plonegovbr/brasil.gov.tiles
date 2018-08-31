@@ -1,33 +1,29 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:monkey="http://namespaces.plone.org/monkey"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="brasil.gov.tiles">
+    xmlns:i18n="http://namespaces.zope.org/i18n">
 
+    <i18n:registerTranslations directory="locales" />
+
+    <include package="collective.cover" />
+    <include package="collective.nitf" />
+    <include package="collective.polls" />
+    <include package="plone.app.imagecropping" />
     <include package="sc.embedder" />
 
     <include package=".tiles" />
 
-    <!-- Profiles de Generic Setup -->
     <include file="profiles.zcml" />
 
-    <!-- Registra pasta de traducoes -->
-    <i18n:registerTranslations directory="locales" />
-
-    <!-- Registra pasta de elementos estaticos -->
     <browser:resourceDirectory
             name="brasil.gov.tiles"
             directory="static"
     />
 
-    <!-- Oculta products -->
     <utility
       factory=".config.HiddenProducts"
       name="brasil.gov.tiles" />
 
-    <!-- Oculta profile -->
     <utility
       factory=".config.HiddenProfiles"
       name="brasil.gov.tiles"
