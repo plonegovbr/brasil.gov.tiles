@@ -144,7 +144,7 @@ Tile NITF
     Seu primeiro link aponte para um conteúdo interno.
 
 Tile Rich Text
-    Caso este tile possua uma configuração de classe modificada (aba layout).
+    É necessário que adicione alguma classe na configuração do tile (aba layout).
     E seu primeiro link aponte para um conteúdo interno.
 
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/tileshare.png
