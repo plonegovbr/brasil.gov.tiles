@@ -1,0 +1,15 @@
+<div i18n:domain="brasil.gov.tiles"
+     id="viewlet-tileshare"
+     data-title-fb="Share on Facebook (open in new window)"
+     data-title-twitter="Tweet (opens in new window)"
+     data-title-linkedin="Share on Linkedin (open in new window)"
+     data-title-gplus="Share on Google+ (open in new window)"
+     data-title-link="Copy to Clipboard"
+     data-title-more="More Options"
+     i18n:attributes="data-title-fb;
+                      data-title-twitter;
+                      data-title-linkedin;
+                      data-title-gplus;
+                      data-title-link;
+                      data-title-more">
+</div>

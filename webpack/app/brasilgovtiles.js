@@ -1,15 +1,18 @@
 import Albuns from './js/tiles/albuns.js';
 import AudioGallery from './js/tiles/audiogallery.js';
-import VideoCarouselTile from './js/tiles/videocarousel.js';
+import GroupCarouselTile from './js/tiles/groupcarousel.js';
+import HighlightsCarouselTile from './js/tiles/highlightscarousel.js';
 import NavigationTile from './js/tiles/navigation.js';
 import PhotoGalleryTile from './js/tiles/photogallery.js';
 import POTDTile from './js/tiles/potd.js';
+import TileShare from './js/tileshare.js';
+import VideoCarouselTile from './js/tiles/videocarousel.js';
 import VideoResponsiveResize from './js/tiles/videogallery.js';
-import GroupCarouselTile from './js/tiles/groupcarousel.js';
-import HighlightsCarouselTile from './js/tiles/highlightscarousel.js';
+
 
 // https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/
 jQuery.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+
 
 $(() => {
   if ($('.videogallery-tile')[0] !== undefined) {
@@ -40,6 +43,17 @@ $(() => {
   }
   for (let carousel of $('.brasil-highlightscarousel-tile')) {
     new HighlightsCarouselTile(carousel);
+  }
+  if ($('.portaltype-collective-cover-content').length > 0) {
+    for (let tile of $('.cover-richtext-tile')) {
+      if ($(tile).parent().hasClass('tile-default')) {
+        continue;
+      }
+      new TileShare(tile);
+    }
+    for (let tile of $('.nitf-basic-tile')) {
+      new TileShare(tile);
+    }
   }
 });
 

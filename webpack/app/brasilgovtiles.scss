@@ -22,6 +22,14 @@
 @import 'scss/tiles/groupcarousel';
 @import 'scss/tiles/highlightscarousel';
 
+@import 'scss/tileshare';
+
+/* revisa tamanho de imagens nos tiles */
+.tile img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* botão de busca dos filtros da página de resultado de busca */
 .formControls input.searchButton {
   display: none;

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:viewlet
+      name="brasil.gov.tiles.tileshare"
+      for="collective.cover.interfaces.ICover"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class=".tileshare.TileShareViewlet"
+      template="tileshare.pt"
+      permission="zope2.View"
+      layer="brasil.gov.tiles.interfaces.IBrasilGovTiles"
+      />
+
+</configure>
