@@ -22,16 +22,13 @@ Changelog
 - Adiciona um tile para mostrar um Carrossel de grupo.
   [claytonc]
 
-- Remove override do tile de embed.
-  [hvelarde]
-
 - Usa o `six <https://pypi.python.org/pypi/six>`_ ao invés do ``future`` para compatibilidade futura com o Python 3.
   [hvelarde]
 
 - Adiciona um tile para mostrar um Carrossel de vídeos.
   [rodfersou]
 
-- Remove overrides dos tiles Banner e Básico do collective.cover.
+- Remove overrides dos tiles Banner, Básico e Embed do collective.cover.
   [hvelarde]
 
 - Remove override do tile de matéria (collective.nitf).
@@ -52,7 +49,7 @@ Changelog
 - Corrige dependências do pacote.
   [hvelarde]
 
-- Adiciona suporte para processamento de recursos estáticos usando o `webpack <http://webpack.js.org/>`_.
+- Adiciona suporte para processamento de recursos estáticos usando o `webpack`_.
   [rodfersou]
 
 - Remove upgrade steps antigos.
