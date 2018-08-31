@@ -68,7 +68,6 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         css_ids = css_tool.getResourceIds()
         self.assertIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
-        self.assertNotIn('++resource++brasil.gov.tiles/vendor/swiper.min.css', css_ids)
 
         js_ids = js_tool.getResourceIds()
         self.assertIn('++resource++brasil.gov.tiles/tiles.js', js_ids)
@@ -79,28 +78,23 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js', js_ids)
-        self.assertNotIn('++resource++brasil.gov.tiles/vendor/swiper.min.js', js_ids)
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
 
         css_ids = css_tool.getResourceIds()
         self.assertIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
-        self.assertIn('++resource++brasil.gov.tiles/vendor/swiper.min.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
-        self.assertNotIn('++resource++brasil.gov.tiles/swiper.min.css', css_ids)
 
         js_ids = js_tool.getResourceIds()
         self.assertIn('++resource++brasil.gov.tiles/brasilgovtiles.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js', js_ids)
-        self.assertIn('++resource++brasil.gov.tiles/vendor/swiper.min.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/tiles.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.cycle2.carousel.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.cycle2.js', js_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
-        self.assertNotIn('++resource++brasil.gov.tiles/swiper.min.js', js_ids)
 
     def test_disable_deprecated_tiles(self):
         title = u'Disable deprecated tiles'

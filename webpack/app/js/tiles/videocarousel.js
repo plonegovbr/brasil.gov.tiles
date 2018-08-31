@@ -1,3 +1,4 @@
+import Swiper from 'swiper/dist/js/swiper.js';
 import Youtube from '../youtube.js';
 
 
