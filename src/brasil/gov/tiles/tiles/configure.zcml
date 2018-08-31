@@ -56,18 +56,6 @@
       />
 
   <plone:tile
-      name="standaloneheader"
-      title="Header"
-      description="Header tile, the element dropped populate the data."
-      add_permission="cmf.ModifyPortalContent"
-      schema=".header.IHeaderTile"
-      class=".header.HeaderTile"
-      permission="zope2.View"
-      for="*"
-      i18n:attributes="title; description"
-      />
-
-  <plone:tile
       name="video"
       title="Video"
       description="Video tile, can reproduce embeded files."

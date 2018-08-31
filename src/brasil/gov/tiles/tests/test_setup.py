@@ -22,7 +22,6 @@ TILES = [
     'videogallery',
     'audio',
     'audiogallery',
-    'standaloneheader',
     'video',
     'collective.cover.carousel',
 ]
