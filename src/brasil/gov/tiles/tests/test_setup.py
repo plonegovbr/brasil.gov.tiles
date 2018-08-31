@@ -55,7 +55,6 @@ class InstallTestCase(unittest.TestCase):
         for tile in TILES:
             self.assertIn(tile, registered_tiles)
 
-    @unittest.skipIf(True, 'There are still no upgrade steps in this package.')
     def test_ultimo_upgrade_igual_metadata_xml_filesystem(self):
         """
         Testa se o número do último upgradeStep disponível é o mesmo do
