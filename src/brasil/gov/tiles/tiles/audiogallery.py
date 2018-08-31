@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 from six.moves import range  # noqa: I001
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from brasil.gov.tiles.tiles.list import IListTile
 from brasil.gov.tiles.tiles.list import ListTile
 from plone import api
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.interface import implementer
 
 
 class IAudioGalleryTile(IListTile):
-    """
+    """A droppable tile that shows a gallery of audios with
+    descriptions and links.
     """
 
     header = schema.TextLine(
@@ -37,7 +39,12 @@ class IAudioGalleryTile(IListTile):
     )
 
 
+@implementer(IAudioGalleryTile)
 class AudioGalleryTile(ListTile):
+    """A droppable tile that shows a gallery of audios with
+    descriptions and links.
+    """
+
     index = ViewPageTemplateFile('templates/audiogallery.pt')
     is_configurable = True
     is_editable = True
@@ -58,12 +65,13 @@ class AudioGalleryTile(ListTile):
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
-    def accepted_ct(self):
-        """ Return a list of content types accepted by the tile.
-        """
+    @staticmethod
+    def accepted_ct():
+        """Return a list of content types accepted by the tile."""
         return ['Collection', 'Folder']
 
-    def get_uuid(self, obj):
+    @staticmethod
+    def get_uuid(obj):
         return api.content.get_uuid(obj)
 
     def get_elements(self, obj):
@@ -87,7 +95,8 @@ class AudioGalleryTile(ListTile):
 
         return results
 
-    def get_item_url(self, item):
+    @staticmethod
+    def get_item_url(item):
         """
         Return the audio file url
         Arguments:

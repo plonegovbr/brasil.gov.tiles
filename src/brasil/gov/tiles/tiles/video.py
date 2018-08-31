@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-from brasil.gov.tiles import _ as _
+from brasil.gov.tiles import _
 from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone import api
 from plone.tiles.interfaces import ITileDataManager
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.interface import implementer
 
 
 class IVideoTile(IPersistentCoverTile):
-    """
-    """
+    """Video tile, can reproduce embeded files."""
 
     title = schema.TextLine(
         title=_(u'Title'),
@@ -37,7 +37,10 @@ class IVideoTile(IPersistentCoverTile):
     )
 
 
+@implementer(IVideoTile)
 class VideoTile(PersistentCoverTile):
+    """Video tile, can reproduce embeded files."""
+
     index = ViewPageTemplateFile('templates/video.pt')
     is_configurable = False
     is_editable = True
@@ -61,10 +64,11 @@ class VideoTile(PersistentCoverTile):
                           'embed_code': embed,
                           })
 
-    def get_uuid(self, obj):
+    @staticmethod
+    def get_uuid(obj):
         return api.content.get_uuid(obj)
 
-    def accepted_ct(self):
-        """ Return a list of content types accepted by the tile.
-        """
+    @staticmethod
+    def accepted_ct():
+        """Return a list of content types accepted by the tile."""
         return ['sc.embedder']
