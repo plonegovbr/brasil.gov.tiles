@@ -12,6 +12,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
 
+import warnings
+
 
 class IBannerRotativoTile(IListTile):
     """
@@ -83,6 +85,13 @@ class BannerRotativoTile(ListTile):
     is_configurable = False
     is_editable = True
     limit = 4
+
+    def __call__(self):
+        path = '/'.join(self.context.getPhysicalPath())
+        msg = ('Use of tile "Banner Rotativo" is deprecated '
+               'and will be removed for the next version {0}'.format(path))
+        warnings.warn(msg, DeprecationWarning)
+        return self.index()
 
     def populate_with_object(self, obj):
         super(BannerRotativoTile, self).populate_with_object(obj)  # check permission

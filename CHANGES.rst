@@ -4,7 +4,8 @@ Changelog
 1.6.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Os tiles Banner rotativo, Carrossel de mídia, Destaque, Em detaque e Social foram marcados que serão descontinuados na versão 2.x. (closes `#240 <https://github.com/plonegovbr/brasil.gov.tiles/issues/240>`_).
+  [claytonc] 
 
 
 1.6.1 (2018-06-11)

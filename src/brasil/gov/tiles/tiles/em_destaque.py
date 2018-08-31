@@ -6,6 +6,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
 
+import warnings
+
 
 class IEmDestaqueTile(IPersistentCoverTile):
 
@@ -31,3 +33,10 @@ class EmDestaqueTile(ListTile):
     is_droppable = True
     is_editable = False
     limit = 5
+
+    def __call__(self):
+        path = '/'.join(self.context.getPhysicalPath())
+        msg = ('Use of tile "Em destaque" is deprecated '
+               'and will be removed for the next version {0}'.format(path))
+        warnings.warn(msg, DeprecationWarning)
+        return self.index()
