@@ -3,5 +3,4 @@ from plone.app.layout.viewlets.common import ViewletBase
 
 
 class TileShareViewlet(ViewletBase):
-
-    """Viewlet used by Tile Share functionality to translate messages."""
+    """Viewlet used to translate messages on Tile Share feature."""

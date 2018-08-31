@@ -10,7 +10,7 @@ Changelog
     Esta versão também remove os overrides dos tiles padrão do collective.cover e collective.nitf.
     Um processo de migração atualiza o atributo ``alt_text`` nesses tiles (o atributo ``variacao_titulo`` e simplesmente ignorado por ser um recurso que também não existe mais).
 
-- Adiciona funcionalidade de compartilhamento nos tiles da capa.
+- Adiciona funcionalidade de compartilhamento nas redes sociais nos tiles de matéria (collective.nitf) e texto rico.
   [rodfersou]
 
 - Adiciona um tile para mostrar um Carrossel de destaques.
