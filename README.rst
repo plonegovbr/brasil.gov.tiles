@@ -1,6 +1,6 @@
-*********************************
+***************************
 .gov.br: Blocos de Conteúdo
-*********************************
+***************************
 
 .. contents:: Conteúdo
    :depth: 2
@@ -8,11 +8,10 @@
 Introdução
 ----------
 
-Este pacote provê tiles (Blocos de conteúdo) para uso em
-sites Plone do Governo da República Federativa do Brasil.
+Este complemento provê tiles (Blocos de conteúdo) para uso em sites Plone do Governo da República Federativa do Brasil.
 
-Estado deste pacote
--------------------
+Estado deste complemento
+------------------------
 
 O **brasil.gov.tiles** tem testes automatizados e, a cada alteração em seu
 código os testes são executados pelo serviço Travis CI.
@@ -34,8 +33,7 @@ O estado atual dos testes pode ser visto na imagem a seguir:
 Instalação
 ----------
 
-Para habilitar a instalação deste produto em um ambiente que utilize o
-buildout:
+Para habilitar a instalação deste produto em um ambiente que utilize o buildout:
 
 1. Editar o arquivo buildout.cfg (ou outro arquivo de configuração) e
    adicionar o pacote ``brasil.gov.tiles`` à lista de eggs da instalação:
@@ -47,39 +45,29 @@ buildout:
     eggs =
         brasil.gov.tiles
 
-
 2. Após alterar o arquivo de configuração é necessário executar
    ''bin/buildout'', que atualizará sua instalação.
 
 3. Reinicie o Plone
 
-4. Acesse o painel de controle e na opção **tiles** você verá os tiles
-providos por este pacote listados.
+4. Acesse o painel de controle e na opção **tiles** você verá os tiles providos por este pacote listados.
 
-Rodando o buildout de uma tag antiga do pacote
-----------------------------------------------
+Atualização de 1.x a 2.x
+------------------------
 
-Para atender ao relato de ter vários jobs de integração contínua em pacotes brasil.gov.* (ver https://github.com/plonegovbr/portalpadrao.release/issues/11), no fim da seção extends do buildout.cfg de todos os pacotes brasil.gov.* temos a seguinte linha:
+.. Warning::
+    Só atualize para a versão 2.x do complemento depois de atualizar à versão mais recente da branch 1.x.
+    O processo de migração remove os tiles descontinuados das capas existentes.
 
-.. code-block:: cfg
+As atualizações da versão 1.x à 2.x só são suportadas das versões mais recentes de cada branch.
+Antes de atualizar confira que você está efetivamente utilizando a última versão da branch 1.x e que não existem upgrade steps pendentes de serem aplicados.
 
-    https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
+Esta versão remove os tiles Banner rotativo, Carrossel de mídia, Destaque, Em destaque e Social dos layouts existentes pois eles não são utilizados no IDG v2.
+**Esses tiles serão removidos das capas existentes.**
 
-Hoje, esse arquivo contém sempre as versões pinadas de um release a ser lançado. Por esse motivo, quando é feito o checkout de uma tag mais antiga provavelmente você não conseguirá rodar o buildout. Dessa forma, após fazer o checkout de uma tag antiga, recomendamos que adicione, na última linha do extends, o arquivo de versões do IDG compatível com aquela tag, presente no repositório https://github.com/plonegovbr/portalpadrao.release/.
-
-Exemplo: você clonou o repositório do brasil.gov.portal na sua máquina, e deu checkout na tag 1.0.5. Ao editar o buildout.cfg, ficaria dessa forma, já com a última linha adicionada:
-
-.. code-block:: cfg
-
-    extends =
-        https://raw.github.com/collective/buildout.plonetest/master/test-4.3.x.cfg
-        https://raw.github.com/collective/buildout.plonetest/master/qa.cfg
-        http://downloads.plone.org.br/release/1.0.4/versions.cfg
-        https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/buildout.d/versions.cfg
-        https://raw.githubusercontent.com/plone/plone.app.robotframework/master/versions.cfg
-        https://raw.githubusercontent.com/plonegovbr/portalpadrao.release/master/1.0.5/versions.cfg
-
-Para saber qual arquivo de versões é compatível, no caso do brasil.gov.portal, é simples pois é a mesma versão (no máximo um bug fix, por exemplo, brasil.gov.portal é 1.1.3 e o arquivo de versão é 1.1.3.1). Para os demais pacotes, recomendamos comparar a data da tag do pacote e a data nos changelog entre uma versão e outra para adivinhar a versão compatível.
+Esta versão também remove os overrides dos tiles padrão do collective.cover e collective.nitf.
+Esses tiles serão migrados das capas existentes.
+O processo de migração atualiza o atributo ``alt_text`` nesses tiles (o atributo ``variacao_titulo`` e simplesmente ignorado por ser um recurso que também não existe mais).
 
 Tiles do pacote
 ---------------
@@ -184,3 +172,18 @@ Este comando faz o mesmo que o comando watch, mas não minifica o CSS final.  Ut
     $ bin/build-brasilgovtiles
 
 Este comando cria o CSS minificado, mas não espera por mudanças.
+
+Fazendo releases com o zest.releaser
+------------------------------------
+
+Os recursos estáticos do pacote são gerados usando o `webpack <https://webpack.js.org/>`_ e não são inclusos no VCS.
+Se você está fazendo release usando o zest.releaser, você precisa fazer `upload manual dos arquivos no PyPI <https://github.com/zestsoftware/zest.releaser/issues/261>`_ ou você vai criar uma distribuição quebrada:
+
+* execute ``longtest``, como de costume
+* execute ``fullrelease``, como de costume, respondendo "não" a pergunta "Check out the tag?" para evitar o upload ao PyPI
+* faça checkout na tag do release que você está liberando
+* execute ``bin/build-brasilgovtemas`` para criar os recursos estáticos
+* crie os arquivos da distribuição usando ``python setup.py sdist bdist_wheel``, como de costume
+* faça o upload manual dos arquivos usando ``twine upload dist/*``
+
+Em caso de erro você terá que criar um novo release pois o PyPI Warehouse `não permite reutilizar um nome de arquivo <https://upload.pypi.org/help/#file-name-reuse>`_.
