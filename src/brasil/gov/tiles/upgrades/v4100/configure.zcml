@@ -55,6 +55,11 @@
         handler=".install_imagecropping_manager"
         />
 
+    <genericsetup:upgradeStep
+        title="Avoid searchable_content_types duplication"
+        handler=".avoid_searchable_content_types_duplication"
+        />
+
   </genericsetup:upgradeSteps>
 
 </configure>

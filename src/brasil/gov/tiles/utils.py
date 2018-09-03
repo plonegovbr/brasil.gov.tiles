@@ -12,7 +12,8 @@ def get_registered_tiles():
 
 
 def set_registered_tiles(value):
-    """Set a list of registered tiles."""
+    """Set the list of registered tiles."""
+    value = list(set(value))  # avoid duplicates
     api.portal.set_registry_record(value=value, name='plone.app.tiles')
 
 
@@ -23,8 +24,22 @@ def get_available_tiles():
 
 
 def set_available_tiles(value):
-    """Set a list of available tiles."""
+    """Set the list of available tiles."""
+    value = list(set(value))  # avoid duplicates
     record = dict(interface=ICoverSettings, name='available_tiles')
+    api.portal.set_registry_record(value=value, **record)
+
+
+def get_searchable_content_types():
+    """Return a list of searchable content types."""
+    record = dict(interface=ICoverSettings, name='searchable_content_types')
+    return api.portal.get_registry_record(**record)
+
+
+def set_searchable_content_types(value):
+    """Set the list of searchable content types."""
+    value = list(set(value))  # avoid duplicates
+    record = dict(interface=ICoverSettings, name='searchable_content_types')
     api.portal.set_registry_record(value=value, **record)
 
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from brasil.gov.tiles import utils
 from brasil.gov.tiles.logger import logger
 from brasil.gov.tiles.upgrades import add_tile
 from brasil.gov.tiles.upgrades import get_valid_objects
@@ -58,7 +59,6 @@ DEPRECATED_TILES = [
 
 def disable_deprecated_tiles(setup_tool):
     """Disable deprecated tiles."""
-    from brasil.gov.tiles import utils
     deprecated, new = [], []
     for d, r in DEPRECATED_TILES:
         if r is None:  # deprecating
@@ -161,3 +161,9 @@ def install_imagecropping_manager(setup_tool):
     if not qi.isProductInstalled(addon):
         qi.installProduct(addon)
         logger.info(addon + ' was installed')
+
+
+def avoid_searchable_content_types_duplication(setup_tool):
+    """Avoid searchable_content_types duplication."""
+    content_types = utils.get_searchable_content_types()
+    utils.set_searchable_content_types(content_types)

@@ -44,7 +44,7 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
     def test_registered_steps(self):
         steps = len(self.setup.listUpgrades(self.profile_id)[0])
-        self.assertEqual(steps, 9)
+        self.assertEqual(steps, 10)
 
     def test_update_resources_references(self):
         # address also an issue with Setup permission
@@ -197,3 +197,22 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
 
         self.assertIn(content_type, self.get_searchable_content_types())
+
+    def test_avoid_searchable_content_types_duplication(self):
+        title = u'Avoid searchable_content_types duplication'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        from collections import Counter
+        record = dict(interface=ICoverSettings, name='searchable_content_types')  # noqa: E501
+        content_types = api.portal.get_registry_record(**record)
+        content_types += ['Document', 'Document', 'News Item']
+        api.portal.set_registry_record(value=content_types, **record)
+        content_types = api.portal.get_registry_record(**record)
+        self.assertEqual(max(Counter(content_types).values()), 3)
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        content_types = api.portal.get_registry_record(**record)
+        self.assertEqual(max(Counter(content_types).values()), 1)
