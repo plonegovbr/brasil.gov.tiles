@@ -4,6 +4,13 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+.. warning::
+    Este release atualiza as dependências do processamento de recursos estáticos.
+    Em ambiente de desenvolvimento pode ser necessário remover as pastas ``parts`` e ``webpack/node_modules`` para efetivar a atualização de ambiente.
+
+- Atualiza versões do `Node.js <https://nodejs.org/>`_ e sc.recipe.staticresources.
+  [rodfersou]
+
 - Evita registrar recursos estáticos do Swiper no upgrade step da versão 4100.
   [rodfersou]
 
