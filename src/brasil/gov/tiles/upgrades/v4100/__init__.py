@@ -18,9 +18,6 @@ RESOURCES_TO_UPDATE = {
     '++resource++brasil.gov.tiles/jquery.jplayer.min.js': '++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js',
 }
 
-SWIPER_CSS = '++resource++brasil.gov.tiles/vendor/swiper.min.css'
-SWIPER_JS = '++resource++brasil.gov.tiles/vendor/swiper.min.js'
-
 
 def _rename_resources(tool, from_to):
     for id_ in tool.getResourceIds():
@@ -32,13 +29,11 @@ def update_static_resources(setup_tool):
     """Fix resource references after static files reorganization."""
     css_tool = api.portal.get_tool('portal_css')
     _rename_resources(css_tool, RESOURCES_TO_UPDATE)
-    css_tool.registerResource(SWIPER_CSS)
 
     logger.info('CSS resources were updated')
 
     js_tool = api.portal.get_tool('portal_javascripts')
     _rename_resources(js_tool, RESOURCES_TO_UPDATE)
-    js_tool.registerResource(SWIPER_JS)
     logger.info('JavaScript resources were updated')
 
 

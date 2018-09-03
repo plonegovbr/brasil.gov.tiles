@@ -59,11 +59,9 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
 
         css_tool = api.portal.get_tool('portal_css')
         _rename_resources(css_tool, RESOURCES_TO_UPDATE_INVERSE)
-        css_tool.unregisterResource('++resource++brasil.gov.tiles/vendor/swiper.min.css')
 
         js_tool = api.portal.get_tool('portal_javascripts')
         _rename_resources(js_tool, RESOURCES_TO_UPDATE_INVERSE)
-        js_tool.unregisterResource('++resource++brasil.gov.tiles/vendor/swiper.min.js')
 
         css_ids = css_tool.getResourceIds()
         self.assertIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
