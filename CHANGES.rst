@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Evita registrar recursos estáticos do Swiper no upgrade step da versão 4100.
+  [rodfersou]
+
 - Evita ``AttributeError`` no tile de Foto do dia (fecha `#255 <https://github.com/plonegovbr/brasil.gov.tiles/issues/255>`_).
   [hvelarde]
 
@@ -13,7 +16,7 @@ Changelog
 - Evita tipos de conteúdo duplicados no configlet do collective.cover (fecha `#252 <https://github.com/plonegovbr/brasil.gov.tiles/issues/252>`_).
   [hvelarde]
 
-- Evita o erro ``WrongContainedType`` ao rodar os upgrade steps da versão 4100 (fecha `#249 <https://github.com/plonegovbr/brasil.gov.tiles/issues/249>`_).
+- Evita o erro ``WrongContainedType`` ao rodar o upgrade step da versão 4100 (fecha `#249 <https://github.com/plonegovbr/brasil.gov.tiles/issues/249>`_).
   [hvelarde]
 
 
