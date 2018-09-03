@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Evita ``AttributeError`` no tile de Foto do dia (fecha `#255 <https://github.com/plonegovbr/brasil.gov.tiles/issues/255>`_).
+  [hvelarde]
+
 - Evita ``TypeError`` no tile de Citação (fecha `#254 <https://github.com/plonegovbr/brasil.gov.tiles/issues/254>`_).
   [hvelarde]
 

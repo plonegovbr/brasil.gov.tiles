@@ -4,9 +4,8 @@ from collective.cover.tiles.base import IPersistentCoverTile
 from collective.cover.tiles.base import PersistentCoverTile
 from plone import api
 from plone.namedfile import field
-from plone.namedfile import NamedBlobImage
 from plone.tiles.interfaces import ITileDataManager
-from Products.CMFPlone.utils import safe_hasattr
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
@@ -63,20 +62,26 @@ class POTDTile(PersistentCoverTile):
     def populate_with_object(self, obj):
         super(POTDTile, self).populate_with_object(obj)
 
-        if safe_hasattr(obj, 'getImage'):
-            data = obj.getImage().data
-        else:
-            data = obj.image.data
-        image = NamedBlobImage(data)
+        title = safe_unicode(obj.Title())
+        description = safe_unicode(obj.Description())
+        rights = safe_unicode(obj.Rights())
+
+        image = self.get_image_data(obj)
+        if image:
+            # clear scales if new image is getting saved
+            self.clear_scales()
+
+        data = {
+            'title': title,
+            'description': description,
+            'uuid': api.content.get_uuid(obj=obj),
+            'image': image,
+            'photo_credits': rights,
+            # FIXME: https://github.com/collective/collective.cover/issues/778
+            'alt_text': description or title,
+        }
 
         data_mgr = ITileDataManager(self)
-        data = data_mgr.get()
-        data['title'] = obj.title
-        data['description'] = obj.Description()
-        data['image'] = image
-        data['uuid'] = api.content.get_uuid(obj=obj)
-        data['photo_credits'] = obj.Rights()
-
         data_mgr.set(data)
 
     @property
