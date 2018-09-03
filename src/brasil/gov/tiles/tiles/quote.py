@@ -71,7 +71,10 @@ class QuoteTile(NITFTile):
         data_mgr.set(data)
 
     def color_class(self):
-        return 'quote-' + self.data['quote_color']
+        color = self.data.get('quote_color')
+        if color is None:
+            return u'quote-blue'  # default value
+        return u'quote-' + color
 
     def quote(self):
         return self.data.get('quote', '')

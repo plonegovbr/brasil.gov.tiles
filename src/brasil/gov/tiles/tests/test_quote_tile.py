@@ -12,7 +12,6 @@ class QuoteTileTestCase(BaseIntegrationTestCase):
         super(QuoteTileTestCase, self).setUp()
         self.tile = self.portal.restrictedTraverse(
             '@@{0}/{1}'.format('brasil.gov.tiles.quote', 'test-tile'))
-        self.tile.data['quote_color'] = u'blue'
 
     def test_interface(self):
         self.assertTrue(IPersistentCoverTile.implementedBy(QuoteTile))
@@ -44,3 +43,8 @@ class QuoteTileTestCase(BaseIntegrationTestCase):
         rendered = self.tile()
         self.assertIn(quote, rendered)
         self.assertIn(author, rendered)
+
+    def test_color_class(self):
+        self.assertEqual(self.tile.color_class(), u'quote-blue')
+        self.tile.data['quote_color'] = u'green'
+        self.assertEqual(self.tile.color_class(), u'quote-green')

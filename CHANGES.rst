@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Evita ``TypeError`` no tile de Citação (fecha `#254 <https://github.com/plonegovbr/brasil.gov.tiles/issues/254>`_).
+  [hvelarde]
+
 - Evita tipos de conteúdo duplicados no configlet do collective.cover (fecha `#252 <https://github.com/plonegovbr/brasil.gov.tiles/issues/252>`_).
   [hvelarde]
 
