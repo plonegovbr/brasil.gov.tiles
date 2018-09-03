@@ -4,7 +4,8 @@ Changelog
 2.0a2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Evita o erro ``WrongContainedType`` ao rodar os upgrade steps da versão 4100 (fecha `#249 <https://github.com/plonegovbr/brasil.gov.tiles/issues/249>`_).
+  [hvelarde]
 
 
 2.0a1 (2018-08-31)

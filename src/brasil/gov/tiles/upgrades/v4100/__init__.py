@@ -58,11 +58,25 @@ DEPRECATED_TILES = [
 
 def disable_deprecated_tiles(setup_tool):
     """Disable deprecated tiles."""
-    from brasil.gov.tiles.utils import disable_tile
+    from brasil.gov.tiles import utils
+
+    deprecated = []
     for old, new in DEPRECATED_TILES:
         if old == new:
             continue  # we're just removing an overrides
-        disable_tile(old)
+        deprecated.append(old)
+
+    registered_tiles = utils.get_registered_tiles()
+    registered_tiles = list(set(registered_tiles) - set(deprecated))
+    utils.set_registered_tiles(value=registered_tiles)
+
+    available_tiles = utils.get_available_tiles()
+    available_tiles = list(set(available_tiles) - set(deprecated))
+    utils.set_available_tiles(value=available_tiles)
+
+    for tile in deprecated:
+        assert tile not in utils.get_registered_tiles()  # nosec
+        assert tile not in utils.get_available_tiles()  # nosec
 
 
 NEW_TILES = [
