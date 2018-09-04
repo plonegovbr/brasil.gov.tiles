@@ -198,7 +198,7 @@ Se você está fazendo release usando o zest.releaser, você precisa fazer `uplo
 * execute ``longtest``, como de costume
 * execute ``fullrelease``, como de costume, respondendo "não" a pergunta "Check out the tag?" para evitar o upload ao PyPI
 * faça checkout na tag do release que você está liberando
-* execute ``bin/build-brasilgovtemas`` para criar os recursos estáticos
+* execute ``bin/build-brasilgovtiles`` para criar os recursos estáticos
 * crie os arquivos da distribuição usando ``python setup.py sdist bdist_wheel``, como de costume
 * faça o upload manual dos arquivos usando ``twine upload dist/*``
 
