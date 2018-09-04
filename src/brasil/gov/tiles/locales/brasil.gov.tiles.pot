@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-09-04 12:45+0000\n"
+"POT-Creation-Date: 2018-09-04 14:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,10 +38,6 @@ msgstr ""
 msgid ".gov.br: Blocks Content (Tests)"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "A droppable tile that shows a carousel of videos an images."
-msgstr ""
-
 #: brasil/gov/tiles/tiles/configure.zcml:44
 msgid "A droppable tile that shows a gallery of audios with descriptions and links."
 msgstr ""
@@ -62,16 +58,12 @@ msgstr ""
 msgid "A highlight tile"
 msgstr ""
 
-#: brasil/gov/tiles/tiles/configure.zcml:152
+#: brasil/gov/tiles/tiles/configure.zcml:153
 msgid "A tile that shows a carousel of videos."
 msgstr ""
 
 #: brasil/gov/tiles/tiles/overrides.zcml:33
 msgid "A tile that shows a list of items."
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "A tile that shows a news article."
 msgstr ""
 
 #: brasil/gov/tiles/tiles/configure.zcml:93
@@ -101,10 +93,6 @@ msgstr ""
 
 #: brasil/gov/tiles/tiles/audiogallery.py:35
 msgid "Audios"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "Basic News Article Tile"
 msgstr ""
 
 #: brasil/gov/tiles/tiles/quote.py:25
@@ -154,7 +142,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: brasil/gov/tiles/tiles/configure.zcml:165
+#: brasil/gov/tiles/tiles/configure.zcml:166
 msgid "Display a carousel of items."
 msgstr ""
 
@@ -166,7 +154,7 @@ msgstr ""
 msgid "Display a section navigation."
 msgstr ""
 
-#: brasil/gov/tiles/tiles/configure.zcml:178
+#: brasil/gov/tiles/tiles/configure.zcml:179
 msgid "Display an highlights carousel."
 msgstr ""
 
@@ -214,7 +202,7 @@ msgstr ""
 msgid "Green"
 msgstr ""
 
-#: brasil/gov/tiles/tiles/configure.zcml:165
+#: brasil/gov/tiles/tiles/configure.zcml:166
 msgid "Group Carousel"
 msgstr ""
 
@@ -228,7 +216,7 @@ msgstr ""
 msgid "Header tile, the element dropped populate the data."
 msgstr ""
 
-#: brasil/gov/tiles/tiles/configure.zcml:178
+#: brasil/gov/tiles/tiles/configure.zcml:179
 msgid "Highlights Carousel"
 msgstr ""
 
@@ -260,10 +248,6 @@ msgstr ""
 
 #: brasil/gov/tiles/tiles/templates/audiogallery.pt:53
 msgid "Max volume"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "Media Carousel"
 msgstr ""
 
 #: brasil/gov/tiles/browser/tileshare.pt:1
@@ -335,10 +319,6 @@ msgstr ""
 msgid "Required Update"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Rotating Banner"
-msgstr ""
-
 #: brasil/gov/tiles/browser/tileshare.pt:1
 msgid "Share on Facebook (open in new window)"
 msgstr ""
@@ -349,10 +329,6 @@ msgstr ""
 
 #: brasil/gov/tiles/browser/tileshare.pt:1
 msgid "Share on Linkedin (open in new window)"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "Social"
 msgstr ""
 
 #: brasil/gov/tiles/tiles/videogallery.py:35
@@ -382,20 +358,12 @@ msgstr ""
 msgid "Tile Description"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Tile which displays a gallery of albums"
-msgstr ""
-
 #: brasil/gov/tiles/tiles/configure.zcml:80
 msgid "Tile which displays a gallery of albums."
 msgstr ""
 
 #: tiles/configure.zcml
 msgid "Tile which displays a line with list of highlights"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "Tile which displays a rotating banner with links and images"
 msgstr ""
 
 #: brasil/gov/tiles/tiles/albuns.py:19
@@ -437,7 +405,7 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-#: brasil/gov/tiles/tiles/configure.zcml:152
+#: brasil/gov/tiles/tiles/configure.zcml:153
 msgid "Video Carousel"
 msgstr ""
 
@@ -514,10 +482,6 @@ msgstr ""
 
 #: brasil/gov/tiles/tiles/templates/audio.pt:28
 msgid "play"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "social streams, from twitter and facebook."
 msgstr ""
 
 #: brasil/gov/tiles/tiles/list.py:118
