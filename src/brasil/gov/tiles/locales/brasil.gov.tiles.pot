@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-14 20:17+0000\n"
+"POT-Creation-Date: 2018-09-04 14:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,43 +14,39 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./tiles/templates/albuns.pt:44
+#: brasil/gov/tiles/tiles/templates/albuns.pt:44
 msgid "${scale/alt}"
 msgstr ""
 
-#: ./tiles/templates/albuns.pt:77
+#: brasil/gov/tiles/tiles/templates/albuns.pt:77
 msgid "${thumbnail/alt}"
 msgstr ""
 
-#: ./tiles/templates/albuns.pt:59
+#: brasil/gov/tiles/tiles/templates/albuns.pt:59
 msgid "&laquo; Previous"
 msgstr ""
 
-#: Profile title in profile.zcml
+#: brasil/gov/tiles/profiles.zcml:13
 msgid ".gov.br: Blocks Content"
 msgstr ""
 
-#: Profile title in profile.zcml
+#: brasil/gov/tiles/profiles.zcml:20
 msgid ".gov.br: Blocks Content (Remove)"
 msgstr ""
 
-#: Profile title in profile.zcml
+#: brasil/gov/tiles/profiles.zcml:28
 msgid ".gov.br: Blocks Content (Tests)"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "A droppable tile that shows a carousel of videos an images."
-msgstr ""
-
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:44
 msgid "A droppable tile that shows a gallery of audios with descriptions and links."
 msgstr ""
 
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:20
 msgid "A droppable tile that shows a gallery of videos with descriptions and links."
 msgstr ""
 
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:32
 msgid "A droppable tile that shows an audio player with description, link and credits."
 msgstr ""
 
@@ -62,380 +58,437 @@ msgstr ""
 msgid "A highlight tile"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "A tile that shows a news article."
+#: brasil/gov/tiles/tiles/configure.zcml:153
+msgid "A tile that shows a carousel of videos."
 msgstr ""
 
-#: ./tiles/banner.py:31
-#: ./tiles/basic.py:43
-msgid "ALT"
+#: brasil/gov/tiles/tiles/overrides.zcml:33
+msgid "A tile that shows a list of items."
 msgstr ""
 
-#: ./tiles/albuns.py:68
+#: brasil/gov/tiles/tiles/configure.zcml:93
+msgid "A tile that shows an article quote."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/overrides.zcml:21
+msgid "A tile that shows the result of a collection."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/albuns.py:70
 msgid "Access all Albums"
 msgstr ""
 
-#: ./tiles/audio.py:33
+#: brasil/gov/tiles/tiles/templates/groupcarousel.pt:8
+msgid "Add up to ${limit_objects} objects to the tile."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/audio.py:35
+#: brasil/gov/tiles/tiles/configure.zcml:32
 msgid "Audio"
 msgstr ""
 
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:44
 msgid "Audio Gallery"
 msgstr ""
 
-#: ./tiles/audiogallery.py:32
+#: brasil/gov/tiles/tiles/audiogallery.py:35
 msgid "Audios"
 msgstr ""
 
-#: ./tiles/carousel.py:19
-msgid "Auto play"
+#: brasil/gov/tiles/tiles/quote.py:25
+msgid "Blue"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Basic News Article Tile"
-msgstr ""
-
-#: ./tiles/albuns.py:32
+#: brasil/gov/tiles/tiles/albuns.py:31
 msgid "Carousel of images"
 msgstr ""
 
-#: ./tiles/nitf.py:31
-msgid "Change in Title"
-msgstr ""
-
-#: ./tiles/templates/audiogallery.pt:72
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:72
 msgid "Click here."
 msgstr ""
 
-#: ./tiles/social.py:29
-msgid "Columns"
+#: brasil/gov/tiles/tiles/overrides.zcml:21
+msgid "Collection Tile"
 msgstr ""
 
-#: ./tiles/audio.py:27
+#: brasil/gov/tiles/browser/tileshare.pt:1
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/audio.py:29
 msgid "Credit"
 msgstr ""
 
-#: ./tiles/templates/audio.pt:56
+#: brasil/gov/tiles/tiles/templates/audio.pt:56
 msgid "Credit:"
 msgstr ""
 
-#: ./tiles/albuns.py:26
+#: brasil/gov/tiles/tiles/potd.py:30
+msgid "Credits"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/albuns.py:25
 msgid "Current image"
 msgstr ""
 
-#: ./tiles/banner_rotativo.py:47
-#: ./tiles/basic.py:50
-#: ./tiles/collection.py:43
+#: brasil/gov/tiles/tiles/collection.py:43
+#: brasil/gov/tiles/tiles/list.py:50
 msgid "Date"
 msgstr ""
 
-#: ./tiles/audio.py:21
-#: ./tiles/banner_rotativo.py:39
-#: ./tiles/basic.py:31
+#: brasil/gov/tiles/tiles/audio.py:23
+#: brasil/gov/tiles/tiles/collection.py:36
+#: brasil/gov/tiles/tiles/list.py:43
 msgid "Description"
 msgstr ""
 
-#: ./tiles/templates/mediacarousel.pt:55
-msgid "Drag a folder or collection to populate the tile."
+#: brasil/gov/tiles/tiles/configure.zcml:166
+msgid "Display a carousel of items."
 msgstr ""
 
-#: ./tiles/templates/albuns.pt:87
+#: brasil/gov/tiles/tiles/configure.zcml:127
+msgid "Display a photo of the day section."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:140
+msgid "Display a section navigation."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:179
+msgid "Display an highlights carousel."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/albuns.pt:87
 msgid "Drag an album to the popular tile."
 msgstr ""
 
-#: ./tiles/banner_rotativo.py:72
-#: ./tiles/carousel.py:26
-#: ./tiles/destaque.py:26
+#: brasil/gov/tiles/tiles/templates/quote.pt:9
+msgid "Drag&amp;drop a News Article here."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/photogallery.pt:8
+#: brasil/gov/tiles/tiles/templates/potd.pt:8
+msgid "Drag&amp;drop an image here to populate the tile."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/list.py:64
 msgid "Elements"
 msgstr ""
 
-#: ./tiles/embed.py:13
-msgid "Embedding code"
-msgstr ""
-
-#: ./tiles/templates/social.pt:35
-msgid "Facebook"
-msgstr ""
-
-#: ./tiles/social.py:24
-msgid "Facebook Page URL"
-msgstr ""
-
-#: ./tiles/templates/social.pt:65
-msgid "Facebook page of the Brazil Portal"
-msgstr ""
-
-#: ./tiles/templates/em_destaque.pt:16
+#: tiles/configure.zcml
 msgid "Featured"
 msgstr ""
 
-#: ./tiles/templates/audio.pt:51
+#: brasil/gov/tiles/tiles/templates/audio.pt:51
 msgid "Flash plugin"
 msgstr ""
 
-#: ./tiles/albuns.py:38
-#: ./tiles/collection.py:64
+#: brasil/gov/tiles/tiles/albuns.py:37
+#: brasil/gov/tiles/tiles/collection.py:64
 msgid "Footer"
 msgstr ""
 
-#: ./tiles/audiogallery.py:26
-#: ./tiles/mediacarousel.py:47
-#: ./tiles/videogallery.py:39
+#: brasil/gov/tiles/tiles/audiogallery.py:29
+#: brasil/gov/tiles/tiles/videogallery.py:41
 msgid "Footer Link"
 msgstr ""
 
-#: ./tiles/albuns.py:66
+#: brasil/gov/tiles/tiles/albuns.py:68
+#: brasil/gov/tiles/tiles/configure.zcml:80
 msgid "Gallery albums"
 msgstr ""
 
-#: ./tiles/audiogallery.py:16
-#: ./tiles/banner_rotativo.py:23
-#: ./tiles/collection.py:22
+#: brasil/gov/tiles/tiles/quote.py:26
+msgid "Green"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:166
+msgid "Group Carousel"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/audiogallery.py:19
+#: brasil/gov/tiles/tiles/collection.py:22
+#: brasil/gov/tiles/tiles/configure.zcml:56
 msgid "Header"
 msgstr ""
 
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:56
 msgid "Header tile, the element dropped populate the data."
 msgstr ""
 
-#: ./tiles/templates/destaque.pt:14
-msgid "Highlights"
+#: brasil/gov/tiles/tiles/configure.zcml:179
+msgid "Highlights Carousel"
 msgstr ""
 
-#: ./tiles/banner.py:24
-#: ./tiles/banner_rotativo.py:55
-#: ./tiles/basic.py:36
+#: brasil/gov/tiles/tiles/collection.py:50
+#: brasil/gov/tiles/tiles/list.py:57
+#: brasil/gov/tiles/tiles/videogallery.py:49
 msgid "Image"
 msgstr ""
 
-#: Profile description in profile.zcml
+#: brasil/gov/tiles/profiles.zcml:13
 msgid "Install and configure reusable interface elements"
 msgstr ""
 
-#: ./tiles/albuns.py:51
+#: brasil/gov/tiles/tiles/albuns.py:50
 msgid "Link footer"
 msgstr ""
 
-#: ./tiles/header.py:20
+#: brasil/gov/tiles/tiles/header.py:21
 msgid "Link text"
 msgstr ""
 
-#: ./tiles/header.py:25
+#: brasil/gov/tiles/tiles/header.py:26
 msgid "Link url"
 msgstr ""
 
-#: ./tiles/header.py:30
-msgid "Title as link?"
+#: brasil/gov/tiles/tiles/overrides.zcml:33
+msgid "List Tile"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:53
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:53
 msgid "Max volume"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Media Carousel"
+#: brasil/gov/tiles/browser/tileshare.pt:1
+msgid "More Options"
 msgstr ""
 
-#: ./tiles/collection.py:112
+#: brasil/gov/tiles/tiles/collection.py:112
 msgid "More…"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:51
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:51
 msgid "Mute"
 msgstr ""
 
-#: ./tiles/templates/albuns.pt:60
+#: brasil/gov/tiles/tiles/configure.zcml:140
+msgid "Navigation"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/albuns.pt:60
 msgid "Next &raquo;"
 msgstr ""
 
-#: ./tiles/collection.py:58
+#: brasil/gov/tiles/tiles/collection.py:58
 msgid "Number of items to display"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:50
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:50
 msgid "Pause"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:49
+#: brasil/gov/tiles/tiles/potd.py:36
+msgid "Photo"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:127
+msgid "Photo Gallery"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:106
+msgid "Photo of the Day"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:49
 msgid "Play"
 msgstr ""
 
-#: ./tiles/templates/destaque.pt:9
-#: ./tiles/templates/em_destaque.pt:9
-msgid "Please add up to ${limit_objects} objects to the tile."
-msgstr ""
-
-#: ./tiles/templates/nitf.pt:9
-msgid "Please drag&amp;drop a news article here."
-msgstr ""
-
-#: Profile description in profile.zcml
+#: brasil/gov/tiles/profiles.zcml:28
 msgid "Profile tests for the package Block Content."
 msgstr ""
 
-#: Profile description in profile.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:93
+#: brasil/gov/tiles/tiles/quote.py:35
+msgid "Quote"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/quote.py:42
+msgid "Quote Rights"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/quote.py:23
+msgid "Quote color"
+msgstr ""
+
+#: brasil/gov/tiles/profiles.zcml:20
 msgid "Remove the reusable interface elements"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:71
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:71
 msgid "Required Update"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Rotating Banner"
+#: brasil/gov/tiles/browser/tileshare.pt:1
+msgid "Share on Facebook (open in new window)"
 msgstr ""
 
-#: ./tiles/nitf.py:24
-msgid "Section"
+#: brasil/gov/tiles/browser/tileshare.pt:1
+msgid "Share on Google+ (open in new window)"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Social"
+#: brasil/gov/tiles/browser/tileshare.pt:1
+msgid "Share on Linkedin (open in new window)"
 msgstr ""
 
-#: ./tiles/nitf.py:17
-#: ./tiles/videogallery.py:33
+#: brasil/gov/tiles/tiles/videogallery.py:35
 msgid "Subtitle"
 msgstr ""
 
-#: ./tiles/albuns.py:45
+#: brasil/gov/tiles/tiles/groupcarousel.py:19
+#: brasil/gov/tiles/tiles/videocarousel.py:20
+msgid "Switch Text"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/albuns.py:44
 msgid "Text footer"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Tile which displays a gallery of albums"
+#: brasil/gov/tiles/tiles/templates/highlightscarousel.pt:8
+msgid "This carousel is empty; open the content chooser and drag-and-drop some items here."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:106
+msgid "This tile displays an outstanding photo selected daily."
+msgstr ""
+
+#: brasil/gov/tiles/tiles/groupcarousel.py:15
+#: brasil/gov/tiles/tiles/highlightscarousel.py:15
+#: brasil/gov/tiles/tiles/photogallery.py:17
+msgid "Tile Description"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:80
+msgid "Tile which displays a gallery of albums."
 msgstr ""
 
 #: tiles/configure.zcml
 msgid "Tile which displays a line with list of highlights"
 msgstr ""
 
-#: tiles/configure.zcml
-msgid "Tile which displays a rotating banner with links and images"
-msgstr ""
-
-#: ./tiles/albuns.py:20
-#: ./tiles/audio.py:16
-#: ./tiles/audiogallery.py:21
+#: brasil/gov/tiles/tiles/albuns.py:19
+#: brasil/gov/tiles/tiles/audio.py:18
+#: brasil/gov/tiles/tiles/audiogallery.py:24
 msgid "Title"
 msgstr ""
 
-#: ./tiles/templates/audio.pt:51
+#: brasil/gov/tiles/tiles/header.py:31
+msgid "Title as link?"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/audio.pt:51
 msgid "To play the media you will need to either update your browser to a recent version or update your"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:72
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:72
 msgid "To view content you need Flash update support to a newer version."
 msgstr ""
 
-#: ./tiles/templates/social.pt:36
-msgid "Twitter"
+#: brasil/gov/tiles/browser/tileshare.pt:1
+msgid "Tweet (opens in new window)"
 msgstr ""
 
-#: ./tiles/templates/social.pt:66
-msgid "Twitter Microblog of the Brazil Portal"
-msgstr ""
-
-#: ./tiles/social.py:19
-msgid "Twitter username"
-msgstr ""
-
-#: ./tiles/social.py:14
-msgid "Twitter widget id"
-msgstr ""
-
-#: ./tiles/banner.py:36
-msgid "URL"
-msgstr ""
-
-#: ./tiles/basic.py:66
-#: ./tiles/collection.py:69
-#: ./tiles/header.py:30
+#: brasil/gov/tiles/tiles/collection.py:69
+#: brasil/gov/tiles/tiles/header.py:36
 msgid "UUID"
 msgstr ""
 
-#: ./tiles/templates/audiogallery.pt:52
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:52
 msgid "Unmute"
 msgstr ""
 
-#: ./tiles/templates/audio.pt:50
+#: brasil/gov/tiles/tiles/templates/audio.pt:50
 msgid "Update Required"
 msgstr ""
 
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:68
 msgid "Video"
 msgstr ""
 
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:153
+msgid "Video Carousel"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/configure.zcml:20
 msgid "Video Gallery"
 msgstr ""
 
-#: ./tiles/templates/embed.pt:18
-msgid "Video successfully inserted (access the view tab to view running)"
-msgstr ""
-
-#: tiles/configure.zcml
+#: brasil/gov/tiles/tiles/configure.zcml:68
 msgid "Video tile, can reproduce embeded files."
 msgstr ""
 
-#: ./tiles/video.py:21
-#: ./tiles/videogallery.py:55
+#: brasil/gov/tiles/tiles/video.py:21
+#: brasil/gov/tiles/tiles/videogallery.py:57
 msgid "Videos"
 msgstr ""
 
-#: ./tiles/templates/albuns.pt:53
+#: brasil/gov/tiles/tiles/templates/albuns.pt:53
 msgid "Visit the album"
 msgstr ""
 
-#: ./tiles/templates/video.pt:15
-#: ./tiles/templates/videogallery.pt:96
+#: brasil/gov/tiles/tiles/templates/video.pt:15
+#: brasil/gov/tiles/tiles/templates/videogallery.pt:96
 msgid "Your internet browser this not support JavaScript, therefore some features of the website may not be accessible."
 msgstr ""
 
-#. Default: "Categories"
-#: ./tiles/basic.py:59
-msgid "label_categories"
-msgstr ""
-
-#: ./tiles/templates/audio.pt:32
-#: ./tiles/templates/audiogallery.pt:53
+#: brasil/gov/tiles/tiles/templates/audio.pt:32
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:53
 msgid "max volume"
 msgstr ""
 
-#: ./tiles/templates/audio.pt:30
-#: ./tiles/templates/audiogallery.pt:51
-msgid "mute"
-msgstr ""
-
-#: ./tiles/templates/audio.pt:29
-msgid "pause"
-msgstr ""
-
-#: ./tiles/templates/audio.pt:28
-msgid "play"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "social streams, from twitter and facebook."
-msgstr ""
-
-#: ./tiles/list.py:119
-msgid "tile List Title"
-msgstr ""
-
-#: ./tiles/templates/audio.pt:31
-#: ./tiles/templates/audiogallery.pt:52
-msgid "unmute"
-msgstr ""
-
-#: tiles/configure.zcml
-msgid "Group Carousel"
-msgstr ""
-
-#: ./tiles/groupcarousel.py:33
+#. Default: "Group Carousel"
+#: brasil/gov/tiles/tiles/groupcarousel.py:31
 msgid "msg_short_name_groupcarousel"
 msgstr ""
 
-#: ./tiles/templates/groupcarousel.pt:8
-msgid "Add up to ${limit_objects} objects to the tile."
+#. Default: "Highlights Carousel"
+#: brasil/gov/tiles/tiles/highlightscarousel.py:27
+msgid "msg_short_name_highlightscarousel"
+msgstr ""
+
+#. Default: "Navigation"
+#: brasil/gov/tiles/tiles/navigation.py:20
+msgid "msg_short_name_navigation"
+msgstr ""
+
+#. Default: "Photo of the Day"
+#: brasil/gov/tiles/tiles/potd.py:52
+msgid "msg_short_name_potd"
+msgstr ""
+
+#. Default: "Quote"
+#: brasil/gov/tiles/tiles/quote.py:52
+msgid "msg_short_name_quote"
+msgstr ""
+
+#. Default: "Video Carousel"
+#: brasil/gov/tiles/tiles/videocarousel.py:36
+msgid "msg_short_name_video_carousel"
+msgstr ""
+
+#. Default: "Photo Gallery"
+#: brasil/gov/tiles/tiles/photogallery.py:30
+msgid "msg_short_photo_gallery"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/audio.pt:30
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:51
+msgid "mute"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/audio.pt:29
+msgid "pause"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/audio.pt:28
+msgid "play"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/list.py:118
+msgid "tile List Title"
+msgstr ""
+
+#: brasil/gov/tiles/tiles/templates/audio.pt:31
+#: brasil/gov/tiles/tiles/templates/audiogallery.pt:52
+msgid "unmute"
 msgstr ""
