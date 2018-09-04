@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: brasil.gov.tiles\n"
 "POT-Creation-Date: 2018-09-04 12:45+0000\n"
-"PO-Revision-Date: 2018-09-04 10:34-0300\n"
+"PO-Revision-Date: 2018-09-04 11:02-0300\n"
 "Last-Translator: Rodrigo Ferreira de Souza <rodrigo.souza@avadora.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -316,7 +316,7 @@ msgstr "Citação"
 
 #: brasil/gov/tiles/tiles/quote.py:42
 msgid "Quote Rights"
-msgstr "Crédito da CItação"
+msgstr "Crédito da Citação"
 
 #: brasil/gov/tiles/tiles/quote.py:23
 msgid "Quote color"
@@ -375,7 +375,7 @@ msgstr "Este tile exibe uma foto selecionada diariamente."
 #: brasil/gov/tiles/tiles/highlightscarousel.py:15
 #: brasil/gov/tiles/tiles/photogallery.py:17
 msgid "Tile Description"
-msgstr "Descroção do tile"
+msgstr "Descrição do tile"
 
 #: tiles/configure.zcml
 msgid "Tile which displays a gallery of albums"
