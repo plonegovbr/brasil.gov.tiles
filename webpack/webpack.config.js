@@ -74,7 +74,6 @@ module.exports = {
       use: 'svg-url-loader',
     }]
   },
-  devtool: 'source-map',
   plugins: [
     new CopyWebpackPlugin([{
       from: 'app/vendor/*',
