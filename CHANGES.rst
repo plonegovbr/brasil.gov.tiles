@@ -4,6 +4,9 @@ Changelog
 2.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Evita o erro ``NotFound`` ao rodar o upgrade step da versão 4100 (fecha `#260 <https://github.com/plonegovbr/brasil.gov.tiles/issues/260>`_).
+  [hvelarde]
+
 - Evita a emissão de source maps dos recursos estáticos.
   [hvelarde]
 
