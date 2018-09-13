@@ -111,7 +111,8 @@ def migrate_deprecated_tiles(setup_tool):
 
     logger.info('Migrating IDG tiles on collective.cover objects')
     logger.warn('All tiles with no substitute will be removed from layouts')
-    for obj in get_valid_objects(portal_type='collective.cover.content'):
+    results = get_valid_objects(portal_type='collective.cover.content')
+    for obj in results:
         try:
             layout = json.loads(obj.cover_layout)
         except TypeError:
@@ -123,7 +124,10 @@ def migrate_deprecated_tiles(setup_tool):
             elif old != new:
                 layout = replace_tile(layout, old, new)
             obj.cover_layout = json.dumps(layout)
-            replace_attribute(obj, new, 'image_description', 'alt_text')
+
+    logger.info('Migrating attributes on tiles')
+    for obj in results:
+        replace_attribute(obj, new, 'image_description', 'alt_text')
 
     logger.info('Done')
 
