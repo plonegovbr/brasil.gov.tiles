@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0b2 (unreleased)
+2.0b2 (2018-09-19)
 ^^^^^^^^^^^^^^^^^^
 
 - Evita o erro ``NotFound`` ao rodar o upgrade step da versão 4100 (fecha `#260 <https://github.com/plonegovbr/brasil.gov.tiles/issues/260>`_).
