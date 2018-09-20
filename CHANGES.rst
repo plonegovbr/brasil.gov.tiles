@@ -4,7 +4,8 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Deixa a seta do carrossel invisível quando ela estiver inativa.
+  [hvelarde]
 
 
 2.0b2 (2018-09-19)
