@@ -82,4 +82,8 @@
   .swiper-button-next, .swiper-button-prev {
     height: 25px;
   }
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+  }
 }
