@@ -45,13 +45,7 @@ $(() => {
     new HighlightsCarouselTile(carousel);
   }
   if ($('.portaltype-collective-cover-content').length > 0) {
-    for (let tile of $('.cover-richtext-tile')) {
-      if ($(tile).parent().hasClass('tile-default')) {
-        continue;
-      }
-      new TileShare(tile);
-    }
-    for (let tile of $('.nitf-basic-tile')) {
+    for (let tile of $('.box-colorido .cover-richtext-tile, .nitf-basic-tile')) {
       new TileShare(tile);
     }
   }

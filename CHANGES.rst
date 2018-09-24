@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Revisa regras para aplicar compartilhamento em tiles.
+  [rodfersou]
+
 - Deixa a seta do carrossel invisível quando ela estiver inativa.
   [hvelarde]
 

@@ -144,7 +144,7 @@ Tile NITF
     Seu primeiro link aponte para um conteúdo interno.
 
 Tile Rich Text
-    É necessário que adicione alguma classe na configuração do tile (aba layout),
+    É necessário que adicione o estilo Box Colorido na configuração do tile (aba layout),
     e seu primeiro link aponte para um conteúdo interno.
 
 .. figure:: https://raw.github.com/plonegovbr/brasil.gov.tiles/master/docs/tileshare.png
