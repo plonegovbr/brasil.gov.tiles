@@ -51,7 +51,7 @@ class Upgrade3000to4000TestCase(Upgrade9to10TestCase):
         self.assertIsNotNone(step)
 
         # simulate state on previous version
-        cover = self._create_cover('test-cover', 'Empty layout')
+        cover = self._create_cover(id='test-cover', layout='Empty layout')
         cover.cover_layout = (
             '[{"type": "row", "children": [{"column-size": 16, "type": '
             '"group", "children": [{"tile-type": '
@@ -87,7 +87,7 @@ class Upgrade4000to4001TestCase(UpgradeTestCaseBrasilGovTitles):
         self.assertIsNotNone(step)
 
         # simulate state on previous version
-        cover = self._create_cover('test-cover', 'Empty layout')
+        cover = self._create_cover(id='test-cover', layout='Empty layout')
 
         old_data = (
             u'[{"type": "row", "children": [{"data": {"layout-type": '
