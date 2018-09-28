@@ -8,7 +8,7 @@ Changelog
   [rodfersou]
 
 - Deixa a seta do carrossel invisível quando ela estiver inativa.
-  [hvelarde]
+  [agnogueira]
 
 
 2.0b2 (2018-09-19)
