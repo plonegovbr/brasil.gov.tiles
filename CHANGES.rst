@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0b3 (unreleased)
+2.0b3 (2018-09-28)
 ^^^^^^^^^^^^^^^^^^
 
 - Revisa regras para aplicar compartilhamento em tiles.
