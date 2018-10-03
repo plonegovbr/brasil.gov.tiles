@@ -132,6 +132,29 @@ def migrate_deprecated_tiles(setup_tool):
     logger.info('Done')
 
 
+def migrate_tile_removed_override(setup_tool):
+    """Migrate list tile override:
+
+        - audiogallery
+        - videogallery
+        - collective.cover.list
+    """
+
+    from brasil.gov.tiles.upgrades import replace_value_attribute
+
+    TILES = [
+        u'audiogallery',
+        u'videogallery',
+        u'collective.cover.list',
+    ]
+
+    for obj in get_valid_objects(portal_type='collective.cover.content'):
+        for tile in TILES:
+            replace_attribute(obj, tile, 'header', 'tile_title')
+            replace_value_attribute(obj, tile, 'uuids')
+    logger.info('Done')
+
+
 def install_embedder(setup_tool):
     """Install sc.embedder."""
     addon = 'sc.embedder'
