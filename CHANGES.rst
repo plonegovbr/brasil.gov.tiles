@@ -4,6 +4,13 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Deprecia uso do resource registries.
+  Agora utilizamos um viewlet para registrar recursos estáticos.
+  [rodfersou]
+
+- Atualiza configuração do webpack.
+  [rodfersou]
+
 - Remove override do tile de Coleção do collective.cover.
   [hvelarde, rodfersou]
 
