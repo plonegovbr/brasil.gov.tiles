@@ -64,11 +64,9 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         _rename_resources(js_tool, RESOURCES_TO_UPDATE_INVERSE)
 
         css_ids = css_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
 
         js_ids = js_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/tiles.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.cycle2.carousel.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.cycle2.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
@@ -81,11 +79,9 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
 
         css_ids = css_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
 
         js_ids = js_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/brasilgovtiles.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js', js_ids)
@@ -231,7 +227,7 @@ class UpgradeTo4101TestCase(BaseUpgradeTestCase):
 
     def test_deprecate_resource_registries(self):
         title = u'Deprecate resource registries'
-        step = self._get_upgrade_step(title)
+        step = self._get_upgrade_step_by_title(title)
         self.assertIsNotNone(step)
 
         # simulate state on previous version
@@ -247,7 +243,7 @@ class UpgradeTo4101TestCase(BaseUpgradeTestCase):
             self.assertIn(css, css_tool.getResourceIds())
 
         # run the upgrade step to validate the update
-        self._do_upgrade_step(step)
+        self._do_upgrade(step)
         for js in SCRIPTS:
             self.assertNotIn(js, js_tool.getResourceIds())
         for css in STYLES:

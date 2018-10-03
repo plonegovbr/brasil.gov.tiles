@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.cover.testing import INTEGRATION_TESTING
+from brasil.gov.tiles.testing import INTEGRATION_TESTING
 from lxml import etree  # nosec
 from plone import api
 from Products.Five.browser import BrowserView
@@ -39,7 +39,7 @@ class ResourcesViewletTestCase(unittest.TestCase):
 
     def test_viewlet(self):
         html = etree.HTML(self.viewlet())
-        self.assertIn('async', html.xpath('//script')[0].attrib)
+        self.assertIn('defer', html.xpath('//script')[0].attrib)
         # script name must include the hash of latest git commit
         regexp = r'brasilgovtiles-[\da-f]{7}\.js$'
         self.assertRegexpMatches(
