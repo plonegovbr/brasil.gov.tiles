@@ -214,3 +214,41 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
         content_types = api.portal.get_registry_record(**record)
         self.assertEqual(max(Counter(content_types).values()), 1)
+
+
+class UpgradeTo4101TestCase(BaseUpgradeTestCase):
+
+    from_ = u'4100'
+    to_ = u'4101'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 3)
+
+    def test_deprecate_resource_registries(self):
+        title = u'Deprecate resource registries'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        from brasil.gov.tiles.upgrades.v4101 import SCRIPTS
+        js_tool = api.portal.get_tool('portal_javascripts')
+        for js in SCRIPTS:
+            js_tool.registerResource(id=js)
+            self.assertIn(js, js_tool.getResourceIds())
+        from brasil.gov.tiles.upgrades.v4101 import STYLES
+        css_tool = api.portal.get_tool('portal_css')
+        for css in STYLES:
+            css_tool.registerResource(id=css)
+            self.assertIn(css, css_tool.getResourceIds())
+
+        # run the upgrade step to validate the update
+        self._do_upgrade_step(step)
+        for js in SCRIPTS:
+            self.assertNotIn(js, js_tool.getResourceIds())
+        for css in STYLES:
+            self.assertNotIn(css, css_tool.getResourceIds())
