@@ -29,11 +29,11 @@
         />
 
     <genericsetup:upgradeStep
-        title="Migrate tiles with removed override"
-        description="Tiles with a override removed will be migrated."
-        handler=".migrate_tile_removed_override"
+        title="Migrate data from tiles that have been removed"
+        description="The data of the tiles audiogallery, videogallery and collective.cover.list will be migrated."
+        handler=".migrate_tiles_data_removed"
         />
-tiles with
+
     <genericsetup:upgradeStep
         title="Install sc.embedder"
         handler=".install_embedder"

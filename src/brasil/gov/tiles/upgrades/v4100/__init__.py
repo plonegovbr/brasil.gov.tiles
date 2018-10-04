@@ -132,15 +132,14 @@ def migrate_deprecated_tiles(setup_tool):
     logger.info('Done')
 
 
-def migrate_tile_removed_override(setup_tool):
-    """Migrate list tile override:
+def migrate_tiles_data_removed(setup_tool):
+    """The "List" tile in brasil.gov.tiles has been removed to use
+       collective.cover, it is necessary to migrate the data.
 
-        - audiogallery
-        - videogallery
-        - collective.cover.list
+       Tiles affected: audiogallery, videogallery e collective.cover.list
     """
 
-    from brasil.gov.tiles.upgrades import replace_value_attribute
+    from brasil.gov.tiles.upgrades import replace_attribute_data
 
     TILES = [
         u'audiogallery',
@@ -151,7 +150,7 @@ def migrate_tile_removed_override(setup_tool):
     for obj in get_valid_objects(portal_type='collective.cover.content'):
         for tile in TILES:
             replace_attribute(obj, tile, 'header', 'tile_title')
-            replace_value_attribute(obj, tile, 'uuids')
+            replace_attribute_data(obj, tile, 'uuids')
     logger.info('Done')
 
 
