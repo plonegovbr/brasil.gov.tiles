@@ -96,17 +96,17 @@ a {
     height: 23px;
   }
   &.jp-play {
-    background: url(./img/jplayer.blue.monday.jpg) 0 0 no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 0 no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -41px 0 no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -41px 0 no-repeat;
     }
   }
   &.jp-pause {
     display: none;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -42px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 -42px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -41px -42px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -41px -42px no-repeat;
     }
   }
   &.jp-previous,
@@ -116,15 +116,15 @@ a {
     margin-top: 6px;
   }
   &.jp-previous {
-    background: url(./img/jplayer.blue.monday.jpg) 0 -112px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 -112px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -29px -112px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -29px -112px no-repeat;
     }
   }
   &.jp-next {
-    background: url(./img/jplayer.blue.monday.jpg) 0 -141px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 -141px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -29px -141px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -29px -141px no-repeat;
     }
   }
 }
@@ -166,13 +166,13 @@ div {
 
     cursor: pointer;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -202px repeat-x;
+    background: url(./img/jplayer.blue.monday.png) 0 -202px repeat-x;
   }
   &.jp-play-bar {
     width: 0;
     height: 100%;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -218px repeat-x;
+    background: url(./img/jplayer.blue.monday.png) 0 -218px repeat-x;
   }
   &.jp-seeking-bg {
     background: url(./img/jplayer.blue.monday.seeking.gif);
@@ -213,17 +213,17 @@ div {
 
 a {
   &.jp-mute {
-    background: url(./img/jplayer.blue.monday.jpg) 0 -186px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 -186px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -19px -186px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -19px -186px no-repeat;
     }
   }
   &.jp-unmute {
     display: none;
 
-    background: url(./img/jplayer.blue.monday.jpg) -60px -170px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) -60px -170px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -79px -170px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -79px -170px no-repeat;
     }
   }
 }
@@ -239,7 +239,7 @@ div {
 
     cursor: pointer;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -250px repeat-x;
+    background: url(./img/jplayer.blue.monday.png) 0 -250px repeat-x;
   }
   &.jp-audio div.jp-volume-bar {
     top: 37px;
@@ -253,7 +253,7 @@ div {
     width: 0;
     height: 5px;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -256px repeat-x;
+    background: url(./img/jplayer.blue.monday.png) 0 -256px repeat-x;
   }
   &.jp-audio div {
     &.jp-time-holder {
@@ -345,33 +345,33 @@ a {
   &.jp-full-screen {
     margin-left: 20px;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -310px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 -310px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -30px -310px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -30px -310px no-repeat;
     }
   }
   &.jp-restore-screen {
     margin-left: 20px;
 
-    background: url(./img/jplayer.blue.monday.jpg) -60px -310px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) -60px -310px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -90px -310px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -90px -310px no-repeat;
     }
   }
   &.jp-shuffle {
     margin-left: 5px;
 
-    background: url(./img/jplayer.blue.monday.jpg) 0 -270px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) 0 -270px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -30px -270px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -30px -270px no-repeat;
     }
   }
   &.jp-shuffle-off {
     margin-left: 5px;
 
-    background: url(./img/jplayer.blue.monday.jpg) -60px -270px no-repeat;
+    background: url(./img/jplayer.blue.monday.png) -60px -270px no-repeat;
     &:hover {
-      background: url(./img/jplayer.blue.monday.jpg) -90px -270px no-repeat;
+      background: url(./img/jplayer.blue.monday.png) -90px -270px no-repeat;
     }
   }
 }
