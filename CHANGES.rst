@@ -4,7 +4,8 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove override do tile Lista do collective.cover.
+  [hvelarde, claytonc, rodfersou]
 
 
 2.0b3 (2018-09-28)

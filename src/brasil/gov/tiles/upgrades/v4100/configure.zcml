@@ -29,6 +29,12 @@
         />
 
     <genericsetup:upgradeStep
+        title="Migrate data from tiles that have been removed"
+        description="The data of the tiles audiogallery, videogallery and collective.cover.list will be migrated."
+        handler=".migrate_tiles_data_removed"
+        />
+
+    <genericsetup:upgradeStep
         title="Install sc.embedder"
         handler=".install_embedder"
         />

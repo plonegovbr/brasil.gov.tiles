@@ -4,39 +4,32 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="brasil.gov.tiles">
 
-<!-- <head>
-  <link rel="stylesheet" type="text/css"
-      tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.cover/galleria-theme/galleria.cover_theme.css" />
-  <script type="text/javascript" tal:content="structure view/init_js">
-  </script>
-</head> -->
-
 <body tal:define="tile_id view/id;">
   <div class="videogallery-tile tile-content"
        tal:attributes="id string:videogallery-$tile_id"
-       tal:define="conf_fields view/get_configured_fields;
-                   results view/results;
+       tal:define="results view/results;
                    collection python:results[0] if results else None;
                    items python:view.get_elements(collection)"
        tal:condition="collection">
 
     <!-- Gallery items -->
-    <tal:header define="config python:conf_fields.get('header', None);
-                        htmltag python:config.get('htmltag', 'h1') if config else 'h1'"
-                condition="view/show_header">
-      <h1 class="gallery-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h1'" />
-      <h2 class="gallery-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h2'" />
-      <h3 class="gallery-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h3'" />
-      <h4 class="gallery-tile"
-          tal:content="view/data/header"
-          tal:condition="python:htmltag == 'h4'" />
-    </tal:header>
+    <tal:fields repeat="field view/get_configured_fields">
+      <tal:header define="htmltag python:field.get('htmltag', 'h1') if field else 'h1'"
+                  condition="python:field['id'] == 'tile_title' and view.show_header()">
+        <h1 class="gallery-tile"
+            tal:content="view/data/tile_title"
+            tal:condition="python:htmltag == 'h1'" />
+        <h2 class="gallery-tile"
+            tal:content="view/data/tile_title"
+            tal:condition="python:htmltag == 'h2'" />
+        <h3 class="gallery-tile"
+            tal:content="view/data/tile_title"
+            tal:condition="python:htmltag == 'h3'" />
+        <h4 class="gallery-tile"
+            tal:content="view/data/tile_title"
+            tal:condition="python:htmltag == 'h4'" />
+      </tal:header>
+    </tal:fields>
 
     <div class="videogallery-inner">
       <div class="player-holder" tal:define="first_item python:items[0] if items else None"

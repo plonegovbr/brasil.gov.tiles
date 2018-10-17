@@ -81,3 +81,18 @@ def replace_attribute(obj, tile_type, old, new):
         if data.get(old):
             data[new] = data.pop(old)
             data_mgr.set(data)
+
+
+def replace_attribute_data(obj, tile_type, key):
+    """Replace and convert value list to dict"""
+    from plone.tiles.interfaces import ITileDataManager
+    for id_ in obj.list_tiles(tile_type):
+        tile = obj.get_tile(id_)
+        data_mgr = ITileDataManager(tile)
+        data = data_mgr.get()
+        value = data.get(key)
+
+        if value and isinstance(value, list):
+            data[key] = {item: {'order': index}
+                         for index, item in enumerate(data.pop(key))}
+            data_mgr.set(data)

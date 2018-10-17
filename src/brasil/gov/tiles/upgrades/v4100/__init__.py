@@ -132,6 +132,28 @@ def migrate_deprecated_tiles(setup_tool):
     logger.info('Done')
 
 
+def migrate_tiles_data_removed(setup_tool):
+    """The "List" tile in brasil.gov.tiles has been removed to use
+       collective.cover, it is necessary to migrate the data.
+
+       Tiles affected: audiogallery, videogallery e collective.cover.list
+    """
+
+    from brasil.gov.tiles.upgrades import replace_attribute_data
+
+    TILES = [
+        u'audiogallery',
+        u'videogallery',
+        u'collective.cover.list',
+    ]
+
+    for obj in get_valid_objects(portal_type='collective.cover.content'):
+        for tile in TILES:
+            replace_attribute(obj, tile, 'header', 'tile_title')
+            replace_attribute_data(obj, tile, 'uuids')
+    logger.info('Done')
+
+
 def install_embedder(setup_tool):
     """Install sc.embedder."""
     addon = 'sc.embedder'

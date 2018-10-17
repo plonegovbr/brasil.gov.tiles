@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from six.moves import range  # noqa: I001
 from brasil.gov.tiles import _
-from brasil.gov.tiles.tiles.list import IListTile
-from brasil.gov.tiles.tiles.list import ListTile
 from collective.cover.tiles.configuration_view import IDefaultConfigureForm
+from collective.cover.tiles.list import IListTile
+from collective.cover.tiles.list import ListTile
 from plone import api
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage as NamedImage
@@ -18,7 +18,7 @@ class IVideoGalleryTile(IListTile):
     descriptions and links.
     """
 
-    header = schema.TextLine(
+    tile_title = schema.TextLine(
         title=_(u'Header'),
         required=False,
     )
@@ -78,12 +78,12 @@ class VideoGalleryTile(ListTile):
         # XXX
 
         self.set_limit()
-        header = obj.Title()  # use collection's title as header
+        tile_title = obj.Title()  # use collection's title as header
         uuid = api.content.get_uuid(obj)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
-        old_data['header'] = header
+        old_data['tile_title'] = tile_title
         old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
@@ -123,4 +123,4 @@ class VideoGalleryTile(ListTile):
         return results
 
     def show_header(self):
-        return self._field_is_visible('header')
+        return self._field_is_visible('tile_title')
