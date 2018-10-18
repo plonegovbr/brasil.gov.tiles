@@ -4,7 +4,8 @@ Changelog
 1.6.2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Corrige testes para funcionar com a versão 1.8b2 do collective.cover.
+  [hvelarde]
 
 
 1.6.1 (2018-06-11)
