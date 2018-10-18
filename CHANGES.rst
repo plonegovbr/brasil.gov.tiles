@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.6.2 (unreleased)
+1.6.2 (2018-10-18)
 ^^^^^^^^^^^^^^^^^^
 
 - Corrige testes para funcionar com a versão 1.8b2 do collective.cover.
