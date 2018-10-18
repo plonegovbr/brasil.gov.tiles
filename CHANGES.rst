@@ -5,7 +5,7 @@ Changelog
 ^^^^^^^^^^^^^^^^^^
 
 - Remove override do tile de Coleção do collective.cover.
-  [hvelarde]
+  [hvelarde, rodfersou]
 
 - Remove override do tile Lista do collective.cover.
   [hvelarde, claytonc, rodfersou]

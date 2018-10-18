@@ -68,7 +68,6 @@ class Fixture(CoverFixture):
         super(Fixture, self).setUpZope(app, configurationContext)
         import brasil.gov.tiles
         self.loadZCML(package=brasil.gov.tiles)
-        self.loadZCML(name='overrides.zcml', package=brasil.gov.tiles)
 
     def setUpPloneSite(self, portal):
         super(Fixture, self).setUpPloneSite(portal)

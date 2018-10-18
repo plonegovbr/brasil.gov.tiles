@@ -61,7 +61,6 @@ setup(
         'sc.embedder',
         'setuptools',
         'six',
-        'z3c.unconfigure',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',
