@@ -12,6 +12,8 @@ from Products.CMFPlone.utils import safe_hasattr
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
+import warnings
+
 
 class IMediaCarouselTile(IListTile):
     """
@@ -56,6 +58,13 @@ class MediaCarouselTile(ListTile):
     index = ViewPageTemplateFile('templates/mediacarousel.pt')
     is_configurable = True
     is_editable = True
+
+    def __call__(self):
+        path = '/'.join(self.context.getPhysicalPath())
+        msg = ('Use of tile "Media Carousel" is deprecated '
+               'and will be removed for the next version {0}'.format(path))
+        warnings.warn(msg, DeprecationWarning)
+        return self.index()
 
     def populate_with_object(self, obj):
         super(ListTile, self).populate_with_object(obj)  # check permission

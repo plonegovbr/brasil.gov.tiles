@@ -7,6 +7,8 @@ from Products.PythonScripts.standard import url_quote
 from zope import schema
 from zope.interface import implementer
 
+import warnings
+
 
 class ISocialTile(IPersistentCoverTile):
 
@@ -43,6 +45,13 @@ class SocialTile(PersistentCoverTile):
     is_configurable = False
     is_droppable = False
     is_editable = True
+
+    def __call__(self):
+        path = '/'.join(self.context.getPhysicalPath())
+        msg = ('Use of tile "Social" is deprecated '
+               'and will be removed for the next version {0}'.format(path))
+        warnings.warn(msg, DeprecationWarning)
+        return self.index()
 
     def get_wid(self):
         return self.data['wid']

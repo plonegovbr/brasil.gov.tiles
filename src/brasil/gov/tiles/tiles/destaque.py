@@ -13,6 +13,8 @@ from zope import schema
 from zope.component import getUtility
 from zope.interface import implementer
 
+import warnings
+
 
 # XXX: we must refactor this tile
 class IDestaqueTile(IListTile):
@@ -56,6 +58,13 @@ class DestaqueTile(ListTile):
     is_editable = False
     limit = 2
     short_name = _(u'A highlight tile', default=u'A highlight tile')
+
+    def __call__(self):
+        path = '/'.join(self.context.getPhysicalPath())
+        msg = ('Use of tile "Destaque" is deprecated '
+               'and will be removed for the next version {0}'.format(path))
+        warnings.warn(msg, DeprecationWarning)
+        return self.index()
 
     # FIXME: Até a versão 1.4b1 de collective.cover, o funcionamento da lista
     # do collective.cover e do brasil.gov.tiles, apesar de uma diferença ou outra
