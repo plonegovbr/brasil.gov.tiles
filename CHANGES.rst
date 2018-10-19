@@ -4,8 +4,8 @@ Changelog
 2.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Deprecia uso do resource registries.
-  Agora utilizamos um viewlet para registrar recursos estáticos.
+- Remove registro de recursos estaticos dos resource registries;
+  agora utilizamos um viewlet para incluir eles simplificando a manutenção do complemento.
   [rodfersou]
 
 - Atualiza configuração do webpack.

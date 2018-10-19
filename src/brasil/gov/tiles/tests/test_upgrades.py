@@ -231,20 +231,18 @@ class UpgradeTo4101TestCase(BaseUpgradeTestCase):
         self.assertIsNotNone(step)
 
         # simulate state on previous version
-        from brasil.gov.tiles.upgrades.v4101 import SCRIPTS
+        from brasil.gov.tiles.upgrades.v4101 import JS
+        from brasil.gov.tiles.upgrades.v4101 import CSS
+
         js_tool = api.portal.get_tool('portal_javascripts')
-        for js in SCRIPTS:
-            js_tool.registerResource(id=js)
-            self.assertIn(js, js_tool.getResourceIds())
-        from brasil.gov.tiles.upgrades.v4101 import STYLES
+        js_tool.registerResource(id=JS)
+        self.assertIn(JS, js_tool.getResourceIds())
+
         css_tool = api.portal.get_tool('portal_css')
-        for css in STYLES:
-            css_tool.registerResource(id=css)
-            self.assertIn(css, css_tool.getResourceIds())
+        css_tool.registerResource(id=CSS)
+        self.assertIn(CSS, css_tool.getResourceIds())
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
-        for js in SCRIPTS:
-            self.assertNotIn(js, js_tool.getResourceIds())
-        for css in STYLES:
-            self.assertNotIn(css, css_tool.getResourceIds())
+        self.assertNotIn(JS, js_tool.getResourceIds())
+        self.assertNotIn(CSS, css_tool.getResourceIds())
