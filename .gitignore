@@ -26,4 +26,4 @@ log.html
 output.xml
 report.html
 selenium-screenshot-*.png
-src/brasil/gov/tiles/static/*
+src/brasil/gov/tiles/browser/static/*

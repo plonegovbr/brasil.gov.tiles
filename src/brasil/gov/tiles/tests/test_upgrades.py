@@ -64,11 +64,9 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         _rename_resources(js_tool, RESOURCES_TO_UPDATE_INVERSE)
 
         css_ids = css_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
 
         js_ids = js_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/tiles.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.cycle2.carousel.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.cycle2.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/jquery.jplayer.min.js', js_ids)
@@ -81,11 +79,9 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
 
         css_ids = css_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/brasilgovtiles.css', css_ids)
         self.assertNotIn('++resource++brasil.gov.tiles/tiles.css', css_ids)
 
         js_ids = js_tool.getResourceIds()
-        self.assertIn('++resource++brasil.gov.tiles/brasilgovtiles.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.carousel.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.cycle2.js', js_ids)
         self.assertIn('++resource++brasil.gov.tiles/vendor/jquery.jplayer.min.js', js_ids)
@@ -214,3 +210,39 @@ class UpgradeTo4100TestCase(BaseUpgradeTestCase):
         self._do_upgrade(step)
         content_types = api.portal.get_registry_record(**record)
         self.assertEqual(max(Counter(content_types).values()), 1)
+
+
+class UpgradeTo4101TestCase(BaseUpgradeTestCase):
+
+    from_ = u'4100'
+    to_ = u'4101'
+
+    def test_profile_version(self):
+        version = self.setup.getLastVersionForProfile(self.profile_id)[0]
+        self.assertEqual(version, self.from_)
+
+    def test_registered_steps(self):
+        steps = len(self.setup.listUpgrades(self.profile_id)[0])
+        self.assertEqual(steps, 3)
+
+    def test_deprecate_resource_registries(self):
+        title = u'Deprecate resource registries'
+        step = self._get_upgrade_step_by_title(title)
+        self.assertIsNotNone(step)
+
+        # simulate state on previous version
+        from brasil.gov.tiles.upgrades.v4101 import JS
+        from brasil.gov.tiles.upgrades.v4101 import CSS
+
+        js_tool = api.portal.get_tool('portal_javascripts')
+        js_tool.registerResource(id=JS)
+        self.assertIn(JS, js_tool.getResourceIds())
+
+        css_tool = api.portal.get_tool('portal_css')
+        css_tool.registerResource(id=CSS)
+        self.assertIn(CSS, css_tool.getResourceIds())
+
+        # run the upgrade step to validate the update
+        self._do_upgrade(step)
+        self.assertNotIn(JS, js_tool.getResourceIds())
+        self.assertNotIn(CSS, css_tool.getResourceIds())

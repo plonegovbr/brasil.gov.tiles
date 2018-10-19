@@ -12,4 +12,19 @@
       layer="brasil.gov.tiles.interfaces.IBrasilGovTiles"
       />
 
+  <browser:resourceDirectory
+      name="brasil.gov.tiles"
+      directory="static"
+      />
+
+  <browser:viewlet
+      name="brasil.gov.tiles.resources"
+      for="collective.cover.interfaces.ICover"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      class=".ResourcesViewlet"
+      template="static/resources.pt"
+      permission="zope2.Public"
+      layer="brasil.gov.tiles.interfaces.IBrasilGovTiles"
+      />
+
 </configure>

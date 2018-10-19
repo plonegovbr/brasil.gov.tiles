@@ -16,11 +16,6 @@
 
     <include file="profiles.zcml" />
 
-    <browser:resourceDirectory
-            name="brasil.gov.tiles"
-            directory="static"
-    />
-
     <utility
       factory=".config.HiddenProducts"
       name="brasil.gov.tiles" />
