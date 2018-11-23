@@ -1,8 +1,8 @@
 Changelog
 ---------
 
-2.0b4 (unreleased)
-^^^^^^^^^^^^^^^^^^
+2.0rc1 (2018-11-23)
+^^^^^^^^^^^^^^^^^^^
 
 - Remove registro de recursos estaticos dos resource registries;
   agora utilizamos um viewlet para incluir eles simplificando a manutenção do complemento.
