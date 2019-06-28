@@ -55,14 +55,11 @@ class AudioGalleryTile(ListTile):
         # here we should check if the embeded item has its a video
         # XXX
 
-        self.set_limit()
         tile_title = obj.Title()  # use collection's title as header
-        uuid = api.content.get_uuid(obj)
         data_mgr = ITileDataManager(self)
 
         old_data = data_mgr.get()
         old_data['tile_title'] = tile_title
-        old_data['uuids'] = [uuid]
         data_mgr.set(old_data)
 
     @staticmethod
