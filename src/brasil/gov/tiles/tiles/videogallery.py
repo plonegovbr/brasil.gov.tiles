@@ -12,6 +12,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 from zope.interface import implementer
 
+import six
+
 
 class IVideoGalleryTile(IListTile):
     """A droppable tile that shows a gallery of videos with
@@ -85,7 +87,7 @@ class VideoGalleryTile(ListTile):
         old_data = data_mgr.get()
         old_data['tile_title'] = tile_title
         old_data['uuids'] = {
-            uuid: {'order': 0}
+            uuid: {'order': six.text_type(0)}
         }
         data_mgr.set(old_data)
 
