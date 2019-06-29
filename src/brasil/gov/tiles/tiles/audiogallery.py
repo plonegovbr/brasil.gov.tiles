@@ -65,7 +65,7 @@ class AudioGalleryTile(ListTile):
         old_data = data_mgr.get()
         old_data['tile_title'] = tile_title
         old_data['uuids'] = {
-            uuid: {'order': six.text_type(0)}
+            uuid: {'order': six.text_type(0)},
         }
         data_mgr.set(old_data)
 
