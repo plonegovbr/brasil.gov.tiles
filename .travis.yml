@@ -13,7 +13,7 @@ addons:
 matrix:
   fast_finish: true
 install:
-- virtualenv --no-setuptools .
+- virtualenv .
 - bin/pip install -r requirements.txt
 - bin/buildout annotate
 # FIXME:
