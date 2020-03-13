@@ -4,6 +4,9 @@ Changelog
 2.0 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Adiciona requirements.txt e atualiza .travis.yml.
+  [idgserpro]
+
 - Corrige problema ao popular galeria de audio e video (fecha `#267 <https://github.com/plonegovbr/brasil.gov.tiles/issues/267>`_ `#268 <https://github.com/plonegovbr/brasil.gov.tiles/issues/268>`_).
   [rodfersou]
 

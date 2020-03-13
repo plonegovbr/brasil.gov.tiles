@@ -13,7 +13,8 @@ addons:
 matrix:
   fast_finish: true
 install:
-- python bootstrap.py
+- virtualenv --no-setuptools .
+- bin/pip install -r requirements.txt
 - bin/buildout annotate
 # FIXME:
 # Avoids VersionConflict: (six 1.11.0 (/home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages), Requirement.parse('six==1.10.0'))
