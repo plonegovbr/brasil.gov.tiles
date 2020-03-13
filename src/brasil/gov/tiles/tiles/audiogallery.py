@@ -33,13 +33,6 @@ class IAudioGalleryTile(IListTile):
         readonly=False,
     )
 
-    uuids = schema.List(
-        title=_(u'Audios'),
-        value_type=schema.TextLine(),
-        required=False,
-        readonly=True,
-    )
-
 
 @implementer(IAudioGalleryTile)
 class AudioGalleryTile(ListTile):

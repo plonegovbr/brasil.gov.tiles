@@ -4,6 +4,10 @@ Changelog
 2.0 (unreleased)
 ^^^^^^^^^^^^^^^^
 
+- Remove atributo uuids (customizado) dos tiles audiogallery e videogallery.
+  (`#274 <https://github.com/plonegovbr/brasil.gov.tiles/issues/274>`)
+  [idgserpro]
+
 - Adiciona requirements.txt e atualiza .travis.yml.
   [idgserpro]
 

@@ -53,14 +53,6 @@ class IVideoGalleryTile(IListTile):
         readonly=True,
     )
 
-    form.omitted('uuids')
-    form.no_omit(IDefaultConfigureForm, 'uuids')
-    uuids = schema.List(
-        title=_(u'Videos'),
-        value_type=schema.TextLine(),
-        required=False,
-    )
-
 
 @implementer(IVideoGalleryTile)
 class VideoGalleryTile(ListTile):
