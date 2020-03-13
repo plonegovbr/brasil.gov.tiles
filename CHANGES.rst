@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-2.0 (unreleased)
+2.0 (2020-03-13)
 ^^^^^^^^^^^^^^^^
 
 - Remove atributo uuids (customizado) dos tiles audiogallery e videogallery.
