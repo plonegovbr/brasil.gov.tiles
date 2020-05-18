@@ -235,14 +235,18 @@ class UpgradeTo4101TestCase(BaseUpgradeTestCase):
         from brasil.gov.tiles.upgrades.v4101 import CSS
 
         js_tool = api.portal.get_tool('portal_javascripts')
-        js_tool.registerResource(id=JS)
-        self.assertIn(JS, js_tool.getResourceIds())
+        for js in JS:
+            js_tool.registerResource(id=js)
+            self.assertIn(js, js_tool.getResourceIds())
 
         css_tool = api.portal.get_tool('portal_css')
-        css_tool.registerResource(id=CSS)
-        self.assertIn(CSS, css_tool.getResourceIds())
+        for css in CSS:
+            css_tool.registerResource(id=css)
+            self.assertIn(css, css_tool.getResourceIds())
 
         # run the upgrade step to validate the update
         self._do_upgrade(step)
-        self.assertNotIn(JS, js_tool.getResourceIds())
-        self.assertNotIn(CSS, css_tool.getResourceIds())
+        for js in JS:
+            self.assertNotIn(js, js_tool.getResourceIds())
+        for css in CSS:
+            self.assertNotIn(css, css_tool.getResourceIds())
