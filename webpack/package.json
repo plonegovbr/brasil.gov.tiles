@@ -27,6 +27,6 @@
   "dependencies": {
     "clipboard": "^2.0.1",
     "sc-recipe-staticresources": "collective/sc.recipe.staticresources#1.1b7",
-    "swiper": "^4.3.5"
+    "swiper": "^6.5.1"
   }
 }
